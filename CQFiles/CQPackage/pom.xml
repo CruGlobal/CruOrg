@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <name>CruOrg-deployment-parent</name>
+    <artifactId>CruOrg-deployment-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.bedrock.test</groupId>
+        <artifactId>CruOrg-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <modules>
+      <module>PkgDefinition</module>
+      <module>PkgDeployment</module>
+    </modules>
+    <properties>
+        <!-- Stable repository -->
+         <repositoryUrl>${project.distributionManagement.repository.url}</repositoryUrl>
+        <!-- SNAPSHOTS repository (default) -->
+        <repositoryUrl>${project.distributionManagement.snapshotRepository.url}</repositoryUrl>
+    </properties>
+
+
+    <build>
+      <pluginManagement>
+	<plugins>
+        <!-- Dynamically define the repository url based on the version -->
+        <!-- This url is used to deploy the CQ packages to nexus. -->
+        <!--<plugin>
+            <groupId>org.codehaus.groovy.maven</groupId>
+            <artifactId>gmaven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>choose-target-repository</id>
+                    <phase>initialize</phase>
+                    <goals>
+                        <goal>execute</goal>
+                    </goals>
+                    <configuration>
+                        <source>
+                            if (project.version.endsWith("-SNAPSHOT")){
+                                project.properties.repositoryUrl = project.distributionManagement.snapshotRepository.url;
+                            } else {
+                                project.properties.repositoryUrl = project.distributionManagement.repository.url;
+                            }
+                        </source>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin> -->
+	  <!-- Plugin, to create and manage the CQFiles package -->
+	  <plugin>
+	    <groupId>com.day.jcr.vault</groupId>
+	    <artifactId>content-package-maven-plugin</artifactId>
+	    <version>0.0.23</version>
+	    <extensions>true</extensions>
+	    <configuration>
+	      <group>${project.groupId}</group>
+	      <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+	      <targetURL>${cq.server}/crx/packmgr/service.jsp</targetURL>
+	      <failOnError>true</failOnError>
+	      <username>${username}</username>
+	      <password>${password}</password>
+	    </configuration>
+	  </plugin>
+	</plugins>
+      </pluginManagement>
+    </build>
+    <profiles>
+      <profile>
+	<!-- Ensure proper build order for full deployment -->
+	<id>enforceDependencies</id>
+	<activation>
+	  <property>
+	    <name>cq.profilegroup</name>
+	    <value>fullDeploy</value>
+	  </property>
+	</activation>
+	<!-- Add all the osgi bundles as dependencies -->
+	<dependencies>
+	  <dependency>
+	    <groupId>${project.groupId}</groupId>
+	    <artifactId>CruOrg</artifactId>
+	    <version>${project.version}</version>
+	  </dependency>
+	</dependencies>
+      </profile>
+
+    </profiles>
+</project>

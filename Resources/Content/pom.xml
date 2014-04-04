@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>example-package</artifactId>
+    <groupId>grupoDeParent</groupId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPTSHOT</version>
+
+
+    <!-- <parent> -->
+    <!--     <artifactId>base-pkg-parent</artifactId> -->
+    <!--     <groupId>XumaK</groupId> -->
+    <!--     <version>1.0</version> -->
+    <!--     <relativePath>../pom.xml</relativePath> -->
+    <!-- </parent> -->
+
+  <properties>
+    <!-- The name of the CQ Package -->
+    <cq.package.name>content-example-cqpkg</cq.package.name>
+  </properties>
+
+
+  <build>
+    <resources>
+      <!-- This resource is an empty directory used to create the cq package -->
+      <resource>
+	<directory>src/main/content/jcr_root</directory>
+	<filtering>false</filtering>
+	<excludes>
+	  <exclude>**/.vlt</exclude>
+	  <exclude>**/.vltignore</exclude>
+	  <exclude>**/.gitignore</exclude>
+	  <exclude>**/.DS_Store</exclude>
+	</excludes>
+
+
+      </resource>
+      <!-- vault META-INF resources (thumbnail etc.) -->
+      <resource>
+	<directory>${basedir}/src/main/content/META-INF</directory>
+	<targetPath>../vault-work/META-INF</targetPath>
+      </resource>
+    </resources>
+
+    <plugins>
+      <!-- Used to add the directory to the cq package -->
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-resources-plugin</artifactId>
+	<version>2.6</version>
+	<configuration>
+	  <includeEmptyDirs>true</includeEmptyDirs>
+	</configuration>
+	<executions>
+	  <!-- required when using content-package-maven-plugin <packaging>pom...-->
+	  <execution>
+	    <id>custom-process-resources</id>
+	    <phase>process-resources</phase>
+	    <goals>
+	      <goal>resources</goal>
+	    </goals>
+	  </execution>
+	</executions>
+      </plugin>
+
+      <!-- This plugin is used to build the empty cq package -->
+      <plugin>
+        <groupId>com.day.jcr.vault</groupId>
+        <artifactId>content-package-maven-plugin</artifactId>
+        <version>0.0.23</version>
+        <configuration>
+          <properties>
+            <description>Created ${maven.build.timestamp}</description>
+          </properties>
+          <name>${cq.package.name}</name>
+          <finalName>${cq.package.name}-${project.version}-empty</finalName>
+          <install>true</install>
+          <targetURL>${cq.server}/crx/packmgr/service.jsp</targetURL>
+          <username>${username}</username>
+          <password>${password}</password>
+        </configuration>
+        <executions>
+              <execution>
+                <goals>
+                  <goal>package</goal>
+                </goals>
+              </execution>
+          <execution>
+            <id>upload-content-package</id>
+            <phase>install</phase>
+            <goals>
+              <goal>install</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

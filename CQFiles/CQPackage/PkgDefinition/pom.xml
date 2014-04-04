@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <name>CruOrg-cq-package</name>
+    <!-- This artifactId and the CQFiles.package.name must have the same value. -->
+    <!-- CQFiles.package.name is defined in ../../../osgi/pom.xml -->
+    <artifactId>CruOrg-cq-package</artifactId>
+    <packaging>content-package</packaging>
+    <description>Content Package</description>
+
+    <parent>
+	<groupId>com.bedrock.test</groupId>
+	<artifactId>CruOrg-deployment-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <scm>
+      <connection>scm:git:https://github.com/user/project.git</connection><!-- scm:git:https://github.com/user/project.git -->
+      <url>https://github.com/user/project</url><!-- https://github.com/user/project -->
+    </scm>
+
+
+  <build>
+    <resources>
+      <resource>
+	<!-- This resource is an empty directory used to create the CQFiles package -->
+	<directory>src/main/content/jcr_root</directory>
+	<filtering>false</filtering>
+	<excludes>
+	  <exclude>**/.vlt</exclude>
+	  <exclude>**/.vltignore</exclude>
+	  <exclude>**/.gitignore</exclude>
+	  <exclude>**/.DS_Store</exclude>
+	</excludes>
+      </resource>
+      <!-- vault META-INF resources (thumbnail etc.) -->
+      <resource>
+	<directory>${basedir}/src/main/content/META-INF</directory>
+	<targetPath>../vault-work/META-INF</targetPath>
+      </resource>
+    </resources>
+
+    <plugins>
+      <!-- Used to add the empty directory to the CQFiles package -->
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-resources-plugin</artifactId>
+	<version>2.6</version>
+	<configuration>
+	  <includeEmptyDirs>true</includeEmptyDirs>
+	</configuration>
+      </plugin>
+
+      <!-- This plugin is used to add the commit id to the CQFiles package -->
+      <plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>buildnumber-maven-plugin</artifactId>
+	<version>1.2</version>
+	<executions>
+	  <execution>
+	    <phase>validate</phase>
+	    <goals>
+	      <goal>create</goal>
+	    </goals>
+	  </execution>
+	</executions>
+	<configuration>
+	  <doCheck>false</doCheck>
+	  <doUpdate>false</doUpdate>
+	  <revisionOnScmFailure>_</revisionOnScmFailure>
+	  <shortRevisionLength>7</shortRevisionLength>
+	</configuration>
+      </plugin>
+
+      <!-- This plugin is used to build the empty CQFiles package -->
+      <plugin>
+        <groupId>com.day.jcr.vault</groupId>
+        <artifactId>content-package-maven-plugin</artifactId>
+        <configuration>
+          <properties>
+            <description>${project.description} (Build ${buildNumber}${bNote} created ${maven.build.timestamp}).</description>
+          </properties>
+          <finalName>${cq.package.name}-${project.version}</finalName>
+          <!-- do not install, only upload the package -->
+          <install>false</install>
+        </configuration>
+      </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.8.1</version>
+            <configuration>
+                <skip>true</skip>
+            </configuration>
+        </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <!-- This profile allow us to upload (*no* install) the empty CQFiles package -->
+    <profile>
+      <id>autoUploadPackage</id>
+      <activation>
+        <property>
+	  <name>cq.profilegroup</name>
+	  <value>fullDeploy</value>
+        </property>
+      </activation>
+      <build>
+	<plugins>
+	  <plugin>
+	    <groupId>com.day.jcr.vault</groupId>
+	    <artifactId>content-package-maven-plugin</artifactId>
+	    <executions>
+	      <execution>
+		<id>upload-content-package</id>
+		<phase>install</phase>
+		<goals>
+		  <goal>install</goal>
+		</goals>
+	      </execution>
+	    </executions>
+	  </plugin>
+	</plugins>
+      </build>
+    </profile>
+
+
+  </profiles>
+</project>

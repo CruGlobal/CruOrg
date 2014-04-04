@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="sling:Folder">
+  <properties>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[CruOrgApp]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Component">
+  <properties>
+    <property name="allowedPaths" type="1" multiple="false">
+      <value><![CDATA[/content(/.*)?]]></value>
+    </property>
+    <property name="jcr:title" type="1" multiple="false">
+      <value><![CDATA[XumaK Example Content Page Component]]></value>
+    </property>
+    <property name="sling:resourceSuperType" type="1" multiple="false">
+      <value><![CDATA[xumakbase/components/page/htmlbase]]></value>
+    </property>
+    <property name="componentGroup" type="1" multiple="false">
+      <value><![CDATA[.hidden]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
