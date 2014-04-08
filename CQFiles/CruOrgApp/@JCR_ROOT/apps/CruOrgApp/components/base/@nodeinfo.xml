@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Component">
+  <properties>
+    <property name="sling:resourceSuperType" type="1" multiple="false">
+      <value><![CDATA[xumakbase/components/base]]></value>
+    </property>
+    <property name="componentGroup" type="1" multiple="false">
+      <value><![CDATA[.hidden]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

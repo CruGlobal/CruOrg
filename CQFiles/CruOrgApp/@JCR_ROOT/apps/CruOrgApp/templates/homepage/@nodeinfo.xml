@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Template">
   <properties>
-    <property name="allowedPaths" type="1" multiple="true">
+    <property name="allowedPaths" type="1" multiple="false">
       <value><![CDATA[/content(/.*)?]]></value>
     </property>
     <property name="jcr:title" type="1" multiple="false">
-      <value><![CDATA[XumaK Example Content Page]]></value>
+      <value><![CDATA[Cru Home Page]]></value>
     </property>
     <property name="ranking" type="3" multiple="false">
       <value>100</value>
