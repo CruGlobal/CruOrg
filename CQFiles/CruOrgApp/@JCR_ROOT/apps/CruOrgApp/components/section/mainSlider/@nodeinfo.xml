@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Component">
+  <properties>
+    <property name="jcr:title" type="1" multiple="false">
+      <value><![CDATA[XumaK Example Title Component]]></value>
+    </property>
+    <property name="componentGroup" type="1" multiple="false">
+      <value><![CDATA[XumaK Example]]></value>
+    </property>
+    <property name="sling:resourceSuperType" type="1" multiple="false">
+      <value><![CDATA[xumakbase/components/section/base]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

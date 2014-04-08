@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[List of article paths]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./path]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
