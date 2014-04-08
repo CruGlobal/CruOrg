@@ -10,10 +10,10 @@
 .project
 .settings
 target
+stat.file
 lib/
 classes/
-/Source/CQFiles/Base/stat.file
-/Source/CQFiles/Examples/stat.file
+/Source/CQFiles/CruOrgApp/stat.file
 /Source/Bundles/JCRSyncr/target/
 /Source/Bundles/Parent/target/
 /Source/Bundles/Base/target/
