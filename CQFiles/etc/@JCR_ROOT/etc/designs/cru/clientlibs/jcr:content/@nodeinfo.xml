@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[wcm/core/components/designer]]></value>
+    </property>
+    <property name="cq:doctype" type="1" multiple="false">
+      <value><![CDATA[html_5]]></value>
+    </property>
+    <property name="cq:lastModified" type="5" multiple="false">
+      <value>2012-06-13T15:18:34.908-06:00</value>
+    </property>
+    <property name="cq:lastModifiedBy" type="1" multiple="false">
+      <value><![CDATA[admin]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

@@ -2,8 +2,7 @@
 <node nodeType="cq:ClientLibraryFolder">
   <properties>
     <property name="categories" type="1" multiple="true">
-      <value><![CDATA[cruOrg.page]]></value>
-      <value><![CDATA[cruOrg.page.htmlbase]]></value>
+      <value><![CDATA[cruOrg.section]]></value>
     </property>
   </properties>
   <mixins />
