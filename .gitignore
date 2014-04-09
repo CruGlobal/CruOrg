@@ -13,9 +13,9 @@ target
 stat.file
 lib/
 classes/
-/Source/CQFiles/CruOrgApp/stat.file
-/Source/Bundles/JCRSyncr/target/
-/Source/Bundles/Parent/target/
-/Source/Bundles/Base/target/
-/Source/Bundles/Examples/target/
+CQFiles/etc/@JCR_ROOT/etc/designs/cru/jcr:content
+/CruOrg/Bundles/JCRSyncr/target/
+/CruOrg/Bundles/Parent/target/
+/CruOrg/Bundles/Base/target/
+/CruOrg/Bundles/Examples/target/
 
