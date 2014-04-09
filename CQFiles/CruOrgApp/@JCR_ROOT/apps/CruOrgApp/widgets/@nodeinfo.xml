@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<node nodeType="sling:Folder">
-  <properties />
+<node nodeType="cq:ClientLibraryFolder">
+  <properties>
+    <property name="categories" type="1" multiple="true">
+      <value><![CDATA[cq.wcm.edit]]></value>
+      <value><![CDATA[cq.widgets]]></value>
+    </property>
+  </properties>
   <mixins />
 </node>
 
