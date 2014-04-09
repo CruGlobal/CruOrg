@@ -1,0 +1,6 @@
+/* field set widget style fixed in the searchBox dialog */
+.search-box > legend {
+    margin-bottom: 0;
+    width: auto;
+    border: none;
+}
