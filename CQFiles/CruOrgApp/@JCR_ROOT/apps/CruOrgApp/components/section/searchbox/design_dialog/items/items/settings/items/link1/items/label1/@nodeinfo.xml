@@ -13,9 +13,6 @@
     <property name="anchor" type="1" multiple="false">
       <value><![CDATA[95%]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Label for the first link for search.]]></value>
-    </property>
   </properties>
   <mixins />
 </node>

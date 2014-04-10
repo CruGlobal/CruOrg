@@ -10,9 +10,6 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./title]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Title of the component.]]></value>
-    </property>
   </properties>
   <mixins />
 </node>

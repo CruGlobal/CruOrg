@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Facebook API key]]></value>
-    </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[textfield]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Facebook API key]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./apikey]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Facebook account API key.]]></value>
+      <value><![CDATA[e.g. 116517098374395]]></value>
     </property>
   </properties>
   <mixins />

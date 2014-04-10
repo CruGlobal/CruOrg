@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[pathfield]]></value>
-    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Path]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./path2]]></value>
     </property>
     <property name="anchor" type="1" multiple="false">
       <value><![CDATA[95%]]></value>
-    </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Internal URL for the second link for search.]]></value>
     </property>
   </properties>
   <mixins />

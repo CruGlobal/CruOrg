@@ -7,9 +7,6 @@
     <property name="title" type="1" multiple="false">
       <value><![CDATA[First Link]]></value>
     </property>
-    <property name="collapsible" type="6" multiple="false">
-      <value>true</value>
-    </property>
     <property name="cls" type="1" multiple="false">
       <value><![CDATA[search-box]]></value>
     </property>

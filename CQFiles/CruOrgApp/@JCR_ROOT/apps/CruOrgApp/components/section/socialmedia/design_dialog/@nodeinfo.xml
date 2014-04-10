@@ -4,6 +4,9 @@
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[dialog]]></value>
     </property>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Social Media]]></value>
+    </property>
   </properties>
   <mixins />
 </node>
