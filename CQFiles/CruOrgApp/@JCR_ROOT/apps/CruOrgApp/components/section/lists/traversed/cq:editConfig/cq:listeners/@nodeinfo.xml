@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:EditListenersConfig">
+  <properties>
+    <property name="afteredit" type="1" multiple="false">
+      <value><![CDATA[REFRESH_PAGE]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
