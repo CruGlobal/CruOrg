@@ -1,4 +1,4 @@
-package com.CruOrg.example.servlet;
+package org.cru.example.servlet;
 
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
