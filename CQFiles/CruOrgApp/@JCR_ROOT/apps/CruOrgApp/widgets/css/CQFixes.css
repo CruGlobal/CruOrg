@@ -1,0 +1,6 @@
+/* field set widget style fixed in the dialog */
+.x-fieldset > legend.x-fieldset-header {
+    margin-bottom: 0;
+    width: auto;
+    border: none;
+}
