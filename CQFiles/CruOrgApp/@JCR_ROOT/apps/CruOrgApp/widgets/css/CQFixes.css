@@ -4,3 +4,9 @@
     width: auto;
     border: none;
 }
+
+/* ParSys dialog fixed collapsed group of components. */
+/* It had conflict with the cru homepage label style.   */
+div.x-form-check-wrap > label {
+    display: inline-block;
+}
