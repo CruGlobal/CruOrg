@@ -10,8 +10,14 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./text]]></value>
     </property>
+    <property name="allowBlank" type="6" multiple="false">
+      <value>false</value>
+    </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter text to display]]></value>
+    </property>
+    <property name="blankText" type="1" multiple="false">
+      <value><![CDATA[Text field is required]]></value>
     </property>
   </properties>
   <mixins />
