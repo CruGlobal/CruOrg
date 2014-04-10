@@ -1,4 +1,4 @@
-package com.CruOrg.example.logiclesstemplates.processors;
+package org.cru.example.logiclesstemplates.processors;
 
 import com.xumak.base.templatingsupport.AbstractResourceTypeCheckContextProcessor;
 import com.xumak.base.templatingsupport.ContentModel;
