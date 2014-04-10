@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="editable" type="6" multiple="false">
-      <value>false</value>
-    </property>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[pathfield]]></value>
+      <value><![CDATA[multifield]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Path]]></value>
+      <value><![CDATA[Pages]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./path2]]></value>
+      <value><![CDATA[./pathRefs]]></value>
     </property>
-    <property name="anchor" type="1" multiple="false">
-      <value><![CDATA[95%]]></value>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Click the '+' to add a new page]]></value>
     </property>
   </properties>
   <mixins />

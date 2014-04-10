@@ -1,0 +1,25 @@
+<!-- Footer Component -->
+<footer class="global-footer">
+<hr class="section-divider">
+
+<!-- Social wrapper -->
+<!--TODO: Add social component-->
+<!-- End social wrapper -->
+{%#if list.pages%}
+<nav role="supplementary">
+    <ul class="nav  flush--bottom">
+        {%#each list.pages %}
+            <li>
+              <a href="{%this.path%}.html">{%this.title%}</a>
+            </li>
+        {%/each%}
+    </ul>
+</nav>
+{%/if%}
+{%#if global.text %}
+    <div class="copy">
+      <small>{%global.text%}</small>
+    </div>
+{%/if%}
+</footer>
+<!-- End footer component -->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Copyright text]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./text]]></value>
+    </property>
+    <property name="allowBlank" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
+    <property name="validateOnBlur" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
