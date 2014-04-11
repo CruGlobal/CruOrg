@@ -96,14 +96,8 @@
     <!-- Section-title wrapper on homepage to add margin -->
     <div class="mb  ps-">
       
-      <!-- Section-title -->
-      <div class="section-title  center-block">
-        <h2 class="section-title__item">Tristique Malesuada Cursus Fusce Dapibus</h2>
-        <div class="section-title__item  inline-btn  pl-">
-          <button class="button  button--secondary  button--small">.button--secondary.button--small</button>
-        </div>
-      </div>
-      <!-- End section-title -->
+      		{%#include "section-title-main" as="CruOrgApp/components/section/section-title"%}{%/include%}
+
       
     </div>
     
@@ -117,9 +111,8 @@
 
     
     <div class="mt center-block  home-banner">
-       <div class="mt">
-         <h2 class="callout">Get Started</h2>
-       </div>
+    	{%#include "section-title" as="CruOrgApp/components/section/section-title"%}{%/include%}
+
      </div>
 
     <hr class="section-divider">
