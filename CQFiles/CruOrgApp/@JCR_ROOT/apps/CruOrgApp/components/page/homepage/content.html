@@ -1,4 +1,4 @@
- <!-- Content wrap -->
+<!-- Content wrap -->
     <div class="page-content">  
     <!-- Slider Component -->
     <div class="content-slider  position--relative  overflow--hide  mb">
@@ -56,6 +56,7 @@
             </li>
           </ul>
         </div>
+
         <!-- end .mask -->
       </div>
       <a class="slider-control  slider-control__prev  position--absolute">
@@ -70,7 +71,7 @@
       </a>
     </div>
     <!-- End slider component -->
-    
+
     <!-- Homepage social bar -->
     <div class="center--block  color-white">
       <div class="layout--cap">
@@ -111,7 +112,7 @@
       
     <!-- Tiles -->
     <div  class="grid mb"> <!--This and the following grid is using same markup as tile-components for the tiles-->
-		{%#include "tileContainerParsys" as="foundation/components/parsys"%}{%/include%}
+		{%#include "tile-container-parsys" as="foundation/components/parsys"%}{%/include%}
     </div>
 
     
@@ -124,70 +125,20 @@
     <hr class="section-divider">
 
      <!--Two large buttons. One for finder other for Start Relationship...-->
-    <div class="grid  button-group">
-      <div class="grid__item  desk--one-half">
-         <div class="m--">
-          <button class="button button--primary full-width">Locate a U.S. Campus Ministry</button>
-         </div>
-      </div>
-      <div class="grid__item  desk--one-half">
-         <div class="m--">
-           <button class="button button--primary full-width">Start a Personal Relationship with Jesus</button>
-         </div>
-      </div>
-    </div>
+    {%#include "home-section-container-1" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
+
 
      <!--List items for the quasi site map and facebook iframe-->
      <div class="grid">
        <div class="grid__item one-whole desk--one-half">
 
          <div class="grid m--">
-           <div class="grid__item  lap--one-half desk--one-half">
-             <h5 class="weight--semibold mt">Ministries by Location</h5>
-             <ul class="block-list mb">
-               <li><a href="#">Africa</a></li>
-               <li><a href="#">Americas</a></li>
-               <li><a href="#">Asia</a></li>
-               <li><a href="#">Australia and Oceania</a></li>
-               <li><a href="#">Europe</a></li>
-             </ul>
-
-             <h5 class="weight--semibold">Ministries by Interest</h5>
-             <ul class="block-list">
-               <li><a href="#">High School</a></li>
-               <li><a href="#">College</a></li>
-               <li><a href="#">Grad Students and Faculty</a></li>
-               <li><a href="#">Family</a></li>
-               <li><a href="#">Sports</a></li>
-               <li><a href="#">Marketplace</a></li>
-             </ul>
-           </div>
-
-           <div class="grid__item  lap--one-half desk--one-half">
-             <h5 class="weight--semibold mt">Ministries by Name</h5>
-             <ul class="block-list">
-               <li><a href="#">Athletes in Action</a></li>
-               <li><a href="#">Campus</a></li>
-               <li><a href="#">Christian Embassy, UN</a></li>
-               <li><a href="#">Christian Embassy, D.C</a></li>
-               <li><a href="#">City</a></li>
-               <li><a href="#">Cru Military</a></li>
-               <li><a href="#">Faculty and Graduates</a></li>
-               <li><a href="#">FamilyLife</a></li>
-               <li><a href="#">Global Aid Network</a></li>
-               <li><a href="#">High School</a></li>
-               <li><a href="#">Inner City</a></li>
-               <li><a href="#">The Impact Movement</a></li>
-               <li><a href="#">The JESUS Film Project</a></li>
-               <li><a href="#">Josh McDowell Ministry</a></li>
-               <li><a href="#">Keynote</a></li>
-             </ul>
-           </div>
+           		{%#include "home-section-container-parsys-1" as="foundation/components/parsys"%}{%/include%}
          </div> <!--end grid-->
        </div> <!--end grid__item-->
-       <div class="grid__item  desk--one-half mt">
+       <div class="grid__item  desk--one-half">
          <div class="m--">
-           <fb:like-box href="https://www.facebook.com/CruGlobal" width="450" show_faces="false" stream="true" header="false" border_color="white" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=116517098374395&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FCruGlobal&amp;locale=en_US&amp;sdk=joey&amp;show_faces=false&amp;stream=true&amp;width=450"><span  class="fb-feed" style="vertical-align: bottom; width: 100%; height: 395px;"><iframe name="f3292db77c" width="100%" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like_box Facebook Social Plugin" src="http://www.facebook.com/plugins/like_box.php?app_id=116517098374395&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FwTH8U0osOYl.js%3Fversion%3D40%23cb%3Df3a68e0ba%26domain%3Dwww.cru.org%26origin%3Dhttp%253A%252F%252Fwww.cru.org%252Ff255a947c%26relation%3Dparent.parent&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FCruGlobal&amp;locale=en_US&amp;sdk=joey&amp;show_faces=false&amp;stream=true&amp;width=450" class="" style="border: none; visibility: visible; width: 100%; height: 395px;"></iframe></span></fb:like-box>
+           		{%#include "home-section-container-parsys-2" as="foundation/components/parsys"%}{%/include%}
          </div>
        </div>
 
