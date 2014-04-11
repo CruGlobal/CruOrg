@@ -1,0 +1,12 @@
+/* field set widget style fixed in the dialog */
+.x-fieldset > legend.x-fieldset-header {
+    margin-bottom: 0;
+    width: auto;
+    border: none;
+}
+
+/* ParSys dialog fixed collapsed group of components. */
+/* It had conflict with the cru homepage label style.   */
+div.x-form-check-wrap > label {
+    display: inline-block;
+}

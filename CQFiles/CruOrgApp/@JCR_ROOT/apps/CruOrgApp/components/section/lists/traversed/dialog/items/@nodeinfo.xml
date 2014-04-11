@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="title" type="1" multiple="false">
-      <value><![CDATA[Second Link]]></value>
-    </property>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[fieldset]]></value>
+      <value><![CDATA[tabpanel]]></value>
     </property>
   </properties>
   <mixins />
