@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Name Page]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./fbName]]></value>
+    </property>
+    <property name="anchor" type="1" multiple="false">
+      <value><![CDATA[100%]]></value>
+    </property>
+    <property name="validateOnBlur" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[e.g.  for the "https://www.facebook.com/CruGlobal" page, the value is CruGlobal.]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
