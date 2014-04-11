@@ -118,7 +118,12 @@
     <hr class="section-divider">
 
      <!--Two large buttons. One for finder other for Start Relationship...-->
-    {%#include "home-section-container-1" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
+     <div class="grid  button-group">
+      <!-- button one -->
+      {%#include "home-section-container-1" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
+      <!-- button two -->
+      {%#include "home-section-container-2" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
+    </div>
 
 
      <!--List items for the quasi site map and facebook iframe-->
