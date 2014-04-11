@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Title]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./title]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Enter title to display]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
