@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Link]]></value>
-    </property>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[pathfield]]></value>
+      <value><![CDATA[textfield]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Text]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./linkOne]]></value>
+      <value><![CDATA[./text]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter link for the button]]></value>
+      <value><![CDATA[Enter text to display]]></value>
     </property>
   </properties>
   <mixins />
