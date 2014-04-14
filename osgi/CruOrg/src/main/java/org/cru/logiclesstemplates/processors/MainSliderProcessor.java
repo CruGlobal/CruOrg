@@ -47,7 +47,10 @@ public class MainSliderProcessor extends AddPagePathListContextProcessor {
             throws Exception {
 
         Collection<String> pathList = new ArrayList();
-        if ( request.getResource().adaptTo( Node.class ).hasProperty("pathRefs") ) {
+        Resource resource = request.getResource();
+
+        if ( resource != null && resource.adaptTo( Node.class ) != null &&
+                resource.adaptTo( Node.class).hasProperty("pathRefs") ) {
 
             Property p = request.getResource().adaptTo( Node.class ).getProperty("pathRefs");
             if( p.isMultiple() ){
