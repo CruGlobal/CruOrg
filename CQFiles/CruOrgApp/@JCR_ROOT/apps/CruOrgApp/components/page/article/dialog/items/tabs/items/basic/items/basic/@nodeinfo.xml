@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[cqinclude]]></value>
+    </property>
+    <property name="path" type="1" multiple="false">
+      <value><![CDATA[/libs/foundation/components/page/tab_basic/items/basic.infinity.json]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

@@ -1,5 +1,4 @@
-<!-- Content wrap -->
-    <div class="page-content">  
+
     <!-- Slider Component -->
         {%#include "main-slider" as="CruOrgApp/components/section/main-slider"%}{%/include%}
     <!-- End slider component -->
@@ -50,20 +49,24 @@
     <hr class="section-divider">
 
      <!--Two large buttons. One for finder other for Start Relationship...-->
-     <div class="grid  button-group">
-      <!-- button one -->
-      {%#include "home-section-container-1" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
-      <!-- button two -->
-      {%#include "home-section-container-2" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
+	<div class="grid  button-group">
+          {%#include "home-section-container-left" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
+          {%#include "home-section-container-right" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
     </div>
-
 
      <!--List items for the quasi site map and facebook iframe-->
      <div class="grid">
        <div class="grid__item one-whole desk--one-half">
 
          <div class="grid m--">
-           		{%#include "home-section-container-parsys-1" as="foundation/components/parsys"%}{%/include%}
+
+             <div class="grid__item  lap--one-half desk--one-half">
+                 {%#include "traversed-1" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
+                 {%#include "traversed-2" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
+             </div>
+             <div class="grid__item  lap--one-half desk--one-half">
+ 				{%#include "traversed-3" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
+           </div>
          </div> <!--end grid-->
        </div> <!--end grid__item-->
        <div class="grid__item  desk--one-half">
@@ -74,6 +77,4 @@
 
      </div> <!--end grid-->
     <!-- End tiles -->
-    
-    </div>
-    <!-- End primary wrapper -->
+
