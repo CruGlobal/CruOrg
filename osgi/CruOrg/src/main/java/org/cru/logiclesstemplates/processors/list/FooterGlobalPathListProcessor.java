@@ -1,4 +1,4 @@
-package com.CruOrg.example.logiclesstemplates.processors;
+package org.cru.logiclesstemplates.processors.list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,9 +36,10 @@ public class FooterGlobalPathListProcessor extends AddPagePathListContextProcess
                     pathList.add(pathRef);
                 }
             } else if (pathRefs.getClass().isArray()) {
-                pathList = Arrays.asList((String[]) pathRefs);
+                String[] pathReftsArr = (String[]) pathRefs;
+                pathList.addAll(Arrays.asList(pathReftsArr));
             } else {
-                pathList.add((String)pathRefs);
+                pathList.add((String) pathRefs);
             }
             contentModel.set("list.paths", pathList);
         }
