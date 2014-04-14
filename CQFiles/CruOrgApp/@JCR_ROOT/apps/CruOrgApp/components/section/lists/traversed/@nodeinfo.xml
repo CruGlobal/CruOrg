@@ -2,7 +2,7 @@
 <node nodeType="cq:Component">
   <properties>
     <property name="jcr:title" type="1" multiple="false">
-      <value><![CDATA[Traversed List Component]]></value>
+      <value><![CDATA[Traversed List]]></value>
     </property>
     <property name="componentGroup" type="1" multiple="false">
       <value><![CDATA[Cru]]></value>
