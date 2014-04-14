@@ -1,0 +1,37 @@
+<div class="content-slider  position--relative  overflow--hide  mb">
+
+<div class="slider  centered  position--relative">
+        <!-- .mask -->
+        <div class="slider__mask  overflow--hide">
+          <ul class="bare-list">
+			{%#if list.pages%}
+				{%#each list.pages %}
+                    <li class="slider__item  position--absolute  full-height">
+                      <a class="position--relative  display--block  full-height" href="{%this.path%}.html">
+                        <div class="full-height  full-width">
+                          <!-- This is the background image style that will be changed based on the article image -->
+                          <div class="background-image" style="background-image: url('{%this.image%}')"></div>
+                        </div>
+                        <div class="article-details  position--absolute  p0">
+                          <h3 class="affordance  display--block  m0">{%this.description%}</h3>
+                        </div>
+                      </a>
+                    </li>
+			   {%/each%}
+			{%/if%}
+          </ul>
+        </div>
+        <!-- end .mask -->
+      </div>
+      <a class="slider-control  slider-control__prev  position--absolute">
+            <span class="slider-control--btn  position--absolute">
+              <i class="icon-left-arrow"></i>
+            </span>
+      </a>
+      <a class="slider-control  slider-control__next  position--absolute">
+            <span class="slider-control--btn  position--absolute">
+              <i class="icon-right-arrow"></i>
+            </span>
+      </a>
+    </div>
+    

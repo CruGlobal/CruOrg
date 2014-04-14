@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[multifield]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Pages]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./pathRefs]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Click the '+' to add a new page]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

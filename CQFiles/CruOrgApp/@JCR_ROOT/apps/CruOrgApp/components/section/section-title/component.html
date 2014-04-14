@@ -1,13 +1,20 @@
- {%#if content.text%}
- <div class="section-title">
- 	<h2 class="section-title__item">{%content.text%}</h2>
- 	{%#if content.link%}
- 	<div class="section-title__item  inline-btn">
- 		<button class="button  button--{%content.style%}  button--small">{%content.label%}</button>
- 	</div>
- 	{%/if%}
- </div>
- {%else%}
- Double click to enter section title
- {%/if%}
+ 
+<div class="section-title">
+	<h2 class="section-title__item">
+		{%#if content.text%}	
+			{%content.text%}
+		{%else%}
+			{%#if page.isEditMode%}
+				&para;
+			{%/if%} 
+		{%/if%}
+	</h2>
+	{%#if content.link%}
+		{%#if content.label%}
+			<div class="section-title__item  inline-btn">
+				<button class="button  button--{%content.style%}  button--small">{%content.label%}</button>
+			</div>
+		{%/if%}
+	{%/if%}
+</div>
 

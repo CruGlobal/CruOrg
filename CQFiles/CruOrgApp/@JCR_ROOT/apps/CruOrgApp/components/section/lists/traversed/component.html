@@ -1,12 +1,12 @@
 {%#if list.navigation %}
-	<div class="grid__item  lap--one-half desk--one-half">
-    	<h5 class="weight--semibold mt">{%content.title %}</h5>
-    	<ul class="block-list mb">
+	<h5 class="weight--semibold mt">{%content.title %}</h5>
+   	<ul class="block-list mb">
     	{%#each list.navigation %}
     		<li><a href="{% this.path %}.html">{% this.title %}</a></li>
 		{%/each%}
-  		</ul>
-	</div>
+  	</ul>
 {%else%}
-    <p>Please add Root Path in the dialog.</p>
+	{%#if page.isEditMode %}
+    	<p>Please add Root Path in the dialog.</p>
+    {%/if%}
 {%/if%}

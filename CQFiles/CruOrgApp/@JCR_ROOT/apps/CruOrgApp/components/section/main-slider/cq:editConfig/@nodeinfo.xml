@@ -5,15 +5,9 @@
       <value><![CDATA[editbar]]></value>
     </property>
     <property name="cq:actions" type="1" multiple="true">
-      <value><![CDATA[text:Transversed List]]></value>
+      <value><![CDATA[text: Main Slider]]></value>
       <value><![CDATA[-]]></value>
       <value><![CDATA[edit]]></value>
-      <value><![CDATA[delete]]></value>
-      <value><![CDATA[-]]></value>
-      <value><![CDATA[copymove]]></value>
-    </property>
-    <property name="cq:dialogMode" type="1" multiple="false">
-      <value><![CDATA[floating]]></value>
     </property>
     <property name="cq:disableTargeting" type="6" multiple="false">
       <value>true</value>

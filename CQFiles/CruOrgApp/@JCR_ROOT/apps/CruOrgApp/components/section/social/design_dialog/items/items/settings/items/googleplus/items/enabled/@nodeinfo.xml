@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[selection]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Enabled]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./googleplus]]></value>
+    </property>
+    <property name="anchor" type="1" multiple="false">
+      <value><![CDATA[100%]]></value>
+    </property>
+    <property name="type" type="1" multiple="false">
+      <value><![CDATA[checkbox]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
