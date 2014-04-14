@@ -59,7 +59,14 @@
        <div class="grid__item one-whole desk--one-half">
 
          <div class="grid m--">
-           		{%#include "home-section-container-parsys-1" as="foundation/components/parsys"%}{%/include%}
+
+             <div class="grid__item  lap--one-half desk--one-half">
+                 {%#include "traversed-1" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
+                 {%#include "traversed-2" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
+             </div>
+             <div class="grid__item  lap--one-half desk--one-half">
+ 				{%#include "traversed-3" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
+           </div>
          </div> <!--end grid-->
        </div> <!--end grid__item-->
        <div class="grid__item  desk--one-half">
