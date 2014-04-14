@@ -16,11 +16,10 @@ import com.xumak.extended.contextprocessors.lists.AddPagePathListContextProcesso
 @Component
 @Service
 public class FooterGlobalPathListProcessor extends AddPagePathListContextProcessor {
-    public FooterGlobalPathListProcessor() {}
 
     @Override
     public Set<String> requiredResourceTypes() {
-        return Sets.newHashSet(new String[]{"CruOrgApp/components/section/footer"});
+        return Sets.newHashSet("CruOrgApp/components/section/footer");
     }
 
     @Override
@@ -43,5 +42,10 @@ public class FooterGlobalPathListProcessor extends AddPagePathListContextProcess
             }
             contentModel.set("list.paths", pathList);
         }
+    }
+
+    @Override
+    protected boolean mustExist() {
+        return false;
     }
 }
