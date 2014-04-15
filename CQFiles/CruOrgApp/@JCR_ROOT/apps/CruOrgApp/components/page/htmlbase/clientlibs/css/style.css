@@ -842,12 +842,12 @@ small {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.cf:before, .nav:before, .cf:after, .nav:after, .grid:before, .home-banner:before, .grid:after, .home-banner:after {
+.cf:before, .nav:before, .cf:after, .nav:after, .grid:before, .home-banner:before, .post-article figure:before, .grid:after, .home-banner:after, .post-article figure:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-.cf:after, .nav:after, .grid:after, .home-banner:after {
+.cf:after, .nav:after, .grid:after, .home-banner:after, .post-article figure:after {
   clear: both; }
 
 /*------------------------------------*\
@@ -2964,7 +2964,7 @@ input[disabled]:focus,
 .position--absolute {
   position: absolute; }
 
-.position--relative {
+.position--relative, .post-article figure, .layout-background-fill {
   position: relative; }
 
 .position--fixed, .navigation {
@@ -2985,10 +2985,10 @@ input[disabled]:focus,
 /**
  * Sizes
  */
-.full-height, .navigation {
+.full-height, .navigation, .layout-background-fill {
   height: 100%; }
 
-.full-width {
+.full-width, .layout-background-fill {
   width: 100%; }
 
 /**
@@ -3070,9 +3070,276 @@ input[disabled]:focus,
 /**
  * Take it from here, cap’n... Begin importing your stuff here.
  */
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+/**
+ * As of now this is where we will be placing our icon fonts. 
+ * Freight Sans Pro will be served up from Typekit. 
+ */
+@font-face {
+  font-family: 'cruicons';
+  src: url("assets/fonts/cruicons.eot?54093663");
+  src: url("assets/fonts/cruicons.eot?54093663#iefix") format("embedded-opentype"), url("assets/fonts/cruicons.woff?54093663") format("woff"), url("assets/fonts/cruicons.ttf?54093663") format("truetype"), url("assets/fonts/cruicons.svg?54093663#cruicons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'cruicons';
+    src: url('../font/cruicons.svg?54093663#cruicons') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "cruicons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-info-circled:before {
+  content: '\e808'; }
+
+/* '' */
+.icon-right-circle:before, .affordance:after {
+  content: '\e800'; }
+
+/* '' */
+.icon-left-arrow:before {
+  content: '\e80e'; }
+
+/* '' */
+.icon-right-arrow:before {
+  content: '\e80d'; }
+
+/* '' */
+.icon-up-arrow:before {
+  content: '\e80c'; }
+
+/* '' */
+.icon-twitter:before {
+  content: '\e801'; }
+
+/* '' */
+.icon-facebook:before {
+  content: '\e802'; }
+
+/* '' */
+.icon-down-arrow:before {
+  content: '\e80f'; }
+
+/* '' */
+.icon-location:before {
+  content: '\e806'; }
+
+/* '' */
+.icon-hamburger:before {
+  content: '\e805'; }
+
+/* '' */
+.icon-mail:before {
+  content: '\e807'; }
+
+/* '' */
+.icon-search:before {
+  content: '\e804'; }
+
+/* '' */
+.icon-tag:before {
+  content: '\e811'; }
+
+/* '' */
+.icon-comment-1:before {
+  content: '\e812'; }
+
+/* '' */
+.icon-gplus:before {
+  content: '\e803'; }
+
+/* '' */
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+/**
+ * Used for background colors at the moment, text is either in 
+ * the default text color or white. You can extend %text-white
+ * found in the _utilities.scss file if you wish to change the
+ * text color. 
+ */
+/**
+ * Primary Colors
+ */
+.color-gold {
+  background-color: #f9b625; }
+
+.color-gray {
+  background-color: #666062; }
+
+.color-white {
+  background-color: white; }
+
+/**
+ * Secondary Colors
+ */
+.color-orange {
+  background-color: #dd7d1b; }
+
+/**
+ * Accent Colors
+ */
+.color-bright-blue {
+  background-color: #3eb1c8; }
+
+.color-deep-blue {
+  background-color: #007398; }
+
+abbr[title="required"], abbr[title="Required"] {
+  color: #d95c5c;
+  border-bottom: none; }
+
+b, strong {
+  font-weight: 600; }
+
+figure {
+  position: relative; }
+
+figcaption {
+  line-height: 1.6;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  /* 4 */
+  /* 5 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  margin: 5px 0 15px;
+  /* 9 */
+  margin: 0.26316rem 0 0.78947rem;
+  /* 9 */
+  font-size: 14px;
+  font-size: 0.73684rem; }
+
+/**
+ * Places a dash after a piece of text. Mainly for post meta info
+ * 
+ */
+.accent:after {
+  content: "-";
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  margin-left: 12px;
+  /* 9 */
+  margin-left: 0.63158rem;
+  /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  margin-right: 12px;
+  /* 9 */
+  margin-right: 0.63158rem;
+  /* 9 */ }
+
+blockquote {
+  letter-spacing: .01rem;
+  font-weight: 300;
+  font-style: italic;
+  border-left: 3px solid #f9b625;
+  margin-left: -26px;
+  padding-bottom: 3px;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  padding-left: 28px;
+  /* 9 */
+  padding-left: 1.47368rem;
+  /* 9 */
+  font-size: 19px;
+  font-size: 1rem;
+  line-height: 1.73684; }
+
+.pullquote {
+  padding-left: 0;
+  border-left-color: transparent;
+  margin: 48px 0px;
+  text-align: center;
+  -webkit-transition: margin 0.1s;
+  -moz-transition: margin 0.1s;
+  -ms-transition: margin 0.1s;
+  -o-transition: margin 0.1s;
+  transition: margin 0.1s; }
+  @media screen and (min-width: 31.3125em) {
+    .pullquote {
+      margin: 48px -10px; } }
+  @media screen and (min-width: 62.5625em) {
+    .pullquote {
+      margin: 48px -100px; } }
+  .pullquote em, .pullquote strong {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 110%; }
+
+q {
+  quotes: "“" "”";
+  /**
+   * If an element opens with an inline quote, let’s hang that.
+   */ }
+  q:before {
+    content: "“";
+    content: open-quote; }
+  q:after {
+    content: "“";
+    content: close-quote; }
+  q q:before {
+    content: "“";
+    content: open-quote; }
+  q q:after {
+    content: "“";
+    content: close-quote; }
+  q.opener {
+    display: inline-block;
+    text-indent: -0.22em; }
+  q:first-child {
+    display: inline-block;
+    text-indent: 0; }
+
 .page-content {
-  margin-top: 70px;
-  margin-top: 3.68421rem;
+  margin-top: 72px;
+  margin-top: 3.78947rem;
   padding-top: 38px;
   padding-top: 2rem; }
 
@@ -3691,34 +3958,22 @@ input[disabled]:focus,
   .source:before {
     content: "-"; }
 
-/**
- * The main image in a post. This is a wrapper class with the image 
- * as a child
- */
-.post__image--primary {
-  position: relative; }
-
-	/*
-	 * Force the main image to stetch full width to match the text.
-     * Since the posts will be narrow this will not mess up the 
-     * images.
-	 */
-.post-image {
-  width: 100%; }
+.post-article figure {
+  outline: 0; }
 
 	/** 
 	 * Main image captions. Place the .image-credit within this.
      * Pulls the caption to the left of the image for wide screens
      * and centers it for smaller screens.
 	 */
-.post-image__caption {
+.image__caption {
   position: relative;
   width: 100%;
   text-align: center;
   left: 0;
   margin-top: 10px; }
   @media screen and (min-width: 72.75em) {
-    .post-image__caption {
+    .image__caption.default-view {
       position: absolute;
       left: -172px;
       width: 150px;
@@ -3726,7 +3981,7 @@ input[disabled]:focus,
       text-align: right;
       margin-top: 0;
       line-height: 1.6; }
-      .post-image__caption:before {
+      .image__caption.default-view:before {
         width: 25%;
         margin-left: 75%;
         border-top: 1px solid #dddddd;
@@ -3740,113 +3995,78 @@ input[disabled]:focus,
   font-size: 80%;
   color: #666062; }
 
-/*------------------------------------*\
-    $FONTS
-\*------------------------------------*/
-/**
- * As of now this is where we will be placing our icon fonts. 
- * Freight Sans Pro will be served up from Typekit. 
- */
-@font-face {
-  font-family: 'cruicons';
-  src: url("assets/fonts/cruicons.eot?54093663");
-  src: url("assets/fonts/cruicons.eot?54093663#iefix") format("embedded-opentype"), url("assets/fonts/cruicons.woff?54093663") format("woff"), url("assets/fonts/cruicons.ttf?54093663") format("truetype"), url("assets/fonts/cruicons.svg?54093663#cruicons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'cruicons';
-    src: url('../font/cruicons.svg?54093663#cruicons') format('svg');
-  }
-}
-*/
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "cruicons";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
+/*figure*/
+.image--inset__left {
+  width: 100%;
+  clear: both; }
+  @media screen and (min-width: 61.3125em) {
+    .image--inset__left {
+      width: 50%;
+      float: left;
+      margin-top: 10px;
+      margin-right: 33px;
+      margin-bottom: 10px; } }
+  @media screen and (min-width: 72.75em) {
+    .image--inset__left > .image__caption {
+      position: absolute;
+      left: -172px;
+      width: 150px;
+      top: 0;
+      text-align: right;
+      margin-top: 0;
+      line-height: 1.6; }
+      .image--inset__left > .image__caption:before {
+        width: 25%;
+        margin-left: 75%;
+        border-top: 1px solid #dddddd;
+        display: block;
+        content: "";
+        margin-bottom: 10px; } }
+
+/*figure*/
+.image--outset__left {
+  width: 100%;
+  clear: both; }
+  @media screen and (min-width: 61.3125em) {
+    .image--outset__left {
+      float: left;
+      margin-top: 10px;
+      margin-right: 33px;
+      margin-bottom: 10px;
+      width: 75%;
+      margin-left: -100px; } }
+  @media screen and (min-width: 81.25em) {
+    .image--outset__left > .image__caption {
+      position: absolute;
+      left: -172px;
+      width: 150px;
+      top: 0;
+      text-align: right;
+      margin-top: 0;
+      line-height: 1.6; }
+      .image--outset__left > .image__caption:before {
+        width: 25%;
+        margin-left: 75%;
+        border-top: 1px solid #dddddd;
+        display: block;
+        content: "";
+        margin-bottom: 10px; } }
+
+/*figure*/
+@media screen and (min-width: 61.3125em) {
+  .image--outset__center {
+    margin-left: -100px;
+    margin-right: -100px; } }
+.image--outset__center > .image__caption {
+  position: relative;
+  width: 100%;
   text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+  left: 0;
+  margin: 10px auto 0; }
+  .image--outset__center > .image__caption:before {
+    content: none; }
 
-.icon-info-circled:before {
-  content: '\e808'; }
-
-/* '' */
-.icon-right-circle:before, .affordance:after {
-  content: '\e800'; }
-
-/* '' */
-.icon-left-arrow:before {
-  content: '\e80e'; }
-
-/* '' */
-.icon-right-arrow:before {
-  content: '\e80d'; }
-
-/* '' */
-.icon-up-arrow:before {
-  content: '\e80c'; }
-
-/* '' */
-.icon-twitter:before {
-  content: '\e801'; }
-
-/* '' */
-.icon-facebook:before {
-  content: '\e802'; }
-
-/* '' */
-.icon-down-arrow:before {
-  content: '\e80f'; }
-
-/* '' */
-.icon-location:before {
-  content: '\e806'; }
-
-/* '' */
-.icon-hamburger:before {
-  content: '\e805'; }
-
-/* '' */
-.icon-mail:before {
-  content: '\e807'; }
-
-/* '' */
-.icon-search:before {
-  content: '\e804'; }
-
-/* '' */
-.icon-tag:before {
-  content: '\e811'; }
-
-/* '' */
-.icon-comment-1:before {
-  content: '\e812'; }
-
-/* '' */
-.icon-gplus:before {
-  content: '\e803'; }
-
-/* '' */
+/*section*/
 .social__item {
   font-size: 24px;
   font-size: 1.26316rem;
@@ -3876,7 +4096,7 @@ input[disabled]:focus,
   padding-left: 18px;
   padding-right: 18px; }
 
-.site-search {
+.primary-search {
   position: relative;
   top: 2px; }
 
@@ -3906,42 +4126,6 @@ input[disabled]:focus,
   .search-button > i {
     color: #6d6e71;
     font-size: 70%; }
-
-/*------------------------------------*\
-    $COLORS
-\*------------------------------------*/
-/**
- * Used for background colors at the moment, text is either in 
- * the default text color or white. You can extend %text-white
- * found in the _utilities.scss file if you wish to change the
- * text color. 
- */
-/**
- * Primary Colors
- */
-.color-gold {
-  background-color: #f9b625; }
-
-.color-gray {
-  background-color: #666062; }
-
-.color-white {
-  background-color: white; }
-
-/**
- * Secondary Colors
- */
-.color-orange {
-  background-color: #dd7d1b; }
-
-/**
- * Accent Colors
- */
-.color-bright-blue {
-  background-color: #3eb1c8; }
-
-.color-deep-blue {
-  background-color: #007398; }
 
 thead th {
   border-bottom: 2px solid #ddd; }
@@ -4038,130 +4222,6 @@ input.button--unstyled:active {
 .button--icon {
   background: transparent;
   border: none; }
-
-abbr[title="required"], abbr[title="Required"] {
-  color: #d95c5c;
-  border-bottom: none; }
-
-b, strong {
-  font-weight: 600; }
-
-figure {
-  position: relative; }
-
-figcaption {
-  line-height: 1.6;
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  /* 4 */
-  /* 5 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  margin: 5px 0 15px;
-  /* 9 */
-  margin: 0.26316rem 0 0.78947rem;
-  /* 9 */
-  font-size: 14px;
-  font-size: 0.73684rem; }
-
-/**
- * Places a dash after a piece of text. Mainly for post meta info
- * 
- */
-.accent:after {
-  content: "-";
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  margin-left: 12px;
-  /* 9 */
-  margin-left: 0.63158rem;
-  /* 9 */
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  margin-right: 12px;
-  /* 9 */
-  margin-right: 0.63158rem;
-  /* 9 */ }
-
-blockquote {
-  letter-spacing: .01rem;
-  font-weight: 300;
-  font-style: italic;
-  border-left: 3px solid #f9b625;
-  margin-left: -26px;
-  padding-bottom: 3px;
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  padding-left: 28px;
-  /* 9 */
-  padding-left: 1.47368rem;
-  /* 9 */
-  font-size: 19px;
-  font-size: 1rem;
-  line-height: 1.73684; }
-
-.pullquote {
-  padding-left: 0;
-  border-left-color: transparent;
-  margin: 48px 0px;
-  text-align: center;
-  -webkit-transition: margin 0.1s;
-  -moz-transition: margin 0.1s;
-  -ms-transition: margin 0.1s;
-  -o-transition: margin 0.1s;
-  transition: margin 0.1s; }
-  @media screen and (min-width: 31.3125em) {
-    .pullquote {
-      margin: 48px -10px; } }
-  @media screen and (min-width: 62.5625em) {
-    .pullquote {
-      margin: 48px -100px; } }
-  .pullquote em, .pullquote strong {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 110%; }
-
-q {
-  quotes: "“" "”";
-  /**
-   * If an element opens with an inline quote, let’s hang that.
-   */ }
-  q:before {
-    content: "“";
-    content: open-quote; }
-  q:after {
-    content: "“";
-    content: close-quote; }
-  q q:before {
-    content: "“";
-    content: open-quote; }
-  q q:after {
-    content: "“";
-    content: close-quote; }
-  q.opener {
-    display: inline-block;
-    text-indent: -0.22em; }
-  q:first-child {
-    display: inline-block;
-    text-indent: 0; }
 
 /*------------------------------------*\
     $FORMS
@@ -4339,6 +4399,24 @@ textarea.text-input {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px; }
+
+.layout-background-fill {
+  display: table;
+  max-height: 800px;
+  max-width: 100%;
+  margin-top: 0;
+  background-color: #191918;
+  background-position: center;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  top: -38px;
+  /* 9 */
+  top: -2rem;
+  /* 9 */ }
 
 .preload {
   display: none !important; }

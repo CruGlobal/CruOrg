@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Dialog">
   <properties>
-    <property name="title" type="1" multiple="false">
-      <value><![CDATA[Traversed List]]></value>
-    </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[dialog]]></value>
+    </property>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Global Properties]]></value>
     </property>
   </properties>
   <mixins />
