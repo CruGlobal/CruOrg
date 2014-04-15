@@ -5,7 +5,7 @@
       <value><![CDATA[textfield]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Link]]></value>
+      <value><![CDATA[Footer Link]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./twitterLink]]></value>

@@ -2,7 +2,7 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Name Page]]></value>
+      <value><![CDATA[Page Name]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[textfield]]></value>
