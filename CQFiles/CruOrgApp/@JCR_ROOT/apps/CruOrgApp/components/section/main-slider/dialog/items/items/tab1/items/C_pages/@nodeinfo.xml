@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
+    <property name="minItems" type="1" multiple="false">
+      <value><![CDATA[4]]></value>
+    </property>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[multifield]]></value>
+      <value><![CDATA[minmaxmultifield]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Pages]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./pathRefs]]></value>
+    </property>
+    <property name="maxItems" type="1" multiple="false">
+      <value><![CDATA[5]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Click the '+' to add a new page]]></value>
