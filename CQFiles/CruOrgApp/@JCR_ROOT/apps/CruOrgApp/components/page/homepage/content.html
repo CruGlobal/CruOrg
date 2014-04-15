@@ -3,24 +3,7 @@
     <!-- End slider component -->
 
     <!-- Homepage social bar -->
-    <div class="center--block  color-white">
-      <div class="layout--cap">
-        <div class="push-half--sides">
-          <div class="push-third--right  fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-          <a href="https://twitter.com/crutweets" class="twitter-follow-button  push-fourth--right" data-show-count="false" data-lang="en">Follow @crutweets</a>
-          <!-- Place this tag where you want the +1 button to render. -->
-          <div class="g-plusone" data-size="medium" data-annotation="none"></div>
-          <!-- Place this tag after the last +1 button tag. -->
-          <script type="text/javascript">
-            (function() {
-              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-              po.src = 'https://apis.google.com/js/platform.js';
-              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-            })();
-          </script>
-        </div>
-      </div>
-    </div>
+        {%#include "social-bar" as="CruOrgApp/components/section/social"%}{%/include%}
     <!-- End hompage socail bar-->
     
     <!-- Section-title wrapper on homepage to add margin -->

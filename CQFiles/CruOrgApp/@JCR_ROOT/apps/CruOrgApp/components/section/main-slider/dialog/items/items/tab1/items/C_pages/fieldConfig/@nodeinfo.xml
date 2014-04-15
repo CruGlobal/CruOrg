@@ -7,6 +7,9 @@
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[pathfield]]></value>
     </property>
+    <property name="maxItems" type="1" multiple="false">
+      <value><![CDATA[5]]></value>
+    </property>
     <property name="width" type="1" multiple="false">
       <value><![CDATA[155]]></value>
     </property>
