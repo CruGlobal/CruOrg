@@ -1,5 +1,4 @@
-
-    <!-- Slider Component -->
+   <!-- Slider Component -->
         {%#include "main-slider" as="CruOrgApp/components/section/main-slider"%}{%/include%}
     <!-- End slider component -->
 
@@ -35,46 +34,39 @@
     <!-- Primary wrapper for home page-->
     <div class="layout-single-column  layout--wide">
       
-    <!-- Tiles -->
-    <div  class="grid mb"> <!--This and the following grid is using same markup as tile-components for the tiles-->
-		{%#include "tile-container-parsys" as="foundation/components/parsys"%}{%/include%}
-    </div>
-
+        <!-- Tiles -->
+        <div  class="grid mb"> <!--This and the following grid is using same markup as tile-components for the tiles-->
+            {%#include "tile-container-parsys" as="foundation/components/parsys"%}{%/include%}
+        </div>
     
-    <div class="mt center-block  home-banner">
-    	{%#include "section-title" as="CruOrgApp/components/section/section-title"%}{%/include%}
-
-     </div>
-
-    <hr class="section-divider">
-
-     <!--Two large buttons. One for finder other for Start Relationship...-->
-	<div class="grid  button-group">
-          {%#include "home-section-container-left" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
-          {%#include "home-section-container-right" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
-    </div>
-
-     <!--List items for the quasi site map and facebook iframe-->
-     <div class="grid">
-       <div class="grid__item one-whole desk--one-half">
-
-         <div class="grid m--">
-
-             <div class="grid__item  lap--one-half desk--one-half">
-                 {%#include "traversed-1" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
-                 {%#include "traversed-2" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
-             </div>
-             <div class="grid__item  lap--one-half desk--one-half">
- 				{%#include "traversed-3" as="CruOrgApp/components/section/lists/traversed"%}{%/include%}
-           </div>
-         </div> <!--end grid-->
-       </div> <!--end grid__item-->
-       <div class="grid__item  desk--one-half">
-         <div class="m--">
-           		{%#include "home-section-container-parsys-2" as="foundation/components/parsys"%}{%/include%}
+        
+        <div class="mt center-block  home-banner">
+            {%#include "section-title" as="CruOrgApp/components/section/section-title"%}{%/include%}
+    
          </div>
-       </div>
-
-     </div> <!--end grid-->
-    <!-- End tiles -->
-
+    
+        <hr class="section-divider">
+    
+         <!--Two large buttons. One for finder other for Start Relationship...-->
+        <div class="grid  button-group">
+              {%#include "home-section-container-left" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
+              {%#include "home-section-container-right" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
+        </div>
+    
+         <!--List items for the quasi site map and facebook iframe-->
+         <div class="grid">
+           <div class="grid__item one-whole desk--one-half">
+    
+             <div class="grid m--">
+                    {%#include "home-section-container-parsys-1" as="foundation/components/parsys"%}{%/include%}
+             </div> <!--end grid-->
+           </div> <!--end grid__item-->
+           <div class="grid__item  desk--one-half">
+             <div class="m--">
+                    {%#include "home-section-container-parsys-2" as="foundation/components/parsys"%}{%/include%}
+             </div>
+           </div>
+    
+         </div> <!--end grid-->
+        <!-- End tiles -->
+	</div>
