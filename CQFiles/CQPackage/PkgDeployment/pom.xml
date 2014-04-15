@@ -8,7 +8,7 @@
     <description>Content Package</description>
 
     <parent>
-        <groupId>com.bedrock.test</groupId>
+        <groupId>org.cru</groupId>
         <artifactId>CruOrg-deployment-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
