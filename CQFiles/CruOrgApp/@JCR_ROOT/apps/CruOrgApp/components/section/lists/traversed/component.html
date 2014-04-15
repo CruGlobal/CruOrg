@@ -1,8 +1,8 @@
-{%#if list.navigation %}
+{%#if list.pages %}
 	<h5 class="weight--semibold mt">{%content.title %}</h5>
    	<ul class="block-list mb">
-    	{%#each list.navigation %}
-    		<li><a href="{% this.path %}.html">{% this.title %}</a></li>
+    	{%#each list.pages %}
+    		<li><a href="{% this.path %}.html">{% this.navigationTitle %}</a></li>
 		{%/each%}
   	</ul>
 {%else%}

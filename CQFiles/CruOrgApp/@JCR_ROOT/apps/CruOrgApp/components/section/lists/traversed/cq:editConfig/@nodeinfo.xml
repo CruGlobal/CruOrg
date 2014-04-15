@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:EditConfig">
   <properties>
-    <property name="cq:layout" type="1" multiple="false">
-      <value><![CDATA[editbar]]></value>
-    </property>
-    <property name="cq:actions" type="1" multiple="true">
-      <value><![CDATA[text:Traversed List]]></value>
-      <value><![CDATA[-]]></value>
-      <value><![CDATA[edit]]></value>
-      <value><![CDATA[delete]]></value>
-      <value><![CDATA[-]]></value>
-      <value><![CDATA[copymove]]></value>
-    </property>
     <property name="cq:dialogMode" type="1" multiple="false">
       <value><![CDATA[floating]]></value>
     </property>
