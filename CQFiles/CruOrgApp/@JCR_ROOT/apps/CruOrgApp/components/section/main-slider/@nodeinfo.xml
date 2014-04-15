@@ -5,7 +5,7 @@
       <value><![CDATA[Main Slider]]></value>
     </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
-      <value><![CDATA[xumakbase/components/section/base]]></value>
+      <value><![CDATA[xumakbase/components/section/lists/curated]]></value>
     </property>
     <property name="componentGroup" type="1" multiple="false">
       <value><![CDATA[.hidden]]></value>

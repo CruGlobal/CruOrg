@@ -1,6 +1,6 @@
 
 <div class="section-title">
-	<h2 class="section-title__item">
+	<h2 class="section-title__item display--inline-block">
 		{%#if content.text%}	
 			{%content.text%}
 		{%else%}
@@ -11,10 +11,9 @@
 	</h2>
 	{%#if content.link%}
 		{%#if content.label%}
-			<div class="section-title__item  inline-btn">
+			<div class="section-title__item  display--inline-block  inline-btn  pl-">
 				<a href="{%content.link%}" class="button  button--{%content.style%}  button--small">{%content.label%}</a>
 			</div>
 		{%/if%}
 	{%/if%}
 </div>
-

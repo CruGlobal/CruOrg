@@ -2,14 +2,13 @@
 	<div class="m-- p-- color-white">
     	<div class="action-icons">
 			{%#if content.imagePath %}
-        		<img class="mb-" src="{% content.imagePath %}" alt="{% content.imageAlt %}">
+        		<img class="mb-" src="{% content.imagePath %}" alt="{% content.title %}">
         	{%else%}
 				{%#if page.isEditMode %}
         			<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
 				{%/if %}
 
         	{%/if%}
-
         </div>
         <h4 class="mb0">
 			{% content.title %}
@@ -18,7 +17,7 @@
 			{% content.text %}
 		</p>
         {%#if content.href %}
-        	<a class="button button--subtle" href="{% content.href %}.html">{% content.readMore %}</a>
+        	<a class="button {% content.readMoreStyle %}" href="{% content.href %}.html">{% content.readMore %}</a>
         {%/if%}
     </div>
 </div>

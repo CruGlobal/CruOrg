@@ -2,7 +2,7 @@
 <node nodeType="cq:Dialog">
   <properties>
     <property name="title" type="1" multiple="false">
-      <value><![CDATA[Tile]]></value>
+      <value><![CDATA[Tile2]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[dialog]]></value>

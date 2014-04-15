@@ -2,13 +2,16 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Title]]></value>
+      <value><![CDATA[Read more style]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+      <value><![CDATA[selection]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./title]]></value>
+      <value><![CDATA[./readMoreStyle]]></value>
+    </property>
+    <property name="type" type="1" multiple="false">
+      <value><![CDATA[select]]></value>
     </property>
   </properties>
   <mixins />
