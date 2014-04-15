@@ -2,16 +2,19 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+      <value><![CDATA[selection]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Image Alt]]></value>
+      <value><![CDATA[Tile width]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./imageAlt]]></value>
+      <value><![CDATA[./width]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter alt text for the image]]></value>
+    <property name="type" type="1" multiple="false">
+      <value><![CDATA[select]]></value>
+    </property>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[desk--one-third]]></value>
     </property>
   </properties>
   <mixins />

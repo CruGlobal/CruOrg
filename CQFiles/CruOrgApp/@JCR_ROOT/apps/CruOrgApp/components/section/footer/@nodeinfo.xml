@@ -4,11 +4,11 @@
     <property name="jcr:title" type="1" multiple="false">
       <value><![CDATA[Footer]]></value>
     </property>
+    <property name="componentGroup" type="1" multiple="false">
+      <value><![CDATA[.hidden]]></value>
+    </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
       <value><![CDATA[xumakbase/components/section/lists/queried]]></value>
-    </property>
-    <property name="componentGroup" type="1" multiple="false">
-      <value><![CDATA[Cru]]></value>
     </property>
   </properties>
   <mixins />

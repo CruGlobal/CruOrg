@@ -1,13 +1,24 @@
-<div class="grid__item text--center one-whole {% content.with %}">
+<div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
 	<div class="m-- p-- color-white">
     	<div class="action-icons">
-        	<img class="mb-" src="{% content.imageReference %}" alt="{% content.imageAlt %}">
+			{%#if content.imagePath %}
+        		<img class="mb-" src="{% content.imagePath %}" alt="{% content.imageAlt %}">
+        	{%else%}
+				{%#if page.isEditMode %}
+        			<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+				{%/if %}
+
+        	{%/if%}
+
         </div>
-        <h4 class="mb0">{% content.title %}</h4>
-        <p class="text--left">{% content.text %}</p>
+        <h4 class="mb0">
+			{% content.title %}
+		</h4>
+        <p class="text--left">
+			{% content.text %}
+		</p>
         {%#if content.href %}
         	<a class="button button--subtle" href="{% content.href %}.html">{% content.readMore %}</a>
-
         {%/if%}
     </div>
 </div>

@@ -14,7 +14,7 @@
       <value><![CDATA[./image]]></value>
     </property>
     <property name="fileReferenceParameter" type="1" multiple="false">
-      <value><![CDATA[./imageReference]]></value>
+      <value><![CDATA[./fileReference]]></value>
     </property>
     <property name="cropParameter" type="1" multiple="false">
       <value><![CDATA[./imageCrop]]></value>
@@ -25,10 +25,13 @@
     <property name="fileNameParameter" type="1" multiple="false">
       <value><![CDATA[./imageName]]></value>
     </property>
+    <property name="allowUpload" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
+    </property>
     <property name="sizeLimit" type="1" multiple="false">
       <value><![CDATA[100]]></value>
     </property>
-    <property name="ddGroups" type="1" multiple="true">
+    <property name="ddGroups" type="1" multiple="false">
       <value><![CDATA[media]]></value>
     </property>
   </properties>
