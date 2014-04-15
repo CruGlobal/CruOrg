@@ -1,11 +1,13 @@
+<div class="grid__item text--center one-whole {% content.with %}">
 	<div class="m-- p-- color-white">
     	<div class="action-icons">
-        	<img class="mb-" src="{% content.imageReference %}" alt="{% content.imageAlt %}">
+        	<img class="mb-" src="{% content.imageReference %}" alt="{% content.title %}">
         </div>
         <h4 class="mb0">{% content.title %}</h4>
         <p class="text--left">{% content.text %}</p>
         {%#if content.href %}
-        	<a class="button button--subtle" href="{% content.href %}.html">{% content.readMore %}</a>
+        	<a class="button {% content.readMoreStyle %}" href="{% content.href %}.html">{% content.readMore %}</a>
 
         {%/if%}
     </div>
+</div>

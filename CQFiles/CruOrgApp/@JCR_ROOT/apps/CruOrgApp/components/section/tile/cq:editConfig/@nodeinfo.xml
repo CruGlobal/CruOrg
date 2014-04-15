@@ -8,6 +8,7 @@
       <value><![CDATA[text: Tile]]></value>
       <value><![CDATA[-]]></value>
       <value><![CDATA[edit]]></value>
+      <value><![CDATA[-]]></value>
       <value><![CDATA[delete]]></value>
     </property>
     <property name="cq:disableTargeting" type="6" multiple="false">

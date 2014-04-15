@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./title]]></value>
     </property>
+    <property name="maxLength" type="1" multiple="false">
+      <value><![CDATA[144]]></value>
+    </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter title to display]]></value>
     </property>

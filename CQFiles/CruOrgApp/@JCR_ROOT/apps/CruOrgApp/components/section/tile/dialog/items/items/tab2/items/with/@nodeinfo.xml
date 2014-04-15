@@ -2,7 +2,7 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Tile with]]></value>
+      <value><![CDATA[With]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[selection]]></value>
