@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[hidden]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./image/sling:resourceType]]></value>
+    </property>
+    <property name="value" type="1" multiple="false">
+      <value><![CDATA[foundation/components/image]]></value>
+    </property>
+    <property name="ignoreData" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

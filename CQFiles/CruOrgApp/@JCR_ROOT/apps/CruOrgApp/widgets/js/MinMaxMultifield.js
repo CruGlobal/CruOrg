@@ -264,14 +264,13 @@ CQ.form.MinMaxMultiField.Item = CQ.Ext.extend(CQ.form.MultiField.Item, {
                     "iconCls": "cq-multifield-remove",
                     "template": new CQ.Ext.Template('<span><button class="x-btn" type="{0}"></button></span>'),
                     "handler":function() {
-                        console.log("REMOVE");
                         var parent = item.ownerCt;
                         var minItems = parent.minItems;
                         var noItems = parent.items.length - 1;
                         if(noItems <= minItems){
-                            var msg = CQ.I18n.getMessage("Is required to have a minimum of ") + minItems + CQ.I18n.getMessage(" items.");           
+                            var msg = CQ.I18n.getMessage("The minimum number of items required is ") + minItems;           
                             CQ.Ext.Msg.show({
-                                "title": CQ.I18n.getMessage("Create New Item"),
+                                "title": CQ.I18n.getMessage("Remove Item"),
                                 "msg": msg,
                                 icon:CQ.Ext.MessageBox.ERROR,                               
                                 "buttons": CQ.Ext.Msg.OK

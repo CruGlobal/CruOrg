@@ -8,10 +8,10 @@
       <value><![CDATA[Article Metadata]]></value>
     </property>
     <property name="collapsible" type="6" multiple="false">
-      <value>true</value>
+      <value>false</value>
     </property>
     <property name="collapsed" type="6" multiple="false">
-      <value>true</value>
+      <value>false</value>
     </property>
   </properties>
   <mixins />

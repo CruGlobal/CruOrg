@@ -7,6 +7,9 @@
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Link]]></value>
     </property>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[CRU]]></value>
+    </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./link]]></value>
     </property>
@@ -15,9 +18,6 @@
     </property>
     <property name="rootPath" type="1" multiple="false">
       <value><![CDATA[/content/cru]]></value>
-    </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Insert the link for the button]]></value>
     </property>
   </properties>
   <mixins />

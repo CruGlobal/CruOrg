@@ -2,7 +2,10 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[tabpanel]]></value>
+      <value><![CDATA[fieldset]]></value>
+    </property>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[First Link]]></value>
     </property>
   </properties>
   <mixins />

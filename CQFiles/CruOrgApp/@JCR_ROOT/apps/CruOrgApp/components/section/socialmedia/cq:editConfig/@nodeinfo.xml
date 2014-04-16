@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:EditConfig">
   <properties>
-    <property name="cq:actions" type="1" multiple="true">
+    <property name="cq:layout" type="1" multiple="false">
+      <value><![CDATA[editbar]]></value>
+    </property>
+    <property name="cq:actions" type="1" multiple="false">
       <value><![CDATA[delete]]></value>
     </property>
   </properties>

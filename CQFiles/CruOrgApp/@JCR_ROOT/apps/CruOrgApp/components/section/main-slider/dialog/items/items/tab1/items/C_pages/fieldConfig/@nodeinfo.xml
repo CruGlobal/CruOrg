@@ -7,8 +7,14 @@
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[pathfield]]></value>
     </property>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[cru]]></value>
+    </property>
     <property name="maxItems" type="1" multiple="false">
       <value><![CDATA[5]]></value>
+    </property>
+    <property name="rootPath" type="1" multiple="false">
+      <value><![CDATA[/content/cru]]></value>
     </property>
     <property name="width" type="1" multiple="false">
       <value><![CDATA[155]]></value>

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Template">
   <properties>
-    <property name="jcr:description" type="1" multiple="false">
-      <value><![CDATA[Cru Article Template]]></value>
-    </property>
     <property name="allowedPaths" type="1" multiple="false">
-      <value><![CDATA[/content(/.*)?]]></value>
+      <value><![CDATA[/content/cru(/.*)?]]></value>
     </property>
     <property name="jcr:title" type="1" multiple="false">
       <value><![CDATA[Cru Article]]></value>
