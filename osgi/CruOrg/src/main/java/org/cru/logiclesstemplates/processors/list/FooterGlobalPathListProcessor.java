@@ -39,7 +39,7 @@ public class FooterGlobalPathListProcessor extends AddPagePathListContextProcess
     private Collection<String> buildPathList(final Object pathRefs) {
         Collection<String> pathList = new ArrayList();
         if ((pathRefs instanceof Collection)) {
-            for (String pathRef : (Collection<String>)pathRefs) {
+            for (String pathRef : (Collection<String>) pathRefs) {
                 pathList.add(pathRef);
             }
         } else if (pathRefs.getClass().isArray()) {
@@ -56,12 +56,12 @@ public class FooterGlobalPathListProcessor extends AddPagePathListContextProcess
         final Collection<String> pathList) {
         ResourceResolver resourceResolver = request.getResourceResolver();
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-        Collection<Map<String,Object>> pageTitles = new ArrayList();
-        for(String path : pathList){
+        Collection<Map<String, Object>> pageTitles = new ArrayList();
+        for (String path : pathList){
             Map<String, Object> pageDetails = new HashMap();
             Page page = pageManager.getPage(path);
 
-            if(page !=null){
+            if (page != null){
                 pageDetails.put("title", page.getTitle());
                 pageDetails.put("path", path);
                 pageTitles.add(pageDetails);
