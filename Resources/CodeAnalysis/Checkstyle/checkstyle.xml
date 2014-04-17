@@ -47,6 +47,15 @@
 	        <property name="ignorePattern" value="^import"/>
         </module>
 
+        <!-- Check that method bodies are at most 15 lines, excluding blanks and comments -->
+        <module name="MethodLength">
+          <!--
+            checkstyle counts the opening and closing braces towards the method line count,
+            so we specify 17 instead of 15 as the max method length.
+          -->
+          <property name="max" value="17"/>
+          <property name="countEmpty" value="false"/>
+        </module>
 
         <module name="EmptyBlock"/>
         <module name="LeftCurly"/>
