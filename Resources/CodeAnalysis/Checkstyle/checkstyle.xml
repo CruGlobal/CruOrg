@@ -55,6 +55,7 @@
           -->
           <property name="max" value="17"/>
           <property name="countEmpty" value="false"/>
+          <property name="severity" value="warning"/>
         </module>
 
         <module name="EmptyBlock"/>
