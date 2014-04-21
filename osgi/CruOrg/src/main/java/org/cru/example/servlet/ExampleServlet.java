@@ -32,7 +32,7 @@ public class ExampleServlet extends SlingAllMethodsServlet {
             final SlingHttpServletRequest request,
             final SlingHttpServletResponse response) throws ServletException,
             IOException {
-        doPost(request,response);
+        doPost(request, response);
     }
 
 
