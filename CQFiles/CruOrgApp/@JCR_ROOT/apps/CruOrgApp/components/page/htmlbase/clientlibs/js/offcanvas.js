@@ -1,4 +1,3 @@
-
 (function(window, document, undefined)
 {
 
@@ -64,11 +63,11 @@
 
         var _init = false, app = { };
 
-        var inner = document.getElementById('js-page-container'),
+        var inner = document.getElementById('js-inner-wrap'),
 
             nav_open = false,
 
-            nav_class = 'js-slide';
+            nav_class = 'nav-is-open';
 
 
         app.init = function()
@@ -119,12 +118,6 @@
                 if (e) {
                     e.preventDefault();
                 }
-				
-				/**
-				if doc >= 500{
-					app.closeNav();
-				}
-				**/
             };
 
             // open nav with main "nav" button
@@ -132,19 +125,16 @@
 
             // close nav with main "close" button
             document.getElementById('nav-close-btn').addEventListener('click', app.toggleNav, false);
-			
-			//document.getElementById('nav-pen-')
 
             // close nav by touching the partial off-screen content
             document.addEventListener('click', function(e)
             {
-                if (nav_open && !hasParent(e.target, 'off-canvas')) {
+                if (nav_open && !hasParent(e.target, 'nav')) {
                     e.preventDefault();
                     app.closeNav();
                 }
             },
             true);
-		
 
             addClass(doc, 'js-ready');
 
@@ -159,4 +149,3 @@
     }
 
 })(window, window.document);
- 
