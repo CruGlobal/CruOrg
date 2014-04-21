@@ -25,7 +25,7 @@ public class ExampleProcessor
     @Override
     public void process(final SlingHttpServletRequest request, final ContentModel contentModel)
             throws Exception {
-        Map<String, Object> contentObject =  (Map<String, Object>)contentModel.get(RESOURCE_CONTENT_KEY);
+        Map<String, Object> contentObject =  (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
         contentObject.put("exampleText", "This is a text from a processor :)");
     }
 
