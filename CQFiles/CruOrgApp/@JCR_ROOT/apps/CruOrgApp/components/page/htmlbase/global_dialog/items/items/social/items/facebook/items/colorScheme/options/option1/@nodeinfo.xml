@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="value" type="1" multiple="false">
+      <value><![CDATA[light]]></value>
+    </property>
+    <property name="text" type="1" multiple="false">
+      <value><![CDATA[Light]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
