@@ -20,16 +20,12 @@
 <!-- End primary header -->
 
 <!-- Navigation for off canvas and primary navigation -->
-		<nav  id="off-canvas" class="navigation  js-navigation">			
+		<nav  id="nav" class="navigation  js-navigation">			
 			<ul class="nav  right-nav  flush--bottom">
-				<li class="spoken-form  nav__item">
-				{%#include "searchbox" as="CruOrgApp/components/section/searchbox"%}{%/include%}
-
-         			<!--<form class="site-search"  method="post" onsubmit=""  action="#" name="search">
-						<input class="search-field  text-input" placeholder="Search" type="search" />
-						<button class="search-button" value="" type="submit"><i class="icon-search"></i></button>
-					</form>-->
-				</li>
+				
+					<!-- This component includes a li <tag> on it-->		
+					{%#include "searchbox" as="CruOrgApp/components/section/searchbox"%}{%/include%}
+				
 			</ul>						
 
 			<ul class="nav  site-nav  flush--bottom">

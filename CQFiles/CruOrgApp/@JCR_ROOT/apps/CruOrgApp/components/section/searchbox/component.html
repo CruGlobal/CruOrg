@@ -1,29 +1,29 @@
-<form class="primary-search" method="post" onsubmit=""  action="#" name="search">
+<!--The search itself-->
+
+<form class="primary-search js-primary-search" method="get" name="search">
 
     <!-- Search input field -->
     <input class="search-field  text-input" placeholder="Search" type="search">
 
     <!-- Search icon -->
-    <button class="search-button  button--icon" type="submit">
+    <button class="search-button  button--icon" value="" type="submit">
         <i class="icon-search"></i>
     </button>
 
     <!-- Dropdown open button -->
-    <button class="search-button" value="" type="submit">
-		<i class="icon-search"></i>
-	</button>
+    <a href="#" class="primary-search--options  js-search-menu  button--icon"><i class="icon-down-arrow"></i></a>
 
     <!-- The dropdown search items -->
-    <ul class="primary-search--dropdown  bare-list">
+    <ul id="search-dropdown" class="primary-search--dropdown   js-search-content  bare-list">
         {%#if global.path1 %}
-            {%#if global.label1 %}
-                <li><a href="{%global.path1%}.html">{%global.label1%}</a></li>
-            {%/if%}
+        {%#if global.label1 %}
+        <li><a href="{%global.path1%}.html">{%global.label1%}</a></li>
+        {%/if%}
         {%/if%}
         {%#if global.path2 %}
-            {%#if global.label2 %}
-                <li><a href="{%global.path2%}.html">{%global.label2%}</a></li>
-            {%/if%}
+        {%#if global.label2 %}
+        <li><a href="{%global.path2%}.html">{%global.label2%}</a></li>
+        {%/if%}
         {%/if%}
     </ul>
 </form>

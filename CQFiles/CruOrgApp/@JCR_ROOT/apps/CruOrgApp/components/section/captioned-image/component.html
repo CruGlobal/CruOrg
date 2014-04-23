@@ -1,0 +1,10 @@
+<figure class="{%#if content.style %}{% content.style %}{%else%}{%#if page.isEditMode %}image--inset__left{%/if %}{%/if%}">
+    {%#if content.fileReference %}
+        <img class="" src="{% content.fileReference %}">
+    {%else%}
+        {%#if page.isEditMode %}
+            <img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+        {%/if %}
+    {%/if%}
+<figcaption class="image__caption">{%{ content.text }%}</figcaption>
+</figure>
