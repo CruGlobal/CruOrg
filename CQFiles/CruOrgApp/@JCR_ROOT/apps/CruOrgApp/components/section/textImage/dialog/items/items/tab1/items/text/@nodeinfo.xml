@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[slingscriptinclude]]></value>
+    </property>
+    <property name="script" type="1" multiple="false">
+      <value><![CDATA[rte.default.text.json.jsp]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
