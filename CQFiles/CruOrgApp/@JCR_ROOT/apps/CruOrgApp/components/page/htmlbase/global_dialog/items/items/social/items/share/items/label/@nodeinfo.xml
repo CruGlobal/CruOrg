@@ -13,9 +13,6 @@
     <property name="defaultValue" type="1" multiple="false">
       <value><![CDATA[Share:]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter text to share label (default value 'Share:').]]></value>
-    </property>
   </properties>
   <mixins />
 </node>
