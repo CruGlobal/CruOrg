@@ -2,7 +2,7 @@
 <node nodeType="cq:Component">
   <properties>
     <property name="jcr:title" type="1" multiple="false">
-      <value><![CDATA[Facebook comments]]></value>
+      <value><![CDATA[Facebook comments feed]]></value>
     </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
       <value><![CDATA[xumakbase/components/section/base]]></value>
