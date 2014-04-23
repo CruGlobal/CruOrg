@@ -5,7 +5,10 @@
 
 
             <h1>{% page.title %}</h1>
-       
+
+			{%#if page.subtitle %}
+				<h2 class="post-subtitle  h3">{%page.subtitle%}</h2>
+            {%/if%}
 
         	<ul class="post-meta">
                 {%#if page.author %}
@@ -33,7 +36,7 @@
 
 
     <figure >
-        <img src="{%page.imagePath%}"/>
+        	<img src="{%page.imagePath%}"/>
             <figcaption class="image__caption  default-view">
             Integer posuere erat a ante venenatis dapibus posuere velit aliquet.           
         <span class="image-credit">Photo by Morgan Thrall</span>
