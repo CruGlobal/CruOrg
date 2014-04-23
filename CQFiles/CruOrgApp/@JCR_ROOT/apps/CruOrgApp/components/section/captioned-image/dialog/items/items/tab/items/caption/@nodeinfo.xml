@@ -2,16 +2,16 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Text]]></value>
+      <value><![CDATA[Caption]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[textfield]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./text]]></value>
+      <value><![CDATA[./caption]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter text to display]]></value>
+      <value><![CDATA[Enter caption to display]]></value>
     </property>
   </properties>
   <mixins />
