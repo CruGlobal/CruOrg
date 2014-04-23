@@ -89,6 +89,20 @@ Cru.widgets.Util = {
         }
 
 		return elementIsNotNull && elementHasChildren;
+    },
+
+
+    /*
+    *  Get Global Property
+    * */
+    getGlobalProperty: function(property){
+        var pagePath = CQ.WCM.getPagePath();
+        var design = CQ.WCM.getDesign(pagePath);
+        var GlobalPath = design.path + "/jcr:content/global.json"; //TODO refactor using xcqb approach
+        var Global = CQ.HTTP.get(GlobalPath);
+        var body = JSON.parse(Global.body);
+        var value = body[property];
+        return value;
     }
 
 }

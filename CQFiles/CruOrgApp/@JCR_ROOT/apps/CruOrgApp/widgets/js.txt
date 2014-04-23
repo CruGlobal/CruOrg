@@ -4,3 +4,5 @@ Cru.js
 Util.js
 SectionTitle.js
 MinMaxMultifield.js
+MediaEmbed.js
+

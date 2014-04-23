@@ -1,0 +1,11 @@
+{%#if content.mediaEmbed %}
+    <figure class="{%content.class%}" >
+        <!-- Media Embed Here -->
+        {%{content.mediaEmbed}%}
+        <!-- End Media Embed -->
+        <figcaption class="image__caption  default-view">{%content.caption%}</figcaption>
+    </figure>
+{%else%}
+	<p>Please add the media Embed Script.</p>
+
+{%/if%}
