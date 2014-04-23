@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Component">
   <properties>
-    <property name="cq:noDecoration" type="6" multiple="false">
-      <value>true</value>
+    <property name="jcr:description" type="1" multiple="false">
+      <value><![CDATA[Legacy Image Component]]></value>
     </property>
     <property name="jcr:title" type="1" multiple="false">
-      <value><![CDATA[Footer]]></value>
+      <value><![CDATA[Legacy Image]]></value>
     </property>
     <property name="componentGroup" type="1" multiple="false">
       <value><![CDATA[.hidden]]></value>
     </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
-      <value><![CDATA[xumakbase/components/section/lists/curated]]></value>
+      <value><![CDATA[xumakbase/components/section/images/single]]></value>
     </property>
   </properties>
   <mixins />

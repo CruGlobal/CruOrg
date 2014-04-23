@@ -2,16 +2,16 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Label]]></value>
+      <value><![CDATA[Domains]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+      <value><![CDATA[multifield]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./label2]]></value>
+      <value><![CDATA[./domains]]></value>
     </property>
-    <property name="anchor" type="1" multiple="false">
-      <value><![CDATA[95%]]></value>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Click the '+' to add a valid Domain.]]></value>
     </property>
   </properties>
   <mixins />

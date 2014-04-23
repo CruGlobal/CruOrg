@@ -5,10 +5,10 @@
 <!-- Social wrapper -->
 {%#include "social-links" as="CruOrgApp/components/section/socialLinks"%}{%/include%}
 <!-- End social wrapper -->
-{%#if list.titles%}
+{%#if list.pages%}
 <nav role="supplementary">
     <ul class="nav  flush--bottom">
-        {%#each list.titles %}
+        {%#each list.pages %}
             <li>
               <a href="{%this.path%}.html">{%this.title%}</a>
             </li>

@@ -8,10 +8,13 @@
       <value><![CDATA[textfield]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./label2]]></value>
+      <value><![CDATA[./shareLabel]]></value>
     </property>
-    <property name="anchor" type="1" multiple="false">
-      <value><![CDATA[95%]]></value>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[Share:]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Enter text to share label (default value 'Share:').]]></value>
     </property>
   </properties>
   <mixins />

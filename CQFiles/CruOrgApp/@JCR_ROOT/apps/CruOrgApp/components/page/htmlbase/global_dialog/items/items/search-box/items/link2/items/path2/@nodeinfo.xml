@@ -4,11 +4,11 @@
     <property name="editable" type="6" multiple="false">
       <value>false</value>
     </property>
-    <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Path]]></value>
-    </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[pathfield]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Path]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./path2]]></value>
