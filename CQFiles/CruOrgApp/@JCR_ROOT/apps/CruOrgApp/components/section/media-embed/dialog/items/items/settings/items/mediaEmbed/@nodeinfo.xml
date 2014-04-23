@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Media Embed]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textarea]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./mediaEmbed]]></value>
+    </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { return Cru.widgets.MediaEmbed.validate(value); }]]></value>
+    </property>
+    <property name="allowBlank" type="6" multiple="false">
+      <value>false</value>
+    </property>
+    <property name="blankText" type="1" multiple="false">
+       <value><![CDATA[Text field is required]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
