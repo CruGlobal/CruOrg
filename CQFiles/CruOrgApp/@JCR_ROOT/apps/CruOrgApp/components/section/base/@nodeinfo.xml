@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Component">
   <properties>
-    <property name="desc" type="1" multiple="false">
-      <value><![CDATA[Here's a description]]></value>
-    </property>
     <property name="jcr:title" type="1" multiple="false">
-      <value><![CDATA[XumaK Base Section Component...]]></value>
-    </property>
-    <property name="componentGroup" type="1" multiple="false">
-      <value><![CDATA[.hidden]]></value>
+      <value><![CDATA[Cru Base Section Component]]></value>
     </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
       <value><![CDATA[xumakbase/components/section/base]]></value>
+    </property>
+    <property name="componentGroup" type="1" multiple="false">
+      <value><![CDATA[.hidden]]></value>
     </property>
   </properties>
   <mixins />
