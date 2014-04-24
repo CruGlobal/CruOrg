@@ -2,7 +2,7 @@
 <node nodeType="nt:unstructured">
   <properties>
     <property name="pattern" type="1" multiple="false">
-      <value><![CDATA[/content/cru/article.*]]></value>
+      <value><![CDATA[/content/cru(/.*)?]]></value>
     </property>
   </properties>
   <mixins />

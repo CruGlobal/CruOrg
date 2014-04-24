@@ -4,13 +4,13 @@ Cru.widgets.MediaEmbed = {
 	* Validate the source into embed code.
 	**/
 	validate: function(value) {
-        var beginMessage =  "The media Embed "
-        var endMessage = " not is valid."
+        var beginMessage =  "The media Embed ";
+        var endMessage = " not is valid.";
         var isValid = beginMessage + endMessage;
-        var scripts = $(value);
+        var scripts = value.match(/((href|src)="([^\'\"]+))/g);
         if(scripts && scripts.length > 0){
             for (var i=0; i< scripts.length; i++) {
-                var src = this.getSource(scripts[i]);
+                var src =scripts[i].replace(/(href|src)=\"/,"");
                 if(src !== undefined){
                     if (this.isValidUrl(src)) {
                         isValid = this.checkDomains(src);
@@ -25,17 +25,6 @@ Cru.widgets.MediaEmbed = {
         }
 		return isValid;
 	},
-
-    /**
-     * Get src or href attribute.
-     **/
-    getSource: function(value){
-        var src = $(value).attr("src");
-        if (src === undefined) {
-            src = $(value).attr("href");
-        }
-        return src;
-    },
 
     /**
      * Validate if the Url contains http or https and valid characters.
