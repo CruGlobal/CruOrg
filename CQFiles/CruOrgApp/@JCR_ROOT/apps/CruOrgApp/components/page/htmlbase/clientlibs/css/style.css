@@ -842,12 +842,12 @@ small {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.cf:before, .nav:before, .cf:after, .nav:after, .grid:before, .home-banner:before, .post-article figure:before, .grid:after, .home-banner:after, .post-article figure:after {
+.cf:before, .nav:before, .media:before, .cf:after, .nav:after, .media:after, .grid:before, .home-banner:before, .post-article figure:before, .grid:after, .home-banner:after, .post-article figure:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-.cf:after, .nav:after, .grid:after, .home-banner:after, .post-article figure:after {
+.cf:after, .nav:after, .media:after, .grid:after, .home-banner:after, .post-article figure:after {
   clear: both; }
 
 /*------------------------------------*\
@@ -2632,7 +2632,7 @@ input[disabled]:focus,
 .nav > li > a {
   display: inline-block;
   *display: inline;
-  /* zoom: 1; */ }
+  zoom: 1; }
 
 /**
  * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
@@ -2722,6 +2722,52 @@ input[disabled]:focus,
 .nav--keywords > li:last-child:after {
   display: none; }
 
+/*------------------------------------*\
+    $MEDIA
+\*------------------------------------*/
+/**
+ * Deals with text in combination with images and video content by 
+ * placing them side by side. 
+ * Ex: 
+ *
+   <div class="media">
+       <img src="http://placekitten.com/200/300" alt="" class="media__img">
+       <p class="media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+ *
+ */
+.media {
+  display: block; }
+
+@media screen and (min-width: 62.5em) {
+  .media__img, .media__img--rev {
+    max-width: 25%; } }
+
+@media screen and (min-width: 62.5em) {
+  .media__img {
+    float: left;
+    margin-right: 33px; } }
+
+/**
+ * Reversed image location (right instead of left).
+ */
+@media screen and (min-width: 62.5em) {
+  .media__img--rev {
+    float: right;
+    margin-left: 33px; } }
+
+.media__img img,
+.media__img--rev img {
+  display: block; }
+
+.media__body {
+  overflow: hidden; }
+
+.media__body,
+.media__body > :last-child {
+  margin-bottom: 0; }
+
 /**
  * Style trumps; helper and brand classes
  */
@@ -2739,7 +2785,7 @@ input[disabled]:focus,
 .m {
   margin: 33px !important; }
 
-.mt {
+.mt, .primary-search__results--item {
   margin-top: 33px !important; }
 
 .mr {
@@ -2751,7 +2797,7 @@ input[disabled]:focus,
 .ml {
   margin-left: 33px !important; }
 
-.me {
+.me, .locations .locations__select {
   margin-top: 33px !important;
   margin-bottom: 33px !important; }
 
@@ -2823,7 +2869,7 @@ input[disabled]:focus,
 .mr0 {
   margin-right: 0 !important; }
 
-.mb0 {
+.mb0, .grid__item.media, .locations li > a {
   margin-bottom: 0 !important; }
 
 .ml0 {
@@ -2849,7 +2895,7 @@ input[disabled]:focus,
 .pr {
   padding-right: 33px !important; }
 
-.pb {
+.pb, .primary-search__results h3, .primary-search__results--item {
   padding-bottom: 33px !important; }
 
 .pl {
@@ -3027,6 +3073,9 @@ input[disabled]:focus,
 
 .display--inline {
   display: inline; }
+
+.display--none, .locations .locations__list {
+  display: none; }
 
 /**
  * Sizes
@@ -3482,6 +3531,18 @@ q {
   font-family: "cruicons";
   padding-left: 10px;
   font-size: 18px; }
+
+@media screen and (min-width: 37.5em) {
+  .locations .locations__select {
+    display: none; } }
+@media screen and (min-width: 37.5em) {
+  .locations .locations__list {
+    display: block; } }
+@media screen and (min-width: 37.5em) {
+  .locations li {
+    width: 33.3333333%; } }
+.locations li > a:hover {
+  background-color: #f6f6f6; }
 
 /*------------------------------------*\
     $HEADER
@@ -4546,6 +4607,12 @@ hr {
 .primary-search.active .primary-search--dropdown {
   visibility: visible; }
 
+.primary-search__results h3 {
+  border-bottom: 1px solid #dddddd; }
+
+.primary-search__results--item {
+  border-bottom: 1px solid #dddddd; }
+
 thead th {
   border-bottom: 2px solid #ddd; }
 
@@ -5307,12 +5374,15 @@ textarea.text-input {
 .text-white, .button--primary, .button--secondary {
   color: white !important; }
 
-.basic-transition, .more-stories__link {
+.basic-transition, .locations li > a, .more-stories__link {
   -webkit-transition: 250ms ease-in;
   -moz-transition: 250ms ease-in;
   -ms-transition: 250ms ease-in;
   -o-transition: 250ms ease-in;
   transition: 250ms ease-in; }
+
+.decoration--none, .locations li > a:hover {
+  text-decoration: none; }
 
 body {
   background-color: #f8f8f8; }
