@@ -6,6 +6,10 @@
         <figcaption class="image__caption  default-view">{%content.caption%}</figcaption>
     </figure>
 {%else%}
-	<p>Please add the media Embed Script.</p>
-
+	{%#if page.isEditMode %}
+		<p>Please add the media Embed Script.</p>
+	{%/if%}
+{%/if%}
+{%#if page.isEditMode %}
+    <br>
 {%/if%}
