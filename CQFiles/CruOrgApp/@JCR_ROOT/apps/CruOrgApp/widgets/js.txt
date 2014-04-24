@@ -6,3 +6,6 @@ SectionTitle.js
 MinMaxMultifield.js
 MediaEmbed.js
 
+
+rte/plugins/QuotePlugin.js
+rte/commands/Quote.js

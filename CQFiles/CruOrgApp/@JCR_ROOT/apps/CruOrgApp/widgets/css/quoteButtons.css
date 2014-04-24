@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+#CQ .x-html-editor-tb .x-edit-blockquote{
+    background-image: url(/apps/CruOrgApp/widgets/images/rte/quote-sprite.gif) !important;
+    background-position: -15px 0 !important;
+}
+#CQ .x-html-editor-tb .x-edit-pullquote{
+    background-image: url(/apps/CruOrgApp/widgets/images/rte/quote-sprite.gif) !important;
+    background-position: 0px 0 !important;
+}

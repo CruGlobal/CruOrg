@@ -5,7 +5,7 @@
       <value><![CDATA[Facebook comments feed]]></value>
     </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
-      <value><![CDATA[xumakbase/components/section/base]]></value>
+      <value><![CDATA[/apps/CruOrgApp/components/section/base]]></value>
     </property>
     <property name="componentGroup" type="1" multiple="false">
       <value><![CDATA[.hidden]]></value>

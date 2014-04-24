@@ -2,10 +2,10 @@
 <node nodeType="cq:Component">
   <properties>
     <property name="jcr:title" type="1" multiple="false">
-      <value><![CDATA[Captioned Image]]></value>
+      <value><![CDATA[Text Image]]></value>
     </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
-      <value><![CDATA[/apps/CruOrgApp/components/section/base]]></value>
+      <value><![CDATA[xumakbase/components/section/base]]></value>
     </property>
     <property name="componentGroup" type="1" multiple="false">
       <value><![CDATA[Cru]]></value>

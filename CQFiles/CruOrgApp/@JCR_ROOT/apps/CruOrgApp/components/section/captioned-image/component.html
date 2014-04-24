@@ -6,5 +6,6 @@
             <img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
         {%/if %}
     {%/if%}
-<figcaption class="image__caption">{%{ content.text }%}</figcaption>
+<figcaption class="image__caption">{%{ content.caption }%}</figcaption>
 </figure>
+{%#if page.isEditMode %}<div style=“clear:both”></div>{%/if %}

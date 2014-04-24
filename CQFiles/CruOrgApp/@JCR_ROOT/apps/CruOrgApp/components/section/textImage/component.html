@@ -1,0 +1,9 @@
+{%! For this component is necessary sync the /etc/rteconfig folder
+    and the acs-aem-commons-content-1.5.0 package %}
+{%#if content.text %}
+    {%{ content.text }%}
+{%else%}
+    {%#if page.isEditMode%}
+        <p>&para;</p>
+    {%/if%}
+{%/if%}
