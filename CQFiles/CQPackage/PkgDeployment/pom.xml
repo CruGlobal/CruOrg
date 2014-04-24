@@ -413,5 +413,59 @@
                 </plugins>
             </build>
         </profile>
+        <!-- Profile for deployment of acs-aem-commons-->
+        <profile>
+          <id>acs-aem</id>
+          <build>
+            <plugins>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <executions>
+                  <execution>
+                    <id>copy</id>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>copy</goal>
+                    </goals>
+                    <configuration>
+                      <artifactItems>
+                        <artifactItem>
+                          <groupId>com.adobe.acs</groupId>
+                          <artifactId>acs-aem-commons-content</artifactId>
+                          <version>1.5.0</version>
+                          <type>zip</type>
+                          <outputDirectory>target/</outputDirectory>
+                          <destFileName>acs-aem-commons-content-1.5.0.zip</destFileName>
+                        </artifactItem>
+                      </artifactItems>
+                    </configuration>
+                  </execution>
+                </executions>
+              </plugin>
+              <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>content-package-maven-plugin</artifactId>
+                <executions>
+                  <execution>
+                    <id>install-content-package-author</id>
+                    <phase>install</phase>
+                    <goals>
+                      <goal>install</goal>
+                    </goals>
+                    <configuration>
+                      <packageFile>${basedir}/target/acs-aem-commons-content-1.5.0.zip</packageFile>
+                      <targetURL>${pkgMgrURL}</targetURL>
+                      <username>${username}</username>
+                      <password>${password}</password>
+                      <install>true</install>
+                    </configuration>
+                  </execution>
+                </executions>
+              </plugin>
+            </plugins>
+          </build>
+        </profile>
     </profiles>
 </project>
