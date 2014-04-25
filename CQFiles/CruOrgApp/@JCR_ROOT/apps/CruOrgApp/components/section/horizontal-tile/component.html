@@ -1,0 +1,44 @@
+{%#if  content.image-class  %}
+	<div class="grid__item  one-whole  media center-block">
+{%else%}
+  <div class="grid__item  one-whole  media">
+{%/if%}
+
+      <div class="color-white  p  mb">
+        {%#if content.fileReference %}
+          {%#if  content.image-class  %}
+            <div class="media__img mask--circle">
+              <img class="image--circle mb-" src="{% content.fileReference %}">
+          {%else%}
+            <div class="media__img">
+              <img class="mb-" src="{% content.fileReference %}">
+          {%/if%}
+        		</div>
+    	{%else%}
+        	{%#if page.isEditMode %}
+        	<div class="media__img">
+            	<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+        	</div>
+        	{%/if %}
+    	{%/if%} 
+
+      {%#if  content.image-class  %}
+        <div class="media__body text--left">
+      {%else%}
+        <div class="media__body">
+      {%/if%}
+
+          {%#if content.h4-title %}
+          	<h4>{% content.h4-title %}</h4>
+          {%/if%}
+          {%#if content.description %}
+          	<p>{% content.description %}</p>
+          {%/if%}	
+          {%#if content.button-link%}
+			{%#if content.button-text%}
+          		<a class="button" href="{%content.button-link%}"> {% content.button-text %} </a>
+          	{%/if%}
+		   {%/if%}
+        </div>
+      </div>
+  </div>
