@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="allowNegative" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[numberfield]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Number of Results]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./resultsPerPage]]></value>
+    </property>
+    <property name="allowBlank" type="6" multiple="false">
+      <value>false</value>
+    </property>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[25]]></value>
+    </property>
+    <property name="allowDecimals" type="6" multiple="false">
+      <value>false</value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Select number of results to show in a single page.]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

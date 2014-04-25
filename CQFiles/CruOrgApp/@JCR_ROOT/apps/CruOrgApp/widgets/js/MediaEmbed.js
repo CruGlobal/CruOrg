@@ -4,23 +4,27 @@ Cru.widgets.MediaEmbed = {
 	* Validate the source into embed code.
 	**/
 	validate: function(value) {
-        var beginMessage =  "The media Embed ";
-        var endMessage = " not is valid.";
-        var isValid = beginMessage + endMessage;
-        var scripts = value.match(/((href|src)="([^\'\"]+))/g);
-        if(scripts && scripts.length > 0){
-            for (var i=0; i< scripts.length; i++) {
-                var src =scripts[i].replace(/(href|src)=\"/,"");
-                if(src !== undefined){
-                    if (this.isValidUrl(src)) {
-                        isValid = this.checkDomains(src);
-                        if(isValid !== true){
-                            return isValid;
+        var beginMessage =  "The script ";
+        var endMessage = " is not valid.";
+        var isValid = "Please add a script.";
+        if(value.length > 0){
+            var scripts = value.match(/((href|src)="([^\'\"]+))/g);
+            if(scripts && scripts.length > 0){
+                for (var i=0; i< scripts.length; i++) {
+                    var src =scripts[i].replace(/(href|src)=\"/,"");
+                    if(src !== undefined){
+                        if (this.isValidUrl(src)) {
+                            isValid = this.checkDomains(src);
+                            if(isValid !== true){
+                                return isValid;
+                            }
+                        }else{
+                            return beginMessage + src + endMessage;
                         }
-                    }else{
-                        return beginMessage + src + endMessage;
                     }
                 }
+            }else{
+                isValid = beginMessage + endMessage;
             }
         }
 		return isValid;
@@ -42,8 +46,8 @@ Cru.widgets.MediaEmbed = {
      * Validate if the domains is contains into global valid domains.
      **/
     checkDomains: function(src){
-        var beginMessage =  "The media Embed ";
-        var endMessage = " do not match with valid domains.";
+        var beginMessage =  "The script ";
+        var endMessage = " does not match with a valid domain.";
         var domains = Cru.widgets.Util.getGlobalProperty("domains");
         if (domains) {
             if (Array.isArray(domains)) {
