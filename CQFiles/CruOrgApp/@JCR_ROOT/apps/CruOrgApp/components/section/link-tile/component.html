@@ -1,0 +1,21 @@
+  <a class="grid__item one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%} text--center" href="{% content.href %}.html">
+    <div class="color-white  p  mb">  
+        <h4 class="-">{% content.title %}</h4>
+        <div>
+            {%#if content.imagePath %}
+        		<img class="mb-" src="{% content.imagePath %}" alt="{% content.title %}">
+        	{%else%}
+				{%#if page.isEditMode %}
+        			<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+				{%/if %}
+
+        	{%/if%}
+                </div>
+                 {%#if content.buttonType  %}
+                 <p class="text--left pb0 mb0 affordance">{% content.text %}</p>
+                 {%else%}
+                 <p class="text--left pb0 mb0">{% content.text %}</p>
+                 <btn class="button {% content.readMoreStyle %}">{% content.readMore %}</btn>
+                 {%/if%} 
+      </div>
+  </a>

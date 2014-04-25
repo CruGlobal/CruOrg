@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Pages to Search]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
+    </property>
+    <property name="allowBlank" type="6" multiple="false">
+      <value>false</value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./pagesToSearch]]></value>
+    </property>
+    <property name="rootPath" type="1" multiple="false">
+      <value><![CDATA[/content]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Path to root page where search will be performed.]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
