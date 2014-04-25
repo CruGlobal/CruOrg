@@ -1,0 +1,13 @@
+{%#if list.pages %}
+   	<ul class="{%content.class%}">
+    	{%#each list.pages %}
+    		<li>
+          		<a href="{% this.path %}.html">{% this.navigationTitle %}</a>
+        	</li>
+		{%/each%}
+  	</ul>
+{%else%}
+	{%#if page.isEditMode %}
+    	<p>Please add links in the dialog.</p>
+    {%/if%}
+{%/if%}
