@@ -1,0 +1,47 @@
+<h1>SEARCH COMPONENT</h1>
+
+{%!Search box %}
+<form action="{%page.path%}.html">
+    <input size="41" maxlength="2048" name="q" value="{%content.escapedQueryForAttr%}"/>
+    <input value="{%content.searchButtonText%}" type="submit"/>
+</form>
+
+{%!Results %}
+{%#if content.hits %}
+    <p>{%{content.statisticsText}%}</p>
+    <ul>
+        {%#each content.hits %}
+            <li>
+                <a href="{%this.URL%}" target="{% content.resultTarget %}">{%{this.title}%}</a><br>
+                <div>{%{this.excerpt}%}</div>
+            </li>
+        {%/each%}
+    </ul>
+    {%!Paginator %}
+    {%#if content.showPagination %}
+        <p>{%content.resultPagesText%}
+            {%#if content.result.previousPage %}
+            <a href="{%content.result.previousPage.URL%}">{%content.previousText%}</a>
+            {%/if%}
+            {%#each content.result.resultPages %}
+            {%#if this.currentPage %}
+            {% this.index %}
+            {%else%}
+            <a href="{% this.URL %}">{% this.index %}</a>
+            {%/if%}
+            {%/each%}
+            {%#if content.result.nextPage %}
+            <a href="{%content.result.nextPage.URL%}">{%content.nextText%}</a>
+            {%/if%}
+        </p>
+    {%/if%}
+{%else%}
+    <p>
+        {%#if content.result.spellcheck %}
+            {%{content.spellcheckText}%}<br>
+        {%/if%}
+        {%#if content.escapedQuery %}
+            {%{content.noResultsText}%}
+        {%/if%}
+    </p>
+{%/if%}

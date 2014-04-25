@@ -20,6 +20,18 @@
       <artifactId>ehcache</artifactId>
       <version>1.6.0-beta4</version>
     </dependency>
+    <dependency>
+      <groupId>com.day.cq.wcm</groupId>
+      <artifactId>cq-wcm-foundation</artifactId>
+      <version>5.6.4</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.1</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <packaging>bundle</packaging>
 
