@@ -1,12 +1,12 @@
 {%!
-    For this component is necessary sync the /etc/rteconfig folder
-    and deploy the acs-aem-commons-content-1.5.0 package.
+    For this component it is necessary to sync the /etc/rteconfig folder
+    and deploy the acs-aem-commons-content-1.5.0 package with the following command:
 
     mvn -f CQFiles/CQPackage/PkgDeployment/pom.xml install -Pacs-aem \
         -Dcq.server=http://localhost:4502 -Dusername=admin -Dpassword=admin
 %}
 {%#if content.text %}
-    {%{ content.text }%}
+	{%{ content.text }%}
 {%else%}
     {%#if page.isEditMode%}
         <p>&para;</p>

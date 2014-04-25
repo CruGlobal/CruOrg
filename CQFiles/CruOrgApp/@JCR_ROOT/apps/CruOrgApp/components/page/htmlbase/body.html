@@ -1,4 +1,6 @@
-<!-- Facebook feed js -->
+
+<body class="page  page--{%component.bodyClass%}">
+    <!-- Facebook feed js -->
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -7,8 +9,6 @@
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-
-<body class="page  page--home">
     {%> siteglobalbutton %}
     <div id="js-outer-wrap"  class="position--relative  full-width  overflow--hidden  outer-wrap  js-outer-wrap">
     	<div id="js-inner-wrap"  class="position--relative  full-width  inner-wrap  js-inner-wrap">

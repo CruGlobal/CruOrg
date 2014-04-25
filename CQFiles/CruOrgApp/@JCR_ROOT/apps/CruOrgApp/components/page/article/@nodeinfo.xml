@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Component">
   <properties>
+    <property name="bodyClass" type="1" multiple="false">
+      <value><![CDATA[article]]></value>
+    </property>
     <property name="jcr:description" type="1" multiple="false">
       <value><![CDATA[Cru article page component]]></value>
     </property>
