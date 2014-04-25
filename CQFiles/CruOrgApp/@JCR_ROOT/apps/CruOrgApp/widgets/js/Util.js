@@ -117,5 +117,16 @@ Cru.widgets.Util = {
         text = text.replace(/[ ]{2,}/gi," ");       //only one space between words
         text = text.replace(/\n /,"\n");            //new lines aren't words.
         return text.split(' ').length;
-    }
+    },
+
+    /**
+     * Get the total number of characters in the text.
+     * @param text with chars to count.
+     * @return {Number} total of chars.
+     */
+    characterCount : function(text) {
+    	if (!text) return 0;
+
+		return text.length;
+	}
 };

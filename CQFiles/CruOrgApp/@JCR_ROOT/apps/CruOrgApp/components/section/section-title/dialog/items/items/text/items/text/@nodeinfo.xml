@@ -11,7 +11,7 @@
       <value><![CDATA[./text]]></value>
     </property>
     <property name="validator" type="1" multiple="false">
-      <value><![CDATA[function(value) { return Cru.widgets.SectionTitle.validateLength(value,144); }]]></value>
+      <value><![CDATA[function(value) { return Cru.widgets.SectionTitle.validateLength(value,140); }]]></value>
     </property>
     <property name="allowBlank" type="6" multiple="false">
       <value>false</value>
