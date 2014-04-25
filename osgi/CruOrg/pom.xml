@@ -4,7 +4,24 @@
 
     <artifactId>CruOrg</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>bundle</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>1.6.0-beta4</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>1.6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>1.6.0-beta4</version>
+    </dependency>
+  </dependencies>
+  <packaging>bundle</packaging>
 
     <parent>
         <groupId>org.cru</groupId>
@@ -29,10 +46,6 @@
     </profiles>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>

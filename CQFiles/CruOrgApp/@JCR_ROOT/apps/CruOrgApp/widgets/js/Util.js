@@ -103,6 +103,19 @@ Cru.widgets.Util = {
         var body = JSON.parse(Global.body);
         var value = body[property];
         return value;
-    }
+    },
 
-}
+    /**
+     * Get the total number of words in the text.
+     * @param text with words to count.
+     * @return {Number} total of words.
+     */
+    wordCount : function(text) {
+        if (!text) return 0;
+
+        text = text.replace(/(^\s*)|(\s*$)/gi,"");  //trim spaces
+        text = text.replace(/[ ]{2,}/gi," ");       //only one space between words
+        text = text.replace(/\n /,"\n");            //new lines aren't words.
+        return text.split(' ').length;
+    }
+};
