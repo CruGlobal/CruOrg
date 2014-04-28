@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[selection]]></value>
-    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Read more style]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[selection]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./readMoreStyle]]></value>
