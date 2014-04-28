@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Root Page]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./pathRef]]></value>
+    </property>
+    <property name="fieldSubLabel" type="1" multiple="false">
+      <value><![CDATA[The current Page will be used if this is empty.]]></value>
+    </property>
+    <property name="editable" type="6" multiple="false">
+       <value>false</value>
+    </property>
+    <property name="rootPath" type="1" multiple="false">
+        <value><![CDATA[/content/cru]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
