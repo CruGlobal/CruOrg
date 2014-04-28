@@ -5,7 +5,7 @@
       <value><![CDATA[slingscriptinclude]]></value>
     </property>
     <property name="script" type="1" multiple="false">
-      <value><![CDATA[rte.default.text.json.jsp]]></value>
+      <value><![CDATA[rte.default.text.json?height=420&width=450.jsp]]></value>
     </property>
   </properties>
   <mixins />
