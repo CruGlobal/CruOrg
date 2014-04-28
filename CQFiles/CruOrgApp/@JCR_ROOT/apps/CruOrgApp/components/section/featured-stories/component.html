@@ -1,0 +1,18 @@
+<!-- Component wrapper -->
+<div class="more-stories  more-stories--featured">
+    <hr>
+    <h4 class="ps- mb-  text--center">Featured Stories</h4>
+    <!-- Two featured stories -->
+    <ul class="grid  block-list">
+        {%#each list.pages %}
+            <li class="grid__item  one-whole desk--one-half">
+                <a href="{%this.path%}.html"   class="more-stories__link  p-  affordance  small">
+                    <!-- Featured story title -->
+                    <h5  class="m0  weight--semibold">{%this.navigationTitle%}</h5>
+                    <!-- Featured story description -->
+                    <span>{%this.description%}</span>
+                </a>
+            </li>
+        {%/each%}
+    </ul>
+</div>
