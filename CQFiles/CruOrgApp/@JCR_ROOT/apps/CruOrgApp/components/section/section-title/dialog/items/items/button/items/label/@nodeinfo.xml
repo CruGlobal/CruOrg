@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./label]]></value>
     </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { if (Cru.widgets.Util.wordCount(value) > 2) return "Button label can only have two words"; else return true; }]]></value>
+    </property>
   </properties>
   <mixins />
 </node>
