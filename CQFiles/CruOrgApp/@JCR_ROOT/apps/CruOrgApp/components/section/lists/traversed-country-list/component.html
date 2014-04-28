@@ -1,0 +1,44 @@
+<div class="layout-single-column  layout--wide">
+	<div class="locations color-white">
+		<!-- Small Screen Display -->
+		<!--The contries get listed as options in the select-->
+		<div class="locations__select  p">
+			{%#if list.pages %}
+				<select class="full-width  form-control">
+					<option value>Find a Country</option>
+					<!-- The optgroup label is the continent or or overall title -->	
+						<optgroup label="{% page.title %}">
+							{%#each list.pages %}
+								<option value="{% this.navigationTitle %}">{% this.navigationTitle %}</option>
+							{%/each%}
+						</optgroup>
+				</select>
+			{%else%}
+				{%#if page.isEditMode %}
+    				<p>Please add Root Path in the dialog.</p>
+    			{%/if%}
+			{%/if%}
+		</div>
+		{%#if list.pages %}
+		<!-- Larger Screen Display -->
+		<ul class="locations__list  block-list  grid">
+			{%#each list.pages %}
+				<li class="grid__item">
+					<a href="{% this.path %}.html" class="p-  media">
+						<div class="media__img">
+							<img title="{% this.navigationTitle %}" src="{% this.imagePath %}" /> 
+						</div>
+						<div class="media__body">
+							<p>{% this.navigationTitle %}</p>
+						</div>
+					</a>
+				</li>
+			{%/each%}
+		</ul>
+		{%else%}
+			{%#if page.isEditMode %}
+    			<p>Please add Root Path in the dialog.</p>
+    		{%/if%}
+		{%/if%}
+	</div>
+</div>
