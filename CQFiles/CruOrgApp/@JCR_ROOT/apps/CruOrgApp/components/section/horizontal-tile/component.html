@@ -1,19 +1,10 @@
-{%#if  content.image-class  %}
-	<div class="grid__item  one-whole  media center-block">
-{%else%}
-  <div class="grid__item  one-whole  media">
-{%/if%}
 
+<div class="grid__item  one-whole  {%#if  content.image-class  %}media center-block{%/if%}">
       <div class="color-white  p  mb">
         {%#if content.fileReference %}
-          {%#if  content.image-class  %}
-            <div class="media__img mask--circle">
-              <img class="image--circle mb-" src="{% content.fileReference %}">
-          {%else%}
-            <div class="media__img">
-              <img class="mb-" src="{% content.fileReference %}">
-          {%/if%}
-        		</div>
+            <div class="media__img {%#if  content.image-class  %}mask--circle{%/if%}">
+              <img class="{%#if  content.image-class  %}image--circle{%/if%} mb-" src="{% content.fileReference %}">
+        	</div>
     	{%else%}
         	{%#if page.isEditMode %}
         	<div class="media__img">
@@ -21,13 +12,7 @@
         	</div>
         	{%/if %}
     	{%/if%} 
-
-      {%#if  content.image-class  %}
-        <div class="media__body text--left">
-      {%else%}
-        <div class="media__body">
-      {%/if%}
-
+        <div class="media__body {%#if  content.image-class  %}text--left{%/if%}">
           {%#if content.h4-title %}
           	<h4>{% content.h4-title %}</h4>
           {%/if%}
