@@ -4,6 +4,15 @@
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[dialog]]></value>
     </property>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Text Image]]></value>
+    </property>
+    <property name="width" type="1" multiple="false">
+      <value><![CDATA[800]]></value>
+    </property>
+    <property name="height" type="1" multiple="false">
+      <value><![CDATA[600]]></value>
+    </property>
   </properties>
   <mixins />
 </node>
