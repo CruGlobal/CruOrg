@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
-    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Button Text]]></value>
     </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
+    </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./button-text]]></value>
+    </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { if (Cru.widgets.Util.wordCount(value) > 2) return "Button label can only have two words"; else return true; }]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter text to display in the button]]></value>
