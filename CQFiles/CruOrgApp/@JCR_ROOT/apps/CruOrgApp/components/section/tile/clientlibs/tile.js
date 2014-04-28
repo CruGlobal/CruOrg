@@ -10,15 +10,17 @@ Cru.components = (function(v) {
 
 Cru.components.tile = {
     afterRender : function(container){
-        //debugger;
 				var cqGeneratedDiv = container.element;
-        		var gridItemDiv = cqGeneratedDiv.firstChild;
+        		var gridItemDiv = cqGeneratedDiv.firstElementChild;
                 var tileClass = $(gridItemDiv).attr("class");
                 $(cqGeneratedDiv).addClass(tileClass)
                 $(gridItemDiv).removeClass(tileClass) 
 
-		if(Xumak.Utils.elementExists($(".tile"))){
-			$( "<div style='clear:both;'></div>" ).insertAfter($(".tile").last());
+		if(Xumak.Utils.elementExists($(".tile-container-parsys"))){
+
+			$( "<div style='clear:both;'></div>" ).insertAfter($(".tile-container-parsys .parbase.section").last());
         }
+
+
     }
 }

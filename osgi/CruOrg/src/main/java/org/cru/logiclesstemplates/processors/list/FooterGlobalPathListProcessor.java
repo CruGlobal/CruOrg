@@ -28,7 +28,7 @@ public class FooterGlobalPathListProcessor extends AddPagePathListContextProcess
         if (contentModel.has(pathRefsProp)) {
             Object pathRefs = contentModel.get(pathRefsProp);
             Collection<String> pathList = buildPathList(pathRefs);
-            contentModel.set("list.paths", pathList);
+            contentModel.set(PATH_LIST_CONTEXT_PROPERTY_NAME, pathList);
         }
     }
 
