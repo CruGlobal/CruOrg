@@ -13,6 +13,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./href]]></value>
     </property>
+    <property name="linkPattern" type="1" multiple="false">
+      <value><![CDATA[{0}.html]]></value>
+    </property>
     <property name="rootPath" type="1" multiple="false">
       <value><![CDATA[/content/cru]]></value>
     </property>

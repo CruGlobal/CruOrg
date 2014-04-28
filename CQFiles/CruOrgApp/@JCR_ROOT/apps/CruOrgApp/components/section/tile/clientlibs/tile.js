@@ -15,12 +15,14 @@ Cru.components.tile = {
                 var tileClass = $(gridItemDiv).attr("class");
                 $(cqGeneratedDiv).addClass(tileClass)
                 $(gridItemDiv).removeClass(tileClass) 
-
-		if(Xumak.Utils.elementExists($(".tile-container-parsys"))){
-
-			$( "<div style='clear:both;'></div>" ).insertAfter($(".tile-container-parsys .parbase.section").last());
-        }
-
+                if(Xumak.Utils.elementExists($(".tile-container-parsys"))){
+        
+                    $( "<div style='clear:both;'></div>" ).insertAfter($(".tile-container-parsys .parbase.section").last());
+                }
+                if(Xumak.Utils.elementExists($(".post-body-parsys"))){
+        
+                    $( "<div style='clear:both;'></div>" ).insertAfter($(".post-body-parsys .parbase.section").last());
+                }
 
     }
 }
