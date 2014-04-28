@@ -4,7 +4,6 @@ CQ.form.MinMaxMultiField = CQ.Ext.extend(CQ.form.MultiField, {
     minItems: 0,   
     maxItems: 50,
     constructor: function(config) {
-        console.log("ASDF");
         var list = this;
 
         if (typeof config.orderable === "undefined") {
