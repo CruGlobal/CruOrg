@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:PageContent">
+  <properties>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[CruOrgApp/components/page/article-long-form]]></value>
+    </property>
+    <property name="cq:designPath" type="1" multiple="false">
+      <value><![CDATA[/etc/designs/cru]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
