@@ -1,0 +1,67 @@
+<div class="more-stories  more-stories--related">
+      <hr>
+      <h4 class="ps- mb-  text--center">Related Stories</h4>
+      
+        <!-- 
+         By default the li class is one-whole, if there are two related stories
+         add desk--one-half, if there are three
+         desk--one-third. There can be no more than three related stories
+        -->
+
+        <!-- Three related stories -->
+        <ul class="grid  block-list">
+        {%#each list.pages %}
+            <li class="grid__item  one-whole desk--one-third">
+                <a href="{%this.path%}.html"   class="more-stories__link  p-  affordance  small">
+                    <!-- Featured story title -->
+                    <h5  class="m0  weight--semibold">{%this.navigationTitle%}</h5>
+                    <!-- Featured story description -->
+                    <span>{%this.description%}</span>
+                </a>
+            </li>
+        {%/each%}
+        </ul>
+
+		<!-- Two related stories -->
+        {%#if content.page21path %}
+
+        <ul class="grid  block-list">
+          <li class="grid__item  one-whole desk--one-half">
+            <a href="{% content.page21path %}.html" class="more-stories__link  p-  affordance  small">
+              <!-- Related story title -->
+              <h5 class="m0  weight--semibold">{% content.page21title %}</h5>
+
+              <!-- Related story description -->
+              <span>{% content.page21description %}</span>
+            </a>
+          </li>
+          <li class="grid__item  one-whole desk--one-half">
+            <a href="{% content.page22path %}.html" class="more-stories__link  p-  affordance  small">
+              <!-- Related story title -->
+              <h5 class="m0  weight--semibold">{% content.page22title %}</h5>
+
+              <!-- Related story description -->
+              <span>{% content.page22description %}</span>
+            </a>
+          </li>
+        </ul> 
+
+		{%/if%}
+        {%#if content.page1path %}
+
+		<!-- One related story -->  
+        <ul class="grid  block-list">
+          <li class="grid__item  one-whole">
+            <a href="{% content.page1path %}.html" class="more-stories__link  p-  affordance  small">
+              <!-- Related story title -->
+              <h5 class="m0  weight--semibold">{% content.page1title %}</h5>
+              
+              <!-- Related story description -->
+              <span>{% content.page1description %}</span>
+            </a>
+          </li>
+        </ul>  
+		{%/if%}
+
+        
+    </div>
