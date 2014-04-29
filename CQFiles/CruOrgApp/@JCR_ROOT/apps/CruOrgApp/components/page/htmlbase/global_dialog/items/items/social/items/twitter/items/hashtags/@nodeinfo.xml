@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Hashtags]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./hashtags]]></value>
+    </property>
+    <property name="anchor" type="1" multiple="false">
+      <value><![CDATA[100%]]></value>
+    </property>
+    <property name="validateOnBlur" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[e.g.  for the #cru hashtag, the value after the '#' symbol (cru).]]></value>
+    </property>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[cru]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
