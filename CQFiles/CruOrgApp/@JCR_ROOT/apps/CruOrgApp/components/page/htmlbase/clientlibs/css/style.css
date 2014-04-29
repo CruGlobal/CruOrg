@@ -1274,7 +1274,7 @@ legend {
 .text-input, .form-control {
   display: block;
   width: 100%;
-  /** 
+  /**
    * Make inputs at least the height of their button counterpart (base line-height + padding + border)
    */
   height: 47.5px;
@@ -2320,55 +2320,37 @@ input + .additional {
  * Base button styles
  */
 .button {
+  position: relative;
   display: inline-block;
-  vertical-align: middle;
-  white-space: nowrap;
   cursor: pointer;
   margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
   background-color: #f1f1f1;
   background-image: none;
   border: 2px solid;
   border-color: #d7d7d7;
   color: #6d6e71;
   font-weight: 500;
-  line-height: 3;
   text-align: center;
+  letter-spacing: 0.02em;
   vertical-align: middle;
   overflow: visible;
+  -webkit-font-smoothing: antialiased;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  padding: 6px 18px;
+  /* 9 */
+  padding: 0.31579rem 0.94737rem;
+  /* 9 */
   font-size: 16px;
   font-size: 0.84211rem;
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  min-height: 40px;
-  /* 9 */
-  min-height: 2.10526rem;
-  /* 9 */
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  padding-left: 24px;
-  /* 9 */
-  padding-left: 1.26316rem;
-  /* 9 */
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  padding-right: 24px;
-  /* 9 */
-  padding-right: 1.26316rem;
-  /* 9 */
   /* 3 */
   /* 3 */
   /* 4 */
@@ -2379,6 +2361,11 @@ input + .additional {
   /* 9 */
   border-radius: 0.10526rem;
   /* 9 */
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -2431,6 +2418,22 @@ input + .additional {
    * 1. Remove padding so that widths and paddings don’t conflict.
    */ }
   .button--small {
+    line-height: 1.75;
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    padding: 8px 22px;
+    /* 9 */
+    padding: 0.42105rem 1.15789rem;
+    /* 9 */ }
+  .button--large {
     line-height: 2;
     /* 3 */
     /* 3 */
@@ -2438,61 +2441,13 @@ input + .additional {
     /* 6 */
     /* 6 */
     /* 7 */
-    height: 24px;
-    /* 9 */
-    height: 1.26316rem;
-    /* 9 */
-    /* 3 */
-    /* 3 */
     /* 4 */
     /* 6 */
     /* 6 */
     /* 7 */
-    padding-left: 8px;
+    padding: 12px 26px;
     /* 9 */
-    padding-left: 0.42105rem;
-    /* 9 */
-    /* 3 */
-    /* 3 */
-    /* 4 */
-    /* 6 */
-    /* 6 */
-    /* 7 */
-    padding-right: 8px;
-    /* 9 */
-    padding-right: 0.42105rem;
-    /* 9 */ }
-  .button--large {
-    line-height: 4;
-    /* 3 */
-    /* 3 */
-    /* 4 */
-    /* 6 */
-    /* 6 */
-    /* 7 */
-    height: 64px;
-    /* 9 */
-    height: 3.36842rem;
-    /* 9 */
-    /* 3 */
-    /* 3 */
-    /* 4 */
-    /* 6 */
-    /* 6 */
-    /* 7 */
-    padding-left: 30px;
-    /* 9 */
-    padding-left: 1.57895rem;
-    /* 9 */
-    /* 3 */
-    /* 3 */
-    /* 4 */
-    /* 6 */
-    /* 6 */
-    /* 7 */
-    padding-right: 30px;
-    /* 9 */
-    padding-right: 1.57895rem;
+    padding: 0.63158rem 1.36842rem;
     /* 9 */ }
   .button--full {
     width: 100%;
@@ -2723,12 +2678,81 @@ input[disabled]:focus,
   display: none; }
 
 /*------------------------------------*\
+    $PAGINATION
+\*------------------------------------*/
+/**
+ * Basic pagination object, extends `.nav`.
+ * Requires some funky commenting to collapse any white-space caused by the
+ * `display:inline-block;` rules.
+ *
+   <ol class="nav  pagination">
+       <li class=pagination__first>First</li>
+       <li class=pagination__prev>Previous</li>
+       <li><a href=/page/1>1</a></li>
+       <li><a href=/page/2>2</a></li>
+       <li class=current><a href=/page/3>3</a></li>
+       <li><a href=/page/4>4</a></li>
+       <li><a href=/page/5>5</a></li>
+       <li class=pagination__next><a href=/page/next>Next</a></li>
+       <li class=pagination__last><a href=/page/last>Last</a></li>
+   </ol>
+ *
+ * Demo: jsfiddle.net/inuitcss/9Y6PU
+ *
+ */
+.pagination {
+  margin-bottom: 33px;
+  text-align: center;
+  /**
+   * Remove whitespace caused by `inline-block`.
+   */
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em; }
+
+.pagination li {
+  padding: 16.5px;
+  letter-spacing: normal;
+  word-spacing: normal; }
+
+.pagination li > a {
+  padding: 16.5px;
+  margin: -16.5px; }
+
+.pagination__prev > .button, .pagination__next > .button {
+  margin: 0;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  padding: 8px 22px;
+  /* 9 */
+  padding: 0.42105rem 1.15789rem;
+  /* 9 */ }
+
+.pagination__prev a:before {
+  content: "\00AB" "\00A0"; }
+
+.pagination__next a:after {
+  content: "\00A0" "\00BB"; }
+
+.current > a {
+  pointer-events: none;
+  cursor: text;
+  color: #444444; }
+
+/*------------------------------------*\
     $MEDIA
 \*------------------------------------*/
 /**
- * Deals with text in combination with images and video content by 
- * placing them side by side. 
- * Ex: 
+ * Deals with text in combination with images and video content by
+ * placing them side by side.
+ * Ex:
  *
    <div class="media">
        <img src="http://placekitten.com/200/300" alt="" class="media__img">
@@ -2775,7 +2799,7 @@ input[disabled]:focus,
     #SPACING
 \*------------------------------------*/
 /**
- * Margin and padding helper classes. 
+ * Margin and padding helper classes.
  *
  * `.(m|p)(t|r|b|L|e|s)(-|+|0) {}` = margin/padding top/right/bottom/left/ends/sides less/more/none
  */
@@ -2785,7 +2809,7 @@ input[disabled]:focus,
 .m {
   margin: 33px !important; }
 
-.mt, .primary-search__results--item {
+.mt {
   margin-top: 33px !important; }
 
 .mr {
@@ -2895,7 +2919,7 @@ input[disabled]:focus,
 .pr {
   padding-right: 33px !important; }
 
-.pb, .primary-search__results h3, .primary-search__results--item {
+.pb, .primary-search__results h3 {
   padding-bottom: 33px !important; }
 
 .pl {
@@ -2953,7 +2977,7 @@ input[disabled]:focus,
 .pl- {
   padding-left: 16.5px !important; }
 
-.pe- {
+.pe-, .primary-search__results--item {
   padding-top: 16.5px !important;
   padding-bottom: 16.5px !important; }
 
@@ -3169,8 +3193,8 @@ hr, .divider, .centered {
     $FONTS
 \*------------------------------------*/
 /**
- * As of now this is where we will be placing our icon fonts. 
- * Freight Sans Pro will be served up from Typekit. 
+ * As of now this is where we will be placing our icon fonts.
+ * Freight Sans Pro will be served up from Typekit.
  */
 @font-face {
   font-family: 'cruicons';
@@ -3276,10 +3300,10 @@ hr, .divider, .centered {
     $COLORS
 \*------------------------------------*/
 /**
- * Used for background colors at the moment, text is either in 
+ * Used for background colors at the moment, text is either in
  * the default text color or white. You can extend %text-white
  * found in the _utilities.scss file if you wish to change the
- * text color. 
+ * text color.
  */
 /**
  * Primary Colors
@@ -3341,7 +3365,7 @@ figcaption {
 
 /**
  * Places a dash after a piece of text. Mainly for post meta info
- * 
+ *
  */
 .accent:after {
   content: "-";
@@ -3918,7 +3942,7 @@ q {
 
 /**
  * For numbered post formats. Removes the typical magin given to a
- * list. 
+ * list.
  */
 .post__list {
   margin-left: 0; }
@@ -3936,7 +3960,7 @@ q {
       /* 9 */ } }
 
 /**
- * A different type of <hr> styling. 
+ * A different type of <hr> styling.
  */
 /*hr.section-divider{
 	display: block;
@@ -3949,14 +3973,14 @@ hr, .divider {
   clear: both;
   display: block; }
 
-/** 
- * The primary hr, small width 
+/**
+ * The primary hr, small width
  */
 hr {
   width: 14%; }
 
-/** 
- * Full width hr 
+/**
+ * Full width hr
  */
 /* hr */
 .divider {
@@ -4024,7 +4048,7 @@ hr {
 .post-article figure {
   outline: 0; }
 
-	/** 
+	/**
 	 * Main image captions. Place the .image-credit within this.
      * Pulls the caption to the left of the image for wide screens
      * and centers it for smaller screens.
@@ -4180,364 +4204,14 @@ hr {
 
 /**
  * Article Share Buttons
+ *
  */
-/*! Social Likes v3.0.3 by Artem Sapegin - http://sapegin.github.com/social-likes - Licensed MIT */
-.social-likes,
-.social-likes__widget {
-  display: inline-block;
-  padding: 0;
-  vertical-align: middle !important;
-  word-spacing: 0 !important;
-  text-indent: 0 !important;
-  list-style: none !important; }
-
-.social-likes {
-  opacity: 0; }
-
-.social-likes_visible {
-  opacity: 1;
-  -webkit-transition: opacity .1s ease-in;
-  transition: opacity 0.1s ease-in; }
-
-.social-likes > h5 {
-  display: inline-block; }
-
-.social-likes_visible .social-likes__widget {
-  visibility: inherit; }
-
-.social-likes__widget {
-  display: inline-block;
+/*    */
+.social-shares .fb-like {
   position: relative;
-  white-space: nowrap; }
-
-.social-likes__widget:before,
-.social-likes__widget:after {
-  display: none !important; }
-
-.social-likes_vertical .social-likes__widget {
-  display: block;
-  float: left;
-  clear: left; }
-
-.social-likes__button,
-.social-likes__icon,
-.social-likes__counter {
-  text-decoration: none;
-  text-rendering: optimizeLegibility; }
-
-.social-likes__button,
-.social-likes__counter {
-  display: inline-block;
-  margin: 0;
-  outline: 0; }
-
-.social-likes__button {
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-
-.social-likes__button:before {
-  content: "";
-  display: inline-block; }
-
-.social-likes__icon {
-  position: absolute;
-  top: 0;
-  left: 0; }
-
-.social-likes__counter {
-  display: none;
-  position: relative; }
-
-.social-likes_ready .social-likes__counter,
-.social-likes__counter_single {
-  display: inline-block; }
-
-.social-likes_ready .social-likes__counter_empty {
-  display: none; }
-
-.social-likes_vertical .social-likes__widget {
-  display: block; }
-
-.social-likes_notext .social-likes__button {
-  padding-left: 0; }
-
-.social-likes_single-w {
-  position: relative;
-  display: inline-block; }
-
-.social-likes_single {
-  position: absolute;
-  text-align: left;
-  z-index: 99999;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: visibility 0 .3s,opacity .3s ease-out;
-  transition: visibility 0s .3s,opacity .3s ease-out;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-.social-likes_single.social-likes_opened {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: opacity .3s ease-out;
-  transition: opacity 0.3s ease-out; }
-
-.social-likes_single.social-likes_opened .social-likes__single-container {
-  visibility: visible; }
-
-.social-likes__button_single {
-  position: relative; }
-
-.social-likes {
-  min-height: 36px; }
-
-.social-likes,
-.social-likes_single-w {
-  line-height: 19px; }
-
-.social-likes__widget {
-  margin: 6px;
-  color: #000;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  line-height: 19px; }
-
-.social-likes__widget:hover,
-.social-likes__widget:active,
-.social-likes__widget:focus {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #fff;
-  cursor: pointer; }
-
-.social-likes__button,
-.social-likes__counter {
-  vertical-align: middle;
-  font-family: "Helvetica Neue",Arial,sans-serif;
-  font-size: 13px;
-  line-height: 20px;
-  cursor: inherit; }
-
-.social-likes__button {
-  padding: 1px 6px 1px 20px;
-  font-weight: 400;
-  border-right: 0; }
-
-.social-likes__icon {
-  width: 20px;
-  height: 18px;
-  margin-top: 1px;
-  background-repeat: no-repeat;
-  background-position: 50% 50%; }
-
-.social-likes__counter {
-  min-width: 12px;
-  padding: 1px 4px;
-  font-weight: 400;
-  text-align: center;
-  border-left: 1px solid #cccccc; }
-
-.social-likes__widget:hover > .social-likes__counter,
-.social-likes__widget:focus > .social-likes__counter,
-.social-likes__widget:active > .social-likes__counter,
-.social-likes__widget_active > .social-likes__counter {
-  position: relative;
-  border-left-color: transparent; }
-
-.social-likes__widget:hover > .social-likes__counter:before,
-.social-likes__widget:focus > .social-likes__counter:before,
-.social-likes__widget:active > .social-likes__counter:before,
-.social-likes__widget_active > .social-likes__counter:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -1px;
-  border-left: 1px solid;
-  opacity: 0.4; }
-
-.social-likes_vertical {
-  margin: -6px; }
-
-.social-likes_vertical .social-likes__widget {
-  margin: 6px; }
-
-.social-likes_notext {
-  margin: -3px; }
-
-.social-likes_notext .social-likes__widget {
-  margin: 3px; }
-
-.social-likes_notext .social-likes__button {
-  width: 18px; }
-
-.social-likes_notext .social-likes__icon {
-  width: 100%;
-  background-position: center center; }
-
-.social-likes__widget_single {
-  margin: 0; }
-
-.social-likes_single {
-  margin: -12px 0 0;
-  padding: 4px 0;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 3px; }
-
-.social-likes__single-container {
-  width: 100%;
-  display: table; }
-
-.social-likes_single .social-likes__widget {
-  float: none;
-  display: table-row;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  background: 0 0; }
-
-.social-likes_single .social-likes__button {
-  display: table-cell;
-  padding: 2px 6px 2px 24px; }
-
-.social-likes_single .social-likes__icon {
-  margin-left: 4px;
-  margin-top: 2px; }
-
-.social-likes_single .social-likes__counter {
-  display: table-cell;
-  padding: 2px 8px 2px 4px;
-  border-left: 0;
-  text-align: right; }
-
-.social-likes_single .social-likes__widget:hover > .social-likes__counter:before,
-.social-likes_single .social-likes__widget:focus > .social-likes__counter:before,
-.social-likes_single .social-likes__widget:active > .social-likes__counter:before {
-  display: none; }
-
-.social-likes__icon_single {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAANBAMAAACJLlk1AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURQAAADdx/Tdv/z9//wAA/zhw/zlz/zZx/DZx/Tdw/TZw/DZx/Tdx/cUcoZwAAAAMdFJOUwCAIAQBMh/Nv7zOuwoNnlgAAAAxSURBVAjXY2Bga2IAgqzjCgwMLFuPTgGyDQ4YMDAIChxgFGAQYDjAgJ1kQCMFgUAAAPr2CjLqR7ZxAAAAAElFTkSuQmCC"); }
-
-.social-likes__widget_single:hover,
-.social-likes__widget_single:active,
-.social-likes__widget_single:focus,
-.social-likes__widget_active {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #3673f4;
-  border-color: #3673f4;
-  color: white; }
-
-.social-likes__widget_single:hover .social-likes__icon_single,
-.social-likes__widget_single:active .social-likes__icon_single,
-.social-likes__widget_single:focus .social-likes__icon_single,
-.social-likes__widget_active .social-likes__icon_single {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAANBAMAAACJLlk1AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURQAAAP///////////////////////////////////////////////649SjkAAAAMdFJOUwCAIAQBHzK/zby7zi9WA1QAAAAxSURBVAjXY2BgLWIAgugTCgwMLMuOTQGyDQ4YMDAIChxgFGAQYDjAgJ1kQCMFgUAAAO6kCgXRSb6qAAAAAElFTkSuQmCC"); }
-
-.social-likes__icon_facebook {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURQAAAERVnUJTnEJTnUFSm0JSmz9ZmUFSnEVRlkFSm0JTnOFJfLwAAAAKdFJOUwA85klK5xSjFuSkBLVgAAAAL0lEQVQI12MwWgUEygxaIGoRA5CoYFwFohIgFMMqJEqAgRGJQpbTAlFLGVxB1BQA/zMjpvikUOQAAAAASUVORK5CYII="); }
-
-.social-likes__widget_facebook:hover,
-.social-likes__widget_facebook:active,
-.social-likes__widget_facebook:focus {
-  background: #425497;
-  border-color: #425497; }
-
-.social-likes__widget_facebook:hover .social-likes__icon_facebook,
-.social-likes__widget_facebook:active .social-likes__icon_facebook,
-.social-likes__widget_facebook:focus .social-likes__icon_facebook {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURQAAAP///////////////////////////////////////88h6/kAAAAKdFJOUwA85knnShSjFuSJMex3AAAAL0lEQVQI12MwWgUEygxaIGoRA5CoYFwFohIgFMMqJEqAgRGJQpbTAlFLGEJA1FQA/4Yjtfe91e4AAAAASUVORK5CYII="); }
-
-.social-likes__icon_twitter {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAMAAABlXnzoAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACuUExURQAAABq16hq06hu06xmy5Ru16hi07Bu06hi07hq16xu06xu06x2w6xOw6xq16xu16hq16hmy5R608Bq16hqz6hq06hq06xu16hu16hq06hu16xq26huz6hq06hu07Byq4hqz7Bu06hm06wC//zPM/xu06hq16hu06hq16hy26xq16hqz6x216xu06xq16xqy7Rq06xq16hq16xu16hu17Bu06wD//wB//xu16xu168IFmEIAAAA5dFJOUwBM498U/Cn+H/bZZxoNjrFyChGjWL2F/YqlwjFwxzcJX/tPBAVxyJf5Na5ONOloOZqHa6B5qAECqtOTkwwAAAB5SURBVAjXRc7nEoJAEAPggMiBvaBYEHvFhj3v/2LcHgPm3zeZ2Q3ma0i6w93p6JyxGG+EbZLKThBxNgUaSpMHC+6SatCpi7gHVhOWGQHxXwz0ka1fyO9p3i4FW/Lik1Zz1ZpmwfdhXPEE1tsWhH3HdHBfz9/96uXIAII2FOflt9YWAAAAAElFTkSuQmCC"); }
-
-.social-likes__widget_twitter:hover,
-.social-likes__widget_twitter:active,
-.social-likes__widget_twitter:focus {
-  background: #00b7ec;
-  border-color: #00b7ec; }
-
-.social-likes__widget_twitter:hover .social-likes__icon_twitter,
-.social-likes__widget_twitter:active .social-likes__icon_twitter,
-.social-likes__widget_twitter:focus .social-likes__icon_twitter {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAMAAABlXnzoAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACuUExURQAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////y2K9CoAAAA5dFJOUwDjTGcU/Cn+H/Ya2d8NjrFyChGjWL2F/YqlBHBP+wnHN8IFMV9xyJdONDX5ruloOZqHawGoqnkCoFycKRQAAAB5SURBVAjXRc7nEoJAEAPggMiBvaBYEHvFhj3v/2LcHgPm3zeZ2Q3iCSTd4e58co7YjFfCNkllHTDlfA3UlCYTG+6MatCpiLgHoiXLjIDFXwz0ka1fyO9p3i4FW/LimVZz1Ztmwfdh3PAE9ssShH3HdHA/v/f96uXIAHxfFOel4oDwAAAAAElFTkSuQmCC"); }
-
-.social-likes__icon_plusone {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAMAAACOacfrAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABvUExURQAAANVFPtpIPNZGPdhFPdZGPdZFPdBFRdRGPdZFPtVHPtZFPdZGPtZGPNVFPdZGPtZFPtZFPtZFP9ZGPtVGPdZFPtdHP9VFPtZGPdVFPdVGPtVGPdVGPdVGPtZFPtZGPdZGPtVFPdVGP9VGPtZGPkE5bP8AAAAkdFJOUwDmFfMhztwLNvVW47xM/OnuryzI0pdA8cPXoOz3/vm1+t9pjuidahEAAABxSURBVAjXLcxXFsIwDETRcbfjkpCQSgftf43YCP1dPR0BLhkxDCfwxIil9I7hb3WdSP9FFjhIwovGM806HnBdkO38Y4uBVFdSttU3hdyarm0W+1SeGWNfQwoeWO6Gf4bX79XE2mnr8uPiWXpT62pGxhe/6gV7Y92howAAAABJRU5ErkJggg=="); }
-
-.social-likes__widget_plusone:hover,
-.social-likes__widget_plusone:active,
-.social-likes__widget_plusone:focus {
-  background: #dd4241;
-  border-color: #dd4241; }
-
-.social-likes__widget_plusone:hover .social-likes__icon_plusone,
-.social-likes__widget_plusone:active .social-likes__icon_plusone,
-.social-likes__widget_plusone:focus .social-likes__icon_plusone {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAMAAACOacfrAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABvUExURQAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////y/TAtEAAAAkdFJOUwDmFfMhztwLNvVW47xM/OnuryzI0pdA8cPXoOz+9/m1+t9pjmJKNOkAAABxSURBVAjXLcxXFsIwDETRcbfjkpCQSgftf43YCP1dPR0BLhkxDCfwxIil9I7hr3WdSP9FFjhIwovGM806HnBdkO38Y4uBVDdSttU3hdyarm0W+1SeGWNfQwoeWO6Gf4bX79XE2mnr8uPiWXpT62pGxhe/uAV7kao1zQAAAABJRU5ErkJggg=="); }
-
-.social-likes__icon_mailrum {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAEFUExURQAAAN2VAN+UAN+TAN6TAN+TAN+UAN+TAOCRAOCSAN6TAN+SAN+SAN6TAN+TAN6SAOGRAN+TAN+TAN6TAN+SAN6SAN+UAN+TANyWAN+TAN6UAN+SAN2SAN+TAN+TAN+SAN6SAN+TAN6TAOGWAN6SAN6PAOCRAN6SAN+PAN6SAN+SAN6TAN+SAN+TAN6UAN6SAN+SAN+TAN6TAN+SAOKNAN6TAN6TAN+SAN2TAN+SAN6SAOCOANqRAN+TANuVAN+TAN+TAN+SAN+TAN+UAN+RAN+SAN6TAN6SANqRAN6TAN+SAN+TAN+TAN+TAN+SAN+TAOCTAOWZAN6SAN+SAN+TAN6TAN+TAITwHJ4AAABWdFJOUwA1aejV00r7KmP00pCVWPUj8uGk85cY4xb4N8g2iru6dpGHEeQnW+4g3VlO8Ngf/iiCVeIJd5yBRbgvGQ7JHbl5evEwYnHeZxVmUKj5k9mDawrG0XCOw2VMxAAAAJFJREFUCNcVy0UCglAARdGnxAcBJe3u7u7ujr//pQh3dgcHwOv7IUT/TWBX5ExZFC2G4YEuW5oLT3GaSRAVPVp3e95SNl6eGaj1m7QCJOnO60PD22Idul4JGmg7HXGmutyY6KTC1AXkqXtLIYf8Md9lpHkUaYFggFPPhjIe0IIARPXr7XCyhnzOocfHnZC97fAHYCsSBT+KnnYAAAAASUVORK5CYII="); }
-
-.social-likes__widget_mailru:hover,
-.social-likes__widget_mailru:active,
-.social-likes__widget_mailru:focus {
-  background: #255896;
-  border-color: #255896;
-  color: #ffcd00; }
-
-.social-likes__widget_mailru:hover .social-likes__icon_mailru,
-.social-likes__widget_mailru:active .social-likes__icon_mailru,
-.social-likes__widget_mailru:focus .social-likes__icon_mailru {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAEFUExURQAAAP/OAP/MAP/NAP/NAP/MAP/LAP/NAP/OAP/OAP/MAP/NAP/NAP/NAP/NAP/MAP/NAP/NAP/NAP/NAP/MAP/MAP/JAP/MAP/QAP/MAP/MAP/NAP/LAP/NAP/NAP/NAP/MAP/NAP/NAP/SAP/MAP/MAP/MAP/KAP/NAP/NAP/PAP/OAP/NAP/GAP/NAP/MAP/MAP/NAP/NAP/MAP/MAP/NAP/NAP/NAP/LAP/OAP/NAP/IAP/MAP/KAP/MAP/MAP/PAP/NAP/NAP/NAP/NAP/NAP/OAP/NAP/MAP/MAP/NAP/MAP/MAP/MAP/MAP/MAP/MAP/MAP/MAP/MAP/MAP/MAP/NADYVBygAAABWdFJOUwA1aejT1Ur7KmP00pCVWCP18uGk85cY4xb4N8g2ina6u5GHEeTuWyfwTiBZ3Ql3KJwfglX+4tiBRS+4DhkdeXowccm5YvEVZ5ODZtne+ahQcMaO0WsKStUUQwAAAJFJREFUCNcVy0UCglAARdGnxAcBJe3u7u7ujr//pQh3dgcHwO/5IUR/T2FXZk1ZFC2G4YEaV50JX3GSSRAf6rTl9rykbLKyNtBvNmgJiNOVV0XX2+YculsIGmgnHXGmOF+a6KXC1AXkqXtLIYf8MfU+1jyKtEEwwPoehjIa0JwARPXb8XC2hnzBofvThZCr7fAHYCoSBacAOY0AAAAASUVORK5CYII="); }
-
-.social-likes__icon_vkontakte {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAB1UExURQAAAFx4m39/f1hznFl1m1l1mj9/f1h1m1V3mVdzmVl1m1h0m1l1mll0m1l1l1h0m1tznVp4nVl1m1p3mV9/n1h0m1t2mll1mgAA/1h1nFl1m1pzm1h0m1h1mllymVl1mlh1mlh0m1t1nFl0mlZ1mVtwmVl1m7Jh3dIAAAAmdFJOUwAkAktK5wTmD0nkpOKxJccqIvYtCJUcegE0tjOZqij+hIgnjjIZFfWMEwAAAFtJREFUCNdNzVcOwCAMA1AXKHTvvSf3P2JBSqtGcuT3EQW+0jTKx9eNYBaAzoltsbnms8pecL06PUF648EGgrfs290UBK51i5RQTnUuIwLAktDe/J66EO7bA/EAylcPktuRikMAAAAASUVORK5CYII="); }
-
-.social-likes__widget_vkontakte:hover,
-.social-likes__widget_vkontakte:active,
-.social-likes__widget_vkontakte:focus {
-  background: #526e8f;
-  border-color: #526e8f; }
-
-.social-likes__widget_vkontakte:hover .social-likes__icon_vkontakte,
-.social-likes__widget_vkontakte:active .social-likes__icon_vkontakte,
-.social-likes__widget_vkontakte:focus .social-likes__icon_vkontakte {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAB1UExURQAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+WLZkAAAAAmdFJOUwAkAktK5wTmD0nk4qSxxyUq9iItejSVCBwBhP4ntjMoiI4ZqjKZkhg3SQAAAFtJREFUCNdNzVcOwCAMA1AXKHTvvSf3P2JBSqtGcuT3EQW+0jTKx9eNYBaA3oltsbnOvc1ecD06NUF6y8Rmgrduw9HlBK51hYRQ3k0hQwLA0sje/J66EO7bA/EAyccPknyrAlUAAAAASUVORK5CYII="); }
-
-.social-likes__icon_odnoklassniki {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAMCAMAAABoQAyvAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABmUExURQAAAO+SIO+RIOyRJP+RJPCRIO+SIO+SIe2VI++SIPCSIf+fH/KPH/GSIu+SIfCRIfKSH++SIPCSIPCRIO+RIfCUI+6QIe+SIO+RIO+PH++RIPCRIPCRIO+SIPCRIfCRIfCSIPCSITDDkCMAAAAhdFJOUwCUhRwHwpbmHWXPCClLc9Ao++HUkSQu2ocQyfO7yp/g8t7ozhAAAABYSURBVAjXBcGHAYAgAASxwwYWRMUult9/SRMosmnKCsDo+2QgH1/n3jFn0A23Btqg51FooYtS7KCufN/7qqaUmkYqWWYr2XkBt0mbg9XqPGVX9isdR7r2HzzRBpHJpEsFAAAAAElFTkSuQmCC");
-  background-position: 6px 3px; }
-
-.social-likes__widget_odnoklassniki:hover,
-.social-likes__widget_odnoklassniki:active,
-.social-likes__widget_odnoklassniki:focus {
-  background: #f6903b;
-  border-color: #f6903b; }
-
-.social-likes__widget_odnoklassniki:hover .social-likes__icon_odnoklassniki,
-.social-likes__widget_odnoklassniki:active .social-likes__icon_odnoklassniki,
-.social-likes__widget_odnoklassniki:focus .social-likes__icon_odnoklassniki {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAMCAMAAABoQAyvAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABpUExURQAAAP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wbrXYAAAAidFJOUwCWhZQHwv0d5mUcz1YpCOHQKPvec5Ekn8ry4C7ahxDG87v81uwdAAAAWElEQVQI1wXBhwGAIAAEsbOCHVSwt99/SBPI02FIcyDTtimDetyN2ccarxVWeXqnZZHroZukqYMqaee5TSoKlU1TqiAGK9kQwZzSaeCweh7Zg+v97vt7rx8ywwahFuCYrQAAAABJRU5ErkJggg=="); }
-
-.social-likes__icon_pinterest {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAMAAABIK2QJAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAADhUExURQAAAMQOLMUOLMQOLMUPLMUOLb8AP/8AALYAJMQPLcQOLMYOKsQOLcwRM8QOLMwZM8QPLcQPLcUPLcQPLcMQLcQOLcYOKsUPLdQAKsUPLMcNMMUOLMQOLMgSJMUPLcUPLMUPLMEPLsUPLMUPLcUOLMMPLcQPKsIMKsMPLcQOLsQPLf8AAMQPLcINLsUPLMYOLcMQLsQPLcUMLMQPLMQOLcUPLcUPLMQPLcMPLcQPLcQPLMMOLMQPLcUPLcUPLcQPLcQOLMQOLMQOLcQPLMUPLMQPLcYRLcQOLMUPLcUNLMUPLSb7ts8AAABKdFJOUwDTm+Ri8wQBB/31EowPNArndsaHX68k+AbIJfTfDkP7cyGWZtQzMCoiacQCtCb8Wk2YKNp75urKEe1yRf73VGRo9p36x8UtkLVubO0tPwAAAIBJREFUCNc1jFUOwgAUBKel1HB3d3d3h3f/A1EC7NdkMllgcHXvVmoP0FV5Hg8PcdWhJWuWsNm2dSYLzvYebtJApuZJXtCVPPbInF/udKpWmnJ/PFOgVlCS5CpDy9UspURzTilKNmNJxHDQiCXi0ZD/YwkEw/znc2tfcCKP1/zZN2lRDcEQ7lIvAAAAAElFTkSuQmCC"); }
-
-.social-likes__widget_pinterest:hover,
-.social-likes__widget_pinterest:active,
-.social-likes__widget_pinterest:focus {
-  background: #cc002b;
-  border-color: #cc002b; }
-
-.social-likes__widget_pinterest:hover .social-likes__icon_pinterest,
-.social-likes__widget_pinterest:active .social-likes__icon_pinterest,
-.social-likes__widget_pinterest:focus .social-likes__icon_pinterest {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAMAAABIK2QJAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAADhUExURQAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6yqAvMAAABKdFJOUwDTm+Ri8wQBB/31EowPNArndsaHX68k+AbI9CUO30P7c5ZmITMw1CoiabQCxCZa/E0omObae8rq9kVu7fr3xy1UxWT+cp2QaLURQyWHqgAAAIBJREFUCNc1jFUOwgAUBKel1HB3d3d3h3f/A1EC7NdkMlmgv3fvNmoP0FV5Ps53cdWgJVdesLp0daZzbvYRTtJAZuZS1tCWPPbYXGwPdOpWhtJgNFGgWlCSZMtDy9WspERzTilKLm1JxHDQiCXi0ZD/YwkEw/znc2tfcCKP1/zZN22JDcGD2fwRAAAAAElFTkSuQmCC"); }
+  top: -3px; }
+.social-shares .twitter-share-button, .social-shares .twitter-tweet-button, .social-shares .twitter-count-horizontal {
+  width: 85px !important; }
 
 /*------------------------------------*\
     $SEARCH
@@ -4610,8 +4284,15 @@ hr {
 .primary-search__results h3 {
   border-bottom: 1px solid #dddddd; }
 
-.primary-search__results--item {
-  border-bottom: 1px solid #dddddd; }
+.primary-search__results--item:hover {
+  background-color: #f2f2f2; }
+.primary-search__results--item > a {
+  color: #444444; }
+  .primary-search__results--item > a, .primary-search__results--item > a:hover {
+    text-decoration: none; }
+
+.results-title {
+  color: #3eb1c8; }
 
 thead th {
   border-bottom: 2px solid #ddd; }
@@ -4624,12 +4305,15 @@ tbody {
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-/** 
+/**
  * Use this mixin to quickly pump out buttons:
  * @mixin btn($background, $border, $color).
- * 
- * Quick not that it will not work with transparency due to 
- * the hover states. 
+ *
+ * Change the hover and other states with:;
+ * @mixin btn-effects($background, $border, $color).
+ *
+ * Quick not that it will not work with transparency due to
+ * the hover states.
  */
 .button-group {
   display: block; }
@@ -4640,10 +4324,6 @@ tbody {
   color: inherit;
   background-color: #f9b625;
   border-color: #f8ae0c; }
-  .button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .open .button--primary.dropdown-toggle {
-    color: inherit;
-    background-color: #efa507;
-    border-color: #c28605; }
   .button--primary:active, .button--primary.active, .open .button--primary.dropdown-toggle {
     background-image: none; }
   .button--primary.disabled, .button--primary.disabled:hover, .button--primary.disabled:focus, .button--primary.disabled:active, .button--primary.disabled.active, .button--primary[disabled], .button--primary[disabled]:hover, .button--primary[disabled]:focus, .button--primary[disabled]:active, .button--primary[disabled].active, fieldset[disabled] .button--primary, fieldset[disabled] .button--primary:hover, fieldset[disabled] .button--primary:focus, fieldset[disabled] .button--primary:active, fieldset[disabled] .button--primary.active {
@@ -4651,15 +4331,15 @@ tbody {
     border-color: #f8ae0c;
     cursor: not-allowed;
     pointer-events: none; }
+  .button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .open .button--primary.dropdown-toggle {
+    color: white;
+    background-color: #efa507;
+    border-color: #c28605; }
 
 .button--secondary {
   color: inherit;
   background-color: #666062;
   border-color: #595455; }
-  .button--secondary:hover, .button--secondary:focus, .button--secondary:active, .button--secondary.active, .open .button--secondary.dropdown-toggle {
-    color: inherit;
-    background-color: #514c4e;
-    border-color: #393637; }
   .button--secondary:active, .button--secondary.active, .open .button--secondary.dropdown-toggle {
     background-image: none; }
   .button--secondary.disabled, .button--secondary.disabled:hover, .button--secondary.disabled:focus, .button--secondary.disabled:active, .button--secondary.disabled.active, .button--secondary[disabled], .button--secondary[disabled]:hover, .button--secondary[disabled]:focus, .button--secondary[disabled]:active, .button--secondary[disabled].active, fieldset[disabled] .button--secondary, fieldset[disabled] .button--secondary:hover, fieldset[disabled] .button--secondary:focus, fieldset[disabled] .button--secondary:active, fieldset[disabled] .button--secondary.active {
@@ -4667,16 +4347,16 @@ tbody {
     border-color: #595455;
     cursor: not-allowed;
     pointer-events: none; }
+  .button--secondary:hover, .button--secondary:focus, .button--secondary:active, .button--secondary.active, .open .button--secondary.dropdown-toggle {
+    color: white;
+    background-color: #514c4e;
+    border-color: #393637; }
 
 .button--subtle, input.button--subtle {
   background-color: #e9e9e9;
   color: #6d6e71;
   background-color: rgba(229, 229, 229, 0.35);
   border-color: rgba(216, 216, 216, 0.35); }
-  .button--subtle:hover, .button--subtle:focus, .button--subtle:active, .button--subtle.active, .open .button--subtle.dropdown-toggle, input.button--subtle:hover, input.button--subtle:focus, input.button--subtle:active, input.button--subtle.active, .open input.button--subtle.dropdown-toggle {
-    color: #6d6e71;
-    background-color: rgba(209, 209, 209, 0.35);
-    border-color: rgba(186, 186, 186, 0.35); }
   .button--subtle:active, .button--subtle.active, .open .button--subtle.dropdown-toggle, input.button--subtle:active, input.button--subtle.active, .open input.button--subtle.dropdown-toggle {
     background-image: none; }
   .button--subtle.disabled, .button--subtle.disabled:hover, .button--subtle.disabled:focus, .button--subtle.disabled:active, .button--subtle.disabled.active, .button--subtle[disabled], .button--subtle[disabled]:hover, .button--subtle[disabled]:focus, .button--subtle[disabled]:active, .button--subtle[disabled].active, fieldset[disabled] .button--subtle, fieldset[disabled] .button--subtle:hover, fieldset[disabled] .button--subtle:focus, fieldset[disabled] .button--subtle:active, fieldset[disabled] .button--subtle.active, input.button--subtle.disabled, input.button--subtle.disabled:hover, input.button--subtle.disabled:focus, input.button--subtle.disabled:active, input.button--subtle.disabled.active, input.button--subtle[disabled], input.button--subtle[disabled]:hover, input.button--subtle[disabled]:focus, input.button--subtle[disabled]:active, input.button--subtle[disabled].active, fieldset[disabled] input.button--subtle, fieldset[disabled] input.button--subtle:hover, fieldset[disabled] input.button--subtle:focus, fieldset[disabled] input.button--subtle:active, fieldset[disabled] input.button--subtle.active {
@@ -4684,6 +4364,10 @@ tbody {
     border-color: rgba(216, 216, 216, 0.35);
     cursor: not-allowed;
     pointer-events: none; }
+  .button--subtle:hover, .button--subtle:focus, .button--subtle:active, .button--subtle.active, .open .button--subtle.dropdown-toggle, input.button--subtle:hover, input.button--subtle:focus, input.button--subtle:active, input.button--subtle.active, .open input.button--subtle.dropdown-toggle {
+    color: white;
+    background-color: #666062;
+    border-color: #595455; }
 
 .button--unstyled:link, .button--unstyled:visited, .button--unstyled:hover, .button--unstyled:focus, .button--unstyled:active,
 input.button--unstyled:link,
@@ -5375,11 +5059,11 @@ textarea.text-input {
   color: white !important; }
 
 .basic-transition, .locations li > a, .more-stories__link {
-  -webkit-transition: 250ms ease-in;
-  -moz-transition: 250ms ease-in;
-  -ms-transition: 250ms ease-in;
-  -o-transition: 250ms ease-in;
-  transition: 250ms ease-in; }
+  -webkit-transition: 250ms ease;
+  -moz-transition: 250ms ease;
+  -ms-transition: 250ms ease;
+  -o-transition: 250ms ease;
+  transition: 250ms ease; }
 
 .decoration--none, .locations li > a:hover {
   text-decoration: none; }

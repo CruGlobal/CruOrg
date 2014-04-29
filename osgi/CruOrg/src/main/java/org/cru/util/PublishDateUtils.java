@@ -7,11 +7,11 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.*;
+import static com.day.cq.commons.jcr.JcrConstants.JCR_CREATED;
 
 
 public class PublishDateUtils {
 
-    public static final String KEY_JCR_CREATED = "jcr:created";
     public static final String KEY_PUBLISH_DATE = "date";
 
     /*
@@ -25,7 +25,7 @@ public class PublishDateUtils {
      * @param unsortedIterator
      * @return ArrayList
      */
-    public static ArrayList<Resource> sort(final RangeIterator<Resource> unsortedIterator){
+    public static ArrayList<Resource> getSortedList(final RangeIterator<Resource> unsortedIterator){
         ArrayList<Resource> list = new ArrayList<Resource>();
         while (unsortedIterator.hasNext()) {
             list.add(unsortedIterator.next());
@@ -46,12 +46,12 @@ public class PublishDateUtils {
                                                        final Resource resource, final Long max) {
 
         ArrayList<String> pathList = new ArrayList();
-        ArrayList<Resource> resourceList = PublishDateUtils.sort(unsortedIterator);
+        ArrayList<Resource> resourceList = PublishDateUtils.getSortedList(unsortedIterator);
         Long items = 0L;
 
         if (resource != null && resourceList != null) {
             ResourceResolver resourceResolver = resource.getResourceResolver();
-            PageManager pageManager = (PageManager) resourceResolver.adaptTo(PageManager.class);
+            PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
 
             //get actual page path
             String actualPagePath = pageManager.getContainingPage(resource).getPath();
@@ -74,27 +74,27 @@ public class PublishDateUtils {
 
 
     /**
-     * get Created Date or publish Date
-     * @param resource
+     * get Publish Date or created Date
+     * @param resource the Resource containing the date property
      * @return Calendar
      */
-    public static Calendar getCreatedDate(final Resource resource){
-        Calendar  t = null;
-        if (resource.adaptTo(ValueMap.class).containsKey(KEY_PUBLISH_DATE)) {
-            t = resource.adaptTo(ValueMap.class).get(KEY_PUBLISH_DATE, Calendar.class);
+    public static Calendar getPublishDate(final Resource resource){
+        Calendar publishDate = resource.adaptTo(ValueMap.class).get(JCR_CREATED, Calendar.class);
+        ValueMap map = resource.adaptTo(ValueMap.class);
+        if (map.containsKey(KEY_PUBLISH_DATE)) {
+            if(map.get(KEY_PUBLISH_DATE, Calendar.class) != null){
+                publishDate = map.get(KEY_PUBLISH_DATE, Calendar.class);
+            }
         }
-        if(null == t){
-           t = resource.adaptTo(ValueMap.class).get(KEY_JCR_CREATED, Calendar.class);
-        }
-        return t;
+        return publishDate;
     }
 
 
     static class CreatedDateComparator implements Comparator<Resource> {
         @Override
         public int compare(final Resource a, final Resource b) {
-            Calendar date1 = getCreatedDate(a);
-            Calendar date2 = getCreatedDate(b);
+            Calendar date1 = getPublishDate(a);
+            Calendar date2 = getPublishDate(b);
             return date1.before(date2) ? 1 : date1.after(date2) ? -1 : 0;
         }
     }

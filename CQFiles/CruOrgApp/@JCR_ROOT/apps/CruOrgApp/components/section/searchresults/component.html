@@ -1,47 +1,73 @@
-<h1>SEARCH COMPONENT</h1>
+<div class="primary-search__results">
+    {%#if content.hits %}
+        {%!Results %}
+        <div class="layout-single-column">
+            <h3>{%{content.statisticsText}%}</h3>
+        </div>
 
-{%!Search box %}
-<form action="{%page.path%}.html">
-    <input size="41" maxlength="2048" name="q" value="{%content.escapedQueryForAttr%}"/>
-    <input value="{%content.searchButtonText%}" type="submit"/>
-</form>
-
-{%!Results %}
-{%#if content.hits %}
-    <p>{%{content.statisticsText}%}</p>
-    <ul>
-        {%#each content.hits %}
-            <li>
-                <a href="{%this.URL%}" target="{% content.resultTarget %}">{%{this.title}%}</a><br>
-                <div>{%{this.excerpt}%}</div>
-            </li>
-        {%/each%}
-    </ul>
-    {%!Paginator %}
-    {%#if content.showPagination %}
-        <p>{%content.resultPagesText%}
-            {%#if content.result.previousPage %}
-            <a href="{%content.result.previousPage.URL%}">{%content.previousText%}</a>
-            {%/if%}
-            {%#each content.result.resultPages %}
-            {%#if this.currentPage %}
-            {% this.index %}
-            {%else%}
-            <a href="{% this.URL %}">{% this.index %}</a>
-            {%/if%}
+        <ul class="block-list  mb-">
+            {%#each content.hits %}
+                <li class="primary-search__results--item">
+                    <a class="layout-single-column"  href="{%this.URL%}">
+                        <h4 class="results-title  pb--  mb0">{%{this.title}%}</h4>
+                        <!-- Limit to 20-25 words -->
+                        <p class="pb-  mb0">{%{this.excerpt}%}</p>
+                    </a>
+                </li>
             {%/each%}
-            {%#if content.result.nextPage %}
-            <a href="{%content.result.nextPage.URL%}">{%content.nextText%}</a>
+        </ul>
+
+        {%!Paginator %}
+        <div class="layout-single-column">
+            {%#if content.showPagination %}
+                <ol class="nav  pagination  layout-single-column">
+                    <li class="pagination__prev">
+                        {%#if content.result.previousPage %}
+                            <a href="{%content.result.previousPage.URL%}"
+                               class="button  button--small  button--subtle">{%content.previousText%}</a>
+                        {%else%}
+                            {%content.previousText%}
+                        {%/if%}
+                    </li>
+
+                    {%#each content.result.resultPages %}
+                        {%#if this.currentPage %}
+                            <li class="current">
+                        {%else%}
+                            <li>
+                        {%/if%}
+                            <a href="{% this.URL %}">{% this.pageNumber %}</a>
+                        </li>
+                    {%/each%}
+
+                    <li class="pagination__next">
+                        {%#if content.result.nextPage %}
+                        <a href="{%content.result.nextPage.URL%}"
+                           class="button  button--small  button--subtle">{%content.nextText%}</a>
+                        {%else%}
+                            {%content.nextText%}
+                        {%/if%}
+                    </li>
+                </ol>
             {%/if%}
-        </p>
-    {%/if%}
-{%else%}
-    <p>
-        {%#if content.result.spellcheck %}
+        </div>
+    {%else%}
+        {%!No Results %}
+        <div class="layout-single-column">
+            {%#if content.result.spellcheck %}
             {%{content.spellcheckText}%}<br>
-        {%/if%}
-        {%#if content.escapedQuery %}
+            {%/if%}
+            {%#if content.escapedQuery %}
             {%{content.noResultsText}%}
-        {%/if%}
-    </p>
-{%/if%}
+            {%/if%}
+            {%#if page.isEditMode %}
+                {%#unless content.escapedQuery %}
+                    [SEARCH RESULTS]<br>
+                    {%#unless content.pagesToSearch %}
+                        Set a <strong>page to search</strong> in the dialog.
+                    {%/unless%}
+                {%/unless%}
+            {%/if%}
+        </div>
+    {%/if%}
+</div>

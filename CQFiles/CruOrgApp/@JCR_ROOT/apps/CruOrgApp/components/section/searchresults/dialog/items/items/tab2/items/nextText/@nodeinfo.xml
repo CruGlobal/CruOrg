@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./nextText]]></value>
     </property>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[Next]]></value>
+    </property>
   </properties>
   <mixins />
 </node>

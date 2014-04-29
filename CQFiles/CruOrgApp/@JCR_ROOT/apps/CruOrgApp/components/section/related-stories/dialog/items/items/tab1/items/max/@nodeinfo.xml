@@ -2,16 +2,16 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+      <value><![CDATA[numberfield]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Previous label]]></value>
+      <value><![CDATA[Max. Number of Items]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./previousText]]></value>
+      <value><![CDATA[./max]]></value>
     </property>
-    <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[Previous]]></value>
+    <property name="validateOnBlur" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
     </property>
   </properties>
   <mixins />
