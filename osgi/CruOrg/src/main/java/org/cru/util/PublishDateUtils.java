@@ -79,9 +79,12 @@ public class PublishDateUtils {
      * @return Calendar
      */
     public static Calendar getCreatedDate(final Resource resource){
-        Calendar  t = resource.adaptTo(ValueMap.class).get(KEY_JCR_CREATED, Calendar.class);
+        Calendar  t = null;
         if (resource.adaptTo(ValueMap.class).containsKey(KEY_PUBLISH_DATE)) {
             t = resource.adaptTo(ValueMap.class).get(KEY_PUBLISH_DATE, Calendar.class);
+        }
+        if(null == t){
+           t = resource.adaptTo(ValueMap.class).get(KEY_JCR_CREATED, Calendar.class);
         }
         return t;
     }
