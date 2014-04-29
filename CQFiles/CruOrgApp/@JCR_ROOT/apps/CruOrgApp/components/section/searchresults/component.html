@@ -23,7 +23,8 @@
                 <ol class="nav  pagination  layout-single-column">
                     <li class="pagination__prev">
                         {%#if content.result.previousPage %}
-                            <a class="button  button--small  button--subtle">{%content.previousText%}</a>
+                            <a href="{%content.result.previousPage.URL%}"
+                               class="button  button--small  button--subtle">{%content.previousText%}</a>
                         {%else%}
                             {%content.previousText%}
                         {%/if%}
@@ -40,8 +41,9 @@
                     {%/each%}
 
                     <li class="pagination__next">
-                        {%#if content.result.previousPage %}
-                        <a class="button  button--small  button--subtle">{%content.nextText%}</a>
+                        {%#if content.result.nextPage %}
+                        <a href="{%content.result.nextPage.URL%}"
+                           class="button  button--small  button--subtle">{%content.nextText%}</a>
                         {%else%}
                             {%content.nextText%}
                         {%/if%}
