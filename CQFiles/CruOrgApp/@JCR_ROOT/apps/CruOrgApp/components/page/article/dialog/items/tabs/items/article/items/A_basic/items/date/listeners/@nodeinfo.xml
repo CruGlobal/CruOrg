@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="change" type="1" multiple="false">
+      <value><![CDATA[function(){     var dateTextWidget = this.findParentByType('dialog').getField("./dateText");
+              dateTextWidget.setValue(Cru.widgets.Article.getdateFormatProperty(this.getValue() ,"d F Y"));  }]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

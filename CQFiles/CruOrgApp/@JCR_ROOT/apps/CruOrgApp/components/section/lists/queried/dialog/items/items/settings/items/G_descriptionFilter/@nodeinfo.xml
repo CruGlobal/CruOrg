@@ -16,6 +16,9 @@
     <property name="allowBlank" type="1" multiple="false">
       <value><![CDATA[true]]></value>
     </property>
+    <property name="defaultValue" type="6" multiple="false">
+      <value>true</value>
+    </property>
     <property name="validateOnBlur" type="1" multiple="false">
       <value><![CDATA[true]]></value>
     </property>

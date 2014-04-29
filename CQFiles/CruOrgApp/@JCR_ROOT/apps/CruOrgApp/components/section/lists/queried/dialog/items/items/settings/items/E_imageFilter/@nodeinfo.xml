@@ -14,7 +14,7 @@
             <value><![CDATA[select]]></value>
         </property>
         <property name="defaultValue" type="1" multiple="false">
-            <value><![CDATA[0]]></value>
+            <value><![CDATA[ALL]]></value>
         </property>
     </properties>
     <mixins />
