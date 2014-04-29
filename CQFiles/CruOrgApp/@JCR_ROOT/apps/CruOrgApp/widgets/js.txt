@@ -4,7 +4,6 @@ Cru.js
 Util.js
 SectionTitle.js
 MinMaxMultifield.js
-MediaEmbed.js
 
 
 rte/plugins/QuotePlugin.js
