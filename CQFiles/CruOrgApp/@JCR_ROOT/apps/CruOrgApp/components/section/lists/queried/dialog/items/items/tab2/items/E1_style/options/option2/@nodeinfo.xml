@@ -2,10 +2,10 @@
 <node nodeType="nt:unstructured">
   <properties>
     <property name="value" type="1" multiple="false">
-      <value />
+      <value><![CDATA[numbered-list]]></value>
     </property>
     <property name="text" type="1" multiple="false">
-      <value><![CDATA[empty]]></value>
+      <value><![CDATA[Numbered List]]></value>
     </property>
   </properties>
   <mixins />
