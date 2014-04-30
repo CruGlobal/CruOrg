@@ -24,8 +24,6 @@ import java.util.Set;
 public class QueriedPathListProcessor extends AddQueriedPagePathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/queried";
-    public static final String PATH_LIST_CONTEXT_PROPERTY_NAME = "list.paths";
-    public static final String PATHREF_CONTENT_KEY_NAME = "content.pathRef";
     public static final String QUERY_CONTENT_KEY_NAME = "content.query";
     public static final String MAX_CONTENT_KEY_NAME = "content.max";
 
@@ -39,9 +37,9 @@ public class QueriedPathListProcessor extends AddQueriedPagePathListContextProce
         Collection<String> pathList = new ArrayList();
         Resource resource = request.getResource();
 
-        if (contentModel.has(PATHREF_CONTENT_KEY_NAME) && contentModel.has(QUERY_CONTENT_KEY_NAME)) {
+        if (contentModel.has(PATHREFS_LIST_CONTENT_KEY) && contentModel.has(QUERY_CONTENT_KEY_NAME)) {
             //get PathReference
-            String pathRef = contentModel.getAsString(PATHREF_CONTENT_KEY_NAME);
+            String pathRef = contentModel.getAsString(PATHREFS_LIST_CONTENT_KEY);
             //get Tags
             List<String> tagsList = contentModel.getAs(QUERY_CONTENT_KEY_NAME , List.class);
             RangeIterator<Resource> pages = findByTags(resource, pathRef, tagsList);
@@ -51,7 +49,7 @@ public class QueriedPathListProcessor extends AddQueriedPagePathListContextProce
                 pathList = PublishDateUtils.getSortedPathList(pages, resource, max);
             }
         }
-        contentModel.set(PATH_LIST_CONTEXT_PROPERTY_NAME, pathList);
+        contentModel.set(PATHS_LIST_CONTEXT_KEY, pathList);
     }
 
 

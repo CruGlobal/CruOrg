@@ -1,30 +1,24 @@
 package org.cru.logiclesstemplates.processors.list;
 
 
-import com.day.cq.commons.RangeIterator;
 import com.google.common.collect.Sets;
 import com.xumak.base.templatingsupport.TemplateContentModel;
-
-
 import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
-
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
-import org.apache.sling.api.resource.Resource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.*;
-
+import static com.xumak.extended.contextprocessors.lists.ListConstants.PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME;
 
 @Component
 @Service
 public class QueriedFilterProcessor extends AddQueriedPagePathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/queried";
-    public static final String LIST_PAGES_CONTEXT_PROPERTY = "list.pages";
     public static final String TITLE_CONTENT_KEY_NAME = "content.titleFilter";
     public static final String TITLE_REMOVE_KEY_NAME = "title";
     public static final String DESCRIPTION_CONTENT_KEY_NAME = "content.descriptionFilter";
@@ -34,8 +28,6 @@ public class QueriedFilterProcessor extends AddQueriedPagePathListContextProcess
     public static final String IMAGE_VALUE_NONE = "NONE";
     public static final String IMAGE_VALUE_FIRST = "FIRST";
 
-
-   // private static final Logger LOGGER = LoggerFactory.getLogger(QueriedFilterProcessor.class);
     public static final int PRIORITY = AddQueriedPagePathListContextProcessor.PRIORITY - 20;
 
     @Override
@@ -49,7 +41,7 @@ public class QueriedFilterProcessor extends AddQueriedPagePathListContextProcess
         String imageStr = "";
         boolean titleFilter, descriptionFilter;
         int imageFilter = 0;
-        if (contentModel.has(LIST_PAGES_CONTEXT_PROPERTY)) {
+        if (contentModel.has(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME)) {
 
             if (contentModel.has(IMAGE_CONTENT_KEY_NAME)) {
                 imageStr = contentModel.getAsString(IMAGE_CONTENT_KEY_NAME);
@@ -58,9 +50,9 @@ public class QueriedFilterProcessor extends AddQueriedPagePathListContextProcess
             titleFilter = contentModel.has(TITLE_CONTENT_KEY_NAME);
             descriptionFilter = contentModel.has(DESCRIPTION_CONTENT_KEY_NAME);
 
-            ArrayList<Map<String, String>> pathList = contentModel.getAs(LIST_PAGES_CONTEXT_PROPERTY, ArrayList.class);
+            ArrayList<Map<String, String>> pathList = contentModel.getAs(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME, ArrayList.class);
             getListByFilter(pathList, titleFilter, descriptionFilter, imageFilter);
-            contentModel.set(LIST_PAGES_CONTEXT_PROPERTY, pathList);
+            contentModel.set(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME, pathList);
         }
     }
 
