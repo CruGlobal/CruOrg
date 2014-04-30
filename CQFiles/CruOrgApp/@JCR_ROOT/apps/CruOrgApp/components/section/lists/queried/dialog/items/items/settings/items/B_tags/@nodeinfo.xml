@@ -13,6 +13,9 @@
     <property name="cls" type="1" multiple="false">
       <value><![CDATA[cq-propsdialog-tags]]></value>
     </property>
+    <property name="allowBlank" type="6" multiple="false">
+      <value>false</value>
+    </property>
   </properties>
   <mixins />
 </node>
