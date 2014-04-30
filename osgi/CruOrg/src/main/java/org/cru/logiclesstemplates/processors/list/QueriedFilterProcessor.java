@@ -19,7 +19,7 @@ import static com.xumak.extended.contextprocessors.lists.ListConstants.PAGE_DETA
 public class QueriedFilterProcessor extends AddQueriedPagePathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/queried";
-    public static final String XUMAK_CURATED_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/curated-list";
+    public static final String XUMAK_CURATED_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/curated";
     public static final String TITLE_CONTENT_KEY_NAME = "content.titleFilter";
     public static final String TITLE_REMOVE_KEY_NAME = "navigationTitle";
     public static final String DESCRIPTION_CONTENT_KEY_NAME = "content.descriptionFilter";
