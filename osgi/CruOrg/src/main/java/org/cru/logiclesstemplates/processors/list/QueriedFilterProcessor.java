@@ -1,18 +1,20 @@
 package org.cru.logiclesstemplates.processors.list;
 
 
-import com.google.common.collect.Sets;
-import com.xumak.base.templatingsupport.TemplateContentModel;
-import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.api.SlingHttpServletRequest;
+import static com.xumak.extended.contextprocessors.lists.ListConstants.PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import static com.xumak.extended.contextprocessors.lists.ListConstants.PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.api.SlingHttpServletRequest;
+
+import com.google.common.collect.Sets;
+import com.xumak.base.templatingsupport.TemplateContentModel;
+import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
 
 @Component
 @Service
@@ -51,7 +53,8 @@ public class QueriedFilterProcessor extends AddQueriedPagePathListContextProcess
             titleFilter = contentModel.has(TITLE_CONTENT_KEY_NAME);
             descriptionFilter = contentModel.has(DESCRIPTION_CONTENT_KEY_NAME);
 
-            ArrayList<Map<String, String>> pathList = contentModel.getAs(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME, ArrayList.class);
+            ArrayList<Map<String, String>> pathList =
+                    contentModel.getAs(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME, ArrayList.class);
             getListByFilter(pathList, titleFilter, descriptionFilter, imageFilter);
             contentModel.set(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME, pathList);
         }
@@ -101,7 +104,7 @@ public class QueriedFilterProcessor extends AddQueriedPagePathListContextProcess
         int imageFilter = 0;
         if (imageStr.equals(IMAGE_VALUE_FIRST)) {
             imageFilter = 1;
-        }else if (imageStr.equals(IMAGE_VALUE_NONE)){
+        } else if (imageStr.equals(IMAGE_VALUE_NONE)) {
             imageFilter = 2;
         }
         return imageFilter;

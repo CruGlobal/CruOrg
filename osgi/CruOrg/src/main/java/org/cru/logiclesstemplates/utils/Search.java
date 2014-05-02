@@ -30,8 +30,7 @@ import com.day.cq.search.Trends;
  *
   ==============================================================================
  */
-public final class Search
-{
+public final class Search {
     private static final Logger log = LoggerFactory.getLogger(
             Thread.currentThread().getStackTrace()[0].getClassName());
     private final SlingHttpServletRequest request;
@@ -41,8 +40,7 @@ public final class Search
     private boolean tagPredicateSet;
     private String start;
 
-    public Search(SlingHttpServletRequest request)
-    {
+    public Search(final SlingHttpServletRequest request) {
         String language = "language";
         String property = "property";
         this.request = request;
@@ -65,20 +63,16 @@ public final class Search
         }
 
         if (this.query != null) {
-            try
-            {
+            try {
                 setQuery(new String(this.query.getBytes(charset), "UTF-8"));
-            }
-            catch (UnsupportedEncodingException e) {
+            } catch (UnsupportedEncodingException e) {
                 log.error("Search error setting query", e);
             }
         }
         if (this.start != null) {
-            try
-            {
+            try {
                 this.search.setStart(Long.parseLong(this.start));
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 log.error("Search error setting start", e);
             }
         }
@@ -110,67 +104,58 @@ public final class Search
         this.search.addPredicate(orderByScore);
     }
 
-    public Trends getTrends()
-    {
+    public Trends getTrends() {
         return this.search.getTrends();
     }
 
     public Result getResult()
-            throws RepositoryException
-    {
-        if ((this.result == null) && ((this.search.getQuery().length() > 0) || (this.tagPredicateSet)) && (this.search.getResult() != null)) {
+            throws RepositoryException {
+        if ((this.result == null) &&
+                ((this.search.getQuery().length() > 0) || (this.tagPredicateSet)) &&
+                (this.search.getResult() != null)) {
             this.result = new Result(this.search.getResult(), this);
         }
         return this.result;
     }
 
     public List<String> getRelatedQueries()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         return this.search.getRelatedQueries();
     }
 
-    public String getQuery()
-    {
+    public String getQuery() {
         return this.query != null ? this.query : "";
     }
 
-    public void setQuery(String query)
-    {
+    public void setQuery(final String query) {
         this.search.setQuery(query);
     }
 
-    public long getHitsPerPage()
-    {
+    public long getHitsPerPage() {
         return this.search.getHitsPerPage();
     }
 
-    public void setHitsPerPage(long num)
-    {
+    public void setHitsPerPage(final long num) {
         this.search.setHitsPerPage(num);
     }
 
-    public String getSearchIn()
-    {
+    public String getSearchIn() {
         return this.search.getSearchIn();
     }
 
-    public void setSearchIn(String searchIn)
-    {
+    public void setSearchIn(final String searchIn) {
         this.search.setSearchIn(searchIn);
     }
 
-    public String getSearchProperties()
-    {
+    public String getSearchProperties() {
         return this.search.getSearchProperties();
     }
 
-    public void setSearchProperties(String properties)
-    {
+    public void setSearchProperties(final String properties) {
         this.search.setSearchProperties(properties);
     }
 
-    public void setStart(String start) {
+    public void setStart(final String start) {
         this.start = start;
     }
 
@@ -178,13 +163,10 @@ public final class Search
         return start;
     }
 
-    public static String encodeURL(String url)
-    {
-        try
-        {
+    public static String encodeURL(final String url) {
+        try {
             return URLEncoder.encode(url, "UTF-8");
-        }
-        catch (UnsupportedEncodingException e) {
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
         return url;

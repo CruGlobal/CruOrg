@@ -49,7 +49,7 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
     @Override
     public void process(final SlingHttpServletRequest request, final ContentModel contentModel) {
         contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
-        Map<String, Object> designObject =  (Map<String, Object>)contentModel.get(GLOBAL_PAGE_CONTENT_KEY);
+        Map<String, Object> designObject =  (Map<String, Object>) contentModel.get(GLOBAL_PAGE_CONTENT_KEY);
 
         try {
             Search search = new Search(request);
@@ -71,7 +71,7 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
                 Result result = search.getResult();
                 List<Hit> hits = result.getHits();
 
-                SlingBindings bindings = (SlingBindings)request.getAttribute(SlingBindings.class.getName());
+                SlingBindings bindings = (SlingBindings) request.getAttribute(SlingBindings.class.getName());
                 XSSAPI xssAPI = (bindings.getSling().getService(XSSAPI.class)).getRequestSpecificAPI(request);
 
                 final String escapedQuery = xssAPI.encodeForHTML(search.getQuery());
@@ -88,7 +88,7 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
 
                 contentObject.put("resultTarget", resultTarget);
                 contentObject.put("showPagination", result.getResultPages().size() > 1);
-                contentObject.put("startIndex", result.getStartIndex()+1);
+                contentObject.put("startIndex", result.getStartIndex() + 1);
                 contentObject.put("numberOfHits", result.getStartIndex() + hits.size());
                 contentObject.put("totalMatches", result.getTotalMatches());
                 contentObject.put("executionTime", result.getExecutionTime());
@@ -107,7 +107,7 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
         }
     }
 
-    private String getFormat(String value) {
+    private String getFormat(final String value) {
         return MessageFormat.format(value,
                 contentObject.get("escapedQuery"),
                 contentObject.get("totalMatches"),

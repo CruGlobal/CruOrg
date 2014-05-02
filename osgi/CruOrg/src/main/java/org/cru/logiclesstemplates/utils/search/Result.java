@@ -30,16 +30,14 @@ import com.day.cq.search.result.SearchResult;
  *
   ==============================================================================
  */
-public final class Result
-{
+public final class Result {
     private final Search search;
     private final SearchResult result;
     private final List<Hit> hits;
     private String spellSuggestion;
     private List<Page> resultPages;
 
-    public Result(SearchResult result, Search search)
-    {
+    public Result(final SearchResult result, final Search search) {
         this.search = search;
         this.result = result;
         this.hits = new ArrayList();
@@ -49,10 +47,8 @@ public final class Result
     }
 
     public List<Page> getResultPages()
-            throws RepositoryException
-    {
-        if (this.resultPages == null)
-        {
+            throws RepositoryException {
+        if (this.resultPages == null) {
             this.resultPages = new ArrayList();
             for (ResultPage rp : this.result.getResultPages()) {
                 this.resultPages.add(new Page(rp, search));
@@ -63,8 +59,7 @@ public final class Result
     }
 
     public Page getPreviousPage()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         ResultPage previous = this.result.getPreviousPage();
         if (previous != null) {
             return new Page(previous, search);
@@ -73,8 +68,7 @@ public final class Result
     }
 
     public Page getNextPage()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         ResultPage next = this.result.getNextPage();
         if (next != null) {
             return new Page(next, search);
@@ -82,19 +76,19 @@ public final class Result
         return null;
     }
 
-    public String getSpellcheck()
-    {
+    public String getSpellcheck() {
         if (this.spellSuggestion == null) {
-            try
-            {
+            try {
                 Session session = search.getRequest().getResourceResolver().adaptTo(Session.class);
-                RowIterator rows = session.getWorkspace().getQueryManager().createQuery("/jcr:root[rep:spellcheck('${query}')]/(rep:spellcheck())".replaceAll("\\$\\{query\\}", Matcher.quoteReplacement(search.getSearch().getQuery())), "xpath").execute().getRows();
+                RowIterator rows = session.getWorkspace().getQueryManager().createQuery(
+                        "/jcr:root[rep:spellcheck('${query}')]/(rep:spellcheck())".replaceAll(
+                                "\\$\\{query\\}", Matcher.quoteReplacement(search.getSearch().getQuery())), "xpath")
+                        .execute().getRows();
 
 
 
                 String suggestion = null;
-                if (rows.hasNext())
-                {
+                if (rows.hasNext()) {
                     Value v = rows.nextRow().getValue("rep:spellcheck()");
                     if (v != null) {
                         suggestion = v.getString();
@@ -109,9 +103,7 @@ public final class Result
                 } else {
                     this.spellSuggestion = "";
                 }
-            }
-            catch (RepositoryException e)
-            {
+            } catch (RepositoryException e) {
                 this.spellSuggestion = "";
             }
         }
@@ -121,34 +113,28 @@ public final class Result
         return this.spellSuggestion;
     }
 
-    public long getStartIndex()
-    {
+    public long getStartIndex() {
         return this.result.getStartIndex();
     }
 
-    public long getTotalMatches()
-    {
+    public long getTotalMatches() {
         return this.result.getTotalMatches();
     }
 
-    public String getExecutionTime()
-    {
+    public String getExecutionTime() {
         return this.result.getExecutionTime();
     }
 
-    public long getExecutionTimeMillis()
-    {
+    public long getExecutionTimeMillis() {
         return this.result.getExecutionTimeMillis();
     }
 
     public Map<String, Facet> getFacets()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         return this.result.getFacets();
     }
 
-    public List<Hit> getHits()
-    {
+    public List<Hit> getHits() {
         return this.hits;
     }
 }

@@ -20,37 +20,32 @@ import com.day.cq.search.result.ResultPage;
  *
   ==============================================================================
  */
-public final class Page
-{
+public final class Page {
     private final ResultPage rp;
     private final Search search;
 
-    public Page(ResultPage rp, Search search)
-    {
+    public Page(final ResultPage rp, final Search search) {
         this.rp = rp;
         this.search = search;
     }
 
-    public boolean isCurrentPage()
-    {
+    public boolean isCurrentPage() {
         return this.rp.isCurrentPage();
     }
 
-    public long getIndex()
-    {
+    public long getIndex() {
         return this.rp.getIndex();
     }
 
     public long getPageNumber() {
-        return getIndex()+1;
+        return getIndex() + 1;
     }
 
     /**
      *
      * @return the correct url with selectors.
      */
-    public String getURL()
-    {
+    public String getURL() {
 
         PathInfo pathInfo = new PathInfo(search.getRequest().getRequestURI());
         StringBuilder url = new StringBuilder();
