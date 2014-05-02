@@ -22,15 +22,15 @@
             {%#if content.showPagination %}
                 <ol class="nav  pagination  layout-single-column">
                     <li class="pagination__prev">
-                        {%#if content.result.previousPage %}
-                            <a href="{%content.result.previousPage.URL%}"
+                        {%#if content.previousPage %}
+                            <a href="{%content.previousPage.URL%}"
                                class="button  button--small  button--subtle">{%content.previousText%}</a>
                         {%else%}
                             {%content.previousText%}
                         {%/if%}
                     </li>
 
-                    {%#each content.result.resultPages %}
+                    {%#each content.resultPages %}
                         {%#if this.currentPage %}
                             <li class="current">
                         {%else%}
@@ -41,8 +41,8 @@
                     {%/each%}
 
                     <li class="pagination__next">
-                        {%#if content.result.nextPage %}
-                        <a href="{%content.result.nextPage.URL%}"
+                        {%#if content.nextPage %}
+                        <a href="{%content.nextPage.URL%}"
                            class="button  button--small  button--subtle">{%content.nextText%}</a>
                         {%else%}
                             {%content.nextText%}
@@ -54,9 +54,6 @@
     {%else%}
         {%!No Results %}
         <div class="layout-single-column">
-            {%#if content.result.spellcheck %}
-            {%{content.spellcheckText}%}<br>
-            {%/if%}
             {%#if content.escapedQuery %}
             {%{content.noResultsText}%}
             {%/if%}
