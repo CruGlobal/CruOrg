@@ -82,7 +82,7 @@ public class PublishDateUtils {
         Calendar publishDate = resource.adaptTo(ValueMap.class).get(JCR_CREATED, Calendar.class);
         ValueMap map = resource.adaptTo(ValueMap.class);
         if (map.containsKey(KEY_PUBLISH_DATE)) {
-            if(map.get(KEY_PUBLISH_DATE, Calendar.class) != null){
+            if (map.get(KEY_PUBLISH_DATE, Calendar.class) != null){
                 publishDate = map.get(KEY_PUBLISH_DATE, Calendar.class);
             }
         }

@@ -1,25 +1,26 @@
 package org.cru.logiclesstemplates.processors.list;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.cru.util.PublishDateUtils;
+
 import com.day.cq.commons.RangeIterator;
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
-import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
-import com.xumak.base.templatingsupport.TemplateContentModel;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Service;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.Resource;
 import com.google.common.collect.Sets;
-import org.cru.util.PublishDateUtils;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import com.xumak.base.templatingsupport.TemplateContentModel;
+import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
 
 
 @Component
@@ -55,7 +56,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
             Tag[] tags = currentPage.getTags();
             ArrayList<String> ids = new ArrayList<String>();
             log.info( "looking for tags...");
-            for( Tag tag: tags){
+            for ( Tag tag: tags){
                 log.info( "found: " + tag.getName());
                 ids.add( tag.getTagID() );
             }
@@ -70,36 +71,36 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
                 log.info( "pages after sort : " + pathList.size() );
             }
         }
-        log.info( "storing " +pathList.size() + " paths");
+        log.info( "storing " + pathList.size() + " paths");
         int modular = pathList.size() % 3;
 
-        if( modular == 2 ){
+        if ( modular == 2 ){
 
-             String path = (String)((ArrayList)pathList).get( pathList.size() - 2 );
+             String path = (String) ((ArrayList) pathList).get( pathList.size() - 2 );
              log.info( "pat: " + path );
              Page p = resourceResolver.getResource( path ).adaptTo( Page.class );
              contentModel.set( "content.page21path", p.getPath());
              contentModel.set( "content.page21title", p.getTitle());
              contentModel.set( "content.page21description", p.getDescription());
 
-            String path2 = (String)((ArrayList)pathList).get( pathList.size() - 1 );
+            String path2 = (String) ((ArrayList) pathList).get( pathList.size() - 1 );
             log.info( "pat2: " + path2 );
             Page p2 = resourceResolver.getResource( path2 ).adaptTo( Page.class );
             contentModel.set( "content.page22path", p2.getPath());
             contentModel.set( "content.page22title", p2.getTitle());
             contentModel.set( "content.page22description", p2.getDescription());
 
-            ((ArrayList)pathList).remove( pathList.size() - 1 );
-            ((ArrayList)pathList).remove( pathList.size() - 1 );
+            ((ArrayList) pathList).remove( pathList.size() - 1 );
+            ((ArrayList) pathList).remove( pathList.size() - 1 );
 
-        } else  if( modular == 1 ){
-            String path = (String)((ArrayList)pathList).get( pathList.size() -1 );
+        } else  if ( modular == 1 ){
+            String path = (String) ((ArrayList) pathList).get( pathList.size() - 1 );
             log.info( "pat2: " + path );
             Page p = resourceResolver.getResource( path ).adaptTo( Page.class );
             contentModel.set( "content.page1path", p.getPath());
             contentModel.set( "content.page1title", p.getTitle());
             contentModel.set( "content.page1description", p.getDescription());
-            ((ArrayList)pathList).remove( pathList.size() - 1 );
+            ((ArrayList) pathList).remove( pathList.size() - 1 );
         }
 
         contentModel.set(PATH_LIST_CONTEXT_PROPERTY_NAME, pathList);

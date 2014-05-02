@@ -23,21 +23,18 @@ import org.cru.logiclesstemplates.utils.Search;
  *
   ==============================================================================
  */
-public class Hit
-{
+public class Hit {
     private final Search search;
     private final com.day.cq.search.result.Hit hit;
 
-    public Hit(com.day.cq.search.result.Hit hit, Search search)
-    {
+    public Hit(final com.day.cq.search.result.Hit hit, final Search search) {
         this.search = search;
         this.hit = hit;
     }
 
     public String getTitle()
-            throws RepositoryException
-    {
-        String excerpt = (String)this.hit.getExcerpts().get("jcr:title");
+            throws RepositoryException {
+        String excerpt = (String) this.hit.getExcerpts().get("jcr:title");
         if (excerpt != null) {
             return excerpt;
         }
@@ -45,14 +42,12 @@ public class Hit
     }
 
     public String getExcerpt()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         return this.hit.getExcerpt();
     }
 
     public String getURL()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         Node n = getPageOrAsset();
         String url = search.getRequest().getContextPath() + n.getPath();
         if (isPage(n)) {
@@ -62,34 +57,29 @@ public class Hit
     }
 
     public String getExtension()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         String url = getURL();
         int idx = url.lastIndexOf('.');
         return idx >= 0 ? url.substring(idx + 1) : "";
     }
 
     public Map getProperties()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         return this.hit.getProperties();
     }
 
-    private boolean isPageOrAsset(Node n)
-            throws RepositoryException
-    {
+    private boolean isPageOrAsset(final Node n)
+            throws RepositoryException {
         return (isPage(n)) || (n.isNodeType("dam:Asset"));
     }
 
-    private boolean isPage(Node n)
-            throws RepositoryException
-    {
+    private boolean isPage(final Node n)
+            throws RepositoryException {
         return (n.isNodeType("cq:Page")) || (n.isNodeType("cq:PseudoPage"));
     }
 
     private Node getPageOrAsset()
-            throws RepositoryException
-    {
+            throws RepositoryException {
         Node n = this.hit.getNode();
         while ((!isPageOrAsset(n)) && (n.getName().length() > 0)) {
             n = n.getParent();
