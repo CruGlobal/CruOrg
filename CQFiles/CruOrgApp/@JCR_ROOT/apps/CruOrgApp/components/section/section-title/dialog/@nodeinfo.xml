@@ -5,7 +5,7 @@
       <value><![CDATA[dialog]]></value>
     </property>
     <property name="title" type="1" multiple="false">
-      <value><![CDATA[dialog]]></value>
+      <value><![CDATA[Section Title]]></value>
     </property>
   </properties>
   <mixins />
