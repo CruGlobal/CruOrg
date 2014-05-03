@@ -5,7 +5,7 @@
       <value><![CDATA[FIRST]]></value>
     </property>
     <property name="text" type="1" multiple="false">
-      <value><![CDATA[Show only first image]]></value>
+      <value><![CDATA[First]]></value>
     </property>
   </properties>
   <mixins />

@@ -5,7 +5,7 @@
       <value><![CDATA[NONE]]></value>
     </property>
     <property name="text" type="1" multiple="false">
-      <value><![CDATA[Show none image]]></value>
+      <value><![CDATA[None]]></value>
     </property>
   </properties>
   <mixins />
