@@ -23,6 +23,10 @@ Cru.components.tile = {
         
                     $( "<div style='clear:both;'></div>" ).insertAfter($(".post-body-parsys .parbase.section").last());
                 }
+        		if(Xumak.Utils.elementExists($(".content-parsys"))){
+        
+                    $( "<div style='clear:both;'></div>" ).insertAfter($(".content-parsys .parbase.section").last());
+                }
 
     }
 }
