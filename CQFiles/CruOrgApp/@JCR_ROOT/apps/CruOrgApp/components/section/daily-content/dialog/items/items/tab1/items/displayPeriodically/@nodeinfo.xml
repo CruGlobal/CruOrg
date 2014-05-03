@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="type" type="1" multiple="false">
+      <value><![CDATA[checkbox]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Is periodical?]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[selection]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./displayPeriodically]]></value>
+    </property>
+    <property name="inputValue" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[If checked, this component will not look for a page under today's date, but check if today's date is within the specified dates and display the content accordingly.]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

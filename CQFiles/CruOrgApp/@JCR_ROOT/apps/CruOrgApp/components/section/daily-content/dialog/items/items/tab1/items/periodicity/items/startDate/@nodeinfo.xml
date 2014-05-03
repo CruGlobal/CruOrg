@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="width" type="1" multiple="false">
+      <value><![CDATA[280]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Start Date]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[datetime]]></value>
+    </property>
+    <property name="hideTime" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
+    <property name="dateFormat" type="1" multiple="false">
+      <value><![CDATA[F d, Y]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./startDate]]></value>
+    </property>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[now]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
