@@ -4,6 +4,40 @@ CQ.form.rte.commands.Quotes = new Class({
 
     extend: CQ.form.rte.commands.DefaultFormatting,
 
+    execute: function(execDef) {
+        var com = CUI.rte.Common;
+        var nodeList = execDef.nodeList;
+        var selection = execDef.selection;
+        var context = execDef.editContext;
+        if (!CUI.rte.Selection.isSelection(selection)) {
+            // execDef.editContext.doc.execCommand(execDef.command, false, null);
+            return this.setCaretTo(execDef);
+        }
+        var tagName = this.getTagNameForCommand(execDef.command);
+        var attributes = execDef.value;
+        // see queryState()
+        var isActive = (com.getTagInPath(context, selection.startNode, tagName) != null);
+        if (!isActive) {
+            if (this.getClassNameForCommand(execDef.command)) {
+                //if the command is a pullquote needs em tag.
+                var dpr = CUI.rte.DomProcessor;
+                var containerNode = dpr.restructureAsChild(context, nodeList.commonAncestor,
+                    nodeList.createTopLevelDomNodes(), "em", null);
+                var containerStrucNode = nodeList.createStructuralNode(containerNode, null);
+                nodeList.nodes = [ containerStrucNode ];
+                dpr.restructureAsChild(context, nodeList.commonAncestor, nodeList.createTopLevelDomNodes(),
+                    "blockquote", attributes);
+            } else {
+                nodeList.surround(execDef.editContext, tagName, attributes);
+            }
+        } else {
+            nodeList.removeNodesByTag(execDef.editContext, tagName, attributes, true);
+            if (this.getClassNameForCommand(execDef.command)) {
+                nodeList.removeNodesByTag(execDef.editContext, "em", null, true);
+            }
+        }
+    },
+
     isCommand: function(cmdStr) {
         var cmdLC = cmdStr.toLowerCase();
         return (cmdLC == "blockquote") || (cmdLC == "pullquote");

@@ -1,0 +1,27 @@
+{%#if list.pages %}
+   	<ul class="{%content.class%}">
+    	{%#each list.pages %}
+    	<li>
+			{%#if this.imagePath %}
+           		  <!-- Optional image item -->
+  			    <img alt="{% this.navigationTitle %}" src="{% this.imagePath %}" />
+        	{%/if%}
+
+            {%#if this.navigationTitle %}
+           		<!-- Optional link item -->
+           		 <a href="{% this.path %}.html">{% this.navigationTitle %}</a>
+        	{%/if%}
+
+ 			{%#if this.description %}
+           		<!-- Optional paragraph text -->
+           		<p>{% this.description %}</p>
+            {%/if%}    
+
+    	</li>
+		{%/each%}
+ 	</ul>
+{%else%}
+	{%#if page.isEditMode %}
+    	<p>Please add Root Path in the dialog.</p>
+    {%/if%}
+{%/if%}
