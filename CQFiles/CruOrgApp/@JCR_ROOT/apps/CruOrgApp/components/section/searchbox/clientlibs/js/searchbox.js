@@ -71,7 +71,7 @@ Cru.components.searchbox = {
         form.on("submit", { "link" : pathFields[0] }, submitFormClick);
 
         //if can catch a search query parameter, put it in the textfield.
-        getQueryField().val(getQueryParameter());
+        getQueryField().val(decodeURIComponent(getQueryParameter()));
     }
 };
 
