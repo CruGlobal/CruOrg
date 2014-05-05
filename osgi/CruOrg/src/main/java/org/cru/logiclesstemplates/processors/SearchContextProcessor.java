@@ -13,7 +13,7 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.scripting.SlingBindings;
-import org.cru.logiclesstemplates.utils.Search;
+import org.cru.util.Search;
 
 import com.adobe.granite.xss.XSSAPI;
 import com.day.cq.search.result.SearchResult;

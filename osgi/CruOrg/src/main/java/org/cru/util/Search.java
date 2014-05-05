@@ -1,4 +1,4 @@
-package org.cru.logiclesstemplates.utils;
+package org.cru.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -95,7 +95,7 @@ public final class Search {
         return this.query != null ? this.query : "";
     }
 
-    public void setQuery(final String query) {
+    private void setQuery(final String query) {
         this.search.setQuery(query);
     }
 
@@ -103,15 +103,11 @@ public final class Search {
         this.search.setHitsPerPage(num);
     }
 
-    public String getSearchIn() {
-        return this.search.getSearchIn();
-    }
-
     public void setSearchIn(final String searchIn) {
         this.search.setSearchIn(searchIn);
     }
 
-    public static String encodeURL(final String url) {
+    private static String encodeURL(final String url) {
         try {
             return URLEncoder.encode(url, "UTF-8");
         } catch (UnsupportedEncodingException e) {
@@ -123,7 +119,7 @@ public final class Search {
     /**
      * @return the correct url with selectors.
      */
-    public String getURL(final ResultPage page) {
+    private String getURL(final ResultPage page) {
 
         PathInfo pathInfo = new PathInfo(request.getRequestURI());
         StringBuilder url = new StringBuilder();
@@ -135,11 +131,22 @@ public final class Search {
         return url.toString();
     }
 
-    public long getPageNumber(final ResultPage page) {
+    /**
+     * Get the number of the page for manage the pagination.
+     * @param page to get the number.
+     * @return the page index + 1
+     */
+    private long getPageNumber(final ResultPage page) {
         return page.getIndex() + 1;
     }
 
-    public Map<String, Object> getResultPageProperties(final ResultPage resultPage) {
+    /**
+     * Retrieve if is the current page, the number of the page for the navigation and the
+     * URL using selectors.
+     * @param resultPage to get the properties.
+     * @return a map with the properties of the result page.
+     */
+    private Map<String, Object> getResultPageProperties(final ResultPage resultPage) {
         if (resultPage == null) {
             return null;
         }
@@ -232,7 +239,7 @@ public final class Search {
      * @return the url of the hit.
      * @throws RepositoryException
      */
-    public String getURL(final Hit hit)
+    private String getURL(final Hit hit)
             throws RepositoryException {
         Node n = getPageOrAsset(hit);
         String url = request.getContextPath() + n.getPath();
@@ -242,7 +249,13 @@ public final class Search {
         return url;
     }
 
-    public Map<String, Object> getHitProperties(final Hit hit) throws RepositoryException {
+    /**
+     * set the URL the title and the excerpt into a map structure.
+     * @param hit
+     * @return the URL, title and excerpt of the hit
+     * @throws RepositoryException
+     */
+    private Map<String, Object> getHitProperties(final Hit hit) throws RepositoryException {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         resultMap.put("URL", getURL(hit));
         resultMap.put("title", hit.getTitle());
@@ -251,6 +264,12 @@ public final class Search {
         return resultMap;
     }
 
+    /**
+     * retrieve a list of property hits in form of map with the correct URL
+     * the title of the hit and the excerpt.
+     * @return a list of hit properties.
+     * @throws RepositoryException
+     */
     public List<Map<String, Object>> getHits() throws RepositoryException {
         SearchResult searchResult = getResult();
         List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
