@@ -4,12 +4,12 @@
          <li>
 			{%#if this.imagePath %}
            		<!-- Optional image item -->
-           		<img alt="Some alt text" src="{% this.imagePath %}">
+           		<img alt="{% this.navigationTitle %}" src="{% this.imagePath %}">
         	{%/if%}
 
-            {%#if this.title %}
+            {%#if this.navigationTitle %}
            		<!-- Optional link item -->
-           		<a href="{% this.path %}.html"> {% this.title %} </a>
+           		<a href="{% this.path %}.html"> {% this.navigationTitle %} </a>
         	{%/if%}
 
  			{%#if this.description %}

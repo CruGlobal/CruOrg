@@ -18,6 +18,7 @@ CQ.form.rte.plugins.QuotePlugin = new Class({
 
     initializeUI: function(tbGenerator) {
         this.commandsUI = [ ];
+        this.editorKernel.htmlRules.docType.typeConfig.semanticMarkupMap = {};
         var cmdCnt = this.commands.length;
         for (var cmdIndex = 0; cmdIndex < cmdCnt; cmdIndex++) {
             var command = this.commands[cmdIndex];
