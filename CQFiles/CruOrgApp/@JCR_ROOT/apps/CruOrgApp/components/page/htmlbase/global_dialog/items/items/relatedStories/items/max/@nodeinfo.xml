@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./max]]></value>
     </property>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[3]]></value>
+    </property>
     <property name="validateOnBlur" type="1" multiple="false">
       <value><![CDATA[true]]></value>
     </property>

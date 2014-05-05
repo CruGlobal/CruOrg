@@ -10,14 +10,17 @@
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[pathfield]]></value>
     </property>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[Cru]]></value>
+    </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./pathRef]]></value>
     </property>
+    <property name="fieldSubLabel" type="1" multiple="false">
+      <value><![CDATA[The Homepage path will be used if this is empty.]]></value>
+    </property>
     <property name="rootPath" type="1" multiple="false">
       <value><![CDATA[/content/cru]]></value>
-    </property>
-    <property name="fieldSubLabel" type="1" multiple="false">
-      <value><![CDATA[The current Page will be used if this is empty.]]></value>
     </property>
   </properties>
   <mixins />

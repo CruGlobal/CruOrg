@@ -7,7 +7,6 @@
     <property name="cq:actions" type="1" multiple="true">
       <value><![CDATA[copymove]]></value>
       <value><![CDATA[delete]]></value>
-      <value><![CDATA[edit]]></value>
     </property>
   </properties>
   <mixins />

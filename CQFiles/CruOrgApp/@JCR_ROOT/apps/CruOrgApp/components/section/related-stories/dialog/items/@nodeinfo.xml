@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+      <property name="xtype" type="1" multiple="false">
+        <value>tabpanel</value>
+      </property>
+  </properties>
+  <mixins />
+</node>
+
