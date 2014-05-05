@@ -1,5 +1,5 @@
  <article class="post-article">
-        
+
 		<!-- ARTICLE HEADLINE COMPONENT -->
       	<header class="post__headline  layout-single-column">
 
@@ -33,6 +33,8 @@
         
         <!-- POST BODY -->
         <div class="post__body  layout-single-column">
+        	{%#include "article-share" as="CruOrgApp/components/section/article-share"%}{%/include%}
+
 
 
     <figure >
@@ -52,4 +54,5 @@
         
       </article>
 
+    {%#include "facebook-coments-feed" as="CruOrgApp/components/section/facebook-comments-feed"%}{%/include%}
 
