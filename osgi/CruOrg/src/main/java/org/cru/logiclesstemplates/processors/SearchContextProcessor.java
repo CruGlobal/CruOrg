@@ -8,14 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.scripting.SlingBindings;
 import org.cru.util.Search;
 
-import com.adobe.granite.xss.XSSAPI;
 import com.day.cq.search.result.SearchResult;
 import com.xumak.base.templatingsupport.AbstractResourceTypeCheckContextProcessor;
 import com.xumak.base.templatingsupport.ContentModel;
@@ -70,22 +69,23 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
                 List<Map<String, Object>> hits = search.getHits();
                 List<Map<String, Object>> resultPages = search.getResultPages();
 
-                SlingBindings bindings = (SlingBindings) request.getAttribute(SlingBindings.class.getName());
-                XSSAPI xssAPI = (bindings.getSling().getService(XSSAPI.class)).getRequestSpecificAPI(request);
-
                 //query can be a parameter so is necessary encode it for html.
-                final String escapedQuery = xssAPI.encodeForHTML(search.getQuery());
+                final String escapedQuery = StringEscapeUtils.escapeHtml(search.getQuery());
 
                 contentObject.put("escapedQuery", escapedQuery);
                 contentObject.put("resultPages", resultPages);
                 contentObject.put("showPagination", resultPages.size() > 1);
                 contentObject.put("previousPage", search.getPreviousPage());
                 contentObject.put("nextPage", search.getNextPage());
-                contentObject.put("startIndex", result.getStartIndex() + 1);
-                contentObject.put("numberOfHits", result.getStartIndex() + hits.size());
-                contentObject.put("totalMatches", result.getTotalMatches());
-                contentObject.put("executionTime", result.getExecutionTime());
                 contentObject.put("hits", hits);
+
+                //validates we have results.
+                if (result != null) {
+                    contentObject.put("startIndex", result.getStartIndex() + 1);
+                    contentObject.put("numberOfHits", result.getStartIndex() + hits.size());
+                    contentObject.put("totalMatches", result.getTotalMatches());
+                    contentObject.put("executionTime", result.getExecutionTime());
+                }
 
                 //assign labels with replaced tokens.
                 contentObject.put("nextText", getFormat(nextText));
