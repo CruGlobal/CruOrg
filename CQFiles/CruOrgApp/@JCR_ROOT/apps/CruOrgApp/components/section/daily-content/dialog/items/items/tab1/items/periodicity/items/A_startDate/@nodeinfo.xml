@@ -8,13 +8,16 @@
       <value><![CDATA[datetime]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[End Date]]></value>
+      <value><![CDATA[Start Date]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./endDate]]></value>
+      <value><![CDATA[./startDate]]></value>
     </property>
     <property name="dateFormat" type="1" multiple="false">
       <value><![CDATA[F d, Y]]></value>
+    </property>
+    <property name="width" type="1" multiple="false">
+      <value><![CDATA[280]]></value>
     </property>
     <property name="defaultValue" type="1" multiple="false">
       <value><![CDATA[now]]></value>

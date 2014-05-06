@@ -1,15 +1,9 @@
 package org.cru.logiclesstemplates.processors.dailycontent;
 
-import com.day.cq.wcm.api.Page;
 import com.xumak.base.templatingsupport.TemplateContentModel;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.cru.util.PageUtils;
-
-import java.util.Calendar;
-
-import static java.util.Calendar.DATE;
 
 /* DESCRIPTION
  * -----------------------------------------------------------------------------

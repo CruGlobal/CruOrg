@@ -1,32 +1,116 @@
-//$(document).ready(function(){
-    var dailyContentContainer = $(".post-article.daily-content");
-    if(Cru.widgets.Util.elementExists(dailyContentContainer)) {
-        var servletPath = dailyContentContainer.data("servletpath");
-    	if (typeof servletPath != 'undefined'){
-			var servletResponse = $.ajax({
-    			type: "GET",
-    			url: servletPath,
-    			async: false
-			});
-           // debugger;
+Cru = Cru || {};
+Cru.components = Cru.components || {};
+Cru.components.DailyContent = Cru.components.DailyContent || {};
 
-            if(servletResponse.status == 200){
-				var paths = servletResponse.responseJSON;
-                if(paths.today){
-                    var data = {};
-                    if(typeof CQ != 'undefined'){
-                        if(CQ.WCM.isEditMode()){
-							data.wcmmode = "disabled";
-                        }
-                    }
-                    $.get( paths.today + "/jcr:content/post-body-parsys.html", data, function( data ) {
-                        $(".post__body.layout-single-column.daily-content").append(data);
-					}, "html");
-                }
-            }
-    	}
+Cru.components.DailyContent.elements = {
+    H1 : "h1",
+    H2 : "h2",
+    UL : "ul",
+    LI : "li",
+    IMG : "img",
+    A : "a",
+    TIME : "time",
+    SPAN : "span",
+    FIGCAPTION : "figcaption",
+    createTitle: function(title){
+        var h1 = document.createElement(this.H1);
+        var titleNode = document.createTextNode(title);
+        h1.appendChild(titleNode);
+        return h1;
+    },
+    createSubtitle : function(subtitle){
+        var h2 = document.createElement(this.H2);
+        var subtitleNode = document.createTextNode(subtitle);
+        h2.className = "post-subtitle  h3";
+        h2.appendChild(subtitleNode);
 
-//    	debugger;    
+        return h2;
+    },
+    createMetadata : function(date, twitterUser, author){
+        var ul = document.createElement(this.UL);
+        ul.className = "post-meta";
+        if(author){
+            var authorLi = document.createElement(this.LI);
+            authorLi.className = "accent";
+            var authorNode = document.createTextNode("by " + author);
+            authorLi.appendChild(authorNode);
+            ul.appendChild(authorLi);
+        }
+
+        if(twitterUser){
+            var twitterUserLi = document.createElement(this.LI);
+            twitterUserLi.className = "accent";
+            var twitterUserAnchor = document.createElement((this.A));
+            var twitterUserNode = document.createTextNode("@" + twitterUser);
+            var twitterUserLink = "https://twitter.com/" + twitterUser;
+            twitterUserAnchor.appendChild(twitterUserNode);
+            twitterUserAnchor.href = twitterUserLink;
+            twitterUserLi.appendChild(twitterUserAnchor);
+            ul.appendChild(twitterUserLi);
+        }
+
+        if(date){
+            var dateLi = document.createElement(this.LI);
+            var dateTime = document.createElement(this.TIME);
+            var dateNode = document.createTextNode(date);
+            dateTime.appendChild(dateNode);
+            dateLi.appendChild(dateTime);
+            ul.appendChild(dateLi);
+        }
+
+        return ul;
+    },
+    createImage : function(src){
+        var imageTag = document.createElement(this.IMG);
+        imageTag.src = src;
+        return imageTag;
+    },
+    createCaption : function(caption, credit){
+        var captionTag = document.createElement(this.FIGCAPTION);
+        captionTag.className = "image__caption default-view";
+        var captionNode = document.createTextNode(caption);
+        captionTag.appendChild(captionNode);
+        if(credit){
+            captionTag.appendChild(this.createCredit(credit));
+        }
+        return captionTag;
+    },
+    createCredit : function(credit){
+        var creditTag = document.createElement(this.SPAN);
+        creditTag.className = "image-credit";
+        var creditNode = document.createTextNode(credit);
+        creditTag.appendChild(creditNode);
+        return(creditTag);
+    },
+    buildHeader : function(header, data){
+        var title = data["title"];
+        if(title){
+            header.append(this.createTitle(title));
+        }
+
+        var subtitle =  data["subtitle"];
+        if(subtitle){
+            header.append(this.createSubtitle(subtitle));
+        }
+
+        var date = data["dateText"];
+        var twitterUser = data["twitterUser"];
+        var author = data["author"];
+        if(date || twitterUser || author){
+            header.append(this.createMetadata(date, twitterUser, author));
+        }
+
+    },
+    buildFigure : function(figure, data){
+        var imagePath = data["imagePath"];
+        if(imagePath){
+            figure.append(this.createImage(imagePath));
+        }
+
+        var caption = data["imageCaption"];
+        var credit = data["imageCredit"];
+        if(caption){
+            figure.append(this.createCaption(caption, credit));
+        }
     }
-//});
-
+};

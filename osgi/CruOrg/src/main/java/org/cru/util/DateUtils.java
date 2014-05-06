@@ -26,7 +26,7 @@ public class DateUtils {
      * @param maxDate the upper bound
      * @return true if date is between minDate and maxDate.
      */
-    public static boolean isDateBetween(Calendar date, Calendar minDate, Calendar maxDate){
+    public static boolean isDateBetween(final Calendar date, final Calendar minDate, final Calendar maxDate){
         return date.after(minDate) && date.before(maxDate);
     }
 

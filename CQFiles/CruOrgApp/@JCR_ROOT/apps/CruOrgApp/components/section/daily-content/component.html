@@ -1,16 +1,14 @@
-<article class="post-article daily-content" data-servletPath="{%content.path%}.pages.json">
-    <!-- ARTICLE HEADLINE COMPONENT -->
-    <header class="post__headline  layout-single-column">
-    	HEADER
-    </header>
-    
-    <!-- POST BODY -->
-    <div class="post__body  layout-single-column daily-content">
-        <figure>
-        	IMAGE
-        </figure>
-    </div>
-</article>
+{%#if content.today%}
+    <article class="post-article daily-content" data-servletPath="{%content.path%}.pages.json">
+        <!-- ARTICLE HEADLINE COMPONENT -->
+        <header class="post__headline  layout-single-column daily-content"></header>
+        <!-- POST BODY -->
+        <div class="post__body  layout-single-column daily-content">
+            {%#include "article-share" as="CruOrgApp/components/section/article-share"%}{%/include%}
+            <figure></figure>
+            <div class="daily-content-container"></div>
+        </div>
+    </article>
+{%/if%}
 
-            {%#include "/content/cru/us/en/ministries-and-locations/ministries/family-life/when-christmas-isnt-perfect/jcr:content/post-body-parsys" as="foundation/components/parsys"%}{%/include%}
 

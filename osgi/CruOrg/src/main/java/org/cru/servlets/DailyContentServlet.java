@@ -20,11 +20,8 @@ import java.util.Map;
 import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
 import static com.xumak.base.templatingsupport.TemplatingSupportFilter.TEMPLATE_CONTENT_MODEL_ATTR_NAME;
 import static org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyContentPagePathContextProcessor.*;
- /*
-import static com.xumak.base.Constants.XUMAK_BASE_PAGE_RESOURCE_TYPE;
-import static com.xumak.base.Constants.XUMAK_BASE_SECTION_RESOURCE_TYPE;
-import static com.xumak.base.templatingsupport.TemplatingSupportFilter.TEMPLATE_CONTENT_MODEL_ATTR_NAME;
-*/
+import static org.cru.logiclesstemplates.processors.dailycontent.AddTodaysPagePathContextProcessor.SERVLET_PATH_KEY;
+
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
  * DailyContentServlet
@@ -44,23 +41,26 @@ import static com.xumak.base.templatingsupport.TemplatingSupportFilter.TEMPLATE_
         @Property(name = "service.description", value = "Daily Content component Servlet"),
         @Property(name = "sling.servlet.selectors", value = "pages"),
         @Property(name = "sling.servlet.extensions", value = "json"),
-        @Property(name = "sling.servlet.resourceTypes", value = {AbstractAddDailyContentPagePathContextProcessor.DAILY_CONTENT_RESOURCE_TYPE})
+        @Property(name = "sling.servlet.resourceTypes",
+                value = {AbstractAddDailyContentPagePathContextProcessor.DAILY_CONTENT_RESOURCE_TYPE})
 })
 public class DailyContentServlet
         extends SlingSafeMethodsServlet {
 
 
      @Override
-    protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
+    protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         JSONObject jsonObject = new JSONObject();
-        TemplateContentModel contentModel = (TemplateContentModel) request.getAttribute(TEMPLATE_CONTENT_MODEL_ATTR_NAME);
+        TemplateContentModel contentModel =
+                (TemplateContentModel) request.getAttribute(TEMPLATE_CONTENT_MODEL_ATTR_NAME);
         Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
 
         try {
             jsonObject.put(TODAY, contentObject.get(TODAY));
+            jsonObject.put(SERVLET_PATH_KEY, contentObject.get(SERVLET_PATH_KEY));
             jsonObject.put(YESTERDAY, contentObject.get(YESTERDAY));
             jsonObject.put(TOMORROW, contentObject.get(TOMORROW));
             out.print(jsonObject.toString());
