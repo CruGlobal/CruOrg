@@ -1,7 +1,7 @@
 package org.cru.logiclesstemplates.processors;
 
 
-import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
+import static com.xumak.base.Constants.GLOBAL_PROPERTIES_KEY;
 
 import java.text.MessageFormat;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ import com.xumak.base.templatingsupport.ContentModel;
 @Component
 @Service
 public class SearchContextProcessor extends AbstractResourceTypeCheckContextProcessor<ContentModel> {
-    private static Map<String, Object> contentObject = new HashMap<String, Object>();
+    private static Map<String, Object> designObject = new HashMap<String, Object>();
 
     @Override
     public String requiredResourceType() {
@@ -46,20 +46,20 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
 
     @Override
     public void process(final SlingHttpServletRequest request, final ContentModel contentModel) {
-        contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
+        designObject = (Map<String, Object>) contentModel.get(GLOBAL_PROPERTIES_KEY);
 
         try {
             //initialize the search class
             Search search = new Search(request);
 
             //get some labels.
-            String pagesToSearch = (String) contentObject.get("pagesToSearch");
-            String resultsPerPage = (String) contentObject.get("resultsPerPage");
+            String pagesToSearch = (String) designObject.get("pagesToSearch");
+            String resultsPerPage = (String) designObject.get("resultsPerPage");
 
-            String nextText = (String) contentObject.get("nextText");
-            String previousText = (String) contentObject.get("previousText");
-            String noResultsText = (String) contentObject.get("noResultsText");
-            String statisticsText = (String) contentObject.get("statisticsText");
+            String nextText = (String) designObject.get("nextText");
+            String previousText = (String) designObject.get("previousText");
+            String noResultsText = (String) designObject.get("noResultsText");
+            String statisticsText = (String) designObject.get("statisticsText");
 
             //the property pageToSearch must be configured.
             if (StringUtils.isNotBlank(pagesToSearch)) {
@@ -72,26 +72,26 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
                 //query can be a parameter so is necessary encode it for html.
                 final String escapedQuery = StringEscapeUtils.escapeHtml(search.getQuery());
 
-                contentObject.put("escapedQuery", escapedQuery);
-                contentObject.put("resultPages", resultPages);
-                contentObject.put("showPagination", resultPages.size() > 1);
-                contentObject.put("previousPage", search.getPreviousPage());
-                contentObject.put("nextPage", search.getNextPage());
-                contentObject.put("hits", hits);
+                designObject.put("escapedQuery", escapedQuery);
+                designObject.put("resultPages", resultPages);
+                designObject.put("showPagination", resultPages.size() > 1);
+                designObject.put("previousPage", search.getPreviousPage());
+                designObject.put("nextPage", search.getNextPage());
+                designObject.put("hits", hits);
 
                 //validates we have results.
                 if (result != null) {
-                    contentObject.put("startIndex", result.getStartIndex() + 1);
-                    contentObject.put("numberOfHits", result.getStartIndex() + hits.size());
-                    contentObject.put("totalMatches", result.getTotalMatches());
-                    contentObject.put("executionTime", result.getExecutionTime());
+                    designObject.put("startIndex", result.getStartIndex() + 1);
+                    designObject.put("numberOfHits", result.getStartIndex() + hits.size());
+                    designObject.put("totalMatches", result.getTotalMatches());
+                    designObject.put("executionTime", result.getExecutionTime());
                 }
 
                 //assign labels with replaced tokens.
-                contentObject.put("nextText", getFormat(nextText));
-                contentObject.put("previousText", getFormat(previousText));
-                contentObject.put("noResultsText", getFormat(noResultsText));
-                contentObject.put("statisticsText", getFormat(statisticsText));
+                designObject.put("nextText", getFormat(nextText));
+                designObject.put("previousText", getFormat(previousText));
+                designObject.put("noResultsText", getFormat(noResultsText));
+                designObject.put("statisticsText", getFormat(statisticsText));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -105,10 +105,10 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
      */
     private String getFormat(final String value) {
         return MessageFormat.format(value,
-                contentObject.get("escapedQuery"),
-                contentObject.get("totalMatches"),
-                contentObject.get("startIndex"),
-                contentObject.get("numberOfHits"),
-                contentObject.get("executionTime"));
+                designObject.get("escapedQuery"),
+                designObject.get("totalMatches"),
+                designObject.get("startIndex"),
+                designObject.get("numberOfHits"),
+                designObject.get("executionTime"));
     }
 }

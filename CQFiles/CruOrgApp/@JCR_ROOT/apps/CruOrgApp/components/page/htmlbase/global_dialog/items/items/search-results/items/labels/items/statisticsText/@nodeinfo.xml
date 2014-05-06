@@ -2,16 +2,19 @@
 <node nodeType="cq:Widget">
   <properties>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Next label]]></value>
+      <value><![CDATA[Statistics text]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[textfield]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./nextText]]></value>
+      <value><![CDATA[./statisticsText]]></value>
     </property>
     <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[Next]]></value>
+      <value><![CDATA[<strong>{1} results</strong> found for "{0}"]]></value>
+    </property>
+    <property name="anchor" type="1" multiple="false">
+      <value><![CDATA[95%]]></value>
     </property>
   </properties>
   <mixins />
