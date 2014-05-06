@@ -18,7 +18,7 @@ import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextP
 
 @Component
 @Service
-public class QueriedFilterProcessor extends AddQueriedPagePathListContextProcessor {
+public class QueriedFilterContextProcessor extends AddQueriedPagePathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/queried";
     public static final String XUMAK_CURATED_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/curated";
