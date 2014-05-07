@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./description]]></value>
     </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { return Cru.widgets.SectionTitle.validateLength(value,250); }]]></value>
+    </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter description to display]]></value>
     </property>
