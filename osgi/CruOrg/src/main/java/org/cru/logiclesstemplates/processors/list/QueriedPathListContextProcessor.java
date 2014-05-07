@@ -60,7 +60,7 @@ public class QueriedPathListContextProcessor extends AddQueriedPagePathListConte
      * @param tagsList list of tags.
      * @return ArrayList
      */
-    private RangeIterator<Resource> findByTags(final Resource resource, final String pathRef,
+    protected RangeIterator<Resource> findByTags(final Resource resource, final String pathRef,
                                                final List<String> tagsList) {
         RangeIterator<Resource> pages = null;
         if (resource != null) {
@@ -86,7 +86,7 @@ public class QueriedPathListContextProcessor extends AddQueriedPagePathListConte
      * @param listSize
      * @return Long with max number of items.
      */
-    private long getMaxNumber(final TemplateContentModel contentModel, final long listSize)throws Exception{
+    protected long getMaxNumber(final TemplateContentModel contentModel, final long listSize)throws Exception{
         long max = 0;
         if (contentModel.has(MAX_CONTENT_KEY_NAME)) {
             max = contentModel.getAs(MAX_CONTENT_KEY_NAME, Long.class);

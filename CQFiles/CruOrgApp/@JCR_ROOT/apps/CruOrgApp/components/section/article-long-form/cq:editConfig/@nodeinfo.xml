@@ -5,9 +5,11 @@
       <value><![CDATA[rollover]]></value>
     </property>
     <property name="cq:actions" type="1" multiple="true">
-      <value><![CDATA[text: Inset Sidebar]]></value>
+      <value><![CDATA[text: Article Long Form]]></value>
       <value><![CDATA[-]]></value>
       <value><![CDATA[edit]]></value>
+      <value><![CDATA[delete]]></value>
+      <value><![CDATA[copymove]]></value>
     </property>
     <property name="cq:dialogMode" type="1" multiple="false">
       <value><![CDATA[floating]]></value>
