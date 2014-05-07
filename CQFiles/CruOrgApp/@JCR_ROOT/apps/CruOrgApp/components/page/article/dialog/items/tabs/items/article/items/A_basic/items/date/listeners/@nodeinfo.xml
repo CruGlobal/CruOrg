@@ -5,6 +5,10 @@
       <value><![CDATA[function(){     var dateTextWidget = this.findParentByType('dialog').getField("./dateText");
               dateTextWidget.setValue(Cru.widgets.Article.getdateFormatProperty(this.getValue() ,"d F Y"));  }]]></value>
     </property>
+    <property name="loadcontent" type="1" multiple="false">
+       <value><![CDATA[function(){     var dateTextWidget = this.findParentByType('dialog').getField("./dateText");
+              dateTextWidget.setValue(Cru.widgets.Article.getdateFormatProperty(this.getValue() ,"d F Y"));  }]]></value>
+    </property>
   </properties>
   <mixins />
 </node>
