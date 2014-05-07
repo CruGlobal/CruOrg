@@ -9,22 +9,30 @@ Cru.components.searchbox = {
         //at least one configured path.
         if (pathFields.size() === 0) return;
 
-        //declare functions
+        //declare functions /////////////////////////////////////////////
         function isInternalLink(a) {
             return a.hostname === location.hostname;
         }
+        //look for an internal of external link and process it with
+        //selectors of parameters.
         function processLink(link) {
             //get the link
             var a = $('<a>', { href:link } )[0];
             var extension = a.pathname.split('.').pop();
+
+            //in case that the pathName doesn't have any extension.
+            if (a.pathname === extension) {
+                extension = "html";
+            }
+
             var path = a.pathname.replace('.' + extension, '');
-            var queryField = form.find("input.search-field");
+            var queryField = getQueryField();
 
             if (isInternalLink(a)) {
                 //for internal links and selectors search.
                 return path + "." + queryField.val() + "." + extension;
             } else {
-                return link;
+                return link + "?ssUserText=" + queryField.val() + "&Query=" + queryField.val();
             }
         }
         function submitForm(link) {
@@ -41,10 +49,29 @@ Cru.components.searchbox = {
             submitForm(link);
             e.preventDefault();
         }
+        function getQueryField() {
+            return form.find("input.search-field");
+        }
+        function getQueryParameter() {
+            var reParameters = new RegExp("Query=([^&#=]*)");
+            var reSelectors = new RegExp("\\.([^\\.&#=]*)\\.html");
+            var results = reSelectors.exec(window.location.pathname);
+
+            //prioritizing on selectors,
+            results = results || reParameters.exec(window.location.search);
+            if (results && results.length > 1) {
+                return results[1];
+            }
+
+            return "";
+        }
 
         //process
         pathFields.on("click", pathFieldsClick);
         form.on("submit", { "link" : pathFields[0] }, submitFormClick);
+
+        //if can catch a search query parameter, put it in the textfield.
+        getQueryField().val(decodeURIComponent(getQueryParameter()));
     }
 };
 

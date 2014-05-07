@@ -52,7 +52,7 @@ public final class Search {
         //compatibility with selectors.
         RequestPathInfo pathInfo = request.getRequestPathInfo();
         String[] selectors = pathInfo.getSelectors();
-        this.query = request.getParameter("q");
+        this.query = request.getParameter("Query");
         this.start = request.getParameter("start");
         if (selectors.length > 0) {
             this.query = selectors[selectors.length - 1];
