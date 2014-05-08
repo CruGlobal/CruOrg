@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./link]]></value>
     </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { return Cru.widgets.Util.externalLinkValidation(value); }]]></value>
+    </property>
     <property name="linkPattern" type="1" multiple="false">
       <value><![CDATA[{0}.html]]></value>
     </property>

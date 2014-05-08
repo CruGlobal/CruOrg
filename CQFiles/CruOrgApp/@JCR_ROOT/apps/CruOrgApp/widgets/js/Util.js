@@ -128,5 +128,35 @@ Cru.widgets.Util = {
     	if (!text) return 0;
 
 		return text.length;
+	},
+
+    /**
+     * Checks if the link is external and validates
+     * that contains the text 'http://' or 'https://' on it.
+     * @param text to validate
+     * @return validated text
+     */
+    externalLinkValidation : function(text) {
+		if (!text) return true;
+
+        var validArray = ["http://","https://"],
+            length = validArray.length,
+            valid = true;
+
+        if (text.indexOf("/")!=0) {
+			valid = false;
+            while(length--) {
+                if ((text.indexOf(validArray[length])!=-1)) {
+                    valid = true;
+                }
+            }
+            if (valid) {
+                return valid;
+            } else {
+                return "Please add 'http://' or 'https://' at the beggining of the link.";	
+            }
+        } else {
+            return valid;
+        }
 	}
 };
