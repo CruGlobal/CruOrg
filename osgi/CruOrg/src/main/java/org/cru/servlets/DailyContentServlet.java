@@ -21,6 +21,9 @@ import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
 import static com.xumak.base.templatingsupport.TemplatingSupportFilter.TEMPLATE_CONTENT_MODEL_ATTR_NAME;
 import static org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyContentPagePathContextProcessor.*;
 import static org.cru.logiclesstemplates.processors.dailycontent.AddTodaysPagePathContextProcessor.SERVLET_PATH_KEY;
+import static org.cru.logiclesstemplates.processors.dailycontent.AddTomorrowsPagePathContextProcessor.IS_TOMORROW_DEFAULT_PATH;
+import static org.cru.logiclesstemplates.processors.dailycontent.AddYesterdaysPagePathContextProcessor.IS_YESTERDAY_DEFAULT_PATH;
+
 
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
@@ -63,6 +66,8 @@ public class DailyContentServlet
             jsonObject.put(SERVLET_PATH_KEY, contentObject.get(SERVLET_PATH_KEY));
             jsonObject.put(YESTERDAY, contentObject.get(YESTERDAY));
             jsonObject.put(TOMORROW, contentObject.get(TOMORROW));
+            jsonObject.put(IS_YESTERDAY_DEFAULT_PATH, contentObject.get(IS_YESTERDAY_DEFAULT_PATH));
+            jsonObject.put(IS_TOMORROW_DEFAULT_PATH, contentObject.get(IS_TOMORROW_DEFAULT_PATH));
             out.print(jsonObject.toString());
         } catch (JSONException e) {
             throw new ServletException(e);

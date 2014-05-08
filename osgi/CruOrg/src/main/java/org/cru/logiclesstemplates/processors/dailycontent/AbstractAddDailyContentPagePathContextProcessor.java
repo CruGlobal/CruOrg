@@ -71,6 +71,7 @@ public class AbstractAddDailyContentPagePathContextProcessor
         currentPage = pageManager.getContainingPage(resource);
         contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
         defaultPath = (String) contentObject.get(DEFAULT_PATH);
+        defaultPath = (null == defaultPath) ? "" : defaultPath;
         today = Calendar.getInstance();
         startDate = (Calendar) contentObject.get(START_DATE);
         if (null != startDate) {

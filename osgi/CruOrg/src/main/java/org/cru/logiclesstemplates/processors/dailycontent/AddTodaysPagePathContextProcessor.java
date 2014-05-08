@@ -42,10 +42,13 @@ public class AddTodaysPagePathContextProcessor extends AbstractAddDailyContentPa
         Page todaysPage = pageManager.getPage(todaysPagePath);
         if (todaysPage == null || !PageUtils.isArticlePage(todaysPage)){
             todaysPage = pageManager.getPage(defaultPath);
+            if (null != todaysPage) {
+                todaysPagePath = todaysPage.getPath();
+            }
         }
 
         contentObject.put(SERVLET_PATH_KEY, getContentServletPath(todaysPage));
-        contentObject.put(TODAY, defaultPath);
+        contentObject.put(TODAY, todaysPagePath);
 
     }
 

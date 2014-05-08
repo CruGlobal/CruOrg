@@ -22,12 +22,16 @@ import org.apache.sling.api.SlingHttpServletRequest;
 @Service
 public class AddTomorrowsPagePathContextProcessor extends AbstractAddDailyContentPagePathContextProcessor {
 
+    public static final String IS_TOMORROW_DEFAULT_PATH = "isTomorrowDefaultPath";
+
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)
             throws Exception {
 
         super.process(request, contentModel);
-        contentObject.put(TOMORROW, getDailyContentPath(TOMORROW));
+        String tomorrowsPagePath = getDailyContentPath(TOMORROW);
+        contentObject.put(TOMORROW, tomorrowsPagePath);
+        contentObject.put(IS_TOMORROW_DEFAULT_PATH, defaultPath.equals(tomorrowsPagePath));
 
     }
 

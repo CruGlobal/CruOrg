@@ -1,7 +1,14 @@
-Cru = Cru || {};
-Cru.components = Cru.components || {};
-Cru.components.DailyContent = Cru.components.DailyContent || {};
+/*Daily Content*/
+var Cru = (function(v) {
+    return v;
+}(Cru || {}));  
+Cru.components = (function(v) {
+    return v;
+}(Cru.components || {}));
 
+Cru.components.DailyContent = (function(v) {
+    return v;
+}(Cru.components.DailyContent || {}));
 Cru.components.DailyContent.elements = {
     H1 : "h1",
     H2 : "h2",
@@ -82,6 +89,18 @@ Cru.components.DailyContent.elements = {
         creditTag.appendChild(creditNode);
         return(creditTag);
     },
+    createPaginationItem : function(path, cssClass, text){
+        var paginationTag = document.createElement(this.LI);
+        paginationTag.className = cssClass;
+        var paginationLink = document.createElement(this.A);
+        paginationLink.className = "button  button--small  button--subtle";
+        paginationLink.href = path + ".html";
+        var paginationText = document.createTextNode(text);
+        paginationLink.appendChild(paginationText);
+        paginationTag.appendChild(paginationLink);
+        return paginationTag;
+
+    },
     buildHeader : function(header, data){
         var title = data["title"];
         if(title){
@@ -111,6 +130,14 @@ Cru.components.DailyContent.elements = {
         var credit = data["imageCredit"];
         if(caption){
             figure.append(this.createCaption(caption, credit));
+        }
+    },
+    buildPagination : function(pagination, data){
+        if(data.yesterday && !data.isYesterdayDefaultPath){
+            pagination.append(this.createPaginationItem(data.yesterday, "pagination__prev  grid__item  one-half  text--left visibility--hide", "Previous Day"));
+        }
+        if(data.tomorrow && !data.isTomorrowDefaultPath){
+            pagination.append(this.createPaginationItem(data.tomorrow, "pagination__next  text--right", "Next Day"));
         }
     }
 };
