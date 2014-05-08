@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="type" type="1" multiple="false">
-      <value><![CDATA[checkbox]]></value>
-    </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[selection]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Show facebook comments]]></value>
+      <value><![CDATA[Hide facebook comments]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./showFacebookCommentsFeed]]></value>
+      <value><![CDATA[./hideFacebookCommentsFeed]]></value>
     </property>
-    <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[true]]></value>
+    <property name="type" type="1" multiple="false">
+      <value><![CDATA[checkbox]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[If checked shows the facebook comments feed section]]></value>
+      <value><![CDATA[If checked it will hide the facebook comments feed section]]></value>
     </property>
   </properties>
   <mixins />
