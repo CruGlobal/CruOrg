@@ -1,0 +1,4 @@
+base=.
+
+search-options.min.js
+searchbox.js

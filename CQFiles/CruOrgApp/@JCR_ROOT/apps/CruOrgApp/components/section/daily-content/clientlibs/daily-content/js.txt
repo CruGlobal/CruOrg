@@ -1,0 +1,4 @@
+base=.
+
+DailyContent.js
+OnDocumentReady.js
