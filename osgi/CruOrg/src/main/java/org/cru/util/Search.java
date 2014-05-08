@@ -78,7 +78,7 @@ public final class Search {
 
         //for get the last published pages first.
         Predicate lastModPredicate = new Predicate("lastPublished", "daterange");
-        lastModPredicate.set("property", "jcr:content/cq:lastPublished");
+        lastModPredicate.set("property", "jcr:content/date");
         this.search.addPredicate(lastModPredicate);
     }
 

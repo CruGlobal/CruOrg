@@ -1,3 +1,11 @@
+var Cru = (function(v) {
+    return v;
+}(Cru || {}));
+
+Cru.components = (function(v) {
+    return v;
+}(Cru.components || {}));
+
 Cru.components.searchresults = {
     className : "div.primary-search__results",
     refresh: function(link) {
