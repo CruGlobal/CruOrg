@@ -39,7 +39,6 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
 
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)throws Exception{
-        log.info( "processing..............");
         Collection<String> pathList = new ArrayList();
         Resource resource = request.getResource();
         ResourceResolver resourceResolver = request.getResourceResolver();
@@ -55,11 +54,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
         //get Tags
         Tag[] tags = currentPage.getTags();
         ArrayList<String> ids = new ArrayList<String>();
-        log.debug("looking for tags...");
         for (Tag tag: tags){
-            if (log.isDebugEnabled()) {
-                log.debug("found: " + tag.getName());
-            }
             ids.add(tag.getTagID());
         }
         List<String> tagsList = ids; //contentModel.getAs(QUERY_CONTENT_KEY_NAME , List.class);
@@ -67,23 +62,19 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
         if (pages != null) {
             //get max number of items
             long max = getMaxNumber(contentModel, pages.getSize());
-            if (log.isDebugEnabled()) {
-                log.debug("pages size: " + pages.getSize());
-            }
             pathList = PublishDateUtils.getSortedPathList(pages, resource, max);
         }
-        if (log.isDebugEnabled()) {
-            log.debug("storing " + pathList.size() + " paths");
-        }
         int modular = pathList.size() % 3;
-
-        if ( modular == 2 ){
-
+        if (pathList.size() > 0){
+            contentModel.set("content.showContent", "true");
+        }
+        if (modular == 2 || pathList.size() == 2){
             String path = (String) ((ArrayList) pathList).get( pathList.size() - 2 );
             Page p = resourceResolver.getResource( path ).adaptTo( Page.class );
             contentModel.set("content.page21path", p.getPath());
             contentModel.set("content.page21title", p.getTitle());
             contentModel.set("content.page21description", p.getDescription());
+
 
             String path2 = (String) ((ArrayList) pathList).get( pathList.size() - 1 );
             Page p2 = resourceResolver.getResource( path2 ).adaptTo( Page.class );
@@ -94,7 +85,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
             ((ArrayList) pathList).remove( pathList.size() - 1 );
             ((ArrayList) pathList).remove( pathList.size() - 1 );
 
-        } else  if ( modular == 1 ){
+        } else  if (modular == 1 || pathList.size() == 1){
             String path = (String) ((ArrayList) pathList).get( pathList.size() - 1);
             Page p = resourceResolver.getResource( path ).adaptTo( Page.class);
             contentModel.set("content.page1path", p.getPath());
@@ -102,7 +93,6 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
             contentModel.set("content.page1description", p.getDescription());
             ((ArrayList) pathList).remove(pathList.size() - 1);
         }
-
         contentModel.set(PATH_LIST_CONTEXT_PROPERTY_NAME, pathList);
     }
 
