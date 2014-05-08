@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
+    <property name="type" type="1" multiple="false">
+      <value><![CDATA[select]]></value>
+    </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[selection]]></value>
     </property>
@@ -10,8 +13,8 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./style]]></value>
     </property>
-    <property name="type" type="1" multiple="false">
-      <value><![CDATA[select]]></value>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[image--inset__left]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter credits to display]]></value>
