@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:EditConfig">
+  <properties>
+    <property name="cq:actions" type="1" multiple="true">
+      <value><![CDATA[copymove]]></value>
+      <value><![CDATA[delete]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
