@@ -58,7 +58,7 @@ public class AddFeaturedStoriesPathListContextProcessor extends AbstractListCont
         Resource mainSliderResource = resourceResolver.getResource(mainSliderResourcePath);
         if (null != mainSliderResource) {
             ValueMap resourceProperties = ResourceUtil.getValueMap(mainSliderResource);
-            String[] mainSliderPathArray = resourceProperties.get(PATHREFS_CONTENT_KEY_NAME, String[].class);
+            String[] mainSliderPathArray = resourceProperties.get(PATHREFS_CONTENT_KEY_NAME, new String[]{});
             int mainSliderPathListSize = mainSliderPathArray.length >= FEATURED_STORIES_MAX_ITEMS ?
                     FEATURED_STORIES_MAX_ITEMS : mainSliderPathArray.length;
             mainSliderPathList.addAll(Arrays.asList(mainSliderPathArray).subList(0, mainSliderPathListSize));

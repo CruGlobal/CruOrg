@@ -92,6 +92,8 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
                 designObject.put("previousText", getFormat(previousText));
                 designObject.put("noResultsText", getFormat(noResultsText));
                 designObject.put("statisticsText", getFormat(statisticsText));
+
+                designObject.put("searchResourcePath", request.getResource().getPath());
             }
         } catch (Exception e) {
             e.printStackTrace();

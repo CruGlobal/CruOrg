@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<node nodeType="cq:Dialog">
+<node nodeType="sling:Folder">
   <properties />
   <mixins />
 </node>

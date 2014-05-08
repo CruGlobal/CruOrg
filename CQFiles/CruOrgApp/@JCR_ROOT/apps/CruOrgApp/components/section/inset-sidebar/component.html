@@ -1,25 +1,16 @@
+{%#if content.show%}
 <nav class="post-nav">
     {%#if content.title%}
         <h3 class="mb--">{%content.title%}</h3>
     {%/if%}
     <ul class="numbered-list">
-        <li>
-            <a href="#">Condimentum Tortor Venenatis Inceptos</a>
-        </li>
-        <li>
-            <a href="#">Parturient Ridiculus Pellentesque Sem</a>
-        </li>
-        <li>
-            <a href="#">Fermentum Cursus Vulputate Malesuada</a>
-        </li>
-        <li>
-            <a href="#">Risus Sem Tellus Nibh Vulputate</a>
-        </li>
-        <li>
-            <a href="#">Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</a>
-        </li>
-        <li>
-            <a href="#">Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</a>
-        </li>
+        {%#if content.allSiblings %}
+			{%#each content.allSiblings %}
+				<li>
+                    <a href="{% this.path %}">{% this.title %}</a>
+        		</li>
+            {%/each%}
+      {%/if%}
     </ul>
 </nav>
+{%/if%}

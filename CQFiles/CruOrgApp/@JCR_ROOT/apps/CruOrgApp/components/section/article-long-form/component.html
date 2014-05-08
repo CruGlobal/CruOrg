@@ -1,0 +1,61 @@
+ {%#if content.showContent %}
+{%#if page.isEditMode %}
+<div class="bordered">
+{%/if%}
+<article class="post-article">
+
+        <!-- ARTICLE HEADLINE COMPONENT -->
+        <header class="post__headline  layout-single-column">
+
+        <h1 class="post-title">{% content.title %}</h1>
+
+        <ul class="post-meta">
+        {%#if page.author %}
+        	<li class="accent">by {% page.author %}</li>
+        {%/if%}
+         {%#if page.twitterUser %}
+          	<li class="accent">
+                <a href="https://twitter.com/{% page.twitterUser %}">@{% page.twitterUser %}</a>
+   	        </li>
+         {%/if%}
+         {%#if page.dateText %}
+            <li>
+         	    <time>{% page.dateText %}</time>
+            </li>
+         {%/if%}
+        </ul>
+
+        </header>
+
+
+        
+        <!-- POST BODY -->
+        <div class="post__body  layout-single-column">
+        
+            <!-- Legacy Image -->
+            <figure class="image--legacy">
+            <img class="" src="{%content.fileReference%}"/>
+                <figcaption class="image__caption">
+                {%content.imageCaption%}
+            <span class="image-credit">{%content.imageCredit%}</span>
+            </figcaption>
+            </figure>
+    
+    
+    
+            <!-- The component: a link list with one extra class on the wrapper -->
+            {%#include "insetsidebar" as="CruOrgApp/components/section/inset-sidebar"%}{%/include%}
+            {%#if page.isEditMode %}<div style="clear:both"></div>{%/if %}
+    
+    
+            
+            <!-- Testing paragraphs -->
+            {%#include "article-long-form-parsys" as="foundation/components/parsys"%}{%/include%}
+
+
+    	</div>        
+    </article>
+{%#if page.isEditMode %}
+</div>
+{%/if%}
+{%/if%}

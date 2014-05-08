@@ -1,5 +1,4 @@
 package org.cru.logiclesstemplates.processors.list;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -40,6 +39,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
 
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)throws Exception{
+        log.info( "processing..............");
         Collection<String> pathList = new ArrayList();
         Resource resource = request.getResource();
         ResourceResolver resourceResolver = request.getResourceResolver();
@@ -79,11 +79,11 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
 
         if ( modular == 2 ){
 
-             String path = (String) ((ArrayList) pathList).get( pathList.size() - 2 );
-             Page p = resourceResolver.getResource( path ).adaptTo( Page.class );
-             contentModel.set("content.page21path", p.getPath());
-             contentModel.set("content.page21title", p.getTitle());
-             contentModel.set("content.page21description", p.getDescription());
+            String path = (String) ((ArrayList) pathList).get( pathList.size() - 2 );
+            Page p = resourceResolver.getResource( path ).adaptTo( Page.class );
+            contentModel.set("content.page21path", p.getPath());
+            contentModel.set("content.page21title", p.getTitle());
+            contentModel.set("content.page21description", p.getDescription());
 
             String path2 = (String) ((ArrayList) pathList).get( pathList.size() - 1 );
             Page p2 = resourceResolver.getResource( path2 ).adaptTo( Page.class );
@@ -149,5 +149,4 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
         }
         return max;
     }
-
 }
