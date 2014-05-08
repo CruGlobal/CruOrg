@@ -16,9 +16,10 @@ import com.xumak.extended.contextprocessors.lists.AddPagePathListContextProcesso
 @Service
 public class FooterGlobalPathListProcessor extends AddPagePathListContextProcessor {
 
+    public static final String FOOTER_RESOURCE_TYPE = "CruOrgApp/components/section/footer";
     @Override
     public Set<String> requiredResourceTypes() {
-        return Sets.newHashSet("CruOrgApp/components/section/footer");
+        return Sets.newHashSet(FOOTER_RESOURCE_TYPE);
     }
 
     @Override

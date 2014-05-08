@@ -2,5 +2,4 @@
 modernizr.js
 nav.js
 offcanvas.js
-slider.js
 search-options.min.js

@@ -1,5 +1,9 @@
-<!-- Wrapper for comments feed -->
-<section class="layout-single-column"> 
-	<!-- Test url for comments -->
-	<div class="fb-comments" data-href="{%page.requestURL%}" data-width="700" data-numposts="{%#if global.numberOfPosts %}{% global.numberOfPosts %}{%else%}{%#if page.isEditMode %}3{%/if %}{%/if%}" data-colorscheme="{%#if global.colorScheme %}{% global.colorScheme %}{%else%}{%#if page.isEditMode %}light{%/if %}{%/if%}"></div>
-</section>
+{%#if page.showArticleShare %}
+    {%#if page.showFacebookCommentsFeed %}
+        <!-- Wrapper for comments feed -->
+        <section class="layout-single-column"> 
+            <!-- Test url for comments -->
+            <div class="fb-comments" data-href="{%page.requestURL%}" data-width="700" data-numposts="{%#if global.numberOfPosts %}{% global.numberOfPosts %}{%else%}{%#if page.isEditMode %}3{%/if %}{%/if%}" data-colorscheme="{%#if global.colorScheme %}{% global.colorScheme %}{%else%}{%#if page.isEditMode %}light{%/if %}{%/if%}"></div>
+        </section>
+    {%/if %}
+{%/if %}

@@ -6,6 +6,8 @@
             <img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
         {%/if %}
     {%/if%}
-<figcaption class="image__caption">{%{ content.caption }%}</figcaption>
+<figcaption class="image__caption">{%{ content.caption }%}
+<span class="image-credit">{%content.imageCredit%}</span>
+</figcaption>
 </figure>
 {%#if page.isEditMode %}<div style="clear:both;"></div>{%/if %}

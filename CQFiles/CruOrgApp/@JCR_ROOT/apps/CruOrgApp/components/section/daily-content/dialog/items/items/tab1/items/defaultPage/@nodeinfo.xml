@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <properties>
+    <property name="editable" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Default Page]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./defaultPath]]></value>
+    </property>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[Cru]]></value>
+    </property>
+    <property name="rootPath" type="1" multiple="false">
+      <value><![CDATA[/content/cru]]></value>
+    </property>
+    <property name="allowBlank" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[The default page to be displayed.]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

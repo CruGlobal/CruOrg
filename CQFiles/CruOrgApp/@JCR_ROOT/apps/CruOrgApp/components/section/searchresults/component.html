@@ -1,12 +1,12 @@
-<div class="primary-search__results">
-    {%#if content.hits %}
+<div class="primary-search__results" data-asynchronous-path="{%global.searchResourcePath%}">
+    {%#if global.hits %}
         {%!Results %}
         <div class="layout-single-column">
-            <h3>{%{content.statisticsText}%}</h3>
+            <h3>{%{global.statisticsText}%}</h3>
         </div>
 
         <ul class="block-list  mb-">
-            {%#each content.hits %}
+            {%#each global.hits %}
                 <li class="primary-search__results--item">
                     <a class="layout-single-column"  href="{%this.URL%}">
                         <h4 class="results-title  pb--  mb0">{%{this.title}%}</h4>
@@ -19,18 +19,18 @@
 
         {%!Paginator %}
         <div class="layout-single-column">
-            {%#if content.showPagination %}
+            {%#if global.showPagination %}
                 <ol class="nav  pagination  layout-single-column">
                     <li class="pagination__prev">
-                        {%#if content.previousPage %}
-                            <a href="{%content.previousPage.URL%}"
-                               class="button  button--small  button--subtle">{%content.previousText%}</a>
+                        {%#if global.previousPage %}
+                            <a href="{%global.previousPage.URL%}"
+                               class="button  button--small  button--subtle">{%global.previousText%}</a>
                         {%else%}
-                            {%content.previousText%}
+                            {%global.previousText%}
                         {%/if%}
                     </li>
 
-                    {%#each content.resultPages %}
+                    {%#each global.resultPages %}
                         {%#if this.currentPage %}
                             <li class="current">
                         {%else%}
@@ -41,11 +41,11 @@
                     {%/each%}
 
                     <li class="pagination__next">
-                        {%#if content.nextPage %}
-                        <a href="{%content.nextPage.URL%}"
-                           class="button  button--small  button--subtle">{%content.nextText%}</a>
+                        {%#if global.nextPage %}
+                        <a href="{%global.nextPage.URL%}"
+                           class="button  button--small  button--subtle">{%global.nextText%}</a>
                         {%else%}
-                            {%content.nextText%}
+                            {%global.nextText%}
                         {%/if%}
                     </li>
                 </ol>
@@ -54,14 +54,14 @@
     {%else%}
         {%!No Results %}
         <div class="layout-single-column">
-            {%#if content.escapedQuery %}
-            {%{content.noResultsText}%}
+            {%#if global.escapedQuery %}
+            {%{global.noResultsText}%}
             {%/if%}
             {%#if page.isEditMode %}
-                {%#unless content.escapedQuery %}
+                {%#unless global.escapedQuery %}
                     [SEARCH RESULTS]<br>
-                    {%#unless content.pagesToSearch %}
-                        Set a <strong>page to search</strong> in the dialog.
+                    {%#unless global.pagesToSearch %}
+                        Set a <strong>page to search</strong> in the Global Properties.
                     {%/unless%}
                 {%/unless%}
             {%/if%}
