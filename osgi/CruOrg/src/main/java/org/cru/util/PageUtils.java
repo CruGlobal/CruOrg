@@ -56,20 +56,34 @@ public class PageUtils {
         return dayPage;
     }
 
+    /**
+     * looks for a page directly below {@code basePage} whose name is equal to {@code day}
+     * @param basePage the base page
+     * @param day the name of the page (represents the day of the month)
+     * @return page directly below {@code basePage} whose name is equal to {@code day} or null if none is found
+     */
     public static Page getDayPage(final Page basePage, final int day){
         PageManager pageManager = basePage.getPageManager();
         String dayPagePath = basePage.getPath() + "/" + day;
         Page monthPage = pageManager.getPage(dayPagePath);
         if (null == monthPage){
+            //see if adding a '0' before day matches the name of any page
             dayPagePath = basePage.getPath() + "/" + String.format("%02d", day);
             monthPage = pageManager.getPage(dayPagePath);
         }
         return monthPage;
     }
 
+    /**
+     * looks for a page directly below {@code basePage} whose name is equal to {@code monthNumber}
+     * @param basePage the base page
+     * @param monthNumber the name of the page (represents the month of the year),
+     *                    which is going to be converted to a String.
+     * @return page directly below {@code basePage} whose name is equal to {@code monthNumber} or null if none is found
+     */
     public static Page getMonthPage(final Page basePage, final int monthNumber){
         PageManager pageManager = basePage.getPageManager();
-        int month = monthNumber + 1;
+        int month = monthNumber + 1; //because Calendar months start at 0 and we want to start at 1
         String monthPagePath = basePage.getPath() + "/" + month;
         Page monthPage = pageManager.getPage(monthPagePath);
         if (null == monthPage){
@@ -79,6 +93,12 @@ public class PageUtils {
         return monthPage;
     }
 
+    /**
+     * looks for a page directly below {@code basePage} whose name is equal to {@code year}
+     * @param basePage the base page
+     * @param year the name of the page (represents the year), which is going to be converted to a String.
+     * @return page directly below {@code basePage} whose name is equal to {@code year} or null if none is found
+     */
     public static Page getYearPage(final Page basePage, final int year){
         PageManager pageManager = basePage.getPageManager();
         String yearPagePath = basePage.getPath() + "/" + year;
@@ -95,24 +115,34 @@ public class PageUtils {
         Iterator<Page> pageIterator = basePage.listChildren();
         List pageList = IteratorUtils.toList(pageIterator);
         Page page = null;
-        if (0 <= index && index < pageList.size()) {
+        if (0 <= index && index < pageList.size()) {//make sure the index is within range
             page = (Page) pageList.get(index);
         }
         return page;
     }
 
+    /**
+     * Finds the 'cq:template' property under the page properties and returns its value. Strips '/apps'.
+     * @param page the page we want to know the template of
+     * @return the cq:template page property
+     */
     public static String getTemplate(final Page page){
         String template = "";
         if (null != page) {
             ValueMap properties = page.getProperties();
             if (null != properties){
-                template = properties.get(PN_TEMPLATE, "");
-                template = template.replace(APPS_ROOT + "/", "");
+                template = properties.get(PN_TEMPLATE, ""); //get "cq:template" property
+                template = template.replace(APPS_ROOT + "/", ""); //strip "/apps"
             }
         }
         return template;
     }
 
+    /**
+     * Sees if the page's template path is equal to the article template path
+     * @param page the page to evaluate
+     * @return true if  {@code page} is an Article Page
+     */
     public static boolean isArticlePage(final Page page){
         return ARTICLE_TEMPLATE_PATH.equals(getTemplate(page));
     }

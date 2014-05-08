@@ -24,6 +24,9 @@ import static com.xumak.base.templatingsupport.TemplatingSupportFilter.TEMPLATE_
 /* DESCRIPTION
 * -----------------------------------------------------------------------------
 * DailyContentServlet
+*
+* Returns a json with the article's page properties such as title, subtitle,
+* date, twitter user, image path, etc.
 * -----------------------------------------------------------------------------
 *
 * CHANGE HISTORY
@@ -62,10 +65,10 @@ public class ArticleContentServlet
        JSONObject jsonObject = new JSONObject();
        TemplateContentModel contentModel =
                (TemplateContentModel) request.getAttribute(TEMPLATE_CONTENT_MODEL_ATTR_NAME);
-       //Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
        Map<String, Object> pageObject = (Map<String, Object>) contentModel.get(GLOBAL_PAGE_CONTENT_KEY);
 
        try {
+           //fill the json object
            jsonObject.put(IMAGE_PATH, pageObject.get(IMAGE_PATH));
            jsonObject.put(TITLE, pageObject.get(TITLE));
            jsonObject.put(SUBTITLE, pageObject.get(SUBTITLE));
@@ -75,7 +78,7 @@ public class ArticleContentServlet
            jsonObject.put(CAPTION, pageObject.get(CAPTION));
            jsonObject.put(CREDIT, pageObject.get(CREDIT));
 
-           out.write(jsonObject.toString());
+           out.write(jsonObject.toString()); //print the json object
        } catch (JSONException e) {
            throw new ServletException(e);
        }

@@ -25,6 +25,11 @@ import static java.util.Calendar.MINUTE;
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
  * AddDailyContentPagesContextProcessor
+ *
+ * Runs for the daily content component.
+ * Its process method sets the fields needed.
+ * Has methods to choose what path to return based on the isPeriodical, startDate
+ * and endDate properties.
  * -----------------------------------------------------------------------------
  * 
  * CHANGE HISTORY
@@ -86,15 +91,21 @@ public class AbstractAddDailyContentPagePathContextProcessor
         }
     }
 
+    /**
+     * Gets the page path under currentPage that corresponds to a given day
+     * @param day today, tomorrow or yesterday
+     * @return the corresponding page path
+     */
     protected String getPeriodicalPagePath(final String day){
         String periodicalPagePath = defaultPath;
         if (DateUtils.isDateBetween(today, startDate, endDate)){
+            //TODO fix; if today and start date are in different years, it will break
             int index = today.get(Calendar.DAY_OF_YEAR) - startDate.get(Calendar.DAY_OF_YEAR);
 
             if (YESTERDAY.equals(day)){
-                index--;
+                index--; //if we want yesterday's page, we substract 1 from today's index
             } else if (TOMORROW.equals(day)){
-                index++;
+                index++; //if we want tomorrow's page, we add 1 to today's index
             }
 
             Page periodicalPage = PageUtils.getPage(currentPage, index);
@@ -105,11 +116,23 @@ public class AbstractAddDailyContentPagePathContextProcessor
         return periodicalPagePath;
     }
 
+    /**
+     * gets page path under the specified date.
+     * e.g. for june 24 2014, this method will try to get {@code currentPage}/2014/06/24
+     * @param date the date to look for
+     * @return the path under {@code currentPage} that corresponds to {@code date}
+     */
     protected String getDatePagePath(final Calendar date){
         Page page = PageUtils.getPageFromDate(currentPage, date);
         return (null != page) ? page.getPath() : "";
     }
 
+    /**
+     * Gets the correct content path taking into account {@code isPeriodical} property, {@code startDate},
+     * {@code endDate} and today's date
+     * @param dateString "yesterday", "today" or "tomorrow"
+     * @return the content path for the corresponding day
+     */
     protected String getDailyContentPath(final String dateString){
         String dailyContentPath = "";
         if (null == contentObject.get(DISPLAY_PERIODICALLY_KEY)){
@@ -121,6 +144,11 @@ public class AbstractAddDailyContentPagePathContextProcessor
         return dailyContentPath;
     }
 
+    /**
+     * gets the date corresponding to yesterday, today or tomorrow
+     * @param dateString "yesterday", "today" or "tomorrow"
+     * @return the date corresponding to yesterday, today or tomorrow
+     */
     protected Calendar getDate(final String dateString){
         Calendar date = Calendar.getInstance();
         if (YESTERDAY.equals(dateString)) {
