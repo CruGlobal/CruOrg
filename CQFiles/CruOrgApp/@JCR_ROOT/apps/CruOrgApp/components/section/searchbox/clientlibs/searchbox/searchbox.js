@@ -1,3 +1,10 @@
+var Cru = (function(v) {
+    return v;
+}(Cru || {}));
+Cru.components = (function(v) {
+    return v;
+}(Cru.components || {}));
+
 Cru.components.searchbox = {
     searchBoxClass : "form.primary-search",
     init: function(form) {
@@ -9,7 +16,7 @@ Cru.components.searchbox = {
         //at least one configured path.
         if (pathFields.size() === 0) return;
 
-        //declare functions /////////////////////////////////////////////
+        //declare functions
         function isInternalLink(a) {
             return a.hostname === location.hostname;
         }
