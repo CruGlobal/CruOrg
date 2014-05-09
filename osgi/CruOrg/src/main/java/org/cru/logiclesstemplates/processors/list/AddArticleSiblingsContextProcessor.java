@@ -52,23 +52,28 @@ public class AddArticleSiblingsContextProcessor extends AbstractListContextProce
 
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)throws Exception{
-        Resource  resource = request.getResource().getParent().getParent();
-        ParagraphSystem paragraphSystem = ParagraphSystem.create(resource, request);
-        List<Paragraph> paragraphs = paragraphSystem.paragraphs();
-        PageManager pageManager = request.getResourceResolver().adaptTo(PageManager.class);
-        Page currentPage = pageManager.getContainingPage(resource).adaptTo(Page.class);
 
-        int count = 1;
-        List<Map<String, String>> allParagraphDetailList = new ArrayList<Map<String, String>>();
-        for (Paragraph p : paragraphs){
-            if (ARTICLE_LONG_FORM_RESOURCE_TYPE.equals(p.getResource().getResourceType())){
-                String path = currentPage.getPath() + "." + count + HTML_EXT;
-                allParagraphDetailList.add(extractParagraphDetails(p, path));
-                count++;
+        if ( request.getResource() != null &&
+                request.getResource().getParent() != null &&
+                request.getResource().getParent().getParent() != null ){
+            Resource  resource = request.getResource().getParent().getParent();
+            ParagraphSystem paragraphSystem = ParagraphSystem.create(resource, request);
+            List<Paragraph> paragraphs = paragraphSystem.paragraphs();
+            PageManager pageManager = request.getResourceResolver().adaptTo(PageManager.class);
+            Page currentPage = pageManager.getContainingPage(resource).adaptTo(Page.class);
+
+            int count = 1;
+            List<Map<String, String>> allParagraphDetailList = new ArrayList<Map<String, String>>();
+            for (Paragraph p : paragraphs){
+                if (ARTICLE_LONG_FORM_RESOURCE_TYPE.equals(p.getResource().getResourceType())){
+                    String path = currentPage.getPath() + "." + count + HTML_EXT;
+                    allParagraphDetailList.add(extractParagraphDetails(p, path));
+                    count++;
+                }
             }
+            contentModel.set(TOTAL_SIBLINGS_PROPERTY_NAME, new Integer(count));
+            contentModel.set(ALL_SIBLINGS_PROPERTY_NAME, allParagraphDetailList);
         }
-        contentModel.set(TOTAL_SIBLINGS_PROPERTY_NAME, new Integer(count));
-        contentModel.set(ALL_SIBLINGS_PROPERTY_NAME, allParagraphDetailList);
     }
 
     private Map<String, String> extractParagraphDetails(final Paragraph paragraph, final String path)

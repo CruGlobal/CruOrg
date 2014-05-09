@@ -24,7 +24,7 @@ import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextP
 
 @Component
 @Service
-public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProcessor {
+public class AddRelatedTagsPagesContextProcessor extends AddQueriedPagePathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/related-stories";
     public static final String PATH_LIST_CONTEXT_PROPERTY_NAME = "list.paths";
@@ -46,7 +46,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
         PageManager pageManager = (PageManager) resourceResolver.adaptTo(PageManager.class);
 
         //get actual page path
-        Page currentPage = pageManager.getContainingPage(resource).adaptTo( Page.class );
+        Page currentPage = pageManager.getContainingPage(resource).adaptTo(Page.class);
 
         //get PathReference
         String pathRef = contentModel.getAsString(PATHREF_GLOBAL_KEY_NAME);
@@ -69,14 +69,14 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
             contentModel.set("content.showContent", "true");
         }
         if (modular == 2 || pathList.size() == 2){
-            String path = (String) ((ArrayList) pathList).get( pathList.size() - 2 );
+            String path = (String) ((ArrayList) pathList).get( pathList.size() - 2);
             Page p = resourceResolver.getResource( path ).adaptTo( Page.class );
             contentModel.set("content.page21path", p.getPath());
             contentModel.set("content.page21title", p.getTitle());
             contentModel.set("content.page21description", p.getDescription());
 
 
-            String path2 = (String) ((ArrayList) pathList).get( pathList.size() - 1 );
+            String path2 = (String) ((ArrayList) pathList).get( pathList.size() - 1);
             Page p2 = resourceResolver.getResource( path2 ).adaptTo( Page.class );
             contentModel.set("content.page22path", p2.getPath());
             contentModel.set("content.page22title", p2.getTitle());
