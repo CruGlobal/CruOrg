@@ -1,6 +1,11 @@
 package org.cru.util;
 
-import static com.day.cq.commons.jcr.JcrConstants.JCR_CONTENT;
+import static com.day.cq.wcm.api.NameConstants.NT_PAGE;
+import static com.day.cq.wcm.api.NameConstants.NT_PSEUDO_PAGE;
+import static com.day.cq.dam.api.DamConstants.NT_DAM_ASSET;
+import static com.day.cq.wcm.api.commands.WCMCommand.PAGE_TITLE_PARAM;
+import static com.day.cq.search.Predicate.PARAM_EXCERPT;
+import static com.xumak.base.Constants.*;
 import static org.apache.commons.lang.CharEncoding.UTF_8;
 
 import java.io.UnsupportedEncodingException;
@@ -46,7 +51,6 @@ public final class Search {
     private final SlingHttpServletRequest request;
     private final SimpleSearch search;
     private String query;
-    private String start;
 
     public Search(final SlingHttpServletRequest request) {
         this.request = request;
@@ -55,12 +59,12 @@ public final class Search {
         //compatibility with selectors.
         RequestPathInfo pathInfo = request.getRequestPathInfo();
         String[] selectors = pathInfo.getSelectors();
-        this.query = request.getParameter("Query");
-        this.start = request.getParameter("start");
+        this.query = request.getParameter(Constants.QUERY_PARAMETER);
+        String start = request.getParameter(Constants.START_PARAMETER);
         if (selectors.length > 0) {
             this.query = selectors[selectors.length - 1];
             if (selectors.length > 1) {
-                this.start = selectors[selectors.length - 2];
+                start = selectors[selectors.length - 2];
             }
         }
 
@@ -71,20 +75,20 @@ public final class Search {
                 log.error("Search error setting query", e);
             }
         }
-        if (this.start != null) {
+        if (start != null) {
             try {
-                this.search.setStart(Long.parseLong(this.start));
+                this.search.setStart(Long.parseLong(start));
             } catch (NumberFormatException e) {
                 log.error("Search error setting start", e);
             }
         }
 
         //for search in specific properties.
-        this.search.setSearchProperties("jcr:title,jcr:description,./text,author,twitterUser");
+        this.search.setSearchProperties(Constants.SEARCH_IN_PROPERTIES);
 
         //for get the last published pages first.
-        Predicate lastModPredicate = new Predicate("lastPublished", "daterange");
-        lastModPredicate.set("property", JCR_CONTENT  + "/date");
+        Predicate lastModPredicate = new Predicate(Constants.LAST_PUBLISHED_KEY, Constants.DATE_RANGE_KEY);
+        lastModPredicate.set(Constants.PROPERTY_KEY, JCR_CONTENT + Constants.DATE_PROPERTY);
         this.search.addPredicate(lastModPredicate);
     }
 
@@ -130,9 +134,9 @@ public final class Search {
         PathInfo pathInfo = new PathInfo(request.getRequestURI());
         StringBuilder url = new StringBuilder();
         url.append(pathInfo.getResourcePath());
-        url.append('.').append(page.getStart());
-        url.append('.').append(Search.encodeURL(search.getQuery()));
-        url.append('.').append(pathInfo.getExtension());
+        url.append(Constants.DOT_SEPARATOR).append(page.getStart());
+        url.append(Constants.DOT_SEPARATOR).append(Search.encodeURL(search.getQuery()));
+        url.append(Constants.DOT_SEPARATOR).append(pathInfo.getExtension());
 
         return url.toString();
     }
@@ -158,9 +162,9 @@ public final class Search {
         }
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
-        resultMap.put("URL", getURL(resultPage));
-        resultMap.put("pageNumber", getPageNumber(resultPage));
-        resultMap.put("currentPage", resultPage.isCurrentPage());
+        resultMap.put(Constants.URL_KEY, getURL(resultPage));
+        resultMap.put(Constants.PAGE_NUMBER_KEY, getPageNumber(resultPage));
+        resultMap.put(Constants.DEFAULT_CURRENT_PAGE_NAME, resultPage.isCurrentPage());
 
         return resultMap;
     }
@@ -218,7 +222,7 @@ public final class Search {
      */
     private boolean isPageOrAsset(final Node n)
             throws RepositoryException {
-        return (isPage(n)) || (n.isNodeType("dam:Asset"));
+        return (isPage(n)) || (n.isNodeType(NT_DAM_ASSET));
     }
 
     /**
@@ -228,7 +232,7 @@ public final class Search {
      */
     private boolean isPage(final Node n)
             throws RepositoryException {
-        return (n.isNodeType("cq:Page")) || (n.isNodeType("cq:PseudoPage"));
+        return (n.isNodeType(NT_PAGE)) || (n.isNodeType(NT_PSEUDO_PAGE));
     }
 
     private Node getPageOrAsset(final Hit hit)
@@ -250,7 +254,7 @@ public final class Search {
         Node n = getPageOrAsset(hit);
         String url = request.getContextPath() + n.getPath();
         if (isPage(n)) {
-            url = url + ".html";
+            url = url + HTML_EXT;
         }
         return url;
     }
@@ -263,9 +267,9 @@ public final class Search {
      */
     private Map<String, Object> getHitProperties(final Hit hit) throws RepositoryException {
         Map<String, Object> resultMap = new HashMap<String, Object>();
-        resultMap.put("URL", getURL(hit));
-        resultMap.put("title", hit.getTitle());
-        resultMap.put("excerpt", hit.getExcerpt());
+        resultMap.put(Constants.URL_KEY, getURL(hit));
+        resultMap.put(PAGE_TITLE_PARAM, hit.getTitle());
+        resultMap.put(PARAM_EXCERPT, hit.getExcerpt());
 
         return resultMap;
     }

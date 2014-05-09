@@ -14,11 +14,12 @@ import org.apache.sling.api.SlingHttpServletRequest;
 
 import com.google.common.collect.Sets;
 import com.xumak.base.templatingsupport.TemplateContentModel;
+import static com.xumak.base.Constants.MEDIUM_PRIORITY;
 import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
 
 @Component
 @Service
-public class QueriedFilterContextProcessor extends AddQueriedPagePathListContextProcessor {
+public class AddQueriedFilterContextProcessor extends AddQueriedPagePathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/queried";
     public static final String XUMAK_CURATED_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/curated";
@@ -31,7 +32,7 @@ public class QueriedFilterContextProcessor extends AddQueriedPagePathListContext
     public static final String IMAGE_VALUE_NONE = "NONE";
     public static final String IMAGE_VALUE_FIRST = "FIRST";
 
-    public static final int PRIORITY = AddQueriedPagePathListContextProcessor.PRIORITY - 20;
+    public static final int PRIORITY = MEDIUM_PRIORITY;
 
     @Override
     public Set<String> requiredResourceTypes() {
