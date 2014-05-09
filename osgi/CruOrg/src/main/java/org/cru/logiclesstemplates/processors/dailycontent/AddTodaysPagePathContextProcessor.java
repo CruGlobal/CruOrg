@@ -47,6 +47,7 @@ public class AddTodaysPagePathContextProcessor extends AbstractAddDailyContentPa
             }
         }
 
+        //TODO separate into different context processors
         contentObject.put(SERVLET_PATH_KEY, getContentServletPath(todaysPage));
         contentObject.put(TODAY, todaysPagePath);
 

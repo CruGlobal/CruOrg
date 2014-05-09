@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[CruOrgApp/components/section/related-stories]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

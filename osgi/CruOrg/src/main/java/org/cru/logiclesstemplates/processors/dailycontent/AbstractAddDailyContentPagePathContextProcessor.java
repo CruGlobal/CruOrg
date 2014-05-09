@@ -82,7 +82,6 @@ public class AbstractAddDailyContentPagePathContextProcessor
         if (null != startDate) {
             startDate.set(HOUR_OF_DAY, 0);
             startDate.set(MINUTE, 0);
-
         }
         endDate = (Calendar) contentObject.get(END_DATE);
         if (null != endDate) {
