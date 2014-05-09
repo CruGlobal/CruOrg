@@ -45,13 +45,15 @@
     
             <!-- The component: a link list with one extra class on the wrapper -->
             {%#include "insetsidebar" as="CruOrgApp/components/section/inset-sidebar"%}{%/include%}
-            {%#if page.isEditMode %}<div style="clear:both"></div>{%/if %}
-    
-    
-            
+
             <!-- Testing paragraphs -->
             {%#include "article-long-form-parsys" as="foundation/components/parsys"%}{%/include%}
-
+            {%#if page.prevSiblings %}
+            	<a href="{%page.prevSiblings%}">Previous</a>
+            {%/if%}
+            {%#if page.nextSiblings %}
+            	<a href="{%page.nextSiblings%}">Next</a>
+            {%/if%}
 
     	</div>        
     </article>
