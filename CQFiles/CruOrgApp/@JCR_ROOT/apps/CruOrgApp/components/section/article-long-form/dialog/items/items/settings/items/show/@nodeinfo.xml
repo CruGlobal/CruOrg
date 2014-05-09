@@ -5,7 +5,7 @@
       <value><![CDATA[selection]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Show]]></value>
+      <value><![CDATA[Show inset sidebar]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./show]]></value>

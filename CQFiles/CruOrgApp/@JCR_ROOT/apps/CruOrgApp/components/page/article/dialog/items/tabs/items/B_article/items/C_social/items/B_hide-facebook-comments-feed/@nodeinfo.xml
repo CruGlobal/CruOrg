@@ -14,7 +14,7 @@
       <value><![CDATA[checkbox]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[If checked it will the facebook comments feed section]]></value>
+      <value><![CDATA[If checked it will hide the facebook comments feed section]]></value>
     </property>
   </properties>
   <mixins />

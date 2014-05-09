@@ -1,8 +1,7 @@
-{%#if content.show%}
-<nav class="post-nav">
     {%#if content.title%}
         <h3 class="mb--">{%content.title%}</h3>
     {%/if%}
+
     <ul class="numbered-list">
         {%#if content.allSiblings %}
 			{%#each content.allSiblings %}
@@ -12,5 +11,3 @@
             {%/each%}
       {%/if%}
     </ul>
-</nav>
-{%/if%}

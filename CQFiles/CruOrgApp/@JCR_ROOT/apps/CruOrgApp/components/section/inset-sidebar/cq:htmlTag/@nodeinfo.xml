@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="cq:tagName" type="1" multiple="false">
+      <value><![CDATA[nav]]></value>
+    </property>
+    <property name="class" type="1" multiple="false">
+      <value><![CDATA[post-nav]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

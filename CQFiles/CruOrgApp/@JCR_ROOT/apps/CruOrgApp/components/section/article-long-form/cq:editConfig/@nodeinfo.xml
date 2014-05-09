@@ -2,7 +2,7 @@
 <node nodeType="cq:EditConfig">
   <properties>
     <property name="cq:layout" type="1" multiple="false">
-      <value><![CDATA[rollover]]></value>
+      <value><![CDATA[editbar]]></value>
     </property>
     <property name="cq:actions" type="1" multiple="true">
       <value><![CDATA[text: Article Long Form]]></value>

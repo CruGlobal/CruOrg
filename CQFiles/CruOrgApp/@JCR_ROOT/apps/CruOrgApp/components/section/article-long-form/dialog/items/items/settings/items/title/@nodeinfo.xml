@@ -14,7 +14,7 @@
       <value><![CDATA[function(value) { return Cru.widgets.SectionTitle.validateLength(value,80); }]]></value>
     </property>
     <property name="allowBlank" type="6" multiple="false">
-      <value>true</value>
+      <value>false</value>
     </property>
   </properties>
   <mixins />
