@@ -1,5 +1,8 @@
 package org.cru.util;
 
+import static com.day.cq.commons.jcr.JcrConstants.JCR_CONTENT;
+import static org.apache.commons.lang.CharEncoding.UTF_8;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -63,7 +66,7 @@ public final class Search {
 
         if (this.query != null) {
             try {
-                setQuery(new String(this.query.getBytes("UTF-8")));
+                setQuery(new String(this.query.getBytes(UTF_8)));
             } catch (UnsupportedEncodingException e) {
                 log.error("Search error setting query", e);
             }
@@ -76,9 +79,12 @@ public final class Search {
             }
         }
 
+        //for search in specific properties.
+        this.search.setSearchProperties("jcr:title,jcr:description,./text,author,twitterUser");
+
         //for get the last published pages first.
         Predicate lastModPredicate = new Predicate("lastPublished", "daterange");
-        lastModPredicate.set("property", "jcr:content/date");
+        lastModPredicate.set("property", JCR_CONTENT  + "/date");
         this.search.addPredicate(lastModPredicate);
     }
 
@@ -109,7 +115,7 @@ public final class Search {
 
     private static String encodeURL(final String url) {
         try {
-            return URLEncoder.encode(url, "UTF-8");
+            return URLEncoder.encode(url, UTF_8);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
