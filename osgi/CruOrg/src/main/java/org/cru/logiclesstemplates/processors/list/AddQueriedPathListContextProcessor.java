@@ -21,7 +21,7 @@ import java.util.Set;
 
 @Component
 @Service
-public class QueriedPathListContextProcessor extends AddQueriedPagePathListContextProcessor {
+public class AddQueriedPathListContextProcessor extends AddQueriedPagePathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/lists/queried";
     public static final String QUERY_CONTENT_KEY_NAME = "content.query";
