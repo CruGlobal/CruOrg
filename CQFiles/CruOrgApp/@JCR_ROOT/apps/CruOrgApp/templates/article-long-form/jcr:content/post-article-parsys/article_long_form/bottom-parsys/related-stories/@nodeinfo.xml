@@ -2,10 +2,7 @@
 <node nodeType="nt:unstructured">
   <properties>
     <property name="sling:resourceType" type="1" multiple="false">
-      <value><![CDATA[CruOrgApp/components/section/article-long-form]]></value>
-    </property>
-    <property name="show" type="1" multiple="false">
-      <value><![CDATA[true]]></value>
+      <value><![CDATA[CruOrgApp/components/section/related-stories]]></value>
     </property>
   </properties>
   <mixins />

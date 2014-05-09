@@ -1,11 +1,5 @@
-{%#if content.show%}
-<!--nav class="post-nav"-->
     {%#if content.title%}
         <h3 class="mb--">{%content.title%}</h3>
-	{%else%}
- 		<div>
-        	<img title="" alt="" class="cq-dd-text cq-text-placeholder" src="/etc/designs/default/0.gif" />
-		</div>
     {%/if%}
 
     <ul class="numbered-list">
@@ -17,11 +11,3 @@
             {%/each%}
       {%/if%}
     </ul>
-<!--/nav-->
-{%else%}
-	{%#if page.isEditMode %}
-		<div>
-        	<img title="" alt="" class="cq-dd-text cq-text-placeholder" src="/etc/designs/default/0.gif" />
-		</div>
-    {%/if%}
-{%/if%}

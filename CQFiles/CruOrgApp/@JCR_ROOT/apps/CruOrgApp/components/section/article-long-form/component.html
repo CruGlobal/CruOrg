@@ -34,19 +34,30 @@
         
             <!-- Legacy Image -->
             <figure class="image--legacy">
-            <img class="" src="{%content.fileReference%}"/>
+                {%#if content.imagePath%}    
+            <img class="" src="{%content.imagePath%}"/>
+                 {%else%}
+            {%#if page.isEditMode%}
+                    	<img title="" alt="" class="cq-dd-text cq-text-placeholder" src="/etc/designs/default/0.gif" />
+                            {%/if%}
+                             {%/if%}
                 <figcaption class="image__caption">
                 {%content.imageCaption%}
             <span class="image-credit">{%content.imageCredit%}</span>
             </figcaption>
             </figure>
-    
-    
-    
-            <!-- The component: a link list with one extra class on the wrapper -->
-            {%#include "insetsidebar" as="CruOrgApp/components/section/inset-sidebar"%}{%/include%}
+    {%#if page.isEditMode %}
+<div style="clear:both;"></div>
+    {%/if%}
 
-            <!-- Testing paragraphs -->
+            {%#if content.show%}
+            <!-- The component: a link list with one extra class on the wrapper -->
+            {%#include "inset-sidebar" as="CruOrgApp/components/section/inset-sidebar"%}{%/include%}
+            {%/if%}
+
+            {%#if page.isEditMode %}
+<div style="clear:both;"></div>
+    {%/if%}
             {%#include "article-long-form-parsys" as="foundation/components/parsys"%}{%/include%}
             {%#if page.prevSiblings %}
             	<a href="{%page.prevSiblings%}">Previous</a>
@@ -54,6 +65,7 @@
             {%#if page.nextSiblings %}
             	<a href="{%page.nextSiblings%}">Next</a>
             {%/if%}
+      		{%#include "bottom-parsys" as="foundation/components/parsys"%}{%/include%}
 
     	</div>        
     </article>
