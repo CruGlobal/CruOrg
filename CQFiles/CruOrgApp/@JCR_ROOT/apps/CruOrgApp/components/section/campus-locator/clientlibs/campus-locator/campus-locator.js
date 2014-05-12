@@ -1,4 +1,3 @@
-console.log("ASDF");
 $(document).ready(function() {
 
     $( function() {
