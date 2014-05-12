@@ -15,6 +15,8 @@ import java.util.Set;
 import static com.xumak.base.Constants.GLOBAL_PAGE_CONTENT_KEY;
 import static com.xumak.base.Constants.HTML_EXT;
 import static com.xumak.base.Constants.IS_EDIT_MODE;
+import static com.xumak.base.Constants.HIGHER_PRIORITY;
+
 
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
@@ -40,6 +42,7 @@ public class AddShowParagraphFlagContextProcessor extends AddComponentProperties
     public static final String TOTAL_SIBLINGS_PROPERTY_NAME = "page.totalSiblings";
     public static final String NEXT_SIBLINGS_PROPERTY_NAME = "page.nextSiblings";
     public static final String PREV_SIBLINGS_PROPERTY_NAME = "page.prevSiblings";
+
 
     @Override
     public Set<String> requiredResourceTypes() {
@@ -95,6 +98,6 @@ public class AddShowParagraphFlagContextProcessor extends AddComponentProperties
     }
     @Override
     public int priority(){
-        return 1000;
+        return HIGHER_PRIORITY;
     }
 }

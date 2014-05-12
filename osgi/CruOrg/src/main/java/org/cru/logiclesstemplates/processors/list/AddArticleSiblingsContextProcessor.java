@@ -59,6 +59,10 @@ public class AddArticleSiblingsContextProcessor extends AbstractResourceTypeChec
         resource = (null != resource) ? resource.getParent() : resource;
 
         if (null != resource){
+        if ( request.getResource() != null &&
+                request.getResource().getParent() != null &&
+                request.getResource().getParent().getParent() != null ){
+            Resource  resource = request.getResource().getParent().getParent();
             ParagraphSystem paragraphSystem = ParagraphSystem.create(resource, request);
             List<Paragraph> paragraphs = paragraphSystem.paragraphs();
             PageManager pageManager = request.getResourceResolver().adaptTo(PageManager.class);
@@ -76,7 +80,6 @@ public class AddArticleSiblingsContextProcessor extends AbstractResourceTypeChec
             contentModel.set(TOTAL_SIBLINGS_PROPERTY_NAME, new Integer(count));
             contentModel.set(ALL_SIBLINGS_PROPERTY_NAME, allParagraphDetailList);
         }
-
     }
 
     private Map<String, String> extractParagraphDetails(final Paragraph paragraph, final String path)
