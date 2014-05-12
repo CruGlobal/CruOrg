@@ -11,7 +11,7 @@
       <value><![CDATA[./text]]></value>
     </property>
     <property name="validator" type="1" multiple="false">
-      <value><![CDATA[function(value) { if (Cru.widgets.Util.characterCount(value) > 80) return "The maximum number of characters is 80"; else return true; }]]></value>
+      <value><![CDATA[function(value) { if (Cru.widgets.Util.characterCount(value) > 50) return "The maximum number of characters is 50"; else return true; }]]></value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter text to display]]></value>
