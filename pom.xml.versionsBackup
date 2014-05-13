@@ -17,7 +17,7 @@
         <pkgMgrURL>${cq.server}/crx/packmgr/service.jsp</pkgMgrURL>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <xcqb.version>2.0.1.100</xcqb.version>
+        <xcqb.version>2.0.1.93</xcqb.version>
 
         <!-- Properties for Sonar -->
         <sonar.jdbc.url>jdbc:mysql://sonar.xumak.gt:3306/sonar</sonar.jdbc.url> <!-- jdbc:mysql://sonar.xumak.gt:3306/sonar -->
