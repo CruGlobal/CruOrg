@@ -7,7 +7,6 @@ import com.day.cq.wcm.foundation.ParagraphSystem;
 import com.google.common.collect.Sets;
 import com.xumak.base.templatingsupport.AbstractResourceTypeCheckContextProcessor;
 import com.xumak.base.templatingsupport.TemplateContentModel;
-import com.xumak.extended.contextprocessors.lists.AbstractListContextProcessor;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -40,7 +39,8 @@ import static com.xumak.base.Constants.HTML_EXT;
 
 @Component
 @Service
-public class AddArticleSiblingsContextProcessor extends AbstractResourceTypeCheckContextProcessor<TemplateContentModel> {
+public class AddArticleSiblingsContextProcessor
+        extends AbstractResourceTypeCheckContextProcessor<TemplateContentModel> {
 
     public static final String INSET_SIDEBAR_RESOURCE_TYPE = "CruOrgApp/components/section/inset-sidebar";
     public static final String ARTICLE_LONG_FORM_RESOURCE_TYPE = "CruOrgApp/components/section/article-long-form";
@@ -59,10 +59,7 @@ public class AddArticleSiblingsContextProcessor extends AbstractResourceTypeChec
         resource = (null != resource) ? resource.getParent() : resource;
 
         if (null != resource){
-        if ( request.getResource() != null &&
-                request.getResource().getParent() != null &&
-                request.getResource().getParent().getParent() != null ){
-            Resource  resource = request.getResource().getParent().getParent();
+
             ParagraphSystem paragraphSystem = ParagraphSystem.create(resource, request);
             List<Paragraph> paragraphs = paragraphSystem.paragraphs();
             PageManager pageManager = request.getResourceResolver().adaptTo(PageManager.class);
