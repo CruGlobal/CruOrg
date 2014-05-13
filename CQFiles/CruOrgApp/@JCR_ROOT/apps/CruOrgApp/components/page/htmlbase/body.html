@@ -1,18 +1,19 @@
 
 <body class="page {%component.bodyClass%}">
+	<div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+	</script>
     <div class="preload">
     	<img src="/images/cru-logo.svg" alt="" width="0" height="0">
     	<img src="/images/cru-logo.png" alt="" width="0" height="0"> 
     </div>
-    <!-- Facebook feed js -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
     {%> siteglobalbutton %}
     <div id="js-outer-wrap"  class="position--relative  full-width  overflow--hidden  outer-wrap  js-outer-wrap">
     	<div id="js-inner-wrap"  class="position--relative  full-width  inner-wrap  js-inner-wrap">
