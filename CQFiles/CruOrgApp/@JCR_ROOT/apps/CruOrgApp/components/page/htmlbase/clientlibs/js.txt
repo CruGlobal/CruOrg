@@ -1,5 +1,2 @@
 #base=js
 modernizr.js
-nav.js
-offcanvas.js
-search-options.min.js
