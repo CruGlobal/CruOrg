@@ -7,6 +7,7 @@
     <property name="embed" type="1" multiple="true">
       <value><![CDATA[cruOrg.page]]></value>
       <value><![CDATA[cruOrg.section]]></value>
+      <value><![CDATA[xumakbase.page.htmlbase]]></value>
     </property>
   </properties>
   <mixins />
