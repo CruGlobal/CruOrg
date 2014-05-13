@@ -2,7 +2,7 @@
 <node nodeType="cq:Panel">
   <properties>
     <property name="title" type="1" multiple="false">
-      <value><![CDATA[Misc]]></value>
+      <value><![CDATA[Home Page]]></value>
     </property>
   </properties>
   <mixins />
