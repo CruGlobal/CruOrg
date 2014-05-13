@@ -4,14 +4,6 @@
     {%#if global.fbAppID %}
         <div class="display--inline-block">
             <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-            <div id="fb-root"></div>
-            <script>(function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={% global.fbAppID %}";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
         </div>
     {%/if%}
 
@@ -33,5 +25,11 @@
         })();
       </script>
     </div>
+    <div class="display--inline-block">
+        <a class="share-alt" href="javascript:emailThis()"><img alt="Email this page" src="/images/btn_email.png"></a>
+     </div>
+     <div class="display--inline-block">
+         <a class="share-alt" href="#" onclick="javascript:window.print();"><img alt="Print this page" src="/images/btn_print.png"></a>
+     </div>
 </div>
 {%/unless %}

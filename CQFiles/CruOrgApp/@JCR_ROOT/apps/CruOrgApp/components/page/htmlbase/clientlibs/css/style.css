@@ -5159,8 +5159,8 @@ code {
     display: inline-block;
     width: 78px;
     height: 54px;
-    background: url("//images/cru-logo.png");
-    background-image: url("//images/cru-logo.svg");
+    background: url("/images/cru-logo.png");
+    background-image: url("/images/cru-logo.svg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain; }
