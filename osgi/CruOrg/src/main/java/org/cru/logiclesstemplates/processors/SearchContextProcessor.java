@@ -104,7 +104,7 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
      * @param value is the message with the keys to replace.
      * @return the value message with the keys replaced.
      */
-    private String getFormat(final String value, final Map<String,Object> designObject) {
+    private String getFormat(final String value, final Map<String, Object> designObject) {
         return MessageFormat.format(value,
                 designObject.get("escapedQuery"),
                 designObject.get("totalMatches"),
