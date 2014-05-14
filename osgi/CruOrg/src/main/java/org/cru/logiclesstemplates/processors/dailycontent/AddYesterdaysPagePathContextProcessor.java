@@ -5,6 +5,10 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
 
+import java.util.Map;
+
+import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
+
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
  * AddYesterdaysPagePathContextProcessor
@@ -27,11 +31,13 @@ public class AddYesterdaysPagePathContextProcessor extends AbstractAddDailyConte
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)
             throws Exception {
-
+       /*
         super.process(request, contentModel);
         String yesterdaysPagePath =  getDailyContentPath(YESTERDAY);
+        Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
+
         contentObject.put(YESTERDAY, yesterdaysPagePath);
-        contentObject.put(IS_YESTERDAY_DEFAULT_PATH, defaultPath.equals(yesterdaysPagePath));
+        contentObject.put(IS_YESTERDAY_DEFAULT_PATH, defaultPath.equals(yesterdaysPagePath));  */
     }
 
 }

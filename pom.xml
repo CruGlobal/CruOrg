@@ -380,6 +380,12 @@
             <artifactId>Base</artifactId>
             <version>${xcqb.version}</version>
         </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>1.6</version>
+        </dependency>
+
     </dependencies>
 
   <modules>

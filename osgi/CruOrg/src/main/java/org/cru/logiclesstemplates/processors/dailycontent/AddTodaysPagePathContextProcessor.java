@@ -35,7 +35,7 @@ public class AddTodaysPagePathContextProcessor extends AbstractAddDailyContentPa
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)
             throws Exception {
-        super.process(request, contentModel);
+        super.process(request, contentModel);      /*
         ResourceResolver resourceResolver = request.getResourceResolver();
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
         String todaysPagePath = getDailyContentPath(TODAY);
@@ -49,10 +49,10 @@ public class AddTodaysPagePathContextProcessor extends AbstractAddDailyContentPa
 
         //TODO separate into different context processors
         contentObject.put(SERVLET_PATH_KEY, getContentServletPath(todaysPage));
-        contentObject.put(TODAY, todaysPagePath);
+        contentObject.put(TODAY, todaysPagePath);              */
 
     }
-
+    /*
     private String getContentServletPath(final Page page){
         String contentServletPath = "";
         if (null != page) {
@@ -64,5 +64,5 @@ public class AddTodaysPagePathContextProcessor extends AbstractAddDailyContentPa
             }
         }
         return contentServletPath;
-    }
+    }       */
 }
