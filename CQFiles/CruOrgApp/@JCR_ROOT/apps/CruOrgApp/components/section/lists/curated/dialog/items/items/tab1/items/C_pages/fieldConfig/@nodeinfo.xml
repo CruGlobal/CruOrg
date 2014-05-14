@@ -16,6 +16,9 @@
     <property name="width" type="1" multiple="false">
       <value><![CDATA[155]]></value>
     </property>
+    <property name="allowBlank" type="6" multiple="false">
+      <value>false</value>
+    </property>
   </properties>
   <mixins />
 </node>

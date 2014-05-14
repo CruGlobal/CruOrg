@@ -4,7 +4,6 @@ package org.cru.logiclesstemplates.processors;
 import static com.xumak.base.Constants.GLOBAL_PROPERTIES_KEY;
 
 import java.text.MessageFormat;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,14 +20,15 @@ import com.xumak.base.templatingsupport.ContentModel;
 
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
- * It manage all the possible content of a search with selectors for the
+ * Manages all the possible content of a search with selectors for the
  * Search Results component.
  * -----------------------------------------------------------------------------
  *
  * CHANGE HISTORY
  * -----------------------------------------------------------------------------
  * Version | Date        | Developer              | Changes
- * 1.0     | 29/4/14     | oklee                  | Initial Creation
+ * 1.0     | 14/4/29     | oklee                  | Initial Creation
+ * 1.0     | 14/5/12     | palecio                | Converted to immutable
  * -----------------------------------------------------------------------------
  *
   ==============================================================================
@@ -37,7 +37,6 @@ import com.xumak.base.templatingsupport.ContentModel;
 @Component
 @Service
 public class SearchContextProcessor extends AbstractResourceTypeCheckContextProcessor<ContentModel> {
-    private static Map<String, Object> designObject = new HashMap<String, Object>();
 
     @Override
     public String requiredResourceType() {
@@ -46,7 +45,7 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
 
     @Override
     public void process(final SlingHttpServletRequest request, final ContentModel contentModel) {
-        designObject = (Map<String, Object>) contentModel.get(GLOBAL_PROPERTIES_KEY);
+        Map<String, Object> designObject = (Map<String, Object>) contentModel.get(GLOBAL_PROPERTIES_KEY);
 
         try {
             //initialize the search class
@@ -88,10 +87,10 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
                 }
 
                 //assign labels with replaced tokens.
-                designObject.put("nextText", getFormat(nextText));
-                designObject.put("previousText", getFormat(previousText));
-                designObject.put("noResultsText", getFormat(noResultsText));
-                designObject.put("statisticsText", getFormat(statisticsText));
+                designObject.put("nextText", getFormat(nextText, designObject));
+                designObject.put("previousText", getFormat(previousText, designObject));
+                designObject.put("noResultsText", getFormat(noResultsText, designObject));
+                designObject.put("statisticsText", getFormat(statisticsText, designObject));
 
                 designObject.put("searchResourcePath", request.getResource().getPath());
             }
@@ -105,7 +104,7 @@ public class SearchContextProcessor extends AbstractResourceTypeCheckContextProc
      * @param value is the message with the keys to replace.
      * @return the value message with the keys replaced.
      */
-    private String getFormat(final String value) {
+    private String getFormat(final String value, final Map<String, Object> designObject) {
         return MessageFormat.format(value,
                 designObject.get("escapedQuery"),
                 designObject.get("totalMatches"),

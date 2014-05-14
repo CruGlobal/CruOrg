@@ -102,42 +102,58 @@ Cru.components.DailyContent.elements = {
 
     },
     buildHeader : function(header, data){
-        var title = data["title"];
+        var title = data.page["title"];
         if(title){
             header.append(this.createTitle(title));
         }
 
-        var subtitle =  data["subtitle"];
+        var subtitle =  data.page["subtitle"];
         if(subtitle){
             header.append(this.createSubtitle(subtitle));
         }
 
-        var date = data["dateText"];
-        var twitterUser = data["twitterUser"];
-        var author = data["author"];
+        var date = data.page["dateText"];
+        var twitterUser = data.page["twitterUser"];
+        var author = data.page["author"];
         if(date || twitterUser || author){
             header.append(this.createMetadata(date, twitterUser, author));
         }
 
     },
     buildFigure : function(figure, data){
-        var imagePath = data["imagePath"];
+        var imagePath = data.page["imagePath"];
         if(imagePath){
             figure.append(this.createImage(imagePath));
         }
 
-        var caption = data["imageCaption"];
-        var credit = data["imageCredit"];
+        var caption = data.page["imageCaption"];
+        var credit = data.page["imageCredit"];
         if(caption){
             figure.append(this.createCaption(caption, credit));
         }
     },
-    buildPagination : function(pagination, data){
-        if(data.yesterday && !data.isYesterdayDefaultPath){
-            pagination.append(this.createPaginationItem(data.yesterday, "pagination__prev  grid__item  one-half  text--left visibility--hide", "Previous Day"));
+    buildPagination : function(pagination, paths, data){
+        var dailyContentPreviousLabel = "Previous";
+        var dailyContentNextLabel = "Previous";
+        if(data.global && data.global["dailyContentPreviousLabel"] != ""){
+            dailyContentPreviousLabel = data.global["dailyContentPreviousLabel"];
         }
-        if(data.tomorrow && !data.isTomorrowDefaultPath){
-            pagination.append(this.createPaginationItem(data.tomorrow, "pagination__next  text--right", "Next Day"));
+        if(data.global && data.global["dailyContentNextLabel"] != ""){
+            dailyContentNextLabel = data.global["dailyContentNextLabel"];
         }
+        if(paths.yesterday && !paths.isYesterdayDefaultPath){
+            pagination.append(this.createPaginationItem(paths.yesterday, "pagination__prev  grid__item  one-half  text--left visibility--hide", dailyContentPreviousLabel));
+        }
+        if(paths.tomorrow && !paths.isTomorrowDefaultPath){
+            pagination.append(this.createPaginationItem(paths.tomorrow, "pagination__next  text--right", dailyContentNextLabel));
+        }
+    },
+    isEditMode : function(){
+        if(typeof CQ != 'undefined'){
+            if(CQ.WCM.isEditMode()){
+               return true;
+            }
+        }
+        return false;
     }
 };

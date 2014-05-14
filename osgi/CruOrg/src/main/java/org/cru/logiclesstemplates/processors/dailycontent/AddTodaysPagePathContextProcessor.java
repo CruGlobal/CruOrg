@@ -30,7 +30,7 @@ import org.cru.util.PageUtils;
 public class AddTodaysPagePathContextProcessor extends AbstractAddDailyContentPagePathContextProcessor {
 
     public static final String SERVLET_PATH_KEY = "contentServletPath";
-    public static final String SERVLET_PATH_SUFFIX = ".content.json";
+    public static final String SERVLET_PATH_SUFFIX = ".contentmodel.page.json";
 
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)

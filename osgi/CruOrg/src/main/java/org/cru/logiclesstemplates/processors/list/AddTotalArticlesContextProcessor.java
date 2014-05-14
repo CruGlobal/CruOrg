@@ -10,6 +10,8 @@ import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 
+import static com.xumak.base.Constants.HIGHER_PRIORITY;
+
 import java.util.*;
 
 /* DESCRIPTION
@@ -41,22 +43,26 @@ public class AddTotalArticlesContextProcessor extends AbstractListContextProcess
 
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)throws Exception{
-        Resource  resource = request.getResource().getParent();
-        log.info(resource.getPath());
-        ParagraphSystem paragraphSystem = ParagraphSystem.create(resource, request);
-        List<Paragraph> paragraphs = paragraphSystem.paragraphs();
+        Resource  mainResource = request.getResource();
+        Resource resource = null;
 
-        int count = 0;
-        for (Paragraph p : paragraphs){
-            if (ARTICLE_LONG_FORM_RESOURCE_TYPE.equals(p.getResource().getResourceType())){
-                count++;
+        if (mainResource != null && mainResource.getParent() != null ){
+            resource = mainResource.getParent();
+            ParagraphSystem paragraphSystem = ParagraphSystem.create(resource, request);
+            List<Paragraph> paragraphs = paragraphSystem.paragraphs();
+
+            int count = 0;
+            for (Paragraph p : paragraphs){
+                if (ARTICLE_LONG_FORM_RESOURCE_TYPE.equals(p.getResource().getResourceType())){
+                    count++;
+                }
             }
+            contentModel.set(TOTAL_SIBLINGS_PROPERTY_NAME, new Integer(count));
         }
-        contentModel.set(TOTAL_SIBLINGS_PROPERTY_NAME, new Integer(count));
     }
 
     @Override
     public int priority(){
-        return 1001;
+        return HIGHER_PRIORITY + 1;
     }
 }

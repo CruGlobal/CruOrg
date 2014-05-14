@@ -39,7 +39,11 @@ public class FooterGlobalPathListProcessor extends AddPagePathListContextProcess
             String[] pathReftsArr = (String[]) pathRefs;
             pathList.addAll(Arrays.asList(pathReftsArr));
        } else {
-            pathList.add((String) pathRefs);
+           if (pathRefs instanceof String) {
+               pathList.add((String) pathRefs);
+           } else {
+                pathList.addAll((List) pathRefs);
+           }
        }
        return pathList;
     }

@@ -21,10 +21,23 @@ import com.google.common.collect.Sets;
 import com.xumak.base.templatingsupport.TemplateContentModel;
 import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
 
-
+/* DESCRIPTION
+* -----------------------------------------------------------------------------
+* AddFeaturedStoriesPathListContextProcessor
+* -----------------------------------------------------------------------------
+*
+* CHANGE HISTORY
+* -----------------------------------------------------------------------------
+* Version | Date        | Developer              | Changes
+* 1.0     | 14/05/06    | jurizar                | Initial Creation
+* 1.0     | 14/05/12    | palecio                | Renamed class, minor refactoring
+* -----------------------------------------------------------------------------
+*
+==============================================================================
+*/
 @Component
 @Service
-public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProcessor {
+public class AddRelatedStoriesPathsContextProcessor extends AddQueriedPagePathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/related-stories";
     public static final String PATH_LIST_CONTEXT_PROPERTY_NAME = "list.paths";
@@ -34,7 +47,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
 
     @Override
     public Set<String> requiredResourceTypes() {
-        return Sets.newHashSet(new String[]{XUMAK_TAG_NAV_LIST_RESOURCE_TYPE});
+        return Sets.newHashSet(XUMAK_TAG_NAV_LIST_RESOURCE_TYPE);
     }
 
     @Override
@@ -43,7 +56,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
         Resource resource = request.getResource();
         ResourceResolver resourceResolver = request.getResourceResolver();
 
-        PageManager pageManager = (PageManager) resourceResolver.adaptTo(PageManager.class);
+        PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
 
         //get actual page path
         Page currentPage = pageManager.getContainingPage(resource).adaptTo( Page.class );
@@ -57,8 +70,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
         for (Tag tag: tags){
             ids.add(tag.getTagID());
         }
-        List<String> tagsList = ids; //contentModel.getAs(QUERY_CONTENT_KEY_NAME , List.class);
-        RangeIterator<Resource> pages = findByTags(resource, pathRef, tagsList);
+        RangeIterator<Resource> pages = findByTags(resource, pathRef, ids);
         if (pages != null) {
             //get max number of items
             long max = getMaxNumber(contentModel, pages.getSize());
@@ -99,7 +111,7 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
 
     /**
      * get Iterator of resources based in list of tags.
-     * @param  resource
+     * @param  resource the resource
      * @param pathRef path of reference.
      * @param tagsList list of tags.
      * @return ArrayList
@@ -124,8 +136,8 @@ public class RelatedTagsPagesProcessor extends AddQueriedPagePathListContextProc
 
     /**
      * get Max number of items
-     * @param contentModel
-     * @param listSize
+     * @param contentModel the content model
+     * @param listSize the size of the list
      * @return Long with max number of items.
      */
     private long getMaxNumber(final TemplateContentModel contentModel, final long listSize)throws Exception{
