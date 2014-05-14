@@ -20,6 +20,7 @@ import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.cru.util.DateUtils;
 import org.cru.util.PageUtils;
 import org.joda.time.DateTime;
+import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
 import java.util.Calendar;
@@ -106,13 +107,14 @@ public class AbstractAddDailyContentPagePathContextProcessor
      * @param day today, tomorrow or yesterday
      * @return the corresponding page path
      */
-    protected String getPeriodicalPagePath(final String day,
-                                           final Calendar today, final Calendar startDate,
-                                           final Calendar endDate){
-        String periodicalPagePath = defaultPath;
-        if (DateUtils.isDateBetween(today, startDate, endDate)){
+    protected String getPeriodicalPagePath(final String day, final Map<String, Object> contentObject){
+        String periodicalPagePath = getDefaultPath(contentObject);
+        DateTime requiredDate = getDate(day, contentObject);
+        DateTime startDate = getDate(START_DATE, contentObject);
+        DateTime endDate = getDate(END_DATE, contentObject);
+        if (DateUtils.isDateBetween(requiredDate, startDate, endDate)){
             //TODO fix; if today and start date are in different years, it will break
-            int index = today.get(Calendar.DAY_OF_YEAR) - startDate.get(Calendar.DAY_OF_YEAR);
+            int index = Days.daysBetween(startDate, today).getDays();
 
             if (YESTERDAY.equals(day)){
                 index--; //if we want yesterday's page, we substract 1 from today's index
@@ -125,7 +127,7 @@ public class AbstractAddDailyContentPagePathContextProcessor
                 periodicalPagePath = periodicalPage.getPath();
             }
         }
-        return periodicalPagePath;
+        return "";//periodicalPagePath;
     }
 
     /**
@@ -134,33 +136,34 @@ public class AbstractAddDailyContentPagePathContextProcessor
      * @param date the date to look for
      * @return the path under {@code currentPage} that corresponds to {@code date}
      */
-    protected String getDatePagePath(final Calendar date, final Page currentPage){
+    protected String getDatePagePath(final DateTime date, final Page currentPage){
         Page page = PageUtils.getPageFromDate(currentPage, date);
         return (null != page) ? page.getPath() : "";
     }
 
     /**
-     * Gets the correct content path taking into account {@code isPeriodical} property, {@code startDate},
-     * {@code endDate} and today's date
-     * @param dateString "yesterday", "today" or "tomorrow"
-     * @return the content path for the corresponding day
+     *
+     * @param day
+     * @param contentObject
+     * @return
      */
     protected String getDailyContentPath(final String day, final Map<String, Object> contentObject){
         String dailyContentPath = "";
         if (null == contentObject.get(DISPLAY_PERIODICALLY_KEY)){
-            Calendar date = getDate(dateString);
-            dailyContentPath = getDatePagePath(date, currentPage);
+            DateTime date = getDate(day, contentObject);
+            dailyContentPath = getDatePagePath(date, getCurrentPage(contentObject));
         } else {
-            dailyContentPath = getPeriodicalPagePath(dateString);
+            dailyContentPath = getPeriodicalPagePath(day, contentObject);
         }
         return dailyContentPath;
     }
 
 
     /**
-     * gets the date corresponding to yesterday, today or tomorrow
-     * @param dateString "yesterday", "today" or "tomorrow"
-     * @return the date corresponding to yesterday, today or tomorrow
+     *
+     * @param which
+     * @param contentObject
+     * @return
      */
     protected DateTime getDate(final String which, final Map<String, Object> contentObject){
         DateTime date;
@@ -168,21 +171,36 @@ public class AbstractAddDailyContentPagePathContextProcessor
             date = new DateTime(contentObject.get(START_DATE));
         } else if (END_DATE.equals(which)) {
             date = new DateTime(contentObject.get(END_DATE));
+            date.withHourOfDay(23);
+            date.withMinuteOfHour(59);
+            date.withSecondOfMinute(59);
         }else if (YESTERDAY.equals(which)) {
             date = new DateTime();
-            date.mi
+            date = date.minusDays(1);
         } else if (TOMORROW.equals(which)) {
+            date = new DateTime();
+            date = date.plusDays(1);
         } else{
             date = new DateTime();
         }
         return date;
     }
 
+    /**
+     *
+     * @param contentObject
+     * @return
+     */
     private String getDefaultPath(final Map<String, Object> contentObject) {
         String defaultPath = (String) contentObject.get(DEFAULT_PATH);
         return (null != defaultPath) ? defaultPath : "";
     }
 
+    /**
+     *
+     * @param contentObject
+     * @return
+     */
     private Page getCurrentPage(final Map<String, Object> contentObject) {
         Page currentPage = null;
         String currentResourcePath = (String) contentObject.get(PATH);
@@ -192,6 +210,11 @@ public class AbstractAddDailyContentPagePathContextProcessor
         return currentPage;
     }
 
+    /**
+     *
+     * @param componentResourcePath
+     * @return
+     */
     private Page getContainingPage(String componentResourcePath){
         Page containingPage = null;
         ResourceResolver resourceResolver = null;

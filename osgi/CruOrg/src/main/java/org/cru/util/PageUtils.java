@@ -4,12 +4,11 @@ import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.commons.collections.IteratorUtils;
 import org.apache.sling.api.resource.ValueMap;
+import org.joda.time.DateTime;
 
-import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 
-import static java.util.Calendar.*;
 import static com.day.cq.wcm.api.NameConstants.PN_TEMPLATE;
 import static com.xumak.base.Constants.APPS_ROOT;
 
@@ -21,7 +20,7 @@ import static com.xumak.base.Constants.APPS_ROOT;
  * CHANGE HISTORY
  * -----------------------------------------------------------------------------
  * Version | Date        | Developer              | Changes
- * 1.0     | 30/4/14     | palecio                | Initial Creation
+ * 1.0     | 14/04/30    | palecio                | Initial Creation
  * -----------------------------------------------------------------------------
  *
   ==============================================================================
@@ -36,15 +35,15 @@ public class PageUtils {
      * Gets the page under the specified base page that complies with the year/month/day format
      * e.g for april 26 2014, it would look for a page under {base-path}/2014/04/26
      * @param basePageParameter the place to start looking for a page
-     * @param calendar the date to use
+     * @param date the date to use
      * @return the page under the specified date
      */
-    public static Page getPageFromDate(final Page basePageParameter, final Calendar calendar){
+    public static Page getPageFromDate(final Page basePageParameter, final DateTime date){
         Page basePage = basePageParameter;
         Page dayPage = null;
-        int day = calendar.get(DAY_OF_MONTH);
-        int month = calendar.get(MONTH); // add 1 because the months from Calendar start at 0
-        int year = calendar.get(YEAR);
+        int day = date.getDayOfMonth();
+        int month = date.getMonthOfYear();
+        int year = date.getYear();
         if (null != basePage) {
             Page yearPage = getYearPage(basePage, year);
             basePage = (null != yearPage) ? yearPage : basePage; //if there is a year page, use it as base instead
@@ -77,13 +76,12 @@ public class PageUtils {
     /**
      * looks for a page directly below {@code basePage} whose name is equal to {@code monthNumber}
      * @param basePage the base page
-     * @param monthNumber the name of the page (represents the month of the year),
+     * @param month the name of the page (represents the month of the year),
      *                    which is going to be converted to a String.
      * @return page directly below {@code basePage} whose name is equal to {@code monthNumber} or null if none is found
      */
-    public static Page getMonthPage(final Page basePage, final int monthNumber){
+    public static Page getMonthPage(final Page basePage, final int month){
         PageManager pageManager = basePage.getPageManager();
-        int month = monthNumber + 1; //because Calendar months start at 0 and we want to start at 1
         String monthPagePath = basePage.getPath() + "/" + month;
         Page monthPage = pageManager.getPage(monthPagePath);
         if (null == monthPage){
