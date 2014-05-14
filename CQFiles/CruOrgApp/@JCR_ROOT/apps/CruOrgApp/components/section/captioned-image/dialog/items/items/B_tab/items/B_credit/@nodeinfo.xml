@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./imageCredit]]></value>
     </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { return Cru.widgets.SectionTitle.validateLength(value,80); }]]></value>
+    </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter image credits to display]]></value>
     </property>
