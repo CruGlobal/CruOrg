@@ -42,6 +42,9 @@
         <!-- ../CQFiles/CQPackage/PkgDefinition/pom.xml has to be change also. -->
         <cq.package.name>CruOrg-cq-package</cq.package.name>
         <bNote>local</bNote><!-- Overrided by jenkins with: -DbNote=branch-name -->
+
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
     <distributionManagement>

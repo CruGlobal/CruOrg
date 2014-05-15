@@ -33,6 +33,8 @@ public class AddYesterdaysPagePathContextProcessor extends AbstractAddDailyConte
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)
             throws Exception {
         Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
+        contentObject.put(CURRENT_RESOURCE_KEY, request.getResource());
+
         String yesterdaysPagePath =  getDailyContentPath(YESTERDAY, contentObject);
 
         contentObject.put(YESTERDAY, yesterdaysPagePath);

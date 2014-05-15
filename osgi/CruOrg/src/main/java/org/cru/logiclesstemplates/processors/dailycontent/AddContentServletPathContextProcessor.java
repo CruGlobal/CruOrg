@@ -40,25 +40,26 @@ public class AddContentServletPathContextProcessor extends AbstractAddDailyConte
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)
             throws Exception {
         Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
+        contentObject.put(CURRENT_RESOURCE_KEY, request.getResource());
         ResourceResolver resourceResolver = request.getResourceResolver();
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
         String todaysPagePath = getDailyContentPath(TODAY, contentObject);
         Page todaysPage = pageManager.getPage(todaysPagePath);
-        if (todaysPage == null || !PageUtils.isArticlePage(todaysPage)){
-            todaysPage = pageManager.getPage(getDefaultPath(contentObject));
+        if (todaysPage == null || !PageUtils.isArticlePage(todaysPage)){//if today's page is null or is not an article
+            todaysPage = pageManager.getPage(getDefaultPath(contentObject)); //try to get the default page
         }
-        contentObject.put(SERVLET_PATH_KEY, getContentServletPath(todaysPage));
+        if (todaysPage != null) {
+            contentObject.put(SERVLET_PATH_KEY, getContentServletPath(todaysPage));
+        }
 
     }
 
     private String getContentServletPath(final Page page){
         String contentServletPath = "";
-        if (null != page) {
-            Resource todaysPageContentResource = page.getContentResource();
-            if (null != todaysPageContentResource) {
-                if (PageUtils.isArticlePage(page)) {
-                    contentServletPath = todaysPageContentResource.getPath() + SERVLET_PATH_SUFFIX;
-                }
+        Resource todaysPageContentResource = page.getContentResource();
+        if (null != todaysPageContentResource) {
+            if (PageUtils.isArticlePage(page)) {
+                contentServletPath = todaysPageContentResource.getPath() + SERVLET_PATH_SUFFIX;
             }
         }
         return contentServletPath;

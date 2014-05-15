@@ -2,25 +2,19 @@ package org.cru.logiclesstemplates.processors.dailycontent;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
-import com.day.cq.wcm.api.PageManagerFactory;
 import com.google.common.collect.Sets;
 import com.xumak.base.templatingsupport.AbstractResourceTypeCheckContextProcessor;
 import com.xumak.base.templatingsupport.TemplateContentModel;
 import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.cru.util.DateUtils;
 import org.cru.util.PageUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import java.util.Map;
 import java.util.Set;
-
-import static com.xumak.base.Constants.*;
 
 
 /* DESCRIPTION
@@ -52,15 +46,13 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
     public static final String DAILY_CONTENT_RESOURCE_TYPE =
             "CruOrgApp/components/section/daily-content";
     public static final String DISPLAY_PERIODICALLY_KEY = "displayPeriodically";
+    public static final String CURRENT_RESOURCE_KEY = "currentResource";
     public static final String START_DATE = "startDate";
     public static final String END_DATE = "endDate";
     public static final String DEFAULT_PATH = "defaultPath";
     public static final String TODAY = "today";
     public static final String TOMORROW = "tomorrow";
     public static final String YESTERDAY = "yesterday";
-
-    @Reference
-    ResourceResolverFactory resourceResolverFactory;
 
     @Override
     public Set<String> requiredResourceTypes() {
@@ -108,14 +100,14 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
      * @return the daily content path for the day specified
      */
     protected String getDailyContentPath(final String day, final Map<String, Object> contentObject){
-        String dailyContentPath = "";
+        String dailyContentPath;
         if (null == contentObject.get(DISPLAY_PERIODICALLY_KEY)){
             DateTime date = getDate(day, contentObject);
             dailyContentPath = getDatePagePath(date, getCurrentPage(contentObject));
         } else {
             dailyContentPath = getPeriodicalPagePath(day, contentObject);
         }
-        return dailyContentPath;
+        return "".equals(dailyContentPath) ? getDefaultPath(contentObject) : dailyContentPath;
 
     }
 
@@ -129,17 +121,23 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
      */
     protected DateTime getDate(final String which, final Map<String, Object> contentObject){
         DateTime date;
-        if (START_DATE.equals(which)) {
-            date = new DateTime(contentObject.get(START_DATE));
-        } else if (END_DATE.equals(which)) {
-            date = new DateTime(contentObject.get(END_DATE))
-                    .withHourOfDay(23).withMinuteOfHour(59).withSecondOfMinute(59);
-        } else if (YESTERDAY.equals(which)) {
-            date = new DateTime().minusDays(1);
-        } else if (TOMORROW.equals(which)) {
-            date = new DateTime().plusDays(1);
-        } else {
-            date = new DateTime();
+        switch (which) {
+            case START_DATE:
+                date = new DateTime(contentObject.get(START_DATE));
+                break;
+            case END_DATE:
+                date = new DateTime(contentObject.get(END_DATE))
+                        .withHourOfDay(23).withMinuteOfHour(59).withSecondOfMinute(59);
+                break;
+            case YESTERDAY:
+                date = new DateTime().minusDays(1);
+                break;
+            case TOMORROW:
+                date = new DateTime().plusDays(1);
+                break;
+            default:
+                date = new DateTime();
+                break;
         }
         return date;
     }
@@ -151,7 +149,17 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
      */
     protected String getDefaultPath(final Map<String, Object> contentObject) {
         String defaultPath = (String) contentObject.get(DEFAULT_PATH);
+        if (null != defaultPath){
+            Resource resource = (Resource) contentObject.get(CURRENT_RESOURCE_KEY);
+            ResourceResolver resourceResolver = resource.getResourceResolver();
+            PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+            Page page = pageManager.getPage(defaultPath);
+            if (null == page){
+                defaultPath = "";
+            }
+        }
         return (null != defaultPath) ? defaultPath : "";
+
     }
 
     /**
@@ -160,36 +168,18 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
      * @return the current page or null
      */
     private Page getCurrentPage(final Map<String, Object> contentObject) {
-        Page currentPage = null;
-        String currentResourcePath = (String) contentObject.get(PATH);
-        if (null != currentResourcePath) {
-            currentPage = getContainingPage(currentResourcePath);
-        }
-        return currentPage;
+        Resource currentResource = (Resource) contentObject.get("currentResource");
+        return getContainingPage(currentResource);
     }
 
     /**
      * Gets the page that contains certain resource
-     * @param componentResourcePath the path to the current resource
-     * @return the page that contains said resource or null if the componentResourcePath doesn't point to a resource
+     * @param componentResource the path to the current resource
+     * @return the page that contains said resource
      */
-    private Page getContainingPage(final String componentResourcePath){
-        Page containingPage = null;
-        ResourceResolver resourceResolver = null;
-        try {
-            resourceResolver = resourceResolverFactory.getAdministrativeResourceResolver(null);
-            Resource componentResource = resourceResolver.getResource(componentResourcePath);
-            if (null != componentResource) {
-                PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-                containingPage = pageManager.getContainingPage(componentResource);
-            }
-        } catch (LoginException e) {
-            log.error("Error logging in. {}", e);
-        }finally {
-            if (null != resourceResolver)
-                resourceResolver.close();
-        }
-        return containingPage;
+    private Page getContainingPage(final Resource componentResource){
+        PageManager pageManager = componentResource.getResourceResolver().adaptTo(PageManager.class);
+        return pageManager.getContainingPage(componentResource);
     }
 
     @Override

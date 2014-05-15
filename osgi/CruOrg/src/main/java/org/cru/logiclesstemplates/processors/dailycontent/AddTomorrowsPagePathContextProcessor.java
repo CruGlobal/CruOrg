@@ -33,6 +33,7 @@ public class AddTomorrowsPagePathContextProcessor extends AbstractAddDailyConten
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)
             throws Exception {
         Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
+        contentObject.put(CURRENT_RESOURCE_KEY, request.getResource());
         String tomorrowsPagePath = getDailyContentPath(TOMORROW, contentObject);
         contentObject.put(TOMORROW, tomorrowsPagePath);
         //IS_TOMORROW_DEFAULT_PATH lets us know if the path obtained for 'tomorrow' is the default path
