@@ -131,6 +131,17 @@ Cru.widgets.Util = {
 	},
 
     /**
+	* Validate length for a specific 'value' string 
+	* with 'limit' specify
+	**/
+	validateLength: function(value, limit) {
+        if (Cru.widgets.Util.characterCount(value) > limit) {
+            return "You have exceed the maximum character limit of " + limit;
+        }
+		return true;
+	},
+
+    /**
      * Checks if the link is external and validates
      * that contains the text 'http://' or 'https://' on it.
      * @param text to validate

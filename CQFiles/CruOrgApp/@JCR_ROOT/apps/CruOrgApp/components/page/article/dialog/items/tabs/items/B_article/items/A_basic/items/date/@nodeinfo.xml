@@ -16,9 +16,6 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./date]]></value>
     </property>
-    <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[now]]></value>
-    </property>
   </properties>
   <mixins />
 </node>

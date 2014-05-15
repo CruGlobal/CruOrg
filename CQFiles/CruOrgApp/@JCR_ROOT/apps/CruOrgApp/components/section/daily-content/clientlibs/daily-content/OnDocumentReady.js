@@ -25,7 +25,13 @@ $(document).ready(function(){
                     Cru.components.DailyContent.elements.buildHeader(header, data); //build the header (title, subtitle, etc.)
                     var figure = $(".daily-content figure");
                     Cru.components.DailyContent.elements.buildFigure(figure, data); //build the image
-                    $(".daily-content-container").load(parsysPath); //get the contents from the article parsys
+                    $(".daily-content-container").load(parsysPath, function() {
+                        //reloads the twitter api for reevaluate twitter widgets.
+                        var twitterScript = $("script#twitter-wjs");
+                        $.getScript(twitterScript[0].src).fail(function() {
+                            console.error("Error reloading twitter platform, src: " + twitterScript[0].src);
+                        });
+                    }); //get the contents from the article parsys
                     var pagination = $(".grid.pagination");
                     Cru.components.DailyContent.elements.buildPagination(pagination, paths, data);
                 });
