@@ -2,10 +2,6 @@ package org.cru.util;
 
 import org.joda.time.DateTime;
 
-import java.util.Calendar;
-import static java.util.Calendar.*;
-
-
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
  * DateUtils
@@ -14,7 +10,8 @@ import static java.util.Calendar.*;
  * CHANGE HISTORY
  * -----------------------------------------------------------------------------
  * Version | Date        | Developer              | Changes
- * 1.0     | 2/5/14      | palecio                | Initial Creation
+ * 1.0     | 2014/05/02  | palecio                | Initial Creation
+ * 1.0     | 2014/05/14  | palecio                | Joda Time refactoring
  * -----------------------------------------------------------------------------
  *
   ==============================================================================

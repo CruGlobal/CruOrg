@@ -1,7 +1,6 @@
 package org.cru.logiclesstemplates.processors.dailycontent;
 
 import com.day.cq.wcm.api.Page;
-//import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.PageManagerFactory;
 import com.google.common.collect.Sets;
@@ -10,9 +9,6 @@ import com.xumak.base.templatingsupport.TemplateContentModel;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.api.SlingHttpServletRequest;
-//import org.apache.sling.api.resource.Resource;
-//import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -21,16 +17,11 @@ import org.cru.util.DateUtils;
 import org.cru.util.PageUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
-import org.joda.time.LocalDate;
-
-import java.util.Calendar;
 import java.util.Map;
 import java.util.Set;
 
 import static com.xumak.base.Constants.*;
-import static java.util.Calendar.DATE;
-import static java.util.Calendar.HOUR_OF_DAY;
-import static java.util.Calendar.MINUTE;
+
 
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
@@ -45,14 +36,16 @@ import static java.util.Calendar.MINUTE;
  * CHANGE HISTORY
  * -----------------------------------------------------------------------------
  * Version | Date        | Developer              | Changes
- * 1.0     | 30/4/14     | palecio                | Initial Creation
+ * 1.0     | 14/04/30    | palecio                | Initial Creation
+ * 1.0     | 14/05/12    | palecio                | Added Joda Time
+
  * -----------------------------------------------------------------------------
  *
   ==============================================================================
  */
 @Component
 @Service
-public class AbstractAddDailyContentPagePathContextProcessor
+public abstract class AbstractAddDailyContentPagePathContextProcessor
         extends AbstractResourceTypeCheckContextProcessor<TemplateContentModel>{
 
 
@@ -74,34 +67,6 @@ public class AbstractAddDailyContentPagePathContextProcessor
         return Sets.newHashSet(DAILY_CONTENT_RESOURCE_TYPE);
     }
 
-    @Override
-    public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)
-            throws Exception {
-
-
-
-        LocalDate date = new LocalDate(Calendar.getInstance());
-        System.out.println("DATE" + date);
-        //ResourceResolver resourceResolver = request.getResourceResolver();
-        //Resource resource = request.getResource();
-        //PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-        //Page currentPage = pageManager.getContainingPage(resource);
-        Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
-        //String defaultPath = (String) contentObject.get(DEFAULT_PATH);
-        //defaultPath = (null == defaultPath) ? "" : defaultPath;
-        //Calendar today = Calendar.getInstance();
-        Calendar startDate = (Calendar) contentObject.get(START_DATE);
-        if (null != startDate) {
-            startDate.set(HOUR_OF_DAY, 0);
-            startDate.set(MINUTE, 0);
-        }
-        Calendar endDate = (Calendar) contentObject.get(END_DATE);
-        if (null != endDate) {
-            endDate.set(HOUR_OF_DAY, 23);
-            endDate.set(MINUTE, 59);
-        }
-    }
-
     /**
      * Gets the page path under currentPage that corresponds to a given day
      * @param day today, tomorrow or yesterday
@@ -113,21 +78,15 @@ public class AbstractAddDailyContentPagePathContextProcessor
         DateTime startDate = getDate(START_DATE, contentObject);
         DateTime endDate = getDate(END_DATE, contentObject);
         if (DateUtils.isDateBetween(requiredDate, startDate, endDate)){
-            //TODO fix; if today and start date are in different years, it will break
-            int index = Days.daysBetween(startDate, today).getDays();
-
-            if (YESTERDAY.equals(day)){
-                index--; //if we want yesterday's page, we substract 1 from today's index
-            } else if (TOMORROW.equals(day)){
-                index++; //if we want tomorrow's page, we add 1 to today's index
-            }
-
-            Page periodicalPage = PageUtils.getPage(currentPage, index);
-            if (null != periodicalPage){
-                periodicalPagePath = periodicalPage.getPath();
+            int index = Days.daysBetween(startDate, requiredDate).getDays();
+            if (index >= 0) {
+                Page periodicalPage = PageUtils.getPage(getCurrentPage(contentObject), index);
+                if (null != periodicalPage){
+                    periodicalPagePath = periodicalPage.getPath();
+                }
             }
         }
-        return "";//periodicalPagePath;
+        return periodicalPagePath;
     }
 
     /**
@@ -142,10 +101,11 @@ public class AbstractAddDailyContentPagePathContextProcessor
     }
 
     /**
-     *
-     * @param day
-     * @param contentObject
-     * @return
+     * Looks for the display periodically property on the content model, if found, this method
+     * will try to get the page within that period, else it will try to find the page under a certain date
+     * @param day {@code TODAY}, {@code TOMORROW} or {@code YESTERDAY}
+     * @param contentObject the content object
+     * @return the daily content path for the day specified
      */
     protected String getDailyContentPath(final String day, final Map<String, Object> contentObject){
         String dailyContentPath = "";
@@ -156,66 +116,64 @@ public class AbstractAddDailyContentPagePathContextProcessor
             dailyContentPath = getPeriodicalPagePath(day, contentObject);
         }
         return dailyContentPath;
+
     }
 
 
     /**
-     *
-     * @param which
-     * @param contentObject
-     * @return
+     * Gets the date of the day specified
+     * @param which could be {@code TODAY}, {@code TOMORROW}, {@code YESTERDAY},
+     * {@code START_DATE} or {@code END_DATE}
+     * @param contentObject the content object
+     * @return a Date Time object with the date needed
      */
     protected DateTime getDate(final String which, final Map<String, Object> contentObject){
         DateTime date;
         if (START_DATE.equals(which)) {
             date = new DateTime(contentObject.get(START_DATE));
         } else if (END_DATE.equals(which)) {
-            date = new DateTime(contentObject.get(END_DATE));
-            date.withHourOfDay(23);
-            date.withMinuteOfHour(59);
-            date.withSecondOfMinute(59);
-        }else if (YESTERDAY.equals(which)) {
-            date = new DateTime();
-            date = date.minusDays(1);
+            date = new DateTime(contentObject.get(END_DATE))
+                    .withHourOfDay(23).withMinuteOfHour(59).withSecondOfMinute(59);
+        } else if (YESTERDAY.equals(which)) {
+            date = new DateTime().minusDays(1);
         } else if (TOMORROW.equals(which)) {
-            date = new DateTime();
-            date = date.plusDays(1);
-        } else{
+            date = new DateTime().plusDays(1);
+        } else {
             date = new DateTime();
         }
         return date;
     }
 
     /**
-     *
-     * @param contentObject
-     * @return
+     * Gets the default path property from the content model
+     * @param contentObject the content object
+     * @return The default path or an empty string
      */
-    private String getDefaultPath(final Map<String, Object> contentObject) {
+    protected String getDefaultPath(final Map<String, Object> contentObject) {
         String defaultPath = (String) contentObject.get(DEFAULT_PATH);
         return (null != defaultPath) ? defaultPath : "";
     }
 
     /**
-     *
-     * @param contentObject
-     * @return
+     * Gets the current page
+     * @param contentObject the content object
+     * @return the current page or null
      */
     private Page getCurrentPage(final Map<String, Object> contentObject) {
         Page currentPage = null;
         String currentResourcePath = (String) contentObject.get(PATH);
-        if(null != currentResourcePath){
+        if (null != currentResourcePath) {
             currentPage = getContainingPage(currentResourcePath);
         }
         return currentPage;
     }
 
     /**
-     *
-     * @param componentResourcePath
-     * @return
+     * Gets the page that contains certain resource
+     * @param componentResourcePath the path to the current resource
+     * @return the page that contains said resource or null if the componentResourcePath doesn't point to a resource
      */
-    private Page getContainingPage(String componentResourcePath){
+    private Page getContainingPage(final String componentResourcePath){
         Page containingPage = null;
         ResourceResolver resourceResolver = null;
         try {
@@ -227,11 +185,9 @@ public class AbstractAddDailyContentPagePathContextProcessor
             }
         } catch (LoginException e) {
             log.error("Error logging in. {}", e);
-            e.printStackTrace();
-        } finally {
-            if (null != resourceResolver){
+        }finally {
+            if (null != resourceResolver)
                 resourceResolver.close();
-            }
         }
         return containingPage;
     }
