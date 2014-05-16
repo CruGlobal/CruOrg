@@ -49,7 +49,7 @@ public class AddContentServletPathContextProcessor extends AbstractAddDailyConte
             todaysPage = pageManager.getPage(getDefaultPath(contentObject)); //try to get the default page
         }
         if (todaysPage != null) {
-            contentObject.put(SERVLET_PATH_KEY, getContentServletPath(todaysPage));
+            contentObject.put(SERVLET_PATH_KEY, request.getResourceResolver().map(getContentServletPath(todaysPage)));
         }
 
     }
