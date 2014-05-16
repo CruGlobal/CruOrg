@@ -14,13 +14,12 @@ import org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyConten
 
 import javax.servlet.ServletException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Map;
 
 import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
 import static com.xumak.base.templatingsupport.TemplatingSupportFilter.TEMPLATE_CONTENT_MODEL_ATTR_NAME;
 import static org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyContentPagePathContextProcessor.*;
-import static org.cru.logiclesstemplates.processors.dailycontent.AddTodaysPagePathContextProcessor.SERVLET_PATH_KEY;
+import static org.cru.logiclesstemplates.processors.dailycontent.AddContentServletPathContextProcessor.SERVLET_PATH_KEY;
 import static org.cru.logiclesstemplates.processors.dailycontent.AddTomorrowsPagePathContextProcessor.IS_TOMORROW_DEFAULT_PATH;
 import static org.cru.logiclesstemplates.processors.dailycontent.AddYesterdaysPagePathContextProcessor.IS_YESTERDAY_DEFAULT_PATH;
 
@@ -63,21 +62,18 @@ public class DailyContentServlet
     protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("application/json");
-        PrintWriter out = response.getWriter();
         JSONObject jsonObject = new JSONObject();
         TemplateContentModel contentModel =
                 (TemplateContentModel) request.getAttribute(TEMPLATE_CONTENT_MODEL_ATTR_NAME);
         Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
-
-        try {
-            //fill the json object
+        try {//fill the json object
             jsonObject.put(TODAY, contentObject.get(TODAY));
             jsonObject.put(SERVLET_PATH_KEY, contentObject.get(SERVLET_PATH_KEY));
             jsonObject.put(YESTERDAY, contentObject.get(YESTERDAY));
             jsonObject.put(TOMORROW, contentObject.get(TOMORROW));
             jsonObject.put(IS_YESTERDAY_DEFAULT_PATH, contentObject.get(IS_YESTERDAY_DEFAULT_PATH));
             jsonObject.put(IS_TOMORROW_DEFAULT_PATH, contentObject.get(IS_TOMORROW_DEFAULT_PATH));
-            out.print(jsonObject.toString()); //print the json object
+            response.getWriter().print(jsonObject.toString()); //print the json object
         } catch (JSONException e) {
             throw new ServletException(e);
         }

@@ -5,6 +5,10 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
 
+import java.util.Map;
+
+import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
+
 /* DESCRIPTION
  * -----------------------------------------------------------------------------
  * AddYesterdaysPagePathContextProcessor
@@ -13,7 +17,8 @@ import org.apache.sling.api.SlingHttpServletRequest;
  * CHANGE HISTORY
  * -----------------------------------------------------------------------------
  * Version | Date        | Developer              | Changes
- * 1.0     | 2/5/14     | palecio                | Initial Creation
+ * 1.0     | 14/05/02    | palecio                | Initial Creation
+ * 1.0     | 14/05/13    | palecio                | Added Joda Time, refactoring
  * -----------------------------------------------------------------------------
  *
   ==============================================================================
@@ -27,11 +32,16 @@ public class AddYesterdaysPagePathContextProcessor extends AbstractAddDailyConte
     @Override
     public void process(final SlingHttpServletRequest request, final TemplateContentModel contentModel)
             throws Exception {
+        Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
+        contentObject.put(CURRENT_RESOURCE_KEY, request.getResource());
 
-        super.process(request, contentModel);
-        String yesterdaysPagePath =  getDailyContentPath(YESTERDAY);
-        contentObject.put(YESTERDAY, yesterdaysPagePath);
-        contentObject.put(IS_YESTERDAY_DEFAULT_PATH, defaultPath.equals(yesterdaysPagePath));
+        String yesterdaysPagePath =  getDailyContentPath(YESTERDAY, contentObject);
+
+        contentObject.put(YESTERDAY, request.getResourceResolver().map(yesterdaysPagePath));
+        //IS_YESTERDAY_DEFAULT_PATH lets us know if the path obtained for 'yesterday' is the default path
+        //if it is, it means yesterday we were not within the period specified in the daily content component,
+        //so we set this flag to let the code on the client side we no longer need to display a 'previous' button
+        contentObject.put(IS_YESTERDAY_DEFAULT_PATH, getDefaultPath(contentObject).equals(yesterdaysPagePath));
     }
 
 }
