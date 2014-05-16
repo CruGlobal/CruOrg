@@ -11,7 +11,7 @@
       <value><![CDATA[.hidden]]></value>
     </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
-      <value><![CDATA[xumakbase/components/section/lists/traversed]]></value>
+      <value><![CDATA[CruOrgApp/components/section/base]]></value>
     </property>
   </properties>
   <mixins />
