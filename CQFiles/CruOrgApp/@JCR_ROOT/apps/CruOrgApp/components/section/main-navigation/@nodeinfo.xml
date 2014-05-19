@@ -14,7 +14,7 @@
       <value><![CDATA[xumakbase/components/section/lists/traversed]]></value>
     </property>
     <property name="componentGroup" type="1" multiple="false">
-      <value><![CDATA[Cru]]></value>
+      <value><![CDATA[.hidden]]></value>
     </property>
   </properties>
   <mixins />
