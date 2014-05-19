@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./imageCredit]]></value>
     </property>
+      <property name="maxLength" type="12" multiple="false">
+          <value>80</value>
+      </property>
   </properties>
   <mixins />
 </node>
