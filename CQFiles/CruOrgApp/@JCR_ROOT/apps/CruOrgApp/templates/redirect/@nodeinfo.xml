@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Template">
+  <properties>
+    <property name="jcr:description" type="1" multiple="false">
+      <value><![CDATA[This template is used for creating pages that will be used only for structure. The pages created with this template will not hold any content.]]></value>
+    </property>
+    <property name="allowedPaths" type="1" multiple="false">
+      <value><![CDATA[/content(/.*)?]]></value>
+    </property>
+    <property name="jcr:title" type="1" multiple="false">
+      <value><![CDATA[Redirect]]></value>
+    </property>
+    <property name="ranking" type="3" multiple="false">
+      <value>100</value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

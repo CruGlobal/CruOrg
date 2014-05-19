@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:PageContent">
+  <properties>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[foundation/components/redirect]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
