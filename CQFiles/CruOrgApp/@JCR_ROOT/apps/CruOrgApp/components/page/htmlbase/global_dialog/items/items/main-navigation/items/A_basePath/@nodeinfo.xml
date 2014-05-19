@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Base Path]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./mainNavigationPathRefs]]></value>
+    </property>
+    <property name="allowBlank" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
+    </property>
+    <property name="editable" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
