@@ -36,7 +36,7 @@ public class AddTodaysPagePathContextProcessor extends AbstractAddDailyContentPa
             throws Exception {
         Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
         contentObject.put(CURRENT_RESOURCE_KEY, request.getResource());
-        contentObject.put(TODAY, getDailyContentPath(TODAY, contentObject));
+        contentObject.put(TODAY, request.getResourceResolver().map(getDailyContentPath(TODAY, contentObject)));
 
     }
 

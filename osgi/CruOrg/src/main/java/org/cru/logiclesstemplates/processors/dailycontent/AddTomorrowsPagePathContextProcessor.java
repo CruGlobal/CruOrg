@@ -35,7 +35,7 @@ public class AddTomorrowsPagePathContextProcessor extends AbstractAddDailyConten
         Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
         contentObject.put(CURRENT_RESOURCE_KEY, request.getResource());
         String tomorrowsPagePath = getDailyContentPath(TOMORROW, contentObject);
-        contentObject.put(TOMORROW, tomorrowsPagePath);
+        contentObject.put(TOMORROW, request.getResourceResolver().map(tomorrowsPagePath));
         //IS_TOMORROW_DEFAULT_PATH lets us know if the path obtained for 'tomorrow' is the default path
         //if it is, it means we're no longer within the period specified in the daily content component,
         //so we set this flag to let the code on the client side we no longer need to display a 'next' button

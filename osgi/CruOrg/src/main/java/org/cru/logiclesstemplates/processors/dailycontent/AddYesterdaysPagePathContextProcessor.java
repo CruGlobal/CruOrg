@@ -37,7 +37,7 @@ public class AddYesterdaysPagePathContextProcessor extends AbstractAddDailyConte
 
         String yesterdaysPagePath =  getDailyContentPath(YESTERDAY, contentObject);
 
-        contentObject.put(YESTERDAY, yesterdaysPagePath);
+        contentObject.put(YESTERDAY, request.getResourceResolver().map(yesterdaysPagePath));
         //IS_YESTERDAY_DEFAULT_PATH lets us know if the path obtained for 'yesterday' is the default path
         //if it is, it means yesterday we were not within the period specified in the daily content component,
         //so we set this flag to let the code on the client side we no longer need to display a 'previous' button
