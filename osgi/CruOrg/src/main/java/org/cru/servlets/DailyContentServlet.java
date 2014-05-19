@@ -19,7 +19,6 @@ import java.util.Map;
 import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
 import static com.xumak.base.templatingsupport.TemplatingSupportFilter.TEMPLATE_CONTENT_MODEL_ATTR_NAME;
 import static org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyContentPagePathContextProcessor.*;
-import static org.cru.logiclesstemplates.processors.dailycontent.AddContentServletPathContextProcessor.SERVLET_PATH_KEY;
 import static org.cru.logiclesstemplates.processors.dailycontent.AddTomorrowsPagePathContextProcessor.IS_TOMORROW_DEFAULT_PATH;
 import static org.cru.logiclesstemplates.processors.dailycontent.AddYesterdaysPagePathContextProcessor.IS_YESTERDAY_DEFAULT_PATH;
 
@@ -50,7 +49,7 @@ import static org.cru.logiclesstemplates.processors.dailycontent.AddYesterdaysPa
 @Service
 @Properties({
         @Property(name = "service.description", value = "Daily Content component Servlet"),
-        @Property(name = "sling.servlet.selectors", value = "pages"),
+        @Property(name = "sling.servlet.selectors", value = "dailypaths"),
         @Property(name = "sling.servlet.extensions", value = "json"),
         @Property(name = "sling.servlet.resourceTypes",
                 value = {AbstractAddDailyContentPagePathContextProcessor.DAILY_CONTENT_RESOURCE_TYPE})
@@ -58,6 +57,7 @@ import static org.cru.logiclesstemplates.processors.dailycontent.AddYesterdaysPa
 public class DailyContentServlet
         extends SlingSafeMethodsServlet {
 
+    public static final String SERVLET_PATH_KEY = "contentServletPath";
      @Override
     protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response)
             throws ServletException, IOException {
