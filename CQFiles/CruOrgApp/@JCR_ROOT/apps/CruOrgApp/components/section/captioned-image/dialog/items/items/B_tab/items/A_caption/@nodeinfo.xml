@@ -10,8 +10,8 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./caption]]></value>
     </property>
-    <property name="validator" type="1" multiple="false">
-      <value><![CDATA[function(value) { return Cru.widgets.Util.validateLength(value,250); }]]></value>
+    <property name="maxLength" type="12" multiple="false">
+          <value>250</value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter caption to display]]></value>
