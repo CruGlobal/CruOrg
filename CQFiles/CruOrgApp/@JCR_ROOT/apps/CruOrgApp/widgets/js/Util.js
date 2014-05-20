@@ -1,4 +1,3 @@
-
 Cru.widgets.Util = {
 
     /**
@@ -117,6 +116,31 @@ Cru.widgets.Util = {
         text = text.replace(/[ ]{2,}/gi," ");       //only one space between words
         text = text.replace(/\n /,"\n");            //new lines aren't words.
         return text.split(' ').length;
+    },
+
+    /**
+     * Get the total number of words on each text
+     * and returs false if either one of them
+     * exceeds the specified amount number
+     * @returns error message if exception is throwed
+     * @param text = text to evaluate
+     * @param textLimit = limit of the entire text
+     * @param wordLimit = limit of each word inside text
+     */
+    validateTextLengthWordLength : function (text, textLimit, wordLimit) {
+        var textLength = Cru.widgets.Util.validateLength(text,textLimit);
+        var wordLength;
+        if (textLength === true) {
+			var words = text.split(' ');
+            for (var word in words) {
+				wordLength = Cru.widgets.Util.validateLength(words[word],wordLimit);
+                if (wordLength !== true) {
+                    return "Cannot be words greater than " + wordLimit + " letters.";
+                }
+            }
+        } else {
+            return textLength;
+        }
     },
 
     /**
