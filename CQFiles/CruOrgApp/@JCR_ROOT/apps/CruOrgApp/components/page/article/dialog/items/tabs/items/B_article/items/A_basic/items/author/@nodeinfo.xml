@@ -10,6 +10,9 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./author]]></value>
     </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { return Cru.widgets.Util.validateLength(value,50); }]]></value>
+    </property>
   </properties>
   <mixins />
 </node>
