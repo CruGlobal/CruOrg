@@ -13,6 +13,9 @@
     <property name="validator" type="1" multiple="false">
       <value><![CDATA[function(value) { return Cru.widgets.Util.validateTextLengthWordLength(value,250,25); }]]></value>
     </property>
+    <property name="maxLength" type="12" multiple="false">
+          <value>250</value>
+    </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter caption to display]]></value>
     </property>

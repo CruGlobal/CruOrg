@@ -11,7 +11,7 @@
       <value><![CDATA[./title]]></value>
     </property>
     <property name="maxLength" type="12" multiple="false">
-      <value>80</value>
+      <value>50</value>
     </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter title to display]]></value>

@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
+	var cru_campus_finder_l10n = {"ministry_search":"http://ml.uscm.org/ministries.json?active=true","ministry_details":"http://ml.uscm.org/ministries/%d.json","ministries":{"CA":"Catalytic","SC":"Staffed Campus","IE":"Epic","ID":"Destino","II":"Impact","IN":"Nations","WI":"WSN ICS","WS":"WSN Stint","BR":"Bridges","MM":"Military Ministry","AA":"Athletes In Action","GR":"Grad Resource","CL":"Christian Leadership Ministries","KC":"Korean CCC","GK":"Greek","VL":"Valor","OT":"Other","FS":"Campus Field Ministry"}};
+	
     $( function() {
+
+
         $( '.campus-finder input.campus-name' ).autocomplete( {
                 source: function( request, response ) {
                         $.ajax( {
@@ -81,16 +85,16 @@ $(document).ready(function() {
                         
 						//Only add strategy name if some form of contact info exists
 						if( item.contacts.length > 0 || item.url || item.facebook ) {
-							var strategyRow = $( '<li></li>' ).appendTo( strategyBlock );
+							var strategyRow = $( '<li class="mb"></li>' ).appendTo( strategyBlock );
 							// Strategy Name
-							$( '<h3 class="h4 mb-"></h3>' )
+							$( '<h3 class="h4 mb--"></h3>' )
 								.text( item.strategy )
 								.appendTo( strategyRow );
 							}
 
 						// If There Is A Website Or Facebook URL Add That UL Block
 						if( item.url || item.facebook ) {
-							var socialBlock = $( '<ul class="nav  social  mb-"></ul>' );
+							var socialBlock = $( '<ul class="nav  social  mb--"></ul>' );
 
 						if( item.facebook ) {
 							$( '<li class="accent"></li>' )
@@ -124,7 +128,7 @@ $(document).ready(function() {
 							var contactList = $('<ul class="block-list  contacts"></ul>');
 
 
-							$('<li class="contact__item  contact__titles"><ul class="grid"><li class="contact__name  grid__item  desk--one-third">Name</li><li class="contact__email  grid__item  desk--one-third">Email</li><li class="contact__phone  grid__item  desk--one-third">Phone</li></ul></li>')
+							$('<li class="contact__item  contact__titles"><ul class="grid"><li class="contact__title-name  grid__item  desk--one-third">Name</li><li class="contact__title-name  grid__item  desk--one-third">Email</li><li class="contact__title-name  grid__item  desk--one-third">Phone</li></ul></li>')
 							.appendTo( contactList );
 							
 							$.each( item.contacts, function( index, contact ) {
@@ -132,27 +136,27 @@ $(document).ready(function() {
 								var contactBlock = $( '<ul class="grid"></ul>' ),
 									name       = contact.preferred + ' ' + contact.last;
                                 
-                                contactBlock.append($('<li class="contact__name  grid__item  desk--one-third">' + name + '</li>'));
+                                contactBlock.append($('<li class="grid__item  desk--one-third">' + name + '</li>'));
                                 
                                 
 								if( contact.email ) {
 									contactBlock.append(
-                                        $( '<li class="contact__email  grid__item  desk--one-third"><a href="mailto:' + contact.email + '">' + contact.email + '<a></li>' )
+                                        $( '<li class="grid__item  desk--one-third"><a href="mailto:' + contact.email + '">' + contact.email + '<a></li>' )
                                     ) ;
 								}
                                 else {
 									contactBlock.append(
-                                        $( '<li class="contact__email  grid__item  desk--one-third"> </li>')
+                                        $( '<li class="grid__item  desk--one-third"> </li>')
                                     );
                                     }
 								if( contact.phone ) {
 									contactBlock.append(
-                                        $( '<li class="contact__phone  grid__item  desk--one-third">' + contact.phone + '</li>')
+                                        $( '<li class="grid__item  desk--one-third">' + contact.phone + '</li>')
                                     );
 								}
                                 else {
 									contactBlock.append(
-                                        $( '<li class="contact__phone  grid__item  desk--one-third"></li>')
+                                        $( '<li class="grid__item  desk--one-third"></li>')
                                     );
                                 }
 								contactRow.append( contactBlock );
@@ -236,9 +240,12 @@ $(document).ready(function() {
     // Remove jquery-ui helper span
     $(function() {
         $(".js-campus-finder").find("span").remove();
+        $(".js-campus-finder").find("ul.ui-autocomplete").addClass("block-list");
     });
+
 	
 });
+
 
 
 

@@ -13,6 +13,9 @@
     <property name="validator" type="1" multiple="false">
       <value><![CDATA[function(value) { return Cru.widgets.Util.validateTextLengthWordLength(value,80,25); }]]></value>
     </property>
+    <property name="maxLength" type="12" multiple="false">
+        <value>80</value>
+    </property>
     <property name="fieldDescription" type="1" multiple="false">
       <value><![CDATA[Enter image credits to display]]></value>
     </property>
