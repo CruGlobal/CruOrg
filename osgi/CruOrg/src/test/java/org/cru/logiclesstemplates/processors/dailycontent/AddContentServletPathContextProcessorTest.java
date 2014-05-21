@@ -4,7 +4,7 @@ import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.api.wrappers.ValueMapDecorator;
 import org.apache.sling.commons.testing.sling.MockResource;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.cru.test.MockTemplateContentModel;
@@ -52,7 +52,6 @@ public class AddContentServletPathContextProcessorTest {
     @Mock private ResourceResolver resolver;
     @Mock private PageManager pageManager;
     @Mock private Page page;
-    @Mock private ValueMap valueMap;
 
     public final String testingPath = "/cru/test";
     public final String resourceJsonPath = "/cru/test.contentmodel.page.json";
@@ -80,6 +79,9 @@ public class AddContentServletPathContextProcessorTest {
         * CASE 0:
         * Resource != null
         */
+        Map<String, Object> valueMapValues = new HashMap<String, Object>();
+        valueMapValues.put(PN_TEMPLATE, ARTICLE_TEMPLATE_PATH);
+        ValueMapDecorator map = new ValueMapDecorator(valueMapValues);
         when(request.getResourceResolver()).thenReturn(resolver);
         when(resolver.adaptTo(PageManager.class)).thenReturn(pageManager);
         when(resolver.map(anyString())).thenReturn(resourceJsonPath);
@@ -89,8 +91,7 @@ public class AddContentServletPathContextProcessorTest {
         when(page.getPageManager()).thenReturn(pageManager);
         when(page.getPath()).thenReturn(testingPath);
         when(page.getContentResource()).thenReturn(resource);
-        when(page.getProperties()).thenReturn(valueMap);
-        when(valueMap.get(PN_TEMPLATE, "")).thenReturn(ARTICLE_TEMPLATE_PATH);
+        when(page.getProperties()).thenReturn(map);
         contentServletPath.process(request, contentModel);
 
         assertTrue(contentModel.has(CONTENT_SERVLET_PATH_KEY));
