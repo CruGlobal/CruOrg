@@ -193,5 +193,23 @@ Cru.widgets.Util = {
         } else {
             return valid;
         }
-	}
+	},
+
+    /**
+     * checks for blank spaces on the text
+     * returns an error if finds it
+     * @param text, text to validate
+     * @returns validation
+     */
+    blankSpaceValidation : function(text) {
+        if (!text) return true;
+        
+		var words = text.split(' ');
+        if (words.length == 1) {
+			return true;
+        }
+        if (words.length > 1) {
+			return "This field cannot contain spaces";
+        }
+    }
 };

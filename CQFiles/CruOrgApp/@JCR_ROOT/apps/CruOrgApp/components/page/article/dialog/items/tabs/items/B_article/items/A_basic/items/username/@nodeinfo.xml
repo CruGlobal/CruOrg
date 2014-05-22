@@ -11,7 +11,13 @@
       <value><![CDATA[./twitterUser]]></value>
     </property>
     <property name="validator" type="1" multiple="false">
-      <value><![CDATA[function(value) { return Cru.widgets.Util.validateLength(value,15); }]]></value>
+      <value><![CDATA[function(value) { var textLength = Cru.widgets.Util.validateLength(value,15);
+if (textLength === true) {
+	return Cru.widgets.Util.blankSpaceValidation(value);
+} else {
+	return textLength;
+} 
+}]]></value>
     </property>
     <property name="anchor" type="1" multiple="false">
       <value><![CDATA[100%]]></value>
