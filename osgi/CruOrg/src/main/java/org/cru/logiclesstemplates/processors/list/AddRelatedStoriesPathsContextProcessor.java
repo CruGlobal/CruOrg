@@ -1,9 +1,11 @@
 package org.cru.logiclesstemplates.processors.list;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
+import com.day.cq.commons.RangeIterator;
+import com.day.cq.tagging.Tag;
+import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.PageManager;
+import com.google.common.collect.Sets;
+import com.xumak.base.templatingsupport.TemplateContentModel;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
@@ -12,14 +14,9 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.cru.util.PublishDateUtils;
 
-import com.day.cq.commons.RangeIterator;
-import com.day.cq.tagging.Tag;
-import com.day.cq.tagging.TagManager;
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
-import com.google.common.collect.Sets;
-import com.xumak.base.templatingsupport.TemplateContentModel;
-import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Set;
 
 /* DESCRIPTION
 * -----------------------------------------------------------------------------
@@ -37,7 +34,7 @@ import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextP
 */
 @Component
 @Service
-public class AddRelatedStoriesPathsContextProcessor extends AddQueriedPagePathListContextProcessor {
+public class AddRelatedStoriesPathsContextProcessor extends AbstractAddQueriedPathListContextProcessor {
 
     public static final String XUMAK_TAG_NAV_LIST_RESOURCE_TYPE = "CruOrgApp/components/section/related-stories";
     public static final String PATH_LIST_CONTEXT_PROPERTY_NAME = "list.paths";
@@ -73,7 +70,7 @@ public class AddRelatedStoriesPathsContextProcessor extends AddQueriedPagePathLi
         RangeIterator<Resource> pages = findByTags(resource, pathRef, ids);
         if (pages != null) {
             //get max number of items
-            long max = getMaxNumber(contentModel, pages.getSize());
+            long max = getMaxNumber(contentModel, pages.getSize(), MAX_GLOBAL_KEY_NAME);
             pathList = PublishDateUtils.getSortedPathList(pages, resource, max);
         }
         int modular = pathList.size() % 3;
@@ -109,46 +106,4 @@ public class AddRelatedStoriesPathsContextProcessor extends AddQueriedPagePathLi
     }
 
 
-    /**
-     * get Iterator of resources based in list of tags.
-     * @param  resource the resource
-     * @param pathRef path of reference.
-     * @param tagsList list of tags.
-     * @return ArrayList
-     */
-    private RangeIterator<Resource> findByTags(final Resource resource, final String pathRef,
-                                               final List<String> tagsList) {
-        RangeIterator<Resource> pages = null;
-        if (resource != null) {
-            ResourceResolver resourceResolver = resource.getResourceResolver();
-            TagManager tagManager = resourceResolver.adaptTo(TagManager.class);
-            if (tagManager != null && StringUtils.isNotBlank(pathRef) && tagsList != null) {
-                String[] tagsArray = tagsList.toArray(new String[tagsList.size()]);
-                if (tagsArray.length > 0) {
-                    //find by tag
-                    pages = tagManager.find(pathRef, tagsArray, true);
-                }
-            }
-        }
-        return pages;
-    }
-
-
-    /**
-     * get Max number of items
-     * @param contentModel the content model
-     * @param listSize the size of the list
-     * @return Long with max number of items.
-     */
-    private long getMaxNumber(final TemplateContentModel contentModel, final long listSize)throws Exception{
-        long max = 3;
-        if (contentModel.has(MAX_GLOBAL_KEY_NAME)) {
-            max = contentModel.getAs(MAX_GLOBAL_KEY_NAME, Long.class);
-            //not exist limit
-            if (max == 0) {
-                max = listSize;
-            }
-        }
-        return max;
-    }
 }
