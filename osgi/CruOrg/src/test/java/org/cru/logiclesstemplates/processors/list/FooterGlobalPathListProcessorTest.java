@@ -5,6 +5,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.slf4j.Logger;
@@ -45,7 +46,7 @@ public class FooterGlobalPathListProcessorTest {
         footerGlobalPathList = new FooterGlobalPathListProcessor();
     }
 
-
+    @Ignore
     @Test
     public void testProcess() throws Exception {
 

@@ -8,6 +8,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -58,6 +59,7 @@ public class AddYesterdaysPagePathContextProcessorTest {
     }
 
 
+    @Ignore
     @Test
     public void testProcess() throws Exception {
         MockSlingHttpServletRequest request = spy(new MockSlingHttpServletRequest("/", null, "html", null, null));
