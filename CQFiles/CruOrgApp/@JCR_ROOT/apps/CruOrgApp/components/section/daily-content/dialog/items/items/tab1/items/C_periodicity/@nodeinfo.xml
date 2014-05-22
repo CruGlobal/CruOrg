@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <properties>
-    <property name="collapsed" type="1" multiple="false">
-      <value><![CDATA[false]]></value>
-    </property>
-    <property name="title" type="1" multiple="false">
-      <value><![CDATA[Periodicity]]></value>
-    </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[dialogfieldset]]></value>
+    </property>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Date interval]]></value>
     </property>
     <property name="collapsible" type="1" multiple="false">
       <value><![CDATA[false]]></value>
     </property>
     <property name="itemId" type="1" multiple="false">
       <value><![CDATA[periodicity]]></value>
+    </property>
+    <property name="collapsed" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
     </property>
   </properties>
   <mixins />
