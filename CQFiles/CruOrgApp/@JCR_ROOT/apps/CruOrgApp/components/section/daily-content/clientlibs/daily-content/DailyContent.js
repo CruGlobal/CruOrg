@@ -19,6 +19,7 @@ Cru.components.DailyContent.elements = {
     TIME : "time",
     SPAN : "span",
     FIGCAPTION : "figcaption",
+    DIV : "div",
     createTitle: function(title){
         var h1 = document.createElement(this.H1);
         var titleNode = document.createTextNode(title);
@@ -101,6 +102,17 @@ Cru.components.DailyContent.elements = {
         return paginationTag;
 
     },
+    createFacebookCommentsContainer : function(href, colorScheme, numberOfPosts){
+        /*<div class="fb-comments" data-href="{%page.requestURL%}" data-width="700" data-numposts="{%#if global.numberOfPosts %}{% global.numberOfPosts %}{%else%}{%#if page.isEditMode %}3{%/if %}{%/if%}" data-colorscheme=""></div> */
+
+        var container = document.createElement(this.DIV);
+        container.className = "fb-comments";
+        container.setAttribute("data-href", href);
+        container.setAttribute("data-numposts", numberOfPosts);
+        container.setAttribute("data-colorscheme", colorScheme);
+        container.setAttribute("data-width", "700");
+        return container;
+    },
     buildHeader : function(header, data){
         var title = data.page["title"];
         if(title){
@@ -146,6 +158,11 @@ Cru.components.DailyContent.elements = {
         }
         if(paths.tomorrow && !paths.isTomorrowDefaultPath){
             pagination.append(this.createPaginationItem(paths.tomorrow, "pagination__next  text--right", dailyContentNextLabel));
+        }
+    },
+    buildFacebookComments : function(container, data){
+        if(data.page.requestURL){
+            container.append(this.createFacebookCommentsContainer(data.page.requestURL, data.global.colorScheme, data.global.numberOfPosts));
         }
     },
     isEditMode : function(){

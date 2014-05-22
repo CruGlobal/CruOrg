@@ -21,10 +21,16 @@ $(document).ready(function(){
                     if(!(data instanceof Object)){//if data is a string, we parse it first
                         data = JSON.parse(data);
                     }
+                    if(data.page.hideArticleShare){
+                        $(".article-share").hide();
+                    }
                     var header = $("header.daily-content");
                     Cru.components.DailyContent.elements.buildHeader(header, data); //build the header (title, subtitle, etc.)
                     var figure = $(".daily-content figure");
                     Cru.components.DailyContent.elements.buildFigure(figure, data); //build the image
+
+
+
                     $(".daily-content-container").load(parsysPath, function() {
                         //reloads the twitter api for reevaluate twitter widgets.
                         var twitterScript = $("script#twitter-wjs");
@@ -34,6 +40,13 @@ $(document).ready(function(){
                     }); //get the contents from the article parsys
                     var pagination = $(".grid.pagination");
                     Cru.components.DailyContent.elements.buildPagination(pagination, paths, data);
+                    var facebookCommentsContainer = $(".daily-content-facebook-comments");
+                    debugger;
+
+                    if(!data.page.hideFacebookCommentsFeed && !data.page.hideArticleShare){
+                        Cru.components.DailyContent.elements.buildFacebookComments(facebookCommentsContainer, data);
+                    }
+
                 });
 
             } else { //if the content doesn't exist
