@@ -41,8 +41,6 @@ $(document).ready(function(){
                     var pagination = $(".grid.pagination");
                     Cru.components.DailyContent.elements.buildPagination(pagination, paths, data);
                     var facebookCommentsContainer = $(".daily-content-facebook-comments");
-                    debugger;
-
                     if(!data.page.hideFacebookCommentsFeed && !data.page.hideArticleShare){
                         Cru.components.DailyContent.elements.buildFacebookComments(facebookCommentsContainer, data);
                     }
