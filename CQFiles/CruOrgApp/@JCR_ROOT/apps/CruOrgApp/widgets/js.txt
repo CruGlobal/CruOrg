@@ -5,6 +5,6 @@ Util.js
 SectionTitle.js
 MinMaxMultifield.js
 
-
+rte/plugins/ValidatedLinkPlugin.js
 rte/plugins/QuotePlugin.js
 rte/commands/Quote.js
