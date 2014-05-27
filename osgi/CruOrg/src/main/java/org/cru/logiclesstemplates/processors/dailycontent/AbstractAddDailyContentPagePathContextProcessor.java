@@ -123,7 +123,8 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
         DateTime date;
         switch (which) {
             case START_DATE:
-                date = new DateTime(contentObject.get(START_DATE));
+                date = new DateTime(contentObject.get(START_DATE))
+                        .withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0);
                 break;
             case END_DATE:
                 date = new DateTime(contentObject.get(END_DATE))
