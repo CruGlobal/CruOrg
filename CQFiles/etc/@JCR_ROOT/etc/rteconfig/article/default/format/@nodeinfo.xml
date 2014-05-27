@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="features" type="1" multiple="true">
+      <value><![CDATA[bold]]></value>
+      <value><![CDATA[italic]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
