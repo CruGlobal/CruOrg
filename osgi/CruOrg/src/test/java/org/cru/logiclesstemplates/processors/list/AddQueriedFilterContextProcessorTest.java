@@ -1,19 +1,22 @@
 package org.cru.logiclesstemplates.processors.list;
 
-import mockit.Mocked;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.xumak.base.Constants.HTML;
 import static com.xumak.extended.contextprocessors.lists.ListConstants.PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME;
 import static org.cru.logiclesstemplates.processors.list.AddQueriedFilterContextProcessor.*;
 import static org.junit.Assert.assertEquals;
@@ -33,22 +36,20 @@ import static org.junit.Assert.assertFalse;
 *
 ==============================================================================
 */
+@RunWith(MockitoJUnitRunner.class)
 public class AddQueriedFilterContextProcessorTest {
 
-    @Mocked
-    private AddQueriedFilterContextProcessor queriedFilter;
 
+    @InjectMocks private AddQueriedFilterContextProcessor queriedFilter;
 
     @Before
-    public void init(){
-        queriedFilter  = new AddQueriedFilterContextProcessor();
+    public void setup(){
+        MockitoAnnotations.initMocks(this);
     }
 
-    @Ignore
     @Test
     public void testProcess() throws Exception {
-
-        MockSlingHttpServletRequest request = new MockSlingHttpServletRequest("/", null, "html", null, null);
+        MockSlingHttpServletRequest request = new MockSlingHttpServletRequest("/", null, HTML, null, null);
         SlingHttpServletResponse response = Mockito.mock(SlingHttpServletResponse.class);
         MockTemplateContentModel content = new MockTemplateContentModel(request, response);
 
@@ -118,7 +119,6 @@ public class AddQueriedFilterContextProcessorTest {
     private List<Map<String, String>> simulatePagesList(final int elements, final boolean titleFilter,
                                                      final boolean descriptionFilter,
                                                      final int imageFilter)throws Exception{
-
         List<Map<String, String>> allPageDetailList = new ArrayList<Map<String, String>>();
         //fill List with simulated data
         for (int item = 0; item < elements; item++){
@@ -138,7 +138,6 @@ public class AddQueriedFilterContextProcessorTest {
      */
     private Map<String, String> simulatePageDetails(final int item,  final boolean titleFilter,
                                                final boolean descriptionFilter, final int imageFilter)throws Exception {
-
         Map<String, String> pageDetails = new HashMap<String, String>();
 
         if (titleFilter) {

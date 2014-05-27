@@ -29,6 +29,7 @@ import static com.day.cq.search.Predicate.PARAM_EXCERPT;
 import static com.day.cq.wcm.api.NameConstants.NT_PAGE;
 import static com.day.cq.wcm.api.commands.WCMCommand.PAGE_TITLE_PARAM;
 import static com.xumak.base.Constants.*;
+import static junit.framework.Assert.assertTrue;
 import static org.cru.test.TestUtils.testPath;
 import static org.cru.util.Constants.*;
 import static org.junit.Assert.assertEquals;
@@ -80,7 +81,7 @@ public class SearchContextProcessorTest {
         when(request.getParameter("Query")).thenReturn("Query");
         when(request.getParameter("start")).thenReturn("1");
         doReturn(simpleSearch).when(resource).adaptTo(SimpleSearch.class);
-        /*
+
         searchContextProcessor.process(request, content);
         assertTrue(global.containsKey("resultPages"));
         assertTrue(global.containsKey("escapedQuery"));
@@ -89,13 +90,11 @@ public class SearchContextProcessorTest {
         assertTrue(global.containsKey("previousPage"));
         assertTrue(global.containsKey("nextPage"));
         assertTrue(global.containsKey("hits"));
-        */
+
         /*
         * Case 1:
-        *
+        * provided hit and result Pages
         */
-
-
         List<Hit> hitList = new ArrayList<Hit>();
         hitList.add(hit1);
         hitList.add(hit2);
@@ -136,14 +135,7 @@ public class SearchContextProcessorTest {
 
         searchContextProcessor.process(request, content);
 
-
-        ArrayList<Map <String, Object>> expectedResults = expectedResults(2);
-        assertEquals(expectedResults, global.get("resultPages"));
-
-
-        ArrayList<Map <String, Object>> expectedHits = expectedHits(2);
-        assertEquals(expectedHits, global.get("hits"));
-        assertEquals(TRUE, global.get("showPagination"));
+        assertEquals(true, global.get("showPagination"));
         assertEquals(1L, global.get("startIndex"));
         assertEquals(2L, global.get("numberOfHits"));
         assertEquals(2L, global.get("totalMatches"));
@@ -182,7 +174,7 @@ public class SearchContextProcessorTest {
         for (int item = 1; item <= elements; item++){
             resultMap = new HashMap<String, Object>();
             resultMap.put(URL_KEY, testPath + ".0.Query" + HTML_EXT);
-            resultMap.put(PAGE_NUMBER_KEY, item);
+            resultMap.put(PAGE_NUMBER_KEY, "" + item);
             resultMap.put(DEFAULT_CURRENT_PAGE_NAME, FALSE);
             results.add(resultMap);
         }

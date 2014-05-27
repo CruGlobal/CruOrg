@@ -5,8 +5,11 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,14 +32,16 @@ import static org.junit.Assert.assertFalse;
 *
 ==============================================================================
 */
+@RunWith(MockitoJUnitRunner.class)
 public class AddRequestURLContextProcessorTest {
 
-    @InjectMocks private AddRequestURLContextProcessor requestURL;
+    @Mock private AddRequestURLContextProcessor requestURL;
     private final String GLOBAL_REQUEST_URL_KEY = "page.requestURL";
 
 
     @Before
     public void init(){
+        MockitoAnnotations.initMocks(this);
         requestURL = new AddRequestURLContextProcessor();
     }
 

@@ -3,11 +3,11 @@ package org.cru.logiclesstemplates.processors.list;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.commons.testing.jcr.MockNode;
 import org.apache.sling.commons.testing.sling.MockResource;
 import org.apache.sling.commons.testing.sling.MockResourceResolver;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.cru.test.MockTemplateContentModel;
+import org.cru.test.TestUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,8 +23,9 @@ import java.util.List;
 import java.util.Map;
 
 import static com.day.cq.wcm.api.NameConstants.NT_PAGE;
-import static org.cru.logiclesstemplates.processors.list.AddArticleSiblingsContextProcessor.*;
 import static com.xumak.base.Constants.*;
+import static org.cru.logiclesstemplates.processors.list.AddArticleSiblingsContextProcessor.*;
+import static org.cru.test.TestUtils.testPath;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
@@ -50,7 +51,6 @@ public class AddArticleSiblingsContextProcessorTest {
     @Mock PageManager pageManager;
     @Mock Page page;
 
-    private final String testPath = "/cru/test";
     private final String testPathItem1 = testPath + "/item1";
     private final String testPathArticle1 = testPathItem1 + "/article";
     private final String testPathItem2 = testPath + "/item2";
@@ -65,8 +65,7 @@ public class AddArticleSiblingsContextProcessorTest {
 
     @Test
     public void testProcess() throws Exception {
-
-        MockSlingHttpServletRequest request = spy(new MockSlingHttpServletRequest("/", null, "html", null, null));
+        MockSlingHttpServletRequest request = spy(new MockSlingHttpServletRequest("/", null, HTML, null, null));
         SlingHttpServletResponse response = mock(SlingHttpServletResponse.class);
         MockTemplateContentModel content = new MockTemplateContentModel(request, response);
         MockResourceResolver resolver = spy(new MockResourceResolver());
@@ -100,9 +99,9 @@ public class AddArticleSiblingsContextProcessorTest {
 
         when(request.getResourceResolver()).thenReturn(resolver);
         doReturn(pageManager).when(resolver).adaptTo(PageManager.class);
-        doReturn(mockGetNode(resource)).when(resource).adaptTo(Node.class);
-        doReturn(mockGetNode(item1)).when(item1).adaptTo(Node.class);
-        doReturn(mockGetNode(item2)).when(item2).adaptTo(Node.class);
+        doReturn(TestUtils.mockGetNode(resource)).when(resource).adaptTo(Node.class);
+        doReturn(TestUtils.mockGetNode(item1)).when(item1).adaptTo(Node.class);
+        doReturn(TestUtils.mockGetNode(item2)).when(item2).adaptTo(Node.class);
         when(pageManager.getContainingPage(resource)).thenReturn(page);
         when(page.adaptTo(Page.class)).thenReturn(page); //TODO
         when(page.getPath()).thenReturn(testPathItem1);
@@ -130,17 +129,6 @@ public class AddArticleSiblingsContextProcessorTest {
             allParagraphDetailList.add(detail);
         }
         return allParagraphDetailList;
-    }
-
-
-    /**
-     * get Resource Mock object, based in resource.
-     * @param resource
-     * @return MockNode
-     */
-    private MockNode mockGetNode(final MockResource resource){
-        MockNode node = new MockNode(resource.getPath(), resource.getResourceType());
-        return node;
     }
 
 

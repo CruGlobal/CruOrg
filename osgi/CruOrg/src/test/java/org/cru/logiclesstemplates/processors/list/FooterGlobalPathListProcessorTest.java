@@ -1,21 +1,22 @@
 package org.cru.logiclesstemplates.processors.list;
 
-import mockit.Mocked;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mockito;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.mockito.MockitoAnnotations;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
 import static com.xumak.extended.contextprocessors.lists.AddPagePathListContextProcessor.PATH_LIST_CONTEXT_PROPERTY_NAME;
+import static org.cru.test.TestUtils.testPath;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
@@ -33,20 +34,17 @@ import static org.junit.Assert.assertFalse;
 *
 ==============================================================================
 */
-
+@RunWith(MockitoJUnitRunner.class)
 public class FooterGlobalPathListProcessorTest {
-    private static final Logger log = LoggerFactory.getLogger(FooterGlobalPathListProcessorTest.class);
 
-    @Mocked
-    private FooterGlobalPathListProcessor footerGlobalPathList;
-
+    @InjectMocks private FooterGlobalPathListProcessor footerGlobalPathList;
 
     @Before
     public void init(){
+        MockitoAnnotations.initMocks(this);
         footerGlobalPathList = new FooterGlobalPathListProcessor();
     }
 
-    @Ignore
     @Test
     public void testProcess() throws Exception {
 
@@ -55,7 +53,7 @@ public class FooterGlobalPathListProcessorTest {
         MockTemplateContentModel content = new MockTemplateContentModel(request, response);
 
         //prepare data
-        String[] pathRefs = new String[]{"content/test/cru", "content/test/cru/article"};
+        String[] pathRefs = new String[]{testPath, testPath + "/article"};
 
         //prepare result data
         Collection<String> pathList = new ArrayList();
