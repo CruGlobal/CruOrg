@@ -8,7 +8,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -21,7 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
-import static org.cru.logiclesstemplates.processors.dailycontent.AddYesterdaysPagePathContextProcessor.*;
+import static org.cru.logiclesstemplates.processors.dailycontent.AddYesterdaysPagePathContextProcessor.CURRENT_RESOURCE_KEY;
+import static org.cru.logiclesstemplates.processors.dailycontent.AddYesterdaysPagePathContextProcessor.DEFAULT_PATH;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.anyString;
@@ -59,7 +59,6 @@ public class AddYesterdaysPagePathContextProcessorTest {
     }
 
 
-    @Ignore
     @Test
     public void testProcess() throws Exception {
         MockSlingHttpServletRequest request = spy(new MockSlingHttpServletRequest("/", null, "html", null, null));
@@ -89,8 +88,7 @@ public class AddYesterdaysPagePathContextProcessorTest {
         assertTrue(contentModel.has(CONTENT_IS_YESTERDAY_PATH));
         assertEquals(Boolean.TRUE.toString(), contentModel.getAsString(CONTENT_IS_YESTERDAY_PATH));
 
-
-         /*
+        /*
         * CASE 1:
         * DEFAULT PATH != IS YESTERDAY PATH
         */

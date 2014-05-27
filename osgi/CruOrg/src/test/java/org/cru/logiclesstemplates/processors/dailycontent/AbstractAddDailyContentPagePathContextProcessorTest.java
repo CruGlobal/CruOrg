@@ -22,6 +22,7 @@ import static com.day.cq.wcm.api.NameConstants.NT_PAGE;
 import static org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyContentPagePathContextProcessor.*;
 import static org.cru.logiclesstemplates.processors.dailycontent.AddContentServletPathContextProcessor.CURRENT_RESOURCE_KEY;
 import static org.cru.logiclesstemplates.processors.dailycontent.AddContentServletPathContextProcessor.DEFAULT_PATH;
+import static org.cru.test.TestUtils.testPath;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Matchers.anyString;
@@ -50,7 +51,7 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
     @Mock private PageManager pageManager;
     @Mock private Page page;
 
-    public final String testingPath = "/cru/test";
+
     private final String DEFAULT = "default";
     private MockResource resource;
     private String dateTimeStr;
@@ -58,16 +59,15 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
     @Before
     public void setup(){
         MockitoAnnotations.initMocks(this);
-        resource = spy(new MockResource(resolver, testingPath, NT_PAGE));
+        resource = spy(new MockResource(resolver, testPath, NT_PAGE));
         dateTimeStr = new DateTime().toString();
     }
 
 
     @Test
     public void testGetPeriodicalPagePath() throws Exception {
-
         Map<String, Object> content = new HashMap();
-        content.put(DEFAULT_PATH, testingPath);
+        content.put(DEFAULT_PATH, testPath);
         content.put(CURRENT_RESOURCE_KEY, resource);
 
         /* CASE 0:
@@ -77,8 +77,8 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         when(resource.getResourceResolver()).thenReturn(resolver);
         when(resolver.adaptTo(PageManager.class)).thenReturn(pageManager);
         when(pageManager.getPage(anyString())).thenReturn(page);
-        when(page.getPath()).thenReturn(testingPath);
-        assertEquals(testingPath, contentServletPath.getPeriodicalPagePath(dateTimeStr, content));
+        when(page.getPath()).thenReturn(testPath);
+        assertEquals(testPath, contentServletPath.getPeriodicalPagePath(dateTimeStr, content));
 
 
          /* CASE 1:
@@ -94,7 +94,7 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         content.put(END_DATE, endDate.toString());
         when(pageManager.getContainingPage(resource)).thenReturn(page);
         when(page.listChildren()).thenReturn(iterator);
-        assertEquals(testingPath, contentServletPath.getPeriodicalPagePath(dateTimeStr, content));
+        assertEquals(testPath, contentServletPath.getPeriodicalPagePath(dateTimeStr, content));
 
     }
 
@@ -108,9 +108,9 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         */
         DateTime dateTime = new DateTime();
         when(page.getPageManager()).thenReturn(pageManager);
-        when(page.getPath()).thenReturn(testingPath);
+        when(page.getPath()).thenReturn(testPath);
         when(pageManager.getPage(anyString())).thenReturn(page);
-        assertEquals(testingPath, contentServletPath.getDatePagePath(dateTime, page));
+        assertEquals(testPath, contentServletPath.getDatePagePath(dateTime, page));
 
     }
 
@@ -128,9 +128,9 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         when(resolver.adaptTo(PageManager.class)).thenReturn(pageManager);
         when(pageManager.getPage(anyString())).thenReturn(page);
         when(pageManager.getContainingPage(resource)).thenReturn(page);
-        when(page.getPath()).thenReturn(testingPath);
+        when(page.getPath()).thenReturn(testPath);
         when(page.getPageManager()).thenReturn(pageManager);
-        assertEquals(testingPath, contentServletPath.getDailyContentPath(dateTimeStr, content));
+        assertEquals(testPath, contentServletPath.getDailyContentPath(dateTimeStr, content));
 
         /*
         * CASE 1:
@@ -144,9 +144,9 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         content.put(START_DATE, startDate.toString());
         content.put(END_DATE, endDate.toString());
         content.put(DISPLAY_PERIODICALLY_KEY, Boolean.TRUE.toString());
-        content.put(DEFAULT_PATH, testingPath);
+        content.put(DEFAULT_PATH, testPath);
         when(page.listChildren()).thenReturn(iterator);
-        assertEquals(testingPath, contentServletPath.getDailyContentPath(dateTimeStr, content));
+        assertEquals(testPath, contentServletPath.getDailyContentPath(dateTimeStr, content));
 
     }
 
@@ -216,6 +216,7 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
     @Test
     public void testGetDefaultPath() throws Exception {
         Map<String, Object> content = new HashMap();
+
         /*
         * CASE 0: Content not container DefaultPath key
         */
@@ -226,14 +227,14 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         * content.defaultpath != null
         * content.currentResource != null
         */
-        final String defaultPath = "/test";
-        content.put(DEFAULT_PATH, defaultPath);
+
+        content.put(DEFAULT_PATH, testPath);
         content.put(CURRENT_RESOURCE_KEY, resource);
 
         when(resource.getResourceResolver()).thenReturn(resolver);
         when(resolver.adaptTo(PageManager.class)).thenReturn(pageManager);
-        when(pageManager.getPage(defaultPath)).thenReturn(page);
-        assertEquals(defaultPath, contentServletPath.getDefaultPath(content));
+        when(pageManager.getPage(testPath)).thenReturn(page);
+        assertEquals(testPath, contentServletPath.getDefaultPath(content));
 
     }
 

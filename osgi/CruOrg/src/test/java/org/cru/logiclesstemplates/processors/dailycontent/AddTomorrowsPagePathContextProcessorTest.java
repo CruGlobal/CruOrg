@@ -8,7 +8,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -21,7 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
-import static org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyContentPagePathContextProcessor.*;
+import static org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyContentPagePathContextProcessor.CURRENT_RESOURCE_KEY;
+import static org.cru.logiclesstemplates.processors.dailycontent.AbstractAddDailyContentPagePathContextProcessor.DEFAULT_PATH;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.anyString;
@@ -53,14 +53,12 @@ public class AddTomorrowsPagePathContextProcessorTest {
     private final String CONTENT_IS_YESTERDAY_PATH = "content.isTomorrowDefaultPath";
 
 
-    @Ignore
     @Before
     public void setup(){
         MockitoAnnotations.initMocks(this);
     }
 
 
-    @Ignore
     @Test
     public void testProcess() throws Exception {
         MockSlingHttpServletRequest request = spy(new MockSlingHttpServletRequest("/", null, "html", null, null));

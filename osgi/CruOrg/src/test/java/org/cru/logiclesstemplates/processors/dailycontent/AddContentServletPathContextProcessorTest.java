@@ -9,7 +9,6 @@ import org.apache.sling.commons.testing.sling.MockResource;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -25,6 +24,7 @@ import static com.day.cq.wcm.api.NameConstants.NT_PAGE;
 import static com.day.cq.wcm.api.NameConstants.PN_TEMPLATE;
 import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
 import static org.cru.logiclesstemplates.processors.dailycontent.AddContentServletPathContextProcessor.SERVLET_PATH_KEY;
+import static org.cru.test.TestUtils.testPath;
 import static org.cru.util.PageUtils.ARTICLE_TEMPLATE_PATH;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -54,8 +54,7 @@ public class AddContentServletPathContextProcessorTest {
     @Mock private PageManager pageManager;
     @Mock private Page page;
 
-    public final String testingPath = "/cru/test";
-    public final String resourceJsonPath = "/cru/test.contentmodel.page.json";
+    public final String resourceJsonPath = testPath + ".contentmodel.page.json";
     public final String CONTENT_SERVLET_PATH_KEY = RESOURCE_CONTENT_KEY + "." + SERVLET_PATH_KEY;
 
 
@@ -64,13 +63,12 @@ public class AddContentServletPathContextProcessorTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    @Ignore
     @Test
     public void testProcess() throws Exception {
         MockSlingHttpServletRequest request = spy(new MockSlingHttpServletRequest("/", null, "html", null, null));
         SlingHttpServletResponse response = Mockito.mock(SlingHttpServletResponse.class);
 
-        MockResource resource = spy(new MockResource(resolver, testingPath, NT_PAGE));
+        MockResource resource = spy(new MockResource(resolver, testPath, NT_PAGE));
         MockTemplateContentModel contentModel = spy(new MockTemplateContentModel(request, response));
         request.setResource(resource);
         Map<String, Object> content = new HashMap();
@@ -90,7 +88,7 @@ public class AddContentServletPathContextProcessorTest {
         when(pageManager.getContainingPage(resource)).thenReturn(page);
         when(pageManager.getPage(anyString())).thenReturn(page);
         when(page.getPageManager()).thenReturn(pageManager);
-        when(page.getPath()).thenReturn(testingPath);
+        when(page.getPath()).thenReturn(testPath);
         when(page.getContentResource()).thenReturn(resource);
         when(page.getProperties()).thenReturn(map);
         contentServletPath.process(request, contentModel);
