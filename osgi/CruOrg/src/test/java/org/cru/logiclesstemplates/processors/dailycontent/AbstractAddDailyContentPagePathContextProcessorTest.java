@@ -6,7 +6,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.commons.testing.sling.MockResource;
 import org.joda.time.DateTime;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
