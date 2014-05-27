@@ -18,7 +18,7 @@ import org.apache.sling.api.SlingHttpServletResponse;
 *
 ==============================================================================
 */
-public final class MockTemplateContentModel extends TemplateContentModel {
+public class MockTemplateContentModel extends TemplateContentModel {
 
    /**
     * Constructor.

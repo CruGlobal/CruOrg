@@ -84,7 +84,7 @@ public class AddArticleSiblingsContextProcessor
         Map<String, String> paragraphDetails = new HashMap<String, String>();
         if (null != paragraph){
             Node node = paragraph.adaptTo(Node.class);
-            if ( node.hasProperty(TITLE)){
+            if (node.hasProperty(TITLE)){
                 paragraphDetails.put(TITLE, node.getProperty(TITLE).getString());
             }
             paragraphDetails.put(PATH,  path);

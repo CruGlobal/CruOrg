@@ -56,7 +56,7 @@ public class AddRelatedStoriesPathsContextProcessor extends AbstractAddQueriedPa
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
 
         //get actual page path
-        Page currentPage = pageManager.getContainingPage(resource).adaptTo( Page.class );
+        Page currentPage = pageManager.getContainingPage(resource).adaptTo(Page.class);
 
         //get PathReference
         String pathRef = contentModel.getAsString(PATHREF_GLOBAL_KEY_NAME);
@@ -78,25 +78,25 @@ public class AddRelatedStoriesPathsContextProcessor extends AbstractAddQueriedPa
             contentModel.set("content.showContent", "true");
         }
         if (modular == 2 || pathList.size() == 2){
-            String path = (String) ((ArrayList) pathList).get( pathList.size() - 2 );
-            Page p = resourceResolver.getResource( path ).adaptTo( Page.class );
+            String path = (String) ((ArrayList) pathList).get(pathList.size() - 2);
+            Page p = resourceResolver.getResource(path).adaptTo(Page.class);
             contentModel.set("content.page21path", p.getPath());
             contentModel.set("content.page21title", p.getTitle());
             contentModel.set("content.page21description", p.getDescription());
 
 
-            String path2 = (String) ((ArrayList) pathList).get( pathList.size() - 1 );
-            Page p2 = resourceResolver.getResource( path2 ).adaptTo( Page.class );
+            String path2 = (String) ((ArrayList) pathList).get(pathList.size() - 1);
+            Page p2 = resourceResolver.getResource(path2).adaptTo(Page.class);
             contentModel.set("content.page22path", p2.getPath());
             contentModel.set("content.page22title", p2.getTitle());
             contentModel.set("content.page22description", p2.getDescription());
 
-            ((ArrayList) pathList).remove( pathList.size() - 1 );
-            ((ArrayList) pathList).remove( pathList.size() - 1 );
+            ((ArrayList) pathList).remove(pathList.size() - 1);
+            ((ArrayList) pathList).remove(pathList.size() - 1);
 
         } else  if (modular == 1 || pathList.size() == 1){
-            String path = (String) ((ArrayList) pathList).get( pathList.size() - 1);
-            Page p = resourceResolver.getResource( path ).adaptTo( Page.class);
+            String path = (String) ((ArrayList) pathList).get(pathList.size() - 1);
+            Page p = resourceResolver.getResource(path).adaptTo(Page.class);
             contentModel.set("content.page1path", p.getPath());
             contentModel.set("content.page1title", p.getTitle());
             contentModel.set("content.page1description", p.getDescription());
