@@ -226,6 +226,22 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <version>2.4.0</version>
+                <configuration>
+                    <instructions>
+                        <Export-Package>
+                            com.day.cq.tagging.impl,
+                            org.apache.sling.commons.testing.jcr,
+                            org.apache.sling.commons.testing.sling,
+                            junit.framework,
+                            junit.extensions,
+                            org.junit.runners,
+                            org.junit.runner.manipulation,
+                            org.junit.runner.notification,
+                            org.junit.internal.runners,
+                            org.hamcrest.core
+                        </Export-Package>
+                    </instructions>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -420,7 +436,7 @@
             <artifactId>org.apache.sling.commons.testing</artifactId>
             <version>2.0.16</version>
         </dependency>
-        
+
         <dependency>
             <groupId>XumaK</groupId>
             <artifactId>Base</artifactId>
