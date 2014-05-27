@@ -46,7 +46,7 @@ public class AddTotalArticlesContextProcessor extends AbstractListContextProcess
         Resource  mainResource = request.getResource();
         Resource resource = null;
 
-        if (mainResource != null && mainResource.getParent() != null ){
+        if (mainResource != null && mainResource.getParent() != null){
             resource = mainResource.getParent();
             ParagraphSystem paragraphSystem = ParagraphSystem.create(resource, request);
             List<Paragraph> paragraphs = paragraphSystem.paragraphs();
