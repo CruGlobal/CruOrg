@@ -1,15 +1,12 @@
 package org.cru.logiclesstemplates.processors;
 
-import mockit.Mocked;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mockito;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,11 +31,8 @@ import static org.junit.Assert.assertFalse;
 */
 public class AddRequestURLContextProcessorTest {
 
-    private static final Logger log = LoggerFactory.getLogger(AddRequestURLContextProcessorTest.class);
-    private static final String GLOBAL_REQUEST_URL_KEY = "page.requestURL";
-
-    @Mocked
-    private AddRequestURLContextProcessor requestURL;
+    @InjectMocks private AddRequestURLContextProcessor requestURL;
+    private final String GLOBAL_REQUEST_URL_KEY = "page.requestURL";
 
 
     @Before
@@ -46,14 +40,12 @@ public class AddRequestURLContextProcessorTest {
         requestURL = new AddRequestURLContextProcessor();
     }
 
-    @Ignore
+
     @Test
     public void testProcess() throws Exception {
-
         SlingHttpServletRequest request = Mockito.mock(SlingHttpServletRequest.class);
         SlingHttpServletResponse response = Mockito.mock(SlingHttpServletResponse.class);
         MockTemplateContentModel content = new MockTemplateContentModel(request, response);
-
 
         /*
         * CASE 0:
@@ -74,7 +66,6 @@ public class AddRequestURLContextProcessorTest {
 
         requestURL.process(request, content);
         assertEquals(url.toString(), content.get(GLOBAL_REQUEST_URL_KEY));
-
 
     }
 

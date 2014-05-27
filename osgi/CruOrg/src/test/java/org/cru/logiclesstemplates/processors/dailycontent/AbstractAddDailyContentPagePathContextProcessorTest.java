@@ -74,10 +74,13 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         *  StartDate is Empty
         *  EndDate is Empty
         */
+        Iterator<Page> iterator = getPathIterator(3);
         when(resource.getResourceResolver()).thenReturn(resolver);
         when(resolver.adaptTo(PageManager.class)).thenReturn(pageManager);
         when(pageManager.getPage(anyString())).thenReturn(page);
+        when(pageManager.getContainingPage(resource)).thenReturn(page);
         when(page.getPath()).thenReturn(testPath);
+        when(page.listChildren()).thenReturn(iterator);
         assertEquals(testPath, contentServletPath.getPeriodicalPagePath(dateTimeStr, content));
 
 
@@ -87,7 +90,7 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         *  PageList contains three elements
         */
 
-        Iterator<Page> iterator = getPathIterator(3);
+
         DateTime startDate = new DateTime().minusDays(1);
         DateTime endDate = new DateTime().plusDays(1);
         content.put(START_DATE, startDate.toString());
@@ -154,7 +157,7 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
     @Test
     public void testGetDate() throws Exception {
         Map<String, Object> content = new HashMap();
-        DateTime startDate = new DateTime().minusDays(1);
+        DateTime startDate = new DateTime().minusDays(1).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0);
         DateTime endDate = new DateTime().plusDays(1);
 
 
@@ -210,7 +213,6 @@ public class AbstractAddDailyContentPagePathContextProcessorTest {
         assertNotNull(contentServletPath.getDate(DEFAULT, content));
 
     }
-
 
 
     @Test
