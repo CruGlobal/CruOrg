@@ -228,17 +228,17 @@
                 <version>2.4.0</version>
                 <configuration>
                     <instructions>
+                        <Import-Package>
+                            !org.junit.*,
+                            !junit.framework,
+                            !junit.extensions,
+                            *
+                        </Import-Package>
                         <Export-Package>
                             com.day.cq.tagging.impl,
                             org.apache.sling.commons.testing.jcr,
                             org.apache.sling.commons.testing.sling,
-                            junit.framework,
-                            junit.extensions,
-                            org.junit.runners,
-                            org.junit.runner.manipulation,
-                            org.junit.runner.notification,
-                            org.junit.internal.runners,
-                            org.hamcrest.core
+
                         </Export-Package>
                     </instructions>
                 </configuration>
