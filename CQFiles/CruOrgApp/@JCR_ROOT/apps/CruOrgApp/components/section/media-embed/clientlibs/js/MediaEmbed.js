@@ -8,10 +8,10 @@ Cru.widgets.MediaEmbed = {
         var endMessage = " is not valid.";
         var isValid = "Please add a script.";
         if(value.length > 0){
-            var scripts = value.match(/((href|src)="([^\'\"]+))/g);
+            var scripts = value.match(/((href|src)=([\'\"])([^\'\"]+))/g);
             if(scripts && scripts.length > 0){
                 for (var i=0; i< scripts.length; i++) {
-                    var src =scripts[i].replace(/(href|src)=\"/,"");
+                    var src =scripts[i].replace(/(href|src)=([\'\"])/,"");
                     if(src !== undefined){
                         if (this.isValidUrl(src)) {
                             isValid = this.checkDomains(src);
