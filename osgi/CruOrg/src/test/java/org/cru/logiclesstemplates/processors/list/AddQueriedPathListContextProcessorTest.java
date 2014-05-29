@@ -29,6 +29,7 @@ import static com.xumak.base.Constants.RESOURCE_CONTENT_KEY;
 import static com.xumak.extended.contextprocessors.lists.AddPagePathListContextProcessor.PATHS_LIST_CONTEXT_KEY;
 import static org.cru.logiclesstemplates.processors.list.AddQueriedPathListContextProcessor.PATHREFS_CONTENT_KEY_NAME;
 import static org.cru.test.TestUtils.testPath;
+import static org.cru.test.TestUtils.QUERY_KEY_NAME;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.*;
@@ -43,7 +44,6 @@ public class AddQueriedPathListContextProcessorTest {
     @Mock private Page page1;
     @Mock private Page page2;
     @Mock private Page page3;
-    public final String QUERY_KEY_NAME = "query";
 
 
     @Before
