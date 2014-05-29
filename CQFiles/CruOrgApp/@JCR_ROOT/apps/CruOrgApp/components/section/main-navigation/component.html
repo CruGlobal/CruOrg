@@ -1,5 +1,5 @@
 <!-- Navigation for off canvas and primary navigaiton: This is at the very bottom of the page -->
-AA <nav id="nav" class="navigation">
+<nav id="nav" class="navigation">
     <ul class="nav  right-nav ">
 
         <!--Search-->
@@ -9,12 +9,11 @@ AA <nav id="nav" class="navigation">
     </ul>
     <ul class="nav  site-nav">
         {%#each list.pages%}
-
-        <li class="nav__item">
-            <a href="{%this.vanityPath%}.html"  class="nav__link  primary-link">{%this.navigationTitle%}<i class="icon-down-arrow small-text"></i></a>
+        <li class="nav__item has-dropdown">
+            <a href="{%this.vanityPath%}.html"  class="nav__link  primary-link">{%this.navigationTitle%}<i class="icon-down-arrow small-text float--right mr-"></i></a>
             {%#with this.pages%}
             {%#if this%}
-            <div class="dropdown">
+            <div id="tab{%@index%}"class="dropdown">
                 <ul class="grid">
                     <li class="grid__item  desk--one-third  dropdown--column">
                         {%#each this%}
@@ -35,20 +34,15 @@ AA <nav id="nav" class="navigation">
 
                         </div>
                         {%/each%}
-
                     </li>
-
-
                 </ul>
-
             </div>
             {%/if%}
             {%/with%}
-
         </li>
         {%/each%}
 
     </ul>
-			<a href="#" id="nav-close-btn"  class="topbar-toggle  topbar-close">Close <i class="icon-cancel-circled"></i></a>
+	<a href="#" id="nav-close-btn"  class="topbar-toggle  topbar-close">Close <i class="icon-cancel-circled"></i></a>
 
 </nav>

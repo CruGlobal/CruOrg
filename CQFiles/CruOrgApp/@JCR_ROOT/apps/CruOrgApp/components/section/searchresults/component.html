@@ -7,7 +7,7 @@
 
         <ul class="block-list  mb-">
             {%#each global.hits %}
-                <li class="primary-search__results--item">
+                <li class="primary-search__results--item block-link  pe-">
                     <a class="layout-single-column"  href="{%this.URL%}">
                         <h4 class="results-title  pb--  mb0">{%{this.title}%}</h4>
                         <!-- Limit to 20-25 words -->
@@ -21,7 +21,7 @@
         <div class="layout-single-column">
             {%#if global.showPagination %}
                 <ol class="nav  pagination  layout-single-column">
-                    <li class="pagination__prev">
+                    <li class="pagination__prev  grid__item  one-half  text--left">
                         {%#if global.previousPage %}
                             <a href="{%global.previousPage.URL%}"
                                class="button  button--small  button--subtle">{%global.previousText%}</a>
@@ -31,16 +31,12 @@
                     </li>
 
                     {%#each global.resultPages %}
-                        {%#if this.currentPage %}
-                            <li class="current">
-                        {%else%}
-                            <li>
-                        {%/if%}
+                            <li class="{%#if this.currentPage %}current{%/if%}">
                             <a href="{% this.URL %}">{% this.pageNumber %}</a>
                         </li>
                     {%/each%}
 
-                    <li class="pagination__next">
+                    <li class="pagination__next  text--right">
                         {%#if global.nextPage %}
                         <a href="{%global.nextPage.URL%}"
                            class="button  button--small  button--subtle">{%global.nextText%}</a>
