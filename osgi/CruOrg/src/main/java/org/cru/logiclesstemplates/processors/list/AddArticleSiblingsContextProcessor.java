@@ -91,4 +91,9 @@ public class AddArticleSiblingsContextProcessor
         }
         return paragraphDetails;
     }
+
+    @Override
+    protected boolean mustExist() {
+        return false;
+    }
 }

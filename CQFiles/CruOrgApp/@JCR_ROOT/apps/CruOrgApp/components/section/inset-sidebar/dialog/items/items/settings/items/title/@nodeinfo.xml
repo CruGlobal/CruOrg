@@ -8,7 +8,7 @@
       <value><![CDATA[Title]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./title]]></value>
+      <value><![CDATA[./sidebarTitle]]></value>
     </property>
     <property name="validator" type="1" multiple="false">
       <value><![CDATA[function(value) { return Cru.widgets.Util.validateLength(value,80); }]]></value>
