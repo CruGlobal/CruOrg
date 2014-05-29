@@ -19,13 +19,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <xcqb.version>2.0.1.102</xcqb.version>
 
-        <!-- Properties for Sonar -->
-        <sonar.jdbc.url>jdbc:mysql://sonar.xumak.gt:3306/sonar</sonar.jdbc.url> <!-- jdbc:mysql://sonar.xumak.gt:3306/sonar -->
-        <sonar.jdbc.driverClassName>com.mysql.jdbc.Driver</sonar.jdbc.driverClassName><!-- com.mysql.jdbc.Driver -->
-        <sonar.jdbc.username>anon</sonar.jdbc.username> <!-- anon -->
-        <sonar.jdbc.password>0000</sonar.jdbc.password> <!-- 0000 -->
-        <sonar.host.url>http://sonar.xumak.gt:9000</sonar.host.url> <!-- http://sonar.xumak.gt:9000 -->
-        <sonar.projectName>CruOrg</sonar.projectName>
 
         <!-- Properties for deployment -->
         <cq.author.server>http://localhost:4504</cq.author.server>
