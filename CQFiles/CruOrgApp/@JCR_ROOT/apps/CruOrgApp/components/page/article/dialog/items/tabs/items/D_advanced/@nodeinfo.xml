@@ -5,7 +5,7 @@
       <value><![CDATA[cqinclude]]></value>
     </property>
     <property name="path" type="1" multiple="false">
-      <value><![CDATA[/libs/foundation/components/page/tab_advanced.infinity.json]]></value>
+      <value><![CDATA[/apps/CruOrgApp/components/page/htmlbase/dialog/items/tabs/items/D_advanced.infinity.json]]></value>
     </property>
   </properties>
   <mixins />
