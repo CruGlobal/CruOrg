@@ -1,0 +1,78 @@
+ <article class="post-article">
+
+		<!-- ARTICLE HEADLINE COMPONENT -->
+      	<header class="post__headline  layout-single-column">
+
+
+            <h1>
+				{%#if page.pageTitle %}
+          		    {%page.pageTitle%}
+                {%else%}
+                	{%page.title%}
+                {%/if%}
+
+            </h1>
+
+			{%#if page.subtitle %}
+				<h2 class="post-subtitle  h3">{%page.subtitle%}</h2>
+            {%/if%}
+
+        	<ul class="post-meta">
+                {%#if page.author %}
+          		    <li class="accent">by {% page.author %}</li>
+                {%/if%}
+
+                {%#if page.twitterUser %}
+          		    <li class="accent">
+              		    <a href="https://twitter.com/{% page.twitterUser %}">@{% page.twitterUser %}</a>
+            	    </li>
+                {%/if%}
+
+         	    {%#if page.dateText %}
+          		    <li>
+              		    <time>{% page.dateText %}</time>
+            	    </li>
+           	    {%/if%}
+        	</ul>
+    
+      	</header>
+
+        
+        <!-- POST BODY -->
+        <div class="post__body  layout-single-column">
+        	{%#include "article-share" as="CruOrgApp/components/section/article-share"%}{%/include%}
+
+
+
+    <figure >
+        	<img src="{%page.imagePath%}"/>
+            <figcaption class="image__caption  default-view">
+            {%page.imageCaption%}
+        <span class="image-credit">{%page.imageCredit%}</span>
+        </figcaption>
+    </figure>
+        	{%#include "post-body-parsys" as="foundation/components/parsys"%}{%/include%}
+    <ol class="grid  pagination">
+        {%#if page.previousPage %}
+        <li class="pagination__prev  grid__item  one-half  text--left visibility--hide">
+                    <a class="button  button--small  button--subtle" href="{%page.previousPage%}.html">{%global.dailyContentPreviousLabel%}</a>
+                </li>
+        {%/if%}
+        {%#if page.nextPage %}
+        <li class="pagination__next  text--right">
+                    <a class="button  button--small  button--subtle" href="{%page.nextPage%}.html">{%global.dailyContentNextLabel%}</a>
+                </li>
+        {%/if%}
+
+    </ol>
+            {%#include "bottom-parsys" as="foundation/components/parsys"%}{%/include%}
+
+        </div>
+
+
+
+        
+      </article>
+
+    {%#include "facebook-coments-feed" as="CruOrgApp/components/section/facebook-comments-feed"%}{%/include%}
+
