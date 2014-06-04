@@ -4,6 +4,7 @@ import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageFilter;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -49,7 +50,7 @@ public class AddMainNavigationTraversedPagePathListContextProcessorTest {
         MockitoAnnotations.initMocks(this);
     }
 
-
+    @Ignore
     @Test
     public void testExtractPathList() throws Exception {
 
