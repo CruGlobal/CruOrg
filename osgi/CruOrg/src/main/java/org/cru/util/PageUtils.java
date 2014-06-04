@@ -3,6 +3,7 @@ package org.cru.util;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.commons.collections.IteratorUtils;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.joda.time.DateTime;
 
@@ -120,6 +121,24 @@ public class PageUtils {
     }
 
     /**
+     * Returns the index of the page
+     * @param page the page
+     * @return the index
+     */
+    public static int getPageIndex(final Page page){
+        Page parentPage = page.getParent();
+        Iterator<Page> pageIterator = parentPage.listChildren();
+        int index = 0;
+        while (pageIterator.hasNext()) {
+            if (pageIterator.next().equals(page)) {
+                return index;
+            }
+            index++;
+        }
+        return -1;
+    }
+
+    /**
      * Finds the 'cq:template' property under the page properties and returns its value. Strips '/apps'.
      * @param page the page we want to know the template of
      * @return the cq:template page property
@@ -143,5 +162,15 @@ public class PageUtils {
      */
     public static boolean isArticlePage(final Page page){
         return ARTICLE_TEMPLATE_PATH.equals(getTemplate(page));
+    }
+
+    /**
+     * Gets the page that contains certain resource
+     * @param componentResource the path to the current resource
+     * @return the page that contains said resource
+     */
+    public static Page getContainingPage(final Resource componentResource){
+        PageManager pageManager = componentResource.getResourceResolver().adaptTo(PageManager.class);
+        return pageManager.getContainingPage(componentResource);
     }
 }
