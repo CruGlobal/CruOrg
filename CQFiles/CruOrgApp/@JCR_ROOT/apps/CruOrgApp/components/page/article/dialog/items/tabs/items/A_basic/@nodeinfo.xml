@@ -4,11 +4,11 @@
     <value />
   </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[cqinclude]]></value>
-    </property>
     <property name="path" type="1" multiple="false">
       <value><![CDATA[/apps/CruOrgApp/components/page/htmlbase/dialog/items/tabs/items/A_basic.infinity.json]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[cqinclude]]></value>
     </property>
   </properties>
   <mixins />
