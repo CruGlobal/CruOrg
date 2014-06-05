@@ -170,18 +170,9 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
      */
     private Page getCurrentPage(final Map<String, Object> contentObject) {
         Resource currentResource = (Resource) contentObject.get("currentResource");
-        return getContainingPage(currentResource);
+        return PageUtils.getContainingPage(currentResource);
     }
 
-    /**
-     * Gets the page that contains certain resource
-     * @param componentResource the path to the current resource
-     * @return the page that contains said resource
-     */
-    private Page getContainingPage(final Resource componentResource){
-        PageManager pageManager = componentResource.getResourceResolver().adaptTo(PageManager.class);
-        return pageManager.getContainingPage(componentResource);
-    }
 
     @Override
     protected boolean mustExist() {

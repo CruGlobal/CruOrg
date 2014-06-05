@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:EditConfig">
+  <properties>
+    <property name="cq:dialogMode" type="1" multiple="false">
+      <value><![CDATA[floating]]></value>
+    </property>
+    <property name="cq:disableTargeting" type="6" multiple="false">
+      <value>true</value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

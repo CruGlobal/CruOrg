@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Dialog">
+  <properties>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[dialog]]></value>
+    </property>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Home Page Curated List]]></value>
+    </property>
+    <property name="width" type="1" multiple="false">
+      <value><![CDATA[700]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

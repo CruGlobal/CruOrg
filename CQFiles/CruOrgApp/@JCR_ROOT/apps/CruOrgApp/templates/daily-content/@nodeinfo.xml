@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Template">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="allowedPaths" type="1" multiple="false">
+      <value><![CDATA[/content/cru(/.*)?]]></value>
+    </property>
+    <property name="jcr:title" type="1" multiple="false">
+      <value><![CDATA[Cru Daily Content Article]]></value>
+    </property>
+    <property name="ranking" type="3" multiple="false">
+      <value>4</value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
