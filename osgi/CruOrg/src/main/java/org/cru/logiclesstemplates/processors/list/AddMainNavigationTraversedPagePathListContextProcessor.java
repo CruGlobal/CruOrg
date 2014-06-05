@@ -41,11 +41,7 @@ public class AddMainNavigationTraversedPagePathListContextProcessor
         return Sets.newHashSet(MAIN_NAVIGATION_RESOURCE_TYPE);
     }
 
-    @Override
-    protected Collection<Map<String, Object>>
-            extractPathList(final Page page, final SlingHttpServletRequest request, final int depth){
-        return extractNavPathList(page, new PageFilter(request), depth);
-    }
+
 
     private Collection<Map<String, Object>>
             extractNavPathList(final Page page, final Filter<Page> filter, final int depth) {
@@ -57,7 +53,7 @@ public class AddMainNavigationTraversedPagePathListContextProcessor
                 Page child = children.next();
                 Map<String, Object> currentPath = new HashMap<String, Object>();
                 String path = child.getPath();
-                Collection<Map<String, Object>> childPaths = extractPathList(child, depth - 1);
+                Collection<Map<String, Object>> childPaths = extractNavPathList(child, filter, depth - 1);
                 currentPath.put(PATH_DETAILS_LIST_PATH_PROPERTY_NAME, path);
                 currentPath.put(PATH_DETAILS_LIST_PATHS_PROPERTY_NAME, childPaths);
                 //Add one level to breakNav
@@ -81,11 +77,11 @@ public class AddMainNavigationTraversedPagePathListContextProcessor
         return pathList;
     }
 
-
-    private  Collection<Map<String, Object>> extractPathList(final Page page, final int depth) {
-        return extractNavPathList(page, null, depth);
+    @Override
+    protected Collection<Map<String, Object>>
+    extractPathList(final Page page, final SlingHttpServletRequest request, final int depth){
+        return extractNavPathList(page, new PageFilter(request), depth);
     }
-
 
     private Map<String, Object> getSecondMap(final String path, final Collection<Map<String, Object>> paths){
         Map<String, Object> newPath = new HashMap<String, Object>();
