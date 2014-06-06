@@ -2,9 +2,9 @@ package org.cru.logiclesstemplates.processors.list;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageFilter;
+import org.apache.sling.api.wrappers.ValueMapDecorator;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -50,7 +50,6 @@ public class AddMainNavigationTraversedPagePathListContextProcessorTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    @Ignore
     @Test
     public void testExtractPathList() throws Exception {
 
@@ -71,14 +70,18 @@ public class AddMainNavigationTraversedPagePathListContextProcessorTest {
         * depth = 2
         * pageIterator contains two elements.
         */
+
+        HashMap<String, Object> property = new HashMap<String, Object>();
+        ValueMapDecorator valueMap = new ValueMapDecorator(property);
         pageIterator = simulatePageList(2);
         when(page.listChildren(any(PageFilter.class))).thenReturn(pageIterator);
         when(page.listChildren(null)).thenReturn(pageIterator);
         when(page.getPath()).thenReturn(testPath);
+        when(page.getProperties()).thenReturn(valueMap);
 
         //prepared data o expecting result
-        Iterator<Page> expectingPageIterator = simulatePageList(2);
-        Collection<Map<String, Object>> expectingResult = simulatedNavigationList(expectingPageIterator, 2);
+        Iterator<Page> expectingPageIterator = simulatePageList(3);
+        Collection<Map<String, Object>> expectingResult = simulatedNavigationList(expectingPageIterator, 3);
 
         assertEquals(expectingResult, mainNavigationTraversedPagePathList.extractPathList(page, request, 2));
 
