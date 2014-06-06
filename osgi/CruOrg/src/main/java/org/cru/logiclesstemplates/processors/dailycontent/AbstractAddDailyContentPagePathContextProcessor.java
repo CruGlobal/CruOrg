@@ -53,6 +53,7 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
     public static final String TODAY = "today";
     public static final String TOMORROW = "tomorrow";
     public static final String YESTERDAY = "yesterday";
+    public static final String EXCLUDE_YEAR = "excludeYear";
 
     @Override
     public Set<String> requiredResourceTypes() {
@@ -69,6 +70,17 @@ public abstract class AbstractAddDailyContentPagePathContextProcessor
         DateTime requiredDate = getDate(day, contentObject);
         DateTime startDate = getDate(START_DATE, contentObject);
         DateTime endDate = getDate(END_DATE, contentObject);
+
+        if (contentObject.containsKey(EXCLUDE_YEAR)) {
+            int year = new DateTime().getYear();
+            startDate = startDate.withYear(year);
+            //resolved hypothetical case: select December (startDate) and January(endDate).
+            if (startDate.getMonthOfYear() > endDate.getMonthOfYear()) {
+               year++;
+            }
+            endDate = endDate.withYear(year);
+        }
+
         if (DateUtils.isDateBetween(requiredDate, startDate, endDate)){
             int index = Days.daysBetween(startDate, requiredDate).getDays();
             if (index >= 0) {
