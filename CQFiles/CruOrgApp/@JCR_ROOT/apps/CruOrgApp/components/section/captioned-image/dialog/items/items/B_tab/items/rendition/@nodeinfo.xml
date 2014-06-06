@@ -4,23 +4,14 @@
     <value />
   </nodesOrder>
   <properties>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Please select an image rendition.]]></value>
-    </property>
-    <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Rendition]]></value>
+    <property name="ignoreData" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./imageRenditionName]]></value>
     </property>
-    <property name="options" type="1" multiple="false">
-      <value><![CDATA[$PATH.renditions.options.json]]></value>
-    </property>
-    <property name="type" type="1" multiple="false">
-      <value><![CDATA[select]]></value>
-    </property>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[selection]]></value>
+      <value><![CDATA[hidden]]></value>
     </property>
   </properties>
   <mixins />

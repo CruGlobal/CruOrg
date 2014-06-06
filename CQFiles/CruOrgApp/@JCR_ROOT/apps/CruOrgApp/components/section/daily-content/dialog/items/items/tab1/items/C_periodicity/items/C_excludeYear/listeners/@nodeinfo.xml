@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <properties>
+    <property name="loadcontent" type="1" multiple="false">
+      <value><![CDATA[function(field,record,path){Cru.components.DailyContent.DisplayPeriodically.loadContentExcludeYear(field,record);}]]></value>
+    </property>
+    <property name="selectionchanged" type="1" multiple="false">
+      <value><![CDATA[function(container,value,isChecked){Cru.components.DailyContent.DisplayPeriodically.selectionChangedExcludeYear(container, isChecked);}]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

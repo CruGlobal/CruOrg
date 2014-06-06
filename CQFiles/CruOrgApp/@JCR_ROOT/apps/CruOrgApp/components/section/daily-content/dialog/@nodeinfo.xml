@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Dialog">
   <nodesOrder>
-    <value />
+    <value><![CDATA[items]]></value>
   </nodesOrder>
   <properties>
     <property name="height" type="1" multiple="false">
-      <value><![CDATA[450]]></value>
+      <value><![CDATA[500]]></value>
     </property>
     <property name="title" type="1" multiple="false">
       <value><![CDATA[Daily Content]]></value>

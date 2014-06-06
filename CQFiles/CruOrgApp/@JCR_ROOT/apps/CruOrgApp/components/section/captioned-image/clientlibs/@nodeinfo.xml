@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:ClientLibraryFolder">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="categories" type="1" multiple="false">
+      <value><![CDATA[cq.wcm.edit]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

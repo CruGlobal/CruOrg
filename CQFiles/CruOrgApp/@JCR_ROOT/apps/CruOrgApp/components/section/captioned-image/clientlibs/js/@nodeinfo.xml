@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<node nodeType="cq:WidgetCollection">
+<node nodeType="sling:Folder">
   <nodesOrder>
-    <value><![CDATA[A_date,B_dateExcludeYear,C_excludeYear]]></value>
+    <value />
   </nodesOrder>
   <properties />
   <mixins />

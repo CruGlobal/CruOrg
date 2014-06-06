@@ -16,6 +16,9 @@
     <property name="hideTime" type="1" multiple="false">
       <value><![CDATA[true]]></value>
     </property>
+    <property name="itemId" type="1" multiple="false">
+      <value><![CDATA[endDate]]></value>
+    </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./endDate]]></value>
     </property>

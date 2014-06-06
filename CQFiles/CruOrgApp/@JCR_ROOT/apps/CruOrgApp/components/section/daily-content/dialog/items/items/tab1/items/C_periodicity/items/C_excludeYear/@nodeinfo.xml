@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <nodesOrder>
-    <value />
+    <value><![CDATA[listeners]]></value>
   </nodesOrder>
   <properties>
     <property name="fieldLabel" type="1" multiple="false">

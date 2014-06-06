@@ -128,13 +128,13 @@
 
             // close nav by touching the partial off-screen content
             document.addEventListener('click', function(e)
-            {
-                if (nav_open && !hasParent(e.target, 'nav')) {
-                    e.preventDefault();
-                    app.closeNav();
-                }
-            },
-            true);
+                {
+                    if (nav_open && !hasParent(e.target, 'nav')) {
+                        e.preventDefault();
+                        app.closeNav();
+                    }
+                },
+                true);
 
             addClass(doc, 'js-ready');
 
@@ -149,3 +149,31 @@
     }
 
 })(window, window.document);
+
+
+/*
+ * Detect Browser Width
+ */
+
+// On Page Load
+$(window).ready(function() {
+    var wi = $(window).width();
+    if (wi <= 980){
+
+        $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk" );
+    }
+    else {
+        $( "li.nav__item > div" ).removeClass( "off-canvas-desk" ).addClass( "dropdown" );
+    }
+    // On Window Resize
+    $(window).resize(function() {
+        var wi = $(window).width();
+
+        if (wi <= 980){
+            $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk" );
+        }
+        else {
+            $( "li.nav__item > div" ).removeClass( "off-canvas-desk" ).addClass( "dropdown" );
+        }
+    });
+});
