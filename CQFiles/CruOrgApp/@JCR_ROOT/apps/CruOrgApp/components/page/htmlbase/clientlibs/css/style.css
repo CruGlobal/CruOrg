@@ -2012,8 +2012,7 @@ img[height] {
  * Images in list.
  */
 .img--list {
-    float: left;
-    border: 3px; }
+    float: left; }
 
 /*------------------------------------*\
     $LISTS
@@ -3571,16 +3570,21 @@ input[disabled]:focus,
     text-align: center;
     /**
      * Remove whitespace caused by `inline-block`.
-     */
-    letter-spacing: -.31em;
-    word-spacing: -.43em; }
+     */ }
 
 .pagination li {
     letter-spacing: normal;
-    word-spacing: normal; }
+    word-spacing: normal;
+    display: inline; }
 
-.pagination__next > .button {
-    margin: 0;
+.pagination li a {
+    padding: 3px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    color: #666062;
     /* 3 */
     /* 3 */
     /* 4 */
@@ -3591,14 +3595,39 @@ input[disabled]:focus,
     /* 6 */
     /* 6 */
     /* 7 */
-    padding: 8px 22px;
+    padding: 4px 14px;
     /* 9 */
-    padding: parseInt(8px)/19rem parseInt(22px)/19rem;
+    padding: parseInt(4px)/19rem parseInt(14px)/19rem;
+    /* 9 */
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    margin: 8px 4px;
+    /* 9 */
+    margin: parseInt(8px)/19rem parseInt(4px)/19rem;
     /* 9 */ }
+.pagination li a:hover, .pagination li a:focus {
+    background: #f0f0f0;
+    border-color: #ccc;
+    color: #666062; }
+.pagination li a:active {
+    background: #fff;
+    border-color: #ddd; }
 
+.pagination__prev > .button {
+    margin: 0; }
 .pagination__prev a:before {
     content: "\00AB" "\00A0"; }
 
+.pagination__next > .button {
+    margin: 0; }
 .pagination__next a:after {
     content: "\00A0" "\00BB"; }
 
@@ -3895,8 +3924,8 @@ input[disabled]:focus,
  */
 @font-face {
     font-family: 'cruicons';
-    src: url("/fonts/cruicons.eot?13550619");
-    src: url("/fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("/fonts/cruicons.woff?13550619") format("woff"), url("/fonts/cruicons.ttf?13550619") format("truetype"), url("/fonts/cruicons.svg?13550619#cruicons") format("svg");
+    src: url("assets/fonts/cruicons.eot?13550619");
+    src: url("assets/fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("assets/fonts/cruicons.woff?13550619") format("woff"), url("assets/fonts/cruicons.ttf?13550619") format("truetype"), url("assets/fonts/cruicons.svg?13550619#cruicons") format("svg");
     font-weight: normal;
     font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -4636,8 +4665,8 @@ td {
     vertical-align: middle;
     width: 74px;
     height: 54px;
-    background: url("/images/cru-logo.png");
-    background-image: url("/images/cru-logo.svg");
+    background: url("assets/images/cru-logo.png");
+    background-image: url("assets/images/cru-logo.svg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain; }
@@ -4912,7 +4941,9 @@ td {
     -webkit-border-top-right-radius: 1px;
     border-top-right-radius: 1px; }
 
-.nav li .dropdown, .post-meta li .dropdown {
+.nav li .dropdown, .post-meta li .dropdown,
+.nav li .off-canvas-desk,
+.post-meta li .off-canvas-desk {
     position: fixed;
     left: 0;
     background-color: #444444;
@@ -4924,29 +4955,18 @@ td {
     padding-left: 30px;
     padding-right: 30px;
     opacity: 0;
-    /* Hover Off */
-    -webkit-transform: translate3d(0, 0, -160%);
-    -moz-transform: translate3d(0, 0, -160%);
-    -ms-transform: translate3d(0, 0, -160%);
-    -o-transform: translate3d(0, 0, -160%);
-    transform: translate3d(0, 0, -160%);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    -moz-perspective: 1000;
-    -ms-perspective: 1000;
-    -o-perspective: 1000;
-    perspective: 1000; }
-.nav li .dropdown:before, .post-meta li .dropdown:before, .nav li .dropdown:after, .post-meta li .dropdown:after {
+    /* Hover Off */ }
+.nav li .dropdown:before, .post-meta li .dropdown:before, .nav li .dropdown:after, .post-meta li .dropdown:after,
+.nav li .off-canvas-desk:before,
+.post-meta li .off-canvas-desk:before,
+.nav li .off-canvas-desk:after,
+.post-meta li .off-canvas-desk:after {
     content: " ";
     display: table; }
-.nav li .dropdown:after, .post-meta li .dropdown:after {
+.nav li .dropdown:after, .post-meta li .dropdown:after,
+.nav li .off-canvas-desk:after,
+.post-meta li .off-canvas-desk:after {
     clear: both; }
-.nav li .dropdown h2, .post-meta li .dropdown h2, .nav li .dropdown h3, .post-meta li .dropdown h3, .nav li .dropdown h4, .post-meta li .dropdown h4 {
-    color: #ffffff; }
 
 .no-csstransitions .nav li .dropdown, .no-csstransitions .post-meta li .dropdown {
     height: 0; }
@@ -4959,35 +4979,24 @@ td {
 .dropdown .small-wrap {
     opacity: 0; }
 
-.nav li:hover > .dropdown, .post-meta li:hover > .dropdown, .nav li:focus > .dropdown, .post-meta li:focus > .dropdown {
+.nav li:hover > .dropdown, .post-meta li:hover > .dropdown,
+.nav li:focus > .dropdown,
+.post-meta li:focus > .dropdown,
+.nav li > .off-canvas-desk,
+.post-meta li > .off-canvas-desk {
     padding-top: 30px;
     padding-bottom: 15px;
     max-height: 640px;
     height: inherit;
     overflow: visible;
     opacity: 1;
-    -webkit-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
-    -moz-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
-    -ms-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
-    -o-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
-    box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
     /* Hover On */
-    /*-webkit-transition: max-height 0.25s ease;*/
-    -webkit-transition: all 0.3s 0.2s ease;
-    -moz-transition: all 0.3s 0.2s ease;
-    -ms-transition: all 0.3s 0.2s ease;
-    -o-transition: all 0.3s 0.2s ease;
-    transition: all 0.3s 0.2s ease; }
+    /*-webkit-transition: max-height 0.25s ease;*/ }
 
 .nav li.dropdown__item:hover:after, .post-meta li.dropdown__item:hover:after,
 .nav li.dropdown__item:focus:after,
 .post-meta li.dropdown__item:focus:after {
-    opacity: 1;
-    -webkit-transition: all 0.2s 0.2s ease;
-    -moz-transition: all 0.2s 0.2s ease;
-    -ms-transition: all 0.2s 0.2s ease;
-    -o-transition: all 0.2s 0.2s ease;
-    transition: all 0.2s 0.2s ease; }
+    opacity: 1; }
 
 @media screen and (min-width: 61.25em) {
     .js-close-button {

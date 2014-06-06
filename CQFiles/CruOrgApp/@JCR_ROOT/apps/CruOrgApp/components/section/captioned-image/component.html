@@ -1,6 +1,6 @@
 <figure class="{%#if content.style %}{% content.style %}{%else%}{%#if page.isEditMode %}image--inset__left{%/if %}{%/if%}">
-    {%#if content.fileReference %}
-        <img class="" src="{% content.fileReference %}">
+    {%#if content.imagePath %}
+        <img class="" src="{% content.imagePath %}">
     {%else%}
         {%#if page.isEditMode %}
             <img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
