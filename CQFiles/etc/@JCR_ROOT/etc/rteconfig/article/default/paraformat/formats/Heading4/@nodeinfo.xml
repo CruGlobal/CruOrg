@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="description" type="1" multiple="false">
+      <value><![CDATA[Heading 4]]></value>
+    </property>
+    <property name="tag" type="1" multiple="false">
+      <value><![CDATA[h4]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
