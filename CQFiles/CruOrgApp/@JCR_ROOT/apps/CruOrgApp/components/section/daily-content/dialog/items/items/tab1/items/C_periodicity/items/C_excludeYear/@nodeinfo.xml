@@ -5,7 +5,7 @@
   </nodesOrder>
   <properties>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Exclude Year?]]></value>
+      <value><![CDATA[Ignore Year?]]></value>
     </property>
     <property name="inputValue" type="1" multiple="false">
       <value><![CDATA[true]]></value>
