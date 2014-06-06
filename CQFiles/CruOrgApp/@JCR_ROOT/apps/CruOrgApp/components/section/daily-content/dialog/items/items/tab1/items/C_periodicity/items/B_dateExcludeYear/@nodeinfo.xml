@@ -11,10 +11,10 @@
       <value><![CDATA[false]]></value>
     </property>
     <property name="itemId" type="1" multiple="false">
-      <value><![CDATA[periodicity]]></value>
+      <value><![CDATA[dateExcludeYear]]></value>
     </property>
     <property name="title" type="1" multiple="false">
-      <value><![CDATA[Periodical]]></value>
+      <value><![CDATA[Date Interval]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[dialogfieldset]]></value>

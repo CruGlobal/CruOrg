@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
   <nodesOrder>
-    <value><![CDATA[A_date,B_dateExcludeYear,C_excludeYear]]></value>
+    <value><![CDATA[A1_startDate,B1_endDate]]></value>
   </nodesOrder>
   <properties />
   <mixins />
