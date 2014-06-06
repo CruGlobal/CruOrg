@@ -11,7 +11,7 @@
       <value><![CDATA[Rendition]]></value>
     </property>
     <property name="name" type="1" multiple="false">
-      <value><![CDATA[./imageRendition]]></value>
+      <value><![CDATA[./imageRenditionName]]></value>
     </property>
     <property name="options" type="1" multiple="false">
       <value><![CDATA[$PATH.renditions.options.json]]></value>
