@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
+  <nodesOrder>
+    <value><![CDATA[B_displayPeriodically,A_defaultPage,C_periodicity]]></value>
+  </nodesOrder>
   <properties />
   <mixins />
 </node>
