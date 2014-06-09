@@ -28,7 +28,8 @@ import static com.xumak.base.Constants.APPS_ROOT;
  */
 public class PageUtils {
 
-    public static final String ARTICLE_TEMPLATE_PATH = "CruOrgApp/templates/article";
+    public static final String ARTICLE_RESOURCE_TYPE =
+            "CruOrgApp/components/page/article";
 
     private PageUtils(){} //prevent instantiation
 
@@ -161,7 +162,11 @@ public class PageUtils {
      * @return true if  {@code page} is an Article Page
      */
     public static boolean isArticlePage(final Page page){
-        return ARTICLE_TEMPLATE_PATH.equals(getTemplate(page));
+        boolean isArticlePage = false;
+        if (null != page) {
+            isArticlePage = page.getContentResource().isResourceType(ARTICLE_RESOURCE_TYPE);
+        }
+        return isArticlePage;
     }
 
     /**
