@@ -1787,14 +1787,14 @@ pre,
  * Where `margin-bottom` is concerned, this value will be the same as the
  * base line-height. This allows us to keep a consistent vertical rhythm.
  * As per: csswizardry.com/2012/06/single-direction-margin-declarations
- * 
- * We will be using the above silent classes to quickly remove default 
+ *
+ * We will be using the above silent classes to quickly remove default
  * margin and padding and quickly apply margin-bottom to the element with
- * default rem units and px fallbacks. 
- * 
+ * default rem units and px fallbacks.
+ *
  * By default $base-line-height is set to 24px, therefore so is the
  * $magic-number.
- * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px 
+ * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px
  *
  */
 /**
@@ -1822,7 +1822,7 @@ ul, ol, dd {
 /*------------------------------------*\
     $BASE
 \*------------------------------------*/
-/* 
+/*
  * Reset the box-sizing
  */
 /**
@@ -1862,7 +1862,7 @@ body {
 \*------------------------------------*/
 /**
  * Headings 1-6
- * 
+ *
  */
 h1, .h1 {
     font-size: 200;
@@ -1912,7 +1912,7 @@ h6, .h6 {
  * Big up @boblet: html5doctor.com/blockquote-q-cite
  */
 /**
- * Dont change the content or quotes attribute for these. 
+ * Dont change the content or quotes attribute for these.
  */
 /**
  * Set up quote marks on quoting elements. This is very English-based, so we are
@@ -2155,7 +2155,7 @@ legend {
    <input type=password class=text-input>
  *
  * For non-text based inputs such as <select>, <radio>, etc use .form-control
- * which allows you to add nice hover/focus effect to the text inputs if you 
+ * which allows you to add nice hover/focus effect to the text inputs if you
  * choose
  *
  */
@@ -3650,9 +3650,9 @@ input[disabled]:focus,
     $MEDIA
 \*------------------------------------*/
 /**
- * Deals with text in combination with images and video content by 
- * placing them side by side. 
- * Ex: 
+ * Deals with text in combination with images and video content by
+ * placing them side by side.
+ * Ex:
  *
    <div class="media">
        <img src="http://placekitten.com/200/300" alt="" class="media__img">
@@ -3695,7 +3695,7 @@ input[disabled]:focus,
     #SPACING
 \*------------------------------------*/
 /**
- * Margin and padding helper classes. 
+ * Margin and padding helper classes.
  *
  * `.(m|p)(t|r|b|L|e|s)(-|+|0) {}` = margin/padding top/right/bottom/left/ends/sides less/more/none
  */
@@ -3919,8 +3919,8 @@ input[disabled]:focus,
     $FONTS
 \*------------------------------------*/
 /**
- * As of now this is where we will be placing our icon fonts. 
- * Freight Sans Pro will be served up from Typekit. 
+ * As of now this is where we will be placing our icon fonts.
+ * Freight Sans Pro will be served up from Typekit.
  */
 @font-face {
     font-family: 'cruicons';
@@ -4133,7 +4133,7 @@ input[disabled]:focus,
         text-align: left; } }
 
 /**
- * A different type of <hr> styling. 
+ * A different type of <hr> styling.
  */
 /*hr.section-divider{
 	display: block;
@@ -4146,14 +4146,14 @@ hr, .divider {
     clear: both;
     display: block; }
 
-/** 
- * The primary hr, small width 
+/**
+ * The primary hr, small width
  */
 hr {
     width: 14%; }
 
-/** 
- * Full width hr 
+/**
+ * Full width hr
  */
 /* hr */
 .divider {
@@ -4273,7 +4273,7 @@ figcaption {
 
 /**
  * Places a dash after a piece of text. Mainly for post meta info
- * 
+ *
  */
 .accent:after, a + .phone:after {
     content: "-";
@@ -4372,15 +4372,15 @@ q:first-child {
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-/** 
+/**
  * Use this mixin to quickly pump out buttons:
  * @mixin btn($background, $border, $color:inherit).
  *
  * Change the hover and other states with:;
  * @mixin btn-effects($background, $border, $color:inherit).
- * 
- * Quick not that it will not work with transparency due to 
- * the hover states. 
+ *
+ * Quick not that it will not work with transparency due to
+ * the hover states.
  */
 .button-group {
     display: block; }
@@ -5273,10 +5273,10 @@ td {
     $CAMPUS-LOCATOR
 \*------------------------------------*/
 /**
- * Used for background colors at the moment, text is either in 
+ * Used for background colors at the moment, text is either in
  * the default text color or white. You can extend %text-white
  * found in the _utilities.scss file if you wish to change the
- * text color. 
+ * text color.
  */
 .state-select-results small {
     color: #353535; }
@@ -5648,7 +5648,7 @@ td {
 
 /**
  * For numbered post formats. Removes the typical magin given to a
- * list. 
+ * list.
  */
 @media screen and (max-width: 44.75em) {
     .post__list li {
