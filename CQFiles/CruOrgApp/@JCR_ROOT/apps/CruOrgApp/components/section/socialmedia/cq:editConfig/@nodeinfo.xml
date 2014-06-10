@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:EditConfig">
+  <nodesOrder>
+    <value><![CDATA[cq:listeners]]></value>
+  </nodesOrder>
   <properties>
-    <property name="cq:layout" type="1" multiple="false">
-      <value><![CDATA[editbar]]></value>
-    </property>
     <property name="cq:actions" type="1" multiple="false">
       <value><![CDATA[delete]]></value>
+    </property>
+    <property name="cq:layout" type="1" multiple="false">
+      <value><![CDATA[editbar]]></value>
     </property>
   </properties>
   <mixins />

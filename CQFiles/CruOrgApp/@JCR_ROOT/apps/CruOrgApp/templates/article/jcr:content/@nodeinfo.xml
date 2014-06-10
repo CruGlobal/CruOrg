@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:PageContent">
+  <nodesOrder>
+    <value><![CDATA[bottom-parsys]]></value>
+  </nodesOrder>
   <properties>
-    <property name="sling:resourceType" type="1" multiple="false">
-      <value><![CDATA[CruOrgApp/components/page/article]]></value>
-    </property>
     <property name="cq:designPath" type="1" multiple="false">
       <value><![CDATA[/etc/designs/cru]]></value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[CruOrgApp/components/page/article]]></value>
     </property>
   </properties>
   <mixins />

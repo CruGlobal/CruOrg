@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value><![CDATA[inset-sidebar]]></value>
+  </nodesOrder>
   <properties>
-    <property name="sling:resourceType" type="1" multiple="false">
-      <value><![CDATA[CruOrgApp/components/section/article-long-form]]></value>
-    </property>
     <property name="show" type="1" multiple="false">
       <value><![CDATA[true]]></value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[CruOrgApp/components/section/article-long-form]]></value>
     </property>
   </properties>
   <mixins />

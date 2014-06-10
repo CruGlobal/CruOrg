@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
-    <properties />
-    <mixins />
+  <nodesOrder>
+    <value><![CDATA[E1_style,E2_imageFilter,E3_titleFilter,E4_descriptionFilter]]></value>
+  </nodesOrder>
+  <properties />
+  <mixins />
 </node>
-
 

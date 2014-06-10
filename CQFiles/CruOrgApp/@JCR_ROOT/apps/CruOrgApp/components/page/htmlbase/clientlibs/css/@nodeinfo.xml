@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<node nodeType="cq:WidgetCollection">
+<node nodeType="sling:Folder">
   <nodesOrder>
-    <value><![CDATA[C_pages]]></value>
+    <value />
   </nodesOrder>
   <properties />
   <mixins />

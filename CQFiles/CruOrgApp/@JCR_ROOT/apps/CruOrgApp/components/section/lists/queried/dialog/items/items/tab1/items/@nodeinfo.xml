@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
-    <properties />
-    <mixins />
+  <nodesOrder>
+    <value><![CDATA[E1_pathRef,E2_tags,E3_max,maxHint]]></value>
+  </nodesOrder>
+  <properties />
+  <mixins />
 </node>
-
 

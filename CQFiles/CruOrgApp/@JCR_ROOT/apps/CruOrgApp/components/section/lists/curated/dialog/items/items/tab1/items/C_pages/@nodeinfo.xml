@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value><![CDATA[fieldConfig]]></value>
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[minmaxmultifield]]></value>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Click the '+' to add a new page]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Pages]]></value>
@@ -10,8 +13,8 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./pathRefs]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Click the '+' to add a new page]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[minmaxmultifield]]></value>
     </property>
   </properties>
   <mixins />
