@@ -43,15 +43,17 @@ public class MapImagePathsContextProcessor extends AbstractResourceTypeCheckCont
     public void process(final SlingHttpServletRequest request, final ContentModel contentModel) throws Exception {
 
         if (contentModel.has(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME)) {
-            Collection<Map<String, Object>> modifiedListObj = new ArrayList<>();
+            Collection<Map<String, Object>> modifiedListObj = new ArrayList<Map<String, Object>>();
             Collection<Map<String, Object>> pageList =
                     (List<Map<String, Object>>) contentModel.get(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME);
             //Remove "/content/cru/us/en" from every imagePath.
             for (Map<String, Object> pageInfo : pageList) {
-                Map<String, Object> modifiedPageInfo = new HashMap<>(pageInfo);
-                String newImagePath = request.getResourceResolver()
-                        .map((String) modifiedPageInfo.get(IMAGE_PATH_CONTEXT_PROPERTY_NAME));
-                modifiedPageInfo.put(IMAGE_PATH_CONTEXT_PROPERTY_NAME, newImagePath);
+    			Map<String, Object> modifiedPageInfo = new HashMap<String, Object>(pageInfo);
+                String oldImagePath = (String) modifiedPageInfo.get(IMAGE_PATH_CONTEXT_PROPERTY_NAME);
+                if (null != oldImagePath) {
+                    String newImagePath = request.getResourceResolver().map(oldImagePath);
+                    modifiedPageInfo.put(IMAGE_PATH_CONTEXT_PROPERTY_NAME, newImagePath);
+                }
                 modifiedListObj.add(modifiedPageInfo);
             }
             contentModel.set(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME, modifiedListObj);

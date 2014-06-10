@@ -21,28 +21,20 @@
         <div class="layout-single-column">
             {%#if global.showPagination %}
                 <ol class="nav  pagination  layout-single-column">
-                    <li class="pagination__prev  grid__item  one-half  text--left">
-                        {%#if global.previousPage %}
-                            <a href="{%global.previousPage.URL%}"
-                               class="button  button--small  button--subtle">{%global.previousText%}</a>
-                        {%else%}
-                            {%global.previousText%}
-                        {%/if%}
+                    <li class="pagination__prev">
+                        <a {%#if global.previousPage %}href="{%global.previousPage.URL%}"{%/if%}
+                            class="button  button--small  button--subtle">{%global.previousText%}</a>
                     </li>
 
                     {%#each global.resultPages %}
-                            <li class="{%#if this.currentPage %}current{%/if%}">
+                        <li>
                             <a href="{% this.URL %}">{% this.pageNumber %}</a>
                         </li>
                     {%/each%}
 
-                    <li class="pagination__next  text--right">
-                        {%#if global.nextPage %}
-                        <a href="{%global.nextPage.URL%}"
+                    <li class="pagination__next">
+                        <a {%#if global.nextPage %}href="{%global.nextPage.URL%}"{%/if%}
                            class="button  button--small  button--subtle">{%global.nextText%}</a>
-                        {%else%}
-                            {%global.nextText%}
-                        {%/if%}
                     </li>
                 </ol>
             {%/if%}

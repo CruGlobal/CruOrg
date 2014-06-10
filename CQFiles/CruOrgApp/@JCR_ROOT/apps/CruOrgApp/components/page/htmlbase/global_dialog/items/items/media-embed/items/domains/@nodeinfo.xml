@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value><![CDATA[fieldConfig]]></value>
+  </nodesOrder>
   <properties>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Click the '+' to add a valid Domain.]]></value>
+    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Domains]]></value>
-    </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[multifield]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./domains]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Click the '+' to add a valid Domain.]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[multifield]]></value>
     </property>
   </properties>
   <mixins />

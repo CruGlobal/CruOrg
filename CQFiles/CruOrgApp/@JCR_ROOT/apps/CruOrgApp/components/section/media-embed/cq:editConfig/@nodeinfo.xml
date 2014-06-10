@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:EditConfig">
+  <nodesOrder>
+    <value><![CDATA[cq:listeners]]></value>
+  </nodesOrder>
   <properties>
     <property name="cq:actions" type="1" multiple="true">
       <value><![CDATA[text:Media Embed]]></value>
@@ -9,14 +12,14 @@
       <value><![CDATA[copymove]]></value>
       <value><![CDATA[delete]]></value>
     </property>
-    <property name="cq:layout" type="1" multiple="false">
-      <value><![CDATA[editbar]]></value>
-    </property>
     <property name="cq:dialogMode" type="1" multiple="false">
       <value><![CDATA[floating]]></value>
     </property>
     <property name="cq:disableTargeting" type="6" multiple="false">
       <value>true</value>
+    </property>
+    <property name="cq:layout" type="1" multiple="false">
+      <value><![CDATA[editbar]]></value>
     </property>
   </properties>
   <mixins />
