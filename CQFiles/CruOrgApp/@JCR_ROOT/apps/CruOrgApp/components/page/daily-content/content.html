@@ -45,7 +45,9 @@
 
 
     <figure >
-        	<img src="{%page.imagePath%}"/>
+            {%#if page.imagePath %}
+            <img src="{%page.imagePath%}"/>
+            {%/if%}
             <figcaption class="image__caption  default-view">
             {%page.imageCaption%}
         <span class="image-credit">{%page.imageCredit%}</span>
