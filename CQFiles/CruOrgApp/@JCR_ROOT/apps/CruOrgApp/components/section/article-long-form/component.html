@@ -42,10 +42,13 @@
                     	<img title="" alt="" class="cq-dd-text cq-text-placeholder" src="/etc/designs/default/0.gif" />
                             {%/if%}
                              {%/if%}
+                {%#unless content.isCaptionEmpty %}
                 <figcaption class="image__caption">
                 {%content.imageCaption%}
             <span class="image-credit">{%content.imageCredit%}</span>
             </figcaption>
+                {%/unless%}
+
             </figure>
     {%#if page.isEditMode %}
 <div style="clear:both;"></div>

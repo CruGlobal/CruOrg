@@ -3,7 +3,10 @@
         <!-- Media Embed Here -->
         {%{content.mediaEmbed}%}
         <!-- End Media Embed -->
+        {%#unless content.isCaptionEmpty %}
         <figcaption class="image__caption  default-view">{%content.caption%}</figcaption>
+        {%/unless%}
+
     </figure>
 {%else%}
 	{%#if page.isEditMode %}
