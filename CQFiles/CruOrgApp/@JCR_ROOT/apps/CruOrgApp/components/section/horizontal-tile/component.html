@@ -1,9 +1,9 @@
 
 <div class="grid__item  one-whole  {%#if  content.image-class  %}media center-block{%/if%}">
       <div class="color-white  p  mb">
-        {%#if content.fileReference %}
+        {%#if content.imagePath %}
             <div class="media__img {%#if  content.image-class  %}mask--circle{%/if%}">
-              <img class="{%#if  content.image-class  %}image--circle{%/if%} mb-" src="{% content.fileReference %}">
+              <img class="{%#if  content.image-class  %}image--circle{%/if%} mb-" src="{% content.imagePath %}">
         	</div>
     	{%else%}
         	{%#if page.isEditMode %}
