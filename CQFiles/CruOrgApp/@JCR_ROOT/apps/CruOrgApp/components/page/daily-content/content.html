@@ -44,15 +44,19 @@
 
 
 
-    <figure >
+        <figure>
             {%#if page.imagePath %}
             <img src="{%page.imagePath%}"/>
             {%/if%}
+            {%#unless page.isCaptionEmpty %}
             <figcaption class="image__caption  default-view">
-            {%page.imageCaption%}
-        <span class="image-credit">{%page.imageCredit%}</span>
-        </figcaption>
-    </figure>
+                {%page.imageCaption%}
+                {%#if page.imageCredit%}
+                <span class="image-credit">{%page.imageCredit%}</span>
+                {%/if%}
+            </figcaption>
+            {%/unless%}
+        </figure>
         	{%#include "post-body-parsys" as="foundation/components/parsys"%}{%/include%}
     <ol class="grid  pagination">
         {%#if page.previousPage %}

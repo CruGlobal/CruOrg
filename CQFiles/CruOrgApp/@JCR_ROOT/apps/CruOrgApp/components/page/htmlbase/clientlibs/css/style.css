@@ -1787,14 +1787,14 @@ pre,
  * Where `margin-bottom` is concerned, this value will be the same as the
  * base line-height. This allows us to keep a consistent vertical rhythm.
  * As per: csswizardry.com/2012/06/single-direction-margin-declarations
- *
- * We will be using the above silent classes to quickly remove default
+ * 
+ * We will be using the above silent classes to quickly remove default 
  * margin and padding and quickly apply margin-bottom to the element with
- * default rem units and px fallbacks.
- *
+ * default rem units and px fallbacks. 
+ * 
  * By default $base-line-height is set to 24px, therefore so is the
  * $magic-number.
- * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px
+ * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px 
  *
  */
 /**
@@ -1822,7 +1822,7 @@ ul, ol, dd {
 /*------------------------------------*\
     $BASE
 \*------------------------------------*/
-/*
+/* 
  * Reset the box-sizing
  */
 /**
@@ -1862,7 +1862,7 @@ body {
 \*------------------------------------*/
 /**
  * Headings 1-6
- *
+ * 
  */
 h1, .h1 {
     font-size: 200;
@@ -1912,7 +1912,7 @@ h6, .h6 {
  * Big up @boblet: html5doctor.com/blockquote-q-cite
  */
 /**
- * Dont change the content or quotes attribute for these.
+ * Dont change the content or quotes attribute for these. 
  */
 /**
  * Set up quote marks on quoting elements. This is very English-based, so we are
@@ -2155,7 +2155,7 @@ legend {
    <input type=password class=text-input>
  *
  * For non-text based inputs such as <select>, <radio>, etc use .form-control
- * which allows you to add nice hover/focus effect to the text inputs if you
+ * which allows you to add nice hover/focus effect to the text inputs if you 
  * choose
  *
  */
@@ -2165,7 +2165,7 @@ legend {
 .text-input, .form-control {
     display: block;
     width: auto;
-    /**
+    /** 
      * Make inputs at least the height of their button counterpart (base line-height + padding + border)
      */
     height: 34.25px;
@@ -3650,9 +3650,9 @@ input[disabled]:focus,
     $MEDIA
 \*------------------------------------*/
 /**
- * Deals with text in combination with images and video content by
- * placing them side by side.
- * Ex:
+ * Deals with text in combination with images and video content by 
+ * placing them side by side. 
+ * Ex: 
  *
    <div class="media">
        <img src="http://placekitten.com/200/300" alt="" class="media__img">
@@ -3695,7 +3695,7 @@ input[disabled]:focus,
     #SPACING
 \*------------------------------------*/
 /**
- * Margin and padding helper classes.
+ * Margin and padding helper classes. 
  *
  * `.(m|p)(t|r|b|L|e|s)(-|+|0) {}` = margin/padding top/right/bottom/left/ends/sides less/more/none
  */
@@ -3780,8 +3780,7 @@ input[disabled]:focus,
 /**
  * Remove margins.
  */
-.m0,
-.button, .media__body,
+.m0, .media__body,
 .media__body > :last-child, .slider__item, .post-subtitle {
     margin: 0; }
 
@@ -3919,8 +3918,8 @@ input[disabled]:focus,
     $FONTS
 \*------------------------------------*/
 /**
- * As of now this is where we will be placing our icon fonts.
- * Freight Sans Pro will be served up from Typekit.
+ * As of now this is where we will be placing our icon fonts. 
+ * Freight Sans Pro will be served up from Typekit. 
  */
 @font-face {
     font-family: 'cruicons';
@@ -4133,7 +4132,7 @@ input[disabled]:focus,
         text-align: left; } }
 
 /**
- * A different type of <hr> styling.
+ * A different type of <hr> styling. 
  */
 /*hr.section-divider{
 	display: block;
@@ -4146,14 +4145,14 @@ hr, .divider {
     clear: both;
     display: block; }
 
-/**
- * The primary hr, small width
+/** 
+ * The primary hr, small width 
  */
 hr {
     width: 14%; }
 
-/**
- * Full width hr
+/** 
+ * Full width hr 
  */
 /* hr */
 .divider {
@@ -4273,7 +4272,7 @@ figcaption {
 
 /**
  * Places a dash after a piece of text. Mainly for post meta info
- *
+ * 
  */
 .accent:after, a + .phone:after {
     content: "-";
@@ -4372,15 +4371,15 @@ q:first-child {
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-/**
+/** 
  * Use this mixin to quickly pump out buttons:
  * @mixin btn($background, $border, $color:inherit).
  *
  * Change the hover and other states with:;
  * @mixin btn-effects($background, $border, $color:inherit).
- *
- * Quick not that it will not work with transparency due to
- * the hover states.
+ * 
+ * Quick not that it will not work with transparency due to 
+ * the hover states. 
  */
 .button-group {
     display: block; }
@@ -4751,8 +4750,7 @@ td {
     $SEARCH
 \*------------------------------------*/
 .primary-search {
-    position: relative;
-    top: 2px; }
+    position: relative; }
 
 .search-field {
     width: 254px;
@@ -4760,7 +4758,8 @@ td {
     line-height: 18px;
     border-width: 1px;
     padding-left: 8px;
-    padding-right: 60px; }
+    padding-right: 60px;
+    display: block; }
 .search-field::-webkit-input-placeholder {
     font-size: 14px; }
 .search-field::-moz-placeholder {
@@ -4797,7 +4796,7 @@ td {
     visibility: hidden;
     color: white;
     right: 0;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     background-color: #333333; }
 .primary-search--dropdown li a {
@@ -4931,19 +4930,16 @@ td {
         @include vendor(transition, all 0.25s ease-in-out);
         */ } }
 
+.is-active {
+    background-color: #444444;
+    color: #f9b625;
+    text-decoration: none; }
+
 @media screen and (min-width: 61.3125em) {
     .primary-link i {
         display: none; } }
 
-.has-dropdown:hover, .has-dropdown:focus {
-    -webkit-border-top-left-radius: 1px;
-    border-top-left-radius: 1px;
-    -webkit-border-top-right-radius: 1px;
-    border-top-right-radius: 1px; }
-
-.nav li .dropdown, .post-meta li .dropdown,
-.nav li .off-canvas-desk,
-.post-meta li .off-canvas-desk {
+.nav .nav__item > .dropdown, .post-meta .nav__item > .dropdown {
     position: fixed;
     left: 0;
     background-color: #444444;
@@ -4956,40 +4952,36 @@ td {
     padding-right: 30px;
     opacity: 0;
     /* Hover Off */ }
-.nav li .dropdown:before, .post-meta li .dropdown:before, .nav li .dropdown:after, .post-meta li .dropdown:after,
-.nav li .off-canvas-desk:before,
-.post-meta li .off-canvas-desk:before,
-.nav li .off-canvas-desk:after,
-.post-meta li .off-canvas-desk:after {
+.nav .nav__item > .dropdown:before, .post-meta .nav__item > .dropdown:before, .nav .nav__item > .dropdown:after, .post-meta .nav__item > .dropdown:after {
     content: " ";
     display: table; }
-.nav li .dropdown:after, .post-meta li .dropdown:after,
-.nav li .off-canvas-desk:after,
-.post-meta li .off-canvas-desk:after {
+.nav .nav__item > .dropdown:after, .post-meta .nav__item > .dropdown:after {
     clear: both; }
 
-.no-csstransitions .nav li .dropdown, .no-csstransitions .post-meta li .dropdown {
-    height: 0; }
+.nav .nav__item > .off-canvas-desk-is-collasped, .post-meta .nav__item > .off-canvas-desk-is-collasped,
+.nav .nav__item > .off-canvas-desk-is-open,
+.post-meta .nav__item > .off-canvas-desk-is-open {
+    display: none; }
 
 .nav li:hover > .arrow-up, .post-meta li:hover > .arrow-up,
 .nav li:focus > .arrow-up,
 .post-meta li:focus > .arrow-up {
     display: block; }
 
-.dropdown .small-wrap {
-    opacity: 0; }
-
-.nav li:hover > .dropdown, .post-meta li:hover > .dropdown,
-.nav li:focus > .dropdown,
-.post-meta li:focus > .dropdown,
-.nav li > .off-canvas-desk,
-.post-meta li > .off-canvas-desk {
+.nav .nav__item:hover > .dropdown, .post-meta .nav__item:hover > .dropdown,
+.nav .nav__item:focus > .dropdown,
+.post-meta .nav__item:focus > .dropdown {
     padding-top: 30px;
     padding-bottom: 15px;
     max-height: 640px;
-    height: inherit;
+    height: auto;
     overflow: visible;
     opacity: 1;
+    -webkit-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
+    -moz-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
+    -ms-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
+    -o-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
+    box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
     /* Hover On */
     /*-webkit-transition: max-height 0.25s ease;*/ }
 
@@ -5173,12 +5165,7 @@ td {
     color: #f9b625;
     border-radius: 3px;
     padding-left: 0.45313rem;
-    padding-right: 0.45313rem;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out; }
+    padding-right: 0.45313rem; }
 .dropdown--column a:hover {
     text-decoration: none;
     background: #f9b625;
@@ -5200,53 +5187,88 @@ td {
 @media screen and (min-width: 33.8125em) and (max-width: 61.25em) {
     .nav-is-open .inner-wrap, .nav-is-open .site-header {
         right: 18.75em; } }
-@media screen and (min-width: 33.8125em) {
-    .nav-is-open .inner-wrap .navigation, .nav-is-open .site-header .navigation {
+
+@media screen and (max-width: 61.1875em) {
+    .nav-is-open .navigation {
         overflow: scroll;
         padding-top: 20px;
         height: 100%; }
-    .nav-is-open .inner-wrap .site-nav > .has-dropdown, .nav-is-open .site-header .site-nav > .has-dropdown {
-        border-bottom: 1px solid #333333; }
-    .nav-is-open .inner-wrap .right-nav > .nav__item, .nav-is-open .site-header .right-nav > .nav__item {
+    .nav-is-open .right-nav > .nav__item {
         float: left;
         margin-bottom: 20px; }
-    .nav-is-open .inner-wrap .nav__item > .user-action, .nav-is-open .site-header .nav__item > .user-action {
-        display: inline-block; }
-    .nav-is-open .inner-wrap .nav__item > .user-action:before, .nav-is-open .inner-wrap .nav__item > .user-action:after, .nav-is-open .site-header .nav__item > .user-action:before, .nav-is-open .site-header .nav__item > .user-action:after {
-        content: " ";
-        display: table; }
-    .nav-is-open .inner-wrap .nav__item > .user-action:after, .nav-is-open .site-header .nav__item > .user-action:after {
-        clear: both; }
-    .nav-is-open .inner-wrap .nav__item > .primary-search, .nav-is-open .site-header .nav__item > .primary-search {
+    .nav-is-open .site-nav > .nav__item {
+        border-bottom: 1px solid #333333; }
+    .nav-is-open .nav__item > .primary-search {
         float: none; }
-    .nav-is-open .inner-wrap .primary-search > .search-field, .nav-is-open .site-header .primary-search > .search-field {
+    .nav-is-open .primary-search > .search-field {
         width: 320px; }
-    .nav-is-open .inner-wrap .nav li .dropdown, .nav-is-open .inner-wrap .post-meta li .dropdown, .nav-is-open .site-header .nav li .dropdown, .nav-is-open .site-header .post-meta li .dropdown {
+    .nav-is-open .nav .nav__item > .dropdown, .nav-is-open .post-meta .nav__item > .dropdown {
         position: relative;
         display: block;
         margin: 0;
-        padding: 0;
-        /* Hover Off */ }
-    .nav-is-open .inner-wrap .nav li .dropdown .grid, .nav-is-open .inner-wrap .post-meta li .dropdown .grid, .nav-is-open .site-header .nav li .dropdown .grid, .nav-is-open .site-header .post-meta li .dropdown .grid {
+        padding: 0; }
+    .nav-is-open .nav .nav__item > .dropdown .grid, .nav-is-open .post-meta .nav__item > .dropdown .grid, .nav-is-open .nav .nav__item > .dropdown .grid > .grid__item, .nav-is-open .post-meta .nav__item > .dropdown .grid > .grid__item {
         margin: 0;
         padding: 0; }
-    .nav-is-open .inner-wrap .nav li .dropdown .grid > .grid__item, .nav-is-open .inner-wrap .post-meta li .dropdown .grid > .grid__item, .nav-is-open .site-header .nav li .dropdown .grid > .grid__item, .nav-is-open .site-header .post-meta li .dropdown .grid > .grid__item {
-        margin: 0;
-        padding: 0;
-        background-color: deepskyblue; }
-    .nav-is-open .inner-wrap .nav li .dropdown .grid__item > div, .nav-is-open .inner-wrap .post-meta li .dropdown .grid__item > div, .nav-is-open .site-header .nav li .dropdown .grid__item > div, .nav-is-open .site-header .post-meta li .dropdown .grid__item > div {
+    .nav-is-open .nav .nav__item > .dropdown .grid__item > div, .nav-is-open .post-meta .nav__item > .dropdown .grid__item > div {
         margin: 0;
         padding: 3px 12px;
         font-size: 80%; }
-    .nav-is-open .inner-wrap .dropdown--column ul li a, .nav-is-open .site-header .dropdown--column ul li a {
-        font-size: 100%; } }
-.nav-is-open .navigation {
-    right: 0; }
-
-.search {
+    .nav-is-open .nav .nav__item:hover > .dropdown, .nav-is-open .post-meta .nav__item:hover > .dropdown {
+        position: fixed;
+        height: 0;
+        opacity: 0; }
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-open, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open,
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed,
+    .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed {
+        display: block;
+        margin: 0;
+        padding: 0; }
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid, .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid > .grid__item, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid > .grid__item,
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid,
+    .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid,
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid > .grid__item,
+    .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid > .grid__item {
+        margin: 0;
+        padding: 0; }
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid__item > div, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid__item > div,
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid__item > div,
+    .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid__item > div {
+        margin: 0;
+        padding: 3px 12px;
+        font-size: 80%; }
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed {
+        position: fixed;
+        display: none;
+        height: 0px;
+        opacity: 0; }
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-open, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open {
+        position: relative;
+        display: block;
+        height: auto;
+        opacity: 1; }
+    .nav-is-open .dropdown--column ul li a {
+        font-size: 100%; }
+    .nav-is-open .navigation {
+        right: 0; } }
+.nav-is-open .search {
     max-width: 80%;
     margin-left: 16px;
     margin-left: 0.84211rem; }
+.nav-is-open .primary-search > input {
+    display: block; }
+.nav-is-open .primary-search--dropdown {
+    background-color: #f7f7f7; }
+.nav-is-open .primary-search.active .primary-search--options {
+    background-color: #f7f7f7;
+    border: 1px solid #f9b625;
+    border-bottom: none;
+    border-radius: 1px; }
+.nav-is-open .primary-search--dropdown li a {
+    color: #444444; }
+.nav-is-open .primary-search--dropdown {
+    border: 1px solid #f9b625;
+    border-top: none; }
 
 /*------------------------------------*\
     $CAMPUS LOCATOR STYLES
@@ -5273,10 +5295,10 @@ td {
     $CAMPUS-LOCATOR
 \*------------------------------------*/
 /**
- * Used for background colors at the moment, text is either in
+ * Used for background colors at the moment, text is either in 
  * the default text color or white. You can extend %text-white
  * found in the _utilities.scss file if you wish to change the
- * text color.
+ * text color. 
  */
 .state-select-results small {
     color: #353535; }
@@ -5648,7 +5670,7 @@ td {
 
 /**
  * For numbered post formats. Removes the typical magin given to a
- * list.
+ * list. 
  */
 @media screen and (max-width: 44.75em) {
     .post__list li {
@@ -5713,7 +5735,7 @@ td {
 .post-article figure > img {
     width: 100%; }
 
-/**
+/** 
  * Main image captions. Place the .image-credit within this.
  * Pulls the caption to the left of the image for wide screens
  * and centers it for smaller screens.
@@ -6154,5 +6176,15 @@ hr, .divider, .layout--full, .center-block, .centered,
 
 .decoration--none, .content-slider a {
     text-decoration: none; }
+
+.debug {
+    background-color: #007cb1; }
+
+.box-shadown--thin {
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
 
 /* endif */
