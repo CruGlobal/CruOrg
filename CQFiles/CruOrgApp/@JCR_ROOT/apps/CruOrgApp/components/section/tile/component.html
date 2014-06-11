@@ -1,6 +1,5 @@
 <div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
-    <div class="color-white  p  mb">  
-      <h4>{% content.title %}</h4>
+    <div class="color-white  mb  box-shadown--thin">
       <div>
 			{%#if content.imagePath %}
         		<img class="mb-" src="{% content.imagePath %}" alt="{% content.title %}">
@@ -11,11 +10,12 @@
 
         	{%/if%}
       </div>
-      <p class="text--left">
+      <h4 class="mb0  p-">{% content.title %}</h4>
+      <p class="text--left mb0  ps-">
       	{% content.text %}
       </p>
  		{%#if content.href %}
-        	<a class="button {% content.readMoreStyle %}" href="{% content.href %}">{% content.readMore %}</a>
+        	<a class="button me- {% content.readMoreStyle %}" href="{% content.href %}">{% content.readMore %}</a>
         {%/if%}
     </div>
   </div>
