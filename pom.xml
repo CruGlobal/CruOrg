@@ -444,10 +444,8 @@
         <!-- ACS Commons-->
         <dependency>
             <groupId>com.adobe.acs</groupId>
-            <artifactId>acs-aem-commons-content</artifactId>
+            <artifactId>acs-aem-commons-bundle</artifactId>
             <version>1.6.2</version>
-            <scope>provided</scope>
-            <type>content-package</type>
         </dependency>
     </dependencies>
 
