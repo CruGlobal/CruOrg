@@ -434,10 +434,10 @@
                         <artifactItem>
                           <groupId>com.adobe.acs</groupId>
                           <artifactId>acs-aem-commons-content</artifactId>
-                          <version>1.5.0</version>
+                          <version>1.6.2</version>
                           <type>zip</type>
                           <outputDirectory>target/</outputDirectory>
-                          <destFileName>acs-aem-commons-content-1.5.0.zip</destFileName>
+                          <destFileName>acs-aem-commons-content-1.6.2.zip</destFileName>
                         </artifactItem>
                       </artifactItems>
                     </configuration>
@@ -455,7 +455,7 @@
                       <goal>install</goal>
                     </goals>
                     <configuration>
-                      <packageFile>${basedir}/target/acs-aem-commons-content-1.5.0.zip</packageFile>
+                      <packageFile>${basedir}/target/acs-aem-commons-content-1.6.2.zip</packageFile>
                       <targetURL>${pkgMgrURL}</targetURL>
                       <username>${username}</username>
                       <password>${password}</password>
