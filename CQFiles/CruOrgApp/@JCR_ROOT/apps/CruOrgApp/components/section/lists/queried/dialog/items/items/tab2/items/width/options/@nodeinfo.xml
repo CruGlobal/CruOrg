@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
   <nodesOrder>
-    <value><![CDATA[E3_titleFilter,E4_descriptionFilter,read-more,read-more-style,width]]></value>
+    <value><![CDATA[option21,option3]]></value>
   </nodesOrder>
   <properties />
   <mixins />
