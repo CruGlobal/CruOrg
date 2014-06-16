@@ -90,10 +90,18 @@ public class CenterCropImageTransformerImpl implements ImageTransformer {
             //Modification from the original CropImageTransformerImpl
             //Centers the rendition if the property 'center' is set to true
             if (centered) {
+
+                //if the image is square or vertical,
+                if (layer.getHeight() == layer.getWidth()) {
+                    layer.resize(width, width);
+                }
+
                 x = (layer.getWidth() - width) / 2;
                 y = 0;
+
                 rectangle.setBounds(x, y, width, height);
                 layer.crop(rectangle);
+
                 return layer;
             } else if (smartBounding) {
                 rectangle = this.getSmartBounds(x, y, width, height, layer.getWidth(),
