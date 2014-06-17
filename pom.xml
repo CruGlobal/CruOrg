@@ -441,7 +441,12 @@
             <artifactId>joda-time</artifactId>
             <version>1.6</version>
         </dependency>
-
+        <!-- ACS Commons-->
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-bundle</artifactId>
+            <version>1.6.2</version>
+        </dependency>
     </dependencies>
 
   <modules>

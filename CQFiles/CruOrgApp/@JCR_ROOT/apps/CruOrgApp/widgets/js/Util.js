@@ -154,6 +154,11 @@ Cru.widgets.Util = {
 		return text.length;
 	},
 
+    richTextEditorCharacterCount : function(value) {
+        return value.replace(/<.*?>/g,"").length; //removes tags if any.
+
+	},
+
     /**
 	* Validate length for a specific 'value' string 
 	* with 'limit' specify

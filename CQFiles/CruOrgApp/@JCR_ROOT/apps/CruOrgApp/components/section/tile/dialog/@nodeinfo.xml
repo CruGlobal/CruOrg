@@ -5,10 +5,13 @@
   </nodesOrder>
   <properties>
     <property name="height" type="1" multiple="false">
-      <value><![CDATA[450]]></value>
+      <value><![CDATA[550]]></value>
     </property>
     <property name="title" type="1" multiple="false">
       <value><![CDATA[Tile]]></value>
+    </property>
+    <property name="width" type="1" multiple="false">
+      <value><![CDATA[550]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[dialog]]></value>
