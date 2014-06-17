@@ -22,25 +22,25 @@ Cru.components.tile = {
         "desk--one-half"
     ],
 
-    afterRender : function(container){ //adds a div with clear:both style after the last tile in the container so it doesn't overlap with the parsys
-				var cqGeneratedDiv = container.element;
-        		var gridItemDiv = cqGeneratedDiv.firstElementChild;
-                var tileClass = $(gridItemDiv).attr("class");
-                $(cqGeneratedDiv).addClass(tileClass)
-                $(gridItemDiv).removeClass(tileClass) 
-                if(Xumak.Utils.elementExists($(".tile-container-parsys"))){
-        
-                    $( "<div style='clear:both;'></div>" ).insertAfter($(".tile-container-parsys .parbase.section").last());
-                }
-                if(Xumak.Utils.elementExists($(".post-body-parsys"))){
-        
-                    $( "<div style='clear:both;'></div>" ).insertAfter($(".post-body-parsys .parbase.section").last());
-                }
-        		if(Xumak.Utils.elementExists($(".content-parsys"))){
-        
-                    $( "<div style='clear:both;'></div>" ).insertAfter($(".content-parsys .parbase.section").last());
-                }
+    PARSYS_CLASSES_ARRAY : [
+		".tile-container-parsys",
+        ".post-body-parsys",
+        ".content-parsys"
+    ],
 
+    afterRender : function(container){ //adds a div with clear:both style after the last tile in the container so it doesn't overlap with the parsys
+        var cqGeneratedDiv = container.element;
+        var gridItemDiv = cqGeneratedDiv.firstElementChild;
+        var tileClass = $(gridItemDiv).attr("class");
+        $(cqGeneratedDiv).addClass(tileClass) ;
+        $(gridItemDiv).removeClass(tileClass);
+        this.PARSYS_CLASSES_ARRAY.forEach(function(parsysClass) {
+            if(Xumak.Utils.elementExists($(parsysClass))) {
+                if($(parsysClass + " .divider").length == 0) {
+                    $( "<div class='divider'></div>" ).insertAfter($(parsysClass + " .parbase.section").last());
+                }
+            }
+        });
     },
 
     updateRenditionField : function(container) {
