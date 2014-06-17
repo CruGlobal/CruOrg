@@ -10,6 +10,9 @@
       <value><![CDATA[delete]]></value>
       <value><![CDATA[copymove]]></value>
     </property>
+    <property name="cq:dialogMode" type="1" multiple="false">
+      <value><![CDATA[floating]]></value>
+    </property>
     <property name="cq:disableTargeting" type="6" multiple="false">
       <value>true</value>
     </property>

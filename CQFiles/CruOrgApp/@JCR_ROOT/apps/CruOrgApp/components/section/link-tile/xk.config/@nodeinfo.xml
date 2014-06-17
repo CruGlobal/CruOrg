@@ -4,8 +4,12 @@
     <value />
   </nodesOrder>
   <properties>
+    <property name="xk_availableRenditions" type="1" multiple="true">
+      <value><![CDATA[CruHalf432x243]]></value>
+      <value><![CDATA[Cru704x396]]></value>
+    </property>
     <property name="xk_defaultRenditionName" type="1" multiple="false">
-      <value><![CDATA[CruSquare208x208]]></value>
+      <value><![CDATA[CruHalf432x243]]></value>
     </property>
   </properties>
   <mixins />

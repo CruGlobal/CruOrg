@@ -1,27 +1,30 @@
 {%#if list.pages %}
-   	<ul class="{%content.class%}">
-    	{%#each list.pages %}
-    	<li>
-			{%#if this.imagePath %}
-           		  <!-- Optional image item -->
-  			    <img alt="{% this.navigationTitle %}" src="{% this.imagePath %}" />
-        	{%/if%}
-
-            {%#if this.navigationTitle %}
-           		<!-- Optional link item -->
-           		 <a href="{% this.path %}.html">{% this.navigationTitle %}</a>
-        	{%/if%}
-
- 			{%#if this.description %}
-           		<!-- Optional paragraph text -->
-           		<p>{% this.description %}</p>
-            {%/if%}    
-
-    	</li>
-		{%/each%}
- 	</ul>
+<div class="grid">
+    {%#each list.pages %}
+    <div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+        <div class="color-white  mb  box-shadown--thin">
+            <div>
+                {%#if this.imagePath %}
+                <img class="mb-" src="{% this.imagePath %}" alt="{% this.navigationTitle %}">
+                {%/if%}
+            </div>
+            {%#if content.titleFilter %}
+            <h4 class="mb0  p-">{% this.navigationTitle %}</h4>
+            {%/if%}
+            {%#if content.descriptionFilter %}
+            <p class="text--left mb0  ps-">
+                {% this.description %}
+            </p>
+            {%/if%}
+            {%#if content.readMore %}
+            <a class="button me- {% content.readMoreStyle %}" href="{% this.path %}.html">{% content.readMore %}</a>
+            {%/if%}
+        </div>
+    </div>
+    {%/each%}
+</div>
 {%else%}
-	{%#if page.isEditMode %}
-    	<p>Please configure the paths in the dialog.</p>
-    {%/if%}
+{%#if page.isEditMode %}
+<p>Please add tags in the dialog.</p>
+{%/if%}
 {%/if%}

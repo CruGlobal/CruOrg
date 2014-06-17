@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Enter text to display]]></value>
+    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Text]]></value>
-    </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textarea]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./text]]></value>
@@ -28,8 +31,8 @@
 }
 }]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter text to display]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textarea]]></value>
     </property>
   </properties>
   <mixins />

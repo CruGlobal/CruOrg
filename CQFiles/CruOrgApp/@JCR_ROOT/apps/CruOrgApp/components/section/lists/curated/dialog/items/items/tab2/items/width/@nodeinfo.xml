@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
   <nodesOrder>
-    <value><![CDATA[options,listeners]]></value>
+    <value><![CDATA[options]]></value>
   </nodesOrder>
   <properties>
     <property name="defaultValue" type="1" multiple="false">

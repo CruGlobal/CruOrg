@@ -5,10 +5,10 @@
   </nodesOrder>
   <properties>
     <property name="text" type="1" multiple="false">
-      <value><![CDATA[Subtle]]></value>
+      <value><![CDATA[Secondary]]></value>
     </property>
     <property name="value" type="1" multiple="false">
-      <value><![CDATA[button--subtle]]></value>
+      <value><![CDATA[button--secondary]]></value>
     </property>
   </properties>
   <mixins />
