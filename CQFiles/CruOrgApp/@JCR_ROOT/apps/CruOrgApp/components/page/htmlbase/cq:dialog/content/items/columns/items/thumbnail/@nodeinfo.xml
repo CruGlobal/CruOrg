@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value><![CDATA[upload,preview]]></value>
+  </nodesOrder>
+  <properties>
+    <property name="page" type="1" multiple="false">
+      <value><![CDATA[${empty param.item ? requestPathInfo.suffix : param.item}]]></value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[cq/gui/components/common/wcm/pagethumbnail]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

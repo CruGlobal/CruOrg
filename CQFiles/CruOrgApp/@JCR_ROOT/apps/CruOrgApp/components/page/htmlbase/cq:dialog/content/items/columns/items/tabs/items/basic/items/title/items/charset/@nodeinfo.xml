@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="ignoreData" type="6" multiple="false">
+      <value>true</value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[_charset_]]></value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[granite/ui/components/foundation/form/hidden]]></value>
+    </property>
+    <property name="value" type="1" multiple="false">
+      <value><![CDATA[utf-8]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

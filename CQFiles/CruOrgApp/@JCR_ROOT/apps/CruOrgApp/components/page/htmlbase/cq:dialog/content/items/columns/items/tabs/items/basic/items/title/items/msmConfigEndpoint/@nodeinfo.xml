@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="class" type="1" multiple="false">
+      <value><![CDATA[msm-config-endpoint]]></value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[granite/ui/components/foundation/form/hidden]]></value>
+    </property>
+    <property name="value" type="1" multiple="false">
+      <value><![CDATA[${empty param.item ? requestPathInfo.suffix : param.item }]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
