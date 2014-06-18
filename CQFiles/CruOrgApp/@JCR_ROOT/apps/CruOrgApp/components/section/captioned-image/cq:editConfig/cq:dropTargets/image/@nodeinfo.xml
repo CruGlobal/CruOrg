@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:DropTargetConfig">
+  <nodesOrder>
+    <value><![CDATA[parameters]]></value>
+  </nodesOrder>
+  <properties>
+    <property name="accept" type="1" multiple="true">
+      <value><![CDATA[image/.*]]></value>
+    </property>
+    <property name="groups" type="1" multiple="true">
+      <value><![CDATA[media]]></value>
+    </property>
+    <property name="propertyName" type="1" multiple="false">
+      <value><![CDATA[./fileReference]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

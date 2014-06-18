@@ -3,7 +3,7 @@
         <img class="" src="{% content.imagePath %}">
     {%else%}
         {%#if page.isEditMode %}
-            <img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+            <div class="cq-placeholder cq-dd-image" data-emptytext="Capture Image"></div>
         {%/if %}
     {%/if%}
     {%#unless content.isCaptionEmpty %}

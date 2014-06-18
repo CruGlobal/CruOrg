@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="cq-msm-lockable" type="1" multiple="false">
+      <value><![CDATA[cq:exportTemplate]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Export Configuration]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./cq:exportTemplate]]></value>
+    </property>
+    <property name="optionLoader" type="1" multiple="false">
+      <value><![CDATA[function(path, callback) {
+  jQuery.get(Granite.HTTP.getContextPath() + "/bin/tree/ext.json", {
+    path: path,
+    predicate: "nosystem",
+    _charset_: "utf-8"
+  }, function(array) {
+    if (callback) {
+      callback(array.map(function(v) { return v.name; }));
+    }
+  }, "json");
+
+  return false;
+}]]></value>
+    </property>
+    <property name="renderReadOnly" type="6" multiple="false">
+      <value>true</value>
+    </property>
+    <property name="rootPath" type="1" multiple="false">
+      <value><![CDATA[/etc/contentsync/templates]]></value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[granite/ui/components/foundation/form/pathbrowser]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
