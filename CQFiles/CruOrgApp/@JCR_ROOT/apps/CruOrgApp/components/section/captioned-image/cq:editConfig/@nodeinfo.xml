@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:EditConfig">
+  <nodesOrder>
+    <value><![CDATA[cq:dropTargets]]></value>
+  </nodesOrder>
   <properties>
-    <property name="cq:layout" type="1" multiple="false">
-      <value><![CDATA[editbar]]></value>
-    </property>
     <property name="cq:actions" type="1" multiple="true">
       <value><![CDATA[text: Captioned Image]]></value>
       <value><![CDATA[-]]></value>
@@ -15,6 +15,9 @@
     </property>
     <property name="cq:disableTargeting" type="6" multiple="false">
       <value>true</value>
+    </property>
+    <property name="cq:layout" type="1" multiple="false">
+      <value><![CDATA[editbar]]></value>
     </property>
   </properties>
   <mixins />

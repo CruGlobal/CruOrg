@@ -5,7 +5,7 @@ import com.day.cq.commons.RangeIterator;
 import com.day.cq.tagging.TagManager;
 import com.xumak.base.templatingsupport.TemplateContentModel;
 import com.xumak.extended.contextprocessors.lists.AddQueriedPagePathListContextProcessor;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
