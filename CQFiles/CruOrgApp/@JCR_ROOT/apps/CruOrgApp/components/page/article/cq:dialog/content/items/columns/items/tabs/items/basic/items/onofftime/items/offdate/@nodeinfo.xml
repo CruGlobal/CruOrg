@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="cq-msm-lockable" type="1" multiple="false">
+      <value><![CDATA[offTime]]></value>
+    </property>
+    <property name="displayedFormat" type="1" multiple="false">
+      <value><![CDATA[MMMM DD, YYYY hh:mm a]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Off Time]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./offTime]]></value>
+    </property>
+    <property name="renderReadOnly" type="6" multiple="false">
+      <value>true</value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[granite/ui/components/foundation/form/datepicker]]></value>
+    </property>
+    <property name="type" type="1" multiple="false">
+      <value><![CDATA[datetime]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
