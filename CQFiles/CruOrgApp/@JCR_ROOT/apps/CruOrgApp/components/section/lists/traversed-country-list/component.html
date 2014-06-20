@@ -9,7 +9,7 @@
 					<!-- The optgroup label is the continent or or overall title -->	
 						<optgroup label="{% page.title %}">
 							{%#each list.pages %}
-								<option value="{% this.navigationTitle %}">{% this.navigationTitle %}</option>
+								<option value="{% this.path %}.html">{% this.navigationTitle %}</option>
 							{%/each%}
 						</optgroup>
 				</select>
