@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:ClientLibraryFolder">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="categories" type="1" multiple="true">
+      <value><![CDATA[cq.authoring.dialog]]></value>
+    </property>
+    <property name="dependencies" type="1" multiple="true">
+      <value><![CDATA[granite.jquery]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
