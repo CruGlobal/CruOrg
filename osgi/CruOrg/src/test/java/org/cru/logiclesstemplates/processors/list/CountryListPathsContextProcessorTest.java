@@ -78,7 +78,8 @@ public class CountryListPathsContextProcessorTest {
                                                     replace(testPath, ""));
         countryListPaths.process(request, content);
         completeTestPath = completeTestPath.replace(testPath, "");
-        ArrayList<HashMap<String, Object>> listPages = content.getAs(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME, ArrayList.class);
+        ArrayList<HashMap<String, Object>> listPages =
+                content.getAs(PAGE_DETAILS_LIST_CONTEXT_PROPERTY_NAME, ArrayList.class);
         assertEquals(completeTestPath, listPages.get(0).get(PATH_DETAILS_LIST_PATH_PROPERTY_NAME));
 
     }
