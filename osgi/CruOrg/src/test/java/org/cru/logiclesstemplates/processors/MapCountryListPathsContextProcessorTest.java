@@ -1,4 +1,4 @@
-package org.cru.logiclesstemplates.processors.list;
+package org.cru.logiclesstemplates.processors;
 
 
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -41,9 +41,9 @@ import static org.mockito.Mockito.when;
  */
 
 @RunWith(MockitoJUnitRunner.class)
-public class CountryListPathsContextProcessorTest {
+public class MapCountryListPathsContextProcessorTest {
 
-    @InjectMocks private CountryListPathsContextProcessor countryListPaths;
+    @InjectMocks private MapCountryListPathsContextProcessor countryListPaths;
     private String completeTestPath = testPath + "/Article.html";
 
 

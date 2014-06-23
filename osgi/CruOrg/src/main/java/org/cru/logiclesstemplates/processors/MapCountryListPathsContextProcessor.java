@@ -1,4 +1,4 @@
-package org.cru.logiclesstemplates.processors.list;
+package org.cru.logiclesstemplates.processors;
 
 import com.google.common.collect.Sets;
 import com.xumak.base.templatingsupport.TemplateContentModel;
@@ -35,7 +35,7 @@ import static com.xumak.extended.contextprocessors.lists.ListConstants.PATH_DETA
 
 @Component
 @Service
-public class CountryListPathsContextProcessor extends AddTraversedPagePathListContextProcessor {
+public class MapCountryListPathsContextProcessor extends AddTraversedPagePathListContextProcessor {
 
     public static final String TRAVERSED_COUNTRY_LIST = "CruOrgApp/components/section/lists/traversed-country-list";
     public static final int PRIORITY = MEDIUM_PRIORITY;
