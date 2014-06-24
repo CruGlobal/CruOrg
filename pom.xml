@@ -231,12 +231,7 @@
                             com.day.cq.tagging.impl,
                             org.apache.sling.commons.testing.jcr,
                             org.apache.sling.commons.testing.sling,
-                            com.google.common.collect,
-                            com.google.common.base,
-                            com.google.common.base.
-                            com.google.common.math,
-                            com.google.common.primitives,
-                            sun.misc
+
                         </Export-Package>
                     </instructions>
                 </configuration>

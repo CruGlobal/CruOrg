@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="autoStart" type="6" multiple="false">
+      <value>false</value>
+    </property>
+    <property name="cq-msm-lockable" type="1" multiple="false">
+      <value><![CDATA[/image]]></value>
+    </property>
+    <property name="multiple" type="6" multiple="false">
+      <value>false</value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./image/file.sftmp]]></value>
+    </property>
+    <property name="sizeLimit" type="1" multiple="false">
+      <value><![CDATA[100000000]]></value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[granite/ui/components/foundation/form/fileupload]]></value>
+    </property>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Upload Image]]></value>
+    </property>
+    <property name="uploadUrl" type="1" multiple="false">
+      <value><![CDATA[will_be_replaced]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

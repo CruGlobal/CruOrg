@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value><![CDATA[datasource,values,options]]></value>
+  </nodesOrder>
+  <properties>
+    <property name="cq-msm-lockable" type="1" multiple="false">
+      <value><![CDATA[cq:tags]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Tags]]></value>
+    </property>
+    <property name="mode" type="1" multiple="false">
+      <value><![CDATA[contains]]></value>
+    </property>
+    <property name="multiple" type="6" multiple="false">
+      <value>true</value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./cq:tags]]></value>
+    </property>
+    <property name="renderReadOnly" type="6" multiple="false">
+      <value>true</value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[granite/ui/components/foundation/form/autocomplete]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

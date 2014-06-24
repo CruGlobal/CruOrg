@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value><![CDATA[hide-social-share,deletehide-social-share,hide-facebook-comments-feed,deletehide-facebook-comments-feed]]></value>
+  </nodesOrder>
+  <properties />
+  <mixins />
+</node>
+

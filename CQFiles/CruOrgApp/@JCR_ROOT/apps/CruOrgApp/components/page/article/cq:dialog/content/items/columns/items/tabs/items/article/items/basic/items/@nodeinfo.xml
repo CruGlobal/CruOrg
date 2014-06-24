@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value><![CDATA[author,date,date_type,dateText,imagefilereference,username]]></value>
+  </nodesOrder>
+  <properties />
+  <mixins />
+</node>
+

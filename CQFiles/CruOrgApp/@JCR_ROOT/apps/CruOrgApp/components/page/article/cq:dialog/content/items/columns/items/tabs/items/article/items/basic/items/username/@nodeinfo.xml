@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="cq-msm-lockable" type="1" multiple="false">
+      <value><![CDATA[twitterUser]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[e.g.  for the @crutweets account, the value after the '@' symbol (crutweets).]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Twitter Username]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./twitterUser]]></value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[granite/ui/components/foundation/form/textfield]]></value>
+    </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { var textLength = Cru.widgets.Util.validateLength(value,15);]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

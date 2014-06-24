@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value><![CDATA[datasource]]></value>
+  </nodesOrder>
+  <properties>
+    <property name="class" type="1" multiple="false">
+      <value><![CDATA[language]]></value>
+    </property>
+    <property name="cq-msm-lockable" type="1" multiple="false">
+      <value><![CDATA[jcr:language]]></value>
+    </property>
+    <property name="emptyText" type="1" multiple="false">
+      <value><![CDATA[Select]]></value>
+    </property>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Language]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./jcr:language]]></value>
+    </property>
+    <property name="renderReadOnly" type="6" multiple="false">
+      <value>true</value>
+    </property>
+    <property name="sling:resourceType" type="1" multiple="false">
+      <value><![CDATA[granite/ui/components/foundation/form/select]]></value>
+    </property>
+    <property name="translateOptions" type="6" multiple="false">
+      <value>true</value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
