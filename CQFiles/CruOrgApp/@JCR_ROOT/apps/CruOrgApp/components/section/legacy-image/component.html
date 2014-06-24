@@ -1,9 +1,13 @@
 <figure class="image--legacy">
 	<img src="{%content.imagePath%}"/>
+    {%#unless content.isCaptionEmpty%}
 	<figcaption class="image__caption">
 		{%content.caption%}
-		<span class="image-credit">{%content.credit%}</span>
+    	{%#if content.credit%}
+			<span class="image-credit">{%content.credit%}</span>
+        {%/if%}
 	</figcaption>
+    {%/unless%}
 </figure>
  {%#if page.isEditMode%}
     <div style="clear:both;"></div>
