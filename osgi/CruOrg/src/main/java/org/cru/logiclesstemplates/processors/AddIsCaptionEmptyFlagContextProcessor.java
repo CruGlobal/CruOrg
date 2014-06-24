@@ -36,11 +36,15 @@ public class AddIsCaptionEmptyFlagContextProcessor
     public static final String IMAGE_CAPTION_KEY_NAME = "imageCaption";
     public static final String IMAGE_CREDIT_KEY_NAME = "imageCredit";
     public static final String CAPTION_KEY_NAME = "caption";
+    public static final String CREDIT_KEY_NAME = "credit";
+
     public static final String IS_CAPTION_EMPTY_FLAG_KEY_NAME = "isCaptionEmpty";
 
     public static final String CAPTIONED_IMAGE_RESOURCE_TYPE = "CruOrgApp/components/section/captioned-image";
     public static final String MEDIA_EMBED_RESOURCE_TYPE = "CruOrgApp/components/section/media-embed";
     public static final String ARTICLE_LONG_FORM_RESOURCE_TYPE = "CruOrgApp/components/section/article-long-form";
+    public static final String LEGACY_IMAGE_RESOURCE_TYPE = "CruOrgApp/components/section/legacy-image";
+
 
 
 
@@ -49,7 +53,8 @@ public class AddIsCaptionEmptyFlagContextProcessor
         return Sets.newHashSet(ARTICLE_RESOURCE_TYPE,
                                CAPTIONED_IMAGE_RESOURCE_TYPE,
                                MEDIA_EMBED_RESOURCE_TYPE,
-                               ARTICLE_LONG_FORM_RESOURCE_TYPE);
+                               ARTICLE_LONG_FORM_RESOURCE_TYPE,
+                               LEGACY_IMAGE_RESOURCE_TYPE);
     }
 
     @Override
@@ -71,8 +76,9 @@ public class AddIsCaptionEmptyFlagContextProcessor
             Map<String, Object> contentObject = (Map<String, Object>) contentModel.get(RESOURCE_CONTENT_KEY);
             String imageCaption = (String) contentObject.get(IMAGE_CAPTION_KEY_NAME);
             String caption = (String) contentObject.get(CAPTION_KEY_NAME);
+            String credit = (String) contentObject.get(CREDIT_KEY_NAME);
             String imageCredit = (String) contentObject.get(IMAGE_CREDIT_KEY_NAME);
-            if ((null != imageCaption) || (null != caption) || (null != imageCredit)) {
+            if ((null != imageCaption) || (null != caption) || (null != imageCredit) || (null != credit)) {
                 isCaptionEmptyFlag = false;
             }
             contentObject.put(IS_CAPTION_EMPTY_FLAG_KEY_NAME, isCaptionEmptyFlag);

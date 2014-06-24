@@ -41,20 +41,21 @@
         <!-- POST BODY -->
         <div class="post__body  layout-single-column">
         	{%#include "article-share" as="CruOrgApp/components/section/article-share"%}{%/include%}
-
-    <figure>
             {%#if page.imagePath %}
-        	<img src="{%page.imagePath%}"/>
+                <figure>
+
+        	        <img src="{%page.imagePath%}"/>
+
+                    {%#unless page.isCaptionEmpty %}
+                        <figcaption class="image__caption  default-view">
+                            {%page.imageCaption%}
+                        {%#if page.imageCredit%}
+                            <span class="image-credit">{%page.imageCredit%}</span>
+                        {%/if%}
+                        </figcaption>
+                    {%/unless%}
+                </figure>
             {%/if%}
-            {%#unless page.isCaptionEmpty %}
-                <figcaption class="image__caption  default-view">
-                    {%page.imageCaption%}
-                {%#if page.imageCredit%}
-                    <span class="image-credit">{%page.imageCredit%}</span>
-                {%/if%}
-                </figcaption>
-            {%/unless%}
-    </figure>
         	{%#include "post-body-parsys" as="foundation/components/parsys"%}{%/include%}
       		{%#include "bottom-parsys" as="foundation/components/parsys"%}{%/include%}
 
