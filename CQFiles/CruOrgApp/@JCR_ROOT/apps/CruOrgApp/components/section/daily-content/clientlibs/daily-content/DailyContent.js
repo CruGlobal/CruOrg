@@ -136,13 +136,14 @@ Cru.components.DailyContent.elements = {
         var imagePath = data.page["imagePath"];
         if(imagePath){
             figure.append(this.createImage(imagePath));
+            var caption = data.page["imageCaption"];
+            var credit = data.page["imageCredit"];
+            if(caption){
+                figure.append(this.createCaption(caption, credit));
+            }
         }
 
-        var caption = data.page["imageCaption"];
-        var credit = data.page["imageCredit"];
-        if(caption){
-            figure.append(this.createCaption(caption, credit));
-        }
+
     },
     buildPagination : function(pagination, paths, data){
         var dailyContentPreviousLabel = "Previous";
