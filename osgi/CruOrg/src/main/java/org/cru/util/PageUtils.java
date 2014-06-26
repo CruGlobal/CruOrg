@@ -2,6 +2,7 @@ package org.cru.util;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.google.common.primitives.Ints;
 import org.apache.commons.collections.IteratorUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
@@ -177,5 +178,47 @@ public class PageUtils {
     public static Page getContainingPage(final Resource componentResource){
         PageManager pageManager = componentResource.getResourceResolver().adaptTo(PageManager.class);
         return pageManager.getContainingPage(componentResource);
+    }
+
+    public static boolean isMonthPage(final Page page) {
+        boolean isMonthPage = false;
+        if (null != page) {
+            String pageName = page.getName();
+            Integer month = Ints.tryParse(pageName);
+            if (null != month && month < 13) {
+                isMonthPage = true;
+            }
+        }
+        return isMonthPage;
+    }
+
+    public static boolean isDayPage(final Page page) {
+        boolean isDayPage = false;
+        if (null != page) {
+            String pageName = page.getName();
+            Integer day = Ints.tryParse(pageName);
+            if (null != day && day <= 31) {
+                isDayPage = true;
+            }
+        }
+        return isDayPage;
+    }
+
+    public static boolean isYearPage(final Page page) {
+        boolean isYearPage = false;
+        if (null != page) {
+            String pageName = page.getName();
+            Integer year = Ints.tryParse(pageName);
+            if (null != year && pageName.length() == 4 && year > 0) {
+                isYearPage = true;
+            }
+        }
+        return isYearPage;
+    }
+
+    public static int numberOfChildren(final Page page) {
+        Iterator<Page> pageIterator = page.listChildren();
+        List pageList = IteratorUtils.toList(pageIterator);
+        return pageList.size();
     }
 }
