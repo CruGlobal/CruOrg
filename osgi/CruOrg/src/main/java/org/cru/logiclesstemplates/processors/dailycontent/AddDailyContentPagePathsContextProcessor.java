@@ -66,6 +66,13 @@ public class AddDailyContentPagePathsContextProcessor
         }
     }
 
+    /**
+     * Retrieves the previous daily content page. First, it tries to get the previous sibling. If it fails, it looks
+     * in its parent's previous sibling for the last page. If that fails, looks in its grandparent's sibling for its
+     * last grandchild. If that fails, it returns null.
+     * @param currentPage the page to get the previous page from
+     * @return the previous page
+     */
     private Page getPreviousPage(final Page currentPage) {
         Page parentPage = currentPage.getParent();
         int currentPageIndex = PageUtils.getPageIndex(currentPage);
@@ -110,6 +117,13 @@ public class AddDailyContentPagePathsContextProcessor
         return previousPage;
     }
 
+    /**
+     * Retrieves the next daily content page. First, it tries to get the next sibling. If it fails, it looks
+     * in its parent's next sibling for the first page. If that fails, it looks in its grandparent's next sibling for
+     * its first grandchild. If that fails, it returns null.
+     * @param currentPage the page to get the next page from
+     * @return the next page
+     */
     private Page getNextPage(final Page currentPage) {
         Page parentPage = currentPage.getParent();
         int currentPageIndex = PageUtils.getPageIndex(currentPage);

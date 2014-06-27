@@ -3,6 +3,7 @@ package org.cru.util;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+
 import org.apache.sling.api.wrappers.ValueMapDecorator;
 import org.cru.test.TestUtils;
 import org.joda.time.DateTime;
@@ -23,7 +24,9 @@ import static org.cru.test.TestUtils.*;
  * CHANGE HISTORY
  * ------------------------------------------------------------------
  * Version | Date        | Developer              | Changes
- * 1.0     | 5/20/14     | JFlores                | Initial Creation
+ * 1.0     | 2014/05/20  | JFlores                | Initial Creation
+ * 1.0     | 2014/06/26  | Palecio                | added testIsDayPage, testIsYearPage, testIsMonthPage
+ * and testNumberOfChildren methods
  * ------------------------------------------------------------------
  */
 public class PageUtilsTest {
@@ -198,5 +201,128 @@ public class PageUtilsTest {
         assertNotSame(testPath, template);
 
     }
+
+    @Test
+    public void testIsMonthPage() throws Exception {
+
+        /**
+         * Case 0: Page is null
+         */
+        assertFalse(PageUtils.isMonthPage(null));
+
+        /**
+         * Case 1: Page name is not a valid month because it's not a number
+         */
+        when(page.getName()).thenReturn("lent");
+        assertFalse(PageUtils.isMonthPage(page));
+
+        /**
+         * Case 2: Page name is not a valid month because it's less than 1
+         */
+        when(page.getName()).thenReturn("0");
+        assertFalse(PageUtils.isMonthPage(page));
+
+        /**
+         * Case 3: Page name is not a valid month because it's greater than 12
+         */
+        when(page.getName()).thenReturn("13");
+        assertFalse(PageUtils.isMonthPage(page));
+
+        /**
+         * Case 4: Page name is a valid month
+         */
+        when(page.getName()).thenReturn("10");
+        assertTrue(PageUtils.isMonthPage(page));
+
+    }
+
+    @Test
+    public void testIsDayPage() throws Exception {
+
+        /**
+         * Case 0: Page is null
+         */
+        assertFalse(PageUtils.isDayPage(null));
+
+        /**
+         * Case 1: Page name is not a valid day because it's not a number
+         */
+        when(page.getName()).thenReturn("day10");
+        assertFalse(PageUtils.isDayPage(page));
+
+        /**
+         * Case 2: Page name is not a valid day because it's less than 1
+         */
+        when(page.getName()).thenReturn("0");
+        assertFalse(PageUtils.isDayPage(page));
+
+        /**
+         * Case 3: Page name is not a valid day because it's greater than 31
+         */
+        when(page.getName()).thenReturn("32");
+        assertFalse(PageUtils.isDayPage(page));
+
+        /**
+         * Case 4: Page name is a valid day
+         */
+        when(page.getName()).thenReturn("10");
+        assertTrue(PageUtils.isDayPage(page));
+    }
+
+    @Test
+    public void testIsYearPage() throws Exception {
+
+        /**
+         * Case 0: Page is null
+         */
+        assertFalse(PageUtils.isYearPage(null));
+
+        /**
+         * Case 1: Page name is not a valid year because it's not a number
+         */
+        when(page.getName()).thenReturn("devotional-life");
+        assertFalse(PageUtils.isYearPage(page));
+
+        /**
+         * Case 2: Page name is not a valid year because it's length is greater than 4 (20014 is not a valid year)
+         */
+        when(page.getName()).thenReturn("20014");
+        assertFalse(PageUtils.isYearPage(page));
+
+        /**
+         * Case 3: Page name is a valid year
+         */
+        when(page.getName()).thenReturn("2014");
+        assertTrue(PageUtils.isYearPage(page));
+    }
+
+    @Test
+    public void testNumberOfChildren() throws Exception {
+
+        /**
+         * Case 0: Page is null
+         */
+        assertEquals(-1, PageUtils.numberOfChildren(null));
+
+        /**
+         * Case 1: Page has no children
+         */
+        List<Page> list = new ArrayList<Page>();
+        Iterator iterator = list.iterator();
+        when(page.listChildren()).thenReturn(iterator);
+        assertEquals(0, PageUtils.numberOfChildren(page));
+
+        /**
+         * Case 1: Page has 2 children
+         */
+        list.add((mock(Page.class)));
+        list.add((mock(Page.class)));
+        iterator = list.iterator();
+        when(page.listChildren()).thenReturn(iterator);
+        assertEquals(2, PageUtils.numberOfChildren(page));
+    }
+
+
+
 
 }
