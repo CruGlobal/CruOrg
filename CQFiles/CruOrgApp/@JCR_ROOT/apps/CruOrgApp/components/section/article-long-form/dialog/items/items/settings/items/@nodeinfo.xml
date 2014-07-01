@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
   <nodesOrder>
-    <value><![CDATA[B_image,show,title]]></value>
+    <value><![CDATA[B_image,show,title,subtitle]]></value>
   </nodesOrder>
   <properties />
   <mixins />
