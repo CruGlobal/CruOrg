@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<node nodeType="cq:Page">
+<node nodeType="sling:Folder">
   <nodesOrder>
-    <value><![CDATA[clientlibs,jcr:content,clientlibs-ie]]></value>
+    <value />
   </nodesOrder>
   <properties />
   <mixins />
