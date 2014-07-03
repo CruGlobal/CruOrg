@@ -1855,7 +1855,8 @@ html {
 
 body {
     font-family: "freight-sans-pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased; }
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-feature-settings: "lnum"; }
 
 /*------------------------------------*\
     $HEADINGS
@@ -3282,7 +3283,6 @@ input + .additional {
      * Inactive, disabled buttons.
      */ }
 .button--small {
-    line-height: 1.75;
     /* 3 */
     /* 3 */
     /* 4 */
@@ -3293,9 +3293,9 @@ input + .additional {
     /* 6 */
     /* 6 */
     /* 7 */
-    padding: 8px 22px;
+    padding: 2px 6px;
     /* 9 */
-    padding: parseInt(8px)/19rem parseInt(22px)/19rem;
+    padding: parseInt(2px)/19rem parseInt(6px)/19rem;
     /* 9 */ }
 .button--large {
     line-height: 2;
@@ -3965,7 +3965,7 @@ input[disabled]:focus,
     content: '\e808'; }
 
 /* '' */
-.icon-right-circle:before, .affordance:after {
+.icon-right-circle:before, .affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
     content: '\e800'; }
 
 /* '' */
@@ -4297,7 +4297,7 @@ figcaption {
     margin-right: parseInt(12px)/19rem;
     /* 9 */ }
 
-.affordance:after {
+.affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
     color: #f9b625;
     font-family: "cruicons";
     padding-left: 10px;
@@ -4378,7 +4378,7 @@ q:first-child {
  * Change the hover and other states with:;
  * @mixin btn-effects($background, $border, $color:inherit).
  * 
- * Quick not that it will not work with transparency due to 
+ * Quick note: it will not work with transparency due to
  * the hover states. 
  */
 .button-group {
@@ -5255,6 +5255,9 @@ td {
     max-width: 80%;
     margin-left: 16px;
     margin-left: 0.84211rem; }
+@media screen and (max-width: 33.75em) {
+    .nav-is-open .primary-search > .search-field {
+        width: 240px; } }
 .nav-is-open .primary-search > input {
     display: block; }
 .nav-is-open .primary-search--dropdown {
@@ -5287,6 +5290,74 @@ td {
     text-decoration: none; }
 .ui-autocomplete li a:hover {
     color: #f9b625; }
+
+.tile__item {
+    background-color: white;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 29px;
+    text-align: left; }
+.tile__item > h4 {
+    margin-bottom: 0;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+    padding-left: 15px; }
+.tile__item > a > h4 {
+    color: #444444;
+    margin-bottom: 0;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px; }
+.tile__item > ul {
+    margin-bottom: 0;
+    padding-top: 7px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    font-size: 90%;
+    list-style: none; }
+.tile__item > ul li {
+    text-indent: -.5em; }
+.tile__item > ul li:before {
+    content: "\002022";
+    color: #f9b625;
+    display: inline-block;
+    width: .5em;
+    margin-left: .1em; }
+.tile__item > ol {
+    margin-bottom: 0;
+    padding-top: 7px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+    font-size: 90%; }
+.tile__item > p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 7px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    font-size: 90%; }
+.tile__item > a > p {
+    color: #444444;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 7px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    font-size: 90%; }
+.tile__item > .button {
+    margin-bottom: 15px;
+    margin-left: 15px; }
+.tile__item > div > img {
+    width: 100%;
+    display: block; }
 
 /**
  * Page components
@@ -5361,7 +5432,10 @@ td {
         transform: translateX(10px); } }
 
 .slider__mask, .slider {
-    height: 364px; }
+    height: 396px; }
+@media screen and (max-width: 33.8125em) {
+    .slider__mask, .slider {
+        height: 288px; } }
 
 .slider {
     max-width: 1100px; }
@@ -6177,10 +6251,7 @@ hr, .divider, .layout--full, .center-block, .centered,
 .decoration--none, .content-slider a {
     text-decoration: none; }
 
-.debug {
-    background-color: #007cb1; }
-
-.box-shadown--thin {
+.box-shadow--thin {
     -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);

@@ -19,7 +19,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <xcqb.version>3.0.0-SNAPSHOT</xcqb.version>
 
-
         <!-- Properties for deployment -->
         <cq.author.server>http://localhost:4504</cq.author.server>
         <cq.publish.server>http://localhost:4503</cq.publish.server>

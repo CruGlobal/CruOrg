@@ -2,6 +2,7 @@ package org.cru.util;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.google.common.primitives.Ints;
 import org.apache.commons.collections.IteratorUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
@@ -177,5 +178,71 @@ public class PageUtils {
     public static Page getContainingPage(final Resource componentResource){
         PageManager pageManager = componentResource.getResourceResolver().adaptTo(PageManager.class);
         return pageManager.getContainingPage(componentResource);
+    }
+
+    /**
+     * Checks if the name of the page is a valid month
+     * @param page the month page
+     * @return true if the page name is a number greater than 0 and less than 13
+     */
+    public static boolean isMonthPage(final Page page) {
+        boolean isMonthPage = false;
+        if (null != page) {
+            String pageName = page.getName();
+            Integer month = Ints.tryParse(pageName);
+            if (null != month && month > 0 && month < 13) {
+                isMonthPage = true;
+            }
+        }
+        return isMonthPage;
+    }
+
+    /**
+     * Checks if the name of the page is a valid day
+     * @param page the day page
+     * @return true if the page name is a number greater than 0 and less than 31
+     */
+    public static boolean isDayPage(final Page page) {
+        boolean isDayPage = false;
+        if (null != page) {
+            String pageName = page.getName();
+            Integer day = Ints.tryParse(pageName);
+            if (null != day && day > 0 && day <= 31) {
+                isDayPage = true;
+            }
+        }
+        return isDayPage;
+    }
+
+    /**
+     * Checks if the name of the page is a valid year
+     * @param page the year page
+     * @return true if the page name is a number greater than 0 and is 4 characters long
+     */
+    public static boolean isYearPage(final Page page) {
+        boolean isYearPage = false;
+        if (null != page) {
+            String pageName = page.getName();
+            Integer year = Ints.tryParse(pageName);
+            if (null != year && pageName.length() == 4 && year > 0) {
+                isYearPage = true;
+            }
+        }
+        return isYearPage;
+    }
+
+    /**
+     * Returns the page's number of children
+     * @param page the parent page
+     * @return the number of children or -1 if page is null
+     */
+    public static int numberOfChildren(final Page page) {
+        int numberOfChildren = -1;
+        if (null != page) {
+            Iterator<Page> pageIterator = page.listChildren();
+            List pageList = IteratorUtils.toList(pageIterator);
+            numberOfChildren = pageList.size();
+        }
+        return numberOfChildren;
     }
 }

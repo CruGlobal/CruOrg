@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="path" type="1" multiple="false">
+      <value><![CDATA[/apps/acs-commons/components/utilities/errorpagehandler/dialog/errorpages.infinity.json]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[cqinclude]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
