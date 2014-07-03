@@ -17,7 +17,7 @@
         <pkgMgrURL>${cq.server}/crx/packmgr/service.jsp</pkgMgrURL>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <xcqb.version>2.0.1.140</xcqb.version>
+        <xcqb.version>3.0.0-SNAPSHOT</xcqb.version>
 
 
         <!-- Properties for deployment -->
@@ -379,12 +379,6 @@
             <version>5.6</version>
         </dependency>
         <dependency>
-            <groupId>com.github.jknack</groupId>
-            <artifactId>handlebars</artifactId>
-            <version>1.2.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>net.minidev</groupId>
             <artifactId>json-smart</artifactId>
             <version>2.0-RC3</version>
@@ -431,7 +425,7 @@
         </dependency>
 
         <dependency>
-            <groupId>XumaK</groupId>
+            <groupId>XumaK-Zacapa</groupId>
             <artifactId>Base</artifactId>
             <version>${xcqb.version}</version>
         </dependency>
