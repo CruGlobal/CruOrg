@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="title" type="1" multiple="false">
-      <value><![CDATA[Image]]></value>
+    <property name="allowUpload" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
     </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[html5smartimage]]></value>
+    <property name="cropParameter" type="1" multiple="false">
+      <value><![CDATA[./imageCrop]]></value>
+    </property>
+    <property name="ddGroups" type="1" multiple="false">
+      <value><![CDATA[media]]></value>
+    </property>
+    <property name="fileNameParameter" type="1" multiple="false">
+      <value><![CDATA[./fileName]]></value>
+    </property>
+    <property name="fileReferenceParameter" type="1" multiple="false">
+      <value><![CDATA[./fileReference]]></value>
     </property>
     <property name="mapParameter" type="1" multiple="false">
       <value><![CDATA[./imageMap]]></value>
@@ -13,26 +25,20 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./file]]></value>
     </property>
-    <property name="fileReferenceParameter" type="1" multiple="false">
-      <value><![CDATA[./fileReference]]></value>
-    </property>
-    <property name="cropParameter" type="1" multiple="false">
-      <value><![CDATA[./imageCrop]]></value>
+    <property name="renditionSuffix" type="1" multiple="false">
+      <value><![CDATA[/_jcr_content/renditions/original]]></value>
     </property>
     <property name="requestSuffix" type="1" multiple="false">
       <value><![CDATA[.img.png]]></value>
     </property>
-    <property name="fileNameParameter" type="1" multiple="false">
-      <value><![CDATA[./fileName]]></value>
-    </property>
     <property name="rotateParameter" type="1" multiple="false">
       <value><![CDATA[./imageRotate]]></value>
     </property>
-    <property name="renditionSuffix" type="1" multiple="false">
-      <value><![CDATA[/_jcr_content/renditions/original]]></value>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Image]]></value>
     </property>
-    <property name="ddGroups" type="1" multiple="true">
-      <value><![CDATA[media]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[html5smartimage]]></value>
     </property>
   </properties>
   <mixins />

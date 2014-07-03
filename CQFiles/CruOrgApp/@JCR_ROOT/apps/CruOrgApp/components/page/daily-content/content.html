@@ -43,11 +43,11 @@
         	{%#include "article-share" as="CruOrgApp/components/section/article-share"%}{%/include%}
 
 
-
-        <figure>
             {%#if page.imagePath %}
+        <figure>
+
             <img src="{%page.imagePath%}"/>
-            {%/if%}
+
             {%#unless page.isCaptionEmpty %}
             <figcaption class="image__caption  default-view">
                 {%page.imageCaption%}
@@ -57,6 +57,7 @@
             </figcaption>
             {%/unless%}
         </figure>
+            {%/if%}
         	{%#include "post-body-parsys" as="foundation/components/parsys"%}{%/include%}
     <ol class="grid  pagination">
         {%#if page.previousPage %}

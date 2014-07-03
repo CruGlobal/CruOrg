@@ -8,7 +8,7 @@
       <value><![CDATA[550]]></value>
     </property>
     <property name="title" type="1" multiple="false">
-      <value><![CDATA[Tile]]></value>
+      <value><![CDATA[Link Tile]]></value>
     </property>
     <property name="width" type="1" multiple="false">
       <value><![CDATA[550]]></value>

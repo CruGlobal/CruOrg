@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
+    <property name="allowBlank" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Select the target page.]]></value>
+    </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Read more link]]></value>
-    </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[pathfield]]></value>
-    </property>
-    <property name="rootTitle" type="1" multiple="false">
-      <value><![CDATA[cru]]></value>
-    </property>
-    <property name="name" type="1" multiple="false">
-      <value><![CDATA[./href]]></value>
+      <value><![CDATA[Link]]></value>
     </property>
     <property name="linkPattern" type="1" multiple="false">
       <value><![CDATA[{0}.html]]></value>
     </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./href]]></value>
+    </property>
     <property name="rootPath" type="1" multiple="false">
       <value><![CDATA[/content/cru]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Select the target page.]]></value>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[cru]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
     </property>
   </properties>
   <mixins />

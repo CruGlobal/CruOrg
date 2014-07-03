@@ -1,5 +1,5 @@
 <a class="grid__item one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%} text--center" href="{% content.href %}">
-    <div class="tile">
+    <div class="tile__item">
         <div>
             {%#if content.imagePath %}
         		<img src="{% content.imagePath %}" alt="{% content.title %}">
@@ -8,14 +8,11 @@
         			<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
 				{%/if %}
         	{%/if%}
-            <h4 class="mb0  p-">{% content.title %}</h4>
+        </div>
 
-            </div>
-                 {%#if content.buttonType  %}
-                 <p class="text--left pb0 mb0 affordance">{%{ content.text }%}</p>
-                 {%else%}
-                 <p class="text--left pb0 mb0">{%{ content.text }%}</p>
-                 <btn class="button  me- {% content.readMoreStyle %}">{% content.readMore %}</btn>
-                 {%/if%} 
+        <h4 class="mb0  p-">{% content.title %}</h4>
+
+                {%{ content.text }%}
+                <btn class="button  me- {% content.readMoreStyle %}">{% content.readMore %}</btn>
             </div>
   </a>

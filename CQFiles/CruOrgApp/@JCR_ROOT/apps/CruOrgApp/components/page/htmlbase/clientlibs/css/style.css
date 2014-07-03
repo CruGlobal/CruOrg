@@ -1855,7 +1855,8 @@ html {
 
 body {
     font-family: "freight-sans-pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased; }
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-feature-settings: "lnum"; }
 
 /*------------------------------------*\
     $HEADINGS
@@ -2165,7 +2166,7 @@ legend {
 .text-input, .form-control {
     display: block;
     width: auto;
-    /**
+    /** 
      * Make inputs at least the height of their button counterpart (base line-height + padding + border)
      */
     height: 34.25px;
@@ -3964,7 +3965,7 @@ input[disabled]:focus,
     content: '\e808'; }
 
 /* '' */
-.icon-right-circle:before, .affordance:after, .tile > a > h4:after, .tile > a > p:after {
+.icon-right-circle:before, .affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
     content: '\e800'; }
 
 /* '' */
@@ -4296,7 +4297,7 @@ figcaption {
     margin-right: parseInt(12px)/19rem;
     /* 9 */ }
 
-.affordance:after, .tile > a > h4:after, .tile > a > p:after {
+.affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
     color: #f9b625;
     font-family: "cruicons";
     padding-left: 10px;
@@ -5290,7 +5291,7 @@ td {
 .ui-autocomplete li a:hover {
     color: #f9b625; }
 
-.tile {
+.tile__item {
     background-color: white;
     -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
@@ -5299,42 +5300,42 @@ td {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     margin-bottom: 29px;
     text-align: left; }
-.tile > h4 {
+.tile__item > h4 {
     margin-bottom: 0;
     padding-top: 15px;
     padding-right: 15px;
     padding-bottom: 7px;
     padding-left: 15px; }
-.tile > a > h4 {
+.tile__item > a > h4 {
     color: #444444;
     margin-bottom: 0;
     padding-top: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
     padding-left: 15px; }
-.tile > ul {
+.tile__item > ul {
     margin-bottom: 0;
     padding-top: 7px;
     padding-right: 15px;
     padding-bottom: 15px;
     font-size: 90%;
     list-style: none; }
-.tile > ul li {
+.tile__item > ul li {
     text-indent: -.5em; }
-.tile > ul li:before {
+.tile__item > ul li:before {
     content: "\002022";
     color: #f9b625;
     display: inline-block;
     width: .5em;
     margin-left: .1em; }
-.tile > ol {
+.tile__item > ol {
     margin-bottom: 0;
     padding-top: 7px;
     padding-right: 15px;
     padding-bottom: 15px;
     padding-left: 0px;
     font-size: 90%; }
-.tile > p {
+.tile__item > p {
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 7px;
@@ -5342,7 +5343,7 @@ td {
     padding-bottom: 15px;
     padding-left: 15px;
     font-size: 90%; }
-.tile > a > p {
+.tile__item > a > p {
     color: #444444;
     margin-top: 0;
     margin-bottom: 0;
@@ -5351,10 +5352,10 @@ td {
     padding-bottom: 15px;
     padding-left: 15px;
     font-size: 90%; }
-.tile > .button {
+.tile__item > .button {
     margin-bottom: 15px;
     margin-left: 15px; }
-.tile > div > img {
+.tile__item > div > img {
     width: 100%;
     display: block; }
 
@@ -5808,7 +5809,7 @@ td {
 .post-article figure > img {
     width: 100%; }
 
-/**
+/** 
  * Main image captions. Place the .image-credit within this.
  * Pulls the caption to the left of the image for wide screens
  * and centers it for smaller screens.
