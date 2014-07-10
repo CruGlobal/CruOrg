@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:ClientLibraryFolder">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="categories" type="1" multiple="false">
+      <value><![CDATA[cruOrg.ie.all]]></value>
+    </property>
+    <property name="embed" type="1" multiple="false">
+      <value><![CDATA[cruOrg.ie.page]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
