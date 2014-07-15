@@ -1,5 +1,5 @@
 #base=js
 modernizr.js
-masonry.min.js
-images-loaded.min.js
-apply-masonry.min.js
+masonry.js
+images-loaded.js
+apply-masonry.js
