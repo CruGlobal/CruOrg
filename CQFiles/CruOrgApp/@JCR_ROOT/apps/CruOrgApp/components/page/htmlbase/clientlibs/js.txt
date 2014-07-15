@@ -3,4 +3,3 @@ modernizr.js
 masonry.min.js
 images-loaded.min.js
 apply-masonry.min.js
-search-options.min.js
