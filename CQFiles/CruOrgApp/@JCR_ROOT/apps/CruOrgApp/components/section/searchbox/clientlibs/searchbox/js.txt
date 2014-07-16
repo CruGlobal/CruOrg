@@ -1,4 +1,4 @@
 base=.
 
-search-options.js
+search-options.min.js
 searchbox.js
