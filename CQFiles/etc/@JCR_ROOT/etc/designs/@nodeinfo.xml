@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Page">
+  <nodesOrder>
+    <value><![CDATA[default,cru]]></value>
+  </nodesOrder>
+  <properties />
+  <mixins />
+</node>
+
