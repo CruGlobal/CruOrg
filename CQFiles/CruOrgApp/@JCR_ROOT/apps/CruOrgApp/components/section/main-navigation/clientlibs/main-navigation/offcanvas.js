@@ -153,14 +153,23 @@
 
 /*
  * Detect Browser Width
- */
+*/
 
 // On Page Load
 $(window).ready(function() {
     var wi = $(window).width();
     if (wi <= 980){
 
-        $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
+       $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
+       $( "ul.site-nav > li.nav__item" ).addClass( "nav__item-closed" );
+        //Click To Open Off Canvas Main Nav
+       $( "li.nav__item-closed" ).click(function(){
+           $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
+           $(this).children("div").addClass( "off-canvas-desk-is-open" );
+       });
+       $( "li.nav__item-closed > a.primary-link" ).click(function(e){
+       		e.preventDefault();
+       });
     }
     else {
         $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open off-canvas-desk-is-collapsed" ).addClass( "dropdown" );
@@ -171,17 +180,20 @@ $(window).ready(function() {
 
         if (wi <= 980){
             $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
+            $( "ul.site-nav > li.nav__item" ).addClass( "nav__item-closed" );
             //Click To Open Off Canvas Main Nav
-            $('li.nav__item').click(function(event){
-                event.preventDefault();
+            $( "li.nav__item" ).click(function(){
                 $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
                 $(this).children("div").addClass( "off-canvas-desk-is-open" );
             });
-            
+            $( "li.nav__item-closed > a.primary-link" ).click(function(e){
+            		e.preventDefault();
+            });
+
         }
         else {
+        		$( "ul.site-nav > li.nav__item" ).removeClass( "nav__item-closed" );
             $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open off-canvas-desk-is-collapsed" ).addClass( "dropdown" );
         }
     });
 });
-
