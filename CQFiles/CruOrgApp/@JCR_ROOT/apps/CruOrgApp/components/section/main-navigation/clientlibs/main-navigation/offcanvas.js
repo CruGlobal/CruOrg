@@ -171,6 +171,13 @@ $(window).ready(function() {
 
         if (wi <= 980){
             $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
+            //Click To Open Off Canvas Main Nav
+            $('li.nav__item').click(function(event){
+                event.preventDefault();
+                $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
+                $(this).children("div").addClass( "off-canvas-desk-is-open" );
+            });
+            
         }
         else {
             $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open off-canvas-desk-is-collapsed" ).addClass( "dropdown" );
@@ -178,11 +185,3 @@ $(window).ready(function() {
     });
 });
 
-/*
- * Click To Open Off Canvas Main Nav
- */
-$('li.nav__item').click(function(event){
-    event.preventDefault();
-    $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
-    $(this).children("div").addClass( "off-canvas-desk-is-open" );
-});
