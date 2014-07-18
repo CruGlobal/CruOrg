@@ -7,8 +7,9 @@
     <property name="categories" type="1" multiple="false">
       <value><![CDATA[cruOrg.ie.all]]></value>
     </property>
-    <property name="embed" type="1" multiple="false">
+    <property name="embed" type="1" multiple="true">
       <value><![CDATA[cruOrg.ie.page]]></value>
+      <value><![CDATA[cruOrg.ie.section]]></value>
     </property>
   </properties>
   <mixins />

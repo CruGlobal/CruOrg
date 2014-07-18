@@ -4,8 +4,9 @@
     <value />
   </nodesOrder>
   <properties>
-    <property name="category" type="1" multiple="false">
+    <property name="categories" type="1" multiple="true">
       <value><![CDATA[cruOrg.ie.page]]></value>
+      <value><![CDATA[cruOrg.ie.page.htmlbase]]></value>
     </property>
   </properties>
   <mixins />
