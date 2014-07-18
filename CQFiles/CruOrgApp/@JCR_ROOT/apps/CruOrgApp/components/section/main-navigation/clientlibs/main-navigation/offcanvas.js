@@ -161,15 +161,15 @@ $(window).ready(function() {
     if (wi <= 980){
 
        $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
-       $( "ul.site-nav > li.nav__item" ).addClass( "nav__item-closed" );
-        //Click To Open Off Canvas Main Nav
-       $( "li.nav__item-closed" ).click(function(){
+       //Click To Open Off Canvas Main Nav
+       $( "li.nav__item > a.primary-link" ).unbind("click");
+       $( "li.nav__item > a.primary-link" ).click(function(e){
+       		 e.preventDefault();
            $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
-           $(this).children("div").addClass( "off-canvas-desk-is-open" );
+           $(this).siblings("div").addClass( "off-canvas-desk-is-open" );
+           $(this).unbind("click");
        });
-       $( "li.nav__item-closed > a.primary-link" ).click(function(e){
-       		e.preventDefault();
-       });
+
     }
     else {
         $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open off-canvas-desk-is-collapsed" ).addClass( "dropdown" );
@@ -179,21 +179,20 @@ $(window).ready(function() {
         var wi = $(window).width();
 
         if (wi <= 980){
+        		console.log("<= 980)");
             $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
-            $( "ul.site-nav > li.nav__item" ).addClass( "nav__item-closed" );
             //Click To Open Off Canvas Main Nav
-            $( "li.nav__item" ).click(function(){
+            $( "li.nav__item > a.primary-link" ).unbind("click");
+						$( "li.nav__item > a.primary-link" ).click(function(e){
+								e.preventDefault();
                 $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
-                $(this).children("div").addClass( "off-canvas-desk-is-open" );
-            });
-            $( "li.nav__item-closed > a.primary-link" ).click(function(e){
-            		e.preventDefault();
+                $(this).siblings("div").addClass( "off-canvas-desk-is-open" );
             });
 
         }
         else {
-        		$( "ul.site-nav > li.nav__item" ).removeClass( "nav__item-closed" );
             $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open off-canvas-desk-is-collapsed" ).addClass( "dropdown" );
+            $( "li.nav__item > a.primary-link" ).unbind("click");
         }
     });
 });
