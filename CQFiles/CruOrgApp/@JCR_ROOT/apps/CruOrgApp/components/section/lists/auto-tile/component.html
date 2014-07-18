@@ -1,0 +1,29 @@
+{%#if list.pages %}
+    	{%#each list.pages %}
+<div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+    <div class="tile__item">
+      <div>
+			{%#if this.imagePath %}
+        		<img class="mb-" src="{% this.imagePath %}" alt="{% this.title %}">
+        	{%else%}
+				{%#if page.isEditMode %}
+        			<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+				{%/if %}
+
+        	{%/if%}
+      </div>
+      <h4 class="mb0  p-">{% this.title %}</h4>
+		<p class="text--left mb0  ps-">
+          {%{ this.description }%}
+          </p>
+ 		{%#if this.path %}
+        	<a class="button me- {% content.readMoreStyle %}" href="{% this.path %}.html">{% content.readMore %}</a>
+        {%/if%}
+    </div>
+  </div>
+		{%/each%}
+{%else%}
+	{%#if page.isEditMode %}
+    	<p>Please add Root Path in the dialog.</p>
+    {%/if%}
+{%/if%}
