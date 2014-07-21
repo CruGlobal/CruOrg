@@ -2,10 +2,7 @@
 <node nodeType="cq:ClientLibraryFolder">
   <properties>
     <property name="categories" type="1" multiple="false">
-      <value><![CDATA[cruOrg.ie.all]]></value>
-    </property>
-    <property name="embed" type="1" multiple="false">
-      <value><![CDATA[cruOrg.ie.page]]></value>
+      <value><![CDATA[cq.wcm.edit]]></value>
     </property>
   </properties>
   <mixins />

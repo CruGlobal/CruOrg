@@ -153,14 +153,23 @@
 
 /*
  * Detect Browser Width
- */
+*/
 
 // On Page Load
 $(window).ready(function() {
     var wi = $(window).width();
     if (wi <= 980){
 
-        $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
+       $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
+       //Click To Open Off Canvas Main Nav
+       $( "li.nav__item > a.primary-link" ).unbind("click");
+       $( "li.nav__item > a.primary-link" ).click(function(e){
+       		 e.preventDefault();
+           $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
+           $(this).siblings("div").addClass( "off-canvas-desk-is-open" );
+           $(this).unbind("click");
+       });
+
     }
     else {
         $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open off-canvas-desk-is-collapsed" ).addClass( "dropdown" );
@@ -170,19 +179,20 @@ $(window).ready(function() {
         var wi = $(window).width();
 
         if (wi <= 980){
+        		console.log("<= 980)");
             $( "li.nav__item > div" ).removeClass( "dropdown" ).addClass( "off-canvas-desk-is-collapsed" );
+            //Click To Open Off Canvas Main Nav
+            $( "li.nav__item > a.primary-link" ).unbind("click");
+						$( "li.nav__item > a.primary-link" ).click(function(e){
+								e.preventDefault();
+                $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
+                $(this).siblings("div").addClass( "off-canvas-desk-is-open" );
+            });
+
         }
         else {
             $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open off-canvas-desk-is-collapsed" ).addClass( "dropdown" );
+            $( "li.nav__item > a.primary-link" ).unbind("click");
         }
     });
-});
-
-/*
- * Click To Open Off Canvas Main Nav
- */
-$('li.nav__item').click(function(event){
-    event.preventDefault();
-    $( "li.nav__item > div" ).removeClass( "off-canvas-desk-is-open");
-    $(this).children("div").addClass( "off-canvas-desk-is-open" );
 });
