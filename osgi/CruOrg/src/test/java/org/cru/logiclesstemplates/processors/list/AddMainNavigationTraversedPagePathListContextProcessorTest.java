@@ -62,7 +62,7 @@ public class AddMainNavigationTraversedPagePathListContextProcessorTest {
         */
         Iterator<Page> pageIterator = simulatePageList(0);
         when(page.listChildren(any(PageFilter.class))).thenReturn(pageIterator);
-        assertNotNull(mainNavigationTraversedPagePathList.extractPathList(page, request, 2));
+        assertNotNull(mainNavigationTraversedPagePathList.extractNavPathList(page, null, 2, 2));
 
 
         /*
@@ -83,7 +83,8 @@ public class AddMainNavigationTraversedPagePathListContextProcessorTest {
         Iterator<Page> expectingPageIterator = simulatePageList(3);
         Collection<Map<String, Object>> expectingResult = simulatedNavigationList(expectingPageIterator, 3);
 
-        assertEquals(expectingResult, mainNavigationTraversedPagePathList.extractPathList(page, request, 2));
+        assertEquals(expectingResult,
+            mainNavigationTraversedPagePathList.extractNavPathList(page, null, 2, 2));
 
     }
 
