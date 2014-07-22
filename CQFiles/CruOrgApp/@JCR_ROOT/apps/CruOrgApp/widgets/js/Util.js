@@ -190,15 +190,37 @@ Cru.widgets.Util = {
                     valid = true;
                 }
             }
-            if (valid) {
-                return valid;
-            } else {
-                return "Please add 'http://' or 'https://' at the beggining of the link.";	
-            }
+            return valid? valid : "Please add http://' or 'https://' at the beginning of the link.";
         } else {
             return valid;
         }
 	},
+
+    /**
+     * Checks if the link is external and validates
+     * that contains the text 'mailto:', 'http://' or 'https://' on it.
+     * @param text to validate
+     * @return validated text
+     */
+    rteExternalLinkValidation : function(text) {
+        if (!text) return true;
+
+        var validArray = ["http://","https://","mailto:"],
+            length = validArray.length,
+            valid = true;
+
+        if (text.indexOf("/")!=0) {
+            valid = false;
+            while(length--) {
+                if ((text.indexOf(validArray[length])!=-1)) {
+                    valid = true;
+                }
+            }
+            return valid? valid : "Please add 'mailto:', http://' or 'https://' at the beginning of the link.";
+        } else {
+            return valid;
+        }
+    },
 
     /**
      * checks for blank spaces on the text
