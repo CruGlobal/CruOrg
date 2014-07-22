@@ -1,11 +1,13 @@
 $(document).ready(function() {
-    var $container = $('.tile-container-parsys');
-    $container.imagesLoaded( function(){
-        setTimeout(function() {
-            $container.masonry({
-                itemSelector : '.grid__item'
-            });
-        }, 200);
-
-    });
+    if(typeof CQ === 'undefined') { // only when WCM Mode is disabled
+        var $container = $('.parsys');
+        $container.imagesLoaded( function(){
+            setTimeout(function() {
+                $container.masonry({
+                    itemSelector : '.grid__item'
+                });
+            }, 200);
+    
+        });
+    }
 });

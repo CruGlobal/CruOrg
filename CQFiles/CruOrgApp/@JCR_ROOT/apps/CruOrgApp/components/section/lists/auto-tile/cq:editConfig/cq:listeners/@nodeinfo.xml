@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="afterinsert" type="1" multiple="false">
-      <value><![CDATA[REFRESH_PARENT]]></value>
-    </property>
     <property name="afteredit" type="1" multiple="false">
       <value><![CDATA[REFRESH_PARENT]]></value>
     </property>
-    <property name="afterrender" type="1" multiple="false">
-      <value><![CDATA[function(container){
-Cru.components.tile.afterRender(container);
-    }]]></value>
+    <property name="afterinsert" type="1" multiple="false">
+      <value><![CDATA[REFRESH_PARENT]]></value>
     </property>
   </properties>
   <mixins />
