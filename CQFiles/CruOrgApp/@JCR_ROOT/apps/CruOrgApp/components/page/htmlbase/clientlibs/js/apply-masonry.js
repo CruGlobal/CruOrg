@@ -1,13 +1,10 @@
 $(document).ready(function() {
     if(typeof CQ === 'undefined') { // only when WCM Mode is disabled
-        var $container = $('.parsys');
-        $container.imagesLoaded( function(){
-            setTimeout(function() {
-                $container.masonry({
-                    itemSelector : '.grid__item'
-                });
-            }, 200);
-    
+        $('.parsys').masonry({
+            columnWidth: 1,
+            itemSelector: '.grid__item'
+        }).imagesLoaded(function() {
+            $('.parsys').masonry('reload');
         });
     }
 });
