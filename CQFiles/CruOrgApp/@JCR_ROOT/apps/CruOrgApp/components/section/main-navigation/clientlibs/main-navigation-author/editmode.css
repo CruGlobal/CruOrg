@@ -1,0 +1,5 @@
+
+.site-header,
+.navigation {
+    z-index: 9000;
+}

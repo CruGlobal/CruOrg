@@ -117,7 +117,7 @@ CQ.Ext.override(CUI.rte.plugins.LinkPlugin, {
             this.linkDialog = dialogHelper.create();
             //added validation for the link path field
              this.linkDialog.dialogItems.items[0].validator = function(){
-                return Cru.widgets.Util.externalLinkValidation(this.getValue());
+                return Cru.widgets.Util.rteExternalLinkValidation(this.getValue());
              };
             dialogHelper.calculateInitialPosition();
         }
