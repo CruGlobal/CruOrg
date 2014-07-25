@@ -4,7 +4,7 @@ $(document).ready(function() {
             columnWidth: 1,
             itemSelector: '.grid__item'
         }).imagesLoaded(function() {
-            $('.parsys').masonry('reload');
+            $('.parsys').masonry();
         });
     }
 });
