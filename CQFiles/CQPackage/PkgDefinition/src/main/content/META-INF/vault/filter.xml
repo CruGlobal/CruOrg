@@ -4,4 +4,5 @@
     <filter root="/apps/sling"/>
     <filter root="/etc/designs/CruOrgApp"/>
     <filter root="/etc/static/CruOrgApp"/>
+    <filter root="/etc/rteconfig"/>
 </workspaceFilter>
