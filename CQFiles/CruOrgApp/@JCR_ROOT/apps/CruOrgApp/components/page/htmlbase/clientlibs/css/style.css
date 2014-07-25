@@ -6245,6 +6245,12 @@ hr, .divider, .layout--full, .center-block, .centered,
   margin-right: auto; }
 
 /**
+ * Borders
+ */
+.border-bottom-solid {
+  border-bottom: 1px solid #aaaaaa; }
+
+/**
  * Pull items full width of `.island` parents.
  */
 .full-bleed {
