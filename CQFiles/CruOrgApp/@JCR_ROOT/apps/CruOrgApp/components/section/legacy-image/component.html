@@ -2,13 +2,13 @@
 	<img src="{%content.imagePath%}"/>
     {%#unless content.isCaptionEmpty%}
 	<figcaption class="image__caption">
-		{%content.caption%}
-    	{%#if content.credit%}
-			<span class="image-credit">{%content.credit%}</span>
+		{%content.imageCaption%}
+    	{%#if content.imageCredit%}
+			<span class="image-credit">{%content.imageCredit%}</span>
         {%/if%}
 	</figcaption>
     {%/unless%}
 </figure>
- {%#if page.isEditMode%}
-    <div style="clear:both;"></div>
-    {%/if%}
+{%#if page.isEditMode%}
+	<div style="clear:both;"></div>
+{%/if%}
