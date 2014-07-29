@@ -2,12 +2,12 @@
 {%#if page.isEditMode %}
 <div class="bordered">
 {%/if%}
-<article class="post-article">
+<article class="post-article  color-white box-shadow--thin  layout--full">
 
         <!-- ARTICLE HEADLINE COMPONENT -->
         <header class="post__headline  layout-single-column">
 
-        <h1 class="post-title">{% content.title %}</h1>
+        <h1 class="post-title pt_x">{% content.title %}</h1>
 
         <!-- Goes in between the article title and the article metadata -->
         {%#if content.subtitle %}
@@ -35,7 +35,7 @@
 
         
         <!-- POST BODY -->
-        <div class="post__body  layout-single-column">
+        <div class="post__body  layout-single-column pb_x">
             {%#include "article-share" as="CruOrgApp/components/section/article-share"%}{%/include%}
 
             <!-- Legacy Image -->
