@@ -3777,6 +3777,32 @@ input[disabled]:focus,
   margin-left: 15px; }
 
 /**
+ * Large Margins.
+ */
+.m_x {
+  margin: 58px; }
+
+.mt_x {
+  margin-top: 58px; }
+
+.mr_x {
+  margin-right: 58px; }
+
+.mb_x {
+  margin-bottom: 58px; }
+
+.ml_x {
+  margin-left: 58px; }
+
+.me_x {
+  margin-top: 58px;
+  margin-bottom: 58px; }
+
+.ms_x {
+  margin-right: 58px;
+  margin-left: 58px; }
+
+/**
  * Remove margins.
  */
 .m0, .media__body,
@@ -3882,6 +3908,32 @@ input[disabled]:focus,
   padding-left: 15px; }
 
 /**
+ * Large paddings.
+ */
+.p_x {
+  padding: 58px; }
+
+.pt_x {
+  padding-top: 58px; }
+
+.pr_x {
+  padding-right: 58px; }
+
+.pb_x {
+  padding-bottom: 58px; }
+
+.pl_x {
+  padding-left: 58px; }
+
+.pe_x {
+  padding-top: 58px;
+  padding-bottom: 58px; }
+
+.ps_x {
+  padding-right: 58px;
+  padding-left: 58px; }
+
+/**
  * Remove paddings.
  */
 .p0 {
@@ -3922,8 +3974,8 @@ input[disabled]:focus,
  */
 @font-face {
   font-family: 'cruicons';
-  src: url("/fonts/cruicons.eot?13550619");
-  src: url("/fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("/fonts/cruicons.woff?13550619") format("woff"), url("/fonts/cruicons.ttf?13550619") format("truetype"), url("/fonts/cruicons.svg?13550619#cruicons") format("svg");
+  src: url("fonts/cruicons.eot?13550619");
+  src: url("fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("fonts/cruicons.woff?13550619") format("woff"), url("fonts/cruicons.ttf?13550619") format("truetype"), url("fonts/cruicons.svg?13550619#cruicons") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -4663,8 +4715,8 @@ td {
     vertical-align: middle;
     width: 74px;
     height: 54px;
-    background: url("/images/cru-logo.png");
-    background-image: url("/images/cru-logo.svg");
+    background: url("images/cru-logo.png");
+    background-image: url("images/cru-logo.svg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain; }
@@ -5195,6 +5247,10 @@ td {
   background-color: #ffffff;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px; }
+
+/*-- added for you are here functionality, adds underline to main nav item --*/
+.primary-link-active {
+  text-decoration: underline !important; }
 
 /*
 .navigation{
@@ -5928,7 +5984,29 @@ td {
 /*figure*/
 .image--outset__left {
   width: 100%;
-  clear: both; }
+  clear: both;
+    /*
+	& > .image__caption{
+		@include mq(1300px) {
+			position: absolute;
+			left: -172px;
+			width: 150px;
+			top: 0;
+			text-align: right;
+			margin-top: 0;
+			line-height: 1.6;
+	
+			&:before{
+				width: 25%;
+				margin-left: 75%;
+				border-top: 1px solid #ddd;
+				display: block;
+				content: "";
+				margin-bottom: 10px;
+			}
+		}
+	}
+    */ }
   @media screen and (min-width: 61.3125em) {
     .image--outset__left {
       float: left;
@@ -5937,22 +6015,6 @@ td {
       margin-bottom: 10px;
       width: 75%;
       margin-left: -100px; } }
-  @media screen and (min-width: 81.25em) {
-    .image--outset__left > .image__caption {
-      position: absolute;
-      left: -172px;
-      width: 150px;
-      top: 0;
-      text-align: right;
-      margin-top: 0;
-      line-height: 1.6; }
-      .image--outset__left > .image__caption:before {
-        width: 25%;
-        margin-left: 75%;
-        border-top: 1px solid #ddd;
-        display: block;
-        content: "";
-        margin-bottom: 10px; } }
 
 /*figure*/
 @media screen and (min-width: 61.3125em) {
