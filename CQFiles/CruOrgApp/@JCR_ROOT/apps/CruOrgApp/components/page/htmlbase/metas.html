@@ -1,18 +1,31 @@
-<title>{%page.title%}</title>
-<!--TODO point to correct path-->
-<link rel="shortcut icon" href="/icon.png">
-
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0">
-<meta name="apple-mobile-web-app-title" content="cru.org">
-<!--TODO make description dynamic -->
-<meta name="description" content="Cru helps people in every segment of society -- from students to athletes to families to business professionals -- truly follow Jesus Christ.">
-
-<!-- Prefetch DNS for external assets (Twitter widgets etc). -->
-<link rel="dns-prefetch" href="//use.typekit.com">
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-<link rel="dns-prefetch" href="//www.ajax.googleapis.com.com">
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-<link rel="dns-prefetch" href="//cdn.api.twitter.com">
-<link rel="dns-prefetch" href="//p.twitter.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-title" content="cru.org">
+    <meta content="Oh2sCc1p9XP29+2XSvbzRrfta37de2qDQ/8YkLERinU=" name="verify-v1" />
+    <meta property="fb:app_id" content="116517098374395" />
+    <link rel="shortcut icon" href="/icon.png">
+    <link href="https://plus.google.com/u/0/110018976597685338404" rel="publisher" />
+    <link href="{%page.requestURL%}" rel="canonical" />
+    
+    
+    <title>{%page.title%}</title>
+    {%#if page.description%}<meta name="description" content="{%page.description%}" />{%/if%}
+    {%! {{#if page.tags}} <meta name="keywords" content="{{page.tags}}" /> %}
+    <meta property="og:title" content="{%page.title%}" />
+    <meta property="og:url" content="{%page.requestURL%}" />
+    {%#if page.description%}<meta property="og:description" content="{%page.description%}" />{%/if%}
+    <meta property="og:site_name" content="Cru.org" />
+    {%#if page.imagePath%}<meta property="og:image" content="{%page.imagePath%}" />{%/if%}
+    {%> extrametas %}
+    
+    <!-- Prefetch DNS for external assets (Twitter widgets etc). -->
+    <link rel="dns-prefetch" href="//use.typekit.com">
+    <link rel="dns-prefetch" href="//google-analytics.com">
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//p.twitter.com">
+    <link rel="dns-prefetch" href="//www.facebook.com">
+    <link rel="dns-prefetch" href="//connect.facebook.net">
+    <link rel="dns-prefetch" href="//static.ak.facebook.com">
+    <link rel="dns-prefetch" href="//static.ak.fbcdn.net">
+    <link rel="dns-prefetch" href="//s-static.ak.facebook.com">
