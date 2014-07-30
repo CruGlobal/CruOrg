@@ -2,7 +2,7 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/CruOrgApp"/>
     <filter root="/apps/sling"/>
-    <filter root="/etc/designs/CruOrgApp"/>
+    <filter root="/etc/designs/cru"/>
     <filter root="/etc/static/CruOrgApp"/>
     <filter root="/etc/rteconfig"/>
 </workspaceFilter>
