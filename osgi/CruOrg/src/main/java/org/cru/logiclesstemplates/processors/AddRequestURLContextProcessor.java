@@ -31,13 +31,13 @@ import static com.xumak.base.Constants.HTML_EXT;
 public class AddRequestURLContextProcessor extends AbstractResourceTypeCheckContextProcessor <TemplateContentModel>{
 
     public static final String CONTENT_MODEL_SERVLET_SUFFIX = "/_jcr_content.contentmodel.page.json";
-    public static final String FACEBOOK_COMMENTS_FEED_RESOURCE_TYPE =
-            "CruOrgApp/components/page/article";
+    public static final String HTMLBASE_PAGE_RESOURCE_TYPE =
+            "CruOrgApp/components/page/htmlbase";
     public static final String REQUEST_URL_KEY = "requestURL";
 
     @Override
     public Set<String> requiredResourceTypes() {
-        return Sets.newHashSet(FACEBOOK_COMMENTS_FEED_RESOURCE_TYPE);
+        return Sets.newHashSet(HTMLBASE_PAGE_RESOURCE_TYPE);
     }
 
     @Override
