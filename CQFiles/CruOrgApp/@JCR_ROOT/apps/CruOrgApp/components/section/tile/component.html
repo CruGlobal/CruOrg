@@ -1,19 +1,34 @@
-<div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
     <div class="tile__item">
-      <div>
 			{%#if content.imagePath %}
-        		<img class="mb-" src="{% content.imagePath %}" alt="{% content.title %}">
+        		<div>
+                    {%#if content.href %}
+                         <a href="{% content.href %}">
+                    {%/if %}
+                    <img src="{% content.imagePath %}" alt="{% content.title %}">
+                    {%#if content.href %}
+                         </a>
+                    {%/if %}
+                </div>
         	{%else%}
 				{%#if page.isEditMode %}
-        			<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+        			<div><img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif"></div>
 				{%/if %}
 
         	{%/if%}
-      </div>
-      <h4 class="mb0  p-">{% content.title %}</h4>
+      {%#if content.title %}
+        {%#if content.href %}
+            <a href="{% content.href %}">
+        {%/if %}
+        <h4>{% content.title %}</h4>
+        {%#if content.href %}
+            </a>
+        {%/if %}
+      {%/if %}
+
           {%{ content.text }%}
  		{%#if content.href %}
-        	<a class="button me- {% content.readMoreStyle %}" href="{% content.href %}">{% content.readMore %}</a>
+        	<a class="button button--small {% content.readMoreStyle %}" href="{% content.href %}">{% content.readMore %}</a>
         {%/if%}
     </div>
   </div>
