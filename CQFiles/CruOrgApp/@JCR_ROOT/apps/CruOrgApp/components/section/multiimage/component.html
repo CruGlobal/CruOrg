@@ -1,0 +1,30 @@
+
+        <h3>MULTI IMAGE COMPONENT cru</h3>
+
+    <ul class="row">
+        {%#each content.multiimage %}
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="list-style: none">
+                <img class="img-responsive img-rounded" src="{% this.src %}">
+            </li>
+        {%/each%}
+        <!--Design images-->
+        {%#each page.multiimage %}
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="list-style: none">
+                <img class="img-responsive img-rounded" src="{% this.src %}">
+            </li>
+        {%/each%}
+    </ul>
+
+
+content.file: {% content.0.file %} <br/>
+content.file: {% content.1.file %} <br/>
+content.src: {% content.src %} <br/>
+content.imagePath: {%content.imagePath%} <br/>
+
+content.secondImagePath: {%content.secondImagePath%} <br/>
+content.1: {% content.img0 %} <br/>
+content.1: {% content.img1 %} <br/>
+content.0: {% content.img0.src %} <br/>
+content.1: {% content.img1.src %} <br/>
+img1.src {% img1.src %}
+img0.src {% img10.src %}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="ignoreData" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./secondimage/imageRenditionName]]></value>
+    </property>
+    <property name="value" type="1" multiple="false">
+      <value><![CDATA[Cru704x396]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[hidden]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

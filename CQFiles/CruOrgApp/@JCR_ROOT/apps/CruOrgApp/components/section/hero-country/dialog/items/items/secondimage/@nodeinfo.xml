@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="allowUpload" type="1" multiple="false">
+      <value><![CDATA[false]]></value>
+    </property>
+    <property name="ddGroups" type="1" multiple="false">
+      <value><![CDATA[media]]></value>
+    </property>
+    <property name="fileNameParameter" type="1" multiple="false">
+      <value><![CDATA[./secondimage/fileName]]></value>
+    </property>
+    <property name="fileReferenceParameter" type="1" multiple="false">
+      <value><![CDATA[./secondimage/fileReference]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./secondimage/file]]></value>
+    </property>
+    <property name="sizeLimit" type="1" multiple="false">
+      <value><![CDATA[100]]></value>
+    </property>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Country Map Image]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[html5smartimage]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
