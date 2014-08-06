@@ -112,7 +112,7 @@ public class AddMainNavigationTraversedPagePathListContextProcessorTest {
      * @return Collection with detail data of pages.
      */
     private  Collection<Map<String, Object>> simulatedNavigationList(final Iterator<Page> children, final int depth){
-        Collection<Map<String, Object>> pathList = new ArrayList<>();
+        Collection<Map<String, Object>> pathList = new ArrayList<Map<String, Object>>();
         while (children.hasNext()) {
             children.next();
             Collection<Map<String, Object>> childPaths = simulatedNavigationList(children, depth - 1);
