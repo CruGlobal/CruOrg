@@ -61,7 +61,7 @@ public class AddMainNavigationTraversedPagePathListContextProcessor
             if (contentModel.has(pathRefListContentKeyName)) {
                 String pathRef = contentModel.getAsString(pathRefListContentKeyName);
 
-                Collection<Map<String, Object>> pathList = new ArrayList<>();
+                Collection<Map<String, Object>> pathList = new ArrayList<Map<String, Object>>();
                 if (pathRef != null) {
                     Page page = pageManager.getContainingPage(pathRef);
                     int depth = LIST_DEFAULT_DEPTH;
@@ -88,13 +88,13 @@ public class AddMainNavigationTraversedPagePathListContextProcessor
      */
     public Collection<Map<String, Object>>
             extractNavPathList(final Page page, final Filter<Page> filter, final int depth, final int absoluteDepth) {
-        List<Map<String, Object>> pathList = new ArrayList<>();
-        List<Map<String, Object>> tmpPathList = new ArrayList<>(); //help for breakNav
+        List<Map<String, Object>> pathList = new ArrayList<Map<String, Object>>();
+        List<Map<String, Object>> tmpPathList = new ArrayList<Map<String, Object>>(); //help for breakNav
         Iterator<Page> children = page.listChildren(filter);
         if (depth > 0) {
             while (children.hasNext()) {
                 Page child = children.next();
-                Map<String, Object> currentPath = new HashMap<>();
+                Map<String, Object> currentPath = new HashMap<String, Object>();
                 String path = child.getPath();
                 Collection<Map<String, Object>> childPaths =
                         extractNavPathList(child, filter, depth - 1, absoluteDepth);
@@ -105,7 +105,7 @@ public class AddMainNavigationTraversedPagePathListContextProcessor
                     Boolean isBreakNav = child.getProperties().containsKey(BREAK_NAV_KEY);
                     if (isBreakNav && !tmpPathList.isEmpty()) {
                         pathList.add(getSecondMap(page.getPath(), tmpPathList));
-                        tmpPathList = new ArrayList<>();
+                        tmpPathList = new ArrayList<Map<String, Object>>();
                     }
                     tmpPathList.add(currentPath);
                 } else {
@@ -122,7 +122,7 @@ public class AddMainNavigationTraversedPagePathListContextProcessor
     }
 
     private Map<String, Object> getSecondMap(final String path, final Collection<Map<String, Object>> paths){
-        Map<String, Object> newPath = new HashMap<>();
+        Map<String, Object> newPath = new HashMap<String, Object>();
         newPath.put(PATH_DETAILS_LIST_PATH_PROPERTY_NAME, path);
         newPath.put(PATH_DETAILS_LIST_PATHS_PROPERTY_NAME, paths);
         return  newPath;
