@@ -11,7 +11,7 @@
       <value><![CDATA[./secondimage/imageRenditionName]]></value>
     </property>
     <property name="value" type="1" multiple="false">
-      <value><![CDATA[Cru704x396]]></value>
+      <value><![CDATA[CruHalf432x243]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[hidden]]></value>

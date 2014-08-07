@@ -11,7 +11,7 @@
       <value><![CDATA[Hero: Country Profile]]></value>
     </property>
     <property name="sling:resourceSuperType" type="1" multiple="false">
-      <value><![CDATA[xumakbase/components/section/images/single]]></value>
+      <value><![CDATA[xumakbase/components/section/images/double]]></value>
     </property>
   </properties>
   <mixins />

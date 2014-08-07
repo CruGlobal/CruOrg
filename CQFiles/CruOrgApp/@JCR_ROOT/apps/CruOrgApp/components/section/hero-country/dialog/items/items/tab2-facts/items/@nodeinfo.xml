@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
   <nodesOrder>
-    <value><![CDATA[population,languages,location,rendition,width,secondrendition]]></value>
+    <value><![CDATA[population,languages,location,rendition,width,secondrendition,website,spiritual-climate]]></value>
   </nodesOrder>
   <properties />
   <mixins />

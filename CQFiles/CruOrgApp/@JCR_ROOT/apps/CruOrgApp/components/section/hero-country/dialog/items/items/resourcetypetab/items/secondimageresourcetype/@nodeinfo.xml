@@ -4,6 +4,9 @@
     <value />
   </nodesOrder>
   <properties>
+    <property name="ignoreData" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
+    </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./secondimage/sling:resourceType]]></value>
     </property>

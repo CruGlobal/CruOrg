@@ -4,8 +4,8 @@
     <value />
   </nodesOrder>
   <properties>
-    <property name="allowUpload" type="1" multiple="false">
-      <value><![CDATA[false]]></value>
+    <property name="cropParameter" type="1" multiple="false">
+      <value><![CDATA[./imageCrop]]></value>
     </property>
     <property name="ddGroups" type="1" multiple="false">
       <value><![CDATA[media]]></value>
@@ -16,11 +16,17 @@
     <property name="fileReferenceParameter" type="1" multiple="false">
       <value><![CDATA[./fileReference]]></value>
     </property>
+    <property name="mapParameter" type="1" multiple="false">
+      <value><![CDATA[./imageMap]]></value>
+    </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./file]]></value>
     </property>
-    <property name="sizeLimit" type="1" multiple="false">
-      <value><![CDATA[100]]></value>
+    <property name="requestSuffix" type="1" multiple="false">
+      <value><![CDATA[.img.png]]></value>
+    </property>
+    <property name="rotateParameter" type="1" multiple="false">
+      <value><![CDATA[./imageRotate]]></value>
     </property>
     <property name="title" type="1" multiple="false">
       <value><![CDATA[Hero Image]]></value>

@@ -4,8 +4,8 @@
     <value />
   </nodesOrder>
   <properties>
-    <property name="allowUpload" type="1" multiple="false">
-      <value><![CDATA[false]]></value>
+    <property name="cropParameter" type="1" multiple="false">
+      <value><![CDATA[./secondimage/imageCrop]]></value>
     </property>
     <property name="ddGroups" type="1" multiple="false">
       <value><![CDATA[media]]></value>
@@ -16,14 +16,20 @@
     <property name="fileReferenceParameter" type="1" multiple="false">
       <value><![CDATA[./secondimage/fileReference]]></value>
     </property>
+    <property name="mapParameter" type="1" multiple="false">
+      <value><![CDATA[./secondimage/imageMap]]></value>
+    </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./secondimage/file]]></value>
     </property>
-    <property name="sizeLimit" type="1" multiple="false">
-      <value><![CDATA[100]]></value>
+    <property name="requestSuffix" type="1" multiple="false">
+      <value><![CDATA[/secondimage.img.png]]></value>
+    </property>
+    <property name="rotateParameter" type="1" multiple="false">
+      <value><![CDATA[./secondimage/imageRotate]]></value>
     </property>
     <property name="title" type="1" multiple="false">
-      <value><![CDATA[Country Map Image]]></value>
+      <value><![CDATA[Country Map]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[html5smartimage]]></value>
