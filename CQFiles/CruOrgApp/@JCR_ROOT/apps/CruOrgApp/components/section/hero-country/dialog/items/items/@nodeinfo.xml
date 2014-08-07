@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:WidgetCollection">
+  <nodesOrder>
+    <value><![CDATA[tab1-hero-image,tab2-facts,tab3-spirituality,tab4-country-map,resourcetypetab]]></value>
+  </nodesOrder>
+  <properties />
+  <mixins />
+</node>
+

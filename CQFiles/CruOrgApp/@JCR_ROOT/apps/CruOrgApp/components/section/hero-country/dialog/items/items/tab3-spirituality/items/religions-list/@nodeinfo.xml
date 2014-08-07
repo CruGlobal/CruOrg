@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <nodesOrder>
+    <value><![CDATA[fieldConfig]]></value>
+  </nodesOrder>
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Religious Beliefs]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./spirituality]]></value>
+    </property>
+    <property name="orderable" type="6" multiple="false">
+      <value>true</value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[multifield]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
