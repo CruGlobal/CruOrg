@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Component">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="componentGroup" type="1" multiple="false">
+      <value><![CDATA[Cru]]></value>
+    </property>
+    <property name="jcr:title" type="1" multiple="false">
+      <value><![CDATA[Hero: Country Profile]]></value>
+    </property>
+    <property name="sling:resourceSuperType" type="1" multiple="false">
+      <value><![CDATA[xumakbase/components/section/images/double]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

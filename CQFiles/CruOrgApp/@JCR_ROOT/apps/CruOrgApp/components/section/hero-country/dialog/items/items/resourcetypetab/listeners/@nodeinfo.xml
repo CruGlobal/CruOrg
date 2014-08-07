@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="afterrender" type="1" multiple="false">
+      <value><![CDATA[function(t){t.findParentByType("tabpanel").hideTabStripItem(t);}]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

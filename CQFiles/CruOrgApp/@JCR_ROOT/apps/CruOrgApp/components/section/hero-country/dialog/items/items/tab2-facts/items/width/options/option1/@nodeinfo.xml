@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="text" type="1" multiple="false">
+      <value><![CDATA[Whole]]></value>
+    </property>
+    <property name="value" type="1" multiple="false">
+      <value><![CDATA[desk--one-whole]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

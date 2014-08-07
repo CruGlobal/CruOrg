@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="xk_availableRenditions" type="1" multiple="true">
+      <value><![CDATA[CruHalf432x243]]></value>
+      <value><![CDATA[Cru704x396]]></value>
+    </property>
+    <property name="xk_defaultRenditionName" type="1" multiple="false">
+      <value><![CDATA[CruHalf432x243]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
