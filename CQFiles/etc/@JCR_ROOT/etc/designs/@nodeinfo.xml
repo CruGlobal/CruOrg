@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Page">
   <nodesOrder>
-    <value><![CDATA[rep:policy,crx,assetshare,blog,calendar,cloudservices,creativecloud,dashboards,reports,wordDesign,social,mac,geometrixx-media,geometrixx-unlimited,geometrixx-outdoors,geometrixx,geometrixx_mobile,acs-commons,default,cru]]></value>
+    <value><![CDATA[default,cru]]></value>
   </nodesOrder>
   <properties />
   <mixins>
