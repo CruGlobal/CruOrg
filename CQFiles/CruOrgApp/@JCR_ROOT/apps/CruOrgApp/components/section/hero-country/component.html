@@ -21,7 +21,10 @@
     </div>
   </div>
 
-<div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+
+
+
+<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
     <div class="tile__item">
       <div>
 			{%#if content.secondImagePath %}
@@ -37,8 +40,7 @@
     </div>
   </div>
 
-
-<div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
     <div class="tile__item">
 {%#if content.climate %}
                  <p>{% content.climate %}</p>
@@ -50,13 +52,12 @@
   </div>
 
 
-
-<div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
     <div class="tile__item">
-	{%#each content.spirituality %}
-     debug: each statement loop
-     <p>{% this.religion %} {% this.percentage %}</p>
+<dl>
+    {%#each content.spirituality %}
+     <dt>{% this %}</dt>
     {%/each%}
-
+</dl>
     </div>
   </div>
