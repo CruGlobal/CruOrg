@@ -1,0 +1,63 @@
+<div class="section-title center-block">
+	<h2 class="section-title__item display--inline-block">{% page.title %}</h2>
+</div>
+<div class="grid__item text--center one-whole desk--two-thirds">
+    <div class="tile__item">
+      <div>
+			{%#if content.imagePath %}
+        		<img class="mb-" src="{% content.imagePath %}" alt="{% page.title %}">
+        	{%else%}
+				{%#if page.isEditMode %}
+        			<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+				{%/if %}
+
+        	{%/if %}
+      </div>
+          <h4 class="mb0  p-">{% page.title %}</h4>
+          {%#if content.population %}<p><b>Population:</b> {% content.population %}</p>{%/if %}
+	      {%#if content.location %}<p>Located in {% content.location %}</p>{%/if %}
+          {%#if content.website %}<p><b>Website:</b> <a href="{% content.website %}">{% content.website %}</a></p>{%/if %}
+
+    </div>
+  </div>
+
+
+
+
+<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+    <div class="tile__item">
+      <div>
+			{%#if content.secondImagePath %}
+        		<img class="mb-" src="{% content.secondImagePath %}" alt="Map of {% content.title %}">
+        	{%else%}
+				{%#if page.isEditMode %}
+        			<img class="mb- cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif">
+				{%/if %}
+
+        	{%/if%}
+      </div>
+
+    </div>
+  </div>
+
+<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+    <div class="tile__item">
+{%#if content.climate %}
+                 <p>{% content.climate %}</p>
+        {%/if%}
+{%#if page.designation %}
+        	<a class="button me- button--primary" href="https://give.cru.org/{% page.designation %}">Give</a>
+        {%/if%}
+    </div>
+  </div>
+
+
+<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+    <div class="tile__item">
+<dl>
+    {%#each content.spirituality %}
+     <dt>{% this %}</dt>
+    {%/each%}
+</dl>
+    </div>
+  </div>

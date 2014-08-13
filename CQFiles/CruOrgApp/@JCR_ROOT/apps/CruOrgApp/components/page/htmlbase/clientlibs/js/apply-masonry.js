@@ -1,10 +1,10 @@
 $(document).ready(function() {
     if(typeof CQ === 'undefined') { // only when WCM Mode is disabled
-        $('.parsys').masonry({
+        $('.tile-masonry').masonry({
             columnWidth: 1,
             itemSelector: '.grid__item'
         }).imagesLoaded(function() {
-            $('.parsys').masonry();
+            $('.tile-masonry').masonry(); // parsys
         });
     }
 });

@@ -1,7 +1,7 @@
 package org.cru.logiclesstemplates.processors.list;
 
-import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.cru.test.MockTemplateContentModel;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,13 +12,14 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 
+import static com.xumak.base.Constants.HTML;
 import static com.xumak.extended.contextprocessors.lists.AddPagePathListContextProcessor.PATH_LIST_CONTEXT_PROPERTY_NAME;
 import static org.cru.test.TestUtils.testPath;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.mockito.Mockito.spy;
 
 /*
 * DESCRIPTION
@@ -42,22 +43,18 @@ public class FooterGlobalPathListProcessorTest {
     @Before
     public void init(){
         MockitoAnnotations.initMocks(this);
-        footerGlobalPathList = new FooterGlobalPathListProcessor();
     }
 
     @Test
     public void testProcess() throws Exception {
-
-        SlingHttpServletRequest request = Mockito.mock(SlingHttpServletRequest.class);
+        MockSlingHttpServletRequest request = spy(new MockSlingHttpServletRequest("/", null, HTML, null, null));
         SlingHttpServletResponse response = Mockito.mock(SlingHttpServletResponse.class);
         MockTemplateContentModel content = new MockTemplateContentModel(request, response);
 
         //prepare data
-        String[] pathRefs = new String[]{testPath, testPath + "/article"};
-
-        //prepare result data
-        Collection<String> pathList = new ArrayList();
-        pathList.addAll(Arrays.asList(pathRefs));
+        Collection<String> pathRefs = new ArrayList();
+        pathRefs.add(testPath);
+        pathRefs.add(testPath + "/article");
 
         /*
         * CASE 0:
@@ -72,7 +69,7 @@ public class FooterGlobalPathListProcessorTest {
         */
         content.set("global.pathRefs", pathRefs);
         footerGlobalPathList.process(request, content);
-        assertEquals(pathList, content.get(PATH_LIST_CONTEXT_PROPERTY_NAME));
+        assertEquals(pathRefs, content.get(PATH_LIST_CONTEXT_PROPERTY_NAME));
 
     }
 
