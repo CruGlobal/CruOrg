@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*------------------------------------*\
-    STYLE.IE.CSS
+    IE-STYLE.CSS
 \*------------------------------------*/
 /**
  * Here lies the custom styles for Cru.org. These styles have been
@@ -3762,7 +3762,7 @@ input[disabled]:focus,
 .mr- {
   margin-right: 15px; }
 
-.mb- {
+.mb-, .post-subtitle, .post-meta {
   margin-bottom: 15px; }
 
 .ml- {
@@ -3777,10 +3777,36 @@ input[disabled]:focus,
   margin-left: 15px; }
 
 /**
+ * Large Margins.
+ */
+.m_x {
+  margin: 58px; }
+
+.mt_x {
+  margin-top: 58px; }
+
+.mr_x {
+  margin-right: 58px; }
+
+.mb_x {
+  margin-bottom: 58px; }
+
+.ml_x {
+  margin-left: 58px; }
+
+.me_x {
+  margin-top: 58px;
+  margin-bottom: 58px; }
+
+.ms_x {
+  margin-right: 58px;
+  margin-left: 58px; }
+
+/**
  * Remove margins.
  */
 .m0, .media__body,
-.media__body > :last-child, .slider__item, .post-subtitle {
+.media__body > :last-child, .slider__item {
   margin: 0; }
 
 .mt0 {
@@ -3882,6 +3908,32 @@ input[disabled]:focus,
   padding-left: 15px; }
 
 /**
+ * Large paddings.
+ */
+.p_x {
+  padding: 58px; }
+
+.pt_x {
+  padding-top: 58px; }
+
+.pr_x {
+  padding-right: 58px; }
+
+.pb_x {
+  padding-bottom: 58px; }
+
+.pl_x {
+  padding-left: 58px; }
+
+.pe_x {
+  padding-top: 58px;
+  padding-bottom: 58px; }
+
+.ps_x {
+  padding-right: 58px;
+  padding-left: 58px; }
+
+/**
  * Remove paddings.
  */
 .p0 {
@@ -3908,8 +3960,262 @@ input[disabled]:focus,
   padding-left: 0; }
 
 /**
- * Begin importing custom stuff here.
+ * Brackets files
  */
+/*------------------------------------*\
+    $SETTINGS
+\*------------------------------------*/
+/**
+ * Default variables. Redefine these in your `_vars.scss` file
+ */
+/**
+ * Set your base font size here. Define in pixels; the library will
+ * convert measurements to the appropriate units (rems or unitless
+ * for the line height).
+ */
+/**
+ * Would you like to show a baseline grid? This is handy during development.
+ */
+/*------------------------------------*\
+    $BORDER-BOX
+\*------------------------------------*/
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base font family
+ */
+/**
+ * Default colours for objects’ borders etc.
+ */
+/**
+ * Default value for edges and such
+ */
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * Basic font sizes
+ */
+/**
+ * Headings
+ */
+/* Header sizes */
+/* Subheaders */
+/**
+ * Smalls
+ */
+/**
+ * Paragraphs
+ */
+/**
+ * Blockquotes
+ */
+/*------------------------------------*\
+    $GRID
+\*------------------------------------*/
+/**
+ * This grid system is heavily based off the work of Harry Roberts of
+ * css-wizardry and inuit.css. Css-wizardry-grids provides the basic
+ * foundation and inspiration.
+ */
+/**
+ * If you are building a non-responsive site but would still like to use
+ * the girds, set this to ‘false’:
+ */
+/**
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * 100% width if you do not apply a more specific class to them.
+ */
+/**
+ * Set the max width of your grids, if you set this to false, the wrapper will only
+ * center the content and apply a left/right padding
+ */
+/**
+ * Set the spacing between your grid items.
+ */
+/**
+ * Would you like push and pull classes enabled? Keep in mind this adds a large
+ * amount of additional code
+ */
+/**
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ */
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/**
+ * I have included variables for only one buttons, the default, since my wish
+ * is to not impose style. Feel free to add more variables. I have included
+ * a mixin to help you generate these easily
+ */
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+/**
+ * These variables are framework variables, sourced from variables defined
+ * above. Feel free to use these variables throughout your project, but do not
+ * modify or reassign them.
+ */
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/**
+ * csswizardry grids provides you with widths to suit a number of breakpoints
+ * designed around devices of a size you specify. Out of the box, csswizardry
+ * grids caters to the following types of device:
+ *
+ * palm     --  palm-based devices, like phones and small tablets
+ * lap      --  lap-based devices, like iPads or laptops
+ * portable --  all of the above
+ * desk     --  stationary devices, like desktop computers
+ * regular  --  any/all types of device
+ *
+ * These namespaces are then used in the library to give you the ability to
+ * manipulate your layouts based around them, for example:
+ *
+   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it become 50% wide, or it is on a desktop device, at
+ * which point it becomes 33.333% width.
+ *
+ * csswizardry grids also has push and pull classes which allow you to nudge
+ * grid items left and right by a defined amount. These follow the same naming
+ * convention as above, but are prepended by either `push--` or `pull--`, for
+ * example:
+ *
+   `class="grid__item  one-half  push--one-half"`
+ *
+ * This would give you a grid item which is 50% width and pushed over to the
+ * right by 50%.
+ *
+ * All classes in csswizardry grids follow this patten, so you should fairly
+ * quickly be able to piece together any combinations you can imagine, for
+ * example:
+ *
+   `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
+ *
+   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
+ *
+   `class="grid__item  palm--one-third  desk--five-twelfths"`
+ */
+/*------------------------------------*\
+    $GRID SETUP
+\*------------------------------------*/
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+ */
+.grid {
+  list-style: none;
+  /* [1] */
+  margin: 0;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  margin-left: -29px;
+  /* [3] */ }
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ *    - Not implemented at the moment due to legacy support
+ *
+ * 2. Align columns to the tops of each other.
+ * 3. Space columns apart.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters.
+ */
+.grid__item {
+  float: left;
+  vertical-align: top;
+  /* [2] */
+  padding-left: 29px;
+  /* [3] */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* [5] */ }
+
+/**
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. Extends `.grid`.
+ */
+.grid--rev {
+  direction: rtl;
+  text-align: left; }
+  .grid--rev > .grid__item {
+    direction: ltr;
+    text-align: left; }
+
+/**
+ * Align the entire grid to the right. Extends `.grid`.
+ */
+.grid--right {
+  text-align: right; }
+  .grid--right > .grid__item {
+    text-align: left; }
+
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. Extends `.grid`.
+ */
+.grid--center {
+  text-align: center; }
+  .grid--center > .grid__item {
+    text-align: left; }
+
+/**
+ * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
+ * `.grid`.
+ */
+.grid--middle > .grid__item {
+  vertical-align: middle; }
+
+/**
+ *
+ */
+.desk--one-third {
+  width: 33.3333333% !important; }
+
+.desk--one-half {
+  width: 50% !important; }
+
+.desk--one-quarter {
+  width: 25% !important; }
+
 /**
  * Primary site colors and fonts
  */
@@ -3922,8 +4228,8 @@ input[disabled]:focus,
  */
 @font-face {
   font-family: 'cruicons';
-  src: url("assets/fonts/cruicons.eot?13550619");
-  src: url("assets/fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("assets/fonts/cruicons.woff?13550619") format("woff"), url("assets/fonts/cruicons.ttf?13550619") format("truetype"), url("assets/fonts/cruicons.svg?13550619#cruicons") format("svg");
+  src: url("/fonts/cruicons.eot?13550619");
+  src: url("/fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("/fonts/cruicons.woff?13550619") format("woff"), url("/fonts/cruicons.ttf?13550619") format("truetype"), url("/fonts/cruicons.svg?13550619#cruicons") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -4160,67 +4466,18 @@ hr {
 /*------------------------------------*\
     $LAYOUTS
 \*------------------------------------*/
-/*------------------------------------*\
-    $LAYOUTS
-\*------------------------------------*/
-.base-layout {
-  width: auto;
-  clear: both;
-  margin-left: auto;
-  margin-right: auto; }
-
 .layout-single-column, .layout--wide {
-  margin-left: 100px;
-  width: 700px; }
+  margin: 0 auto;
+  clear: both; }
+
+.layout-single-column {
+  width: 980px; }
 
 .layout--wide {
-  width: 880px; }
+  width: 980px; }
 
 .layout--full {
-  max-width: 1100px; }
-
-/**
- * The wrapper class for full-width images
- */
-.layout-background-fill {
-  position: relative;
-  left: 0;
-  overflow: hidden;
-  max-width: 100%;
-  width: 100%;
-  margin-top: 0;
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  top: -25px;
-  /* 9 */
-  top: parseInt(-25px)/19rem;
-  /* 9 */ }
-
-.layout-background-stretch {
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  margin-left: -29px;
-  /* 9 */
-  margin-left: parseInt(-29px)/19rem;
-  /* 9 */
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  margin-right: -29px;
-  /* 9 */
-  margin-right: parseInt(-29px)/19rem;
-  /* 9 */ }
+  width: 980px; }
 
 /**
  * Site-wide elements and components
@@ -4570,7 +4827,6 @@ tbody {
 
 .event {
   width: 100%;
-  color: white;
   border: 1px solid #e9e9e9;
   border-radius: 3px; }
   .event tbody, .event tr:last-child {
@@ -4635,6 +4891,7 @@ td {
   border-top-width: 3px;
   border-top-style: solid;
   border-top-color: #f9b625;
+  margin: 0 auto;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
@@ -4642,32 +4899,32 @@ td {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
 
 .site-logo {
-  display: inline-block;
-  float: left;
-  width: 10%;
+  display: block;
+  float: none;
+  width: 980px;
+  margin: 0 auto;
   height: 81px;
   padding-left: 12px;
   padding-right: 12px;
   line-height: 81px;
   vertical-align: middle;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   .site-logo a {
     display: inline-block;
     overflow: hidden;
     vertical-align: middle;
-    width: 74px;
-    height: 54px;
-    background: url("assets/images/cru-logo.png");
-    background-image: url("assets/images/cru-logo.svg");
+    width: 103px;
+    height: 64px;
+    background: url("/images/cru-logo.png");
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: contain; }
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 5px; }
 
-/* 
-	This goes on .site-logo anchor to show the image...
-	will try to avoid using this.
-	**delete** if unused -- ask eli
-*/
 /*------------------------------------*\
     $FOOTER
 \*------------------------------------*/
@@ -4855,41 +5112,36 @@ td {
   float: none;
   display: inline-block;
   vertical-align: middle;
-  min-width: 90%;
-  max-width: 1220px;
   top: 0;
-  background-color: #444444;
   border-top: 3px solid;
-  border-color: #f9b625;
-  width: 90%;
-  height: 81px;
+  width: 100%;
   background-color: transparent;
   z-index: 505;
   right: 0;
-  border-color: transparent; }
+  border-color: transparent;
+  overflow: scroll;
+  padding-top: 0px;
+  height: 100%; }
 
 .site-nav {
   position: relative;
   z-index: 1;
-  margin-top: 4px;
-  float: right;
+  margin-top: 5px;
+  text-align: right;
   width: 980px;
-  text-align: right; }
-
-.nav_item {
-  border-bottom-color: #f9b625; }
+  margin: 0 auto; }
 
 /**
  *  Nav that includes Sign Up, Log In, and Search
  **/
 .right-nav {
-  float: right;
   width: 980px;
-  text-align: right;
+  margin: 0 auto;
   vertical-align: middle;
   position: relative;
   z-index: 506;
   margin-top: 5px;
+  text-align: right;
   line-height: 1.26316; }
   .right-nav .search__options {
     display: none; }
@@ -4903,7 +5155,13 @@ td {
   padding: 0 18px;
   letter-spacing: 0.9px;
   vertical-align: middle;
-  color: #444444; }
+  color: white;
+  color: #404040;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out; }
   .nav__link:hover {
     background-color: #444444;
     color: #f9b625;
@@ -4920,9 +5178,9 @@ td {
 .nav .nav__item > .dropdown, .post-meta .nav__item > .dropdown {
   position: fixed;
   left: 0;
-  background-color: #444444;
+  background-color: #404040;
   color: #ffffff;
-  width: 100% !important;
+  width: 980px;
   overflow: hidden;
   max-height: 0;
   height: 0;
@@ -4936,10 +5194,12 @@ td {
   .nav .nav__item > .dropdown:after, .post-meta .nav__item > .dropdown:after {
     clear: both; }
 
-.nav .nav__item > .off-canvas-desk-is-collasped, .post-meta .nav__item > .off-canvas-desk-is-collasped,
-.nav .nav__item > .off-canvas-desk-is-open,
-.post-meta .nav__item > .off-canvas-desk-is-open {
-  display: none; }
+.nav .nav__item > .dropdown .grid, .post-meta .nav__item > .dropdown .grid {
+  margin-left: -29px !important; }
+.nav .nav__item > .dropdown .grid__item, .post-meta .nav__item > .dropdown .grid__item {
+  padding-left: 29px !important;
+  float: left !important;
+  width: 33% \0; }
 
 .nav li:hover > .arrow-up, .post-meta li:hover > .arrow-up,
 .nav li:focus > .arrow-up,
@@ -4955,67 +5215,33 @@ td {
   height: auto;
   overflow: visible;
   opacity: 1;
+  margin: 0 auto !important;
   -webkit-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
   -moz-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
   -ms-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
   -o-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
   box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
   /* Hover On */
-  /*-webkit-transition: max-height 0.25s ease;*/ }
+  -webkit-transition: max-height 0.25s ease;
+  -webkit-transition: all 0.3s 0.2s ease;
+  -moz-transition: all 0.3s 0.2s ease;
+  -ms-transition: all 0.3s 0.2s ease;
+  -o-transition: all 0.3s 0.2s ease;
+  transition: all 0.3s 0.2s ease; }
+
+.dropdown {
+  width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center;
+  float: right; }
 
 .nav li.dropdown__item:hover:after, .post-meta li.dropdown__item:hover:after,
 .nav li.dropdown__item:focus:after,
 .post-meta li.dropdown__item:focus:after {
   opacity: 1; }
 
-.nav .dropdown, .post-meta .dropdown {
+#nav-open-btn, #nav-close-btn {
   display: none; }
-
-.js-close-button {
-  display: none; }
-
-#flyout {
-  position: absolute;
-  top: 0;
-  padding-top: 5.25rem; }
-  #flyout:not(:target) {
-    z-index: 1;
-    height: 0; }
-
-.js-ready #flyout {
-  right: -70%;
-  height: 100%;
-  width: 70%;
-  background: #333333;
-  -webkit-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
-  box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25); }
-
-.js-nav #inner-wrap {
-  right: 70%; }
-
-.js-nav #flyout {
-  right: 0; }
-
-.js-nav .site-header {
-  position: absolute; }
-
-.js-nav body {
-  padding-top: 0; }
-
-.js-nav #main {
-  padding-top: 67px; }
-
-.grid:before, .grid:after {
-  content: " ";
-  display: table; }
-.grid:after {
-  clear: both; }
-
-#flyout .js-close-button {
-  position: absolute;
-  top: 2.1rem;
-  right: 1.75rem; }
 
 .is-hidden, .is-visible {
   -webkit-transition: all 0.5s;
@@ -5047,28 +5273,6 @@ td {
     -ms-transform: translateY(0);
     transform: translateY(0); }
 
-.topbar-toggle {
-  text-transform: uppercase;
-  position: absolute;
-  top: 22px;
-  right: 16px;
-  color: #3a3a3a;
-  font-size: 19.2px;
-  font-size: 1.01053rem;
-  display: none; }
-  .topbar-toggle:after {
-    vertical-align: text-bottom;
-    font-weight: bold;
-    line-height: 0.9em;
-    font-size: 28px;
-    font-size: 1.47368rem; }
-  .topbar-toggle:hover {
-    color: #f9b625;
-    text-decoration: none; }
-
-.topbar-close {
-  display: none; }
-
 .search {
   height: auto;
   line-height: 1.5; }
@@ -5098,85 +5302,57 @@ td {
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px; }
 
-.dropdown__item {
-  display: none; }
+/*-- added for you are here functionality, adds underline to main nav item --*/
+.primary-link-active {
+  text-decoration: underline !important; }
 
+/*
+.navigation{
+  display: inline-block;
+  float: none;
+  width: 89%;
+  display: inline-block;
+  vertical-align: middle;
+}
+*/
 .dropdown--column {
-  display: none; }
+  color: white;
+  border-radius: 1px;
+  margin-bottom: 0.90625rem; }
+  .dropdown--column a {
+    display: block;
+    text-align: left;
+    background: #333333;
+    color: #f9b625;
+    border-radius: 3px;
+    padding-left: 0.45313rem;
+    padding-right: 0.45313rem;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
+    .dropdown--column a:hover {
+      text-decoration: none;
+      background: #f9b625;
+      color: #333333; }
+  .dropdown--column ul li a {
+    padding-left: 0.90625rem;
+    padding-right: 0.90625rem;
+    margin: 0;
+    text-align: left;
+    font-size: 85%;
+    color: white; }
 
 /*------------------------------------*\
     $OFF-CANVAS
 \*------------------------------------*/
 .nav-is-open .inner-wrap, .nav-is-open .site-header {
   right: 18.75em; }
-.nav-is-open .navigation {
-  overflow: scroll;
-  padding-top: 20px;
-  height: 100%; }
-.nav-is-open .right-nav > .nav__item {
-  float: left;
-  margin-bottom: 20px; }
-.nav-is-open .site-nav > .nav__item {
-  border-bottom: 1px solid #333333; }
-.nav-is-open .nav__item > .primary-search {
-  float: none; }
-.nav-is-open .primary-search > .search-field {
-  width: 320px; }
-.nav-is-open .nav .nav__item > .dropdown, .nav-is-open .post-meta .nav__item > .dropdown {
-  position: relative;
-  display: block;
-  margin: 0;
-  padding: 0; }
-  .nav-is-open .nav .nav__item > .dropdown .grid, .nav-is-open .post-meta .nav__item > .dropdown .grid, .nav-is-open .nav .nav__item > .dropdown .grid > .grid__item, .nav-is-open .post-meta .nav__item > .dropdown .grid > .grid__item {
-    margin: 0;
-    padding: 0; }
-  .nav-is-open .nav .nav__item > .dropdown .grid__item > div, .nav-is-open .post-meta .nav__item > .dropdown .grid__item > div {
-    margin: 0;
-    padding: 3px 12px;
-    font-size: 80%; }
-.nav-is-open .nav .nav__item:hover > .dropdown, .nav-is-open .post-meta .nav__item:hover > .dropdown {
-  position: fixed;
-  height: 0;
-  opacity: 0; }
-.nav-is-open .nav .nav__item > .off-canvas-desk-is-open, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open,
-.nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed,
-.nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed {
-  display: block;
-  margin: 0;
-  padding: 0; }
-  .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid, .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid > .grid__item, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid > .grid__item,
-  .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid,
-  .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid,
-  .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid > .grid__item,
-  .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid > .grid__item {
-    margin: 0;
-    padding: 0; }
-  .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid__item > div, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid__item > div,
-  .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid__item > div,
-  .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid__item > div {
-    margin: 0;
-    padding: 3px 12px;
-    font-size: 80%; }
-.nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed {
-  position: fixed;
-  display: none;
-  height: 0px;
-  opacity: 0; }
-.nav-is-open .nav .nav__item > .off-canvas-desk-is-open, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open {
-  position: relative;
-  display: block;
-  height: auto;
-  opacity: 1; }
-.nav-is-open .dropdown--column ul li a {
-  font-size: 100%; }
-.nav-is-open .navigation {
-  right: 0; }
 .nav-is-open .search {
   max-width: 80%;
   margin-left: 16px;
   margin-left: 0.84211rem; }
-.nav-is-open .primary-search > .search-field {
-  width: 240px; }
 .nav-is-open .primary-search > input {
   display: block; }
 .nav-is-open .primary-search--dropdown {
@@ -5187,7 +5363,103 @@ td {
   border-bottom: none;
   border-radius: 1px; }
 .nav-is-open .primary-search--dropdown li a {
-  color: #444444; }
+  color: #404040; }
+.nav-is-open .primary-search--dropdown {
+  border: 1px solid #f9b625;
+  border-top: none; }
+
+/*------------------------------------*\
+    $OFF-CANVAS [IE version ie/ie-off-canvas]
+\*------------------------------------*/
+@media screen and (max-width: 33.75em) {
+  .nav-is-open .inner-wrap, .nav-is-open .site-header {
+    right: 70%; } }
+@media screen and (min-width: 33.8125em) and (max-width: 61.25em) {
+  .nav-is-open .inner-wrap, .nav-is-open .site-header {
+    right: 18.75em; } }
+
+@media screen and (max-width: 61.1875em) {
+  .nav-is-open .navigation {
+    overflow: scroll;
+    padding-top: 20px;
+    height: 100%; }
+  .nav-is-open .right-nav > .nav__item {
+    float: left;
+    margin-bottom: 20px;
+    margin-top: 45px; }
+  .nav-is-open .site-nav > .nav__item {
+    border-bottom: 1px solid #333333; }
+  .nav-is-open .nav__item > .primary-search {
+    float: none; }
+  .nav-is-open .primary-search > .search-field {
+    width: 320px; }
+  .nav-is-open .nav .nav__item > .dropdown, .nav-is-open .post-meta .nav__item > .dropdown {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0; }
+    .nav-is-open .nav .nav__item > .dropdown .grid, .nav-is-open .post-meta .nav__item > .dropdown .grid, .nav-is-open .nav .nav__item > .dropdown .grid > .grid__item, .nav-is-open .post-meta .nav__item > .dropdown .grid > .grid__item {
+      margin: 0;
+      padding: 0; }
+    .nav-is-open .nav .nav__item > .dropdown .grid__item > div, .nav-is-open .post-meta .nav__item > .dropdown .grid__item > div {
+      margin: 0;
+      padding: 3px 12px;
+      font-size: 80%; }
+  .nav-is-open .nav .nav__item:hover > .dropdown, .nav-is-open .post-meta .nav__item:hover > .dropdown {
+    position: fixed;
+    height: 0;
+    opacity: 0; }
+  .nav-is-open .nav .nav__item > .off-canvas-desk-is-open, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open,
+  .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed,
+  .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed {
+    display: block;
+    margin: 0;
+    padding: 0; }
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid, .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid > .grid__item, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid > .grid__item,
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid,
+    .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid,
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid > .grid__item,
+    .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid > .grid__item {
+      margin: 0;
+      padding: 0; }
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-open .grid__item > div, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open .grid__item > div,
+    .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed .grid__item > div,
+    .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed .grid__item > div {
+      margin: 0;
+      padding: 3px 12px;
+      font-size: 80%; }
+  .nav-is-open .nav .nav__item > .off-canvas-desk-is-collapsed, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-collapsed {
+    position: fixed;
+    display: none;
+    height: 0px;
+    opacity: 0; }
+  .nav-is-open .nav .nav__item > .off-canvas-desk-is-open, .nav-is-open .post-meta .nav__item > .off-canvas-desk-is-open {
+    position: relative;
+    display: block;
+    height: auto;
+    opacity: 1; }
+  .nav-is-open .dropdown--column ul li a {
+    font-size: 100%; }
+  .nav-is-open .navigation {
+    right: 0; } }
+.nav-is-open .search {
+  max-width: 80%;
+  margin-left: 16px;
+  margin-left: 0.84211rem; }
+@media screen and (max-width: 33.75em) {
+  .nav-is-open .primary-search > .search-field {
+    width: 240px; } }
+.nav-is-open .primary-search > input {
+  display: block; }
+.nav-is-open .primary-search--dropdown {
+  background-color: #f7f7f7; }
+.nav-is-open .primary-search.active .primary-search--options {
+  background-color: #f7f7f7;
+  border: 1px solid #f9b625;
+  border-bottom: none;
+  border-radius: 1px; }
+.nav-is-open .primary-search--dropdown li a {
+  color: #404040; }
 .nav-is-open .primary-search--dropdown {
   border: 1px solid #f9b625;
   border-top: none; }
@@ -5201,7 +5473,7 @@ td {
   .ui-autocomplete li {
     list-style: none outside none; }
   .ui-autocomplete li a {
-    background-color: #444444;
+    background-color: #404040;
     color: white;
     display: block;
     padding: 5px 13px;
@@ -5232,6 +5504,8 @@ td {
     padding-right: 15px;
     padding-bottom: 15px;
     padding-left: 15px; }
+  .tile__item > a:hover {
+    text-decoration: none; }
   .tile__item > ul {
     margin-bottom: 0;
     padding-top: 7px;
@@ -5277,6 +5551,11 @@ td {
   .tile__item > div > img {
     width: 100%;
     display: block; }
+
+.tile-masonry .grid__item {
+  /*following properties fix problem where two halves stack instead of sit side-by-side */
+  margin-left: -1px;
+  transform: translateX(1px); }
 
 /**
  * Page components
@@ -5479,6 +5758,7 @@ td {
   opacity: 0.3; }
 
 .background-image {
+  background-color: black;
   position: absolute;
   top: 0;
   left: 0;
@@ -5496,10 +5776,9 @@ td {
 .article-details {
   bottom: -10px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-  border: 0 none;
-  background: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
+  background: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
   -webkit-transition-property: opacity, bottom, color;
   -moz-transition-property: opacity, bottom, color;
   -ms-transition-property: opacity, bottom, color;
@@ -5516,6 +5795,7 @@ td {
   -o-transition-delay: 62ms, 62ms, 0;
   transition-delay: 62ms, 62ms, 0; }
   .article-details h3 {
+    text-align: center;
     line-height: 1.25em;
     min-height: 2.5em;
     color: white;
@@ -5555,6 +5835,10 @@ td {
   -o-opacity: 1;
   opacity: 1; }
 
+.slider2 .article-details {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1; }
+
 .slider-control, .slider-control i {
   -webkit-transition: -webkit-transform 200ms;
   -moz-transition: -moz-transform 200ms;
@@ -5569,7 +5853,7 @@ td {
   min-height: 60px;
   width: 100px;
   -webkit-tap-highlight-color: transparent;
-  z-index: 1; }
+  z-index: 1000000; }
   .slider-control i {
     color: #ccc;
     -webkit-transition-property: left;
@@ -5645,6 +5929,7 @@ td {
   letter-spacing: -0.04em; }
 
 .post-subtitle {
+  line-height: 1.32857;
   word-wrap: break-word;
   letter-spacing: -0.02em; }
 
@@ -5790,7 +6075,29 @@ td {
 /*figure*/
 .image--outset__left {
   width: 100%;
-  clear: both; }
+  clear: both;
+    /*
+	& > .image__caption{
+		@include mq(1300px) {
+			position: absolute;
+			left: -172px;
+			width: 150px;
+			top: 0;
+			text-align: right;
+			margin-top: 0;
+			line-height: 1.6;
+	
+			&:before{
+				width: 25%;
+				margin-left: 75%;
+				border-top: 1px solid #ddd;
+				display: block;
+				content: "";
+				margin-bottom: 10px;
+			}
+		}
+	}
+    */ }
   @media screen and (min-width: 61.3125em) {
     .image--outset__left {
       float: left;
@@ -5799,22 +6106,6 @@ td {
       margin-bottom: 10px;
       width: 75%;
       margin-left: -100px; } }
-  @media screen and (min-width: 81.25em) {
-    .image--outset__left > .image__caption {
-      position: absolute;
-      left: -172px;
-      width: 150px;
-      top: 0;
-      text-align: right;
-      margin-top: 0;
-      line-height: 1.6; }
-      .image--outset__left > .image__caption:before {
-        width: 25%;
-        margin-left: 75%;
-        border-top: 1px solid #ddd;
-        display: block;
-        content: "";
-        margin-bottom: 10px; } }
 
 /*figure*/
 @media screen and (min-width: 61.3125em) {
@@ -6096,7 +6387,8 @@ td {
   height: 100%; }
 
 .full-width, .page-subnav, .center-block {
-  width: 100%; }
+  width: 100%;
+  margin: 0 auto; }
 
 /**
  * Content Alignment
@@ -6105,6 +6397,12 @@ hr, .divider, .layout--full, .center-block, .centered,
 .center {
   margin-left: auto;
   margin-right: auto; }
+
+/**
+ * Borders
+ */
+.border-bottom-solid {
+  border-bottom: 1px solid #aaaaaa; }
 
 /**
  * Pull items full width of `.island` parents.
