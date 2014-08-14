@@ -3762,7 +3762,7 @@ input[disabled]:focus,
 .mr- {
   margin-right: 15px; }
 
-.mb- {
+.mb-, .post-subtitle, .post-meta {
   margin-bottom: 15px; }
 
 .ml- {
@@ -3806,7 +3806,7 @@ input[disabled]:focus,
  * Remove margins.
  */
 .m0, .media__body,
-.media__body > :last-child, .slider__item, .post-subtitle {
+.media__body > :last-child, .slider__item {
   margin: 0; }
 
 .mt0 {
@@ -4628,7 +4628,6 @@ tbody {
 
 .event {
   width: 100%;
-  color: white;
   border: 1px solid #e9e9e9;
   border-radius: 3px; }
   .event tbody, .event tr:last-child {
@@ -4960,7 +4959,7 @@ td {
  **/
 @media screen and (min-width: 61.3125em) {
   .right-nav {
-    width: auto;
+    width: 50%;
     float: right;
     vertical-align: middle;
     position: relative;
@@ -4996,7 +4995,7 @@ td {
     text-decoration: none; }
   @media screen and (min-width: 61.3125em) {
     .nav__link {
-      color: #444444;
+      color: #404040;
       -webkit-transition: all 0.25s ease-in-out;
       -moz-transition: all 0.25s ease-in-out;
       -ms-transition: all 0.25s ease-in-out;
@@ -5015,7 +5014,7 @@ td {
 .nav .nav__item > .dropdown, .post-meta .nav__item > .dropdown {
   position: fixed;
   left: 0;
-  background-color: #444444;
+  background-color: #404040;
   color: #ffffff;
   width: 100% !important;
   overflow: hidden;
@@ -5250,7 +5249,7 @@ td {
 
 /*-- added for you are here functionality, adds underline to main nav item --*/
 .primary-link-active {
-  text-decoration: underline !important; }
+  border-bottom: 3px solid #f9b625; }
 
 /*
 .navigation{
@@ -5381,7 +5380,7 @@ td {
   border-bottom: none;
   border-radius: 1px; }
 .nav-is-open .primary-search--dropdown li a {
-  color: #444444; }
+  color: #404040; }
 .nav-is-open .primary-search--dropdown {
   border: 1px solid #f9b625;
   border-top: none; }
@@ -5395,7 +5394,7 @@ td {
   .ui-autocomplete li {
     list-style: none outside none; }
   .ui-autocomplete li a {
-    background-color: #444444;
+    background-color: #404040;
     color: white;
     display: block;
     padding: 5px 13px;
@@ -5426,6 +5425,8 @@ td {
     padding-right: 15px;
     padding-bottom: 15px;
     padding-left: 15px; }
+  .tile__item > a:hover {
+    text-decoration: none; }
   .tile__item > ul {
     margin-bottom: 0;
     padding-top: 7px;
@@ -5471,6 +5472,11 @@ td {
   .tile__item > div > img {
     width: 100%;
     display: block; }
+
+.tile-masonry .grid__item {
+  /*following properties fix problem where two halves stack instead of sit side-by-side */
+  margin-left: -1px;
+  transform: translateX(1px); }
 
 /**
  * Page components
@@ -5685,15 +5691,15 @@ td {
   -moz-background-size: cover;
   -ms-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  -ms-behavior: url(/backgroundsize.min.htc); }
 
 .article-details {
   bottom: -10px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-  border: 0 none;
-  background: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
+  background: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
   -webkit-transition-property: opacity, bottom, color;
   -moz-transition-property: opacity, bottom, color;
   -ms-transition-property: opacity, bottom, color;
@@ -5839,6 +5845,7 @@ td {
   letter-spacing: -0.04em; }
 
 .post-subtitle {
+  line-height: 1.32857;
   word-wrap: break-word;
   letter-spacing: -0.02em; }
 
@@ -6187,7 +6194,7 @@ td {
   to {
     left: -33.33333%; } }
 /*------------------------------------*\
-    $HELPER [IE version in patterns ie/ie-helpers]
+    $HELPER
 \*------------------------------------*/
 /**
  * A series of helper classes to use arbitrarily. Only use a helper class if an

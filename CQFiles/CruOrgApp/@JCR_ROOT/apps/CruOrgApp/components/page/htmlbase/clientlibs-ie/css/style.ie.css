@@ -3762,7 +3762,7 @@ input[disabled]:focus,
 .mr- {
   margin-right: 15px; }
 
-.mb- {
+.mb-, .post-subtitle, .post-meta {
   margin-bottom: 15px; }
 
 .ml- {
@@ -3806,7 +3806,7 @@ input[disabled]:focus,
  * Remove margins.
  */
 .m0, .media__body,
-.media__body > :last-child, .slider__item, .post-subtitle {
+.media__body > :last-child, .slider__item {
   margin: 0; }
 
 .mt0 {
@@ -3815,7 +3815,7 @@ input[disabled]:focus,
 .mr0 {
   margin-right: 0; }
 
-.mb0, .grid__item.media, .site-logo, a.ie-logo h1, .locations li > a {
+.mb0, .grid__item.media, .site-logo, .site-logo h1, .locations li > a {
   margin-bottom: 0; }
 
 .ml0, .post__list {
@@ -3960,8 +3960,262 @@ input[disabled]:focus,
   padding-left: 0; }
 
 /**
- * Begin importing custom stuff here.
+ * Brackets files
  */
+/*------------------------------------*\
+    $SETTINGS
+\*------------------------------------*/
+/**
+ * Default variables. Redefine these in your `_vars.scss` file
+ */
+/**
+ * Set your base font size here. Define in pixels; the library will
+ * convert measurements to the appropriate units (rems or unitless
+ * for the line height).
+ */
+/**
+ * Would you like to show a baseline grid? This is handy during development.
+ */
+/*------------------------------------*\
+    $BORDER-BOX
+\*------------------------------------*/
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base font family
+ */
+/**
+ * Default colours for objects’ borders etc.
+ */
+/**
+ * Default value for edges and such
+ */
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * Basic font sizes
+ */
+/**
+ * Headings
+ */
+/* Header sizes */
+/* Subheaders */
+/**
+ * Smalls
+ */
+/**
+ * Paragraphs
+ */
+/**
+ * Blockquotes
+ */
+/*------------------------------------*\
+    $GRID
+\*------------------------------------*/
+/**
+ * This grid system is heavily based off the work of Harry Roberts of
+ * css-wizardry and inuit.css. Css-wizardry-grids provides the basic
+ * foundation and inspiration.
+ */
+/**
+ * If you are building a non-responsive site but would still like to use
+ * the girds, set this to ‘false’:
+ */
+/**
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * 100% width if you do not apply a more specific class to them.
+ */
+/**
+ * Set the max width of your grids, if you set this to false, the wrapper will only
+ * center the content and apply a left/right padding
+ */
+/**
+ * Set the spacing between your grid items.
+ */
+/**
+ * Would you like push and pull classes enabled? Keep in mind this adds a large
+ * amount of additional code
+ */
+/**
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ */
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/**
+ * I have included variables for only one buttons, the default, since my wish
+ * is to not impose style. Feel free to add more variables. I have included
+ * a mixin to help you generate these easily
+ */
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+/**
+ * These variables are framework variables, sourced from variables defined
+ * above. Feel free to use these variables throughout your project, but do not
+ * modify or reassign them.
+ */
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/**
+ * csswizardry grids provides you with widths to suit a number of breakpoints
+ * designed around devices of a size you specify. Out of the box, csswizardry
+ * grids caters to the following types of device:
+ *
+ * palm     --  palm-based devices, like phones and small tablets
+ * lap      --  lap-based devices, like iPads or laptops
+ * portable --  all of the above
+ * desk     --  stationary devices, like desktop computers
+ * regular  --  any/all types of device
+ *
+ * These namespaces are then used in the library to give you the ability to
+ * manipulate your layouts based around them, for example:
+ *
+   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it become 50% wide, or it is on a desktop device, at
+ * which point it becomes 33.333% width.
+ *
+ * csswizardry grids also has push and pull classes which allow you to nudge
+ * grid items left and right by a defined amount. These follow the same naming
+ * convention as above, but are prepended by either `push--` or `pull--`, for
+ * example:
+ *
+   `class="grid__item  one-half  push--one-half"`
+ *
+ * This would give you a grid item which is 50% width and pushed over to the
+ * right by 50%.
+ *
+ * All classes in csswizardry grids follow this patten, so you should fairly
+ * quickly be able to piece together any combinations you can imagine, for
+ * example:
+ *
+   `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
+ *
+   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
+ *
+   `class="grid__item  palm--one-third  desk--five-twelfths"`
+ */
+/*------------------------------------*\
+    $GRID SETUP
+\*------------------------------------*/
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+ */
+.grid {
+  list-style: none;
+  /* [1] */
+  margin: 0;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  margin-left: -29px;
+  /* [3] */ }
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ *    - Not implemented at the moment due to legacy support
+ *
+ * 2. Align columns to the tops of each other.
+ * 3. Space columns apart.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters.
+ */
+.grid__item {
+  float: left;
+  vertical-align: top;
+  /* [2] */
+  padding-left: 29px;
+  /* [3] */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* [5] */ }
+
+/**
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. Extends `.grid`.
+ */
+.grid--rev {
+  direction: rtl;
+  text-align: left; }
+  .grid--rev > .grid__item {
+    direction: ltr;
+    text-align: left; }
+
+/**
+ * Align the entire grid to the right. Extends `.grid`.
+ */
+.grid--right {
+  text-align: right; }
+  .grid--right > .grid__item {
+    text-align: left; }
+
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. Extends `.grid`.
+ */
+.grid--center {
+  text-align: center; }
+  .grid--center > .grid__item {
+    text-align: left; }
+
+/**
+ * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
+ * `.grid`.
+ */
+.grid--middle > .grid__item {
+  vertical-align: middle; }
+
+/**
+ *
+ */
+.desk--one-third {
+  width: 33.3333333% !important; }
+
+.desk--one-half {
+  width: 50% !important; }
+
+.desk--one-quarter {
+  width: 25% !important; }
+
 /**
  * Primary site colors and fonts
  */
@@ -4212,73 +4466,18 @@ hr {
 /*------------------------------------*\
     $LAYOUTS
 \*------------------------------------*/
-.base-layout, .layout-single-column, .layout--wide {
-  width: auto;
-  margin-left: 20px;
-  margin-right: 20px;
+.layout-single-column, .layout--wide {
+  margin: 0 auto;
   clear: both; }
-  @media screen and (min-width: 42.5em) {
-    .base-layout, .layout-single-column, .layout--wide {
-      margin-left: auto;
-      margin-right: auto; } }
 
-@media screen and (min-width: 42.5em) {
-  .layout-single-column, .layout--wide {
-    width: 640px; } }
-@media screen and (min-width: 50em) {
-  .layout-single-column, .layout--wide {
-    width: 700px; } }
+.layout-single-column {
+  width: 980px; }
 
-@media screen and (min-width: 62.5em) {
-  .layout--wide {
-    width: 880px; } }
+.layout--wide {
+  width: 980px; }
 
 .layout--full {
-  max-width: 1100px; }
-
-/**
- * The wrapper class for full-width images
- */
-.layout-background-fill {
-  position: relative;
-  left: 0;
-  overflow: hidden;
-  max-width: 100%;
-  width: 100%;
-  margin-top: 0;
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
-  top: -25px;
-  /* 9 */
-  top: parseInt(-25px)/19rem;
-  /* 9 */ }
-
-@media screen and (max-width: 31.25em) {
-  .layout-background-stretch {
-    /* 3 */
-    /* 3 */
-    /* 4 */
-    /* 6 */
-    /* 6 */
-    /* 7 */
-    margin-left: -29px;
-    /* 9 */
-    margin-left: parseInt(-29px)/19rem;
-    /* 9 */
-    /* 3 */
-    /* 3 */
-    /* 4 */
-    /* 6 */
-    /* 6 */
-    /* 7 */
-    margin-right: -29px;
-    /* 9 */
-    margin-right: parseInt(-29px)/19rem;
-    /* 9 */ } }
+  width: 980px; }
 
 /**
  * Site-wide elements and components
@@ -4628,7 +4827,6 @@ tbody {
 
 .event {
   width: 100%;
-  color: white;
   border: 1px solid #e9e9e9;
   border-radius: 3px; }
   .event tbody, .event tr:last-child {
@@ -4683,9 +4881,6 @@ td {
     $HEADER
 \*------------------------------------*/
 .site-header {
-  margin-top: 20px !important;
-  padding-top: 20px !important;
-  display: inline-block;
   position: fixed;
   top: 0;
   z-index: 505;
@@ -4696,6 +4891,7 @@ td {
   border-top-width: 3px;
   border-top-style: solid;
   border-top-color: #f9b625;
+  margin: 0 auto;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
@@ -4703,27 +4899,31 @@ td {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
 
 .site-logo {
-  display: inline-block;
-  float: left;
-  width: 10%;
+  display: block;
+  float: none;
+  width: 980px;
+  margin: 0 auto;
   height: 81px;
   padding-left: 12px;
   padding-right: 12px;
   line-height: 81px;
   vertical-align: middle;
-  text-align: center; }
-
-a.ie-logo {
-  display: block;
-  overflow: hidden;
-  vertical-align: middle; }
-  a.ie-logo img {
+  text-align: center;
+  position: relative; }
+  .site-logo a {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 103px;
+    height: 64px;
+    background: url("/images/cru-logo.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
     position: absolute;
-    display: block;
-    width: 74px;
-    height: 54px;
-    margin-left: 17px;
-    margin-top: 17px; }
+    top: 0;
+    left: 0;
+    margin-top: 5px; }
 
 /*------------------------------------*\
     $FOOTER
@@ -4912,33 +5112,35 @@ a.ie-logo {
   float: none;
   display: inline-block;
   vertical-align: middle;
-  max-width: 1220px;
   top: 0;
   border-top: 3px solid;
-  width: 90%;
+  width: 100%;
   background-color: transparent;
   z-index: 505;
   right: 0;
   border-color: transparent;
   overflow: scroll;
-  padding-top: 69px;
+  padding-top: 0px;
   height: 100%; }
 
 .site-nav {
   position: relative;
   z-index: 1;
-  margin-top: 20px;
-  text-align: right; }
+  margin-top: 5px;
+  text-align: right;
+  width: 980px;
+  margin: 0 auto; }
 
 /**
  *  Nav that includes Sign Up, Log In, and Search
  **/
 .right-nav {
   width: 980px;
+  margin: 0 auto;
   vertical-align: middle;
   position: relative;
   z-index: 506;
-  margin-top: 20px;
+  margin-top: 5px;
   text-align: right;
   line-height: 1.26316; }
   .right-nav .search__options {
@@ -4954,7 +5156,7 @@ a.ie-logo {
   letter-spacing: 0.9px;
   vertical-align: middle;
   color: white;
-  color: #444444;
+  color: #404040;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -ms-transition: all 0.25s ease-in-out;
@@ -4976,9 +5178,9 @@ a.ie-logo {
 .nav .nav__item > .dropdown, .post-meta .nav__item > .dropdown {
   position: fixed;
   left: 0;
-  background-color: #444444;
+  background-color: #404040;
   color: #ffffff;
-  width: 980px !important;
+  width: 980px;
   overflow: hidden;
   max-height: 0;
   height: 0;
@@ -5013,6 +5215,7 @@ a.ie-logo {
   height: auto;
   overflow: visible;
   opacity: 1;
+  margin: 0 auto !important;
   -webkit-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
   -moz-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
   -ms-box-shadow: 0 1px 1px rgba(6, 8, 8, 0.1);
@@ -5025,6 +5228,12 @@ a.ie-logo {
   -ms-transition: all 0.3s 0.2s ease;
   -o-transition: all 0.3s 0.2s ease;
   transition: all 0.3s 0.2s ease; }
+
+.dropdown {
+  width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center;
+  float: right; }
 
 .nav li.dropdown__item:hover:after, .post-meta li.dropdown__item:hover:after,
 .nav li.dropdown__item:focus:after,
@@ -5154,7 +5363,7 @@ a.ie-logo {
   border-bottom: none;
   border-radius: 1px; }
 .nav-is-open .primary-search--dropdown li a {
-  color: #444444; }
+  color: #404040; }
 .nav-is-open .primary-search--dropdown {
   border: 1px solid #f9b625;
   border-top: none; }
@@ -5250,7 +5459,7 @@ a.ie-logo {
   border-bottom: none;
   border-radius: 1px; }
 .nav-is-open .primary-search--dropdown li a {
-  color: #444444; }
+  color: #404040; }
 .nav-is-open .primary-search--dropdown {
   border: 1px solid #f9b625;
   border-top: none; }
@@ -5264,7 +5473,7 @@ a.ie-logo {
   .ui-autocomplete li {
     list-style: none outside none; }
   .ui-autocomplete li a {
-    background-color: #444444;
+    background-color: #404040;
     color: white;
     display: block;
     padding: 5px 13px;
@@ -5295,6 +5504,8 @@ a.ie-logo {
     padding-right: 15px;
     padding-bottom: 15px;
     padding-left: 15px; }
+  .tile__item > a:hover {
+    text-decoration: none; }
   .tile__item > ul {
     margin-bottom: 0;
     padding-top: 7px;
@@ -5340,6 +5551,11 @@ a.ie-logo {
   .tile__item > div > img {
     width: 100%;
     display: block; }
+
+.tile-masonry .grid__item {
+  /*following properties fix problem where two halves stack instead of sit side-by-side */
+  margin-left: -1px;
+  transform: translateX(1px); }
 
 /**
  * Page components
@@ -5542,6 +5758,7 @@ a.ie-logo {
   opacity: 0.3; }
 
 .background-image {
+  background-color: black;
   position: absolute;
   top: 0;
   left: 0;
@@ -5559,10 +5776,9 @@ a.ie-logo {
 .article-details {
   bottom: -10px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-  border: 0 none;
-  background: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
+  background: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
   -webkit-transition-property: opacity, bottom, color;
   -moz-transition-property: opacity, bottom, color;
   -ms-transition-property: opacity, bottom, color;
@@ -5579,6 +5795,7 @@ a.ie-logo {
   -o-transition-delay: 62ms, 62ms, 0;
   transition-delay: 62ms, 62ms, 0; }
   .article-details h3 {
+    text-align: center;
     line-height: 1.25em;
     min-height: 2.5em;
     color: white;
@@ -5618,6 +5835,10 @@ a.ie-logo {
   -o-opacity: 1;
   opacity: 1; }
 
+.slider2 .article-details {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1; }
+
 .slider-control, .slider-control i {
   -webkit-transition: -webkit-transform 200ms;
   -moz-transition: -moz-transform 200ms;
@@ -5632,7 +5853,7 @@ a.ie-logo {
   min-height: 60px;
   width: 100px;
   -webkit-tap-highlight-color: transparent;
-  z-index: 1; }
+  z-index: 1000000; }
   .slider-control i {
     color: #ccc;
     -webkit-transition-property: left;
@@ -5708,6 +5929,7 @@ a.ie-logo {
   letter-spacing: -0.04em; }
 
 .post-subtitle {
+  line-height: 1.32857;
   word-wrap: break-word;
   letter-spacing: -0.02em; }
 
@@ -6165,7 +6387,8 @@ a.ie-logo {
   height: 100%; }
 
 .full-width, .page-subnav, .center-block {
-  width: 980px; }
+  width: 100%;
+  margin: 0 auto; }
 
 /**
  * Content Alignment
