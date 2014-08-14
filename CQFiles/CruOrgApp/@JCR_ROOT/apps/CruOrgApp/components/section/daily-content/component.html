@@ -1,5 +1,5 @@
 {%#if content.today%}
-    <article class="post-article daily-content" data-servletPath="{%content.path%}.dailypaths.json">
+<article class="post-article  color-white box-shadow--thin  layout--full daily-content" data-servletPath="{%content.path%}.dailypaths.json">
         <!-- ARTICLE HEADLINE COMPONENT -->
         <header class="post__headline  layout-single-column daily-content"></header>
         <!-- POST BODY -->
@@ -10,9 +10,9 @@
             <ol class="grid  pagination">          
         	</ol>       
         </div>
-
-    </article>
     <section class="layout-single-column daily-content-facebook-comments"></section>
+    </article>
+
 {%else%}
 	{%#if page.isEditMode%}
         <header class="post__headline  layout-single-column daily-content">

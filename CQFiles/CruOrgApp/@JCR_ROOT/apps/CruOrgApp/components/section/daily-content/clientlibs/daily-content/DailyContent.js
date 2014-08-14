@@ -23,6 +23,7 @@ Cru.components.DailyContent.elements = {
     createTitle: function(title){
         var h1 = document.createElement(this.H1);
         var titleNode = document.createTextNode(title);
+		h1.className = "post-title pt_x";
         h1.appendChild(titleNode);
         return h1;
     },
