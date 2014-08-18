@@ -8,13 +8,16 @@ $(document).ready(function(){
 		/*
 		 * When window loses focus stop animation from firing to prevent queue up issues
 		 */
-		
+
+    if ($('html').hasClass('no-js')) {
+        // do nothing
+    } else {
 		$(window).focus(function() {
 		  window_focus=true;
 		}).blur(function() {
 		  window_focus=false;
 		});
-
+    }
 
 	/*
 	 * Forward movement
