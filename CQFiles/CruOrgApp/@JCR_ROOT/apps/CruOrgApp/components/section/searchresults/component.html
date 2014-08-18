@@ -1,4 +1,4 @@
-<div class="primary-search__results" data-asynchronous-path="{%global.searchResourcePath%}">
+<div class="primary-search__results  masonry__ignore  layout--wide  box-shadow--thin   color-white  p" data-asynchronous-path="{%global.searchResourcePath%}">
     {%#if global.hits %}
         {%!Results %}
         <div class="layout-single-column">
@@ -18,8 +18,8 @@
         </ul>
 
         {%!Paginator %}
-        <div class="layout-single-column">
-            {%#if global.showPagination %}
+		{%#if global.showPagination %}
+	        <div class="layout-single-column">
                 <ol class="pagination">
                     <li class="pagination__prev">
                         <a {%#if global.previousPage %}href="{%global.previousPage.URL%}"{%/if%}
@@ -37,8 +37,8 @@
                            class="button  button--small  button--subtle">{%global.nextText%}</a>
                     </li>
                 </ol>
-            {%/if%}
-        </div>
+	        </div>
+        {%/if%}
     {%else%}
         {%!No Results %}
         <div class="layout-single-column">
