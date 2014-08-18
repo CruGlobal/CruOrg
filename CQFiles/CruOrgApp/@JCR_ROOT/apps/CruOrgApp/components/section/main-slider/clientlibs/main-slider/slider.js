@@ -9,10 +9,7 @@ $(document).ready(function(){
 		 * When window loses focus stop animation from firing to prevent queue up issues
 		 */
 
-    if ($('html').hasClass('lt-ie9')) {
-        // don't call $(window).focus()
-    } else {
-        alert('modern browser')
+    if (!$('html').hasClass('lt-ie9')) {
 		$(window).focus(function() {
 		  window_focus=true;
 		}).blur(function() {
@@ -35,7 +32,11 @@ $(document).ready(function(){
 				$('.slider0').addClass('slider5').removeClass('slider0');
 				$('.slider5').addClass('slider4').removeClass('slider5');
 
-                setTimeout(function(){sliding=false}, 1200);
+                if ($('html').hasClass('lt-ie9')){
+                    setTimeout(function(){sliding=false}, 0);
+                } else {
+                    setTimeout(function(){sliding=false}, 1000);
+                }
 			}
 		}
 	}
@@ -54,7 +55,11 @@ $(document).ready(function(){
 			$('.slider5').addClass('slider0').removeClass('slider5');
 			$('.slider0').addClass('slider1').removeClass('slider0');
 
-			setTimeout(function(){sliding=false}, 1200);
+            if ($('html').hasClass('lt-ie9')){
+			    setTimeout(function(){sliding=false}, 0);
+            } else {
+                setTimeout(function(){sliding=false}, 1000);
+            }
 		}
 	}
 
