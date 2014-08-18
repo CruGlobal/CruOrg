@@ -10,7 +10,7 @@ $(document).ready(function(){
 		 */
 
     if ($('html').hasClass('lt-ie9')) {
-        alert('less than ie9')
+        // don't call $(window).focus()
     } else {
         alert('modern browser')
 		$(window).focus(function() {
