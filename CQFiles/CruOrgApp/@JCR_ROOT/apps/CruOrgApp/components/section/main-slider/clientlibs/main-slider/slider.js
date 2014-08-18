@@ -9,9 +9,10 @@ $(document).ready(function(){
 		 * When window loses focus stop animation from firing to prevent queue up issues
 		 */
 
-    if ($('html').hasClass('no-js')) {
-        // do nothing
+    if ($('html').hasClass('lt-ie9')) {
+        alert('less than ie9')
     } else {
+        alert('modern browser')
 		$(window).focus(function() {
 		  window_focus=true;
 		}).blur(function() {
