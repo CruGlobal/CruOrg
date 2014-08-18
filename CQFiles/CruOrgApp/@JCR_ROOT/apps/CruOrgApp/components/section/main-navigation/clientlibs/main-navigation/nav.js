@@ -21,7 +21,9 @@ $("div.dropdown").hover(
 * Desktop active class added to main nav item to inicate you are here
 */
 
-$(function() {
- $('nav a[href^="' + location.pathname + '"]').addClass('primary-link-active');
+$(function () {
+    var url = location.pathname; // get current URL
+    $('.nav a[href*="' + url + '"]').addClass('primary-link-active-current');
+    $('>a',$('.primary-link-active-current').parents('li.nav__item')).addClass('primary-link-active');
 });
 
