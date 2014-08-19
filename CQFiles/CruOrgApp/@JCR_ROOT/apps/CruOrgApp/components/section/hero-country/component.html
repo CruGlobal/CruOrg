@@ -1,7 +1,7 @@
 <div class="section-title center-block">
 	<h2 class="section-title__item display--inline-block">{% page.title %}</h2>
 </div>
-<div class="grid__item text--center one-whole desk--two-thirds">
+<div class="grid__item masonry__item text--center one-whole desk--two-thirds">
     <div class="tile__item">
       <div>
 			{%#if content.imagePath %}
@@ -24,7 +24,7 @@
 
 
 
-<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+<div class="grid__item masonry__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
     <div class="tile__item">
       <div>
 			{%#if content.secondImagePath %}
@@ -40,7 +40,7 @@
     </div>
   </div>
 
-<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+<div class="grid__item masonry__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
     <div class="tile__item">
 {%#if content.climate %}
                  <p>{% content.climate %}</p>
@@ -52,7 +52,7 @@
   </div>
 
 
-<div class="grid__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
+<div class="grid__item masonry__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
     <div class="tile__item">
 <dl>
     {%#each content.spirituality %}

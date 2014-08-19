@@ -1,10 +1,11 @@
 $(document).ready(function() {
     if(typeof CQ === 'undefined') { // only when WCM Mode is disabled
-        $('.tile-masonry').masonry({
+        $('.masonry-container').masonry({
             columnWidth: 1,
-            itemSelector: '.grid__item'
+            itemSelector: '.masonry__item',
+			stamp: ".masonry__ignore" //stamp is something masonry ignores
         }).imagesLoaded(function() {
-            $('.tile-masonry').masonry(); // parsys
+            $('.masonry-container').masonry(); // parsys
         });
     }
 });
