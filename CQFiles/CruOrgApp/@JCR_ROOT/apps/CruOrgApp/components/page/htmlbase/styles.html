@@ -11,13 +11,9 @@
     </script>
     
     
-    <!--[if !IE]><!-->
+    <!--[if (!IE)|(gte IE 9)]><!-->
     	{% clientLibrary "cruOrg.all" type="css" %}
     <!--<![endif]-->
-    
-    <!--[if gte IE 9]>
-    	{% clientLibrary "cruOrg.all" type="css" %}
-    <![endif]-->
     
     <!--[if lt IE 9]>
     	{% clientLibrary "cruOrg.ie.all" type="css" %}
