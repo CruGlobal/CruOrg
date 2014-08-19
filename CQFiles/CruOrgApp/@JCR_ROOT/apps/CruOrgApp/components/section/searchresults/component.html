@@ -1,58 +1,57 @@
-<div class="primary-search__results  masonry__ignore  layout--wide  box-shadow--thin   color-white  p" data-asynchronous-path="{%global.searchResourcePath%}">
-    {%#if global.hits %}
-        {%!Results %}
-        <div class="layout-single-column">
-            <h3>{%{global.statisticsText}%}</h3>
-        </div>
+<div class="masonry__ignore  primary-search__results  box-shadow--thin  color-white  p" data-asynchronous-path="{%global.searchResourcePath%}">
+{%#if global.hits %}
+    {%!Results %}
+    <div>
+        <h3 class="ps-">{%{global.statisticsText}%}</h3>
+    </div>
 
-        <ul class="block-list  mb-">
-            {%#each global.hits %}
-                <li class="primary-search__results--item block-link  pe-">
-                    <a class="layout-single-column"  href="{%this.URL%}">
-                        <h4 class="results-title  pb--  mb0">{%{this.title}%}</h4>
-                        <!-- Limit to 20-25 words -->
-                        <p class="pb-  mb0">{%{this.excerpt}%}</p>
-                    </a>
-                </li>
+    <ul class="block-list  mb-">
+        {%#each global.hits %}
+        <li class="primary-search__results--item block-link  p-">
+            <a href="{%this.URL%}">
+                <h4 class="results-title  pb--  mb0">{%{this.title}%}</h4>
+                <!-- Limit to 20-25 words -->
+                <p class="pb-  mb0">{%{this.excerpt}%}</p>
+            </a>
+        </li>
+        {%/each%}
+    </ul>
+
+    {%!Paginator %}
+	{%#if global.showPagination %}
+    <div>
+        <ol class="pagination">
+            <li class="pagination__prev">
+                <a {%#if global.previousPage %}href="{%global.previousPage.URL%}"{%/if%}
+                    class="button  button--small  button--subtle">{%global.previousText%}</a>
+            </li>
+
+            {%#each global.resultPages %}
+            <li>
+                <a href="{% this.URL %}">{% this.pageNumber %}</a>
+            </li>
             {%/each%}
-        </ul>
 
-        {%!Paginator %}
-		{%#if global.showPagination %}
-	        <div class="layout-single-column">
-                <ol class="pagination">
-                    <li class="pagination__prev">
-                        <a {%#if global.previousPage %}href="{%global.previousPage.URL%}"{%/if%}
-                            class="button  button--small  button--subtle">{%global.previousText%}</a>
-                    </li>
-
-                    {%#each global.resultPages %}
-                        <li>
-                            <a href="{% this.URL %}">{% this.pageNumber %}</a>
-                        </li>
-                    {%/each%}
-
-                    <li class="pagination__next">
-                        <a {%#if global.nextPage %}href="{%global.nextPage.URL%}"{%/if%}
-                           class="button  button--small  button--subtle">{%global.nextText%}</a>
-                    </li>
-                </ol>
-	        </div>
-        {%/if%}
-    {%else%}
-        {%!No Results %}
-        <div class="layout-single-column">
-            {%#if global.escapedQuery %}
-            {%{global.noResultsText}%}
-            {%/if%}
-            {%#if page.isEditMode %}
-                {%#unless global.escapedQuery %}
-                    [SEARCH RESULTS]<br>
-                    {%#unless global.pagesToSearch %}
-                        Set a <strong>page to search</strong> in the Global Properties.
-                    {%/unless%}
-                {%/unless%}
-            {%/if%}
-        </div>
+            <li class="pagination__next">
+                <a {%#if global.nextPage %}href="{%global.nextPage.URL%}"{%/if%} class="button  button--small  button--subtle">{%global.nextText%}</a>
+            </li>
+        </ol>
+    </div>
     {%/if%}
+{%else%}
+    {%!No Results %}
+    <div>
+        {%#if global.escapedQuery %}
+        {%{global.noResultsText}%}
+        {%/if%}
+        {%#if page.isEditMode %}
+            {%#unless global.escapedQuery %}
+                [SEARCH RESULTS]<br>
+                {%#unless global.pagesToSearch %}
+                    Set a <strong>page to search</strong> in the Global Properties.
+                {%/unless%}
+            {%/unless%}
+        {%/if%}
+    </div>
+{%/if%}
 </div>
