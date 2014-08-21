@@ -4652,6 +4652,8 @@ q {
     background-color: #efa507;
     border-color: #c28605;
     color: white; }
+  .button--primary:visited {
+    color: white; }
 
 .button--secondary {
   background-color: #666062;
