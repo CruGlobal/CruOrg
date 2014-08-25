@@ -23,7 +23,9 @@ $("div.dropdown").hover(
 
 $(function () {
     var url = location.pathname; // get current URL
-    $('.nav a[href*="' + url + '"]').addClass('primary-link-active-current');
-    $('>a',$('.primary-link-active-current').parents('li.nav__item')).addClass('primary-link-active');
+    if (url != "/") {
+        $('.nav a[href*="' + url + '"]').addClass('primary-link-active-current');
+        $('>a',$('.primary-link-active-current').parents('li.nav__item')).addClass('primary-link-active');
+    }
 });
 
