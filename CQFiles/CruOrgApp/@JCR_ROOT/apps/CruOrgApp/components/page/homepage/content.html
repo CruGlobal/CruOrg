@@ -10,21 +10,19 @@
     
     <!-- Primary wrapper for home page-->
     <div class="layout--wide">
-        <!-- Tiles -->
-        <div  class="grid masonry-container"> <!--This and the following grid is using same markup as tile-components for the tiles-->
-            {%#include "tile-container-parsys" as="foundation/components/parsys"%}{%/include%}
-        </div>
-    
-        
         <div class="mt center-block  home-banner">
             {%#include "section-title" as="CruOrgApp/components/section/section-title"%}{%/include%}
     
          </div>
     
         <hr class="section-divider">
+        <!-- Tiles -->
+        <div  class="grid masonry-container"> <!--This and the following grid is using same markup as tile-components for the tiles-->
+            {%#include "tile-container-parsys" as="foundation/components/parsys"%}{%/include%}
+        </div>
     
          <!--Two large buttons. One for finder other for Start Relationship...-->
-        <div class="grid  button-group">
+        <div class="grid  button-group  mb-">
               {%#include "home-section-container-left" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
               {%#include "home-section-container-right" as="CruOrgApp/components/section/home-section-container"%}{%/include%}
         </div>
@@ -33,7 +31,7 @@
          <div class="grid">
            <div class="grid__item one-whole desk--one-half">
     
-             <div class="grid m--">
+             <div class="grid">
                  <div class="grid__item  lap--one-half desk--one-half">
                      {%#include "home-page-curated-1" as="CruOrgApp/components/section/lists/home-page-curated"%}{%/include%}
                      {%#include "home-page-curated-2" as="CruOrgApp/components/section/lists/home-page-curated"%}{%/include%}
@@ -44,9 +42,7 @@
              </div> <!--end grid-->
            </div> <!--end grid__item-->
            <div class="grid__item  desk--one-half">
-             <div class="m--">
-                    {%#include "home-section-container-parsys-2" as="foundation/components/parsys"%}{%/include%}
-             </div>
+                {%#include "home-section-container-parsys-2" as="foundation/components/parsys"%}{%/include%}
            </div>
     
          </div> <!--end grid-->
