@@ -13,8 +13,8 @@ Cru.components.tile = {
     DEFAULT_RENDITION_VALUE : "CruHalf432x243", //used for the 1/2, 1/3 and 1/4 widths
     CRU_RENDITION_VALUE : "Cru704x396", //used for the 2/3 and whole grid widths
     CRU_WIDTHS_VALUES_ARRAY : [ //array of widths that should use the Cru704x396 rendition 
-		"desk--one-whole",
-       "desk--two-thirds"
+	    "desk--one-whole",
+        "desk--two-thirds"
     ],
 	CRU_250_CHARACTERS_WIDTHS_ARRAY : [ //array of widths that should use the Cru704x396 rendition 
 		"desk--one-whole",
@@ -56,7 +56,7 @@ Cru.components.tile = {
     validator : function(value, container) {
         var width = container.findParentByType('dialog').getField("./width").getValue();
         var characters = Cru.widgets.Util.richTextEditorCharacterCount(value);
-        var limit = (this.CRU_250_CHARACTERS_WIDTHS_ARRAY.indexOf(width) == -1) ? 140 : 250;
+        var limit = (this.CRU_250_CHARACTERS_WIDTHS_ARRAY.indexOf(width) == -1) ? 280 : 320;
         if( Cru.widgets.Util.richTextEditorCharacterCount(value) > limit ){
             return CQ.I18n.getMessage("The character count limit is " + limit);
         } else {
