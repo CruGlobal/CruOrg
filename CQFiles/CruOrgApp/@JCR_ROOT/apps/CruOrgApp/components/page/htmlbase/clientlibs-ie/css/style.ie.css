@@ -8,8 +8,8 @@
  *
  * Be sure read the warning before continuing to edit or add any new
  * styles. In addition, be sure to change the variables to turn off
- * demo mode and debug mode before pushing to production.
- *
+ * demo mode and debug mode before pushing to production. 
+ * 
  */
 /*------------------------------------*\
  $CONTENTS
@@ -56,10 +56,10 @@
   $WARNING
 \*------------------------------------*/
 /**
- * Custom styles for cru.org are meant to be place in the elements folder.
- * They should be as specific to cru as possible and mainly ui related. If
+ * Custom styles for cru.org are meant to be place in the elements folder. 
+ * They should be as specific to cru as possible and mainly ui related. If 
  * there is a generic feature needed, please submit an issue to the
- * brackets.css github page.
+ * brackets.css github page. 
  *
  */
 /*------------------------------------*\
@@ -153,12 +153,12 @@
 \*------------------------------------*/
 /**
  * Brackets is our base framework for cru.org and other projects. We
- * have done our best to stay away from any inherint style as to not
- * impose a prebuilt ui. This framework is our lowest level
+ * have done our best to stay away from any inherint style as to not 
+ * impose a prebuilt ui. This framework is our lowest level 
  * foundation which we will build our patterns on top of.
  *
  * Designed and built with all the love in our hearts
- *
+ * 
  */
 /*------------------------------------*\
     $CONTENTS
@@ -220,8 +220,8 @@
 \*------------------------------------*/
 /*
  * Brackets is an OO framework, which works in keeping the open/closed
- * principle. The variables you set previously are now being used
- * throughout brackets.css to style everything we need for a base.
+ * principle. The variables you set previously are now being used 
+ * throughout brackets.css to style everything we need for a base. 
  * Any custom styles SHOULD NOT be added or modified in brackets.css
  * directly, but added via your theme stylesheet as per the
  * open/closed principle:
@@ -351,7 +351,7 @@
 \*------------------------------------*/
 /**
  * I have included variables for only one buttons, the default, since my wish
- * is to not impose style. Feel free to add more variables. I have included
+ * is to not impose style. Feel free to add more variables. I have included 
  * a mixin to help you generate these easily
  */
 /*------------------------------------*\
@@ -377,7 +377,7 @@
 \*------------------------------------*/
 /**
  * These mixins are for the library to use only, you should not need to modify
- * them at all.
+ * them at all. 
  */
 /*------------------------------------*\
     $MIXINS/ALERTS
@@ -434,7 +434,7 @@
  *    that are clearfixed.
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
- *
+ * 
  *  Source: http://nicolasgallagher.com/micro-clearfix-hack/
  */
 /**
@@ -460,7 +460,7 @@
 /*------------------------------------*\
     $MIXINS/IMAGES
 \*------------------------------------*/
-/**
+/** 
  * Responsive image
  *
  * Keep images from scaling beyond the width of their parents.
@@ -470,15 +470,15 @@
 \*------------------------------------*/
 /**
  * Writes the typical link, button in one go
- * Includes active and focus for accessibility
- *
+ * Includes active and focus for accessibility 
+ * 
  */
 /*------------------------------------*\
     $MIXINS/MEDIA-QUERY
 \*------------------------------------*/
 /**
  * Media query for easy breakpoint. Use pixel width with or without units
- * and it will convert to em
+ * and it will convert to em 
  */
 /**
  * Set $query1: max for a max-qidth query, defaults to min-width
@@ -521,8 +521,8 @@
 \*------------------------------------*/
 /**
  *  Calculates any number of margins and paddings in one swoop
- *
- * Running this is as easy
+ * 
+ * Running this is as easy 
  * @include vertical-calc(1, 12) {}
  *
  * DO NOT USE AT THE MOMENT
@@ -1787,14 +1787,14 @@ pre,
  * Where `margin-bottom` is concerned, this value will be the same as the
  * base line-height. This allows us to keep a consistent vertical rhythm.
  * As per: csswizardry.com/2012/06/single-direction-margin-declarations
- *
- * We will be using the above silent classes to quickly remove default
+ * 
+ * We will be using the above silent classes to quickly remove default 
  * margin and padding and quickly apply margin-bottom to the element with
- * default rem units and px fallbacks.
- *
+ * default rem units and px fallbacks. 
+ * 
  * By default $base-line-height is set to 24px, therefore so is the
  * $magic-number.
- * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px
+ * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px 
  *
  */
 /**
@@ -1822,7 +1822,7 @@ ul, ol, dd {
 /*------------------------------------*\
     $BASE
 \*------------------------------------*/
-/*
+/* 
  * Reset the box-sizing
  */
 /**
@@ -1862,7 +1862,7 @@ body {
 \*------------------------------------*/
 /**
  * Headings 1-6
- *
+ * 
  */
 h1, .h1 {
     font-size: 200;
@@ -1912,7 +1912,7 @@ h6, .h6 {
  * Big up @boblet: html5doctor.com/blockquote-q-cite
  */
 /**
- * Dont change the content or quotes attribute for these.
+ * Dont change the content or quotes attribute for these. 
  */
 /**
  * Set up quote marks on quoting elements. This is very English-based, so we are
@@ -2155,7 +2155,7 @@ legend {
    <input type=password class=text-input>
  *
  * For non-text based inputs such as <select>, <radio>, etc use .form-control
- * which allows you to add nice hover/focus effect to the text inputs if you
+ * which allows you to add nice hover/focus effect to the text inputs if you 
  * choose
  *
  */
@@ -3649,9 +3649,9 @@ input[disabled]:focus,
     $MEDIA
 \*------------------------------------*/
 /**
- * Deals with text in combination with images and video content by
- * placing them side by side.
- * Ex:
+ * Deals with text in combination with images and video content by 
+ * placing them side by side. 
+ * Ex: 
  *
    <div class="media">
        <img src="http://placekitten.com/200/300" alt="" class="media__img">
@@ -3694,7 +3694,7 @@ input[disabled]:focus,
     #SPACING
 \*------------------------------------*/
 /**
- * Margin and padding helper classes.
+ * Margin and padding helper classes. 
  *
  * `.(m|p)(t|r|b|L|e|s)(-|+|0) {}` = margin/padding top/right/bottom/left/ends/sides less/more/none
  */
@@ -4223,13 +4223,13 @@ input[disabled]:focus,
     $FONTS
 \*------------------------------------*/
 /**
- * As of now this is where we will be placing our icon fonts.
- * Freight Sans Pro will be served up from Typekit.
+ * As of now this is where we will be placing our icon fonts. 
+ * Freight Sans Pro will be served up from Typekit. 
  */
 @font-face {
     font-family: 'cruicons';
-    src: url("assets/fonts/cruicons.eot?13550619");
-    src: url("assets/fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("assets/fonts/cruicons.woff?13550619") format("woff"), url("assets/fonts/cruicons.ttf?13550619") format("truetype"), url("assets/fonts/cruicons.svg?13550619#cruicons") format("svg");
+    src: url("/fonts/cruicons.eot?13550619");
+    src: url("/fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("/fonts/cruicons.woff?13550619") format("woff"), url("/fonts/cruicons.ttf?13550619") format("truetype"), url("/fonts/cruicons.svg?13550619#cruicons") format("svg");
     font-weight: normal;
     font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -4437,7 +4437,7 @@ input[disabled]:focus,
         text-align: left; } }
 
 /**
- * A different type of <hr> styling.
+ * A different type of <hr> styling. 
  */
 /*hr.section-divider{
 	display: block;
@@ -4450,14 +4450,14 @@ hr, .divider {
     clear: both;
     display: block; }
 
-/**
- * The primary hr, small width
+/** 
+ * The primary hr, small width 
  */
 hr {
     width: 14%; }
 
-/**
- * Full width hr
+/** 
+ * Full width hr 
  */
 /* hr */
 .divider {
@@ -4522,7 +4522,7 @@ figcaption {
 
 /**
  * Places a dash after a piece of text. Mainly for post meta info
- *
+ * 
  */
 .accent:after, a + .phone:after {
     content: "\00A0";
@@ -4621,15 +4621,15 @@ q:first-child {
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-/**
+/** 
  * Use this mixin to quickly pump out buttons:
  * @mixin btn($background, $border, $color:inherit).
  *
  * Change the hover and other states with:;
  * @mixin btn-effects($background, $border, $color:inherit).
- *
+ * 
  * Quick note: it will not work with transparency due to
- * the hover states.
+ * the hover states. 
  */
 .button-group {
     display: block; }
@@ -4916,7 +4916,7 @@ td {
     vertical-align: middle;
     width: 103px;
     height: 64px;
-    background: url("assets/images/cru-logo.png");
+    background: url("/images/cru-logo.png");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
@@ -5552,7 +5552,7 @@ td {
     width: 100%;
     display: block; }
 
-.masonry__item {
+.masonry__item .grid__item {
     /*following properties fix problem where two halves stack instead of sit side-by-side */
     margin-left: -1px;
     transform: translateX(1px); }
@@ -5564,10 +5564,10 @@ td {
     $CAMPUS-LOCATOR
 \*------------------------------------*/
 /**
- * Used for background colors at the moment, text is either in
+ * Used for background colors at the moment, text is either in 
  * the default text color or white. You can extend %text-white
  * found in the _utilities.scss file if you wish to change the
- * text color.
+ * text color. 
  */
 .state-select-results small {
     color: #353535; }
@@ -5948,7 +5948,7 @@ td {
 
 /**
  * For numbered post formats. Removes the typical magin given to a
- * list.
+ * list. 
  */
 @media screen and (max-width: 44.75em) {
     .post__list li {
@@ -6086,7 +6086,7 @@ td {
 			text-align: right;
 			margin-top: 0;
 			line-height: 1.6;
-
+	
 			&:before{
 				width: 25%;
 				margin-left: 75%;
