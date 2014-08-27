@@ -35,11 +35,13 @@ Cru.components.searchbox = {
             var path = a.pathname.replace('.' + extension, '');
             var queryField = getQueryField();
 
-            if (isInternalLink(a)) {
-                //for internal links and selectors search.
-                return path + "." + queryField.val() + "." + extension;
-            } else {
-                return link + "?ssUserText=" + queryField.val() + "&Query=" + queryField.val();
+            if (queryField.val().length != 0) {
+                if (isInternalLink(a)) {
+                    //for internal links and selectors search.
+                    return path + "." + queryField.val() + "." + extension;
+                } else {
+                    return link + "?ssUserText=" + queryField.val() + "&Query=" + queryField.val();
+                }
             }
         }
         function submitForm(link) {
