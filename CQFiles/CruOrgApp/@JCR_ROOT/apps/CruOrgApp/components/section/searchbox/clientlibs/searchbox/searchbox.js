@@ -10,8 +10,9 @@ Cru.components.searchbox = {
     init: function(form) {
         //declare vars.
         var pathFields = form.find("ul.primary-search--dropdown li a");
-
-        //if (searchlink_id == 'cru_org') {alert(searchlink_id);}
+        var searchlink_id = "cru_org";
+        var give_link = 'https://give.cru.org/give/VirtualCommonLinks/process/search2';
+        var cru_org_link = '/content/cru/us/en/search';
 
         //validate searchBox exist.
         if (!form) return;
@@ -19,7 +20,7 @@ Cru.components.searchbox = {
         if (pathFields.size() === 0) return;
 
         //selectors of parameters.
-        function processLink(link, searchlink_id) {
+        function processLink(link) {
             //get the link
             var a = $('<a>', {
                 href: link
@@ -35,43 +36,34 @@ Cru.components.searchbox = {
             var queryField = getQueryField();
 
 
-            alert('searchlink_id: ' + searchlink_id);
-
             if (queryField.val().length != 0) {
                 if (searchlink_id == 'cru_org') {
                     //for internal links and selectors search.
-                    return path + "." + queryField.val() + "." + extension;
+                    return cru_org_link + "." + queryField.val() + "." + extension;
                 } else {
-                    alert('this is the else statement');
-                    return link + "?ssUserText=" + queryField.val() + "&Query=" + queryField.val();
+                    return give_link + "?ssUserText=" + queryField.val() + "&Query=" + queryField.val();
                 }
             }
         }
 
         function submitForm(link) {
-            var processedLink = processLink(link, searchlink_id);
+            var processedLink = processLink(link);
             $(location).attr('href', processedLink);
         }
 
         function pathFieldsClick(e) {
+            e.preventDefault();
             $('.searchlink--underline').removeClass('searchlink--underline');
 
             $(this).addClass('searchlink--underline');
 
             var link = $(this).attr("href");
-            var searchlink_id = $(this).attr('id');
-
-            //alert(link);
-            //alert(searchlink_id);
-
-            processLink(link, searchlink_id);
-            e.preventDefault();
+            searchlink_id = $(this).attr('id');
         }
 
         function submitFormClick(e) {
-            var link = e.data.link.href;
-            submitForm(link);
             e.preventDefault();
+            submitForm("");
         }
 
         function getQueryField() {
@@ -94,9 +86,7 @@ Cru.components.searchbox = {
 
         //process
         pathFields.on("click", pathFieldsClick);
-        form.on("submit", {
-            "link": pathFields[0]
-        }, submitFormClick);
+        form.on("submit", submitFormClick);
 
         //if can catch a search query parameter, put it in the textfield.
         getQueryField().val(decodeURIComponent(getQueryParameter()));
