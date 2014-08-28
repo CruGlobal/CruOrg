@@ -8,8 +8,8 @@
  *
  * Be sure read the warning before continuing to edit or add any new
  * styles. In addition, be sure to change the variables to turn off
- * demo mode and debug mode before pushing to production. 
- * 
+ * demo mode and debug mode before pushing to production.
+ *
  */
 /*------------------------------------*\
  $CONTENTS
@@ -56,10 +56,10 @@
   $WARNING
 \*------------------------------------*/
 /**
- * Custom styles for cru.org are meant to be place in the elements folder. 
- * They should be as specific to cru as possible and mainly ui related. If 
+ * Custom styles for cru.org are meant to be place in the elements folder.
+ * They should be as specific to cru as possible and mainly ui related. If
  * there is a generic feature needed, please submit an issue to the
- * brackets.css github page. 
+ * brackets.css github page.
  *
  */
 /*------------------------------------*\
@@ -153,12 +153,12 @@
 \*------------------------------------*/
 /**
  * Brackets is our base framework for cru.org and other projects. We
- * have done our best to stay away from any inherint style as to not 
- * impose a prebuilt ui. This framework is our lowest level 
+ * have done our best to stay away from any inherint style as to not
+ * impose a prebuilt ui. This framework is our lowest level
  * foundation which we will build our patterns on top of.
  *
  * Designed and built with all the love in our hearts
- * 
+ *
  */
 /*------------------------------------*\
     $CONTENTS
@@ -220,8 +220,8 @@
 \*------------------------------------*/
 /*
  * Brackets is an OO framework, which works in keeping the open/closed
- * principle. The variables you set previously are now being used 
- * throughout brackets.css to style everything we need for a base. 
+ * principle. The variables you set previously are now being used
+ * throughout brackets.css to style everything we need for a base.
  * Any custom styles SHOULD NOT be added or modified in brackets.css
  * directly, but added via your theme stylesheet as per the
  * open/closed principle:
@@ -351,7 +351,7 @@
 \*------------------------------------*/
 /**
  * I have included variables for only one buttons, the default, since my wish
- * is to not impose style. Feel free to add more variables. I have included 
+ * is to not impose style. Feel free to add more variables. I have included
  * a mixin to help you generate these easily
  */
 /*------------------------------------*\
@@ -370,6 +370,10 @@
  * framework. There is no need to change any of these functions
  */
 /**
+ * This allows us to use the rem-calc mixin for shorthand
+ * conversions.
+ */
+/**
  * Use this em function instead of the other
  */
 /*------------------------------------*\
@@ -377,7 +381,7 @@
 \*------------------------------------*/
 /**
  * These mixins are for the library to use only, you should not need to modify
- * them at all. 
+ * them at all.
  */
 /*------------------------------------*\
     $MIXINS/ALERTS
@@ -434,7 +438,7 @@
  *    that are clearfixed.
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
- * 
+ *
  *  Source: http://nicolasgallagher.com/micro-clearfix-hack/
  */
 /**
@@ -460,7 +464,7 @@
 /*------------------------------------*\
     $MIXINS/IMAGES
 \*------------------------------------*/
-/** 
+/**
  * Responsive image
  *
  * Keep images from scaling beyond the width of their parents.
@@ -470,15 +474,15 @@
 \*------------------------------------*/
 /**
  * Writes the typical link, button in one go
- * Includes active and focus for accessibility 
- * 
+ * Includes active and focus for accessibility
+ *
  */
 /*------------------------------------*\
     $MIXINS/MEDIA-QUERY
 \*------------------------------------*/
 /**
  * Media query for easy breakpoint. Use pixel width with or without units
- * and it will convert to em 
+ * and it will convert to em
  */
 /**
  * Set $query1: max for a max-qidth query, defaults to min-width
@@ -507,6 +511,7 @@
 /**
  * Can handle shorthand calculations
  * Do not change the variable set
+ * http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
  */
 /**
  * Space elements by an amount based on your magic number. Pass in the property
@@ -521,8 +526,8 @@
 \*------------------------------------*/
 /**
  *  Calculates any number of margins and paddings in one swoop
- * 
- * Running this is as easy 
+ *
+ * Running this is as easy
  * @include vertical-calc(1, 12) {}
  *
  * DO NOT USE AT THE MOMENT
@@ -1787,14 +1792,14 @@ pre,
  * Where `margin-bottom` is concerned, this value will be the same as the
  * base line-height. This allows us to keep a consistent vertical rhythm.
  * As per: csswizardry.com/2012/06/single-direction-margin-declarations
- * 
- * We will be using the above silent classes to quickly remove default 
+ *
+ * We will be using the above silent classes to quickly remove default
  * margin and padding and quickly apply margin-bottom to the element with
- * default rem units and px fallbacks. 
- * 
+ * default rem units and px fallbacks.
+ *
  * By default $base-line-height is set to 24px, therefore so is the
  * $magic-number.
- * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px 
+ * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px
  *
  */
 /**
@@ -1822,7 +1827,7 @@ ul, ol, dd {
 /*------------------------------------*\
     $BASE
 \*------------------------------------*/
-/* 
+/*
  * Reset the box-sizing
  */
 /**
@@ -1862,7 +1867,7 @@ body {
 \*------------------------------------*/
 /**
  * Headings 1-6
- * 
+ *
  */
 h1, .h1 {
     font-size: 200;
@@ -1912,7 +1917,7 @@ h6, .h6 {
  * Big up @boblet: html5doctor.com/blockquote-q-cite
  */
 /**
- * Dont change the content or quotes attribute for these. 
+ * Dont change the content or quotes attribute for these.
  */
 /**
  * Set up quote marks on quoting elements. This is very English-based, so we are
@@ -2155,7 +2160,7 @@ legend {
    <input type=password class=text-input>
  *
  * For non-text based inputs such as <select>, <radio>, etc use .form-control
- * which allows you to add nice hover/focus effect to the text inputs if you 
+ * which allows you to add nice hover/focus effect to the text inputs if you
  * choose
  *
  */
@@ -2242,7 +2247,7 @@ label,
     /* 7 */
     margin-bottom: 6px;
     /* 9 */
-    margin-bottom: parseInt(6px)/19rem;
+    margin-bottom: 0.31579rem;
     /* 9 */ }
 
 /**
@@ -2265,7 +2270,7 @@ input + .additional {
     /* 7 */
     margin-top: 6px;
     /* 9 */
-    margin-top: parseInt(6px)/19rem;
+    margin-top: 0.31579rem;
     /* 9 */ }
 
 .additional, .check-list > li {
@@ -2277,7 +2282,7 @@ input + .additional {
     /* 7 */
     margin-bottom: 12px;
     /* 9 */
-    margin-bottom: parseInt(12px)/19rem;
+    margin-bottom: 0.63158rem;
     /* 9 */ }
 
 /*
@@ -3229,7 +3234,7 @@ input + .additional {
     /* 7 */
     padding: 6px 18px;
     /* 9 */
-    padding: parseInt(6px)/19rem parseInt(18px)/19rem;
+    padding: 0.31579rem 0.94737rem;
     /* 9 */
     font-size: 16px;
     font-size: 0.84211rem;
@@ -3241,7 +3246,7 @@ input + .additional {
     /* 7 */
     border-radius: 2px;
     /* 9 */
-    border-radius: parseInt(2px)/19rem;
+    border-radius: 0.10526rem;
     /* 9 */
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -3294,7 +3299,7 @@ input + .additional {
     /* 7 */
     padding: 2px 6px;
     /* 9 */
-    padding: parseInt(2px)/19rem parseInt(6px)/19rem;
+    padding: 0.10526rem 0.31579rem;
     /* 9 */ }
 .button--large {
     line-height: 2;
@@ -3310,7 +3315,7 @@ input + .additional {
     /* 7 */
     padding: 12px 26px;
     /* 9 */
-    padding: parseInt(12px)/19rem parseInt(26px)/19rem;
+    padding: 0.63158rem 1.36842rem;
     /* 9 */ }
 .button--full {
     width: 100%;
@@ -3328,7 +3333,7 @@ input + .additional {
     /* 7 */
     font-size: 30px;
     /* 9 */
-    font-size: parseInt(30px)/19rem;
+    font-size: 1.57895rem;
     /* 9 */ }
 .button--beta {
     /* 3 */
@@ -3339,7 +3344,7 @@ input + .additional {
     /* 7 */
     font-size: 24px;
     /* 9 */
-    font-size: parseInt(24px)/19rem;
+    font-size: 1.26316rem;
     /* 9 */ }
 .button--gamma {
     /* 3 */
@@ -3350,7 +3355,7 @@ input + .additional {
     /* 7 */
     font-size: 16px;
     /* 9 */
-    font-size: parseInt(16px)/19rem;
+    font-size: 0.84211rem;
     /* 9 */ }
 .button--positive {
     background-color: #4a993e;
@@ -3596,7 +3601,7 @@ input[disabled]:focus,
     /* 7 */
     padding: 4px 14px;
     /* 9 */
-    padding: parseInt(4px)/19rem parseInt(14px)/19rem;
+    padding: 0.21053rem 0.73684rem;
     /* 9 */
     /* 3 */
     /* 3 */
@@ -3610,7 +3615,7 @@ input[disabled]:focus,
     /* 7 */
     margin: 8px 4px;
     /* 9 */
-    margin: parseInt(8px)/19rem parseInt(4px)/19rem;
+    margin: 0.42105rem 0.21053rem;
     /* 9 */ }
 .pagination li a:hover, .pagination li a:focus {
     background: #f0f0f0;
@@ -3649,9 +3654,9 @@ input[disabled]:focus,
     $MEDIA
 \*------------------------------------*/
 /**
- * Deals with text in combination with images and video content by 
- * placing them side by side. 
- * Ex: 
+ * Deals with text in combination with images and video content by
+ * placing them side by side.
+ * Ex:
  *
    <div class="media">
        <img src="http://placekitten.com/200/300" alt="" class="media__img">
@@ -3694,7 +3699,7 @@ input[disabled]:focus,
     #SPACING
 \*------------------------------------*/
 /**
- * Margin and padding helper classes. 
+ * Margin and padding helper classes.
  *
  * `.(m|p)(t|r|b|L|e|s)(-|+|0) {}` = margin/padding top/right/bottom/left/ends/sides less/more/none
  */
@@ -4223,13 +4228,13 @@ input[disabled]:focus,
     $FONTS
 \*------------------------------------*/
 /**
- * As of now this is where we will be placing our icon fonts. 
- * Freight Sans Pro will be served up from Typekit. 
+ * As of now this is where we will be placing our icon fonts.
+ * Freight Sans Pro will be served up from Typekit.
  */
 @font-face {
     font-family: 'cruicons';
-    src: url("/fonts/cruicons.eot?13550619");
-    src: url("/fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("/fonts/cruicons.woff?13550619") format("woff"), url("/fonts/cruicons.ttf?13550619") format("truetype"), url("/fonts/cruicons.svg?13550619#cruicons") format("svg");
+    src: url("fonts/cruicons.eot?13550619");
+    src: url("fonts/cruicons.eot?13550619#iefix") format("embedded-opentype"), url("fonts/cruicons.woff?13550619") format("woff"), url("fonts/cruicons.ttf?13550619") format("truetype"), url("fonts/cruicons.svg?13550619#cruicons") format("svg");
     font-weight: normal;
     font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -4437,7 +4442,7 @@ input[disabled]:focus,
         text-align: left; } }
 
 /**
- * A different type of <hr> styling. 
+ * A different type of <hr> styling.
  */
 /*hr.section-divider{
 	display: block;
@@ -4450,14 +4455,14 @@ hr, .divider {
     clear: both;
     display: block; }
 
-/** 
- * The primary hr, small width 
+/**
+ * The primary hr, small width
  */
 hr {
     width: 14%; }
 
-/** 
- * Full width hr 
+/**
+ * Full width hr
  */
 /* hr */
 .divider {
@@ -4471,7 +4476,7 @@ hr {
     clear: both; }
 
 .layout-single-column {
-    width: 980px; }
+    width: 700px; }
 
 .layout--wide {
     width: 980px; }
@@ -4508,7 +4513,7 @@ figcaption {
     /* 7 */
     margin: 5px 0 15px;
     /* 9 */
-    margin: parseInt(5px)/19rem 0 parseInt(15px)/19rem;
+    margin: 0.26316rem 0 0.78947rem;
     /* 9 */
     font-size: 14px;
     font-size: 0.73684rem; }
@@ -4522,7 +4527,7 @@ figcaption {
 
 /**
  * Places a dash after a piece of text. Mainly for post meta info
- * 
+ *
  */
 .accent:after, a + .phone:after {
     content: "\00A0";
@@ -4534,7 +4539,7 @@ figcaption {
     /* 7 */
     margin-left: 12px;
     /* 9 */
-    margin-left: parseInt(12px)/19rem;
+    margin-left: 0.63158rem;
     /* 9 */
     /* 3 */
     /* 3 */
@@ -4544,7 +4549,7 @@ figcaption {
     /* 7 */
     margin-right: 12px;
     /* 9 */
-    margin-right: parseInt(12px)/19rem;
+    margin-right: 0.63158rem;
     /* 9 */ }
 
 .affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
@@ -4568,7 +4573,7 @@ blockquote {
     /* 7 */
     padding-left: 28px;
     /* 9 */
-    padding-left: parseInt(28px)/19rem;
+    padding-left: 1.47368rem;
     /* 9 */
     font-size: 21px;
     font-size: 1.10526rem;
@@ -4621,15 +4626,15 @@ q:first-child {
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-/** 
+/**
  * Use this mixin to quickly pump out buttons:
  * @mixin btn($background, $border, $color:inherit).
  *
  * Change the hover and other states with:;
  * @mixin btn-effects($background, $border, $color:inherit).
- * 
+ *
  * Quick note: it will not work with transparency due to
- * the hover states. 
+ * the hover states.
  */
 .button-group {
     display: block; }
@@ -4637,37 +4642,37 @@ q:first-child {
     margin-bottom: 7px;
     margin-bottom: 0rem; }
 
-.button--primary {
-    background-color: #f9b625;
-    border-color: #f8ae0c;
-    color: white; }
-.button--primary:active, .button--primary.active {
-    background-image: none; }
-.button--primary.disabled, .button--primary.disabled:hover, .button--primary.disabled:focus, .button--primary.disabled:active, .button--primary.disabled.active, .button--primary[disabled], .button--primary[disabled]:hover, .button--primary[disabled]:focus, .button--primary[disabled]:active, .button--primary[disabled].active, fieldset[disabled] .button--primary, fieldset[disabled] .button--primary:hover, fieldset[disabled] .button--primary:focus, fieldset[disabled] .button--primary:active, fieldset[disabled] .button--primary.active {
-    background-color: #f9b625;
-    border-color: #f8ae0c;
-    cursor: not-allowed;
-    pointer-events: none; }
 .button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .open .button--primary.dropdown-toggle {
     background-color: #efa507;
     border-color: #c28605;
     color: white; }
-
-.button--secondary {
-    background-color: #666062;
-    border-color: #595455;
-    color: white; }
-.button--secondary:active, .button--secondary.active {
+.button--primary, .button--primary:active, .button--primary:focus {
+    background-color: #f9b625;
+    border-color: #f8ae0c;
+    color: white !important; }
+.button--primary:active, .button--primary.active, .button--primary:active:active, .button--primary:active.active, .button--primary:focus:active, .button--primary:focus.active {
     background-image: none; }
-.button--secondary.disabled, .button--secondary.disabled:hover, .button--secondary.disabled:focus, .button--secondary.disabled:active, .button--secondary.disabled.active, .button--secondary[disabled], .button--secondary[disabled]:hover, .button--secondary[disabled]:focus, .button--secondary[disabled]:active, .button--secondary[disabled].active, fieldset[disabled] .button--secondary, fieldset[disabled] .button--secondary:hover, fieldset[disabled] .button--secondary:focus, fieldset[disabled] .button--secondary:active, fieldset[disabled] .button--secondary.active {
-    background-color: #666062;
-    border-color: #595455;
+.button--primary.disabled, .button--primary.disabled:hover, .button--primary.disabled:focus, .button--primary.disabled:active, .button--primary.disabled.active, .button--primary[disabled], .button--primary[disabled]:hover, .button--primary[disabled]:focus, .button--primary[disabled]:active, .button--primary[disabled].active, fieldset[disabled] .button--primary, fieldset[disabled] .button--primary:hover, fieldset[disabled] .button--primary:focus, fieldset[disabled] .button--primary:active, fieldset[disabled] .button--primary.active, .button--primary:active.disabled, .button--primary:active.disabled:hover, .button--primary:active.disabled:focus, .button--primary:active.disabled:active, .button--primary:active.disabled.active, .button--primary:active[disabled], .button--primary:active[disabled]:hover, .button--primary:active[disabled]:focus, .button--primary:active[disabled]:active, .button--primary:active[disabled].active, fieldset[disabled] .button--primary:active, fieldset[disabled] .button--primary:active:hover, fieldset[disabled] .button--primary:active:focus, fieldset[disabled] .button--primary:active:active, fieldset[disabled] .button--primary:active.active, .button--primary:focus.disabled, .button--primary:focus.disabled:hover, .button--primary:focus.disabled:focus, .button--primary:focus.disabled:active, .button--primary:focus.disabled.active, .button--primary:focus[disabled], .button--primary:focus[disabled]:hover, .button--primary:focus[disabled]:focus, .button--primary:focus[disabled]:active, .button--primary:focus[disabled].active, fieldset[disabled] .button--primary:focus, fieldset[disabled] .button--primary:focus:hover, fieldset[disabled] .button--primary:focus:focus, fieldset[disabled] .button--primary:focus:active, fieldset[disabled] .button--primary:focus.active {
+    background-color: #f9b625;
+    border-color: #f8ae0c;
     cursor: not-allowed;
     pointer-events: none; }
+
 .button--secondary:hover, .button--secondary:focus, .button--secondary:active, .button--secondary.active, .open .button--secondary.dropdown-toggle {
     background-color: #514c4e;
     border-color: #393637;
     color: white; }
+.button--secondary, .button--secondary:active, .button--secondary:focus {
+    background-color: #666062;
+    border-color: #595455;
+    color: white !important; }
+.button--secondary:active, .button--secondary.active, .button--secondary:active:active, .button--secondary:active.active, .button--secondary:focus:active, .button--secondary:focus.active {
+    background-image: none; }
+.button--secondary.disabled, .button--secondary.disabled:hover, .button--secondary.disabled:focus, .button--secondary.disabled:active, .button--secondary.disabled.active, .button--secondary[disabled], .button--secondary[disabled]:hover, .button--secondary[disabled]:focus, .button--secondary[disabled]:active, .button--secondary[disabled].active, fieldset[disabled] .button--secondary, fieldset[disabled] .button--secondary:hover, fieldset[disabled] .button--secondary:focus, fieldset[disabled] .button--secondary:active, fieldset[disabled] .button--secondary.active, .button--secondary:active.disabled, .button--secondary:active.disabled:hover, .button--secondary:active.disabled:focus, .button--secondary:active.disabled:active, .button--secondary:active.disabled.active, .button--secondary:active[disabled], .button--secondary:active[disabled]:hover, .button--secondary:active[disabled]:focus, .button--secondary:active[disabled]:active, .button--secondary:active[disabled].active, fieldset[disabled] .button--secondary:active, fieldset[disabled] .button--secondary:active:hover, fieldset[disabled] .button--secondary:active:focus, fieldset[disabled] .button--secondary:active:active, fieldset[disabled] .button--secondary:active.active, .button--secondary:focus.disabled, .button--secondary:focus.disabled:hover, .button--secondary:focus.disabled:focus, .button--secondary:focus.disabled:active, .button--secondary:focus.disabled.active, .button--secondary:focus[disabled], .button--secondary:focus[disabled]:hover, .button--secondary:focus[disabled]:focus, .button--secondary:focus[disabled]:active, .button--secondary:focus[disabled].active, fieldset[disabled] .button--secondary:focus, fieldset[disabled] .button--secondary:focus:hover, fieldset[disabled] .button--secondary:focus:focus, fieldset[disabled] .button--secondary:focus:active, fieldset[disabled] .button--secondary:focus.active {
+    background-color: #666062;
+    border-color: #595455;
+    cursor: not-allowed;
+    pointer-events: none; }
 
 .button--subtle, input.button--subtle {
     color: #6d6e71;
@@ -4754,7 +4759,7 @@ input[type="checkbox"], input[type="radio"] {
     /* 7 */
     margin-bottom: 2px;
     /* 9 */
-    margin-bottom: parseInt(2px)/19rem;
+    margin-bottom: 0.10526rem;
     /* 9 */
     /* 3 */
     /* 3 */
@@ -4764,7 +4769,7 @@ input[type="checkbox"], input[type="radio"] {
     /* 7 */
     font-size: 14px;
     /* 9 */
-    font-size: parseInt(14px)/19rem;
+    font-size: 0.73684rem;
     /* 9 */ }
 
 select[multiple] {
@@ -4916,7 +4921,7 @@ td {
     vertical-align: middle;
     width: 103px;
     height: 64px;
-    background: url("/images/cru-logo.png");
+    background: url("images/cru-logo.png");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
@@ -4937,7 +4942,7 @@ td {
     /* 7 */
     margin-top: 100px;
     /* 9 */
-    margin-top: parseInt(100px)/19rem;
+    margin-top: 5.26316rem;
     /* 9 */ }
 .global-footer .section-divider {
     border-color: #f9b625; }
@@ -5564,10 +5569,10 @@ td {
     $CAMPUS-LOCATOR
 \*------------------------------------*/
 /**
- * Used for background colors at the moment, text is either in 
+ * Used for background colors at the moment, text is either in
  * the default text color or white. You can extend %text-white
  * found in the _utilities.scss file if you wish to change the
- * text color. 
+ * text color.
  */
 .state-select-results small {
     color: #353535; }
@@ -5815,7 +5820,7 @@ td {
     /* 7 */
     padding: 8px 14px 6px;
     /* 9 */
-    padding: parseInt(8px)/19rem parseInt(14px)/19rem parseInt(6px)/19rem;
+    padding: 0.42105rem 0.73684rem 0.31579rem;
     /* 9 */
     font-size: 22px;
     font-size: 1.15789rem;
@@ -5948,7 +5953,7 @@ td {
 
 /**
  * For numbered post formats. Removes the typical magin given to a
- * list. 
+ * list.
  */
 @media screen and (max-width: 44.75em) {
     .post__list li {
@@ -5960,7 +5965,7 @@ td {
         /* 7 */
         margin-left: 22px;
         /* 9 */
-        margin-left: parseInt(22px)/19rem;
+        margin-left: 1.15789rem;
         /* 9 */ } }
 
 .source {
@@ -5972,7 +5977,7 @@ td {
     /* 7 */
     margin-top: 14.5px;
     /* 9 */
-    margin-top: parseInt(14.5px)/19rem;
+    margin-top: 0.76316rem;
     /* 9 */ }
 .source:before {
     content: "-"; }
@@ -6001,7 +6006,7 @@ td {
     /* 7 */
     margin-bottom: 87px;
     /* 9 */
-    margin-bottom: parseInt(87px)/19rem;
+    margin-bottom: 4.57895rem;
     /* 9 */ }
 
 /*------------------------------------*\
@@ -6086,7 +6091,7 @@ td {
 			text-align: right;
 			margin-top: 0;
 			line-height: 1.6;
-	
+
 			&:before{
 				width: 25%;
 				margin-left: 75%;
