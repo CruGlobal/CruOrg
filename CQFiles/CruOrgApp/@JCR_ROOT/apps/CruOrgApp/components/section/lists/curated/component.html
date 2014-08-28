@@ -1,4 +1,50 @@
 {%#if list.pages %}
+{%#if content.isTile%}
+    {%#each list.pages %}
+<div class="grid__item masonry__item one-whole lap--one-half {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%else%}desk--one-third{%/if %}{%/if%}">
+    <div class="tile__item">
+			{%#if this.imagePath %}
+        		<div>
+                    {%#if this.path %}
+                         <a href="{% this.path %}.html">
+                    {%/if %}
+                    <img src="{% this.imagePath %}" alt="{% this.title %}">
+                    {%#if this.path %}
+                         </a>
+                    {%/if %}
+                </div>
+        	{%else%}
+				{%#if page.isEditMode %}
+        			<div><img class="cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif"></div>
+				{%/if %}
+
+        	{%/if%}
+      {%#if this.title %}
+        {%#if this.path %}
+            <a href="{% this.path %}.html">
+        {%/if %}
+        <h4>{% this.title %}</h4>
+        {%#if this.path %}
+            </a>
+        {%/if %}
+      {%/if %}
+            {%#if content.descriptionFilter %}
+            <p class="text--left mb0  ps-">
+                {% this.description %}
+            </p>
+            {%/if%}
+ 		{%#if this.path %}
+        	<a class="button button--small {% content.readMoreStyle %}" href="{% this.path %}.html">{% content.readMore %}</a>
+        {%/if%}
+    </div>
+  </div>
+   {%/each%}
+
+
+
+
+
+{%else%}
 <div class="grid">
     {%#each list.pages %}
     <div class="grid__item text--center one-whole {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third{%/if %}{%/if%}">
@@ -23,8 +69,13 @@
     </div>
     {%/each%}
 </div>
+
+{%/if%}
 {%else%}
 {%#if page.isEditMode %}
 <h2>Curated List</h2>
 {%/if%}
 {%/if%}
+
+
+
