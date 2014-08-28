@@ -5,11 +5,27 @@ Cru.components = (function(v) {
     return v;
 }(Cru.components || {}));
 
+
+//$(document).ready(function () {
+//    // finds and replaces underlines on search scope click
+//    $('.searchlink').click(function (element) {
+//        $('.searchlink--underline').removeClass('searchlink--underline');
+//        $(this).addClass('searchlink--underline');
+//
+//        var searchlink_id = $(this).attr('id');
+//        return false;
+//    });
+//});
+
+
 Cru.components.searchbox = {
     searchBoxClass : "form.primary-search",
     init: function(form) {
         //declare vars.
         var pathFields = form.find("ul.primary-search--dropdown li a");
+        var searchlink_id = 'cru_org';
+
+        //if (searchlink_id == 'cru_org') {alert(searchlink_id);}
 
         //validate searchBox exist.
         if (!form) return;
@@ -17,12 +33,18 @@ Cru.components.searchbox = {
         if (pathFields.size() === 0) return;
 
         //declare functions
-        function isInternalLink(a) {
-            return a.hostname === location.hostname;
-        }
+//        function isInternalLink(searchlink_id) {
+//            if (searchlink_id == 'cru_org') {
+//                alert('true');
+//                return true;
+//            } else {
+//                alert('false');
+//                return false;
+//            }
+//        }
         //look for an internal of external link and process it with
         //selectors of parameters.
-        function processLink(link) {
+        function processLink(link, searchlink_id) {
             //get the link
             var a = $('<a>', { href:link } )[0];
             var extension = a.pathname.split('.').pop();
@@ -35,8 +57,11 @@ Cru.components.searchbox = {
             var path = a.pathname.replace('.' + extension, '');
             var queryField = getQueryField();
 
+
+            alert('searchlink_id' + searchlink_id);
+
             if (queryField.val().length != 0) {
-                if (isInternalLink(a)) {
+                if (searchlink_id == 'cru_org') {
                     //for internal links and selectors search.
                     return path + "." + queryField.val() + "." + extension;
                 } else {
@@ -44,13 +69,24 @@ Cru.components.searchbox = {
                 }
             }
         }
+
         function submitForm(link) {
-            var processedLink = processLink(link);
+            var processedLink = processLink(link, searchlink_id);
             $(location).attr('href', processedLink);
         }
+
         function pathFieldsClick(e) {
+            $('.searchlink--underline').removeClass('searchlink--underline');
+
+            $(this).addClass('searchlink--underline');
+
             var link = $(this).attr("href");
-            submitForm(link);
+            var searchlink_id = $(this).attr('id');
+
+            //alert(link);
+            //alert(searchlink_id);
+
+            processLink(link, searchlink_id);
             e.preventDefault();
         }
         function submitFormClick(e) {
