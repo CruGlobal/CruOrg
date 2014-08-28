@@ -5,25 +5,11 @@ Cru.components = (function(v) {
     return v;
 }(Cru.components || {}));
 
-
-//$(document).ready(function () {
-//    // finds and replaces underlines on search scope click
-//    $('.searchlink').click(function (element) {
-//        $('.searchlink--underline').removeClass('searchlink--underline');
-//        $(this).addClass('searchlink--underline');
-//
-//        var searchlink_id = $(this).attr('id');
-//        return false;
-//    });
-//});
-
-
 Cru.components.searchbox = {
-    searchBoxClass : "form.primary-search",
+    searchBoxClass: "form.primary-search",
     init: function(form) {
         //declare vars.
         var pathFields = form.find("ul.primary-search--dropdown li a");
-        var searchlink_id = 'cru_org';
 
         //if (searchlink_id == 'cru_org') {alert(searchlink_id);}
 
@@ -32,21 +18,12 @@ Cru.components.searchbox = {
         //at least one configured path.
         if (pathFields.size() === 0) return;
 
-        //declare functions
-//        function isInternalLink(searchlink_id) {
-//            if (searchlink_id == 'cru_org') {
-//                alert('true');
-//                return true;
-//            } else {
-//                alert('false');
-//                return false;
-//            }
-//        }
-        //look for an internal of external link and process it with
         //selectors of parameters.
         function processLink(link, searchlink_id) {
             //get the link
-            var a = $('<a>', { href:link } )[0];
+            var a = $('<a>', {
+                href: link
+            })[0];
             var extension = a.pathname.split('.').pop();
 
             //in case that the pathName doesn't have any extension.
@@ -58,13 +35,14 @@ Cru.components.searchbox = {
             var queryField = getQueryField();
 
 
-            alert('searchlink_id' + searchlink_id);
+            alert('searchlink_id: ' + searchlink_id);
 
             if (queryField.val().length != 0) {
                 if (searchlink_id == 'cru_org') {
                     //for internal links and selectors search.
                     return path + "." + queryField.val() + "." + extension;
                 } else {
+                    alert('this is the else statement');
                     return link + "?ssUserText=" + queryField.val() + "&Query=" + queryField.val();
                 }
             }
@@ -89,14 +67,17 @@ Cru.components.searchbox = {
             processLink(link, searchlink_id);
             e.preventDefault();
         }
+
         function submitFormClick(e) {
             var link = e.data.link.href;
             submitForm(link);
             e.preventDefault();
         }
+
         function getQueryField() {
             return form.find("input.search-field");
         }
+
         function getQueryParameter() {
             var reParameters = new RegExp("Query=([^&#=]*)");
             var reSelectors = new RegExp("\\.([^\\.&#=]*)\\.html");
@@ -113,13 +94,15 @@ Cru.components.searchbox = {
 
         //process
         pathFields.on("click", pathFieldsClick);
-        form.on("submit", { "link" : pathFields[0] }, submitFormClick);
+        form.on("submit", {
+            "link": pathFields[0]
+        }, submitFormClick);
 
         //if can catch a search query parameter, put it in the textfield.
         getQueryField().val(decodeURIComponent(getQueryParameter()));
     }
 };
 
-$(Cru.components.searchbox.searchBoxClass).ready(function () {
+$(Cru.components.searchbox.searchBoxClass).ready(function() {
     Cru.components.searchbox.init($(Cru.components.searchbox.searchBoxClass));
 });
