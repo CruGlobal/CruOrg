@@ -5,10 +5,10 @@
   </nodesOrder>
   <properties>
     <property name="text" type="1" multiple="false">
-      <value><![CDATA[Whole]]></value>
+      <value><![CDATA[Whole CoverPhoto]]></value>
     </property>
     <property name="value" type="1" multiple="false">
-      <value><![CDATA[one-whole]]></value>
+      <value><![CDATA[one-whole  coverphoto]]></value>
     </property>
   </properties>
   <mixins />
