@@ -1,14 +1,16 @@
 {%#if content.pathRef%}
 <div class="grid__item  masonry__item  one-whole">
-	<div class="tile__item  locator  locator">
+	<div class="tile__item  locator">
 		<form action="{%content.pathRef%}.html" class="p  text--center  desk--one-half lap--one-half  one-whole  center" method="Get">	
 			<ul class="grid  text--center">
                 <li class="grid__item">
 					<label for="locator" class="h3">{% content.text %}</label>
 				</li>
-				<li class="grid__item  one-whole  lap--one-half  desk--one-half">
-					<input type="text" class="text-input  full-width" id="locator" id="campus-name" name="campus-name" autocomplete="off" />
+				<li class="grid__item  mb-">
+					<input type="text" class="text-input  full-width" id="campus-name" name="campus-name" autocomplete="off" />
 					<input type="hidden" id="campus-id" name="campus-id" value="" />
+				</li>
+				<li class="grid__item">
 					<button type="submit" value="Submit" class="button  button--primary">Find &rarr;</button>                   
 				</li>
 			</ul>
