@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="afteredit" type="1" multiple="false">
+      <value><![CDATA[REFRESH_PARENT]]></value>
+    </property>
+    <property name="afterinsert" type="1" multiple="false">
+      <value><![CDATA[REFRESH_PAGE]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
