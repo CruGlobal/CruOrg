@@ -4021,7 +4021,7 @@ input[disabled]:focus,
   content: '\e808'; }
 
 /* '' */
-.icon-right-circle:before, .affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
+.icon-right-circle:before, .affordance:after {
   content: '\e800'; }
 
 /* '' */
@@ -4353,7 +4353,7 @@ figcaption {
   margin-right: 0.63158rem;
   /* 9 */ }
 
-.affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
+.affordance:after {
   color: #f9b625;
   font-family: "cruicons";
   padding-left: 10px;
