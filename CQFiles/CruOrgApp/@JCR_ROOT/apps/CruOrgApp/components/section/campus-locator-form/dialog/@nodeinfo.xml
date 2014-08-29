@@ -5,7 +5,7 @@
   </nodesOrder>
   <properties>
     <property name="title" type="1" multiple="false">
-      <value><![CDATA[Campus Locator]]></value>
+      <value><![CDATA[Section Title]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
       <value><![CDATA[dialog]]></value>
