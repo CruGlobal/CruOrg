@@ -370,6 +370,10 @@
  * framework. There is no need to change any of these functions
  */
 /**
+ * This allows us to use the rem-calc mixin for shorthand 
+ * conversions.
+ */
+/**
  * Use this em function instead of the other
  */
 /*------------------------------------*\
@@ -507,6 +511,7 @@
 /**
  * Can handle shorthand calculations
  * Do not change the variable set
+ * http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
  */
 /**
  * Space elements by an amount based on your magic number. Pass in the property
@@ -2242,7 +2247,7 @@ label,
     /* 7 */
     margin-bottom: 6px;
     /* 9 */
-    margin-bottom: parseInt(6px)/19rem;
+    margin-bottom: 0.31579rem;
     /* 9 */ }
 
 /**
@@ -2265,7 +2270,7 @@ input + .additional {
     /* 7 */
     margin-top: 6px;
     /* 9 */
-    margin-top: parseInt(6px)/19rem;
+    margin-top: 0.31579rem;
     /* 9 */ }
 
 .additional, .check-list > li {
@@ -2277,7 +2282,7 @@ input + .additional {
     /* 7 */
     margin-bottom: 12px;
     /* 9 */
-    margin-bottom: parseInt(12px)/19rem;
+    margin-bottom: 0.63158rem;
     /* 9 */ }
 
 /*
@@ -3229,7 +3234,7 @@ input + .additional {
     /* 7 */
     padding: 6px 18px;
     /* 9 */
-    padding: parseInt(6px)/19rem parseInt(18px)/19rem;
+    padding: 0.31579rem 0.94737rem;
     /* 9 */
     font-size: 16px;
     font-size: 0.84211rem;
@@ -3241,7 +3246,7 @@ input + .additional {
     /* 7 */
     border-radius: 2px;
     /* 9 */
-    border-radius: parseInt(2px)/19rem;
+    border-radius: 0.10526rem;
     /* 9 */
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -3294,7 +3299,7 @@ input + .additional {
     /* 7 */
     padding: 2px 6px;
     /* 9 */
-    padding: parseInt(2px)/19rem parseInt(6px)/19rem;
+    padding: 0.10526rem 0.31579rem;
     /* 9 */ }
 .button--large {
     line-height: 2;
@@ -3310,7 +3315,7 @@ input + .additional {
     /* 7 */
     padding: 12px 26px;
     /* 9 */
-    padding: parseInt(12px)/19rem parseInt(26px)/19rem;
+    padding: 0.63158rem 1.36842rem;
     /* 9 */ }
 .button--full {
     width: 100%;
@@ -3328,7 +3333,7 @@ input + .additional {
     /* 7 */
     font-size: 30px;
     /* 9 */
-    font-size: parseInt(30px)/19rem;
+    font-size: 1.57895rem;
     /* 9 */ }
 .button--beta {
     /* 3 */
@@ -3339,7 +3344,7 @@ input + .additional {
     /* 7 */
     font-size: 24px;
     /* 9 */
-    font-size: parseInt(24px)/19rem;
+    font-size: 1.26316rem;
     /* 9 */ }
 .button--gamma {
     /* 3 */
@@ -3350,7 +3355,7 @@ input + .additional {
     /* 7 */
     font-size: 16px;
     /* 9 */
-    font-size: parseInt(16px)/19rem;
+    font-size: 0.84211rem;
     /* 9 */ }
 .button--positive {
     background-color: #4a993e;
@@ -3596,7 +3601,7 @@ input[disabled]:focus,
     /* 7 */
     padding: 4px 14px;
     /* 9 */
-    padding: parseInt(4px)/19rem parseInt(14px)/19rem;
+    padding: 0.21053rem 0.73684rem;
     /* 9 */
     /* 3 */
     /* 3 */
@@ -3610,7 +3615,7 @@ input[disabled]:focus,
     /* 7 */
     margin: 8px 4px;
     /* 9 */
-    margin: parseInt(8px)/19rem parseInt(4px)/19rem;
+    margin: 0.42105rem 0.21053rem;
     /* 9 */ }
 .pagination li a:hover, .pagination li a:focus {
     background: #f0f0f0;
@@ -4471,7 +4476,7 @@ hr {
     clear: both; }
 
 .layout-single-column {
-    width: 980px; }
+    width: 700px; }
 
 .layout--wide {
     width: 980px; }
@@ -4508,7 +4513,7 @@ figcaption {
     /* 7 */
     margin: 5px 0 15px;
     /* 9 */
-    margin: parseInt(5px)/19rem 0 parseInt(15px)/19rem;
+    margin: 0.26316rem 0 0.78947rem;
     /* 9 */
     font-size: 14px;
     font-size: 0.73684rem; }
@@ -4534,7 +4539,7 @@ figcaption {
     /* 7 */
     margin-left: 12px;
     /* 9 */
-    margin-left: parseInt(12px)/19rem;
+    margin-left: 0.63158rem;
     /* 9 */
     /* 3 */
     /* 3 */
@@ -4544,7 +4549,7 @@ figcaption {
     /* 7 */
     margin-right: 12px;
     /* 9 */
-    margin-right: parseInt(12px)/19rem;
+    margin-right: 0.63158rem;
     /* 9 */ }
 
 .affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
@@ -4568,7 +4573,7 @@ blockquote {
     /* 7 */
     padding-left: 28px;
     /* 9 */
-    padding-left: parseInt(28px)/19rem;
+    padding-left: 1.47368rem;
     /* 9 */
     font-size: 21px;
     font-size: 1.10526rem;
@@ -4637,37 +4642,37 @@ q:first-child {
     margin-bottom: 7px;
     margin-bottom: 0rem; }
 
-.button--primary {
-    background-color: #f9b625;
-    border-color: #f8ae0c;
-    color: white; }
-.button--primary:active, .button--primary.active {
-    background-image: none; }
-.button--primary.disabled, .button--primary.disabled:hover, .button--primary.disabled:focus, .button--primary.disabled:active, .button--primary.disabled.active, .button--primary[disabled], .button--primary[disabled]:hover, .button--primary[disabled]:focus, .button--primary[disabled]:active, .button--primary[disabled].active, fieldset[disabled] .button--primary, fieldset[disabled] .button--primary:hover, fieldset[disabled] .button--primary:focus, fieldset[disabled] .button--primary:active, fieldset[disabled] .button--primary.active {
-    background-color: #f9b625;
-    border-color: #f8ae0c;
-    cursor: not-allowed;
-    pointer-events: none; }
 .button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .open .button--primary.dropdown-toggle {
     background-color: #efa507;
     border-color: #c28605;
     color: white; }
-
-.button--secondary {
-    background-color: #666062;
-    border-color: #595455;
-    color: white; }
-.button--secondary:active, .button--secondary.active {
+.button--primary, .button--primary:active, .button--primary:focus {
+    background-color: #f9b625;
+    border-color: #f8ae0c;
+    color: white !important; }
+.button--primary:active, .button--primary.active, .button--primary:active:active, .button--primary:active.active, .button--primary:focus:active, .button--primary:focus.active {
     background-image: none; }
-.button--secondary.disabled, .button--secondary.disabled:hover, .button--secondary.disabled:focus, .button--secondary.disabled:active, .button--secondary.disabled.active, .button--secondary[disabled], .button--secondary[disabled]:hover, .button--secondary[disabled]:focus, .button--secondary[disabled]:active, .button--secondary[disabled].active, fieldset[disabled] .button--secondary, fieldset[disabled] .button--secondary:hover, fieldset[disabled] .button--secondary:focus, fieldset[disabled] .button--secondary:active, fieldset[disabled] .button--secondary.active {
-    background-color: #666062;
-    border-color: #595455;
+.button--primary.disabled, .button--primary.disabled:hover, .button--primary.disabled:focus, .button--primary.disabled:active, .button--primary.disabled.active, .button--primary[disabled], .button--primary[disabled]:hover, .button--primary[disabled]:focus, .button--primary[disabled]:active, .button--primary[disabled].active, fieldset[disabled] .button--primary, fieldset[disabled] .button--primary:hover, fieldset[disabled] .button--primary:focus, fieldset[disabled] .button--primary:active, fieldset[disabled] .button--primary.active, .button--primary:active.disabled, .button--primary:active.disabled:hover, .button--primary:active.disabled:focus, .button--primary:active.disabled:active, .button--primary:active.disabled.active, .button--primary:active[disabled], .button--primary:active[disabled]:hover, .button--primary:active[disabled]:focus, .button--primary:active[disabled]:active, .button--primary:active[disabled].active, fieldset[disabled] .button--primary:active, fieldset[disabled] .button--primary:active:hover, fieldset[disabled] .button--primary:active:focus, fieldset[disabled] .button--primary:active:active, fieldset[disabled] .button--primary:active.active, .button--primary:focus.disabled, .button--primary:focus.disabled:hover, .button--primary:focus.disabled:focus, .button--primary:focus.disabled:active, .button--primary:focus.disabled.active, .button--primary:focus[disabled], .button--primary:focus[disabled]:hover, .button--primary:focus[disabled]:focus, .button--primary:focus[disabled]:active, .button--primary:focus[disabled].active, fieldset[disabled] .button--primary:focus, fieldset[disabled] .button--primary:focus:hover, fieldset[disabled] .button--primary:focus:focus, fieldset[disabled] .button--primary:focus:active, fieldset[disabled] .button--primary:focus.active {
+    background-color: #f9b625;
+    border-color: #f8ae0c;
     cursor: not-allowed;
     pointer-events: none; }
+
 .button--secondary:hover, .button--secondary:focus, .button--secondary:active, .button--secondary.active, .open .button--secondary.dropdown-toggle {
     background-color: #514c4e;
     border-color: #393637;
     color: white; }
+.button--secondary, .button--secondary:active, .button--secondary:focus {
+    background-color: #666062;
+    border-color: #595455;
+    color: white !important; }
+.button--secondary:active, .button--secondary.active, .button--secondary:active:active, .button--secondary:active.active, .button--secondary:focus:active, .button--secondary:focus.active {
+    background-image: none; }
+.button--secondary.disabled, .button--secondary.disabled:hover, .button--secondary.disabled:focus, .button--secondary.disabled:active, .button--secondary.disabled.active, .button--secondary[disabled], .button--secondary[disabled]:hover, .button--secondary[disabled]:focus, .button--secondary[disabled]:active, .button--secondary[disabled].active, fieldset[disabled] .button--secondary, fieldset[disabled] .button--secondary:hover, fieldset[disabled] .button--secondary:focus, fieldset[disabled] .button--secondary:active, fieldset[disabled] .button--secondary.active, .button--secondary:active.disabled, .button--secondary:active.disabled:hover, .button--secondary:active.disabled:focus, .button--secondary:active.disabled:active, .button--secondary:active.disabled.active, .button--secondary:active[disabled], .button--secondary:active[disabled]:hover, .button--secondary:active[disabled]:focus, .button--secondary:active[disabled]:active, .button--secondary:active[disabled].active, fieldset[disabled] .button--secondary:active, fieldset[disabled] .button--secondary:active:hover, fieldset[disabled] .button--secondary:active:focus, fieldset[disabled] .button--secondary:active:active, fieldset[disabled] .button--secondary:active.active, .button--secondary:focus.disabled, .button--secondary:focus.disabled:hover, .button--secondary:focus.disabled:focus, .button--secondary:focus.disabled:active, .button--secondary:focus.disabled.active, .button--secondary:focus[disabled], .button--secondary:focus[disabled]:hover, .button--secondary:focus[disabled]:focus, .button--secondary:focus[disabled]:active, .button--secondary:focus[disabled].active, fieldset[disabled] .button--secondary:focus, fieldset[disabled] .button--secondary:focus:hover, fieldset[disabled] .button--secondary:focus:focus, fieldset[disabled] .button--secondary:focus:active, fieldset[disabled] .button--secondary:focus.active {
+    background-color: #666062;
+    border-color: #595455;
+    cursor: not-allowed;
+    pointer-events: none; }
 
 .button--subtle, input.button--subtle {
     color: #6d6e71;
@@ -4754,7 +4759,7 @@ input[type="checkbox"], input[type="radio"] {
     /* 7 */
     margin-bottom: 2px;
     /* 9 */
-    margin-bottom: parseInt(2px)/19rem;
+    margin-bottom: 0.10526rem;
     /* 9 */
     /* 3 */
     /* 3 */
@@ -4764,7 +4769,7 @@ input[type="checkbox"], input[type="radio"] {
     /* 7 */
     font-size: 14px;
     /* 9 */
-    font-size: parseInt(14px)/19rem;
+    font-size: 0.73684rem;
     /* 9 */ }
 
 select[multiple] {
@@ -4937,7 +4942,7 @@ td {
     /* 7 */
     margin-top: 100px;
     /* 9 */
-    margin-top: parseInt(100px)/19rem;
+    margin-top: 5.26316rem;
     /* 9 */ }
 .global-footer .section-divider {
     border-color: #f9b625; }
@@ -5815,7 +5820,7 @@ td {
     /* 7 */
     padding: 8px 14px 6px;
     /* 9 */
-    padding: parseInt(8px)/19rem parseInt(14px)/19rem parseInt(6px)/19rem;
+    padding: 0.42105rem 0.73684rem 0.31579rem;
     /* 9 */
     font-size: 22px;
     font-size: 1.15789rem;
@@ -5960,7 +5965,7 @@ td {
         /* 7 */
         margin-left: 22px;
         /* 9 */
-        margin-left: parseInt(22px)/19rem;
+        margin-left: 1.15789rem;
         /* 9 */ } }
 
 .source {
@@ -5972,7 +5977,7 @@ td {
     /* 7 */
     margin-top: 14.5px;
     /* 9 */
-    margin-top: parseInt(14.5px)/19rem;
+    margin-top: 0.76316rem;
     /* 9 */ }
 .source:before {
     content: "-"; }
@@ -6001,7 +6006,7 @@ td {
     /* 7 */
     margin-bottom: 87px;
     /* 9 */
-    margin-bottom: parseInt(87px)/19rem;
+    margin-bottom: 4.57895rem;
     /* 9 */ }
 
 /*------------------------------------*\
