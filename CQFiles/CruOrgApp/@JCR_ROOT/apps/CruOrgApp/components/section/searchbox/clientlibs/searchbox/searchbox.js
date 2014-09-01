@@ -41,7 +41,7 @@ Cru.components.searchbox = {
                     //for internal links and selectors search.
                     return cru_org_link + "." + queryField.val() + "." + extension;
                 } else {
-                    return give_link + "?ssUserText=" + queryField.val() + "&Query=" + queryField.val();
+                    return give_link + "?Query=" + queryField.val();
                 }
             }
         }
@@ -53,9 +53,9 @@ Cru.components.searchbox = {
 
         function pathFieldsClick(e) {
             e.preventDefault();
-            $('.searchlink--underline').removeClass('searchlink--underline');
+            $('#search-dropdown a.selected').removeClass('selected');
 
-            $(this).addClass('searchlink--underline');
+            $(this).addClass('selected');
 
             var link = $(this).attr("href");
             searchlink_id = $(this).attr('id');
