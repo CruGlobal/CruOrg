@@ -4,9 +4,6 @@
     <value><![CDATA[options,listeners]]></value>
   </nodesOrder>
   <properties>
-    <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[desk--one-third]]></value>
-    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Tile width]]></value>
     </property>
