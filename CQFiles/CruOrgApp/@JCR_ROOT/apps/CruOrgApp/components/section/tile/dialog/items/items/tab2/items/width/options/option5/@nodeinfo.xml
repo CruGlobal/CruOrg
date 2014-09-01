@@ -8,7 +8,7 @@
       <value><![CDATA[Whole CoverPhoto]]></value>
     </property>
     <property name="value" type="1" multiple="false">
-      <value><![CDATA[one-whole  coverphoto]]></value>
+      <value><![CDATA[desk--one-whole coverphoto]]></value>
     </property>
   </properties>
   <mixins />

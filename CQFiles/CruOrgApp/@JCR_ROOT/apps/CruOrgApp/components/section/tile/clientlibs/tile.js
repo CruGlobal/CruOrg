@@ -48,9 +48,13 @@ Cru.components.tile = {
         var renditionWidget = container.findParentByType('dialog').getField("./imageRenditionName");
     	var width = container.getValue();
         renditionWidget.setValue(this.DEFAULT_RENDITION_VALUE);
+        if(width == "desk--one-whole coverphoto"){
+            renditionWidget.setValue("CruCoverPhoto880x374");
+        } else {
     	if(this.CRU_WIDTHS_VALUES_ARRAY.indexOf(width) != -1){
         	renditionWidget.setValue(this.CRU_RENDITION_VALUE);
 		}
+        }
     },
 
     validator : function(value, container) {
