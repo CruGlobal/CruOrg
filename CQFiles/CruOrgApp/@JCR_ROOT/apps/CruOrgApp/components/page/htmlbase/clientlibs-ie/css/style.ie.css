@@ -370,7 +370,7 @@
  * framework. There is no need to change any of these functions
  */
 /**
- * This allows us to use the rem-calc mixin for shorthand
+ * This allows us to use the rem-calc mixin for shorthand 
  * conversions.
  */
 /**
@@ -4476,7 +4476,7 @@ hr {
     clear: both; }
 
 .layout-single-column {
-    width: 980px; }
+    width: 700px; }
 
 .layout--wide {
     width: 980px; }
