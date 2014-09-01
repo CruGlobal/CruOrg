@@ -15,6 +15,7 @@ $(document).ready(function() {
                         'limit': 10
                     },
                     success: function( data ) {
+						window.history.pushState('campusid', 'Title', '?');
                         response( $.map( data, function( item ) {
                             return {
                                 label: item.name,
@@ -34,6 +35,7 @@ $(document).ready(function() {
                 
                 if( $( '.locator form' ).attr( 'action' ) === '' ) {
                     school_detail_results( ui.item.id );
+					console.log ('test');
                 }
                 
                 else {
@@ -49,6 +51,11 @@ $(document).ready(function() {
     } );
 
     function school_detail_results( campusid ) {
+		var url = window.location.href;
+		if (url.indexOf('campus-id=') != -1) {
+			var campusid =  location.search.split('campus-id=')[1]
+		}
+
         $.ajax( {
     	    url: cru_campus_finder_l10n.ministry_details.replace( '%d', campusid ),
     		dataType: 'jsonp',
@@ -169,6 +176,12 @@ $(document).ready(function() {
     				if ($(strategyBlock).children().length <= 0 ) {
     					results.empty();
     				}
+					
+					var str = data.name;
+					var res = str.replace(/ /g, '+');
+					window.history.pushState('campusid', 'Title', '?campus-name=' + res + '&campus-id=' + campusid);
+					console.log (campusid);
+					
     
     		}
         } );		
@@ -178,6 +191,7 @@ $(document).ready(function() {
 	$('.locator__state-select').change(function() {
 		// assign the value to a variable, so you can test to see if it is working
     state = $('.locator__state-select :selected').val();
+	window.history.pushState('campusid', 'Title', '?');
     if (state !== ""){
 		jsonLink = 'http://ml.uscm.org/ministries.json?state=' + state + '&active=true&callback=?';
 		getStateResults();
