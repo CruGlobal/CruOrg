@@ -17,7 +17,7 @@
     <ul id="search-dropdown" class="primary-search--dropdown   js-search-content  bare-list">
         {%#if global.path1 %}
         {%#if global.label1 %}
-        <li><a href="{%global.path1%}" id="cru_org" class="searchlink searchlink--underline">{%global.label1%}</a></li>
+        <li><a href="{%global.path1%}" id="cru_org" class="searchlink selected">{%global.label1%}</a></li>
         {%/if%}
         {%/if%}
         {%#if global.path2 %}
@@ -27,13 +27,3 @@
         {%/if%}
     </ul>
 </form>
-
-<style>
-    #search-dropdown li a {
-        text-decoration: none;
-    }
-
-    #search-dropdown li a.searchlink--underline {
-        text-decoration: underline;
-    }
-</style>
