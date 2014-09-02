@@ -1,7 +1,7 @@
 {%#if list.pages %}
 <div class="grid mb">
 <div class="grid__item masonry__item one-whole">
-	<div class="color-white box-shadow-thin p">
+	<div class="tile__item">
       {%#if content.title %}
         {%#if content.path %}
             <a href="{% content.path %}.html">
@@ -13,7 +13,7 @@
       {%/if %}
       <ul class="grid">
   		  {%#each list.pages %}
-			<li class="grid_item desk--one-half">
+			<li class="grid__item desk--one-half">
 				<a href="{% this.path %}.html">
                 	<h5 class="mb0 weight-bold">{% this.title %}</h5>
                 </a>
