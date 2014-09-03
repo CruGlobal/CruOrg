@@ -146,7 +146,7 @@ if (!$('html').hasClass('lt-ie9')) {
     // On Page Load
     $(window).ready(function () {
         var wi = $(window).width();
-        if (wi <= 980) {
+        if (wi <= 979) {
 
             $("li.nav__item > div").removeClass("dropdown").addClass("off-canvas-desk-is-collapsed");
             //Click To Open Off Canvas Main Nav
