@@ -1,18 +1,19 @@
 {%#if content.today%}
-<article class="post-article  color-white box-shadow--thin  layout--full  daily-content  masonry__ignore" data-servletPath="{%content.path%}.dailypaths.json">
-        <!-- ARTICLE HEADLINE COMPONENT -->
-        <header class="post__headline  layout-single-column daily-content"></header>
-        <!-- POST BODY -->
-        <div class="post__body  layout-single-column daily-content">
-            {%#include "article-share" as="CruOrgApp/components/section/article-share"%}{%/include%}
-            <figure></figure>
-            <div class="daily-content-container"></div>
-            <ol class="grid  pagination">          
-        	</ol>       
-        </div>
-    <section class="layout-single-column daily-content-facebook-comments"></section>
-    </article>
-
+<div class="masonry__ignore  grid__item">
+	<article class="post-article  color-white box-shadow--thin  layout--full  daily-content" data-servletPath="{%content.path%}.dailypaths.json">
+	        <!-- ARTICLE HEADLINE COMPONENT -->
+	        <header class="post__headline  layout-single-column daily-content"></header>
+	        <!-- POST BODY -->
+	        <div class="post__body  layout-single-column daily-content">
+	            {%#include "article-share" as="CruOrgApp/components/section/article-share"%}{%/include%}
+	            <figure></figure>
+	            <div class="daily-content-container"></div>
+	            <ol class="grid  pagination">          
+	        	</ol>       
+	        </div>
+	    <section class="layout-single-column daily-content-facebook-comments"></section>
+	</article>
+</grid>
 {%else%}
 	{%#if page.isEditMode%}
         <header class="post__headline  layout-single-column daily-content">
