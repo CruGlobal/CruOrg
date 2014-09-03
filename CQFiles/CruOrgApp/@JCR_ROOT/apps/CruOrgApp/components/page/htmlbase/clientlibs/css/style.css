@@ -4021,7 +4021,7 @@ input[disabled]:focus,
   content: '\e808'; }
 
 /* '' */
-.icon-right-circle:before, .affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
+.icon-right-circle:before, .affordance:after {
   content: '\e800'; }
 
 /* '' */
@@ -4353,7 +4353,7 @@ figcaption {
   margin-right: 0.63158rem;
   /* 9 */ }
 
-.affordance:after, .tile__item > a > h4:after, .tile__item > a > p:after {
+.affordance:after {
   color: #f9b625;
   font-family: "cruicons";
   padding-left: 10px;
@@ -4932,7 +4932,7 @@ td {
       z-index: 505;
       right: 0;
       border-color: transparent; } }
-  @media screen and (max-width: 61.3125em) {
+  @media screen and (max-width: 61.25em) {
     .navigation {
       overflow: scroll;
       padding-top: 69px;
@@ -4946,16 +4946,16 @@ td {
     .site-nav {
       float: right;
       width: auto; } }
-  @media screen and (max-width: 61.3125em) {
+  @media screen and (max-width: 61.25em) {
     .site-nav > li {
       display: block; } }
 
-@media screen and (max-width: 61.3125em) {
+@media screen and (max-width: 61.25em) {
   .nav > .nav__item, .post-meta > .nav__item,
   .nav__item > .nav__link {
     display: block; } }
 
-@media screen and (max-width: 61.3125em) {
+@media screen and (max-width: 61.25em) {
   .nav_item {
     border-bottom-color: #f9b625; } }
 
@@ -5097,7 +5097,7 @@ td {
   -o-transition: all 0.2s 0.2s ease;
   transition: all 0.2s 0.2s ease; }
 
-@media screen and (min-width: 61.25em) {
+@media screen and (min-width: 61.3125em) {
   .js-close-button {
     display: none; } }
 
@@ -5118,19 +5118,19 @@ td {
   -moz-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
   box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25); }
 
-@media screen and (max-width: 61.24em) {
+@media screen and (max-width: 61.25em) {
   .js-nav #inner-wrap {
     right: 70%; } }
 
-@media screen and (max-width: 61.24em) {
+@media screen and (max-width: 61.25em) {
   .js-nav #flyout {
     right: 0; } }
 
-@media screen and (max-width: 61.24em) {
+@media screen and (max-width: 61.25em) {
   .js-nav .site-header {
     position: absolute; } }
 
-@media screen and (max-width: 61.24em) {
+@media screen and (max-width: 61.25em) {
   .js-nav body {
     padding-top: 0; } }
 
@@ -5219,7 +5219,7 @@ td {
   right: 0.84211rem; }
   .topbar-close:hover, .topbar-close:focus {
     text-decoration: none; }
-  @media screen and (min-width: 61.25em) {
+  @media screen and (min-width: 61.3125em) {
     .topbar-close {
       display: none; } }
 
