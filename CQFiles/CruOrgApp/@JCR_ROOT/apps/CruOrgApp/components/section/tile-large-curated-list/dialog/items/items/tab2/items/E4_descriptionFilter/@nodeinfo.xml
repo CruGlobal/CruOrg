@@ -11,7 +11,7 @@
       <value>true</value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
-      <value><![CDATA[Show Description]]></value>
+      <value><![CDATA[Show page description for each item in list]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./descriptionFilter]]></value>
