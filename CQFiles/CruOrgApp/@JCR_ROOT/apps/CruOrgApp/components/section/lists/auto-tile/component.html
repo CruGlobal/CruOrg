@@ -1,6 +1,6 @@
 {%#if list.pages %}
     	{%#each list.pages %}
-<div class="grid__item masonry__item text--center {%#if content.width %}{% content.width %}{%else%}{%#if page.isEditMode %}desk--one-third  lap--one-half  one-whole{%/if %}{%/if%}">
+<div class="grid__item masonry__item text--center {%#if content.width %}{% content.width %}{%else%}desk--one-third  lap--one-half  one-whole{%/if%}">
     <div class="tile__item">
       <div>
 			{%#if this.imagePath %}
