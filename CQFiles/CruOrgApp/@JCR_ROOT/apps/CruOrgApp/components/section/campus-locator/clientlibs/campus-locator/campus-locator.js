@@ -35,7 +35,6 @@ $(document).ready(function() {
                 
                 if( $( '.locator form' ).attr( 'action' ) === '' ) {
                     school_detail_results( ui.item.id );
-					console.log ('test');
                 }
                 
                 else {
@@ -179,9 +178,7 @@ $(document).ready(function() {
 					
 					var str = data.name;
 					var res = str.replace(/ /g, '+');
-					window.history.pushState('campusid', 'Title', '?campus-name=' + res + '&campus-id=' + campusid);
-					console.log (campusid);
-					
+					window.history.pushState('campusid', 'Title', '?campus-name=' + res + '&campus-id=' + campusid);					
     
     		}
         } );		
