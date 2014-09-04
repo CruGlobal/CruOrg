@@ -3,7 +3,8 @@ $(document).ready(function() {
         $('.masonry-container').masonry({
             columnWidth: 1,
             itemSelector: '.masonry__item',
-			stamp: ".masonry__ignore" //stamp is something masonry ignores
+			stamp: ".masonry__ignore", //stamp is something masonry ignores
+			// transitionDuration: 0
         }).imagesLoaded(function() {
             $('.masonry-container').masonry(); // parsys
         });
