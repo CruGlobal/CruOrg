@@ -1809,7 +1809,6 @@ input + .additional {
  */
 /* line 54, ../sass/core/_grids.scss */
 .grid {
-  position: relative;
   list-style: none;
   /* [1] */
   margin: 0;
@@ -4296,7 +4295,7 @@ hr {
   }
 }
 
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 64em) {
   /* line 30, ../sass/elements/_layouts.scss */
   .layout--wide {
     width: 880px;
