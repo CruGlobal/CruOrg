@@ -1809,7 +1809,6 @@ input + .additional {
  */
 /* line 54, ../sass/core/_grids.scss */
 .grid {
-  position: relative;
   list-style: none;
   /* [1] */
   margin: 0;
@@ -1829,7 +1828,7 @@ input + .additional {
  * 4. Full-width unless told to behave otherwise.
  * 5. Required to combine fluid widths and fixed gutters.
  */
-/* line 89, ../sass/core/_grids.scss */
+/* line 88, ../sass/core/_grids.scss */
 .grid__item {
   float: left;
   vertical-align: top;
@@ -1848,12 +1847,12 @@ input + .additional {
  * Reversed grids allow you to structure your source in the opposite order to
  * how your rendered layout will appear. Extends `.grid`.
  */
-/* line 113, ../sass/core/_grids.scss */
+/* line 112, ../sass/core/_grids.scss */
 .grid--rev {
   direction: rtl;
   text-align: left;
 }
-/* line 117, ../sass/core/_grids.scss */
+/* line 116, ../sass/core/_grids.scss */
 .grid--rev > .grid__item {
   direction: ltr;
   text-align: left;
@@ -1862,11 +1861,11 @@ input + .additional {
 /**
  * Align the entire grid to the right. Extends `.grid`.
  */
-/* line 127, ../sass/core/_grids.scss */
+/* line 126, ../sass/core/_grids.scss */
 .grid--right {
   text-align: right;
 }
-/* line 130, ../sass/core/_grids.scss */
+/* line 129, ../sass/core/_grids.scss */
 .grid--right > .grid__item {
   text-align: left;
 }
@@ -1875,11 +1874,11 @@ input + .additional {
  * Centered grids align grid items centrally without needing to use push or pull
  * classes. Extends `.grid`.
  */
-/* line 140, ../sass/core/_grids.scss */
+/* line 139, ../sass/core/_grids.scss */
 .grid--center {
   text-align: center;
 }
-/* line 143, ../sass/core/_grids.scss */
+/* line 142, ../sass/core/_grids.scss */
 .grid--center > .grid__item {
   text-align: left;
 }
@@ -1888,7 +1887,7 @@ input + .additional {
  * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
  * `.grid`.
  */
-/* line 154, ../sass/core/_grids.scss */
+/* line 153, ../sass/core/_grids.scss */
 .grid--middle > .grid__item {
   vertical-align: middle;
 }
@@ -4296,7 +4295,7 @@ hr {
   }
 }
 
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 64em) {
   /* line 30, ../sass/elements/_layouts.scss */
   .layout--wide {
     width: 880px;
@@ -4925,7 +4924,7 @@ td {
   height: 81px;
   padding-left: 12px;
   padding-right: 12px;
-  line-height: 81px;
+  line-height: 73px;
   vertical-align: middle;
   text-align: center;
 }
@@ -5255,7 +5254,7 @@ td {
 .site-nav {
   position: relative;
   z-index: 1;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 @media screen and (min-width: 61.3125em) {
   /* line 49, ../sass/elements/_navigation.scss */
@@ -5303,7 +5302,7 @@ td {
     vertical-align: middle;
     position: relative;
     z-index: 506;
-    margin-top: 5px;
+    margin-top: 8px;
     text-align: right;
     line-height: 1.26316;
   }
@@ -5547,7 +5546,7 @@ td {
 .topbar-toggle {
   text-transform: uppercase;
   position: absolute;
-  top: 22px;
+  top: 27px;
   right: 16px;
   color: #3a3a3a;
   font-size: 19.2px;
@@ -5588,8 +5587,8 @@ td {
   position: absolute;
   z-index: 1;
   color: #ffffff;
-  top: 22px;
-  top: 1.15789rem;
+  top: 27px;
+  top: 1.42105rem;
   right: 16px;
   right: 0.84211rem;
 }
