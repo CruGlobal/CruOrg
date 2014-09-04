@@ -8,7 +8,6 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/restangular/1.3.1/restangular.min.js"></script>
-    <script src="//google-analytics.com/ga.js" type="text/javascript" async=""></script>
     <script src="//platform.twitter.com/widgets.js" id="twitter-wjs" ></script>
     {%> extrascripts %}
     <script>
@@ -16,8 +15,16 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-XXXXXXX-X', 'cru.org');
+
+      ga('create', 'UA-9652718-4', 'auto');
+{%#if page.error404Page %}
+	  ga('send', 'pageview', '/errors/404{% page.path %}.html');
+{%else%}
+  {%#if page.errorDefaultPage %}
+      ga('send', 'pageview', '/errors/default{% page.path %}.html');
+  {%else%}
       ga('send', 'pageview');
-    
+  {%/if%}
+{%/if %}
+      ga('require', 'ecommerce');
     </script>

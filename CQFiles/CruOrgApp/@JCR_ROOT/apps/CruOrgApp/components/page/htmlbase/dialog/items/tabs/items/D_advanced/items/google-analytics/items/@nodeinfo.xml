@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:WidgetCollection">
+  <nodesOrder>
+    <value><![CDATA[error-404-page,error-default-page,search-page]]></value>
+  </nodesOrder>
+  <properties />
+  <mixins />
+</node>
+
