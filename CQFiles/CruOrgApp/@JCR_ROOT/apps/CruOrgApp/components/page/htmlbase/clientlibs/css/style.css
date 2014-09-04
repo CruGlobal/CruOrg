@@ -4296,7 +4296,7 @@ hr {
   }
 }
 
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 64em) {
   /* line 30, ../sass/elements/_layouts.scss */
   .layout--wide {
     width: 880px;
@@ -4925,7 +4925,7 @@ td {
   height: 81px;
   padding-left: 12px;
   padding-right: 12px;
-  line-height: 81px;
+  line-height: 77px;
   vertical-align: middle;
   text-align: center;
 }
@@ -5255,7 +5255,7 @@ td {
 .site-nav {
   position: relative;
   z-index: 1;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 @media screen and (min-width: 61.3125em) {
   /* line 49, ../sass/elements/_navigation.scss */
@@ -5303,7 +5303,7 @@ td {
     vertical-align: middle;
     position: relative;
     z-index: 506;
-    margin-top: 5px;
+    margin-top: 8px;
     text-align: right;
     line-height: 1.26316;
   }
@@ -5547,7 +5547,7 @@ td {
 .topbar-toggle {
   text-transform: uppercase;
   position: absolute;
-  top: 22px;
+  top: 27px;
   right: 16px;
   color: #3a3a3a;
   font-size: 19.2px;
@@ -5588,8 +5588,8 @@ td {
   position: absolute;
   z-index: 1;
   color: #ffffff;
-  top: 22px;
-  top: 1.15789rem;
+  top: 27px;
+  top: 1.42105rem;
   right: 16px;
   right: 0.84211rem;
 }
