@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="displayField" type="1" multiple="false">
+      <value><![CDATA[principal]]></value>
+    </property>
+    <property name="filter" type="1" multiple="false">
+      <value><![CDATA[groups]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[authselection]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

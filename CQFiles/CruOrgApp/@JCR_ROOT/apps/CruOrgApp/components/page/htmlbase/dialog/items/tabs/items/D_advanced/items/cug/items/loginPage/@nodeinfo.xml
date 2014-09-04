@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Login Page]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./cq:cugLoginPage]]></value>
+    </property>
+    <property name="suffix" type="1" multiple="false">
+      <value><![CDATA[.html]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

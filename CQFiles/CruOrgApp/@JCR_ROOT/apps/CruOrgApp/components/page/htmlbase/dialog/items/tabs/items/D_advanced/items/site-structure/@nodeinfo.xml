@@ -4,11 +4,11 @@
     <value />
   </nodesOrder>
   <properties>
-    <property name="path" type="1" multiple="false">
-      <value><![CDATA[/apps/CruOrgApp/components/page/htmlbase/dialog/items/tabs/items/D_advanced.infinity.json]]></value>
+    <property name="script" type="1" multiple="false">
+      <value><![CDATA[fieldset_sitestructure.json.jsp]]></value>
     </property>
     <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[cqinclude]]></value>
+      <value><![CDATA[slingscriptinclude]]></value>
     </property>
   </properties>
   <mixins />
