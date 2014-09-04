@@ -1167,36 +1167,68 @@ h1, .h1 {
   font-size: 3.99758rem;
   line-height: 1.14543;
 }
+@media screen and (max-width: 34.375em) {
+  /* line 8, ../sass/core/_headings.scss */
+  h1, .h1 {
+    font-size: 60.9541px;
+    font-size: 3.20811rem;
+    line-height: 1.4273;
+  }
+}
 
-/* line 15, ../sass/core/_headings.scss */
-h2, .h2 {
+/* line 19, ../sass/core/_headings.scss */
+h2, .h2, .post-title {
   font-size: 53.71577px;
   font-size: 2.82715rem;
   line-height: 1.07976;
 }
+@media screen and (max-width: 34.375em) {
+  /* line 19, ../sass/core/_headings.scss */
+  h2, .h2, .post-title {
+    font-size: 45.71577px;
+    font-size: 2.40609rem;
+    line-height: 1.26871;
+  }
+}
 
-/* line 20, ../sass/core/_headings.scss */
+/* line 27, ../sass/core/_headings.scss */
 h3, .h3 {
   font-size: 37.98852px;
   font-size: 1.9994rem;
   line-height: 1.52678;
 }
+@media screen and (max-width: 34.375em) {
+  /* line 27, ../sass/core/_headings.scss */
+  h3, .h3 {
+    font-size: 32.98852px;
+    font-size: 1.73624rem;
+    line-height: 1.75819;
+  }
+}
 
-/* line 25, ../sass/core/_headings.scss */
+/* line 36, ../sass/core/_headings.scss */
 h4, .h4 {
   font-size: 26.866px;
   font-size: 1.414rem;
   line-height: 1.07943;
 }
+@media screen and (max-width: 34.375em) {
+  /* line 36, ../sass/core/_headings.scss */
+  h4, .h4 {
+    font-size: 21.866px;
+    font-size: 1.15084rem;
+    line-height: 1.32626;
+  }
+}
 
-/* line 30, ../sass/core/_headings.scss */
+/* line 45, ../sass/core/_headings.scss */
 h5, .h5 {
   font-size: 19px;
   font-size: 1rem;
   line-height: 1.52632;
 }
 
-/* line 35, ../sass/core/_headings.scss */
+/* line 50, ../sass/core/_headings.scss */
 h6, .h6 {
   font-size: 15.2px;
   font-size: 0.8rem;
@@ -6454,7 +6486,7 @@ td {
   letter-spacing: -0.04em;
 }
 
-/* line 21, ../sass/elements/_post.scss */
+/* line 23, ../sass/elements/_post.scss */
 .post-subtitle {
   line-height: 1.32857;
   word-wrap: break-word;
@@ -6465,14 +6497,14 @@ td {
  * The author, twitter handle and timestamp for a post.
  * Use to extend .nav
  */
-/* line 32, ../sass/elements/_post.scss */
+/* line 34, ../sass/elements/_post.scss */
 .post-meta {
   color: #666062;
   line-height: 1.6;
   font-size: 16px;
   font-size: 0.84211rem;
 }
-/* line 42, ../sass/elements/_post.scss */
+/* line 44, ../sass/elements/_post.scss */
 .post-meta,
 .post-meta a {
   color: #666062;
@@ -6483,7 +6515,7 @@ td {
  * list. 
  */
 @media screen and (max-width: 44.75em) {
-  /* line 56, ../sass/elements/_post.scss */
+  /* line 58, ../sass/elements/_post.scss */
   .post__list li {
     /* 3 */
     /* 3 */
@@ -6498,7 +6530,7 @@ td {
   }
 }
 
-/* line 63, ../sass/elements/_post.scss */
+/* line 65, ../sass/elements/_post.scss */
 .source {
   /* 3 */
   /* 3 */
@@ -6511,12 +6543,12 @@ td {
   margin-top: 0.76316rem;
   /* 9 */
 }
-/* line 66, ../sass/elements/_post.scss */
+/* line 68, ../sass/elements/_post.scss */
 .source:before {
   content: "-";
 }
 
-/* line 71, ../sass/elements/_post.scss */
+/* line 73, ../sass/elements/_post.scss */
 .more-stories__link {
   color: inherit;
   cursor: pointer;
@@ -6525,21 +6557,21 @@ td {
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 81, ../sass/elements/_post.scss */
+  /* line 83, ../sass/elements/_post.scss */
   .image--legacy + .post-nav {
     margin-top: 14.5px;
   }
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 89, ../sass/elements/_post.scss */
+  /* line 91, ../sass/elements/_post.scss */
   .post-nav {
     padding-right: 12px;
     border-right: 1px solid #666062;
   }
 }
 
-/* line 99, ../sass/elements/_post.scss */
+/* line 101, ../sass/elements/_post.scss */
 .post__footer {
   /* 3 */
   /* 3 */
@@ -7015,7 +7047,7 @@ td {
 }
 
 /* line 34, ../sass/generic/_helpers.scss */
-.weight--semi-light, h2, .h2, h3, .h3 {
+.weight--semi-light, h2, .h2, .post-title, h3, .h3 {
   font-weight: 300;
 }
 
