@@ -1025,7 +1025,7 @@ small {
 .cf, .nav, .post-meta, .grid, .media, .home-banner, .post-article figure {
   *zoom: 1;
 }
-/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/utilities/general/_clearfix.scss */
 .cf:after, .nav:after, .post-meta:after, .grid:after, .media:after, .home-banner:after, .post-article figure:after {
   content: "";
   display: table;
@@ -1841,7 +1841,6 @@ input + .additional {
  */
 /* line 54, ../sass/core/_grids.scss */
 .grid {
-  position: relative;
   list-style: none;
   /* [1] */
   margin: 0;
@@ -1861,7 +1860,7 @@ input + .additional {
  * 4. Full-width unless told to behave otherwise.
  * 5. Required to combine fluid widths and fixed gutters.
  */
-/* line 89, ../sass/core/_grids.scss */
+/* line 88, ../sass/core/_grids.scss */
 .grid__item {
   float: left;
   vertical-align: top;
@@ -1880,12 +1879,12 @@ input + .additional {
  * Reversed grids allow you to structure your source in the opposite order to
  * how your rendered layout will appear. Extends `.grid`.
  */
-/* line 113, ../sass/core/_grids.scss */
+/* line 112, ../sass/core/_grids.scss */
 .grid--rev {
   direction: rtl;
   text-align: left;
 }
-/* line 117, ../sass/core/_grids.scss */
+/* line 116, ../sass/core/_grids.scss */
 .grid--rev > .grid__item {
   direction: ltr;
   text-align: left;
@@ -1894,11 +1893,11 @@ input + .additional {
 /**
  * Align the entire grid to the right. Extends `.grid`.
  */
-/* line 127, ../sass/core/_grids.scss */
+/* line 126, ../sass/core/_grids.scss */
 .grid--right {
   text-align: right;
 }
-/* line 130, ../sass/core/_grids.scss */
+/* line 129, ../sass/core/_grids.scss */
 .grid--right > .grid__item {
   text-align: left;
 }
@@ -1907,11 +1906,11 @@ input + .additional {
  * Centered grids align grid items centrally without needing to use push or pull
  * classes. Extends `.grid`.
  */
-/* line 140, ../sass/core/_grids.scss */
+/* line 139, ../sass/core/_grids.scss */
 .grid--center {
   text-align: center;
 }
-/* line 143, ../sass/core/_grids.scss */
+/* line 142, ../sass/core/_grids.scss */
 .grid--center > .grid__item {
   text-align: left;
 }
@@ -1920,7 +1919,7 @@ input + .additional {
  * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
  * `.grid`.
  */
-/* line 154, ../sass/core/_grids.scss */
+/* line 153, ../sass/core/_grids.scss */
 .grid--middle > .grid__item {
   vertical-align: middle;
 }
@@ -5728,6 +5727,12 @@ td {
   font-size: 85%;
   color: white;
 }
+@media screen and (max-width: 61.25em) {
+  /* line 15, ../sass/elements/_dropdowns.scss */
+  .dropdown--column {
+    width: 100%;
+  }
+}
 
 /*------------------------------------*\
     $OFF-CANVAS [IE version ie/ie-off-canvas]
@@ -6164,13 +6169,13 @@ td {
  * At bat
  */
 /* line 85, ../sass/elements/_slider.scss */
-.slider2 {
+.slider1 {
   left: 0;
   z-index: 1;
 }
 @media screen and (min-width: 61.25em) {
   /* line 85, ../sass/elements/_slider.scss */
-  .slider2 {
+  .slider1 {
     width: 64.9%;
   }
 }
@@ -6179,12 +6184,12 @@ td {
  * On Deck
  */
 /* line 97, ../sass/elements/_slider.scss */
-.slider3 {
+.slider2 {
   left: 100%;
 }
 @media screen and (min-width: 61.25em) {
   /* line 97, ../sass/elements/_slider.scss */
-  .slider3 {
+  .slider2 {
     left: 66.666666%;
   }
 }
@@ -6193,12 +6198,12 @@ td {
  * Last up
  */
 /* line 108, ../sass/elements/_slider.scss */
-.slider1 {
+.slider0 {
   left: -100%;
 }
 @media screen and (min-width: 61.25em) {
   /* line 108, ../sass/elements/_slider.scss */
-  .slider1 {
+  .slider0 {
     left: -33.333333%;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
     opacity: 0.3;
@@ -6207,7 +6212,7 @@ td {
 
 @media screen and (min-width: 61.25em) {
   /* line 117, ../sass/elements/_slider.scss */
-  .slider__reverse .slider1 {
+  .slider__reverse .slider0 {
     -webkit-transition: none;
     -moz-transition: none;
     -ms-transition: none;
@@ -6232,12 +6237,12 @@ td {
  * In the hole
  */
 /* line 131, ../sass/elements/_slider.scss */
-.slider4 {
+.slider3 {
   display: none;
 }
 @media screen and (min-width: 61.25em) {
   /* line 131, ../sass/elements/_slider.scss */
-  .slider4 {
+  .slider3 {
     left: 100%;
     display: block;
     -webkit-animation-name: sliderEnd;
@@ -6258,7 +6263,7 @@ td {
 }
 
 /* line 148, ../sass/elements/_slider.scss */
-.slider__reverse .slider4 {
+.slider__reverse .slider3 {
   -webkit-animation: none;
   -moz-animation: none;
   -ms-animation: none;
@@ -6266,10 +6271,10 @@ td {
 }
 
 /* line 152, ../sass/elements/_slider.scss */
+.slider4,
 .slider5,
 .slider6,
-.slider7,
-.slider8 {
+.slider7 {
   right: 500%;
 }
 
@@ -6358,7 +6363,7 @@ td {
 }
 
 /* line 215, ../sass/elements/_slider.scss */
-.slider2 .article-details, .slider3 .article-details {
+.slider1 .article-details, .slider2 .article-details {
   bottom: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
@@ -7263,5 +7268,3 @@ hr, .divider, .layout--full, .center-block, .centered,
 }
 
 /* endif */
-
-/*# sourceMappingURL=screen.css.map */
