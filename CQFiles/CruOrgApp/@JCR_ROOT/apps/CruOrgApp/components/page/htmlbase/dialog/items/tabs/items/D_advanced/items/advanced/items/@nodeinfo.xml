@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:WidgetCollection">
+  <nodesOrder>
+    <value><![CDATA[language,redirect,designpath,alias]]></value>
+  </nodesOrder>
+  <properties />
+  <mixins />
+</node>
+
