@@ -6169,13 +6169,13 @@ td {
  * At bat
  */
 /* line 85, ../sass/elements/_slider.scss */
-.slider1 {
+.slider2 {
   left: 0;
   z-index: 1;
 }
 @media screen and (min-width: 61.25em) {
   /* line 85, ../sass/elements/_slider.scss */
-  .slider1 {
+  .slider2 {
     width: 64.9%;
   }
 }
@@ -6184,12 +6184,12 @@ td {
  * On Deck
  */
 /* line 97, ../sass/elements/_slider.scss */
-.slider2 {
+.slider3 {
   left: 100%;
 }
 @media screen and (min-width: 61.25em) {
   /* line 97, ../sass/elements/_slider.scss */
-  .slider2 {
+  .slider3 {
     left: 66.666666%;
   }
 }
@@ -6198,12 +6198,12 @@ td {
  * Last up
  */
 /* line 108, ../sass/elements/_slider.scss */
-.slider0 {
+.slider1 {
   left: -100%;
 }
 @media screen and (min-width: 61.25em) {
   /* line 108, ../sass/elements/_slider.scss */
-  .slider0 {
+  .slider1 {
     left: -33.333333%;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
     opacity: 0.3;
@@ -6212,7 +6212,7 @@ td {
 
 @media screen and (min-width: 61.25em) {
   /* line 117, ../sass/elements/_slider.scss */
-  .slider__reverse .slider0 {
+  .slider__reverse .slider1 {
     -webkit-transition: none;
     -moz-transition: none;
     -ms-transition: none;
@@ -6237,12 +6237,12 @@ td {
  * In the hole
  */
 /* line 131, ../sass/elements/_slider.scss */
-.slider3 {
+.slider4 {
   display: none;
 }
 @media screen and (min-width: 61.25em) {
   /* line 131, ../sass/elements/_slider.scss */
-  .slider3 {
+  .slider4 {
     left: 100%;
     display: block;
     -webkit-animation-name: sliderEnd;
@@ -6263,7 +6263,7 @@ td {
 }
 
 /* line 148, ../sass/elements/_slider.scss */
-.slider__reverse .slider3 {
+.slider__reverse .slider4 {
   -webkit-animation: none;
   -moz-animation: none;
   -ms-animation: none;
@@ -6271,10 +6271,10 @@ td {
 }
 
 /* line 152, ../sass/elements/_slider.scss */
-.slider4,
 .slider5,
 .slider6,
-.slider7 {
+.slider7,
+.slider8 {
   right: 500%;
 }
 
@@ -6363,7 +6363,7 @@ td {
 }
 
 /* line 215, ../sass/elements/_slider.scss */
-.slider1 .article-details, .slider2 .article-details {
+.slider2 .article-details, .slider3 .article-details {
   bottom: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
