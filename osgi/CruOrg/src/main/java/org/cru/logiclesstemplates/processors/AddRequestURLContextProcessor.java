@@ -57,10 +57,14 @@ public class AddRequestURLContextProcessor extends AbstractResourceTypeCheckCont
 
             ResourceResolver resourceResolver = request.getResourceResolver();
             URI fullRequestURI = new URI( requestURL );
-            String resourcePath = fullRequestURI.getPath();
-            String resourceMapped = resourceResolver.map( resourcePath );
-
-            requestURL = fullRequestURI.getHost() + resourceMapped;
+            if( null != fullRequestURI ) {
+                String resourcePath = fullRequestURI.getPath();
+                String resourceMapped = "";
+                if( null != resourceResolver ) {
+                    resourceMapped = resourceResolver.map( resourcePath );
+                    requestURL = fullRequestURI.getHost() + resourceMapped;
+                }
+            }
 
             pageObject.put(REQUEST_URL_KEY, requestURL);
         }
