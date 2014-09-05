@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Export Configuration]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./cq:exportTemplate]]></value>
+    </property>
+    <property name="predicate" type="1" multiple="false">
+      <value><![CDATA[nosystem]]></value>
+    </property>
+    <property name="rootPath" type="1" multiple="false">
+      <value><![CDATA[/etc/contentsync/templates]]></value>
+    </property>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[Templates]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
