@@ -1,10 +1,8 @@
 <!-- Navigation for off canvas and primary navigaiton: This is at the very bottom of the page -->
 <nav id="nav" class="navigation">
     <ul class="nav  right-nav ">
-
         <!--Search-->
         {%#include "search-box" as="CruOrgApp/components/section/searchbox"%}{%/include%}
-
         <!--Search - END-->
     </ul>
     <ul class="nav  site-nav">
@@ -17,23 +15,19 @@
                 <ul class="grid">
                     {%#each this%}
                     {%#with this.pages%}
-                    <li class="grid__item  desk--one-third  dropdown--column">
+                    <li class="grid__item  desk--one-third  lap--one-third  dropdown--column">
                         {%#each this%}
                         <div class="mb- ms- p- color-darker-gray">
                             <a href="{%this.vanityPath%}.html">{%this.navigationTitle%}</a>
                             {%#with this.pages%}
                             {%#if this%}
-
                             <ul class="bare-list">
-
                                 {%#each this%}
-
                                     <li><a href="{%this.vanityPath%}.html">{%this.navigationTitle%}</a></li>
                                 {%/each%}
                             </ul>
                             {%/if%}
                             {%/with%}
-
                         </div>
                         {%/each%}
                     </li>
@@ -45,8 +39,6 @@
             {%/with%}
         </li>
         {%/each%}
-
     </ul>
 	<a href="#" id="nav-close-btn"  class="topbar-toggle  topbar-close">Close <i class="icon-cancel-circled"></i></a>
-
 </nav>
