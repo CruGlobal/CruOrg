@@ -5,8 +5,10 @@ import com.xumak.base.templatingsupport.AbstractResourceTypeCheckContextProcesso
 import com.xumak.base.templatingsupport.TemplateContentModel;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.SlingHttpServletRequest;
 
+import java.net.URI;
 import java.util.Map;
 import java.util.Set;
 
@@ -52,6 +54,14 @@ public class AddRequestURLContextProcessor extends AbstractResourceTypeCheckCont
                  */
                 requestURL = requestURL.replace(CONTENT_MODEL_SERVLET_SUFFIX, HTML_EXT);
             }
+
+            ResourceResolver resourceResolver = request.getResourceResolver();
+            URI fullRequestURI = new URI( requestURL );
+            String resourcePath = fullRequestURI.getPath();
+            String resourceMapped = resourceResolver.map( resourcePath );
+
+            requestURL = fullRequestURI.getHost() + resourceMapped;
+
             pageObject.put(REQUEST_URL_KEY, requestURL);
         }
 
