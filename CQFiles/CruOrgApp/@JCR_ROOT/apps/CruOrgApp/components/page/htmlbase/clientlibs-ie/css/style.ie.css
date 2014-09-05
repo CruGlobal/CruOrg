@@ -980,7 +980,7 @@ small {
 .cf, .nav, .post-meta, .grid, .media, .home-banner, .post-article figure {
     *zoom: 1;
 }
-/* line 38, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
 .cf:after, .nav:after, .post-meta:after, .grid:after, .media:after, .home-banner:after, .post-article figure:after {
     content: "";
     display: table;
@@ -4614,8 +4614,8 @@ figcaption {
  * 
  */
 /* line 43, ../sass/elements/_text.scss */
-.accent:after, a + .phone:after {
-    content: "\00A0";
+.accent + .accent:before, a + .phone + .accent:before, a.accent + .phone:before, a + a.phone + .phone:before {
+  content: "\2013";
     /* 3 */
     /* 3 */
     /* 4 */
@@ -7301,3 +7301,5 @@ hr, .divider, .layout--full, .center-block, .centered,
 }
 
 /* endif */
+
+/*# sourceMappingURL=ie.css.map */
