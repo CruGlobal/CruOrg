@@ -1,0 +1,4 @@
+# robots.txt for www.cru.org
+User-Agent: *
+Allow: / 
+Disallow: /ucmcons/
