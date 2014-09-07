@@ -1,0 +1,68 @@
+<!-- Generates navigation html that can be exported to Oracle for use on give.cru.org -->
+{%#if page.cats %}
+    <ul class="outer">
+        {%#each list.pages%}
+        <li class="nav1"><a href="http://www.cru.org{%this.vanityPath%}.html"  class="">{%this.navigationTitle%}</a>
+            {%#with this.pages%}
+            {%#if this%}
+                <ul class="nav2 container">
+                    {%#each this%}
+                    <li class="nav2"><a href="http://www.cru.org{%this.vanityPath%}.html">{%this.navigationTitle%}</a>
+                    {%#with this.pages%}
+                    <div class="menu"><div class="col"><ul>
+                        {%#each this%}
+                        <li class="nav3"><a href="http://www.cru.org{%this.vanityPath%}.html">{%this.navigationTitle%}</a></li>
+                            {%#with this.pages%}
+                            {%#if this%}
+                            <ul class="nav3 container">
+                                {%#each this%}
+                                    <li class="nav4"><a href="http://www.cru.org{%this.vanityPath%}.html">{%this.navigationTitle%}</a></li>
+                                {%/each%}
+                            </ul>
+                            {%/if%}
+                            {%/with%}
+                        {%/each%}
+                    </ul></div></div>
+                    {%/with%}
+					</li>
+                    {%/each%}
+				</ul><!-- Closes a Nav Level 2 list-->
+            {%/if%}
+            {%/with%}
+        </li><!-- Closes a Nav Level 1 list item-->
+        {%/each%}
+</ul>
+{% else %}
+    <ul class="">
+        {%#each list.pages%}
+        <li class=""><a href="http://www.cru.org{%this.vanityPath%}.html"  class="">{%this.navigationTitle%}</a>
+            {%#with this.pages%}
+            {%#if this%}
+                <ul class="">
+                    {%#each this%}
+                    <li class=""><a href="http://www.cru.org{%this.vanityPath%}.html">{%this.navigationTitle%}</a>
+                    {%#with this.pages%}
+                    <div class="menu"><div class="col"><ul>
+                        {%#each this%}
+                        <li class=""><a href="http://www.cru.org{%this.vanityPath%}.html">{%this.navigationTitle%}</a></li>
+                            {%#with this.pages%}
+                            {%#if this%}
+                            <ul class="">
+                                {%#each this%}
+                                    <li class=""><a href="http://www.cru.org{%this.vanityPath%}.html">{%this.navigationTitle%}</a></li>
+                                {%/each%}
+                            </ul>
+                            {%/if%}
+                            {%/with%}
+                        {%/each%}
+                    </ul></div></div>
+                    {%/with%}
+					</li>
+                    {%/each%}
+				</ul><!-- Closes a Nav Level 2 list-->
+            {%/if%}
+            {%/with%}
+        </li><!-- Closes a Nav Level 1 list item-->
+        {%/each%}
+</ul>
+{%/if%}
