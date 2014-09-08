@@ -30,7 +30,7 @@ import static com.xumak.base.Constants.HTML_EXT;
  */
 @Component
 @Service
-public class AddRequestURLContextProcessor extends AbstractResourceTypeCheckContextProcessor <TemplateContentModel>{
+public class AddRequestURLContextProcessor extends AbstractResourceTypeCheckContextProcessor<TemplateContentModel> {
 
     public static final String CONTENT_MODEL_SERVLET_SUFFIX = "/_jcr_content.contentmodel.page.json";
     public static final String HTMLBASE_PAGE_RESOURCE_TYPE =
@@ -62,7 +62,7 @@ public class AddRequestURLContextProcessor extends AbstractResourceTypeCheckCont
                 String resourceMapped;
                 if (null != resourceResolver) {
                     resourceMapped = resourceResolver.map(resourcePath);
-                    requestURL = fullRequestURI.getHost() + resourceMapped;
+                    requestURL = fullRequestURI.getScheme() + "://" + fullRequestURI.getHost() + resourceMapped;
                 }
             }
 
