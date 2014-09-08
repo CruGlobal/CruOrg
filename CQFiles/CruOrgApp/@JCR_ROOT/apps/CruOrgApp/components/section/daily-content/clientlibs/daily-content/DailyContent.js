@@ -104,7 +104,7 @@ Cru.components.DailyContent.elements = {
 
     },
     createFacebookCommentsContainer : function(href, colorScheme, numberOfPosts){
-        /*<div class="fb-comments" data-href="{%page.requestURL%}" data-width="700" data-numposts="{%#if global.numberOfPosts %}{% global.numberOfPosts %}{%else%}{%#if page.isEditMode %}3{%/if %}{%/if%}" data-colorscheme=""></div> */
+        /*<div class="fb-comments" data-href="http://{%page.requestURL%}" data-width="700" data-numposts="{%#if global.numberOfPosts %}{% global.numberOfPosts %}{%else%}{%#if page.isEditMode %}3{%/if %}{%/if%}" data-colorscheme=""></div> */
 
         var container = document.createElement(this.DIV);
         container.className = "fb-comments";
