@@ -7263,5 +7263,14 @@ hr, .divider, .layout--full, .center-block, .centered,
 }
 
 /* endif */
-
+/**
+ * Wonky fixes that we eventually will try to fix
+ */
+/* line 1, ../sass/elements/_shame.scss */
+.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+  min-width: 100% !important;
+  width: 100% !important;
+}
 /*# sourceMappingURL=screen.css.map */
