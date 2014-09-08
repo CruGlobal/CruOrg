@@ -18,10 +18,10 @@
 
       ga('create', 'UA-9652718-4', 'auto');
 {%#if page.error404Page %}
-	  ga('send', 'pageview', '/errors/404{% page.path %}.html');
+	  ga('send', 'pageview', '/errors/404.html?page='+ document.location.pathname + document.location.search +'&ref=' + document.referrer);
 {%else%}
   {%#if page.errorDefaultPage %}
-      ga('send', 'pageview', '/errors/default{% page.path %}.html');
+      ga('send', 'pageview', '/errors/default.html?page='+ document.location.pathname + document.location.search +'&ref=' + document.referrer);
   {%else%}
       ga('send', 'pageview');
   {%/if%}
