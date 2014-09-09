@@ -55,8 +55,6 @@ Cru.components.tile = {
         	renditionWidget.setValue(this.CRU_RENDITION_VALUE);
 		}
         }
-        console.log(width);
-        console.log(renditionWidget);
     },
 
     validator : function(value, container) {
