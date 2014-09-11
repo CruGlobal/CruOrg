@@ -6039,6 +6039,12 @@ td {
   }
 }
 
+/**
+ * .contact__item{
+ *     border: 3px solid #e9e9e9;
+ * }
+ *    
+ */
 /*------------------------------------*\
     $CAMPUS-LOCATOR
 \*------------------------------------*/
@@ -7263,5 +7269,9 @@ hr, .divider, .layout--full, .center-block, .centered,
 }
 
 /* endif */
+/* line 1, ../sass/elements/_shame.scss */
+.fb-comments, .fb-comments span, .fb-comments iframe[style] {
+  width: 100% !important;
+}
 
 /*# sourceMappingURL=screen.css.map */
