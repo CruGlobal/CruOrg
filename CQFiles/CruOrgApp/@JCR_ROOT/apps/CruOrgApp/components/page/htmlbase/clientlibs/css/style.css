@@ -4454,7 +4454,7 @@ figcaption {
  */
 /* line 43, ../sass/elements/_text.scss */
 .accent:after, a + .phone:after {
-  content: "\00A0";
+  content: "\2013";
   /* 3 */
   /* 3 */
   /* 4 */
