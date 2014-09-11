@@ -1192,14 +1192,14 @@ h2, .h2, .post-title {
 }
 
 /* line 27, ../sass/core/_headings.scss */
-h3, .h3, .page--home .section-title {
+h3, .h3, .page--home .banner-title {
   font-size: 37.98852px;
   font-size: 1.9994rem;
   line-height: 1.52678;
 }
 @media screen and (max-width: 34.375em) {
   /* line 27, ../sass/core/_headings.scss */
-  h3, .h3, .page--home .section-title {
+  h3, .h3, .page--home .banner-title {
     font-size: 32.98852px;
     font-size: 1.73624rem;
     line-height: 1.75819;
@@ -7047,7 +7047,7 @@ td {
 }
 
 /* line 34, ../sass/generic/_helpers.scss */
-.weight--semi-light, h2, .h2, .post-title, h3, .h3, .page--home .section-title {
+.weight--semi-light, h2, .h2, .post-title, h3, .h3, .page--home .banner-title {
   font-weight: 300;
 }
 
