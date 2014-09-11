@@ -1192,14 +1192,14 @@ h2, .h2, .post-title {
 }
 
 /* line 27, ../sass/core/_headings.scss */
-h3, .h3 {
+h3, .h3, .page--home .section-title {
   font-size: 37.98852px;
   font-size: 1.9994rem;
   line-height: 1.52678;
 }
 @media screen and (max-width: 34.375em) {
   /* line 27, ../sass/core/_headings.scss */
-  h3, .h3 {
+  h3, .h3, .page--home .section-title {
     font-size: 32.98852px;
     font-size: 1.73624rem;
     line-height: 1.75819;
@@ -4235,7 +4235,7 @@ input[disabled]:focus,
 }
 
 @media screen and (max-width: 31.25em) {
-  /* line 13, ../sass/elements/_page.scss */
+  /* line 17, ../sass/elements/_page.scss */
   .background-size-contain.layout-single-column {
     margin-left: 0;
     margin-right: 0;
@@ -4243,21 +4243,21 @@ input[disabled]:focus,
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 23, ../sass/elements/_page.scss */
+  /* line 27, ../sass/elements/_page.scss */
   .home-banner .h4, .home-banner a {
     display: inline-block;
   }
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 30, ../sass/elements/_page.scss */
+  /* line 34, ../sass/elements/_page.scss */
   .callout {
     margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 38, ../sass/elements/_page.scss */
+  /* line 42, ../sass/elements/_page.scss */
   .callout-button {
     text-align: left;
   }
@@ -4273,7 +4273,7 @@ input[disabled]:focus,
 	border: 0;
 	border-top: 1px solid #dddddd;
 }*/
-/* line 56, ../sass/elements/_page.scss */
+/* line 60, ../sass/elements/_page.scss */
 hr, .divider {
   clear: both;
   display: block;
@@ -4282,7 +4282,7 @@ hr, .divider {
 /** 
  * The primary hr, small width 
  */
-/* line 66, ../sass/elements/_page.scss */
+/* line 70, ../sass/elements/_page.scss */
 hr {
   width: 14%;
 }
@@ -4291,7 +4291,7 @@ hr {
  * Full width hr 
  */
 /* hr */
-/* line 75, ../sass/elements/_page.scss */
+/* line 79, ../sass/elements/_page.scss */
 .divider {
   width: 100%;
 }
@@ -7047,7 +7047,7 @@ td {
 }
 
 /* line 34, ../sass/generic/_helpers.scss */
-.weight--semi-light, h2, .h2, .post-title, h3, .h3 {
+.weight--semi-light, h2, .h2, .post-title, h3, .h3, .page--home .section-title {
   font-weight: 300;
 }
 
@@ -7263,5 +7263,9 @@ hr, .divider, .layout--full, .center-block, .centered,
 }
 
 /* endif */
+/* line 1, ../sass/elements/_shame.scss */
+.fb-comments, .fb-comments span, .fb-comments iframe[style] {
+  width: 100% !important;
+}
 
 /*# sourceMappingURL=screen.css.map */
