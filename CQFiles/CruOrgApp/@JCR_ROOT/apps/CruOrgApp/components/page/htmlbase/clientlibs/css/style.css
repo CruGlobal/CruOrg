@@ -7271,7 +7271,7 @@ hr, .divider, .layout--full, .center-block, .centered,
 
 /* endif */
 /* line 1, ../sass/elements/_shame.scss */
-.fb-comments, .fb-comments span, .fb-comments iframe[style] {
+.fb-comments, .fb-comments span, .fb-comments iframe[style], .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe {
   width: 100% !important;
 }
 
