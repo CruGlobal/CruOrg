@@ -13,13 +13,13 @@ Cru.components.tile = {
     DEFAULT_RENDITION_VALUE : "CruHalf432x243", //used for the 1/2, 1/3 and 1/4 widths
     CRU_RENDITION_VALUE : "Cru704x396", //used for the 2/3 and whole grid widths
     CRU_WIDTHS_VALUES_ARRAY : [ //array of widths that should use the Cru704x396 rendition 
-	    "desk--one-whole",
-        "desk--two-thirds"
+	    "one-whole",
+        "desk--two-thirds  lap--one-half  one-whole"
     ],
 	CRU_250_CHARACTERS_WIDTHS_ARRAY : [ //array of widths that should use the Cru704x396 rendition 
-		"desk--one-whole",
-        "desk--two-thirds",
-        "desk--one-half"
+		"one-whole",
+        "desk--two-thirds  lap--one-half  one-whole",
+        "desk--one-half  lap--one-half  one-whole"
     ],
 
     PARSYS_CLASSES_ARRAY : [
