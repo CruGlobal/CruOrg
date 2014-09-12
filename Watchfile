@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+# run sass from console w/o gui... run the command below
+# sh Watchfile
+
+echo "* Compiling all CSS"
+
+echo "***** compiling into clientlibs";
+compass watch --time --css-dir=CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/components/page/htmlbase/clientlibs/css --output-style expanded --force;
+
+#echo "***** compiling into clientlibs-ie";
+#compass compile --time --css-dir=CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/components/page/htmlbase/clientlibs-ie/css --output-style expanded --force;
+
+echo "***** END";
+
+

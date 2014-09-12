@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+# run sass from console w/o gui... run the command below
+# sh Watchfile
+
+echo "* Compiling all CSS"
+
+echo "***** compiling into clientlibs";
+compass watch --time --css-dir=../components/page/htmlbase/clientlibs-ie/css --output-style expanded --force;
+
+echo "***** END";
