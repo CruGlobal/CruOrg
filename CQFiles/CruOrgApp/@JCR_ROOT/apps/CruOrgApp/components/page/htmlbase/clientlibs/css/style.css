@@ -7276,4 +7276,10 @@ hr, .divider, .layout--full, .center-block, .centered,
   width: 100% !important;
 }
 
-/*# sourceMappingURL=screen.css.map */
+.social-shares .fb_iframe_widget iframe{
+    width: 76px !important;
+    position: relative;
+    top: -3px;
+}
+
+/* sourceMappingURL=screen.css.map */
