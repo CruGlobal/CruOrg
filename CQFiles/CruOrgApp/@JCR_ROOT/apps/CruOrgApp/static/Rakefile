@@ -1,6 +1,8 @@
-task :default => [:patterns, :ie] do
+desc "Watch both patterns and ie compass projects"
+task :compass => [:patterns, :ie] do
  puts "Running both compass patterns and ie"
- sh %(sh tail -f patterns/nohup.out -f ie-styles/nohup.out)
+ Rake::Task[':patterns']
+ Rake::Task[':ie']
 end
 
 desc "Watch patterns compass project"
@@ -13,5 +15,10 @@ task :ie do
     sh %(cd ie-styles/; nohup sh Watchfile &)
 end
 
+desc "Watch compass output in console"
+task :console do
+    sh %(tail -f patterns/nohup.out ie-styles/nohup.out)
+end
+
 # ensure that each shell script spawns a new process
-# tail both files to watch what's going on `tail -f patterns/nohup.out -f ie-styles/nohup.out`
+# tail both files to watch what's going on `tail -f patterns/nohup.out ie-styles/nohup.out`
