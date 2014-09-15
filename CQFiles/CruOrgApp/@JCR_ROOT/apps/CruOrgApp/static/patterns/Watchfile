@@ -6,6 +6,6 @@
 echo "* Compiling all CSS"
 
 echo "***** compiling into clientlibs";
-compass watch --time --css-dir=../components/page/htmlbase/clientlibs/css --output-style expanded --force;
+compass watch;
 
 echo "***** END";
