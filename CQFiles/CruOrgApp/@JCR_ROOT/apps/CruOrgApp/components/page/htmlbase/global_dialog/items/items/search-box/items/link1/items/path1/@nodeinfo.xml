@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[pathfield]]></value>
+    <property name="anchor" type="1" multiple="false">
+      <value><![CDATA[95%]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Path]]></value>
@@ -10,8 +13,8 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./path1]]></value>
     </property>
-    <property name="anchor" type="1" multiple="false">
-      <value><![CDATA[95%]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
     </property>
   </properties>
   <mixins />

@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    $CAMPUS-LOCATOR
+\*------------------------------------*/
+
+.locations{ 
+    
+    .locations__select{
+        @extend %me;
+
+        @include mq(600px) {
+            display: none;
+        }
+    }
+
+    .locations__list{
+        display: none;
+
+        @include mq(600px) {
+            display: block;
+        }
+    }
+
+    li{
+        @include mq(600px) {
+            width: 33.3333333%;
+        }
+
+        & > a{
+            @extend %block-link;
+            @extend %mb0;
+        }
+    }    
+}

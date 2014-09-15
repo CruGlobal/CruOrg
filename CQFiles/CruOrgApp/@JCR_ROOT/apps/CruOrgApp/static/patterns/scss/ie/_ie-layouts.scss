@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    $LAYOUTS
+\*------------------------------------*/
+
+%base{
+	margin: 0 auto;
+	clear: both;
+}
+
+.layout-single-column, %layout-single-column{
+	@extend %base;
+	 
+	width: 700px;
+}
+
+.layout--wide{
+	@extend %base;
+	
+	width: 980px;
+}
+
+.layout--full{
+	@extend %centered;
+
+	width: 980px;
+}

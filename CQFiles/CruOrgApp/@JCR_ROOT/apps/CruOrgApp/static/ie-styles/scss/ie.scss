@@ -1,9 +1,192 @@
-/* Welcome to Compass. Use this file to write IE specific override styles.
- * Import this file using the following HTML or equivalent:
- * <!--[if IE]>
- *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
- * <![endif]--> */
+@charset "UTF-8";
 
-.eli-ie {
-  background: blue;
-}
+/*------------------------------------*\
+    IE-STYLE.CSS
+\*------------------------------------*/
+/**
+ * Here lies the custom styles for Cru.org. These styles have been
+ * built on top of our front-end framework: brackets.css.
+ *
+ * Be sure read the warning before continuing to edit or add any new
+ * styles. In addition, be sure to change the variables to turn off
+ * demo mode and debug mode before pushing to production. 
+ * 
+ */
+
+
+
+
+
+/*------------------------------------*\
+ $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * WARNING.............There be rocks ahead
+ * IMPORTS.............Begin importing the sections below
+ *
+ * SETUP...............Import project variables and brackets.css
+ *
+ * FONT................Set up the primary font
+ * COLORS..............Set base colors and variables for easy use
+ *
+ * PAGE................Overall page settings and foundation
+ * LAYOUTS.............Primary widths and wrappers
+ *
+ * TEXT................Text element settings for articles, etc.
+ * BUTTONS.............Cru specific buttons, extends brackets.css
+ * TABLES..............Cru specific tables, extends brackets.css
+ * FORMS...............Cru specific forms, extends brackets.css
+ * VIDEO...............
+ * IMAGES..............
+ * HEADER..............
+ * FOOTER..............
+ * SOCIAL..............Site and post specific social media
+ * SITE-SEARCH.........Primary site search, extends the header
+ * NAVIGATION..........Praimry site nav, extends the header
+ * DROPDOWNS...........Dropdown views for large screens, extends the navigation
+ * OFF-CANVAS..........Off canvas nav for small screens, extends the navigation
+ *
+ * CAMPUS-LOCATOR......
+ * COUNTRY-LIST........
+ * SLIDER..............Primary site slider. For now only on homepage
+ * POST................Basic post stylings for articles
+ * POST-IMAGES.........Image handling in posts, etc, extends the post
+ * PAGE-SUBNAV.........Additional navigation for community/landing pages
+ *
+ * ANIMATIONS..........Site-wide animation handling
+ * UTILITIES...........A series of helper classes to use arbitrarily
+ * DEBUG...............Enable to add visual flags for debugging purposes
+ */
+
+/*------------------------------------*\
+  $WARNING
+\*------------------------------------*/
+/**
+ * Custom styles for cru.org are meant to be place in the elements folder. 
+ * They should be as specific to cru as possible and mainly ui related. If 
+ * there is a generic feature needed, please submit an issue to the
+ * brackets.css github page. 
+ *
+ */
+
+
+
+
+
+/*------------------------------------*\
+ $IMPORTS
+\*------------------------------------*/
+/**
+ * Core variables, mixins, utilities, etc
+ */
+@import "vars";
+@import "generic/tools";
+@import "generic/mixins";
+@import "generic/_normalize.scss";
+@import "generic/restart";
+@import "generic/clearfix";
+@import "core/shared";
+
+/**
+ * Base styles; unclassed HTML elements etc.
+ */
+@import "core/base";
+@import "core/headings";
+@import "core/paragraphs";
+@import "core/quotes";
+@import "core/images";
+@import "core/lists";
+@import "core/tables";
+@import "core/forms";
+
+/**
+ * Objects and abstractions
+ */
+@import "core/grids";
+@import "generic/mixins/widths";
+@import "components/buttons";
+@import "components/islands";
+@import "components/navs";
+@import "components/pagination";
+@import "components/breadcrumbs";
+@import "components/media";
+
+/**
+ * Style trumps; helper and brand classes
+ */
+@import "generic/spacing";
+
+/**
+ * Begin importing custom stuff here.
+ */
+
+/**
+ * Brackets files
+ */
+@import "ie/ie-defaults"; // This file is referencing defaults.scss in brackets.
+@import "ie/ie-grids";
+/**
+ * Primary site colors and fonts
+ */
+@import "elements/fonts";
+@import "elements/colors";
+
+
+/**
+ * Overall site and layout
+ */
+@import "elements/page";
+@import "ie/ie-layouts";
+
+
+/**
+ * Site-wide elements and components
+ */
+@import "elements/text";
+@import "elements/buttons";
+@import "elements/forms";
+@import "elements/tables";
+@import "elements/video";
+@import "elements/images";
+
+@import "ie/ie-header";
+//@import "elements/header";
+@import "elements/footer";
+@import "elements/social";
+
+@import "elements/site-search";
+@import "ie/ie-navigation";
+@import "elements/dropdowns";
+@import "ie/ie-off-canvas";
+@import "elements/off-canvas";
+@import "elements/ui-autocomplete";
+@import "elements/tiles";
+
+/**
+ * Page components
+ */
+@import "elements/campus-locator";
+@import "elements/country-list";
+@import "ie/ie-sliders";
+
+@import "elements/post";
+@import "elements/post-images";
+
+
+
+/**
+ * Community specific components
+ */
+@import "elements/page-subnav";
+
+
+/**
+ * Overrides and additional tools
+ */
+@import "elements/animations";
+@import "ie/ie-helpers";
+@import "elements/debug";
+
+
+

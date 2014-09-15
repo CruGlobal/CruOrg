@@ -1,0 +1,76 @@
+/*------------------------------------*\
+    $SHARED
+\*------------------------------------*/
+/**
+ * A lot of elements need to share some declarations (mainly for
+ * vertical rhythm), so we `@extend` some silent classes.
+ */
+%reset {
+    margin:  0;
+    padding: 0;
+}
+
+%vertical-rhythm {
+    @extend %reset;
+    margin-bottom: $base-spacing-unit;
+    margin-bottom: $base-spacing-ratio + rem;
+}
+
+
+
+
+
+/**
+ * Where `margin-bottom` is concerned, this value will be the same as the
+ * base line-height. This allows us to keep a consistent vertical rhythm.
+ * As per: csswizardry.com/2012/06/single-direction-margin-declarations
+ * 
+ * We will be using the above silent classes to quickly remove default 
+ * margin and padding and quickly apply margin-bottom to the element with
+ * default rem units and px fallbacks. 
+ * 
+ * By default $base-line-height is set to 24px, therefore so is the
+ * $magic-number.
+ * Therefore, $half-spacing-unit is 12px and $double-spacing-unit is 48px 
+ *
+ */
+
+/**
+ * Base elements
+ */
+h1, h2, h3, h4, h5, h6,
+hgroup, p,
+ul,ol,dl,
+address,table,
+fieldset,figure,
+pre,
+/**
+ * Objects and abstractions
+ */
+%margin-bottom,
+.media,
+.island,
+.islet{
+	@extend %vertical-rhythm; 
+}
+
+
+/**
+ * `hr` elements only take up a few pixels, so we need to give them special
+ * treatment regarding vertical rhythm.
+ */
+hr{
+    margin-top: $base-spacing-unit * 2; 
+    margin-bottom:  $base-spacing-unit * 2; 
+} 
+
+
+/**
+ * Where `margin-left` is concerned we want to try and indent certain elements
+ * by a consistent amount. Define that amount once, here.
+ */
+ul,ol,dd,
+%margin-left {
+    margin-left: 2 * $base-spacing-unit;
+    margin-left: (2 * $base-spacing-ratio / $base-spacing-ratio) * 1rem;
+}

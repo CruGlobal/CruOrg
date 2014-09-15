@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[label]]></value>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[<strong>The key {#} will be replaced by specific values.</strong><br>{0} : query<br>{1} : total matches<br>{2} : start index<br>{3} : number of hits in the page<br>{4} : execution time]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Key concept]]></value>
@@ -10,8 +13,8 @@
     <property name="hideLabel" type="6" multiple="false">
       <value>true</value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[<strong>The key {#} will be replaced by specific values.</strong><br>{0} : query<br>{1} : total matches<br>{2} : start index<br>{3} : number of hits in the page<br>{4} : execution time]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[label]]></value>
     </property>
   </properties>
   <mixins />

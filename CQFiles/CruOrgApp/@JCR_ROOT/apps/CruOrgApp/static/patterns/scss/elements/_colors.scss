@@ -1,0 +1,53 @@
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+/**
+ * Classes allow for color-sharing
+ */
+ 
+/**
+ * Border Colors
+ */ 
+.color-border-base,    %color-border-base    { border-color: $base-ui-color;}
+.color-border-gold,    %color-border-gold    { border-color: $color-gold; }
+.color-border-ui,      %color-border-ui      { border-color: #e9e9e9; }
+.color-border-ui-dark, %color-border-ui-dark { border-color: #ddd; }
+  
+  
+
+/**
+ * Font Colors
+ */ 
+.text-base,  %text-base                  { color: $base-text-color;}
+.text-white, %text--white                { color: $color-white; }
+
+
+/**
+ * Primary Colors
+ */
+.color-gold,  %color-gold                 { background-color: $color-gold; }
+.color-gray,  %color-gray                 { background-color: $color-gray; }
+.color-white, %color-white                { background-color: $color-white; }
+
+
+/**
+ * Secondary Colors
+ */
+.color-orange, %color-orange             { background-color: $color-orange; }
+
+
+
+/**
+ * Accent Colors
+ */
+.color-bright-blue, %color-bright-blue   { background-color: $color-bright-blue; }
+.color-deep-blue, %color-deep-blue       { background-color: $color-deep-blue; }
+
+/**
+ *  Additional Colors
+ */
+ 
+$accent-bg: #f2f2f2;
+
+.color-accent-bg, %color-accent-bg      { background-color: $accent-bg; }
+ .color-darker-gray                       { background-color: $color-darker-gray; }
