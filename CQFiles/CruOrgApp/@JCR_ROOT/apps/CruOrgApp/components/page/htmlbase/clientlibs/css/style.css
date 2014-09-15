@@ -4234,6 +4234,13 @@ input[disabled]:focus,
   padding-top: 6.10526rem;
 }
 
+@media screen and (max-width: 38.75em) {
+  /* line 13, ../sass/elements/_page.scss */
+  .page--home .banner-title {
+    line-height: 1.25;
+  }
+}
+
 @media screen and (max-width: 31.25em) {
   /* line 13, ../../../../../static/patterns/scss/elements/_page.scss */
   .background-size-contain.layout-single-column {
@@ -7264,6 +7271,7 @@ hr, .divider, .layout--full, .center-block, .centered,
 
 /* endif */
 /* line 1, ../../../../../static/patterns/scss/elements/_shame.scss */
+
 .fb-comments, .fb-comments span, .fb-comments iframe[style], .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe {
   width: 100% !important;
 }
