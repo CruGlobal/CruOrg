@@ -12,3 +12,6 @@ desc "Watch ie compass project"
 task :ie do
     sh %(cd ie-styles/; nohup sh Watchfile &)
 end
+
+# ensure that each shell script spawns a new process
+# tail both files to watch what's going on `tail -f patterns/nohup.out -f ie-styles/nohup.out`
