@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
+    <property name="allowBlank" type="6" multiple="false">
+      <value>false</value>
+    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Root Page]]></value>
-    </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[pathfield]]></value>
-    </property>
-    <property name="rootTitle" type="1" multiple="false">
-      <value><![CDATA[cru]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./pathRef]]></value>
@@ -16,8 +16,11 @@
     <property name="rootPath" type="1" multiple="false">
       <value><![CDATA[/content/cru]]></value>
     </property>
-    <property name="allowBlank" type="6" multiple="false">
-      <value>false</value>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[cru]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
     </property>
   </properties>
   <mixins />

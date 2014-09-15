@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:ClientLibraryFolder">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
     <property name="categories" type="1" multiple="true">
       <value><![CDATA[cruOrg.section.dailyContent]]></value>

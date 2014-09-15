@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Dialog">
+  <nodesOrder>
+    <value><![CDATA[items]]></value>
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[dialog]]></value>
-    </property>
     <property name="title" type="1" multiple="false">
       <value><![CDATA[Auto Tile]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[dialog]]></value>
     </property>
   </properties>
   <mixins />

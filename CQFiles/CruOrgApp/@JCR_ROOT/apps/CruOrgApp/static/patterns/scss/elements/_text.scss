@@ -1,0 +1,136 @@
+
+
+
+abbr[title="required"], abbr[title="Required"] {
+    border: 0;
+	color: $color-red;
+}
+
+b, strong{
+    font-weight: 600;
+}
+
+figure{
+    position: relative;
+}
+
+figcaption{
+	line-height: 1.6;
+    
+	@include rem-calc(margin, 5px 0 15px);
+	@include font-size(14px, false);
+}
+
+.dark-link, %dark-link{
+    color: $base-text-color;
+}
+
+.block-link, %block-link{
+    @extend %basic-transition;  
+       
+    &:hover{
+        text-decoration: none;
+        background-color: $accent-bg;     
+    }
+    
+}
+
+/**
+ * Places a dash after a piece of text. Mainly for post meta info
+ * 
+ */
+.accent + .accent{
+	&:before{
+		content: "\2013";    //  "\2013" is a temporary replacement for "-" until legacy articles are phased out.
+        
+		@include rem-calc(margin-left, 12px);
+		@include rem-calc(margin-right, 12px);
+	}
+}
+
+.affordance {
+    &:after{
+        @extend .icon-right-circle:before;
+
+        color: $color-gold;
+        font-family: "cruicons";
+        padding-left: 10px;
+        font-size: 18px;
+    }
+}
+
+blockquote{
+    font-weight: 300;
+    
+	letter-spacing: .01rem;
+	font-style: italic;
+	border-left: 3px solid $color-gold;
+	margin-left: -26px;
+	padding-bottom: 3px;
+	
+	@include rem-calc(padding-left, 28px);
+	@include font-size($paragraph-font-size);		
+}
+
+	.pullquote{
+		@extend %pl0;
+        
+		border-left-color: transparent;
+		margin: 48px 0;
+		text-align: center;
+		
+		@include mq(501px) {
+			margin: 48px -10px;
+		}
+		 
+		@include mq(1001px) {
+			margin: 48px -100px;
+		}
+		
+		@include vendor(transition, margin .1s);
+		
+		em, strong{
+            font-weight: 500;
+			font-style: normal;
+			font-size: 110%;
+		}
+	}
+	
+q{
+    quotes:"“" "”";
+
+    &:before {
+        content: "“";
+        content: open-quote;
+    }
+
+    &:after {
+        content: "“";
+        content: close-quote;
+    }
+
+    q:before {
+        content: "“";
+        content: open-quote;
+    }
+
+    q:after{
+        content: "“";
+        content: close-quote;
+    }
+
+    /**
+     * If an element opens with an inline quote, let’s hang that.
+     */
+    &.opener {
+        display: inline-block;
+        
+        text-indent: -0.22em;
+    }
+	
+    &:first-child {
+        display: inline-block;
+        
+        text-indent: 0;
+    }
+}

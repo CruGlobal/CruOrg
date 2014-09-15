@@ -1,0 +1,133 @@
+///*------------------------------------*\
+//    $HEADER
+//\*------------------------------------*/
+//
+//$link-height: 36px;
+//
+//.site-header {
+//  display: inline-block;
+//
+//  position: fixed;
+//  top: 0;
+//  z-index: 505;
+//  overflow: hidden;
+//
+//  width: 100%;
+//  height: $header-height;
+//  background-color: $color-white;
+//
+//  border-top-width: 3px;
+//  border-top-style: solid;
+//  border-top-color: $color-gold;
+//
+//  @include vendor(box-shadow, 0 0 6px rgba(0, 0, 0, 0.2));
+//
+//}
+//
+//.site-logo {
+//  @extend %mb0;
+//
+//  display: inline-block;
+//  float: left;
+//  width: 10%;
+//  height: $header-height - 3px;
+//
+//  padding-left: 12px;
+//  padding-right: 12px;
+//
+//  line-height: $header-height - 3px;
+//
+//  vertical-align: middle;
+//  text-align: center;
+//}
+//
+//a.ie-logo {
+//  display: block;
+//  overflow: hidden;
+//  vertical-align: middle;
+//
+//  img {
+//    position: absolute;
+//    display: block;
+//    width: 103px;
+//    height: 64px;
+//
+//    margin-left: 0px;
+//    margin-top: 0px;
+//  }
+//
+//  h1 {
+//    @extend %mb0;
+//  }
+//}
+
+
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+
+$link-height: 36px;
+
+.site-header{
+  position: fixed;
+  top: 0;
+  z-index: 505;
+  overflow: hidden;
+
+  width: 100%;
+  height: $header-height;
+  background-color: $color-white;
+
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-top-color: $color-gold;
+
+  margin: 0 auto;
+
+  @include vendor(box-shadow, 0 0 6px rgba(0,0,0,0.2));
+
+}
+
+.site-logo{
+  @extend %mb0;
+
+  display: block;
+  float: none;
+  width: 980px;
+  margin: 0 auto;
+  height: $header-height - 3px;
+
+  padding-left: 12px;
+  padding-right: 12px;
+
+  line-height: $header-height - 3px;
+
+  vertical-align: middle;
+  text-align: center;
+
+  position: relative;
+
+  a{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+
+    width: 87px;
+    height: 54px;
+    background: url("/images/cru-logo-ie.png");
+
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin-top: 5px;
+  }
+
+  h1{
+    @extend %mb0;
+  }
+}

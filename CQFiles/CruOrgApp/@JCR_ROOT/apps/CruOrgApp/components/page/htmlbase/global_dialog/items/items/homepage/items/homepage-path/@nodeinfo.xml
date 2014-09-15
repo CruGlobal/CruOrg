@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[/content/cru/us/en]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[The path to the homepage.]]></value>
+    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Path]]></value>
-    </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[pathfield]]></value>
-    </property>
-    <property name="rootTitle" type="1" multiple="false">
-      <value><![CDATA[Cru]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./homepagePath]]></value>
     </property>
-    <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[/content/cru/us/en]]></value>
-    </property>
     <property name="rootPath" type="1" multiple="false">
       <value><![CDATA[/content/cru]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[The path to the homepage.]]></value>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[Cru]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
     </property>
   </properties>
   <mixins />

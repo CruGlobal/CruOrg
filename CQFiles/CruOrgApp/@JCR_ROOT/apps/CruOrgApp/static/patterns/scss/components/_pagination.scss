@@ -1,0 +1,93 @@
+@if $use-pagination == true {
+
+
+    /*------------------------------------*\
+        $PAGINATION
+    \*------------------------------------*/
+    /**
+     * Basic pagination object, extends `.nav`.
+     * Requires some funky commenting to collapse any white-space caused by the
+     * `display:inline-block;` rules.
+     *
+       <ol class="nav  pagination">
+           <li class=pagination__first>First</li>
+           <li class=pagination__prev>Previous</li>
+           <li><a href=/page/1>1</a></li>
+           <li><a href=/page/2>2</a></li>
+           <li class=current><a href=/page/3>3</a></li>
+           <li><a href=/page/4>4</a></li>
+           <li><a href=/page/5>5</a></li>
+           <li class=pagination__next><a href=/page/next>Next</a></li>
+           <li class=pagination__last><a href=/page/last>Last</a></li>
+       </ol>
+     *
+     * Demo: jsfiddle.net/inuitcss/9Y6PU
+     *
+     */
+    .pagination{
+        margin-bottom: $base-line-height;
+        text-align: center;
+        /**
+         * Remove whitespace caused by `inline-block`.
+         */
+        //letter-spacing: -.31em;
+        //word-spacing: -.43em;
+    }
+    
+        .pagination li{
+            letter-spacing:normal;
+            word-spacing:normal;
+            display: inline;
+        }
+
+        .pagination li a {
+            padding: 3px 8px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 4px;
+            color: #666062;
+            @include rem-calc(padding, 4px 14px);
+            @include rem-calc(margin, 8px 4px);
+
+            &:hover, &:focus {
+                background: #f0f0f0;
+                border-color: #ccc;
+                color: #666062;
+            }
+            &:active {
+                background: #fff;
+                border-color: #ddd;
+            }
+        }
+            
+            %pagination-button{
+                margin: 0;
+            }
+                .pagination__prev{
+                    & > .button {
+                        margin: 0;
+                    }
+
+                    a:before{
+                        content:"\00AB" "\00A0";
+                    }
+                }
+                .pagination__next{
+                    & > .button{
+                        margin: 0;
+                    }
+                    
+                    a:after{
+                        content:"\00A0" "\00BB";
+                    }
+                }
+                .current > a{
+                    pointer-events: none;
+                    cursor: text;
+                    color: $base-text-color;
+                }
+
+
+}//endif

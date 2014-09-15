@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[Read More]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Enter label for 'Read More' button]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Read more label]]></value>
@@ -19,11 +25,8 @@
 	return CQ.I18n.getMessage("The word count limit is 2.");
 }]]></value>
     </property>
-    <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[Read More]]></value>
-    </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter label for 'Read More' button]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
     </property>
   </properties>
   <mixins />

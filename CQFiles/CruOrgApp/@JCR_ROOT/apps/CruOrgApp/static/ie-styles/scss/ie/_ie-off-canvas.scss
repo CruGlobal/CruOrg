@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    $OFF-CANVAS
+\*------------------------------------*/
+
+.nav-is-open{
+  .inner-wrap, .site-header{
+    right: 18.75em;
+  }
+
+  .search{
+    max-width: 80%;
+    @include rem(margin-left, 16px);
+  }
+
+  .primary-search > input{
+    display: block;
+  }
+
+  .primary-search--dropdown{
+    background-color: #f7f7f7;
+  }
+  .primary-search.active{
+    .primary-search--options{
+      background-color: #f7f7f7;
+      border: 1px solid $color-gold;
+      border-bottom: none;
+      border-radius: 1px;
+    }
+  }
+  .primary-search--dropdown li a{
+    color: $color-dark-gray;
+  }
+  .primary-search--dropdown{
+    border: 1px solid $color-gold;
+    border-top: none;
+  }
+
+}
+
+
+

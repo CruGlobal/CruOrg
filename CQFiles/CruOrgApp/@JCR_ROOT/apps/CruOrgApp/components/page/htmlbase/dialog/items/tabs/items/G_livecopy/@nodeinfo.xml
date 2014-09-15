@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[cqinclude]]></value>
-    </property>
     <property name="path" type="1" multiple="false">
       <value><![CDATA[/libs/foundation/components/page/tab_livecopy.infinity.json]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[cqinclude]]></value>
     </property>
   </properties>
   <mixins />

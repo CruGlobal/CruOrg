@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[hidden]]></value>
+    <property name="ignoreData" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./max@TypeHint]]></value>
     </property>
-    <property name="ignoreData" type="1" multiple="false">
-      <value><![CDATA[true]]></value>
-    </property>
     <property name="value" type="1" multiple="false">
       <value><![CDATA[Long]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[hidden]]></value>
     </property>
   </properties>
   <mixins />

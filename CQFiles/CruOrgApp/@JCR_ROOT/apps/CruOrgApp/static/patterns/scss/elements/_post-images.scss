@@ -1,0 +1,157 @@
+/*------------------------------------*\
+    $POST-IMAGES
+\*------------------------------------*/
+
+.post-article figure{
+    @extend %cf;
+    position: relative;
+    
+    outline: 0;
+    
+    & > img{
+       width: 100%;
+    }
+}
+	
+		/** 
+		 * Main image captions. Place the .image-credit within this.
+	     * Pulls the caption to the left of the image for wide screens
+	     * and centers it for smaller screens.
+		 */
+		.image__caption{
+            @extend %mt--;
+            position: relative;
+            left: 0;
+            
+            width: 100%;
+            text-align: center;
+			
+            
+            &.default-view{
+            	@include mq(1164px) {
+            		position: absolute;
+            		left: -172px;
+            		width: 150px;
+            		top: 0;
+            		text-align: right;
+            		margin-top: 0;
+            		line-height: 1.6;
+
+            		&:before{
+            			width: 25%;
+            			margin-left: 75%;
+            			border-top: 1px solid #ddd;
+            			display: block;
+            			content: "";
+            			margin-bottom: 10px;
+            		}
+                }
+            }
+		}
+		
+		.image-credit{
+            @extend %small-text;
+            
+            display: block;
+            
+            
+			color: #666062;
+		}
+      
+/*figure*/.image--inset__left{
+    width: 100%;
+    
+    clear: both;
+    
+    @include mq(981px) {
+        width: 50%;
+    
+        float: left;
+        margin-top: 10px;
+        margin-right: $base-spacing-unit;
+        margin-bottom: 10px;   
+    }
+    
+	& > .image__caption{  
+    	@include mq(1164px) {
+    		position: absolute;
+    		left: -172px;
+    		width: 150px;
+    		top: 0;
+    		text-align: right;
+    		margin-top: 0;
+    		line-height: 1.6;
+
+    		&:before{
+    			width: 25%;
+    			margin-left: 75%;
+    			border-top: 1px solid #ddd;
+    			display: block;
+    			content: "";
+    			margin-bottom: 10px;
+    		}
+    	}
+    }
+    
+}      
+        
+/*figure*/.image--outset__left{
+    width: 100%;
+    
+    clear: both;
+    
+    @include mq(981px) {
+        float: left;
+        margin-top: 10px;
+        margin-right: $base-spacing-unit;
+        margin-bottom: 10px;  
+        width: 75%;
+        margin-left: -100px;
+    }
+    /*
+	& > .image__caption{
+		@include mq(1300px) {
+			position: absolute;
+			left: -172px;
+			width: 150px;
+			top: 0;
+			text-align: right;
+			margin-top: 0;
+			line-height: 1.6;
+	
+			&:before{
+				width: 25%;
+				margin-left: 75%;
+				border-top: 1px solid #ddd;
+				display: block;
+				content: "";
+				margin-bottom: 10px;
+			}
+		}
+	}
+    */
+}
+
+    .image--legacy{
+        @extend .image--inset__left;  
+    }
+
+/*figure*/.image--outset__center{
+    @include mq(981px) {
+        margin-left: -100px;
+        margin-right: -100px;
+    }
+    
+	& > .image__caption{
+		position: relative;
+		width: 100%;
+		text-align: center;
+		left: 0;
+		margin: 10px auto 0;
+        
+        &:before{
+            content:none;
+        }
+	}
+}
+

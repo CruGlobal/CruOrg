@@ -1,0 +1,105 @@
+/*------------------------------------*\
+    $POST
+\*------------------------------------*/
+
+.post-article{
+    @include mq(700px) {
+        font-size: $paragraph-font-size;
+        line-height: $paragraph-line-height;
+        letter-spacing: 0.01rem;
+    }
+}
+
+
+.post-title{
+    @extend %mb--;
+    @extend %h2;
+    
+    //text-transform: capitalize;
+    word-wrap: break-word;    
+    letter-spacing: -0.04em;
+}
+
+    .post-subtitle{
+        @extend %mb-;
+        line-height: ($paragraph-line-height/$paragraph-font-size)*.9;
+        word-wrap: break-word;    
+        letter-spacing: -0.02em;
+    }
+    
+    /**
+     * The author, twitter handle and timestamp for a post.
+     * Use to extend .nav
+     */
+    .post-meta{
+        @extend .nav;
+
+        @extend %mb-;
+
+    	color: $color-gray;
+    	line-height: 1.6;
+	
+    	@include font-size(16px, false);
+	
+    	&, 
+    	a{
+    		color: $color-gray;
+    	}
+    }
+
+
+/**
+ * For numbered post formats. Removes the typical magin given to a
+ * list. 
+ */
+.post__list{
+	@extend %ml0;
+	
+	li{
+		@include mq(716px, max) {
+			@include rem-calc(margin-left, 22px);
+		}
+	}
+}
+
+    .source{
+    	@include rem-calc(margin-top, $base-line-height / 2);
+        
+    	&:before{
+    		content: "-";
+    	}
+    }
+
+.more-stories__link{
+    @extend %basic-transition;
+    @extend %block-link;
+    
+    color: inherit;
+    cursor: pointer;
+    
+    @include font-size($base-font-size * 0.875, false);
+}
+
+.image--legacy + .post-nav{
+    
+    @include mq(981px) {
+        margin-top: $base-margin / 2;
+    }
+    
+}
+
+.post-nav{
+    @extend .image--inset__left;
+    
+    @include mq(981px) {
+        padding-right: 12px;
+        border-right: 1px solid $color-gray;
+    }
+
+}
+
+.post__footer {
+	@include rem-calc(margin-bottom, $base-line-height * 3);
+}
+
+

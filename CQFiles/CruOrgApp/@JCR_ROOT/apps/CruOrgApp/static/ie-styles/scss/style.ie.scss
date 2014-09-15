@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+/*------------------------------------*\
+    IE-STYLE.CSS
+\*------------------------------------*/
+/**
+ * Here lies the custom styles for Cru.org. These styles have been
+ * built on top of our front-end framework: brackets.css.
+ *
+ * Be sure read the warning before continuing to edit or add any new
+ * styles. In addition, be sure to change the variables to turn off
+ * demo mode and debug mode before pushing to production. 
+ * 
+ */
+
+
+
+
+
+/*------------------------------------*\
+ $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * WARNING.............There be rocks ahead
+ * IMPORTS.............Begin importing the sections below
+ *
+ * SETUP...............Import project variables and brackets.css
+ *
+ * FONT................Set up the primary font
+ * COLORS..............Set base colors and variables for easy use
+ *
+ * PAGE................Overall page settings and foundation
+ * LAYOUTS.............Primary widths and wrappers
+ *
+ * TEXT................Text element settings for articles, etc.
+ * BUTTONS.............Cru specific buttons, extends brackets.css
+ * TABLES..............Cru specific tables, extends brackets.css
+ * FORMS...............Cru specific forms, extends brackets.css
+ * VIDEO...............
+ * IMAGES..............
+ * HEADER..............
+ * FOOTER..............
+ * SOCIAL..............Site and post specific social media
+ * SITE-SEARCH.........Primary site search, extends the header
+ * NAVIGATION..........Praimry site nav, extends the header
+ * DROPDOWNS...........Dropdown views for large screens, extends the navigation
+ * OFF-CANVAS..........Off canvas nav for small screens, extends the navigation
+ *
+ * CAMPUS-LOCATOR......
+ * COUNTRY-LIST........
+ * SLIDER..............Primary site slider. For now only on homepage
+ * POST................Basic post stylings for articles
+ * POST-IMAGES.........Image handling in posts, etc, extends the post
+ * PAGE-SUBNAV.........Additional navigation for community/landing pages
+ *
+ * ANIMATIONS..........Site-wide animation handling
+ * UTILITIES...........A series of helper classes to use arbitrarily
+ * DEBUG...............Enable to add visual flags for debugging purposes
+ */
+
+/*------------------------------------*\
+  $WARNING
+\*------------------------------------*/
+/**
+ * Custom styles for cru.org are meant to be place in the elements folder. 
+ * They should be as specific to cru as possible and mainly ui related. If 
+ * there is a generic feature needed, please submit an issue to the
+ * brackets.css github page. 
+ *
+ */
+
+
+
+
+
+/*------------------------------------*\
+ $IMPORTS
+\*------------------------------------*/
+/**
+ * Core variables, mixins, utilities, etc
+ */
+@import "../../patterns/scss/vars";
+@import "../../patterns/scss/generic/tools";
+@import "../../patterns/scss/generic/mixins";
+@import "../../patterns/scss/generic/_normalize.scss";
+@import "../../patterns/scss/generic/restart";
+@import "../../patterns/scss/generic/clearfix";
+@import "../../patterns/scss/core/shared";
+
+/**
+ * Base styles; unclassed HTML elements etc.
+ */
+@import "../../patterns/scss/core/base";
+@import "../../patterns/scss/core/headings";
+@import "../../patterns/scss/core/paragraphs";
+@import "../../patterns/scss/core/quotes";
+@import "../../patterns/scss/core/images";
+@import "../../patterns/scss/core/lists";
+@import "../../patterns/scss/core/tables";
+@import "../../patterns/scss/core/forms";
+
+/**
+ * Objects and abstractions
+ */
+@import "../../patterns/scss/core/grids";
+@import "../../patterns/scss/generic/mixins/widths";
+@import "../../patterns/scss/components/buttons";
+@import "../../patterns/scss/components/islands";
+@import "../../patterns/scss/components/navs";
+@import "../../patterns/scss/components/pagination";
+@import "../../patterns/scss/components/breadcrumbs";
+@import "../../patterns/scss/components/media";
+
+/**
+ * Style trumps; helper and brand classes
+ */
+@import "../../patterns/scss/generic/spacing";
+
+/**
+ * Begin importing custom stuff here.
+ */
+
+/**
+ * Brackets files
+ */
+@import "ie/ie-defaults"; // This file is referencing defaults.scss in brackets.
+@import "ie/ie-grids";
+/**
+ * Primary site colors and fonts
+ */
+@import "../../patterns/scss/elements/fonts";
+@import "../../patterns/scss/elements/colors";
+
+
+/**
+ * Overall site and layout
+ */
+@import "../../patterns/scss/elements/page";
+@import "ie/ie-layouts";
+
+
+/**
+ * Site-wide elements and components
+ */
+@import "../../patterns/scss/elements/text";
+@import "../../patterns/scss/elements/buttons";
+@import "../../patterns/scss/elements/forms";
+@import "../../patterns/scss/elements/tables";
+@import "../../patterns/scss/elements/video";
+@import "../../patterns/scss/elements/images";
+
+@import "ie/ie-header";
+//@import "elements/header";
+@import "../../patterns/scss/elements/footer";
+@import "../../patterns/scss/elements/social";
+
+@import "../../patterns/scss/elements/site-search";
+@import "ie/ie-navigation";
+@import "../../patterns/scss/elements/dropdowns";
+@import "ie/ie-off-canvas";
+@import "../../patterns/scss/elements/off-canvas";
+@import "../../patterns/scss/elements/ui-autocomplete";
+@import "../../patterns/scss/elements/tiles";
+
+/**
+ * Page components
+ */
+@import "../../patterns/scss/elements/campus-locator";
+@import "../../patterns/scss/elements/country-list";
+@import "ie/ie-sliders";
+
+@import "../../patterns/scss/elements/post";
+@import "../../patterns/scss/elements/post-images";
+
+
+
+/**
+ * Community specific components
+ */
+@import "../../patterns/scss/elements/page-subnav";
+
+
+/**
+ * Overrides and additional tools
+ */
+@import "../../patterns/scss/elements/animations";
+@import "ie/ie-helpers";
+@import "../../patterns/scss/elements/debug";
+
+
+
