@@ -7275,3 +7275,14 @@ hr, .divider, .layout--full, .center-block, .centered,
 .fb-comments, .fb-comments span, .fb-comments iframe[style], .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe {
   width: 100% !important;
 }
+<<<<<<< HEAD
+=======
+
+.social-shares .fb_iframe_widget iframe{
+    width: 76px !important;
+    position: relative;
+    top: -3px;
+}
+
+/* sourceMappingURL=screen.css.map */
+>>>>>>> d8c2c035891ad5ad16737e36473a5d461be94191

@@ -1,3 +1,11 @@
 .fb-comments, .fb-comments span, .fb-comments iframe[style], .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe {
     width: 100% !important;
 }
+
+.social-shares{  
+    .fb_iframe_widget iframe{
+        width: 76px !important;
+        position: relative;
+        top: 0;
+    }
+}
