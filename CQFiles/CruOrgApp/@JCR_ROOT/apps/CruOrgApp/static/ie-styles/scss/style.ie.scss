@@ -80,42 +80,42 @@
 /**
  * Core variables, mixins, utilities, etc
  */
-@import "vars";
-@import "generic/tools";
-@import "generic/mixins";
-@import "generic/_normalize.scss";
-@import "generic/restart";
-@import "generic/clearfix";
-@import "core/shared";
+@import "../../patterns/scss/vars";
+@import "../../patterns/scss/generic/tools";
+@import "../../patterns/scss/generic/mixins";
+@import "../../patterns/scss/generic/_normalize.scss";
+@import "../../patterns/scss/generic/restart";
+@import "../../patterns/scss/generic/clearfix";
+@import "../../patterns/scss/core/shared";
 
 /**
  * Base styles; unclassed HTML elements etc.
  */
-@import "core/base";
-@import "core/headings";
-@import "core/paragraphs";
-@import "core/quotes";
-@import "core/images";
-@import "core/lists";
-@import "core/tables";
-@import "core/forms";
+@import "../../patterns/scss/core/base";
+@import "../../patterns/scss/core/headings";
+@import "../../patterns/scss/core/paragraphs";
+@import "../../patterns/scss/core/quotes";
+@import "../../patterns/scss/core/images";
+@import "../../patterns/scss/core/lists";
+@import "../../patterns/scss/core/tables";
+@import "../../patterns/scss/core/forms";
 
 /**
  * Objects and abstractions
  */
-@import "core/grids";
-@import "generic/mixins/widths";
-@import "components/buttons";
-@import "components/islands";
-@import "components/navs";
-@import "components/pagination";
-@import "components/breadcrumbs";
-@import "components/media";
+@import "../../patterns/scss/core/grids";
+@import "../../patterns/scss/generic/mixins/widths";
+@import "../../patterns/scss/components/buttons";
+@import "../../patterns/scss/components/islands";
+@import "../../patterns/scss/components/navs";
+@import "../../patterns/scss/components/pagination";
+@import "../../patterns/scss/components/breadcrumbs";
+@import "../../patterns/scss/components/media";
 
 /**
  * Style trumps; helper and brand classes
  */
-@import "generic/spacing";
+@import "../../patterns/scss/generic/spacing";
 
 /**
  * Begin importing custom stuff here.
@@ -129,64 +129,64 @@
 /**
  * Primary site colors and fonts
  */
-@import "elements/fonts";
-@import "elements/colors";
+@import "../../patterns/scss/elements/fonts";
+@import "../../patterns/scss/elements/colors";
 
 
 /**
  * Overall site and layout
  */
-@import "elements/page";
+@import "../../patterns/scss/elements/page";
 @import "ie/ie-layouts";
 
 
 /**
  * Site-wide elements and components
  */
-@import "elements/text";
-@import "elements/buttons";
-@import "elements/forms";
-@import "elements/tables";
-@import "elements/video";
-@import "elements/images";
+@import "../../patterns/scss/elements/text";
+@import "../../patterns/scss/elements/buttons";
+@import "../../patterns/scss/elements/forms";
+@import "../../patterns/scss/elements/tables";
+@import "../../patterns/scss/elements/video";
+@import "../../patterns/scss/elements/images";
 
 @import "ie/ie-header";
 //@import "elements/header";
-@import "elements/footer";
-@import "elements/social";
+@import "../../patterns/scss/elements/footer";
+@import "../../patterns/scss/elements/social";
 
-@import "elements/site-search";
+@import "../../patterns/scss/elements/site-search";
 @import "ie/ie-navigation";
-@import "elements/dropdowns";
+@import "../../patterns/scss/elements/dropdowns";
 @import "ie/ie-off-canvas";
-@import "elements/off-canvas";
-@import "elements/ui-autocomplete";
-@import "elements/tiles";
+@import "../../patterns/scss/elements/off-canvas";
+@import "../../patterns/scss/elements/ui-autocomplete";
+@import "../../patterns/scss/elements/tiles";
 
 /**
  * Page components
  */
-@import "elements/campus-locator";
-@import "elements/country-list";
+@import "../../patterns/scss/elements/campus-locator";
+@import "../../patterns/scss/elements/country-list";
 @import "ie/ie-sliders";
 
-@import "elements/post";
-@import "elements/post-images";
+@import "../../patterns/scss/elements/post";
+@import "../../patterns/scss/elements/post-images";
 
 
 
 /**
  * Community specific components
  */
-@import "elements/page-subnav";
+@import "../../patterns/scss/elements/page-subnav";
 
 
 /**
  * Overrides and additional tools
  */
-@import "elements/animations";
+@import "../../patterns/scss/elements/animations";
 @import "ie/ie-helpers";
-@import "elements/debug";
+@import "../../patterns/scss/elements/debug";
 
 
 
