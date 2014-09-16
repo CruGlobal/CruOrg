@@ -31,7 +31,7 @@ Cru.components.searchresults = {
         //function when some pagination link is clicked.
         function click(e) {
             //prevent all default clicks.
-            e.preventDefault();
+            //e.preventDefault();
 
             if (this.href.indexOf("_jcr_content") === -1 && this.href.indexOf("jcr:content") === -1) {
                 var asynchronousPath = $(Cru.components.searchresults.className).data("asynchronous-path");
