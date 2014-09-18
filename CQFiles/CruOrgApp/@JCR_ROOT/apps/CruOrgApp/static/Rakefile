@@ -1,16 +1,16 @@
 task :default => [:patterns, :ie] do
- puts "Running both compass patterns and ie"
+ puts "Running both compass scss-main and scss-ie"
  sh %(sh tail -f patterns/nohup.out -f ie-styles/nohup.out)
 end
 
-desc "Watch patterns compass project"
+desc "Watch scss-main compass project"
 task :patterns do
-    sh %(cd patterns/; nohup sh Watchfile &)
+    sh %(cd scss-main/; nohup sh Watchfile &)
 end
 
-desc "Watch ie compass project"
+desc "Watch scss-ie compass project"
 task :ie do
-    sh %(cd ie-styles/; nohup sh Watchfile &)
+    sh %(cd scss-ie/; nohup sh Watchfile &)
 end
 
 # ensure that each shell script spawns a new process
