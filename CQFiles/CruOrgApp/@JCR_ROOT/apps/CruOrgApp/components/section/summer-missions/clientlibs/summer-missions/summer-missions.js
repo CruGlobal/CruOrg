@@ -1,17 +1,17 @@
-//summer-projects.js
+//summer-missions.js
 $(document).ready(function() {
 	var url = window.location.href;
 	
 	//Limits the JSON call to pages that contain a div with the class 'summer-missions' which is contained in the component.
-	if ( $( 'div.summer-missions' ).length ) {
+	if ( $( '.js-summer-missions' ).length ) {
 		
 	    var cru_summer_projects_json = {"project_search":"http://sp.campuscrusadeforchrist.com/projects.json","project_details":"http://sp.campuscrusadeforchrist.com/projects/%d.json"};
 		var tripID = urlParam( 'tripid' )
 		
 		//Is this a Trip or a Search
 		if (tripID) {
-			$( '.summer-missions > .grid__item' ).addClass( 'display--none' );
-            $( '.summer-missions' ).removeClass( 'grid' )
+            $( '.js-summer-missions > .grid__item' ).addClass( 'display--none' );
+            $( '.js-summer-missions' ).removeClass( 'grid' )
 			
 		    function project_detail_results( projectid ) {
 				var jsonLink = cru_summer_projects_json.project_details.replace( '%d', tripID );
@@ -34,7 +34,7 @@ $(document).ready(function() {
 				
 					// Inset Sidebar
 					$( '<nav class="post-nav"><ul class="bare-list  small-text"></ul></nav>')
-						.appendTo( '.summer-missions' );				
+						.appendTo( '.js-summer-missions' );				
 				
 					if (data.project.display_location) {	
 						$( '<li></li>')
@@ -51,8 +51,15 @@ $(document).ready(function() {
 					}
 				
 					if ( data.project.url ) {
+                        if ( data.project.url_title ) {
+                            var urlTitle = data.project.url_title;
+                        }
+                        else {
+                            var urlTitle = 'Trip Website';
+                        }
+                            
 						$( '<li></li>' )
-							.html( '<strong>Website:</strong> <a href="' + data.project.url + '"  target="_blank">' + data.project.url_title + '</a>')
+							.html( '<strong>Website:</strong> <a href="' + data.project.url + '"  target="_blank">' + urlTitle + '</a>')
 							.appendTo( '.post-nav > ul' );
 					}
 				
@@ -98,19 +105,19 @@ $(document).ready(function() {
 					}
 				
 					//Description				
-					$( '<div class="summer-missions__description mb"></div>' )
+					$( '<div class="js-summer-missions__description mb"></div>' )
 						.html( data.project.description )
-						.appendTo( '.summer-missions' );
+						.appendTo( '.js-summer-missions' );
 				
 					//Apply Button
 					if ( data.project.use_provided_application ) {
 						$( '<div></div>' )
 							.html( '<a href="https://sp.campuscrusadeforchrist.com/apply?p=' + data.project.id + '" class="button  button--primary">Apply For This Project</a>')
-							.appendTo( '.summer-missions' );
+							.appendTo( '.js-summer-missions' );
 					}
 				
 					//Remove Bad Styles From Database
-					$( '.summer-missions *' ).removeAttr( 'style' ).removeClass( 'MsoNormal' );
+					$( '.js-summer-missions *' ).removeAttr( 'style' ).removeClass( 'MsoNormal' );
 
 				},
 				error: function( data ) {
@@ -140,7 +147,7 @@ $(document).ready(function() {
 
 			        function (data) {
 			            $.each(data, function (key, value) {
-			                $( '.summer-missions__search' ).append('<p><a href="?tripid=' + value.project.id + '">' + value.project.name + '</a></p>');
+			                $( '.js-summer-missions__search' ).append('<p><a href="?tripid=' + value.project.id + '">' + value.project.name + '</a></p>');
 			            });
 			        });
 	 			}
