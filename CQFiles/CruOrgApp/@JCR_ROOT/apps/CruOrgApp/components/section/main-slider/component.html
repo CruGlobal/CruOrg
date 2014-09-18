@@ -8,7 +8,7 @@
 			{%#if list.pages%}
 				{%#each list.pages %}
                     <li class="slider__item  position--absolute  full-height">
-                      <a class="position--relative  display--block  full-height" href="{%this.path%}.html">
+                      <a class="position--relative  display--block  full-height" href="{%this.path%}.html" onClick="ga('send', 'event', 'carousel', 'CruHome', '{%this.path%}.html');">
                         <div class="full-height  full-width">
                           <!-- This is the background image style that will be changed based on the article image -->
                           <div class="background-image" style="background-image: url('{%this.imagePath%}')"></div>
