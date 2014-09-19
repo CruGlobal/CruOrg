@@ -8,11 +8,14 @@ $(document).ready(function(){
     /*
      * When browser window loses focus stop animation from firing to prevent queue up issues
      */
-    $(window).focus(function() {
-        window_focus=true;
-    }).blur(function() {
-        window_focus=false;
-    });
+    /* IE8 cannot handle window focus so test for IE8 first */
+    if ( !$('html').hasClass('lt-ie9')) {
+        $(window).focus(function() {
+         window_focus=true;
+        }).blur(function() {
+         window_focus=false;
+        });
+    };
 
 
     /*
@@ -125,7 +128,6 @@ $(document).ready(function(){
      */
     $('.slider-control__next').click(function(e) {
         e.preventDefault();
-
         $('.slider').removeClass('slider__reverse');
         slideForward();
     });
