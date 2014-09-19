@@ -1,0 +1,41 @@
+@if $use-islands == true{
+
+/*------------------------------------*\
+    $ISLANDS
+\*------------------------------------*/
+/**
+ * Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object
+ * E.g.:
+ *
+   <div class=island>
+       I am boxed off.
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/u8pV3
+ *
+ */
+.island,
+.islet{
+    @extend %cf;
+    
+    display: block;
+}
+
+.island{
+	@include spacing(padding);
+}
+
+    .island > :last-child,
+    .islet > :last-child{
+        @extend %m0;
+    }
+
+
+/**
+ * Just like `.island`, only smaller.
+ */
+.islet{
+	@include half-spacing(padding);	
+}
+
+}//endif

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[slingscriptinclude]]></value>
-    </property>
     <property name="script" type="1" multiple="false">
       <value><![CDATA[rte.default.text.json?height=420&width=450.jsp]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[slingscriptinclude]]></value>
     </property>
   </properties>
   <mixins />

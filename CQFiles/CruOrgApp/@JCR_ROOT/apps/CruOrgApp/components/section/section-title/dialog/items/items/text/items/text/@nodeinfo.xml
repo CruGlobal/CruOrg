@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+    <property name="allowBlank" type="6" multiple="false">
+      <value>false</value>
+    </property>
+    <property name="blankText" type="1" multiple="false">
+      <value><![CDATA[Text field is required]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Enter text to display]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Text]]></value>
@@ -13,14 +22,8 @@
     <property name="validator" type="1" multiple="false">
       <value><![CDATA[function(value) { return Cru.widgets.Util.validateLength(value,140); }]]></value>
     </property>
-    <property name="allowBlank" type="6" multiple="false">
-      <value>false</value>
-    </property>
-    <property name="blankText" type="1" multiple="false">
-      <value><![CDATA[Text field is required]]></value>
-    </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter text to display]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
     </property>
   </properties>
   <mixins />

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[numberfield]]></value>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[3]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Max. Number of Items]]></value>
@@ -10,11 +13,11 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./max]]></value>
     </property>
-    <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[3]]></value>
-    </property>
     <property name="validateOnBlur" type="1" multiple="false">
       <value><![CDATA[true]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[numberfield]]></value>
     </property>
   </properties>
   <mixins />

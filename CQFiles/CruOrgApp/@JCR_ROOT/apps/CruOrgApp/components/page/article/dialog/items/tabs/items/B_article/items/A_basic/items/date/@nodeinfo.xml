@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value><![CDATA[listeners]]></value>
+  </nodesOrder>
   <properties>
-    <property name="hideTime" type="1" multiple="false">
-      <value><![CDATA[true]]></value>
+    <property name="dateFormat" type="1" multiple="false">
+      <value><![CDATA[d F Y]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Published Date]]></value>
     </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[datetime]]></value>
-    </property>
-    <property name="dateFormat" type="1" multiple="false">
-      <value><![CDATA[d F Y]]></value>
+    <property name="hideTime" type="1" multiple="false">
+      <value><![CDATA[true]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./date]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[datetime]]></value>
     </property>
   </properties>
   <mixins />

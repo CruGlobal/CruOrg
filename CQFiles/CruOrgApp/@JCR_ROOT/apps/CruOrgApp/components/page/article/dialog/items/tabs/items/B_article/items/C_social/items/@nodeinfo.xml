@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
+  <nodesOrder>
+    <value><![CDATA[A_hide-social-share,B_hide-facebook-comments-feed]]></value>
+  </nodesOrder>
   <properties />
   <mixins />
 </node>

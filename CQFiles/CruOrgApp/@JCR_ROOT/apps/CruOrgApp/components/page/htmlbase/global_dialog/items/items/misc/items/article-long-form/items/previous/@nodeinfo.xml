@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+    <property name="anchor" type="1" multiple="false">
+      <value><![CDATA[100%]]></value>
+    </property>
+    <property name="defaultValue" type="1" multiple="false">
+      <value><![CDATA[Previous]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA['Previous' Label]]></value>
@@ -10,11 +16,8 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./articleLongFormPreviousLabel]]></value>
     </property>
-    <property name="anchor" type="1" multiple="false">
-      <value><![CDATA[100%]]></value>
-    </property>
-    <property name="defaultValue" type="1" multiple="false">
-      <value><![CDATA[Previous]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
     </property>
   </properties>
   <mixins />

@@ -1,0 +1,113 @@
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+/**
+ * Big up @boblet: html5doctor.com/blockquote-q-cite
+ */
+
+
+ /**
+  * Dont change the content or quotes attribute for these. 
+  */
+
+/**
+ * Set up quote marks on quoting elements. This is very English-based, so we are
+ * using “, ”, ‘, and ’ quotes.
+ *
+   <blockquote>
+       <p>Insanity: doing the same thing over and over again and expecting
+       different results.</p>
+       <b class=source>Albert Einstein</b>
+   </blockquote>
+ *
+ * 1. Hang the opening quote of the blockquote.
+ * .4em is roughly equal to the width of the opening “ that we wish to hang.
+ */
+blockquote{
+    quotes: "“" "”";
+
+	font-style: $blockquote-font-style;
+    
+    text-indent: -0.41em; /* [1] */
+    
+	@include half-spacing(padding-left);
+	@include font-size(floor($base-font-size * 1.25));
+
+    p {
+
+        &:before {
+            content: "“";
+            content: open-quote;
+        }
+
+        &:after {
+            content: "";
+            content: no-close-quote;
+        }
+
+        &:last-of-type{
+        	 
+			margin-bottom: 0;
+			
+			&:after {
+		        content: "”";
+		        content: close-quote;
+			}
+			
+        }
+	}
+
+}
+
+	.source{
+	    display: block;
+	    text-indent: 0;
+
+	    &:before{
+	        content: "\2014";
+	    }
+	}
+
+
+
+
+
+/**
+ * Inline quotes.
+ */
+q{
+    quotes:"“" "”";
+
+    &:before {
+        content: "“";
+        content: open-quote;
+    }
+
+    &:after {
+        content: "“";
+        content: close-quote;
+    }
+
+    q:before {
+        content: "“";
+        content: open-quote;
+    }
+
+    q:after{
+        content: "“";
+        content: close-quote;
+    }
+
+    /**
+     * If an element opens with an inline quote, let’s hang that.
+     */
+    &.opener {
+        display: inline-block;
+        text-indent: -0.22em;
+    }
+
+    &:first-child {
+        display: inline-block;
+        text-indent: 0;
+    }
+}

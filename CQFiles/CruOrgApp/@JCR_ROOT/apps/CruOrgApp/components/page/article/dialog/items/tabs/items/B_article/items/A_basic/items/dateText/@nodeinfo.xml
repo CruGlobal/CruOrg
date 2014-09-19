@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[hidden]]></value>
-    </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./dateText]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[hidden]]></value>
     </property>
   </properties>
   <mixins />

@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+/**
+ * Custom animation keyframes and site-wide animations
+ */
+
+
+/**
+ * Slider animation
+ */ 
+@include keyframes(sliderBegin) {
+    from {
+        left: -33.333333%;
+        opacity:.4
+    }
+    
+    to {
+        left: -56%;
+        opacity: 0
+    }
+}
+
+@include keyframes(sliderEnd) {
+    from {
+        left: 140%;
+        opacity: 0
+    }
+    
+    to {
+        left: 100%;
+        opacity: .4
+    }
+    
+}
+
+@include keyframes(sliderReverseBegin) {
+    from{
+        left: 66%
+    }
+    
+    to{
+        left: 100%
+    }
+    
+}
+
+@include keyframes(sliderReverseEnd) {
+    from{
+        left: -52%
+    }
+    
+    to{
+        left: -33.333333%
+    }
+}

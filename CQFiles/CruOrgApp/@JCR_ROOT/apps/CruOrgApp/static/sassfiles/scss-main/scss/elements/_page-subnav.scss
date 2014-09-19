@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    $PAGE-SUBNAV
+\*------------------------------------*/
+
+.page-subnav{   
+    @extend %position--relative;  
+    @extend %full-width;
+     
+	z-index: 1;
+	bottom: -18px;
+      
+    @include mq(520px) { 
+        width: auto;
+    }
+      
+	& > li {
+        @extend %block-link;
+        
+        @include mq(520px, max) { 
+            width: 50%;
+            float: left;
+            border-bottom: 1px solid rgba(6,8,8,0.1); 
+            
+            &:nth-child(odd) {
+                border-right: 1px solid rgba(6,8,8,0.1);          
+            }
+        }
+        
+    }
+    
+    a{
+        @extend %block-link;
+        text-transform: capitalize;
+                
+        @include font-size(15px, false);
+    }
+      
+}
+
+.page-hero .article-details{
+    bottom: -1px;
+    
+    @include vendor(opacity, 1);
+}
+

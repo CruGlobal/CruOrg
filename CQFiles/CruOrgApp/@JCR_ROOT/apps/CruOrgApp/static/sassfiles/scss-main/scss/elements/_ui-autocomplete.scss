@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    $CAMPUS LOCATOR STYLES
+\*------------------------------------*/
+
+.ui-autocomplete {
+    border: 1px solid $color-gray;
+    width: 350px;
+
+    & li{
+        list-style: none outside none;
+
+    }
+
+    & li a{
+        background-color: $color-dark-gray;
+        color: $color-white;
+        display: block;
+        padding: 5px 13px;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover{
+            color: $color-gold;
+        }
+    }
+}
+
+

@@ -18,4 +18,5 @@ CQFiles/etc/@JCR_ROOT/etc/designs/cru/jcr:content
 /CruOrg/Bundles/Parent/target/
 /CruOrg/Bundles/Base/target/
 /CruOrg/Bundles/Examples/target/
-
+nohup.out
+.sass-cache/

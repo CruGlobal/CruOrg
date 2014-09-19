@@ -1,0 +1,401 @@
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+$nav-break-min: 981px;
+$nav-break-max: 980px;
+
+.navigation{
+    position: fixed;
+
+    float: none;
+    width: 89%;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 1220px;
+    top: 0;
+    right: -100%;
+    z-index: 1;
+
+    width: 70%;
+
+    background-color: #444444;
+    border-top: 3px solid;
+    border-color: #f9b625;
+
+    @include mq(540px) {
+        width: 18.75em;
+    }
+
+    @include mq($nav-break-min) {
+        width: 90%;
+        height: $header-height - 3px;
+
+        background-color: transparent;
+        z-index: 505;
+        right: 0;
+
+        border-color: transparent;
+
+    }
+
+    @include mq($nav-break-max, max) {
+        overflow: scroll;
+        padding-top: 69px;
+        height: 100%;
+    }
+
+}
+
+.site-nav {
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+
+      @include mq($nav-break-min) {
+          float: right;
+          width: auto;
+
+      }
+
+      & > li{
+          @include mq($nav-break-max, max) {
+              display: block;
+          }
+      }
+      
+      & > .nav__item{
+          @include mq($nav-break-min) {         
+              float: left;
+          }
+      }
+}
+
+.nav > .nav__item,
+.nav__item > .nav__link{
+    @include mq($nav-break-max, max) {
+        display: block;
+    }
+}
+
+.nav_item {
+    @include mq($nav-break-max, max) {
+        border-bottom-color: $color-gold;
+    }
+}
+
+/**
+ *  Nav that includes Sign Up, Log In, and Search
+ **/
+
+.right-nav{
+    @include mq($nav-break-min) {
+        width: 50%;
+        float: right;
+        vertical-align: middle;
+
+        position: relative;
+        z-index: 506;
+
+        margin-top: 8px;
+
+        text-align: right;
+        line-height: ceil($base-font-size / 24px) * (24px / $base-font-size);
+    }
+
+    @include mq($nav-break-max, max) {
+        width: 100%;
+    }
+
+    .search__options{
+        display: none;
+    }
+
+    & > .nav__item{
+        @include mq($nav-break-max, max) {
+            display: block;
+        }
+
+        & > a{
+            @include mq($nav-break-max, max) {
+                display: block;
+            }
+        }
+    }
+}
+
+.nav__link{
+   max-height: 100%;
+   height: $link-height;
+   line-height: $link-height;
+
+   font-weight: 400;
+   font-size: 15px;
+   padding: 0 18px;
+   letter-spacing: 0.9px;
+
+   vertical-align: middle;
+
+   color: $color-white;
+
+   &:hover{
+     background-color: #444444;
+     color: $color-gold;
+     text-decoration: none;
+   }
+
+   @include mq($nav-break-min) {
+       color: $color-dark-gray;
+
+       @include vendor(transition, all 0.25s ease-in-out);
+
+       &:hover{
+           //background-color: #f6f6f6;
+       }
+   }
+
+}
+
+.is-active{
+  background-color: #444444;
+  color: $color-gold;
+  text-decoration: none;
+}
+.primary-link i {
+    @include mq($nav-break-min) {
+      display: none;
+    }
+}
+
+ //.has-dropdown{
+   //  &:hover, &:focus{
+     //  @include border-top-radius(1px);
+    // }
+ //}
+
+
+.nav .nav__item > .dropdown{
+    position: fixed;
+    left: 0;
+    background-color: $color-dark-gray;
+    color: #ffffff;
+    width: 100% !important;
+    overflow: hidden;
+    max-height: 0;
+    height: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    opacity: 0;
+    /* Hover Off */
+    @include vendor(transition, opacity 0s 0.2s ease-out );
+    @include clearfix();
+
+    @include vendor(transform, translate3d(0, 0, -160%));
+    @include vendor(backface-visibility, hidden);
+    @include vendor(perspective, 1000);
+
+}
+
+.nav .nav__item > .off-canvas-desk-is-collasped,
+.nav .nav__item > .off-canvas-desk-is-open {
+    display: none;
+}
+
+.no-csstransitions .nav li .dropdown {
+ //   height: 0;
+}
+
+.nav li:hover > .arrow-up,
+.nav li:focus > .arrow-up{
+    display: block;
+}
+
+.nav .nav__item:hover > .dropdown,
+.nav .nav__item:focus > .dropdown{
+    padding-top: 30px;
+    padding-bottom: 15px;
+    max-height: 640px;
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+
+    @include vendor(box-shadow, 0 1px 1px rgba(6, 8, 8, 0.1));
+
+    /* Hover On */
+    -webkit-transition: max-height 0.25s ease;
+
+    @include vendor(transition, all 0.3s 0.2s ease );
+
+}
+
+.nav li.dropdown__item:hover,
+.nav li.dropdown__item:focus{
+  &:after{
+    opacity: 1;
+    @include vendor(transition, all 0.2s 0.2s ease );
+  }
+}
+
+.js-close-button{
+  @include mq($nav-break-min) {
+      display: none;
+  }
+}
+
+.js-nav #inner-wrap {
+  @include mq($nav-break-max, max) {
+    right: 70%;
+  }
+}
+
+.js-nav .site-header{
+    @include mq($nav-break-max, max) {
+    position: absolute;
+  }
+}
+
+.js-nav body{
+    @include mq($nav-break-max, max) {
+    padding-top: 0;
+  }
+}
+
+.js-nav #main{
+  padding-top: 67px;
+}
+
+.is-hidden, .is-visible{
+  @include vendor(transition, all 0.5s);
+}
+
+.is-hidden{
+  -webkit-transform: translateY(-6em);
+  -ms-transform: translateY(-6em);
+  transform: translateY(-6em);
+
+  .nav li > .dropdown{
+    height: 0;
+    overflow: hidden;
+    @include vendor(transition, all 0s);
+    visibility: hidden;
+
+  }
+}
+
+.is-visible {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+
+  .nav li > .dropdown{
+    -webkit-transform: none;
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+
+.topbar-toggle{
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 27px;
+  right: 16px;
+
+  color: #3a3a3a;
+
+  @include font-size(19.2px, false);
+
+  &:after{
+    vertical-align: text-bottom;
+    font-weight: bold;
+    line-height: 0.9em;
+
+    @include font-size(28px, false);
+  }
+
+  &:hover{
+    color: $color-gold;
+    text-decoration: none;
+  }
+
+  @include mq($nav-break-min){
+    display: none;
+  }
+}
+/*
+.topbar-open{
+  float: right;
+  color: #3a3a3a;
+
+  @include mq(981px){
+    display: none;
+  }
+}
+*/
+.topbar-close{
+  position: absolute;
+  z-index: 1;
+
+  color: #ffffff;
+
+  @include rem(top, 27px);
+  @include rem(right, 16px);
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  @include mq($nav-break-min) {
+    display: none;
+  }
+}
+
+
+.search{
+  height: auto;
+  line-height: 1.5;
+}
+
+#user-actions{
+  position: absolute;
+  right: 220px;
+
+  margin: 0;
+
+
+  & > li{
+    display: block;
+    float: left;
+
+    & > a{
+      display: block;
+      color: #8a8a8a;
+
+      padding: 0 10px;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.9px;
+    }
+  }
+}
+
+
+#toolbar form {
+  border-radius: 2px;
+}
+
+
+#search_options{
+  z-index: 501;
+  top: 31px;
+
+  background-color: #ffffff;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+
+/*-- added for you are here functionality, adds underline to main nav item --*/
+.primary-link-active {
+  border-bottom: 3px solid $color-gold;
+}

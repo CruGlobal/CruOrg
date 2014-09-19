@@ -1,0 +1,149 @@
+$color-facebook: #3b5999;
+$color-google:   #dd4b39;
+$color-twitter:  #55acee;
+
+
+%color-facebook{
+    color: $color-facebook;
+}
+
+%color-google{
+    color: $color-google;
+}
+
+%color-twitter{
+    color: $color-twitter;
+}
+
+.social__item{
+	@include font-size(24px);
+	
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+.social__item--facebook{
+	@extend %color-facebook;
+	
+	&:hover{
+		@extend %color-facebook;
+	}
+}
+
+.social__item--gplus{
+	@extend %color-google;
+	
+	&:hover{
+		@extend %color-google;	
+	}
+}
+
+
+.social__item--twitter{
+	@extend %color-twitter;
+	
+	&:hover{
+		@extend %color-twitter;
+	}
+}
+
+
+
+/**
+ * Facebook Comments box
+ */
+.fbFeedbackContent{ 
+
+    .composer{
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-right: 14px;
+    }
+
+    .fbFeedbackPost{
+        padding-bottom: 5px !important;
+        padding-top: 15px;
+    }
+}
+
+
+/* This element holds injected scripts inside iframes that in some cases may stretch layouts. So, we're just hiding it. */
+#fb-root {
+    @extend %display--none;
+}
+ 
+/* To fill the container and nothing else */ 
+.fb_iframe_widget, .fb_iframe_widget span, 
+.fb_iframe_widget span iframe[style] {
+    //width: 100% !important;
+}
+
+.fb-like.fb_iframe_widget, .fb-like.fb_iframe_widget > span{
+	//width: 85px !important;
+}
+
+.fb-like.fb_iframe_widget > span, 
+#page--home #twitter-widget-0, 
+#___plusone_0{
+	vertical-align: middle !important;
+	height: 25px !important;
+}
+
+.fb-like {
+    position: relative;
+    margin-right: 2px;
+}
+
+.twitter-follow-button {
+    position: relative;
+    top: 3px;
+    height:25px;
+    margin-right: 2px;
+}
+
+#___plusone_0 {
+    position: relative;
+    top: -1px;
+}
+
+/**
+ * Article Share Buttons
+ *
+ */
+
+/*    */
+.social-shares {
+
+    .fb-like {
+        @extend %position--relative;
+        top:-3px;
+    }
+
+    .twitter-share-button, .twitter-tweet-button, .twitter-count-horizontal {
+        width: 85px !important;
+    }
+
+    .share-alt {
+        position: relative;
+        top: -5px;
+
+        &:hover {
+
+        }
+    }
+
+    
+}
+
+/**
+*Twitter Follow Button
+*
+*/
+
+.follow-button {
+    a > span{
+        margin-top: 100px;
+    }
+}
+    
