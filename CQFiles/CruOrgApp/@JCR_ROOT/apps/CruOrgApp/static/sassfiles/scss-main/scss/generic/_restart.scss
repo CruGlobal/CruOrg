@@ -1,0 +1,110 @@
+/*------------------------------------*\
+    $RESTART
+\*------------------------------------*/
+
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+abbr[title],dfn[title]{
+    cursor:help;
+}
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+u,ins{
+    text-decoration:none;
+}
+
+/**
+ * Apply faux underline via `border-bottom`.
+ */
+ins{
+    border-bottom:1px solid;
+}
+
+
+/**
+ * Give form elements some cursor interactions...
+ */
+label,
+input,
+textarea,
+button,
+select,
+option{
+    cursor:pointer;
+}
+
+    .text-input:active,
+    .text-input:focus,
+    textarea:active,
+    textarea:focus{
+        cursor:text;
+        outline:none;
+    }
+
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Links
+
+a {
+  color: $base-accent-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: darken($base-accent-color, 5%);
+    text-decoration: underline;
+  }
+}
+
+
+// Images
+
+img {
+  vertical-align: middle;
+  max-width: 100%; /* Set images to the full width of parent */
+  /**
+   * So that `alt` text is visually offset if images don’t load.
+   */
+  font-style:italic;
+  
+}
+
+// Horizontal rules
+
+hr {
+    border: 0;
+    border-top: 1px solid;
+    border-color: #e9e9e9;
+}
+
+
+/* Helpful Typography Defaults */
+em,
+i {
+  font-style: italic;
+  line-height: inherit;
+}
+
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit;
+}
+
+small {
+  font-size: $small-font-size;
+  line-height: inherit;
+}
+

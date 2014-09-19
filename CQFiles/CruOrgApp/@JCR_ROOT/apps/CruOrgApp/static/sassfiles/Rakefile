@@ -1,0 +1,24 @@
+desc "Watch both scss-main and scss-ie compass projects"
+task :default => [:main, :ie] do
+ puts "Running both compass scss-main and scss-ie"
+ sh %(sh tail -f scss-main/nohup.out -f scss-ie/nohup.out)
+ Rake::Task[':ie']
+end
+
+desc "Watch scss-main compass project"
+task :main do
+    sh %(cd scss-main/; nohup sh Watchfile &)
+end
+
+desc "Watch scss-ie compass project"
+task :ie do
+    sh %(cd scss-ie/; nohup sh Watchfile &)
+end
+
+desc "Watch compass output in console"
+task :console do
+    sh %(tail -f scss-main/nohup.out  scss-ie/nohup.out)
+end
+
+# ensure that each shell script spawns a new process
+# tail both files to watch what's going on `tail -f patterns/nohup.out ie-styles/nohup.out`

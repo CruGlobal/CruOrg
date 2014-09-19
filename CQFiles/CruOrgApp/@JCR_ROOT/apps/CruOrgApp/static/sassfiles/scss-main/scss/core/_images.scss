@@ -1,0 +1,39 @@
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+/**
+ * Non-fluid images if you specify `width` and/or `height` attributes.
+ */
+img[width],
+img[height]{
+    max-width:none;
+}
+
+/**
+ * Rounded images.
+ */
+.image--rounded { 
+	border-radius: $base-border-radius; 
+}
+
+/**
+ * Circle images.
+ */
+.image--circle { 
+	border-radius: 50%; 
+}
+
+/**
+ * Tumbnail images.
+ */
+.image--thumbnail { 
+	padding: 4px;
+	border: 1px solid $base-ui-color;
+}
+
+/**
+ * Images in list.
+ */
+.img--list { 
+	float: left;
+}

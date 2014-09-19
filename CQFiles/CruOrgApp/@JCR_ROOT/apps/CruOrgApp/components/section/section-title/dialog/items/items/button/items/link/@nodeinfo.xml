@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[pathfield]]></value>
-    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Link]]></value>
-    </property>
-    <property name="rootTitle" type="1" multiple="false">
-      <value><![CDATA[CRU]]></value>
-    </property>
-    <property name="name" type="1" multiple="false">
-      <value><![CDATA[./link]]></value>
-    </property>
-    <property name="validator" type="1" multiple="false">
-      <value><![CDATA[function(value) { return Cru.widgets.Util.externalLinkValidation(value); }]]></value>
     </property>
     <property name="linkPattern" type="1" multiple="false">
       <value><![CDATA[{0}.html]]></value>
     </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./link]]></value>
+    </property>
     <property name="rootPath" type="1" multiple="false">
       <value><![CDATA[/content/cru]]></value>
+    </property>
+    <property name="rootTitle" type="1" multiple="false">
+      <value><![CDATA[CRU]]></value>
+    </property>
+    <property name="validator" type="1" multiple="false">
+      <value><![CDATA[function(value) { return Cru.widgets.Util.externalLinkValidation(value); }]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[pathfield]]></value>
     </property>
   </properties>
   <mixins />

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[tags]]></value>
+    <property name="cls" type="1" multiple="false">
+      <value><![CDATA[cq-propsdialog-tags]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Tags/Keywords]]></value>
@@ -10,8 +13,8 @@
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./cq:tags]]></value>
     </property>
-    <property name="cls" type="1" multiple="false">
-      <value><![CDATA[cq-propsdialog-tags]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[tags]]></value>
     </property>
   </properties>
   <mixins />

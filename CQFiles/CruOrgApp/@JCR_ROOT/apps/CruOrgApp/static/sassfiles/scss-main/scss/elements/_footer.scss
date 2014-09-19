@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+
+.global-footer {
+    //@extend %mt+ !optional;
+	@include rem-calc(margin-top, 100px);	
+    
+	.section-divider{
+        border-color: $color-gold;
+	}
+    
+	> nav{	        
+	    @extend %pb;
+		
+		ul{
+            text-align: center;
+		}
+		
+		a{
+            @extend %ps--;
+            color: $base-text-color;
+            
+		}
+	}
+	
+	.copy{
+        @extend %pb;
+		text-align: center;
+	}
+}

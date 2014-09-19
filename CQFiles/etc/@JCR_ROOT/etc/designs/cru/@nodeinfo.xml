@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Page">
   <nodesOrder>
-    <value><![CDATA[clientlibs,clientlibs-ie,jcr:content,clientlibs-head]]></value>
+    <value><![CDATA[clientlibs,clientlibs-ie,clientlibs-head]]></value>
   </nodesOrder>
   <properties />
   <mixins />

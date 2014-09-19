@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Enter image credits to display]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Credit]]></value>
+    </property>
+    <property name="maxLength" type="12" multiple="false">
+      <value>80</value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./imageCredit]]></value>
@@ -13,11 +19,8 @@
     <property name="validator" type="1" multiple="false">
       <value><![CDATA[function(value) { return Cru.widgets.Util.validateTextLengthWordLength(value,80,25); }]]></value>
     </property>
-    <property name="maxLength" type="12" multiple="false">
-        <value>80</value>
-    </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter image credits to display]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
     </property>
   </properties>
   <mixins />

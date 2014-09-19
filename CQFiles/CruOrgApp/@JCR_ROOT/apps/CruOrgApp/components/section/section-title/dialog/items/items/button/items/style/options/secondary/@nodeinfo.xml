@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="value" type="1" multiple="false">
-      <value><![CDATA[secondary]]></value>
-    </property>
     <property name="text" type="1" multiple="false">
       <value><![CDATA[Secondary]]></value>
+    </property>
+    <property name="value" type="1" multiple="false">
+      <value><![CDATA[secondary]]></value>
     </property>
   </properties>
   <mixins />

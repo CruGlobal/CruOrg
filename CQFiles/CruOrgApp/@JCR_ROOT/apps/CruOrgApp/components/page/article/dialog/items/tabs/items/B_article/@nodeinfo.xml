@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Panel">
-    <properties>
-        <property name="title" type="1" multiple="false">
-            <value><![CDATA[Article]]></value>
-        </property>
-    </properties>
-    <mixins />
+  <nodesOrder>
+    <value><![CDATA[items]]></value>
+  </nodesOrder>
+  <properties>
+    <property name="title" type="1" multiple="false">
+      <value><![CDATA[Article]]></value>
+    </property>
+  </properties>
+  <mixins />
 </node>
+

@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+
+.mask--circle{
+    display: inline-block;
+    overflow: hidden;
+	border-radius: 50%;
+}
+
+.mask--cover-image{
+    width: 100%;
+    height: 100%;
+    
+    display: table;
+}
+
+    .cover-image{
+        position: absolute;
+        
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;      
+        
+        background-position: center;  
+        
+        @include vendor(background-size, cover);  
+    }
+    
+
+.action-icons{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    
+    max-width: 150px;
+    vertical-align: middle;
+}	
+    

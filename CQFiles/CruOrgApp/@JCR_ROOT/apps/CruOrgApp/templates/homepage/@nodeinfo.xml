@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Template">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
     <property name="allowedPaths" type="1" multiple="false">
       <value><![CDATA[/content/cru(/.*)?]]></value>

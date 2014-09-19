@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Enter text to display]]></value>
     </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Text]]></value>
@@ -13,8 +16,8 @@
     <property name="validator" type="1" multiple="false">
       <value><![CDATA[function(value) { if (Cru.widgets.Util.characterCount(value) > 50) return "The maximum number of characters is 50"; else return true; }]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter text to display]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
     </property>
   </properties>
   <mixins />

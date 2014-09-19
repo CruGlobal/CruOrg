@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    $CAMPUS-LOCATOR
+\*------------------------------------*/
+/**
+ * Used for background colors at the moment, text is either in 
+ * the default text color or white. You can extend %text-white
+ * found in the _utilities.scss file if you wish to change the
+ * text color. 
+ */
+
+.ui-helper-hidden-accessible{
+    @extend .accessibility;
+}
+
+
+.state-select-results{
+    small{
+        color: $base-text-color;
+    }
+}
+
+a + .phone{
+    @extend .accent;
+}
+
+
+.contact__titles{
+    display: none;
+    
+    @include mq(981px) { 
+        display: block;
+    }
+}
+
+    .contact__title-name{
+        @extend %small-text;
+    }

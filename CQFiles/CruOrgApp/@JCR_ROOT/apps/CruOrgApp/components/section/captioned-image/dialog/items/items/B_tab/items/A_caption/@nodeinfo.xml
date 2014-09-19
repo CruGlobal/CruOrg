@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[Enter caption to display]]></value>
+    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Caption]]></value>
     </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textarea]]></value>
+    <property name="maxLength" type="12" multiple="false">
+      <value>250</value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./caption]]></value>
@@ -13,11 +19,8 @@
     <property name="validator" type="1" multiple="false">
       <value><![CDATA[function(value) { return Cru.widgets.Util.validateTextLengthWordLength(value,250,25); }]]></value>
     </property>
-    <property name="maxLength" type="12" multiple="false">
-      <value>250</value>
-    </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Enter caption to display]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textarea]]></value>
     </property>
   </properties>
   <mixins />

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:TabPanel">
+  <nodesOrder>
+    <value><![CDATA[items]]></value>
+  </nodesOrder>
   <properties />
   <mixins />
 </node>

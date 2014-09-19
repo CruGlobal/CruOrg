@@ -4,8 +4,6 @@
     <value><![CDATA[default,cru]]></value>
   </nodesOrder>
   <properties />
-  <mixins>
-    <mixin>rep:AccessControllable</mixin>
-  </mixins>
+  <mixins />
 </node>
 
