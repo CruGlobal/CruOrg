@@ -1,0 +1,14 @@
+/*------------------------------------*\
+    $PARAGRAPHS
+\*------------------------------------*/
+
+.lead, %lead { 
+	@include font-size($base-font-size * 1.125, false); 
+}
+
+/**
+ * Not strictly a paragraph, but probably doesn’t need its own section.
+ */
+address {
+    @extend %vertical-rhythm;
+}

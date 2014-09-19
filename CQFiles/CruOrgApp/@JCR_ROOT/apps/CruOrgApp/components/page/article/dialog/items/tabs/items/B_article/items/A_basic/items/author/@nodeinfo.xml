@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
-    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Author]]></value>
     </property>
@@ -12,6 +12,9 @@
     </property>
     <property name="validator" type="1" multiple="false">
       <value><![CDATA[function(value) { return Cru.widgets.Util.validateLength(value,50); }]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
     </property>
   </properties>
   <mixins />

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="nt:unstructured">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
-    <property name="cq:tagName" type="1" multiple="false">
-      <value><![CDATA[div]]></value>
-    </property>
     <property name="class" type="1" multiple="false">
       <value><![CDATA[grid__item  desk--one-half]]></value>
+    </property>
+    <property name="cq:tagName" type="1" multiple="false">
+      <value><![CDATA[div]]></value>
     </property>
   </properties>
   <mixins />

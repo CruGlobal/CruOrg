@@ -1,0 +1,12 @@
+/*------------------------------------*\
+    $BREADCRUMBS
+\*------------------------------------*/
+
+.breadcrumb{
+    font-size: 80%;
+    font-weight: 500;
+}
+
+    .breadcrumb > li:after{
+        content:"\002F" "\00A0";
+    }

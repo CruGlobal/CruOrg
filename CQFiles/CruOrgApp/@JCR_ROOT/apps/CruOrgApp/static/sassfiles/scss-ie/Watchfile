@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+# run sass from console w/o gui... run the command below
+# sh Watchfile
+
+echo "* Compiling CSS"
+
+echo "***** compiling ie scss into clientlibs-ie";
+compass watch;
+
+echo "***** END";

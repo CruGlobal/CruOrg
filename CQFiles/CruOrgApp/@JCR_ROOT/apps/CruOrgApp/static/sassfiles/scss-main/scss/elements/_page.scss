@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    $PAGE
+\*------------------------------------*/
+
+.preload{
+    display: none !important;
+}
+
+.page-content{	
+	@include rem(padding-top, $base-spacing-unit * 4);
+}
+
+.background-size-contain.layout-single-column{
+	@include mq(500px, max) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.home-banner{
+	@extend %cf;
+		
+	.h4, a{
+		@include mq(981px) {
+			display: inline-block;
+		}
+	}
+}
+
+	.callout{
+		@extend %mb;
+        
+		@include mq(981px) {
+			margin-bottom: 0;
+		}		
+	}
+	
+	.callout-button{
+		@include mq(981px) {
+			text-align: left;
+		}
+	}
+    
+    
+    /**
+     * A different type of <hr> styling. 
+     */
+    /*hr.section-divider{
+    	display: block;
+    	width: 14%;
+    	margin: 50px auto 40px auto;
+    	border: 0;
+    	border-top: 1px solid #dddddd;
+    }*/
+
+    %hr{
+        @extend %centered;
+        
+        clear: both;
+    	display: block;
+    }
+
+    /** 
+     * The primary hr, small width 
+     */
+    hr{
+        @extend %hr;
+    
+        width: 14%;
+    }
+
+        /** 
+         * Full width hr 
+         */
+        /* hr */.divider{
+            @extend %hr;
+    
+            width: 100%;
+        }

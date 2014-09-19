@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
+    <property name="anchor" type="1" multiple="false">
+      <value><![CDATA[100%]]></value>
+    </property>
+    <property name="fieldDescription" type="1" multiple="false">
+      <value><![CDATA[e.g.  for the @crutweets account, the value after the '@' symbol (crutweets).]]></value>
+    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Username]]></value>
-    </property>
-    <property name="xtype" type="1" multiple="false">
-      <value><![CDATA[textfield]]></value>
     </property>
     <property name="name" type="1" multiple="false">
       <value><![CDATA[./twitterUser]]></value>
     </property>
-    <property name="anchor" type="1" multiple="false">
-      <value><![CDATA[100%]]></value>
-    </property>
     <property name="validateOnBlur" type="1" multiple="false">
       <value><![CDATA[true]]></value>
     </property>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[e.g.  for the @crutweets account, the value after the '@' symbol (crutweets).]]></value>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[textfield]]></value>
     </property>
   </properties>
   <mixins />

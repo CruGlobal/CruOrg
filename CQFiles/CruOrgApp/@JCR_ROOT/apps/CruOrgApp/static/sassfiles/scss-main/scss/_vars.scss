@@ -1,0 +1,493 @@
+/*------------------------------------*\
+    VARS.SCSS
+\*------------------------------------*/
+/**
+ * Any variables you find set in brackets.css’ `_vars.scss` that you do not wish to
+ * keep, simply redefine here. This means that if brackets.css, for example, sets
+ * your `$base-font-size` at 16px and you wish it to be 14px, simply redeclare
+ * that variable in this file. Brackets.css ignores its own variables in favour of
+ * using your own, so you can completely modify how brackets.css works without ever
+ * having to alter the framework itself.
+ */
+
+
+/**
+ * Place any variables that should override brackets.css’ defaults here.
+ */
+$base-font-size:         19px;
+$base-line-height:       29px;
+
+
+
+/**
+ * Would you like to show a baseline grid? This is handy during development.
+ */ 
+$show-baseline:                false !default;
+
+
+
+
+/*------------------------------------*\
+    $BORDER-BOX
+\*------------------------------------*/
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+$global-border-box:            true !default;
+
+
+
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base font family
+ */
+$base-font-family:             sans-serif !default;
+
+/**
+ * Default colours for objects’ borders etc.
+ */
+$base-background-color:        #fff    !default;
+$base-text-color:              #444    !default;
+$base-ui-color:                #ccc    !default;
+$base-accent-color:            #007cb1 !default;
+
+/**
+ * Default value for edges and such
+ */
+$base-border-radius:           2px !default;
+
+
+
+
+
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * Basic font sizes
+ */
+$font-size-small:              12px !default;
+$font-size-tiny:               10px !default;
+
+/**
+ * Headings
+ */
+$header-font-family:           $base-font-family !default;
+$header-font-weight:           500 !default;
+$header-font-style:            normal;
+$header-text-rendering:        optimizeLegibility !default;
+
+$header-font-ratio:            1.414 !default;
+
+
+	/* Header sizes */
+	$h6-font-size:             $base-font-size * .8 !default;
+	$h5-font-size:             $base-font-size !default;
+	$h4-font-size:             $base-font-size * $header-font-ratio !default; 
+	$h3-font-size: 			   $h4-font-size   * $header-font-ratio !default;
+	$h2-font-size:             $h3-font-size   * $header-font-ratio !default; 
+	$h1-font-size:             $h2-font-size   * $header-font-ratio !default; 
+    
+    $h1-font-size-small:       $h1-font-size - 15px;
+    $h2-font-size-small:       $h2-font-size - 8px;
+    $h3-font-size-small:       $h3-font-size - 5px;
+    $h4-font-size-small:       $h4-font-size - 5px;
+    $h5-font-size-small:       $h5-font-size - 2px;
+
+	/* Subheaders */
+	$subheader-line-height:    1.414 !default;
+	$subheader-font-weight:    300 !default;
+
+/**
+ * Smalls
+ */
+$small-font-size:              80% !default;
+
+/**
+ * Paragraphs
+ */
+$paragraph-font-weight:        normal !default;
+$paragraph-line-height:        1.6 !default;
+$paragraph-aside-line-height:  1.35 !default;
+$paragraph-aside-font-style:   italic !default;
+$paragraph-text-rendering:     optimizeLegibility !default;
+
+/**
+ * Blockquotes
+ */
+$blockquote-border:            $base-ui-color !default;
+$blockquote-font-size:         18px !default;
+$blockquote-font-style:        italic !default;
+
+$blockquote-cite-font-size:    14px !default;
+
+
+
+
+
+/*------------------------------------*\
+    $GRID
+\*------------------------------------*/
+/**
+ * This grid system is heavily based off the work of Harry Roberts of
+ * css-wizardry and inuit.css. Css-wizardry-grids provides the basic
+ * foundation and inspiration.
+ */
+
+/**
+ * If you are building a non-responsive site but would still like to use
+ * the girds, set this to ‘false’:
+ */
+$responsive:                   true !default;
+
+/**
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * 100% width if you do not apply a more specific class to them.
+ */
+$mobile-first:                 true !default;
+
+/**
+ * Set the max width of your grids, if you set this to false, the wrapper will only
+ * center the content and apply a left/right padding
+ */
+$use-max-width:                false !default;
+$max-grid-width:               1040px !default;
+
+/**
+ * Set the spacing between your grid items.
+ */
+$gutter:                       $base-line-height !default;
+
+/**
+ * Would you like push and pull classes enabled? Keep in mind this adds a large
+ * amount of additional code
+ */
+$push:                         false !default;
+$pull:                         false !default;
+
+/**
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ */
+$use-markup-fix:               true !default;
+
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+$breakpoints: (
+    'palm' '(max-width: 480px)',
+    'lap' '(min-width: 481px) and (max-width: 1023px)',
+    'portable' '(max-width: 1023px)',
+    'desk' '(min-width: 1024px)'
+) !default;
+
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+$breakpoint-has-widths: ('palm', 'lap', 'portable', 'desk') !default;
+$breakpoint-has-push:   ('palm', 'lap', 'portable', 'desk') !default;
+$breakpoint-has-pull:   ('palm', 'lap', 'portable', 'desk') !default;
+
+
+
+
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+$link-text-decoration:         none !default;
+$link-font-color:              $base-accent-color !default;
+$link-font-color-hover:        darken($base-accent-color, 5%) !default;
+
+
+
+
+
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/**
+ * I have included variables for only one buttons, the default, since my wish
+ * is to not impose style. Feel free to add more variables. I have included 
+ * a mixin to help you generate these easily
+ */
+$btn-font-size:                16px;
+
+$btn-default-min-height:       40px;
+$btn-default-color:            $base-text-color !default;
+$btn-default-bg:               $base-ui-color !default;
+$btn-default-border:           darken($base-ui-color, 5%) !default;
+
+$btn-positive-bg:              #4a993e !default;
+
+$btn-negative-bg:              #b33630 !default;
+
+
+
+
+
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+
+$use-buttons:                  false !default;
+$use-islands:                  false !default;
+$use-nav:                      false !default;
+$use-options:				   false !default;
+$use-pagination:			   false !default;
+$use-breadcrumb:               false !default;
+$use-media:                    false !default;
+
+
+
+
+
+/**
+ * These variables are framework variables, sourced from variables defined
+ * above. Feel free to use these variables throughout your project, but do not
+ * modify or reassign them.
+ */
+$base-spacing-unit:            $base-line-height !default;
+$base-spacing-ratio:		   $base-line-height / $base-font-size;
+
+ $show-baseline: false;
+
+
+/*------------------------------------*\
+    $PROJECT-MODES
+\*------------------------------------*/
+/**
+ * This allows you to use debug settings which can be useful in
+ * development.
+ *
+ * Make sure to set this to false before using the code for production.
+ */
+$debug-mode:        false;
+
+
+
+
+
+/*------------------------------------*\
+    $OBJECTS-AND-ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * All of brackets.css’ objects and abstractions are initially turned off by
+ * default. This means that you start any project with as little as possible,
+ * and introducing objects and abstractions is as simple as switching the
+ * following variables to `true`.
+ */
+$use-grids:         false;
+$use-nav:           true;
+$use-buttons:       true;
+$use-island:        false;
+$use-block-list:    false;
+$use-pagination:    true;
+$use-breadcrumb:    true;
+$use-media:         true;
+
+
+
+
+
+
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
+
+$base-background-color: #f7f7f7;
+
+$header-font-ratio:      1.313;
+$header-font-weight:     400;
+
+$breakpoints: (
+    'palm' '(max-width: 480px)',
+    'lap' '(min-width: 481px) and (max-width: 1023px)',
+    'portable' '(max-width: 980px)',
+    'desk' '(min-width: 981px)'
+) !default;
+
+
+$enable-margins:          true;
+$enable-margins--tiny:    true;
+$enable-margins--small:   true;
+$enable-margins--large:   true;
+$enable-margins--huge:    false;
+$enable-margins--none:    true;
+
+
+$enable-paddings:         true;
+$enable-paddings--tiny:   true;
+$enable-paddings--small:  true;
+$enable-paddings--large:  true;
+$enable-paddings--huge:   false;
+$enable-paddings--none:   true;
+
+
+
+
+
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
+/**
+ * Place any of your own variables that sit on top of brackets.css here.
+ */
+
+
+/*------------------------------------*\
+    $Fonts
+\*------------------------------------*/
+$base-font-family:      "freight-sans-pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
+$numberal-font-family:  "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+$base-text-color:       #353535;
+
+$paragraph-font-size:   21px;
+$paragraph-line-height: 31px;
+
+
+
+
+
+/*------------------------------------*\
+    $Color Palette
+\*------------------------------------*/
+
+/**
+ * Primary colors
+ */
+
+$color-gold:         #f9b625; /* Cru Gold */
+$color-gray:         #666062; /* Cru Gray */
+$color-white:        #ffffff; /* White */
+
+/**
+ * Secondary colors
+ */
+$color-orange:             #dd7d1b; /* Cru Orange */
+
+/**
+ * Accent colors
+ */
+$color-bright-blue:        #3eb1c8; /* Cru Bright Blue */
+$color-deep-blue:          #007398; /* Cru Deep Blue */
+
+/**
+ * Grayscale
+ */ 
+$color-black:              #444444;
+$color-dark-gray:          #404040;
+$color-darker-gray:        #333333;
+
+$color-gray-background:    #f7f7f7;
+$color-gray-keyline:       #e9e9e9;
+$color-gray-light:         #e2e2e2;
+$color-gray-dark:          #4c4749;
+
+
+
+/**
+ * Additional Colors
+ */
+$color-text:               #404040;
+$color-message:            #efefef;
+$color-warning:            #F6F3D5;
+$color-info:               #E6F4F9;
+$color-success:            #5BBD72;
+$color-red:                #d95c5c;
+
+
+
+
+
+/*------------------------------------*\
+    $BUTTON SETTINGS
+\*------------------------------------*/
+$btn-font-size:                16px;
+$btn-default-padding:          0;
+
+$btn-default-color:            #6d6e71;
+$btn-default-bg:               #f1f1f1;
+$btn-default-border:           darken($btn-default-bg, 10%);
+
+$btn-primary-color:            $color-white;
+$btn-primary-bg:               $color-gold;
+$btn-primary-border:           darken($color-gold, 5%);
+
+$btn-alt-color:                $color-white;
+$btn-alt-bg:                   $color-gray;
+$btn-alt-border:               darken($btn-alt-bg, 5%);
+
+$btn-subtle-color:             #6d6e71;
+$btn-subtle-bg:                rgba(229, 229, 229, .35);
+$btn-subtle-bg-fallback:       #e9e9e9;
+$btn-subtle-border:            darken($btn-subtle-bg, 5%);
+$btn-subtle-border-fallback:   #d0d0d0;
+
+
+$btn-unstyled-color:           $base-text-color;
+$btn-unstyled-bg:              transparent;
+$btn-unstyled-border:          transparent;
+
+$btn-large-padding:    0 36px;
+$btn-large-min-height: 50px;
+
+
+$btn-small-padding:    0 16px;
+$btn-small-height:     30px;
+$btn-small-min-height: 10px;
+
+$btn-disabled-color:   #999595;
+$btn-disabled-bg:      #e5e5e5;
+$btn-disabled-border:  darken($btn-disabled-bg, 5%);
+
+
+
+/*------------------------------------*\
+    $URL PATHS
+\*------------------------------------*/
+$cru-logo-primary:      url("/images/cru-logo.svg");
+$cru-logo-fallback:     url("/images/cru-logo.png");
+
+
+
+
+
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+
+$base-animation-time:	 250ms;
+$base-animation-delay:   250ms;
+
+
+
+
+
+/*------------------------------------*\
+    $ADDITIONAL
+\*------------------------------------*/
+$header-height: 84px;

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="sling:OsgiConfig">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
   <properties>
+    <property name="resource.resolver.manglenamespaces" type="6" multiple="false">
+      <value>true</value>
+    </property>
     <property name="resource.resolver.mapping" type="1" multiple="true">
       <value><![CDATA[/-/]]></value>
       <value><![CDATA[/apps/xumakbase/static/-/]]></value>
       <value><![CDATA[/apps/CruOrgApp/static/-/]]></value>
-    </property>
-    <property name="resource.resolver.manglenamespaces" type="6" multiple="false">
-      <value>true</value>
     </property>
     <property name="resource.resolver.searchpath" type="1" multiple="true">
       <value><![CDATA[/apps]]></value>

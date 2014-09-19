@@ -1,0 +1,244 @@
+/*------------------------------------*\
+    $NAVIGATION [IE version ie/ie-navigation]
+\*------------------------------------*/
+
+.navigation{
+  position: fixed;
+
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  top: 0;
+  border-top: 3px solid;
+
+  width: 100%;
+  background-color: transparent;
+  z-index: 505;
+  right: 0;
+
+  border-color: transparent;
+
+  overflow: scroll;
+  padding-top: 0px;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.site-nav {
+  position: relative;
+  z-index: 1;
+  margin-top: 5px;
+  text-align: right;
+
+  width: 980px;
+  margin: 0 auto;
+}
+
+/**
+ *  Nav that includes Sign Up, Log In, and Search
+ **/
+
+.right-nav{
+  width: 980px;
+  margin: 0 auto;
+
+  vertical-align: middle;
+
+  position: relative;
+  z-index: 506;
+
+  margin-top: 5px;
+
+  text-align: right;
+  line-height: ceil($base-font-size / 24px) * (24px / $base-font-size);
+
+  .search__options{
+    display: none;
+  }
+}
+
+.nav__link{
+  max-height: 100%;
+  height: $link-height;
+  line-height: $link-height;
+
+  font-weight: 400;
+  font-size: 15px;
+  padding: 0 18px;
+  letter-spacing: 0.9px;
+
+  vertical-align: middle;
+
+  color: $color-white;
+
+  &:hover{
+    background-color: #444444;
+    color: $color-gold;
+    text-decoration: none;
+  }
+
+  color: $color-dark-gray;
+  @include vendor(transition, all 0.25s ease-in-out);
+}
+
+.is-active{
+  background-color: #444444;
+  color: $color-gold;
+  text-decoration: none;
+}
+.primary-link i {
+  display: none;
+}
+
+
+.nav .nav__item > .dropdown{
+  position: fixed;
+  left: 0;
+  background-color: $color-dark-gray;
+  color: #ffffff;
+  width: 980px;
+  overflow: hidden;
+  max-height: 0;
+  height: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  opacity: 0;
+
+  /* Hover Off */
+  @include clearfix();
+}
+
+.nav .nav__item > .dropdown {
+
+  & .grid{
+    margin-left: -29px !important;
+  }
+  & .grid__item {
+    padding-left: 29px !important;
+    float: left !important;
+    width: 33% \0;
+  }
+
+}
+
+.nav li:hover > .arrow-up,
+.nav li:focus > .arrow-up{
+  display: block;
+}
+
+.nav .nav__item:hover > .dropdown,
+.nav .nav__item:focus > .dropdown{
+  padding-top: 30px;
+  padding-bottom: 15px;
+  max-height: 640px;
+  height: auto;
+  overflow: visible;
+  opacity: 1;
+
+  margin: 0 auto !important;
+  @include vendor(box-shadow, 0 1px 1px rgba(6, 8, 8, 0.1));
+
+  /* Hover On */
+  -webkit-transition: max-height 0.25s ease;
+
+  @include vendor(transition, all 0.3s 0.2s ease );
+
+}
+
+.dropdown{
+  width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center;
+  float: right;
+}
+
+.nav li.dropdown__item:hover,
+.nav li.dropdown__item:focus{
+  &:after{
+    opacity: 1;
+  }
+}
+
+#nav-open-btn, #nav-close-btn {
+  display: none;
+}
+
+.is-hidden, .is-visible{
+  @include vendor(transition, all 0.5s);
+}
+
+.is-hidden{
+  -webkit-transform: translateY(-6em);
+  -ms-transform: translateY(-6em);
+  transform: translateY(-6em);
+
+  .nav li > .dropdown{
+    height: 0;
+    overflow: hidden;
+    @include vendor(transition, all 0s);
+    visibility: hidden;
+
+  }
+}
+
+.is-visible {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+
+  .nav li > .dropdown{
+    -webkit-transform: none;
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.search{
+  height: auto;
+  line-height: 1.5;
+}
+
+#user-actions{
+  position: absolute;
+  right: 220px;
+
+  margin: 0;
+
+
+  & > li{
+    display: block;
+    float: left;
+
+    & > a{
+      display: block;
+      color: #8a8a8a;
+
+      padding: 0 10px;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.9px;
+    }
+  }
+}
+
+
+#toolbar form {
+  border-radius: 2px;
+}
+
+
+#search_options{
+  z-index: 501;
+  top: 31px;
+
+  background-color: #ffffff;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+
+/*-- added for you are here functionality, adds underline to main nav item --*/
+.primary-link-active {
+  text-decoration: underline !important;
+}

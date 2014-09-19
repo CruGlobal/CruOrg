@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:WidgetCollection">
   <nodesOrder>
-    <value><![CDATA[basic,more_titles,onofftime,vanity,errorpages]]></value>
+    <value><![CDATA[B_givecruorg,basic,more_titles,onofftime,vanity,errorpages]]></value>
   </nodesOrder>
   <properties />
   <mixins />
