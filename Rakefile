@@ -5,17 +5,17 @@ end
 
 desc "Watch main compass project"
 task :main do
-    sh %(cd  ~/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; nohup sh Watchfile &)
+    sh %(cd  CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; nohup sh Watchfile &)
 end
 
 desc "Watch ie compass project"
 task :ie do
-    sh %(cd ~/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; nohup sh Watchfile &)
+    sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; nohup sh Watchfile &)
 end
 
 desc "Watch compass output in console"
 task :console do
-    sh %(tail -f ~/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/nohup.out ~/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/nohup.out)
+    sh %(tail -f CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/nohup.out ~/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/nohup.out)
 end
 
 # ensure that each shell script spawns a new process
