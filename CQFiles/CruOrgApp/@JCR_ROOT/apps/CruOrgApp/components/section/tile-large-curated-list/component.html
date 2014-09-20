@@ -3,11 +3,11 @@
 <div class="grid__item masonry__item">
 	<div class="color-white box-shadow--thin p">
       {%#if content.title %}
-        {%#if content.path %}
-            <a href="{% content.path %}.html">
+        {%#if content.href %}
+            <a href="{% content.href %}">
         {%/if %}
         <h2>{% content.title %}</h2>
-        {%#if content.path %}
+        {%#if content.href %}
             </a>
         {%/if %}
       {%/if %}
