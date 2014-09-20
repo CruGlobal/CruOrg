@@ -5,7 +5,7 @@
   </nodesOrder>
   <properties>
     <property name="componentGroup" type="1" multiple="false">
-      <value><![CDATA[Admin]]></value>
+      <value><![CDATA[.hidden]]></value>
     </property>
     <property name="cq:noDecoration" type="6" multiple="false">
       <value>true</value>
