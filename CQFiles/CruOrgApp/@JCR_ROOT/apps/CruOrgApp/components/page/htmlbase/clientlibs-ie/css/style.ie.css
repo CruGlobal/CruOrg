@@ -980,7 +980,7 @@ small {
 .cf, .nav, .post-meta, .grid, .media, .home-banner, .post-article figure {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../../../../../Users/richardcoy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
 .cf:after, .nav:after, .post-meta:after, .grid:after, .media:after, .home-banner:after, .post-article figure:after {
   content: "";
   display: table;
@@ -1341,7 +1341,7 @@ img[height] {
 /* line 29, ../../../../../static/sassfiles/scss-main/scss/core/_images.scss */
 .image--thumbnail {
   padding: 4px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
 }
 
 /**
@@ -1547,7 +1547,7 @@ legend {
   font-size: 16.625px;
   line-height: 29px;
   background-image: none;
-  border: 2px solid #cccccc;
+  border: 2px solid #ccc;
   border-radius: 2px;
   padding-left: 15px;
   padding-left: 1rem;
@@ -4360,7 +4360,7 @@ input[disabled]:focus,
  */
 /* line 11, ../../../../../static/sassfiles/scss-main/scss/elements/_colors.scss */
 .color-border-base {
-  border-color: #cccccc;
+  border-color: #ccc;
 }
 
 /* line 12, ../../../../../static/sassfiles/scss-main/scss/elements/_colors.scss */
@@ -4398,7 +4398,7 @@ input[disabled]:focus,
 .button--negative:focus,
 .button--negative:active,
 .button--negative:visited, .slider-control:hover i {
-  color: white;
+  color: #ffffff;
 }
 
 /**
@@ -4416,7 +4416,7 @@ input[disabled]:focus,
 
 /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_colors.scss */
 .color-white {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 /**
@@ -4764,13 +4764,13 @@ q:first-child {
 .button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .open .button--primary.dropdown-toggle {
   background-color: #efa507;
   border-color: #c28605;
-  color: white;
+  color: #ffffff;
 }
 /* line 26, ../../../../../static/sassfiles/scss-main/scss/elements/_buttons.scss */
 .button--primary, .button--primary:active, .button--primary:focus {
   background-color: #f9b625;
   border-color: #f8ae0c;
-  color: white !important;
+  color: #ffffff !important;
 }
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/generic/mixins/_buttons.scss */
 .button--primary:active, .button--primary.active, .button--primary:active:active, .button--primary:active.active, .button--primary:focus:active, .button--primary:focus.active {
@@ -4788,13 +4788,13 @@ q:first-child {
 .button--secondary:hover, .button--secondary:focus, .button--secondary:active, .button--secondary.active, .open .button--secondary.dropdown-toggle {
   background-color: #514c4e;
   border-color: #393637;
-  color: white;
+  color: #ffffff;
 }
 /* line 36, ../../../../../static/sassfiles/scss-main/scss/elements/_buttons.scss */
 .button--secondary, .button--secondary:active, .button--secondary:focus {
   background-color: #666062;
   border-color: #595455;
-  color: white !important;
+  color: #ffffff !important;
 }
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/generic/mixins/_buttons.scss */
 .button--secondary:active, .button--secondary.active, .button--secondary:active:active, .button--secondary:active.active, .button--secondary:focus:active, .button--secondary:focus.active {
@@ -4836,7 +4836,7 @@ q:first-child {
 }
 /* line 51, ../../../../../static/sassfiles/scss-main/scss/elements/_buttons.scss */
 .button--subtle:hover, input.button--subtle:hover {
-  color: white;
+  color: #ffffff;
 }
 
 /**
@@ -4846,7 +4846,7 @@ q:first-child {
 .button--positive {
   background-color: #4a993e;
   border-color: #418737;
-  color: white;
+  color: #ffffff;
 }
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/generic/mixins/_buttons.scss */
 .button--positive:active, .button--positive.active {
@@ -4863,7 +4863,7 @@ q:first-child {
 .button--positive:hover, .button--positive:focus, .button--positive:active, .button--positive.active, .open .button--positive.dropdown-toggle {
   background-color: #3c7c32;
   border-color: #356d2c;
-  color: white;
+  color: #ffffff;
 }
 
 /**
@@ -4873,7 +4873,7 @@ q:first-child {
 .button--negative {
   background-color: #b33630;
   border-color: #9f302b;
-  color: white;
+  color: #ffffff;
 }
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/generic/mixins/_buttons.scss */
 .button--negative:active, .button--negative.active {
@@ -4890,7 +4890,7 @@ q:first-child {
 .button--negative:hover, .button--negative:focus, .button--negative:active, .button--negative.active, .open .button--negative.dropdown-toggle {
   background-color: #932c27;
   border-color: #832723;
-  color: white;
+  color: #ffffff;
 }
 
 /**
@@ -5105,7 +5105,7 @@ td {
   overflow: hidden;
   width: 100%;
   height: 84px;
-  background-color: white;
+  background-color: #ffffff;
   border-top-width: 3px;
   border-top-style: solid;
   border-top-color: #f9b625;
@@ -5351,7 +5351,7 @@ td {
   position: absolute;
   overflow: hidden;
   visibility: hidden;
-  color: white;
+  color: #ffffff;
   right: 0;
   z-index: 2;
   width: 100%;
@@ -5472,7 +5472,7 @@ td {
   padding: 0 18px;
   letter-spacing: 0.9px;
   vertical-align: middle;
-  color: white;
+  color: #ffffff;
   color: #404040;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -5678,7 +5678,7 @@ td {
 */
 /* line 15, ../../../../../static/sassfiles/scss-main/scss/elements/_dropdowns.scss */
 .dropdown--column {
-  color: white;
+  color: #ffffff;
   border-radius: 1px;
   margin-bottom: 0.90625rem;
 }
@@ -5710,7 +5710,7 @@ td {
   margin: 0;
   text-align: left;
   font-size: 85%;
-  color: white;
+  color: #ffffff;
 }
 @media screen and (max-width: 61.25em) {
   /* line 15, ../../../../../static/sassfiles/scss-main/scss/elements/_dropdowns.scss */
@@ -5922,7 +5922,7 @@ td {
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/elements/_ui-autocomplete.scss */
 .ui-autocomplete li a {
   background-color: #404040;
-  color: white;
+  color: #ffffff;
   display: block;
   padding: 5px 13px;
   cursor: pointer;
@@ -5935,7 +5935,7 @@ td {
 
 /* line 1, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item {
-  background-color: white;
+  background-color: #ffffff;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
@@ -6187,13 +6187,13 @@ td {
  * At bat
  */
 /* line 85, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-.slider2 {
+.slider1 {
   left: 0;
   z-index: 1;
 }
 @media screen and (min-width: 61.25em) {
   /* line 85, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-  .slider2 {
+  .slider1 {
     width: 64.9%;
   }
 }
@@ -6202,12 +6202,12 @@ td {
  * On Deck
  */
 /* line 97, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-.slider3 {
+.slider2 {
   left: 100%;
 }
 @media screen and (min-width: 61.25em) {
   /* line 97, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-  .slider3 {
+  .slider2 {
     left: 66.666666%;
   }
 }
@@ -6216,12 +6216,12 @@ td {
  * Last up
  */
 /* line 108, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-.slider1 {
+.slider0 {
   left: -100%;
 }
 @media screen and (min-width: 61.25em) {
   /* line 108, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-  .slider1 {
+  .slider0 {
     left: -33.333333%;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
     opacity: 0.3;
@@ -6230,7 +6230,7 @@ td {
 
 @media screen and (min-width: 61.25em) {
   /* line 117, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-  .slider__reverse .slider1 {
+  .slider__reverse .slider0 {
     -webkit-transition: none;
     -moz-transition: none;
     -ms-transition: none;
@@ -6255,12 +6255,12 @@ td {
  * In the hole
  */
 /* line 131, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-.slider4 {
+.slider3 {
   display: none;
 }
 @media screen and (min-width: 61.25em) {
   /* line 131, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-  .slider4 {
+  .slider3 {
     left: 100%;
     display: block;
     -webkit-animation-name: sliderEnd;
@@ -6281,7 +6281,7 @@ td {
 }
 
 /* line 148, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-.slider__reverse .slider4 {
+.slider__reverse .slider3 {
   -webkit-animation: none;
   -moz-animation: none;
   -ms-animation: none;
@@ -6289,10 +6289,10 @@ td {
 }
 
 /* line 152, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
+.slider4,
 .slider5,
 .slider6,
-.slider7,
-.slider8 {
+.slider7 {
   right: 500%;
 }
 
@@ -6348,7 +6348,7 @@ td {
   text-align: center;
   line-height: 1.25em;
   min-height: 2.5em;
-  color: white;
+  color: #ffffff;
   /* 3 */
   /* 3 */
   /* 4 */
@@ -6381,7 +6381,7 @@ td {
 }
 
 /* line 215, ../../../../../static/sassfiles/scss-ie/scss/ie/_ie-sliders.scss */
-.slider2 .article-details, .slider3 .article-details {
+.slider1 .article-details, .slider2 .article-details {
   bottom: 0;
   -webkit-opacity: 1;
   -moz-opacity: 1;
@@ -6485,7 +6485,7 @@ td {
   text-align: center;
   line-height: 60px;
   font-size: 2.2em;
-  color: white;
+  color: #ffffff;
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.35);
   -webkit-transition: background-color 150ms linear;
@@ -6828,193 +6828,145 @@ td {
  * Slider animation
  */
 @-webkit-keyframes sliderBegin {
-  /* line 13, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -33.333333%;
     opacity: 0.4;
   }
-
-  /* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -56%;
     opacity: 0;
   }
 }
 @-moz-keyframes sliderBegin {
-  /* line 13, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -33.333333%;
     opacity: 0.4;
   }
-
-  /* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -56%;
     opacity: 0;
   }
 }
 @-ms-keyframes sliderBegin {
-  /* line 13, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -33.333333%;
     opacity: 0.4;
   }
-
-  /* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -56%;
     opacity: 0;
   }
 }
 @keyframes sliderBegin {
-  /* line 13, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -33.333333%;
     opacity: 0.4;
   }
-
-  /* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -56%;
     opacity: 0;
   }
 }
 @-webkit-keyframes sliderEnd {
-  /* line 25, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 140%;
     opacity: 0;
   }
-
-  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
     opacity: 0.4;
   }
 }
 @-moz-keyframes sliderEnd {
-  /* line 25, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 140%;
     opacity: 0;
   }
-
-  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
     opacity: 0.4;
   }
 }
 @-ms-keyframes sliderEnd {
-  /* line 25, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 140%;
     opacity: 0;
   }
-
-  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
     opacity: 0.4;
   }
 }
 @keyframes sliderEnd {
-  /* line 25, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 140%;
     opacity: 0;
   }
-
-  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
     opacity: 0.4;
   }
 }
 @-webkit-keyframes sliderReverseBegin {
-  /* line 38, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 66%;
   }
-
-  /* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
   }
 }
 @-moz-keyframes sliderReverseBegin {
-  /* line 38, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 66%;
   }
-
-  /* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
   }
 }
 @-ms-keyframes sliderReverseBegin {
-  /* line 38, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 66%;
   }
-
-  /* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
   }
 }
 @keyframes sliderReverseBegin {
-  /* line 38, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 66%;
   }
-
-  /* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
   }
 }
 @-webkit-keyframes sliderReverseEnd {
-  /* line 49, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -52%;
   }
-
-  /* line 53, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -33.33333%;
   }
 }
 @-moz-keyframes sliderReverseEnd {
-  /* line 49, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -52%;
   }
-
-  /* line 53, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -33.33333%;
   }
 }
 @-ms-keyframes sliderReverseEnd {
-  /* line 49, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -52%;
   }
-
-  /* line 53, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -33.33333%;
   }
 }
 @keyframes sliderReverseEnd {
-  /* line 49, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -52%;
   }
-
-  /* line 53, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -33.33333%;
   }

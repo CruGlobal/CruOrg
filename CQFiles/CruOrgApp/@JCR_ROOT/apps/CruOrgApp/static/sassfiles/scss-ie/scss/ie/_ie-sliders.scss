@@ -82,7 +82,7 @@ $slider-height: 396px;
 /**
  * At bat
  */
-.slider2{
+.slider1{ // changed from slider2 to slider1
   left: 0;
   z-index: 1;
 
@@ -94,7 +94,7 @@ $slider-height: 396px;
 /**
  * On Deck
  */
-.slider3{
+.slider2{ // changed from slider3 to slider2
   left: 100%;
 
   @include mq(980px) {
@@ -105,7 +105,7 @@ $slider-height: 396px;
 /**
  * Last up
  */
-.slider1{
+.slider0{ // changed from slider1 to slider0
   left: -100%;
 
   @include mq(980px) {
@@ -114,7 +114,7 @@ $slider-height: 396px;
   }
 }
 
-.slider__reverse  .slider1{
+.slider__reverse  .slider0{ // changed from slider1 to slider0
   @include mq(980px) {
 
     @include vendor(transition, none);
@@ -128,7 +128,7 @@ $slider-height: 396px;
 /**
  * In the hole
  */
-.slider4{
+.slider3{ // changed from slider4 to slider3
   display: none;
 
   @include mq(980px){
@@ -145,14 +145,14 @@ $slider-height: 396px;
 }
 
 
-.slider__reverse  .slider4{
+.slider__reverse  .slider3{ // changed from slider4 to slider3
   @include animation(none);
 }
 
-.slider5,
-.slider6,
-.slider7,
-.slider8 {
+.slider4, // changed from slider5 to slider4
+.slider5, // changed from slider6 to slider5
+.slider6, // changed from slider7 to slider6
+.slider7 { // changed from slider8 to slider7
   right: 500%;
 }
 
@@ -210,7 +210,7 @@ $slider-height: 396px;
 
 }
 
-.slider2, .slider3{
+.slider1, .slider2{ //changed from slider2 to slider1 and slider3 to slider2
 
   .article-details{
     bottom: 0;
