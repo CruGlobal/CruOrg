@@ -3,8 +3,8 @@
 }
 
 .social-shares{  
-    .fb_iframe_widget iframe{
-        width: 76px !important;
+    .fb-like, .fb_iframe_widget iframe{
+        width: 80px !important;
         position: relative;
         top: 0;
     }
