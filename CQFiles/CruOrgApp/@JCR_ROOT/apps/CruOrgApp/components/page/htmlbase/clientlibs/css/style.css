@@ -7226,3 +7226,8 @@ hr, .divider, .layout--full, .center-block, .centered,
   position: relative;
   top: 0;
 }
+/* line 11, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+.post__body .social-shares .fb-like, .post__body .social-shares .fb_iframe_widget iframe {
+  vertical-align: top;
+  margin-top: -1px;
+}

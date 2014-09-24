@@ -7,5 +7,10 @@
         width: 80px !important;
         position: relative;
         top: 0;
+		
+		.post__body &{
+			vertical-align: top;
+			margin-top: -1px;
+		}
     }
 }
