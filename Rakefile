@@ -19,3 +19,5 @@ task :watch do
 end
 
 # TODO Capture pid for each compass process and output to `pid` file
+# TODO Add OS X Notifications
+# TODO Add a Gemfile to CruOrg so users just have to `bundle install` to get the gems they need
