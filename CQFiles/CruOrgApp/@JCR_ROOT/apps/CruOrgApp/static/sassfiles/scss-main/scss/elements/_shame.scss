@@ -3,9 +3,14 @@
 }
 
 .social-shares{  
-    .fb_iframe_widget iframe{
-        width: 76px !important;
+    .fb-like, .fb_iframe_widget iframe{
+        width: 80px !important;
         position: relative;
         top: 0;
+		
+		.post__body &{
+			vertical-align: top;
+			margin-top: -1px;
+		}
     }
 }
