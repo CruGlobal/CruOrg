@@ -17,3 +17,5 @@ desc "Watch compass output in console"
 task :watch do
     sh %(multitail -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/nohup.out -i ~/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/nohup.out)
 end
+
+# TODO Capture pid for each compass process and output to `pid` file
