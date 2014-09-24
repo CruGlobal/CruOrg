@@ -5,6 +5,8 @@ Steps to compiling SASS on your local machine:
         1. Open Terminal
         2. Run: gem update --system
         3. Run: gem install compass
+		4. Run: brew install multitail
+			- install Homebrew if needed, run: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
     Run Rake Commands
@@ -12,7 +14,7 @@ Steps to compiling SASS on your local machine:
         1. Open Terminal
         2. Change the Directory to your main CruOrg repository (e.g. cd /Users/mattgasior/GitHub/CruOrg)
         3. Run Rake Commands
-            - rake watch [compiles all .scss files]
+            - rake compile [compiles all .scss files]
             - rake main [compiles just main stylesheet]
             - rake ie [compiles just ie stylesheet]
-            - rake console [watches for changes to .scss files and compiles – cmd+c stops the process]
+            - rake watch [watches for changes to .scss files and compiles – cmd+c stops the process]
