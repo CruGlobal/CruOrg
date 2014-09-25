@@ -116,6 +116,9 @@
   filter:alpha(opacity = 50);
 }
 
+.opaque, %opaque{
+    opacity: 1;
+}
 
 /**
  * Add a right-angled quote to links that imply movement, e.g.:
