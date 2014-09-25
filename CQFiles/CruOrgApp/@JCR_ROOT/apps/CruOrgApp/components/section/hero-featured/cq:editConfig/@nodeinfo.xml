@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:EditConfig">
+  <nodesOrder>
+    <value><![CDATA[cq:listeners]]></value>
+  </nodesOrder>
+  <properties>
+    <property name="cq:actions" type="1" multiple="true">
+      <value><![CDATA[edit]]></value>
+      <value><![CDATA[delete]]></value>
+      <value><![CDATA[copymove]]></value>
+    </property>
+    <property name="cq:disableTargeting" type="6" multiple="false">
+      <value>true</value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+
