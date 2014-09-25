@@ -1,71 +1,463 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    IE-STYLE.CSS
+\*------------------------------------*/
+/**
+ * Here lies the custom styles for Cru.org. These styles have been
+ * built on top of our front-end framework: brackets.css.
+ *
+ * Be sure read the warning before continuing to edit or add any new
+ * styles. In addition, be sure to change the variables to turn off
+ * demo mode and debug mode before pushing to production. 
+ * 
+ */
+/*------------------------------------*\
+ $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * WARNING.............There be rocks ahead
+ * IMPORTS.............Begin importing the sections below
+ *
+ * SETUP...............Import project variables and brackets.css
+ *
+ * FONT................Set up the primary font
+ * COLORS..............Set base colors and variables for easy use
+ *
+ * PAGE................Overall page settings and foundation
+ * LAYOUTS.............Primary widths and wrappers
+ *
+ * TEXT................Text element settings for articles, etc.
+ * BUTTONS.............Cru specific buttons, extends brackets.css
+ * TABLES..............Cru specific tables, extends brackets.css
+ * FORMS...............Cru specific forms, extends brackets.css
+ * VIDEO...............
+ * IMAGES..............
+ * HEADER..............
+ * FOOTER..............
+ * SOCIAL..............Site and post specific social media
+ * SITE-SEARCH.........Primary site search, extends the header
+ * NAVIGATION..........Praimry site nav, extends the header
+ * DROPDOWNS...........Dropdown views for large screens, extends the navigation
+ * OFF-CANVAS..........Off canvas nav for small screens, extends the navigation
+ *
+ * CAMPUS-LOCATOR......
+ * COUNTRY-LIST........
+ * SLIDER..............Primary site slider. For now only on homepage
+ * POST................Basic post stylings for articles
+ * POST-IMAGES.........Image handling in posts, etc, extends the post
+ * PAGE-SUBNAV.........Additional navigation for community/landing pages
+ *
+ * ANIMATIONS..........Site-wide animation handling
+ * UTILITIES...........A series of helper classes to use arbitrarily
+ * DEBUG...............Enable to add visual flags for debugging purposes
+ */
+/*------------------------------------*\
+  $WARNING
+\*------------------------------------*/
+/**
+ * Custom styles for cru.org are meant to be place in the elements folder. 
+ * They should be as specific to cru as possible and mainly ui related. If 
+ * there is a generic feature needed, please submit an issue to the
+ * brackets.css github page. 
+ *
+ */
+/*------------------------------------*\
+ $IMPORTS
+\*------------------------------------*/
+/**
+ * Core variables, mixins, utilities, etc
+ */
+/*------------------------------------*\
+    VARS.SCSS
+\*------------------------------------*/
+/**
+ * Any variables you find set in brackets.css’ `_vars.scss` that you do not wish to
+ * keep, simply redefine here. This means that if brackets.css, for example, sets
+ * your `$base-font-size` at 16px and you wish it to be 14px, simply redeclare
+ * that variable in this file. Brackets.css ignores its own variables in favour of
+ * using your own, so you can completely modify how brackets.css works without ever
+ * having to alter the framework itself.
+ */
+/**
+ * Place any variables that should override brackets.css’ defaults here.
+ */
+/**
+ * Would you like to show a baseline grid? This is handy during development.
+ */
+/*------------------------------------*\
+    $BORDER-BOX
+\*------------------------------------*/
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base font family
+ */
+/**
+ * Default colours for objects’ borders etc.
+ */
+/**
+ * Default value for edges and such
+ */
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * Basic font sizes
+ */
+/**
+ * Headings
+ */
+/* Header sizes */
+/* Subheaders */
+/**
+ * Smalls
+ */
+/**
+ * Paragraphs
+ */
+/**
+ * Blockquotes
+ */
+/*------------------------------------*\
+    $GRID
+\*------------------------------------*/
+/**
+ * This grid system is heavily based off the work of Harry Roberts of
+ * css-wizardry and inuit.css. Css-wizardry-grids provides the basic
+ * foundation and inspiration.
+ */
+/**
+ * If you are building a non-responsive site but would still like to use
+ * the girds, set this to ‘false’:
+ */
+/**
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * 100% width if you do not apply a more specific class to them.
+ */
+/**
+ * Set the max width of your grids, if you set this to false, the wrapper will only
+ * center the content and apply a left/right padding
+ */
+/**
+ * Set the spacing between your grid items.
+ */
+/**
+ * Would you like push and pull classes enabled? Keep in mind this adds a large
+ * amount of additional code
+ */
+/**
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ */
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/**
+ * I have included variables for only one buttons, the default, since my wish
+ * is to not impose style. Feel free to add more variables. I have included 
+ * a mixin to help you generate these easily
+ */
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+/**
+ * These variables are framework variables, sourced from variables defined
+ * above. Feel free to use these variables throughout your project, but do not
+ * modify or reassign them.
+ */
+/*------------------------------------*\
+    $PROJECT-MODES
+\*------------------------------------*/
+/**
+ * This allows you to use debug settings which can be useful in
+ * development.
+ *
+ * Make sure to set this to false before using the code for production.
+ */
+/*------------------------------------*\
+    $OBJECTS-AND-ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * All of brackets.css’ objects and abstractions are initially turned off by
+ * default. This means that you start any project with as little as possible,
+ * and introducing objects and abstractions is as simple as switching the
+ * following variables to `true`.
+ */
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
+/**
+ * Place any of your own variables that sit on top of brackets.css here.
+ */
+/*------------------------------------*\
+    $Fonts
+\*------------------------------------*/
+/*------------------------------------*\
+    $Color Palette
+\*------------------------------------*/
+/**
+ * Primary colors
+ */
+/* Cru Gold */
+/* Cru Gray */
+/* White */
+/**
+ * Secondary colors
+ */
+/* Cru Orange */
+/**
+ * Accent colors
+ */
+/* Cru Bright Blue */
+/* Cru Deep Blue */
+/**
+ * Grayscale
+ */
+/**
+ * Additional Colors
+ */
+/*------------------------------------*\
+    $BUTTON SETTINGS
+\*------------------------------------*/
+/*------------------------------------*\
+    $URL PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+/*------------------------------------*\
+    $ADDITIONAL
+\*------------------------------------*/
+/*------------------------------------*\
+    $TOOLS
+\*------------------------------------*/
+/**
+ * We will begin by importing functions that will be used in the
+ * framework. There is no need to change any of these functions
+ */
+/**
+ * This allows us to use the rem-calc mixin for shorthand 
+ * conversions.
+ */
+/**
+ * Use this em function instead of the other
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all. 
+ */
+/*------------------------------------*\
+    $MIXINS/ALERTS
+\*------------------------------------*/
+/**
+ * Animations
+ */
+/*------------------------------------*\
+    $MIXINS/BUTTONS
+\*------------------------------------*/
+/**
+ * Border Radius
+ */
+/* Top-Left Corner */
+/* Top-Right Corner Only*/
+/* Bottom-Left Corner Only */
+/* Bottom-Right Corner Only */
+/* Both Top Corners */
+/* Both Right Corners */
+/* Both Bottom Corners */
+/* Both Left Corners */
+/*------------------------------------*\
+    $MIXINS/BOX-MODEL
+\*------------------------------------*/
+/**
+ * Box Sizing
+ */
+/*------------------------------------*\
+    $MIXINS/BUTTONS
+\*------------------------------------*/
+/**
+ * Button Varients
+ */
+/**
+ * Button Effects: use with btn
+ */
+/**
+ * Button Sizes
+ */
+/*------------------------------------*\
+    $MIXINS/CENTER-BLOCK
+\*------------------------------------*/
+/**
+ * Center-align a block level element
+ */
+/*------------------------------------*\
+    $MIXINS/CLEARFIX
+\*------------------------------------*/
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ * 
+ *  Source: http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+/**
+ * The newest clearfix: Unsure about support
+ */
+/*------------------------------------*\
+    $MIXINS/FORMS
+\*------------------------------------*/
+/**
+ * Form control sizing
+ *
+ * Relative text size, padding, and border-radii changes for form controls. For
+ * horizontal sizing, wrap controls in the predefined grid classes. `<select>`
+ * element gets special love because it's special, and that's a fact!
+ * [converter] $parent hack
+ */
+/*------------------------------------*\
+    $MIXINS/GRID-SETUP
+\*------------------------------------*/
+/**
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+/*------------------------------------*\
+    $MIXINS/IMAGES
+\*------------------------------------*/
+/** 
+ * Responsive image
+ *
+ * Keep images from scaling beyond the width of their parents.
+ */
+/*------------------------------------*\
+    $MIXINS/LINKS
+\*------------------------------------*/
+/**
+ * Writes the typical link, button in one go
+ * Includes active and focus for accessibility 
+ * 
+ */
+/*------------------------------------*\
+    $MIXINS/MEDIA-QUERY
+\*------------------------------------*/
+/**
+ * Media query for easy breakpoint. Use pixel width with or without units
+ * and it will convert to em 
+ */
+/**
+ * Set $query1: max for a max-qidth query, defaults to min-width
+ */
+/*------------------------------------*\
+    $MIXINS/MESSAGE
+\*------------------------------------*/
+/*------------------------------------*\
+    $MIXINS/PANELS
+\*------------------------------------*/
+/*------------------------------------*\
+    $MIXINS/PREFIX
+\*------------------------------------*/
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(border-radius, 4px);`
+ *
+ */
+/*------------------------------------*\
+    $MIXINS/SIZING
+\*------------------------------------*/
+/**
+ * Can handle shorthand calculations
+ * Do not change the variable set
+ * http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+ */
+/**
+ * Space elements by an amount based on your magic number. Pass in the property
+ * to be indented as a paramater, e.g.:
+ *
+ * pre {
+ *    @include spacing(padding-left);
+ * }
+ */
+/*------------------------------------*\
+    $MIXINS/SPACING
+\*------------------------------------*/
+/**
+ *  Calculates any number of margins and paddings in one swoop
+ * 
+ * Running this is as easy 
+ * @include vertical-calc(1, 12) {}
+ *
+ * DO NOT USE AT THE MOMENT
+ */
+/*------------------------------------*\
+    $MIXINS/TEXT
+\*------------------------------------*/
+/**
+ * Quickly generate a font-size in rems, with a pixel fallback, based on the
+ * value we pass into the mixin, e.g.:
+ *
+ * h1 {
+ *     @include font-size(24px);
+ * }
+ */
+/**
+ * Style any number of headings in one fell swoop, e.g.:
+ *
+   .foo{
+       @include headings(1, 3){
+           color:#c0ffee;
+       }
+    }
+ *
+ * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
+ * @thierrylemoulec for refining and improving my initial mixin.
+ */
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Error: File to import not found or unreadable: elements/shame.
-       Load paths:
-         Compass::SpriteImporter
-         /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss
-         /Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets
-        on line 191 of /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss/style.ie.scss
-
-186:  *\/
-187: @import "../../scss-main/scss/elements/animations";
-188: @import "ie/ie-helpers";
-189: @import "../../scss-main/scss/elements/debug";
-190: 
-191: @import "elements/shame";
-
-Backtrace:
-/Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss/style.ie.scss:191
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:66:in `rescue in import'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:45:in `import'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `block in with_base'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `with_base'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/root_node.rb:20:in `render'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/engine.rb:268:in `render'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:491:in `update_stylesheet'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:469:in `on_file_changed'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:276:in `call'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:276:in `_process_changes'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:233:in `block in _wait_for_changes'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:216:in `loop'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:216:in `_wait_for_changes'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:312:in `block in _start_wait_thread'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: elements/shame.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss\A          /Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets\A         on line 191 of /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss/style.ie.scss\A \A 186:  */\A 187: @import \"../../scss-main/scss/elements/animations\";\A 188: @import \"ie/ie-helpers\";\A 189: @import \"../../scss-main/scss/elements/debug\";\A 190: \A 191: @import \"elements/shame\";"; }
-=======
-=======
->>>>>>> Update css
  * Correct `block` display not defined in IE 8/9.
  */
 /* line 11, ../../../../../static/sassfiles/scss-main/scss/generic/_normalize.scss */
@@ -6861,75 +7253,3 @@ hr, .divider, .layout--full, .center-block, .centered,
 }
 
 /* endif */
-<<<<<<< HEAD
->>>>>>> Hero Featured Story Component
-=======
-=======
-=======
->>>>>>> Update css
-Error: File to import not found or unreadable: elements/shame.
-       Load paths:
-         Compass::SpriteImporter
-         /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss
-         /Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets
-        on line 191 of /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss/style.ie.scss
-
-186:  *\/
-187: @import "../../scss-main/scss/elements/animations";
-188: @import "ie/ie-helpers";
-189: @import "../../scss-main/scss/elements/debug";
-190: 
-191: @import "elements/shame";
-
-Backtrace:
-/Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss/style.ie.scss:191
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:66:in `rescue in import'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:45:in `import'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `block in with_base'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `with_base'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/tree/root_node.rb:20:in `render'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/engine.rb:268:in `render'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:491:in `update_stylesheet'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:469:in `on_file_changed'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.4.4/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:276:in `call'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:276:in `_process_changes'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:233:in `block in _wait_for_changes'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:216:in `loop'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:216:in `_wait_for_changes'
-/Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:312:in `block in _start_wait_thread'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: elements/shame.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss\A          /Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets\A         on line 191 of /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss/style.ie.scss\A \A 186:  */\A 187: @import \"../../scss-main/scss/elements/animations\";\A 188: @import \"ie/ie-helpers\";\A 189: @import \"../../scss-main/scss/elements/debug\";\A 190: \A 191: @import \"elements/shame\";"; }
-<<<<<<< HEAD
->>>>>>> Update css
->>>>>>> Update css
-=======
->>>>>>> Update css
