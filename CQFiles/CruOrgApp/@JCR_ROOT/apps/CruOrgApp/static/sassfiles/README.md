@@ -4,7 +4,7 @@ Steps to compiling SASS on your local machine:
 
         1. Open Terminal
         2. Run: gem update --system
-        3. Run: gem install compass
+        3. Run: bundle install
 		4. Run: brew install multitail
 			- install Homebrew if needed, run: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
