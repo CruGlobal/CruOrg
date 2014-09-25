@@ -15,7 +15,15 @@ end
 
 desc "Watch compass output in console"
 task :watch do
-    sh %(multitail -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/nohup.out -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/nohup.out)
+    if system 'which -s multitail'
+      sh %(multitail -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/nohup.out -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/nohup.out)
+    elsif system 'which -s brew'
+      puts 'Please install multitool'
+      puts 'Run: brew install multitool'
+    else
+      puts 'You need to install Homebrew'
+      puts 'Run: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+    end
 end
 
 desc "Find running compass processes"
