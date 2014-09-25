@@ -1,6 +1,7 @@
 /*
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Error: File to import not found or unreadable: elements/shame.
        Load paths:
          Compass::SpriteImporter
@@ -6864,6 +6865,8 @@ hr, .divider, .layout--full, .center-block, .centered,
 >>>>>>> Hero Featured Story Component
 =======
 =======
+=======
+>>>>>>> Update css
 Error: File to import not found or unreadable: elements/shame.
        Load paths:
          Compass::SpriteImporter
@@ -6925,5 +6928,8 @@ body:before {
   white-space: pre;
   font-family: monospace;
   content: "Error: File to import not found or unreadable: elements/shame.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss\A          /Users/Octopus/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets\A         on line 191 of /Users/Octopus/Dev/CruOrg/CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss/style.ie.scss\A \A 186:  */\A 187: @import \"../../scss-main/scss/elements/animations\";\A 188: @import \"ie/ie-helpers\";\A 189: @import \"../../scss-main/scss/elements/debug\";\A 190: \A 191: @import \"elements/shame\";"; }
+<<<<<<< HEAD
 >>>>>>> Update css
+>>>>>>> Update css
+=======
 >>>>>>> Update css
