@@ -4,7 +4,7 @@
 
 .social-shares{  
     .fb-like, .fb_iframe_widget iframe{
-        width: 80px !important;
+        width: 450px !important;
         position: relative;
         top: 0;
 		
@@ -13,4 +13,8 @@
 			margin-top: -1px;
 		}
     }
+	
+	.fb-like {
+		width: 80px !important;
+	}
 }
