@@ -2339,6 +2339,11 @@ input + .additional {
     width: 91.66667%;
   }
 }
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘palm’ does not exist";
+}
+*/
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
   /**
    * Whole
@@ -2541,6 +2546,11 @@ input + .additional {
     width: 91.66667%;
   }
 }
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘lap’ does not exist";
+}
+*/
 @media only screen and (max-width: 1023px) {
   /**
    * Whole
@@ -2743,6 +2753,11 @@ input + .additional {
     width: 91.66667%;
   }
 }
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘portable’ does not exist";
+}
+*/
 @media only screen and (min-width: 1024px) {
   /**
    * Whole
@@ -2945,6 +2960,11 @@ input + .additional {
     width: 91.66667%;
   }
 }
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘desk’ does not exist";
+}
+*/
 /*------------------------------------*\
     PUSH
 \*------------------------------------*/
@@ -7196,6 +7216,26 @@ hr, .divider, .layout--full, .center-block, .centered,
   width: 1px;
 }
 
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘palm (max-width: 480px)’ does not exist";
+}
+*/
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘lap (min-width: 481px) and (max-width: 1023px)’ does not exist";
+}
+*/
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘portable (max-width: 1023px)’ does not exist";
+}
+*/
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘desk (min-width: 1024px)’ does not exist";
+}
+*/
 /* line 177, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .basic-transition, .block-link, .locations li > a, .more-stories__link, .page-subnav > li, .page-subnav a {
   -webkit-transition: 250ms ease;

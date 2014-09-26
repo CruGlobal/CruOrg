@@ -161,12 +161,6 @@
 @import "ie/ie-off-canvas";
 @import "../../scss-main/scss/elements/off-canvas";
 @import "../../scss-main/scss/elements/ui-autocomplete";
-@import "../../scss-main/scss/elements/tiles";
-
-/**
- * Page components
- */
-@import "../../scss-main/scss/elements/campus-locator";
 @import "../../scss-main/scss/elements/country-list";
 @import "ie/ie-sliders";
 
@@ -188,7 +182,4 @@
 @import "ie/ie-helpers";
 @import "../../scss-main/scss/elements/debug";
 
-@import "elements/shame";
-
-
-
+@import "../../scss-main/scss/elements/shame";
