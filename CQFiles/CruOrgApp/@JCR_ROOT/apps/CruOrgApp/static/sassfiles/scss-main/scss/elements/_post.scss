@@ -80,20 +80,19 @@
     @include font-size($base-font-size * 0.875, false);
 }
 
-.image--legacy + .post-nav{
+.image--inset__right + .post-nav{
     
     @include mq(981px) {
         margin-top: $base-margin / 2;
     }
-    
 }
 
 .post-nav{
-    @extend .image--inset__left;
+    @extend .image--inset__right;
     
     @include mq(981px) {
-        padding-right: 12px;
-        border-right: 1px solid $color-gray;
+        padding-left: 12px;
+        border-left: 1px solid $color-gray;
     }
 
 }

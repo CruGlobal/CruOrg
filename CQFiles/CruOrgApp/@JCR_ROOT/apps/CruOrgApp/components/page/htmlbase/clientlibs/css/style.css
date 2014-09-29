@@ -2339,6 +2339,11 @@ input + .additional {
     width: 91.66667%;
   }
 }
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘palm’ does not exist";
+}
+*/
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
   /**
    * Whole
@@ -2541,6 +2546,11 @@ input + .additional {
     width: 91.66667%;
   }
 }
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘lap’ does not exist";
+}
+*/
 @media only screen and (max-width: 1023px) {
   /**
    * Whole
@@ -2743,6 +2753,11 @@ input + .additional {
     width: 91.66667%;
   }
 }
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘portable’ does not exist";
+}
+*/
 @media only screen and (min-width: 1024px) {
   /**
    * Whole
@@ -2945,6 +2960,11 @@ input + .additional {
     width: 91.66667%;
   }
 }
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘desk’ does not exist";
+}
+*/
 /*------------------------------------*\
     PUSH
 \*------------------------------------*/
@@ -6558,20 +6578,20 @@ td {
 
 @media screen and (min-width: 61.3125em) {
   /* line 83, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
-  .image--legacy + .post-nav {
+  .image--inset__right + .post-nav, .post-nav + .post-nav {
     margin-top: 14.5px;
   }
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 91, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+  /* line 90, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
   .post-nav {
-    padding-right: 12px;
-    border-right: 1px solid #666062;
+    padding-left: 12px;
+    border-left: 1px solid #666062;
   }
 }
 
-/* line 101, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 100, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .post__footer {
   /* 3 */
   /* 3 */
@@ -6598,11 +6618,11 @@ td {
   width: 100%;
 }
 
-	/** 
-	 * Main image captions. Place the .image-credit within this.
-     * Pulls the caption to the left of the image for wide screens
-     * and centers it for smaller screens.
-	 */
+/**
+ * Main image captions. Place the .image-credit within this.
+ * Pulls the caption to the left of the image for wide screens
+ * and centers it for smaller screens.
+ */
 /* line 21, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
 .image__caption {
   position: relative;
@@ -6611,7 +6631,7 @@ td {
   text-align: center;
 }
 @media screen and (min-width: 72.75em) {
-  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  /* line 29, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
   .image__caption.default-view {
     position: absolute;
     left: -172px;
@@ -6621,7 +6641,7 @@ td {
     margin-top: 0;
     line-height: 1.6;
   }
-  /* line 40, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  /* line 39, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
   .image__caption.default-view:before {
     width: 25%;
     margin-left: 75%;
@@ -6632,21 +6652,21 @@ td {
   }
 }
 
-/* line 52, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+/* line 51, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
 .image-credit {
   display: block;
   color: #666062;
 }
 
 /*figure*/
-/* line 61, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-.image--inset__left, .post-nav, .image--legacy {
+/* line 60, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+.image--inset__left, .image--legacy {
   width: 100%;
   clear: both;
 }
 @media screen and (min-width: 61.3125em) {
-  /* line 61, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left, .post-nav, .image--legacy {
+  /* line 60, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  .image--inset__left, .image--legacy {
     width: 50%;
     float: left;
     margin-top: 10px;
@@ -6655,8 +6675,8 @@ td {
   }
 }
 @media screen and (min-width: 72.75em) {
-  /* line 75, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left > .image__caption, .post-nav > .image__caption, .image--legacy > .image__caption {
+  /* line 74, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  .image--inset__left > .image__caption, .image--legacy > .image__caption {
     position: absolute;
     left: -172px;
     width: 150px;
@@ -6665,8 +6685,8 @@ td {
     margin-top: 0;
     line-height: 1.6;
   }
-  /* line 85, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left > .image__caption:before, .post-nav > .image__caption:before, .image--legacy > .image__caption:before {
+  /* line 84, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  .image--inset__left > .image__caption:before, .image--legacy > .image__caption:before {
     width: 25%;
     margin-left: 75%;
     border-top: 1px solid #ddd;
@@ -6678,34 +6698,71 @@ td {
 
 /*figure*/
 /* line 98, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-.image--outset__left {
+.image--inset__right, .post-nav {
   width: 100%;
   clear: both;
-    /*
-	& > .image__caption{
-		@include mq(1300px) {
-			position: absolute;
-			left: -172px;
-			width: 150px;
-			top: 0;
-			text-align: right;
-			margin-top: 0;
-			line-height: 1.6;
-	
-			&:before{
-				width: 25%;
-				margin-left: 75%;
-				border-top: 1px solid #ddd;
-				display: block;
-				content: "";
-				margin-bottom: 10px;
-			}
-		}
-	}
-    */
 }
 @media screen and (min-width: 61.3125em) {
   /* line 98, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  .image--inset__right, .post-nav {
+    width: 50%;
+    float: right;
+    margin-top: 10px;
+    margin-left: 29px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 72.75em) {
+  /* line 112, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  .image--inset__right > .image__caption, .post-nav > .image__caption {
+    position: absolute;
+    left: 379px;
+    width: 150px;
+    top: 0;
+    text-align: left;
+    margin-top: 0;
+    line-height: 1.6;
+  }
+  /* line 122, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  .image--inset__right > .image__caption:before, .post-nav > .image__caption:before {
+    width: 25%;
+    border-top: 1px solid #ddd;
+    display: block;
+    content: "";
+    margin-bottom: 10px;
+  }
+}
+
+/*figure*/
+/* line 136, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+.image--outset__left {
+  width: 100%;
+  clear: both;
+  /*
+  & > .image__caption{
+      @include mq(1300px) {
+          position: absolute;
+          left: -172px;
+          width: 150px;
+          top: 0;
+          text-align: right;
+          margin-top: 0;
+          line-height: 1.6;
+
+          &:before{
+              width: 25%;
+              margin-left: 75%;
+              border-top: 1px solid #ddd;
+              display: block;
+              content: "";
+              margin-bottom: 10px;
+          }
+      }
+  }
+  */
+}
+@media screen and (min-width: 61.3125em) {
+  /* line 136, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
   .image--outset__left {
     float: left;
     margin-top: 10px;
@@ -6718,13 +6775,13 @@ td {
 
 /*figure*/
 @media screen and (min-width: 61.3125em) {
-  /* line 139, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+  /* line 178, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
   .image--outset__center {
     margin-left: -100px;
     margin-right: -100px;
   }
 }
-/* line 145, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+/* line 184, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
 .image--outset__center > .image__caption {
   position: relative;
   width: 100%;
@@ -6732,7 +6789,7 @@ td {
   left: 0;
   margin: 10px auto 0;
 }
-/* line 152, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
+/* line 191, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
 .image--outset__center > .image__caption:before {
   content: none;
 }
@@ -7191,6 +7248,26 @@ hr, .divider, .layout--full, .center-block, .centered,
   width: 1px;
 }
 
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘palm (max-width: 480px)’ does not exist";
+}
+*/
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘lap (min-width: 481px) and (max-width: 1023px)’ does not exist";
+}
+*/
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘portable (max-width: 1023px)’ does not exist";
+}
+*/
+/**
+@if $breakpoint-found == false{
+    @warn "Breakpoint ‘desk (min-width: 1024px)’ does not exist";
+}
+*/
 /* line 173, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .basic-transition, .block-link, .locations li > a, .more-stories__link, .page-subnav > li, .page-subnav a {
   -webkit-transition: 250ms ease;
