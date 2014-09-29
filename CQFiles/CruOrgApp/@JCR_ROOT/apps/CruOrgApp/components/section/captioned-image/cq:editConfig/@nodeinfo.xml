@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:EditConfig">
   <nodesOrder>
-    <value />
+    <value><![CDATA[cq:listeners]]></value>
   </nodesOrder>
   <properties>
     <property name="cq:actions" type="1" multiple="true">
-      <value><![CDATA[text: Captioned Image]]></value>
-      <value><![CDATA[-]]></value>
       <value><![CDATA[edit]]></value>
       <value><![CDATA[-]]></value>
       <value><![CDATA[copymove]]></value>
@@ -17,7 +15,7 @@
       <value>true</value>
     </property>
     <property name="cq:layout" type="1" multiple="false">
-      <value><![CDATA[editbar]]></value>
+      <value><![CDATA[rollover]]></value>
     </property>
   </properties>
   <mixins />
