@@ -1,0 +1,28 @@
+<div class="grid__item  masonry__item  one-whole  coverphoto">
+	{%#if list.pages %}
+        {%#each list.pages %}
+        <a class="full-height" href="{% this.path %}">
+            <div class="mb  position--relative">
+                <img src="{% this.imagePath %}" />
+                <div class="article-details  position--absolute    position--b0  opaque  p0" style="opacity: 1;">
+                    <h3 class="affordance  display--block  m0">{% this.title %}</h3>
+                </div>
+            </div>
+        </a>
+
+        <!-- <a class="full-height" href="{% content.href %}">
+            <div class="full-height  full-width">
+                <div class="background-image  display--block" style="background-image: url('{%this.imagePath%}')"></div>
+            </div>
+
+            <div class="article-details  p0">
+                <h3 class="affordance  display--block  m0">{%this.title%}</h3>
+            </div>
+        </a> -->
+        {%/each%}
+	{%else%}
+		{%#if page.isEditMode %}
+			<div><img class="cq-dd-image cq-image-placeholder" src="/etc/designs/default/0.gif"></div>
+		{%/if %}
+	{%/if%}
+</div>
