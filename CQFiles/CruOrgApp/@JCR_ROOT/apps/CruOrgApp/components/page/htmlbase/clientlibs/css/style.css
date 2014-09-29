@@ -6524,7 +6524,7 @@ td {
   font-size: 16px;
   font-size: 0.84211rem;
 }
-/* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 44, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .post-meta,
 .post-meta a {
   color: #666062;
@@ -6535,7 +6535,7 @@ td {
  * list. 
  */
 @media screen and (max-width: 44.75em) {
-  /* line 55, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+  /* line 58, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
   .post__list li {
     /* 3 */
     /* 3 */
@@ -6550,7 +6550,7 @@ td {
   }
 }
 
-/* line 62, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 65, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .source {
   /* 3 */
   /* 3 */
@@ -6563,12 +6563,12 @@ td {
   margin-top: 0.76316rem;
   /* 9 */
 }
-/* line 65, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 68, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .source:before {
   content: "-";
 }
 
-/* line 70, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 73, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .more-stories__link {
   color: inherit;
   cursor: pointer;
@@ -6577,21 +6577,21 @@ td {
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 80, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+  /* line 83, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
   .image--inset__right + .post-nav, .post-nav + .post-nav {
     margin-top: 14.5px;
   }
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 87, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+  /* line 91, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
   .post-nav {
     padding-left: 12px;
     border-left: 1px solid #666062;
   }
 }
 
-/* line 97, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 101, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .post__footer {
   /* 3 */
   /* 3 */
@@ -7212,18 +7212,13 @@ hr, .divider, .layout--full, .center-block, .centered,
   filter: alpha(opacity=50);
 }
 
-/* line 120, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
-.opaque {
-  opacity: 1;
-}
-
 /**
  * Add a right-angled quote to links that imply movement, e.g.:
  *
    <a href=# class=go>Read more</a>
  *
  */
-/* line 131, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 127, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .go:after, .go:after {
   content: "\00A0" "\00BB";
 }
@@ -7231,7 +7226,7 @@ hr, .divider, .layout--full, .center-block, .centered,
 /**
  * Apply capital case to an element (usually a `strong`).
  */
-/* line 139, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 135, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .caps {
   text-transform: uppercase;
 }
@@ -7240,7 +7235,7 @@ hr, .divider, .layout--full, .center-block, .centered,
  * Hide content off-screen without resorting to `display:none;`, also provide
  * breakpoint specific hidden elements.
  */
-/* line 159, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 155, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .accessibility, .ui-helper-hidden-accessible,
 .visuallyhidden {
   border: 0;
@@ -7273,7 +7268,7 @@ hr, .divider, .layout--full, .center-block, .centered,
     @warn "Breakpoint ‘desk (min-width: 1024px)’ does not exist";
 }
 */
-/* line 177, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 173, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .basic-transition, .block-link, .locations li > a, .more-stories__link, .page-subnav > li, .page-subnav a {
   -webkit-transition: 250ms ease;
   -moz-transition: 250ms ease;
@@ -7282,12 +7277,12 @@ hr, .divider, .layout--full, .center-block, .centered,
   transition: 250ms ease;
 }
 
-/* line 179, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 175, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .decoration--none, .content-slider a {
   text-decoration: none;
 }
 
-/* line 181, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 177, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .box-shadow--thin {
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
