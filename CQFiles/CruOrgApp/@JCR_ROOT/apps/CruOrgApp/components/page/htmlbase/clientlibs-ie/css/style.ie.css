@@ -980,7 +980,7 @@ small {
 .cf, .nav, .post-meta, .grid, .media, .home-banner, .post-article figure {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
 .cf:after, .nav:after, .post-meta:after, .grid:after, .media:after, .home-banner:after, .post-article figure:after {
   content: "";
   display: table;
@@ -6556,7 +6556,7 @@ td {
   font-size: 16px;
   font-size: 0.84211rem;
 }
-/* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 44, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .post-meta,
 .post-meta a {
   color: #666062;
@@ -6567,7 +6567,7 @@ td {
  * list. 
  */
 @media screen and (max-width: 44.75em) {
-  /* line 55, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+  /* line 58, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
   .post__list li {
     /* 3 */
     /* 3 */
@@ -6582,7 +6582,7 @@ td {
   }
 }
 
-/* line 62, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 65, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .source {
   /* 3 */
   /* 3 */
@@ -6595,12 +6595,12 @@ td {
   margin-top: 0.76316rem;
   /* 9 */
 }
-/* line 65, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 68, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .source:before {
   content: "-";
 }
 
-/* line 70, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 73, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .more-stories__link {
   color: inherit;
   cursor: pointer;
@@ -6609,21 +6609,21 @@ td {
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 80, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
-  .image--inset__right + .post-nav, .post-nav + .post-nav {
+  /* line 83, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+  .image--inset__right + .post-nav, .post-nav + .post-nav, .image--legacy + .post-nav {
     margin-top: 14.5px;
   }
 }
 
 @media screen and (min-width: 61.3125em) {
-  /* line 87, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+  /* line 91, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
   .post-nav {
     padding-left: 12px;
     border-left: 1px solid #666062;
   }
 }
 
-/* line 97, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
+/* line 101, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
 .post__footer {
   /* 3 */
   /* 3 */
@@ -6692,13 +6692,13 @@ td {
 
 /*figure*/
 /* line 60, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-.image--inset__left, .image--legacy {
+.image--inset__left {
   width: 100%;
   clear: both;
 }
 @media screen and (min-width: 61.3125em) {
   /* line 60, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left, .image--legacy {
+  .image--inset__left {
     width: 50%;
     float: left;
     margin-top: 10px;
@@ -6708,7 +6708,7 @@ td {
 }
 @media screen and (min-width: 72.75em) {
   /* line 74, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left > .image__caption, .image--legacy > .image__caption {
+  .image--inset__left > .image__caption {
     position: absolute;
     left: -172px;
     width: 150px;
@@ -6718,7 +6718,7 @@ td {
     line-height: 1.6;
   }
   /* line 84, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left > .image__caption:before, .image--legacy > .image__caption:before {
+  .image--inset__left > .image__caption:before {
     width: 25%;
     margin-left: 75%;
     border-top: 1px solid #ddd;
@@ -6730,13 +6730,13 @@ td {
 
 /*figure*/
 /* line 98, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-.image--inset__right, .post-nav {
+.image--inset__right, .post-nav, .image--legacy {
   width: 100%;
   clear: both;
 }
 @media screen and (min-width: 61.3125em) {
   /* line 98, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__right, .post-nav {
+  .image--inset__right, .post-nav, .image--legacy {
     width: 50%;
     float: right;
     margin-top: 10px;
@@ -6746,7 +6746,7 @@ td {
 }
 @media screen and (min-width: 72.75em) {
   /* line 112, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__right > .image__caption, .post-nav > .image__caption {
+  .image--inset__right > .image__caption, .post-nav > .image__caption, .image--legacy > .image__caption {
     position: absolute;
     left: 379px;
     width: 150px;
@@ -6756,7 +6756,7 @@ td {
     line-height: 1.6;
   }
   /* line 122, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__right > .image__caption:before, .post-nav > .image__caption:before {
+  .image--inset__right > .image__caption:before, .post-nav > .image__caption:before, .image--legacy > .image__caption:before {
     width: 25%;
     border-top: 1px solid #ddd;
     display: block;
