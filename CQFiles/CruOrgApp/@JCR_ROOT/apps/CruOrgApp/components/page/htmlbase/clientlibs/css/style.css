@@ -1025,7 +1025,7 @@ small {
 .cf, .nav, .post-meta, .grid, .media, .home-banner, .post-article figure {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
 .cf:after, .nav:after, .post-meta:after, .grid:after, .media:after, .home-banner:after, .post-article figure:after {
   content: "";
   display: table;
@@ -6578,7 +6578,7 @@ td {
 
 @media screen and (min-width: 61.3125em) {
   /* line 83, ../../../../../static/sassfiles/scss-main/scss/elements/_post.scss */
-  .image--inset__right + .post-nav, .post-nav + .post-nav {
+  .image--inset__right + .post-nav, .post-nav + .post-nav, .image--legacy + .post-nav {
     margin-top: 14.5px;
   }
 }
@@ -6660,13 +6660,13 @@ td {
 
 /*figure*/
 /* line 60, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-.image--inset__left, .image--legacy {
+.image--inset__left {
   width: 100%;
   clear: both;
 }
 @media screen and (min-width: 61.3125em) {
   /* line 60, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left, .image--legacy {
+  .image--inset__left {
     width: 50%;
     float: left;
     margin-top: 10px;
@@ -6676,7 +6676,7 @@ td {
 }
 @media screen and (min-width: 72.75em) {
   /* line 74, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left > .image__caption, .image--legacy > .image__caption {
+  .image--inset__left > .image__caption {
     position: absolute;
     left: -172px;
     width: 150px;
@@ -6686,7 +6686,7 @@ td {
     line-height: 1.6;
   }
   /* line 84, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__left > .image__caption:before, .image--legacy > .image__caption:before {
+  .image--inset__left > .image__caption:before {
     width: 25%;
     margin-left: 75%;
     border-top: 1px solid #ddd;
@@ -6698,13 +6698,13 @@ td {
 
 /*figure*/
 /* line 98, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-.image--inset__right, .post-nav {
+.image--inset__right, .post-nav, .image--legacy {
   width: 100%;
   clear: both;
 }
 @media screen and (min-width: 61.3125em) {
   /* line 98, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__right, .post-nav {
+  .image--inset__right, .post-nav, .image--legacy {
     width: 50%;
     float: right;
     margin-top: 10px;
@@ -6714,7 +6714,7 @@ td {
 }
 @media screen and (min-width: 72.75em) {
   /* line 112, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__right > .image__caption, .post-nav > .image__caption {
+  .image--inset__right > .image__caption, .post-nav > .image__caption, .image--legacy > .image__caption {
     position: absolute;
     left: 379px;
     width: 150px;
@@ -6724,7 +6724,7 @@ td {
     line-height: 1.6;
   }
   /* line 122, ../../../../../static/sassfiles/scss-main/scss/elements/_post-images.scss */
-  .image--inset__right > .image__caption:before, .post-nav > .image__caption:before {
+  .image--inset__right > .image__caption:before, .post-nav > .image__caption:before, .image--legacy > .image__caption:before {
     width: 25%;
     border-top: 1px solid #ddd;
     display: block;
@@ -7212,13 +7212,18 @@ hr, .divider, .layout--full, .center-block, .centered,
   filter: alpha(opacity=50);
 }
 
+/* line 120, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+.opaque {
+  opacity: 1;
+}
+
 /**
  * Add a right-angled quote to links that imply movement, e.g.:
  *
    <a href=# class=go>Read more</a>
  *
  */
-/* line 127, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 131, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .go:after, .go:after {
   content: "\00A0" "\00BB";
 }
@@ -7226,7 +7231,7 @@ hr, .divider, .layout--full, .center-block, .centered,
 /**
  * Apply capital case to an element (usually a `strong`).
  */
-/* line 135, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 139, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .caps {
   text-transform: uppercase;
 }
@@ -7235,7 +7240,7 @@ hr, .divider, .layout--full, .center-block, .centered,
  * Hide content off-screen without resorting to `display:none;`, also provide
  * breakpoint specific hidden elements.
  */
-/* line 155, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 159, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .accessibility, .ui-helper-hidden-accessible,
 .visuallyhidden {
   border: 0;
@@ -7268,7 +7273,7 @@ hr, .divider, .layout--full, .center-block, .centered,
     @warn "Breakpoint ‘desk (min-width: 1024px)’ does not exist";
 }
 */
-/* line 173, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 177, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .basic-transition, .block-link, .locations li > a, .more-stories__link, .page-subnav > li, .page-subnav a {
   -webkit-transition: 250ms ease;
   -moz-transition: 250ms ease;
@@ -7277,12 +7282,12 @@ hr, .divider, .layout--full, .center-block, .centered,
   transition: 250ms ease;
 }
 
-/* line 175, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 179, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .decoration--none, .content-slider a {
   text-decoration: none;
 }
 
-/* line 177, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
+/* line 181, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .box-shadow--thin {
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
