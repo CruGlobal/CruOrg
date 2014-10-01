@@ -2,7 +2,12 @@
     width: 100% !important;
 }
 
-.social-shares{  
+.social-shares{
+    div:not(:first-child) {
+      position: relative;
+      z-index: 1;
+    }
+
     .fb-like, .fb_iframe_widget iframe{
         width: 450px !important;
         position: relative;
@@ -14,7 +19,7 @@
 		}
     }
 	
-	.fb-like, .fb_iframe_widget iframe {
+	.fb-like {
 		width: 80px !important;
 	}
 }
