@@ -1,12 +1,18 @@
 namespace :compile do
+    desc "compile main and ie projects"
+    task :all do
+        Rake::Task['compile:main'].execute
+        Rake::Task['compile:ie'].execute
+    end
+
     desc "compile main project"
     task :main do
-        sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; compass watch --time)
+        sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; nohup compass watch --time &)
     end
 
     desc "compile ie project"
     task :ie do
-        sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; compass watch --time)
+        sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; nohup compass watch --time &)
     end
 end
 
