@@ -1,0 +1,53 @@
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/**
+ * Headings 1-6
+ * 
+ */
+h1, .h1, %h1 {
+	@extend %weight--light;
+    font-size: 200;
+    
+    @include font-size($h1-font-size);
+    
+    @include mq(550px, max) {
+        @include font-size($h1-font-size-small);        
+    }
+}
+
+h2, .h2, %h2 {
+	@extend %weight--semilight;
+    @include font-size($h2-font-size);
+    @include mq(550px, max) {
+        @include font-size($h2-font-size-small);        
+    }
+}
+
+h3, .h3, %h3 {
+	@extend %weight--semilight;	
+    @include font-size($h3-font-size);
+    
+    @include mq(550px, max) {
+        @include font-size($h3-font-size-small);        
+    }
+}
+
+h4, .h4, %h4 {
+	@extend %weight--normal;
+    @include font-size($h4-font-size);
+    
+    @include mq(550px, max) {
+        @include font-size($h4-font-size-small);        
+    }
+}
+
+h5, .h5, %h5 {
+	@extend %weight--normal;
+    @include font-size($h5-font-size);
+}
+
+h6, .h6, %h6 {
+	@extend %weight--semibold;
+    @include font-size($h6-font-size);
+}

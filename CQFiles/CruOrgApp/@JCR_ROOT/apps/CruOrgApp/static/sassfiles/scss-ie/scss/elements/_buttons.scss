@@ -1,0 +1,87 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/** 
+ * Use this mixin to quickly pump out buttons:
+ * @mixin btn($background, $border, $color:inherit).
+ *
+ * Change the hover and other states with:;
+ * @mixin btn-effects($background, $border, $color:inherit).
+ * 
+ * Quick note: it will not work with transparency due to
+ * the hover states. 
+ */
+
+.button-group{
+	display: block;
+	
+	.button{
+        @include quarter-spacing(margin-bottom);
+	}
+}
+
+.button--primary{ 	
+    @include btn-effects(darken($btn-primary-bg, 8%), darken($btn-primary-border, 12%), $color-white);
+    
+	&, 
+	&:active, 
+	&:focus{
+    	@include btn($btn-primary-bg, $btn-primary-border, $color-white !important);    
+	}
+}
+
+.button--secondary{
+    @include btn-effects(darken($btn-alt-bg, 8%), darken($btn-alt-border, 12%), $color-white);
+    
+	&, 
+	&:active, 
+	&:focus{
+    	@include btn($btn-alt-bg, $btn-alt-border, $color-white !important);
+	}
+}
+
+.button--subtle, input.button--subtle{
+    color: $btn-subtle-color;
+	background-color: $btn-subtle-bg-fallback;
+    border-color: $btn-subtle-border-fallback;
+    
+	@include btn($btn-subtle-bg, $btn-subtle-border);
+    @include btn-effects($btn-alt-bg, $btn-alt-border);
+    
+    &:hover{
+    	color: $color-white;
+    }
+}
+
+/**
+ * Positive actions; e.g. sign in, purchase, submit, etc.
+ */
+.button--positive{
+    @include btn($btn-positive-bg, darken($btn-positive-bg, 5%), $color-white);
+    @include btn-effects(darken($btn-positive-bg, 8%), darken($btn-positive-bg, 12%), $color-white);
+}
+
+/**
+ * Negative actions; e.g. close account, delete photo, remove friend, etc.
+ */
+.button--negative{
+    @include btn($btn-negative-bg, darken($btn-negative-bg, 5%), $color-white);
+    @include btn-effects(darken($btn-negative-bg, 8%), darken($btn-negative-bg, 12%), $color-white);
+}
+
+/**
+ * Inactive, disabled buttons.
+ */
+.button--inactive {
+	&, 
+	&:hover, 
+	&:active, 
+	&:focus{
+		@extend %btn--inactive;
+	}
+}
+
+.button--icon{
+    border: 0;
+	background: transparent;
+}

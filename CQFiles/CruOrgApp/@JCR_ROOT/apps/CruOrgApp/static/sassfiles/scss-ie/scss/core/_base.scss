@@ -1,0 +1,63 @@
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+
+/* 
+ * Reset the box-sizing
+ */
+
+@if $global-border-box == true{
+    /**
+     * Let’s make the box model all nice, shall we...?
+     */
+    *{
+        &,
+        &:before,
+        &:after{
+            @include box-sizing(border-box);
+        }
+    }
+}
+
+
+/**
+ * 1. Set the base element’s `font-size` to the value of your choosing. Set in
+ *    ems, assuming a browser default of 16px.
+ * 2. Work out the unitless `line-height` for your project based around your
+ *    desired `line-height` (defined previously in pixels), asnd your project’s
+ *    base font size.
+ */
+
+@if $show-baseline == true {
+/**
+ * 3. If you have chosen to display a baseline grid, we turn it on here.
+ */
+}
+
+html {
+    font-size: ($base-font-size / 16px) *  1em;        /* [1] */
+    line-height: $base-line-height / $base-font-size;  /* [2] */
+	background-color: $base-background-color;
+	color: $base-text-color;
+	overflow-y: scroll;
+	min-height: 100%;
+		
+    /**
+	 * If you have chosen to display a baseline grid, we turn it on here.
+	 */
+    @if $show-baseline == true {
+
+        $baseline-size: strip-units($base-spacing-unit);
+
+        background-image: url(http://basehold.it/i/#{$baseline-size}); /* [3] */
+    }
+
+}
+
+body {	
+	font-family: $base-font-family;
+	
+	-webkit-font-smoothing: antialiased;
+
+}

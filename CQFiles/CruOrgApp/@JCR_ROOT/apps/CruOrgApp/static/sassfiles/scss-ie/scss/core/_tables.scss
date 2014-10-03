@@ -1,0 +1,64 @@
+/*------------------------------------*\
+    $TABLES
+\*------------------------------------*/
+
+/**
+ * The table object
+ * 1. Required to make the tabs fill their container.
+ * 2. This is the magic bit; make all children occupy equal width.
+ * 3. Make each tab pack up horizontally.
+ * 4. Ensure the hit area covers the whole tab.
+ */
+/**
+ * Baseline styles
+ */
+table {
+	@extend %vertical-rhythm;
+	max-width: 100%;
+	width: 100%; /* [1] */
+	
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+	.table, 
+	%table {
+		padding: 0;
+	  	list-style: none;
+	  	display: table; 
+	  	table-layout: fixed; /* [2] */
+	}	
+	
+	/**
+	 * The cells
+     */
+	th {
+		text-align: left;
+	}
+	
+	th, td, 
+	.table__item, 
+	%table__item{
+		@extend %table__item;
+		
+	    line-height: $base-spacing-ratio;
+		
+		@include half-spacing(padding);
+	.table__item, 
+	%table__item{
+		 display: table-cell; /* [3] */
+	}
+	
+	th, td, 
+	.table__item,  
+	%table__item{
+	   // padding: $base-spacing-unit / 2;
+	    //line-height: $base-spacing-unit;
+	}
+	
+		.table__content{
+			display: block; /* [4] */
+		}
+
+
+	}

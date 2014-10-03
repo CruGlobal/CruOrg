@@ -1,0 +1,25 @@
+.fb-comments, .fb-comments span, .fb-comments iframe[style], .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe {
+    width: 100% !important;
+}
+
+.social-shares{
+    div:not(:first-child) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .fb-like, .fb_iframe_widget iframe{
+        width: 450px !important;
+        position: relative;
+        top: 0;
+		
+		.post__body &{
+			vertical-align: top;
+			margin-top: -1px;
+		}
+    }
+	
+	.fb-like {
+		width: 80px !important;
+	}
+}

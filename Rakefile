@@ -1,16 +1,27 @@
-desc "Watch both main and ie compass projects"
-task :compile => [:main, :ie] do
-    puts "Watching both main and ie compass projects"
+namespace :compile do
+    desc "compile main project"
+    task :main do
+        sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; compass watch --time)
+    end
+
+    desc "compile ie project"
+    task :ie do
+        sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; compass watch --time)
+    end
 end
 
-desc "Watch main compass project"
-task :main do
-    sh %(cd  CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; nohup sh Watchfile &)
-end
+namespace :compile do
+    namespace :once do
+        desc "compile main project once"
+        task :main do
+            sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; compass compile --time)
+        end
 
-desc "Watch ie compass project"
-task :ie do
-    sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; nohup sh Watchfile &)
+        desc "compile ie project once"
+        task :ie do
+            sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; compass compile --time)
+        end
+    end
 end
 
 desc "Watch compass output in console"
@@ -28,9 +39,8 @@ end
 
 desc "Find running compass processes"
 task :processes do
-  sh %(ps aux | grep compass)
+  puts processes = `ps -ef | grep -v grep | grep CruOrg | awk '{print $2,$8}'`
 end
 
-# TODO Capture pid for each compass process and output to `pid` file
-# TODO Add OS X Notifications
-# TODO Add a Gemfile to CruOrg so users just have to `bundle install` to get the gems they need
+# TODO Iterate through and kill compass processes
+# TODO Add icons OS X Notificationsstall` to get the gems they need
