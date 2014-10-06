@@ -1,8 +1,9 @@
 namespace :compile do
-    desc "compile main and ie projects"
+    desc "compile main + ie projects and guard files"
     task :all do
         Rake::Task['compile:main'].execute
         Rake::Task['compile:ie'].execute
+        # Rake::Task['guard'].execute
     end
 
     desc "compile main project"
@@ -30,7 +31,7 @@ namespace :compile do
     end
 end
 
-desc "Watch compass output in console"
+desc "watch compass output in console"
 task :watch do
     if system 'which -s multitail'
       sh %(multitail -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/nohup.out -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/nohup.out)
@@ -43,10 +44,15 @@ task :watch do
     end
 end
 
-desc "Find running compass processes"
+desc "find running compass processes"
 task :processes do
   puts processes = `ps -ef | grep -v grep | grep CruOrg | awk '{print $2,$8}'`
 end
 
-# TODO Iterate through and kill compass processes
-# TODO Add icons OS X Notificationsstall` to get the gems they need
+desc "watch files for changes in scss-main and copy them to scss-ie"
+task :guard do
+    # sh %(nohup bundle exec guard &)
+    sh %(bundle exec guard)
+end
+
+# TODO Iterate through and kill all compass processes

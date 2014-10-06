@@ -1,7 +1,6 @@
 notification :off
 
 watch(%r{^CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/scss(.+)\.scss$}) do |m|
-
     # build ie version of changed file in scss-main
     scss_ie_file = 'CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/scss/main' + m[1] + '.scss'
 

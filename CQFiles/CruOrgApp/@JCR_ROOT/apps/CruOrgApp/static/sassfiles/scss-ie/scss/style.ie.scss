@@ -80,42 +80,42 @@
 /**
  * Core variables, mixins, utilities, etc
  */
-@import "vars";
-@import "generic/tools";
-@import "generic/mixins";
-@import "generic/_normalize.scss";
-@import "generic/restart";
-@import "generic/clearfix";
-@import "core/shared";
+@import "main/vars";
+@import "main/generic/tools";
+@import "main/generic/mixins";
+@import "main/generic/_normalize.scss";
+@import "main/generic/restart";
+@import "main/generic/clearfix";
+@import "main/core/shared";
 
 /**
  * Base styles; unclassed HTML elements etc.
  */
-@import "core/base";
-@import "core/headings";
-@import "core/paragraphs";
-@import "core/quotes";
-@import "core/images";
-@import "core/lists";
-@import "core/tables";
-@import "core/forms";
+@import "main/core/base";
+@import "main/core/headings";
+@import "main/core/paragraphs";
+@import "main/core/quotes";
+@import "main/core/images";
+@import "main/core/lists";
+@import "main/core/tables";
+@import "main/core/forms";
 
 /**
  * Objects and abstractions
  */
-@import "core/grids";
-@import "generic/mixins/widths";
-@import "components/buttons";
-@import "components/islands";
-@import "components/navs";
-@import "components/pagination";
-@import "components/breadcrumbs";
-@import "components/media";
+@import "main/core/grids";
+@import "main/generic/mixins/widths";
+@import "main/components/buttons";
+@import "main/components/islands";
+@import "main/components/navs";
+@import "main/components/pagination";
+@import "main/components/breadcrumbs";
+@import "main/components/media";
 
 /**
  * Style trumps; helper and brand classes
  */
-@import "generic/spacing";
+@import "main/generic/spacing";
 
 /**
  * Begin importing custom stuff here.
