@@ -38,6 +38,6 @@
     vertical-align: middle;
 }
 
-.cru {
-  color: #ffffff;
+.eli {
+    color: red;
 }

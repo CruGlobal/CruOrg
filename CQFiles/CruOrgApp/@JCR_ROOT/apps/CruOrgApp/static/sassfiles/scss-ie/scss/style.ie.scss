@@ -129,66 +129,66 @@
 /**
  * Primary site colors and fonts
  */
-@import "elements/fonts";
-@import "elements/colors";
+@import "main/elements/fonts";
+@import "main/elements/colors";
 
 
 /**
  * Overall site and layout
  */
-@import "elements/page";
+@import "main/elements/page";
 @import "ie/ie-layouts";
 
 
 /**
  * Site-wide elements and components
  */
-@import "elements/text";
-@import "elements/buttons";
-@import "elements/forms";
-@import "elements/tables";
-@import "elements/video";
-@import "elements/images";
+@import "main/elements/text";
+@import "main/elements/buttons";
+@import "main/elements/forms";
+@import "main/elements/tables";
+@import "main/elements/video";
+@import "main/elements/images";
 
 @import "ie/ie-header";
-//@import "elements/header";
-@import "elements/footer";
-@import "elements/social";
+//@import "main/elements/header";
+@import "main/elements/footer";
+@import "main/elements/social";
 
-@import "elements/site-search";
+@import "main/elements/site-search";
 @import "ie/ie-navigation";
-@import "elements/dropdowns";
+@import "main/elements/dropdowns";
 @import "ie/ie-off-canvas";
-@import "elements/off-canvas";
-@import "elements/ui-autocomplete";
-@import "elements/tiles";
+@import "main/elements/off-canvas";
+@import "main/elements/ui-autocomplete";
+@import "main/elements/tiles";
 
 /**
  * Page components
  */
-@import "elements/campus-locator";
-@import "elements/country-list";
+@import "main/elements/campus-locator";
+@import "main/elements/country-list";
 @import "ie/ie-sliders";
 
-@import "elements/post";
-@import "elements/post-images";
+@import "main/elements/post";
+@import "main/elements/post-images";
 
 
 
 /**
  * Community specific components
  */
-@import "elements/page-subnav";
+@import "main/elements/page-subnav";
 
 
 /**
  * Overrides and additional tools
  */
-@import "elements/animations";
+@import "main/elements/animations";
 @import "ie/ie-helpers";
-@import "elements/debug";
+@import "main/elements/debug";
 
-@import "elements/shame";
+@import "main/elements/shame";
 
 
 
