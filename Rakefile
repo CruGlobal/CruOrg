@@ -3,7 +3,7 @@ namespace :compile do
     task :all do
         Rake::Task['compile:main'].execute
         Rake::Task['compile:ie'].execute
-        # Rake::Task['guard'].execute
+        Rake::Task['guard'].execute
     end
 
     desc "compile main project"
@@ -51,8 +51,8 @@ end
 
 desc "watch files for changes in scss-main and copy them to scss-ie"
 task :guard do
-    # sh %(nohup bundle exec guard &)
     sh %(bundle exec guard)
 end
 
 # TODO Iterate through and kill all compass processes
+# TODO Upgrade Guardfile w/ guard-compass

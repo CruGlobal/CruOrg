@@ -1,3 +1,5 @@
+require 'guard'
+
 notification :off
 
 watch(%r{^CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/scss(.+)\.scss$}) do |m|
