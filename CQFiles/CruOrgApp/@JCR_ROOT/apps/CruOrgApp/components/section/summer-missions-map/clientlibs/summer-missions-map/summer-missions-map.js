@@ -1,4 +1,6 @@
 //summer-missions-map.js
+var map;
+
 $(document).ready(function() {
     if ( $( '.summer-missions__map' ).length ) {
         function init() {
@@ -43,14 +45,14 @@ $(document).ready(function() {
               mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
             }
           };
-          var map = new google.maps.Map(document.getElementById('map_canvas'),
+          map = new google.maps.Map(document.getElementById('map_canvas'),
             mapOptions);
 
           //Associate the styled map with the MapTypeId and set it to display.
           map.mapTypes.set('map_style', styledMap);
           map.setMapTypeId('map_style');
         }
-        
+
         // Parse XML of project locations to create map markers
            function getMarkers() {
              $.ajax({
@@ -60,8 +62,8 @@ $(document).ready(function() {
               }
              });
            }
-    
+
   	$(document).ready(init);
-  	$(window).load(getMarkers);    
+  	$(window).load(getMarkers);
     }
 });
