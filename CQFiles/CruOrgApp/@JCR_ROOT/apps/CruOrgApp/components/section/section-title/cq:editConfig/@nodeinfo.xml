@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <node nodeType="cq:EditConfig">
   <nodesOrder>
-    <value />
+    <value><![CDATA[cq:listeners]]></value>
   </nodesOrder>
   <properties>
     <property name="cq:dialogMode" type="1" multiple="false">
