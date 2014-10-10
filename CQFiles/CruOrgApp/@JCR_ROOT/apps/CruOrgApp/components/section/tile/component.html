@@ -28,7 +28,7 @@
 
           {%{ content.text }%}
  		{%#if content.href %}
-        	<a class="button button--small {% content.readMoreStyle %}" href="{% content.href %}">{% content.readMore %}</a>
+        	<a class="button button--small {% content.readMoreStyle %}" href="{% content.href %}"{%#if content.target%} target="_blank"{%/if%}>{% content.readMore %}</a>
         {%/if%}
     </div>
   </div>

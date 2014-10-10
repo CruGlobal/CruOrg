@@ -4,9 +4,6 @@
     <value />
   </nodesOrder>
   <properties>
-    <property name="fieldDescription" type="1" multiple="false">
-      <value><![CDATA[Select the target page.]]></value>
-    </property>
     <property name="fieldLabel" type="1" multiple="false">
       <value><![CDATA[Read more link]]></value>
     </property>
