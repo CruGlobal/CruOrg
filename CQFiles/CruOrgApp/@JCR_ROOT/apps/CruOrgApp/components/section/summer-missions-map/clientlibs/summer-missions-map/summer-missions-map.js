@@ -38,11 +38,18 @@ $(document).ready(function() {
           var mapOptions = {
             zoom: 2,
             center: new google.maps.LatLng(35, -37),
-            disableDefaultUI: !0,
-            zoomControl: !1,
-            scrollwheel: !1,
+            disableDefaultUI: false,
+            streetViewControl: false,
+            zoomControl: true,
+            mapTypeControl: false,
+            scrollwheel: false,
+            panControl: false,
+            zoomControlOptions: {
+                   position: google.maps.ControlPosition.LEFT_BOTTOM
+               },
             mapTypeControlOptions: {
-              mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+              mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'],
+              position: google.maps.ControlPosition.BOTTOM_LEFT
             }
           };
           map = new google.maps.Map(document.getElementById('map_canvas'),
