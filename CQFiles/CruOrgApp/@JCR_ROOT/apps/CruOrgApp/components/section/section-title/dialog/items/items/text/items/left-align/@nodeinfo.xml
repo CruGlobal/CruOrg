@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node nodeType="cq:Widget">
+  <nodesOrder>
+    <value />
+  </nodesOrder>
+  <properties>
+    <property name="fieldLabel" type="1" multiple="false">
+      <value><![CDATA[Left Align Text?]]></value>
+    </property>
+    <property name="name" type="1" multiple="false">
+      <value><![CDATA[./align]]></value>
+    </property>
+    <property name="type" type="1" multiple="false">
+      <value><![CDATA[checkbox]]></value>
+    </property>
+    <property name="xtype" type="1" multiple="false">
+      <value><![CDATA[selection]]></value>
+    </property>
+  </properties>
+  <mixins />
+</node>
+

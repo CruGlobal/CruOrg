@@ -1,6 +1,6 @@
 
-<div class="section-title center-block  masonry__item  grid__item">
-	<h2 class="section-title__item  banner-title  display--inline-block">
+<div class="section-title {%#unless content.align%} center-block{%/unless%}  masonry__item  grid__item">
+	<h2 class="section-title__item  banner-title  display--inline-block{%#if content.fontSize%}  h3{%/if%}">
 		{%#if content.text%}	
 			{%content.text%}
 		{%else%}
