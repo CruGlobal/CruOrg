@@ -17,6 +17,7 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-9652718-4', 'auto');
+      ga('require', 'displayfeatures');
 {%#if page.error404Page %}
 	  ga('send', 'pageview', '/errors/404.html?page='+ document.location.pathname + document.location.search +'&ref=' + document.referrer);
 {%else%}
