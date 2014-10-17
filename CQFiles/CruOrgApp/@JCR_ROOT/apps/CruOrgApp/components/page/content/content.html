@@ -1,5 +1,8 @@
 <div class="grid">
 	<div class="layout-single-column  layout--wide  masonry-container">
+    {%#if page.summerMissions%}
+        {%#include "summer-missions-nav" as="CruOrgApp/components/section/summer-missions-nav"%}{%/include%}
+    {%/if%}
 
 	{%#include "content-parsys" as="foundation/components/parsys"%}{%/include%}
 	</div>
