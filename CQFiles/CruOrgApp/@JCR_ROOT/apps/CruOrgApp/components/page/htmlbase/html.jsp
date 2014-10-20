@@ -15,7 +15,7 @@
                                       || |||
    cccccccc    rrrrrrr  uu       uu   || |||
  ccc      cc   rrr      uu       uu   || |||
-cc             rr       uu       uy      |||
+cc             rr       uu       uu      |||
 cc             rr       uu       uu      |||
 cc             rr       uu       uu
  cc       cc   rr       uuu     uuu
