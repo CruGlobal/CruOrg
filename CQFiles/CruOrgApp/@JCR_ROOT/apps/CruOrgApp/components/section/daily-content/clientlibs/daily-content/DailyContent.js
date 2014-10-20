@@ -60,6 +60,7 @@ Cru.components.DailyContent.elements = {
 
         if(date){
             var dateLi = document.createElement(this.LI);
+            dateLi.className = "accent";
             var dateTime = document.createElement(this.TIME);
             var dateNode = document.createTextNode(date);
             dateTime.appendChild(dateNode);
