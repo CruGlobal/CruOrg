@@ -4,21 +4,22 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html prefix="og: http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#" itemscope itemtype="http://schema.org/" lang="en" class="no-js"> <!--<![endif]-->
 <!--
-                                         +s
-                                         +s
-                                         +s
-                                         +s
-                                dddddhhd osssssssss
-                             myyyssssssy yyyyyyyd
-                                      :+ +s 
-                                      :+ +s
-   dmddddd    mm mmdd  my       ym    :+ +s
- dyhd   dhyd  yyyy     ym       my    :+ +s
-hym           yy       ym       my    dd +s
-yd            yy       ym       my       oy
-yy            yy       ym       hy
-myh       hh  yy       yym     dyd
- Nmhyhhhyhd   yy        dhyhhhyhm
+
+                                         |||
+                                      || |||
+                                      || |||
+                                      || |||
+                                |||||||| |||||||||||                             
+                              |||||||||| |||||||||
+                                      || |||
+                                      || |||
+   cccccccc    rrrrrrr  uu       uu   || |||
+ ccc      cc   rrr      uu       uu   || |||
+cc             rr       uu       uy      |||
+cc             rr       uu       uu      |||
+cc             rr       uu       uu
+ cc       cc   rr       uuu     uuu
+   cccccccc    rr        uuuuuuuuu
 
 Thanks for checking out our source code. 
 Want to work with us? http://www.cru.org/opportunities/careers.html
