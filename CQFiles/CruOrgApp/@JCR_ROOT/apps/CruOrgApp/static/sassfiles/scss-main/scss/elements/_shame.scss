@@ -31,3 +31,53 @@
 .summer-missions__map img { 
     max-width:none;
 }
+
+$color-dark-gray: #514c4e;
+
+.page__links {
+    position: relative;
+    top: 71px; 
+    z-index: 1;  
+    text-align: center;
+    float: none
+}
+
+.page__links li {
+    display: inline-block; 
+    vertical-align: middle;
+    border-right: 1px solid $color-dark-gray;
+    
+    &:last-child{
+        border-right: none;
+    }
+}
+
+.page__links li > a {
+    display: inline-block;
+    padding: 8px 26px;
+    background-color: $color-gray; 
+    color: #fff; 
+    font-weight: 500; 
+    font-size: 17px;
+    text-transform: capitalize;
+    
+    &:hover{
+        background-color: $color-dark-gray; 
+        border-color: #393637; 
+        text-decoration: none;
+    }
+    
+    @include mq(501px, max) {
+        padding: 6px 12px; 
+    }
+    
+    @include mq(580px, max) {
+        font-size: 72%;
+    }
+}
+
+.page--article .page__links {
+    z-index: 1; 
+    margin-bottom: 42px; 
+    top: 42px;
+}

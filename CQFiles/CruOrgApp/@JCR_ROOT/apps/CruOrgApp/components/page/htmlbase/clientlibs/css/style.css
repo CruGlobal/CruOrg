@@ -1025,7 +1025,7 @@ small {
 .cf, .nav, .post-meta, .grid, .media, .home-banner, .post-article figure {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
 .cf:after, .nav:after, .post-meta:after, .grid:after, .media:after, .home-banner:after, .post-article figure:after {
   content: "";
   display: table;
@@ -1386,7 +1386,7 @@ img[height] {
 /* line 29, ../../../../../static/sassfiles/scss-main/scss/core/_images.scss */
 .image--thumbnail {
   padding: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 
 /**
@@ -1592,7 +1592,7 @@ legend {
   font-size: 16.625px;
   line-height: 29px;
   background-image: none;
-  border: 2px solid #ccc;
+  border: 2px solid #cccccc;
   border-radius: 2px;
   padding-left: 15px;
   padding-left: 1rem;
@@ -4144,7 +4144,7 @@ input[disabled]:focus,
  */
 /* line 11, ../../../../../static/sassfiles/scss-main/scss/elements/_colors.scss */
 .color-border-base {
-  border-color: #ccc;
+  border-color: #cccccc;
 }
 
 /* line 12, ../../../../../static/sassfiles/scss-main/scss/elements/_colors.scss */
@@ -4182,7 +4182,7 @@ input[disabled]:focus,
 .button--negative:focus,
 .button--negative:active,
 .button--negative:visited, .slider-control:hover i {
-  color: #ffffff;
+  color: white;
 }
 
 /**
@@ -4200,7 +4200,7 @@ input[disabled]:focus,
 
 /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_colors.scss */
 .color-white {
-  background-color: #ffffff;
+  background-color: white;
 }
 
 /**
@@ -4616,13 +4616,13 @@ q:first-child {
 .button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .open .button--primary.dropdown-toggle {
   background-color: #efa507;
   border-color: #c28605;
-  color: #ffffff;
+  color: white;
 }
 /* line 26, ../../../../../static/sassfiles/scss-main/scss/elements/_buttons.scss */
 .button--primary, .button--primary:active, .button--primary:focus {
   background-color: #f9b625;
   border-color: #f8ae0c;
-  color: #ffffff !important;
+  color: white !important;
 }
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/generic/mixins/_buttons.scss */
 .button--primary:active, .button--primary.active, .button--primary:active:active, .button--primary:active.active, .button--primary:focus:active, .button--primary:focus.active {
@@ -4640,13 +4640,13 @@ q:first-child {
 .button--secondary:hover, .button--secondary:focus, .button--secondary:active, .button--secondary.active, .open .button--secondary.dropdown-toggle {
   background-color: #514c4e;
   border-color: #393637;
-  color: #ffffff;
+  color: white;
 }
 /* line 36, ../../../../../static/sassfiles/scss-main/scss/elements/_buttons.scss */
 .button--secondary, .button--secondary:active, .button--secondary:focus {
   background-color: #666062;
   border-color: #595455;
-  color: #ffffff !important;
+  color: white !important;
 }
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/generic/mixins/_buttons.scss */
 .button--secondary:active, .button--secondary.active, .button--secondary:active:active, .button--secondary:active.active, .button--secondary:focus:active, .button--secondary:focus.active {
@@ -4688,7 +4688,7 @@ q:first-child {
 }
 /* line 51, ../../../../../static/sassfiles/scss-main/scss/elements/_buttons.scss */
 .button--subtle:hover, input.button--subtle:hover {
-  color: #ffffff;
+  color: white;
 }
 
 /**
@@ -4698,7 +4698,7 @@ q:first-child {
 .button--positive {
   background-color: #4a993e;
   border-color: #418737;
-  color: #ffffff;
+  color: white;
 }
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/generic/mixins/_buttons.scss */
 .button--positive:active, .button--positive.active {
@@ -4715,7 +4715,7 @@ q:first-child {
 .button--positive:hover, .button--positive:focus, .button--positive:active, .button--positive.active, .open .button--positive.dropdown-toggle {
   background-color: #3c7c32;
   border-color: #356d2c;
-  color: #ffffff;
+  color: white;
 }
 
 /**
@@ -4725,7 +4725,7 @@ q:first-child {
 .button--negative {
   background-color: #b33630;
   border-color: #9f302b;
-  color: #ffffff;
+  color: white;
 }
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/generic/mixins/_buttons.scss */
 .button--negative:active, .button--negative.active {
@@ -4742,7 +4742,7 @@ q:first-child {
 .button--negative:hover, .button--negative:focus, .button--negative:active, .button--negative.active, .open .button--negative.dropdown-toggle {
   background-color: #932c27;
   border-color: #832723;
-  color: #ffffff;
+  color: white;
 }
 
 /**
@@ -4957,7 +4957,7 @@ td {
   overflow: hidden;
   width: 100%;
   height: 84px;
-  background-color: #ffffff;
+  background-color: white;
   border-top-width: 3px;
   border-top-style: solid;
   border-top-color: #f9b625;
@@ -5197,7 +5197,7 @@ td {
   position: absolute;
   overflow: hidden;
   visibility: hidden;
-  color: #ffffff;
+  color: white;
   right: 0;
   z-index: 2;
   width: 100%;
@@ -5392,7 +5392,7 @@ td {
   padding: 0 18px;
   letter-spacing: 0.9px;
   vertical-align: middle;
-  color: #ffffff;
+  color: white;
 }
 /* line 140, ../../../../../static/sassfiles/scss-main/scss/elements/_navigation.scss */
 .nav__link:hover {
@@ -5713,7 +5713,7 @@ td {
 */
 /* line 15, ../../../../../static/sassfiles/scss-main/scss/elements/_dropdowns.scss */
 .dropdown--column {
-  color: #ffffff;
+  color: white;
   border-radius: 1px;
   margin-bottom: 0.90625rem;
 }
@@ -5745,7 +5745,7 @@ td {
   margin: 0;
   text-align: left;
   font-size: 85%;
-  color: #ffffff;
+  color: white;
 }
 @media screen and (max-width: 61.25em) {
   /* line 15, ../../../../../static/sassfiles/scss-main/scss/elements/_dropdowns.scss */
@@ -5919,7 +5919,7 @@ td {
 /* line 14, ../../../../../static/sassfiles/scss-main/scss/elements/_ui-autocomplete.scss */
 .ui-autocomplete li a {
   background-color: #404040;
-  color: #ffffff;
+  color: white;
   display: block;
   padding: 5px 13px;
   cursor: pointer;
@@ -5932,7 +5932,7 @@ td {
 
 /* line 1, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item {
-  background-color: #ffffff;
+  background-color: white;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
@@ -6345,7 +6345,7 @@ td {
 .article-details h3 {
   line-height: 1.25em;
   min-height: 2.5em;
-  color: #ffffff;
+  color: white;
   /* 3 */
   /* 3 */
   /* 4 */
@@ -6473,7 +6473,7 @@ td {
   text-align: center;
   line-height: 60px;
   font-size: 2.2em;
-  color: #ffffff;
+  color: white;
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.35);
   -webkit-transition: background-color 150ms linear;
@@ -6853,145 +6853,193 @@ td {
  * Slider animation
  */
 @-webkit-keyframes sliderBegin {
+  /* line 13, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -33.333333%;
     opacity: 0.4;
   }
+
+  /* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -56%;
     opacity: 0;
   }
 }
 @-moz-keyframes sliderBegin {
+  /* line 13, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -33.333333%;
     opacity: 0.4;
   }
+
+  /* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -56%;
     opacity: 0;
   }
 }
 @-ms-keyframes sliderBegin {
+  /* line 13, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -33.333333%;
     opacity: 0.4;
   }
+
+  /* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -56%;
     opacity: 0;
   }
 }
 @keyframes sliderBegin {
+  /* line 13, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -33.333333%;
     opacity: 0.4;
   }
+
+  /* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -56%;
     opacity: 0;
   }
 }
 @-webkit-keyframes sliderEnd {
+  /* line 25, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 140%;
     opacity: 0;
   }
+
+  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
     opacity: 0.4;
   }
 }
 @-moz-keyframes sliderEnd {
+  /* line 25, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 140%;
     opacity: 0;
   }
+
+  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
     opacity: 0.4;
   }
 }
 @-ms-keyframes sliderEnd {
+  /* line 25, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 140%;
     opacity: 0;
   }
+
+  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
     opacity: 0.4;
   }
 }
 @keyframes sliderEnd {
+  /* line 25, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 140%;
     opacity: 0;
   }
+
+  /* line 30, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
     opacity: 0.4;
   }
 }
 @-webkit-keyframes sliderReverseBegin {
+  /* line 38, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 66%;
   }
+
+  /* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
   }
 }
 @-moz-keyframes sliderReverseBegin {
+  /* line 38, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 66%;
   }
+
+  /* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
   }
 }
 @-ms-keyframes sliderReverseBegin {
+  /* line 38, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 66%;
   }
+
+  /* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
   }
 }
 @keyframes sliderReverseBegin {
+  /* line 38, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: 66%;
   }
+
+  /* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: 100%;
   }
 }
 @-webkit-keyframes sliderReverseEnd {
+  /* line 49, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -52%;
   }
+
+  /* line 53, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -33.33333%;
   }
 }
 @-moz-keyframes sliderReverseEnd {
+  /* line 49, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -52%;
   }
+
+  /* line 53, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -33.33333%;
   }
 }
 @-ms-keyframes sliderReverseEnd {
+  /* line 49, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -52%;
   }
+
+  /* line 53, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -33.33333%;
   }
 }
 @keyframes sliderReverseEnd {
+  /* line 49, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   from {
     left: -52%;
   }
+
+  /* line 53, ../../../../../static/sassfiles/scss-main/scss/elements/_animations.scss */
   to {
     left: -33.33333%;
   }
@@ -7255,22 +7303,22 @@ hr, .divider, .layout--full, .center-block, .centered,
 
 /**
 @if $breakpoint-found == false{
-    @warn "Breakpoint ‘palm (max-width: 480px)’ does not exist";
+    @warn "Breakpoint ‘"palm" "(max-width: 480px)"’ does not exist";
 }
 */
 /**
 @if $breakpoint-found == false{
-    @warn "Breakpoint ‘lap (min-width: 481px) and (max-width: 1023px)’ does not exist";
+    @warn "Breakpoint ‘"lap" "(min-width: 481px) and (max-width: 1023px)"’ does not exist";
 }
 */
 /**
 @if $breakpoint-found == false{
-    @warn "Breakpoint ‘portable (max-width: 1023px)’ does not exist";
+    @warn "Breakpoint ‘"portable" "(max-width: 1023px)"’ does not exist";
 }
 */
 /**
 @if $breakpoint-found == false{
-    @warn "Breakpoint ‘desk (min-width: 1024px)’ does not exist";
+    @warn "Breakpoint ‘"desk" "(min-width: 1024px)"’ does not exist";
 }
 */
 /* line 177, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
@@ -7296,7 +7344,6 @@ hr, .divider, .layout--full, .center-block, .centered,
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
-/* endif */
 /* line 1, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
 .fb-comments, .fb-comments span, .fb-comments iframe[style], .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe {
   width: 100% !important;
@@ -7331,4 +7378,62 @@ hr, .divider, .layout--full, .center-block, .centered,
 /* line 31, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
 .summer-missions__map img {
   max-width: none;
+}
+
+/* line 37, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+.page__links {
+  position: relative;
+  top: 71px;
+  z-index: 1;
+  text-align: center;
+  float: none;
+}
+
+/* line 45, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+.page__links li {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border-right: 1px solid #514c4e;
+}
+/* line 51, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+.page__links li:last-child {
+  border-right: none;
+}
+
+/* line 56, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+.page__links li > a {
+  display: inline-block;
+  padding: 8px 26px;
+  background-color: #666062;
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+  font-size: 17px;
+  text-transform: capitalize;
+}
+/* line 66, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+.page__links li > a:hover {
+  background-color: #514c4e;
+  border-color: #393637;
+  text-decoration: none;
+}
+@media screen and (max-width: 31.3125em) {
+  /* line 56, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+  .page__links li > a {
+    padding: 6px 16px;
+  }
+}
+@media screen and (max-width: 36.25em) {
+  /* line 56, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+  .page__links li > a {
+    font-size: 75%;
+  }
+}
+
+/* line 81, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+.page--article .page__links {
+  z-index: 1;
+  margin-bottom: 42px;
+  top: 42px;
 }
