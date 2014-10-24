@@ -18,7 +18,7 @@
         	{%/if%}
       {%#if content.title %}
         {%#if content.href %}
-            <a href="{% content.href %}">
+            <a href="{% content.href %}"{%#if content.target%} target="_blank"{%/if%}>
         {%/if %}
         <h4>{% content.title %}</h4>
         {%#if content.href %}
