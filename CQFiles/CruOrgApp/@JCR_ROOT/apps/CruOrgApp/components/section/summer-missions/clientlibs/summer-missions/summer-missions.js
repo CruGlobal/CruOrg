@@ -5,7 +5,7 @@ $(document).ready(function() {
 	//Limits the JSON call to pages that contain a div with the class 'summer-missions' which is contained in the component.
 	if ( $( '.js-summer-missions' ).length ) {
 		
-	    var cru_summer_projects_json = {"project_search":"http://sp.campuscrusadeforchrist.com/projects.json","project_details":"http://sp.campuscrusadeforchrist.com/projects/%d.json"};
+	    var cru_summer_projects_json = {"project_search":"http://sp.campuscrusadeforchrist.com/projects.json","project_details":"http://sp.campuscrusadeforchrist.com/projects.json?id=%d"};
 		var tripID = urlParam( 'tripid' )
 		
 		//Is this a Trip or a Search
@@ -20,68 +20,65 @@ $(document).ready(function() {
 		    	    url: jsonLink,
 		    		dataType: 'jsonp',
 		            async: false,
-		    		data: {
-		    		    'active': 1
-				},
 		
 				success: function( data ) {
 		    		// Project Name
 					$( '.post__headline' ).empty();
 				
 		    		$( '<h1 class="post-title  pt_x"></h1>' )
-						.text( data.project.name )
+						.text( data[0].project.name )
 						.appendTo( '.post__headline' );
 				
 					// Inset Sidebar
 					$( '<nav class="post-nav"><ul class="bare-list  small-text"></ul></nav>')
 						.appendTo( '.js-summer-missions' );				
 				
-					if (data.project.display_location) {	
+					if (data[0].project.display_location) {	
 						$( '<li></li>')
-							.html( '<strong>Location:</strong> ' +  data.project.display_location )
+							.html( '<strong>Location:</strong> ' +  data[0].project.display_location )
 							.appendTo( '.post-nav > ul' );
 					}
 				
-					if ( data.project.start_date ) {
-						var startDate = $.datepicker.formatDate('M d, yy', new Date( data.project.start_date ));
-						var endDate = $.datepicker.formatDate('M d, yy', new Date( data.project.end_date ));
+					if ( data[0].project.start_date ) {
+						var startDate = $.datepicker.formatDate('M d, yy', new Date( data[0].project.start_date ));
+						var endDate = $.datepicker.formatDate('M d, yy', new Date( data[0].project.end_date ));
 						$( '<li></li>' )
 							.html( '<strong>Term:</strong> ' +  startDate + ' – ' + endDate )
 							.appendTo( '.post-nav > ul' );
 					}
 				
-					if ( data.project.url ) {
-                        if ( data.project.url_title ) {
-                            var urlTitle = data.project.url_title;
+					if ( data[0].project.url ) {
+                        if ( data[0].project.url_title ) {
+                            var urlTitle = data[0].project.url_title;
                         }
                         else {
                             var urlTitle = 'Trip Website';
                         }
                             
 						$( '<li></li>' )
-							.html( '<strong>Website:</strong> <a href="' + data.project.url + '"  target="_blank">' + urlTitle + '</a>')
+							.html( '<strong>Website:</strong> <a href="' + data[0].project.url + '"  target="_blank">' + urlTitle + '</a>')
 							.appendTo( '.post-nav > ul' );
 					}
 				
-					if ( data.project.ministry_focuses ) {
+					if ( data[0].project.ministry_focuses ) {
 						$( '<li></li>' )
-							.html( '<strong>Ministry Focus:</strong> ' + data.project.primary_focus_name )
+							.html( '<strong>Ministry Focus:</strong> ' + data[0].project.primary_focus_name )
 							.appendTo( '.post-nav > ul' );
 					}
 				
-					if ( data.project.student_cost ) {
+					if ( data[0].project.student_cost ) {
 						$( '<li></li>' )
-							.html( '<strong>Cost:</strong> $' + data.project.student_cost )
+							.html( '<strong>Cost:</strong> $' + data[0].project.student_cost )
 							.appendTo( '.post-nav > ul' );
 					}
 				
-					if ( data.project.weeks ) {
+					if ( data[0].project.weeks ) {
 						$( '<li></li>' )
-							.html( '<strong>Length:</strong> ' + data.project.weeks + ' weeks')
+							.html( '<strong>Length:</strong> ' + data[0].project.weeks + ' weeks')
 							.appendTo( '.post-nav > ul' );
 					}
 				
-					if ( data.project.job ) {
+					if ( data[0].project.job ) {
 						$( '<li></li>' )
 							.html( '<strong>Can a student get a job?</strong> Yes')
 							.appendTo( '.post-nav > ul' );
@@ -92,27 +89,27 @@ $(document).ready(function() {
 							.appendTo( '.post-nav > ul' );
 					}
 				
-					if ( data.project.pd_name ) {
+					if ( data[0].project.pd_name ) {
 						$( '<li></li>' )
-							.html( '<hr class="me" /><strong>Trip Director:</strong> <a href="mailto:' + data.project.pd_email + '">' + data.project.pd_name + '</a>')
+							.html( '<hr class="me" /><strong>Trip Director:</strong> <a href="mailto:' + data[0].project.pd_email + '">' + data[0].project.pd_name + '</a>')
 							.appendTo( '.post-nav > ul' );
 					}
 				
-					if ( data.project.apd_name ) {
+					if ( data[0].project.apd_name ) {
 						$( '<li></li>' )
-							.html( '<strong>Trip Director:</strong> <a href="mailto:' + data.project.apd_email + '">' + data.project.apd_name + '</a>')
+							.html( '<strong>Trip Director:</strong> <a href="mailto:' + data[0].project.apd_email + '">' + data[0].project.apd_name + '</a>')
 							.appendTo( '.post-nav > ul' );
 					}
 				
 					//Description				
 					$( '<div class="js-summer-missions__description mb"></div>' )
-						.html( data.project.description )
+						.html( data[0].project.description )
 						.appendTo( '.js-summer-missions' );
 				
 					//Apply Button
-					if ( data.project.use_provided_application ) {
-						$( '<div></div>' )
-							.html( '<a href="https://sp.campuscrusadeforchrist.com/apply?p=' + data.project.id + '" class="button  button--primary">Apply For This Project</a>')
+					if ( data[0].project.use_provided_application ) {
+						$( '<div class="mb_x"></div>' )
+							.html( '<a href="https://sp.cru.org/apply?p=' + data[0].project.id + '" class="button  button--primary" onclick="event.preventDefault(); summermissions_apply(this.href);">Apply For This Project</a>')
 							.appendTo( '.js-summer-missions' );
 					}
 				
@@ -121,7 +118,7 @@ $(document).ready(function() {
 
 				},
 				error: function( data ) {
-					$( '<p><strong>Error:</strong> No trip found.<br />Go Back?<br />Search box?<br />Go to list of all projects? </p>' )
+					$( '<p><strong>Error:</strong> No trip found.<br /><br /><a href="?">Go to list of all projects</a></p>' )
 						.appendTo( '.summer-project' );
 				}
 		        } );		
@@ -136,20 +133,13 @@ $(document).ready(function() {
 
 		        $.ajax( {
 	 	    	    url: jsonLink,
-	 	    		dataType: 'json',
+	 	    		dataType: 'jsonp',
 	 	            async: false,
-	 	    		data: {
-	 	    		    'active': 1
-	 			},
 			
 	 			success: function( data ){ 
-			        $.getJSON(jsonLink,
-
-			        function (data) {
-			            $.each(data, function (key, value) {
-			                $( '.js-summer-missions__search' ).append('<p><a href="?tripid=' + value.project.id + '">' + value.project.name + '</a></p>');
-			            });
-			        });
+		            $.each(data, function (key, value) {
+		                $( '.js-summer-missions__search' ).append('<p><a href="?tripid=' + value.project.id + '">' + value.project.name + '</a></p>');
+		            });
 	 			}
 				});
 			}
@@ -157,3 +147,7 @@ $(document).ready(function() {
 		}
 	}
 });
+
+function summermissions_apply(link){
+    window.open(link, "_blank", "toolbar=no, location=no, status=no, titlebar=no");
+}
