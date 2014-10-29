@@ -5,7 +5,7 @@
   </nodesOrder>
   <properties>
     <property name="componentGroup" type="1" multiple="false">
-      <value><![CDATA[Cru]]></value>
+      <value><![CDATA[.hidden]]></value>
     </property>
     <property name="jcr:title" type="1" multiple="false">
       <value><![CDATA[Summer Missions Nav]]></value>

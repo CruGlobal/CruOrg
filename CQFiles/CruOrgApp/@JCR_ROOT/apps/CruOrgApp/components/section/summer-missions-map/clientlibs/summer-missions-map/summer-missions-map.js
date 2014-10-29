@@ -63,7 +63,8 @@ $(document).ready(function() {
         // Parse XML of project locations to create map markers
            function getMarkers() {
              $.ajax({
-              url: "http://sp.campuscrusadeforchrist.com/projects/markers.js",
+              url: "http://sp.campuscrusadeforchrist.com/projects/markers",
+              dataType: "jsonp",
               success: function(markers){
                 eval(markers);
               }
