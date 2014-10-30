@@ -5933,15 +5933,10 @@ td {
 /* line 1, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item {
   background-color: white;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   margin-bottom: 29px;
   text-align: left;
 }
-/* line 9, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 10, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > h4 {
   margin-bottom: 0;
   padding-top: 15px;
@@ -5949,7 +5944,7 @@ td {
   padding-bottom: 7px;
   padding-left: 15px;
 }
-/* line 17, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 18, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > a > h4 {
   color: #444444;
   margin-bottom: 0;
@@ -5958,11 +5953,11 @@ td {
   padding-bottom: 15px;
   padding-left: 15px;
 }
-/* line 28, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 29, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > a:hover {
   text-decoration: none;
 }
-/* line 32, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 33, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > ul {
   margin-bottom: 0;
   padding-top: 7px;
@@ -5971,11 +5966,11 @@ td {
   font-size: 90%;
   list-style: none;
 }
-/* line 42, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 43, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > ul li {
   text-indent: -.5em;
 }
-/* line 46, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 47, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > ul li:before {
   content: "\002022";
   color: #f9b625;
@@ -5983,7 +5978,7 @@ td {
   width: .5em;
   margin-left: .1em;
 }
-/* line 57, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 58, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > ol {
   margin-bottom: 0;
   padding-top: 7px;
@@ -5992,7 +5987,7 @@ td {
   padding-left: 0px;
   font-size: 90%;
 }
-/* line 67, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 68, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > p {
   margin-top: 0;
   margin-bottom: 0;
@@ -6002,7 +5997,7 @@ td {
   padding-left: 15px;
   font-size: 90%;
 }
-/* line 78, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 79, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > a > p {
   color: #444444;
   margin-top: 0;
@@ -6013,18 +6008,18 @@ td {
   padding-left: 15px;
   font-size: 90%;
 }
-/* line 93, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 94, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > .button {
   margin-bottom: 15px;
   margin-left: 15px;
 }
-/* line 99, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 100, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .tile__item > div > img {
   width: 100%;
   display: block;
 }
 
-/* line 105, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
+/* line 106, ../../../../../static/sassfiles/scss-main/scss/elements/_tiles.scss */
 .masonry__item {
   /*following properties fix problem where two halves stack instead of sit side-by-side */
   margin-left: -1px;
@@ -7336,7 +7331,7 @@ hr, .divider, .layout--full, .center-block, .centered,
 }
 
 /* line 181, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
-.box-shadow--thin {
+.box-shadow--thin, .tile__item {
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
