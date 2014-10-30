@@ -7337,11 +7337,11 @@ hr, .divider, .layout--full, .center-block, .centered,
 
 /* line 181, ../../../../../static/sassfiles/scss-main/scss/generic/_helpers.scss */
 .box-shadow--thin {
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 /* line 1, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
@@ -7392,46 +7392,44 @@ hr, .divider, .layout--full, .center-block, .centered,
 /* line 45, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
 .page__links li {
   display: inline-block;
-  position: relative;
   vertical-align: middle;
   border-right: 1px solid #514c4e;
 }
-/* line 51, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+/* line 50, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
 .page__links li:last-child {
   border-right: none;
 }
 
-/* line 56, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+/* line 55, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
 .page__links li > a {
   display: inline-block;
   padding: 8px 26px;
   background-color: #666062;
-  position: relative;
   color: #fff;
   font-weight: 500;
   font-size: 17px;
   text-transform: capitalize;
 }
-/* line 66, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+/* line 64, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
 .page__links li > a:hover {
   background-color: #514c4e;
   border-color: #393637;
   text-decoration: none;
 }
 @media screen and (max-width: 31.3125em) {
-  /* line 56, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+  /* line 55, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
   .page__links li > a {
-    padding: 6px 16px;
+    padding: 6px 12px;
   }
 }
 @media screen and (max-width: 36.25em) {
-  /* line 56, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+  /* line 55, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
   .page__links li > a {
-    font-size: 75%;
+    font-size: 72%;
   }
 }
 
-/* line 81, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
+/* line 79, ../../../../../static/sassfiles/scss-main/scss/elements/_shame.scss */
 .page--article .page__links {
   z-index: 1;
   margin-bottom: 42px;
