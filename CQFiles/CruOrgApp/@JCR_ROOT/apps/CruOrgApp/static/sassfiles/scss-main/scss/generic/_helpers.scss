@@ -178,6 +178,6 @@
 
 .decoration--none, %decoration--none{ text-decoration: none; }
 
-  .box-shadow--thin {
-  @include vendor(box-shadow, 0 0 6px rgba(0,0,0,0.2));
+.box-shadow--thin {
+  @include vendor(box-shadow, 0 0 1px rgba(0,0,0,0.2));
 }
