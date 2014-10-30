@@ -106,12 +106,12 @@ $(document).ready(function() {
 						.html( data[0].project.description )
 						.appendTo( '.js-summer-missions' );
 				
-					//Apply Button
+					/*Apply Button
 					if ( data[0].project.use_provided_application ) {
 						$( '<div class="mb_x"></div>' )
 							.html( '<a href="https://sp.cru.org/apply?p=' + data[0].project.id + '" class="button  button--primary" onclick="event.preventDefault(); summermissions_apply(this.href);">Apply For This Project</a>')
 							.appendTo( '.js-summer-missions' );
-					}
+					}*/
 				
 					//Remove Bad Styles From Database
 					$( '.js-summer-missions *' ).removeAttr( 'style' ).removeClass( 'MsoNormal' );
