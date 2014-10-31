@@ -5,7 +5,7 @@ $(document).ready(function() {
 	//Limits the JSON call to pages that contain a div with the class 'summer-missions' which is contained in the component.
 	if ( $( '.js-summer-missions' ).length ) {
 		
-	    var cru_summer_projects_json = {"project_search":"http://sp.campuscrusadeforchrist.com/projects.json","project_details":"http://sp.campuscrusadeforchrist.com/projects.json?id=%d"};
+	    var cru_summer_projects_json = {"project_search":"https://smapp.cru.org/projects.json","project_details":"https://smapp.cru.org/projects.json?id=%d"};
 		var tripID = urlParam( 'tripid' )
 		
 		//Is this a Trip or a Search
@@ -109,7 +109,7 @@ $(document).ready(function() {
 					//Apply Button
 					if ( data[0].project.use_provided_application ) {
 						$( '<div class="mb_x"></div>' )
-							.html( '<a href="https://sp.cru.org/apply?p=' + data[0].project.id + '" class="button  button--primary" onclick="event.preventDefault(); summermissions_apply(this.href);">Apply For This Project</a>')
+							.html( '<a href="https://smapp.cru.org/apply?p=' + data[0].project.id + '" class="button  button--primary" onclick="event.preventDefault(); summermissions_apply(this.href);">Apply For This Project</a>')
 							.appendTo( '.js-summer-missions' );
 					}
 				
