@@ -21,9 +21,9 @@ $(document).ready(function() {
 		    		dataType: 'jsonp',
 		            async: false,
 		
-				success: function( data ) {
+				success: function( data ) {                    
 		    		// Project Name
-					$( '.post__headline' ).empty();
+					$( '.post__headline' ).empty();            
 				
 		    		$( '<h1 class="post-title  pt_x"></h1>' )
 						.text( data[0].project.name )
@@ -40,10 +40,12 @@ $(document).ready(function() {
 					}
 				
 					if ( data[0].project.start_date ) {
-						var startDate = $.datepicker.formatDate('M d, yy', new Date( data[0].project.start_date ));
-						var endDate = $.datepicker.formatDate('M d, yy', new Date( data[0].project.end_date ));
+                        var startDate = data[0].project.start_date;
+                        var startDateFormatted = $.datepicker.formatDate("M d, yy", $.datepicker.parseDate( "yy-mm-dd", startDate ));
+						var endDate = data[0].project.end_date;
+                        var endDateFormatted = $.datepicker.formatDate("M d, yy", $.datepicker.parseDate( "yy-mm-dd", endDate ));
 						$( '<li></li>' )
-							.html( '<strong>Term:</strong> ' +  startDate + ' – ' + endDate )
+							.html( '<strong>Term:</strong> ' +  startDateFormatted + ' – ' + endDateFormatted )
 							.appendTo( '.post-nav > ul' );
 					}
 				
