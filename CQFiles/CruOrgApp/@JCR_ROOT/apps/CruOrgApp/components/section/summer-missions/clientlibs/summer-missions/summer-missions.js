@@ -14,7 +14,7 @@ $(document).ready(function() {
             $( '.js-summer-missions' ).removeClass( 'grid' )
 			
 		    function project_detail_results( projectid ) {
-				var jsonLink = cru_summer_projects_json.project_details.replace( '%d', tripID );
+				var jsonLink = cru_summer_projects_json.project_details.replace( '%d', Number(tripID) );
 
 		        $.ajax( {
 		    	    url: jsonLink,
@@ -40,12 +40,10 @@ $(document).ready(function() {
 					}
 				
 					if ( data[0].project.start_date ) {
-                        var startDate = data[0].project.start_date;
-                        var startDateFormatted = $.datepicker.formatDate("M d, yy", $.datepicker.parseDate( "yy-mm-dd", startDate ));
-						var endDate = data[0].project.end_date;
-                        var endDateFormatted = $.datepicker.formatDate("M d, yy", $.datepicker.parseDate( "yy-mm-dd", endDate ));
+                        var startDate = $.datepicker.formatDate("M d, yy", $.datepicker.parseDate( "yy-mm-dd", data[0].project.start_date ));
+						var endDate = $.datepicker.formatDate("M d, yy", $.datepicker.parseDate( "yy-mm-dd", data[0].project.end_date ));
 						$( '<li></li>' )
-							.html( '<strong>Term:</strong> ' +  startDateFormatted + ' – ' + endDateFormatted )
+							.html( '<strong>Term:</strong> ' +  startDate + ' – ' + endDate )
 							.appendTo( '.post-nav > ul' );
 					}
 				
