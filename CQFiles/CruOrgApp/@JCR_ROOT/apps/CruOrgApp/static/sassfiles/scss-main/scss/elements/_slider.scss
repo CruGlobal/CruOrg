@@ -198,9 +198,10 @@ $slider-height: 396px;
     min-height: 2.5em;
 
     color: $color-white;
+    font-weight: 400;
 
     @include rem-calc(padding, 13px 14px 6px);
-    @include font-size(22px, false);
+    @include font-size(28px, false);
     @include vendor(transition, color .15s linear);
 
     &:hover{
