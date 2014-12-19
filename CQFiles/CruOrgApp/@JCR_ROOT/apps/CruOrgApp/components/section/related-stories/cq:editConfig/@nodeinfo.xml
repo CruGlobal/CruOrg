@@ -8,6 +8,9 @@
       <value><![CDATA[copymove]]></value>
       <value><![CDATA[delete]]></value>
     </property>
+    <property name="cq:disableTargeting" type="6" multiple="false">
+      <value>true</value>
+    </property>
     <property name="cq:layout" type="1" multiple="false">
       <value><![CDATA[rollover]]></value>
     </property>

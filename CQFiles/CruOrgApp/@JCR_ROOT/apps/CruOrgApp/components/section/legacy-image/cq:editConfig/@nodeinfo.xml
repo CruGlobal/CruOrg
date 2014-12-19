@@ -9,6 +9,9 @@
       <value><![CDATA[copymove]]></value>
       <value><![CDATA[delete]]></value>
     </property>
+    <property name="cq:disableTargeting" type="6" multiple="false">
+      <value>true</value>
+    </property>
   </properties>
   <mixins />
 </node>
