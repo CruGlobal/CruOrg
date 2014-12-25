@@ -1,19 +1,37 @@
-desc "Watch both main and ie compass projects"
-task :compile => [:main, :ie] do
-    puts "Watching both main and ie compass projects"
+namespace :compile do
+    desc "compile main + ie projects and guard files"
+    task :all do
+        Rake::Task['compile:main'].execute
+        Rake::Task['compile:ie'].execute
+        Rake::Task['guard'].execute
+    end
+
+    desc "compile main project"
+    task :main do
+        sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; nohup compass watch --time &)
+    end
+
+    desc "compile ie project"
+    task :ie do
+        sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; nohup compass watch --time &)
+    end
 end
 
-desc "Watch main compass project"
-task :main do
-    sh %(cd  CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; nohup sh Watchfile &)
+namespace :compile do
+    namespace :once do
+        desc "compile main project once"
+        task :main do
+            sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/; compass compile --time)
+        end
+
+        desc "compile ie project once"
+        task :ie do
+            sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; compass compile --time)
+        end
+    end
 end
 
-desc "Watch ie compass project"
-task :ie do
-    sh %(cd CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/; nohup sh Watchfile &)
-end
-
-desc "Watch compass output in console"
+desc "watch compass output in console"
 task :watch do
     if system 'which -s multitail'
       sh %(multitail -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-main/nohup.out -i CQFiles/CruOrgApp/@JCR_ROOT/apps/CruOrgApp/static/sassfiles/scss-ie/nohup.out)
@@ -26,11 +44,15 @@ task :watch do
     end
 end
 
-desc "Find running compass processes"
+desc "find running compass processes"
 task :processes do
-  sh %(ps aux | grep compass)
+  puts processes = `ps -ef | grep -v grep | grep CruOrg | awk '{print $2,$8}'`
 end
 
-# TODO Capture pid for each compass process and output to `pid` file
-# TODO Add OS X Notifications
-# TODO Add a Gemfile to CruOrg so users just have to `bundle install` to get the gems they need
+desc "watch files for changes in scss-main and copy them to scss-ie"
+task :guard do
+    sh %(bundle exec guard)
+end
+
+# TODO Iterate through and kill all compass processes
+# TODO Upgrade Guardfile w/ guard-compass

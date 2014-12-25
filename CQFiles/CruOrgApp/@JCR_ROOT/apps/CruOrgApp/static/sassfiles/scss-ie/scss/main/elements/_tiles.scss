@@ -1,0 +1,110 @@
+.tile__item {
+  background-color: $color-white;
+  @include vendor(box-shadow, 0 0 6px rgba(0,0,0,0.2));
+
+  margin-bottom: $base-margin;
+
+  text-align: left;
+
+  & > h4 {
+    margin-bottom: 0;
+    padding-top:    half($base-margin);
+    padding-right:  half($base-margin);
+    padding-bottom: quarter($base-margin);
+    padding-left:   half($base-margin);
+  }
+
+  & > a > h4 {
+    color: $color-black;
+
+    // @extend .affordance;
+
+    margin-bottom: 0;
+    padding-top:    half($base-margin);
+    padding-right:  half($base-margin);
+    padding-bottom: half($base-margin);
+    padding-left:   half($base-margin);
+  }
+  & > a:hover {
+    text-decoration: none;
+  }
+
+  & > ul {
+    margin-bottom: 0;
+    padding-top:    quarter($base-margin);
+    padding-right:  half($base-margin);
+    padding-bottom: half($base-margin);
+
+    font-size: 90%;
+
+    list-style: none;
+
+    li {
+      text-indent: -.5em;
+    }
+
+    li:before {
+      content: "\002022";
+
+      color: $color-gold;
+
+      display: inline-block;
+      width: .5em;
+      margin-left: .1em;
+    }
+  }
+
+  & > ol {
+    margin-bottom: 0;
+    padding-top:    quarter($base-margin);
+    padding-right:  half($base-margin);
+    padding-bottom: half($base-margin);
+    padding-left: 0px;
+
+    font-size: 90%;
+  }
+
+  & > p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top:    quarter($base-margin);
+    padding-right:  half($base-margin);
+    padding-bottom: half($base-margin);
+    padding-left:   half($base-margin);
+
+    font-size: 90%;
+  }
+
+  & > a > p {
+    color: $color-black;
+
+    // @extend .affordance;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top:    quarter($base-margin);
+    padding-right:  half($base-margin);
+    padding-bottom: half($base-margin);
+    padding-left:   half($base-margin);
+
+    font-size: 90%;
+  }
+
+  & > .button {
+    margin-bottom: half($base-margin);
+    margin-left:   half($base-margin);
+
+  }
+
+  & > div > img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.masonry__item { /*following properties fix problem where two halves stack instead of sit side-by-side */
+  margin-left:-1px;
+  transform:translateX(1px);
+}
+
+

@@ -1,0 +1,217 @@
+@if $use-buttons == true{
+/*------------------------------------*\
+    $Buttons
+\*------------------------------------*/	
+/**
+ * Base button styles
+ */
+%button, 
+.button {    
+    //@extend %m0;
+    position: relative;
+    display: inline-block;
+
+	cursor: pointer;
+
+	
+	background-color: $btn-default-bg;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	
+	border: 2px solid;
+	border-color: $btn-default-border;
+	
+	color: $btn-default-color;
+	font-weight: 500;
+	text-align: center;
+    letter-spacing: .02em;
+	vertical-align: middle;
+	overflow: visible;
+    
+	-webkit-font-smoothing: antialiased;
+    
+    @include rem-calc(padding, 6px 18px);		
+    @include font-size($btn-font-size, false);		
+	@include rem-calc(border-radius, $base-border-radius);	
+    @include vendor(transition, all .2s ease);
+	@include vendor(appearance, none);
+	@include user-select(none);
+    
+	/**
+	 * Button size modifiers
+	 *
+	 * These all follow the same sizing rules as above; text is 1em, space around it
+     * remains uniform.
+	 */    
+	&--small{               
+
+        @include rem-calc(padding, 2px 6px);
+	}
+
+	&--large{
+		line-height: 2;
+        @include rem-calc(padding, 12px 26px);
+	}
+    
+ 	/**
+ 	 * These buttons will fill the entirety of their container.
+ 	 *
+ 	 * 1. Remove padding so that widths and paddings don’t conflict.
+ 	 */
+ 	&--full{
+ 	    width: 100%;
+ 	    padding-right:0;            /* [1] */
+ 	    padding-left: 0;            /* [1] */
+ 	    text-align:center;
+ 	}
+
+	/**
+	 * Button font-size modifiers.
+	 */
+	&--alpha{
+		@include rem-calc(font-size, 30px);		
+	}
+
+	&--beta{
+		@include rem-calc(font-size, 24px);	
+	}
+
+	&--gamma{
+		@include rem-calc(font-size, 16px);		
+	}
+    
+	/**
+	 * Positive actions; e.g. sign in, purchase, submit, etc.
+	 */
+	&--positive{
+	    background-color: $btn-positive-bg;
+		border-color: darken($btn-positive-bg, 10%);
+	
+		&, 
+		&:hover,
+		&:focus,
+		&:active, 
+		&:visited {
+			@extend %text--white;
+		}
+
+		&:hover{
+			background-color: darken($btn-positive-bg, 10%);
+		}
+	}
+
+	/**
+	 * Negative actions; e.g. close account, delete photo, remove friend, etc.
+	 */
+	&--negative{
+	    background-color: $btn-negative-bg;
+		border-color: darken($btn-negative-bg, 10%);
+	
+	
+		&, 
+		&:hover,
+		&:focus,
+		&:active, 
+		&:visited {
+	    	@extend %text--white;
+		}
+
+		&:hover{
+			background-color: darken($btn-negative-bg, 10%);
+		}
+	}
+
+	/**
+	 * Inactive, disabled buttons.
+	 */
+	&--inactive {
+		&, 
+		&:hover, 
+		&:active, 
+		&:focus{
+			@extend %btn--inactive;
+		}
+    }
+}
+
+	/**
+	 * Base button states
+	 */
+	%button,
+	.button {
+		
+		&, 
+		&:hover,
+		&:focus,
+		&:active, 
+		&:visited {
+			color: $btn-default-color;
+			text-decoration: none;
+		}
+
+		&:hover{
+			background-color: darken($btn-default-bg, 10%);
+			box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+		}
+
+		&:active,
+		&:focus{
+		    outline:none;
+		    box-shadow:0 0 2px rgba(0, 0, 0, .3) inset;
+		}
+
+		&:focus {
+			@include tab-focus;
+		}
+
+		&:active{
+			background-image: none;
+		}
+		
+		&::-moz-focus-inner { 
+	        border: 0;
+	        padding: 0;
+		}
+		  
+		  
+	}
+
+	
+	
+	
+	
+	
+	/**
+	 * Button Functions
+	 */
+	
+	/**
+	 * Use to extend the inactive/disabled states: sass cannot extend a
+	 * nested property so this is a temporary hack
+	 *
+	 * 1. Make the button look like normal text when hovered.
+	 */
+	%btn--inactive{
+        background-color:#ddd;
+        color: #777 !important;
+        cursor: text;         /* [1] */
+        box-shadow:none;
+	}
+	
+	
+	button[disabled],
+	input[disabled], 
+	.button--disabled{	
+		&, 
+		&:hover, 
+		&:active, 
+		&:focus {
+			@extend %btn--inactive;
+	        cursor: not-allowed;       
+			
+		}
+    }
+	
+
+
+
+}//endif

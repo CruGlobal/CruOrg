@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    $LAYOUTS
+\*------------------------------------*/
+
+.base-layout, %base-layout{
+	width: auto;
+	
+	margin-left: 20px;
+	margin-right: 20px;
+	clear: both;
+	
+	@include mq(680px) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.layout-single-column, %layout-single-column{
+	@extend %base-layout;
+		
+	@include mq(680px) {
+		width: 640px;
+	}
+	
+	@include mq(800px){
+		width: 700px;
+	}
+}
+
+.layout--wide{
+	@extend %layout-single-column;
+	
+	@include mq(1024px){
+		width: 880px;
+	}
+}
+
+.layout--full{
+	@extend %centered;
+
+	max-width: 1100px;
+}
+
+/**
+ * The wrapper class for full-width images
+ */
+.layout-background-fill{    
+    position: relative;
+    
+    left: 0;     
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0;
+
+    @include rem-calc(top, -25px);
+
+}
+
+.layout-background-stretch{
+	@include mq(500px, max) {
+        @include rem-calc(margin-left,  -$base-spacing-unit);
+        @include rem-calc(margin-right, -$base-spacing-unit);
+	}
+}
